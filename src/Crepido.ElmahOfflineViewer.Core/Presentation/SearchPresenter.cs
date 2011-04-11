@@ -7,12 +7,12 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 	public class SearchPresenter
 	{
 		private readonly ISearchView _view;
-		private readonly IErrorLogRepository _errorLogsRepository;
+		private readonly IErrorLogRepository _repository;
 
 		public SearchPresenter(ISearchView view, IErrorLogRepository errorLogRepository)
 		{
 			_view = view;
-			_errorLogsRepository = errorLogRepository;
+			_repository = errorLogRepository;
 
 			RegisterEvents();
 		}
@@ -20,15 +20,22 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 		public void Initialize()
 		{
 			_view.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today);
-			_view.LoadTypes(_errorLogsRepository.GetTypes());
-			_view.LoadSources(_errorLogsRepository.GetSources());
-			_view.LoadUsers(_errorLogsRepository.GetUsers());
+			_view.LoadTypes(_repository.GetTypes());
+			_view.LoadSources(_repository.GetSources());
+			_view.LoadUsers(_repository.GetUsers());
 		}
 
 		private void RegisterEvents()
 		{
 			_view.OnFilterApplied += ViewOnFilterApplied;
 			_view.OnErrorLogSelected += ViewOnErrorLogSelected;
+			_repository.OnInitialized += RepositoryOnInitialized;
+		}
+
+		private void RepositoryOnInitialized(object sender, Domain.RepositoryInitializedEventArgs e)
+		{
+			_view.ClearResult();
+			_view.ClearErrorDetails();
 		}
 
 		private void ViewOnErrorLogSelected(object sender, ErrorLogSelectedEventArgs e)
@@ -40,7 +47,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 		{
 			_view.ClearErrorDetails();
 
-			var result = _errorLogsRepository.GetWithFilter(e.Query);
+			var result = _repository.GetWithFilter(e.Query);
 
 			_view.DisplaySearchResult(result);
 		}

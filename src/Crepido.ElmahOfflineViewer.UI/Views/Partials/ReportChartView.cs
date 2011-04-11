@@ -17,14 +17,25 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		{
 			_report = report;
 
+			ClearView();
 			SetTitle();
 			SetSeries();
+		}
+		
+		public void ClearView()
+		{
+			if (InvokeRequired)
+			{
+				this.InvokeEx(x => x.Clear());
+			}
+			else
+			{
+				Clear();
+			}
 		}
 
 		private void SetTitle()
 		{
-			_chart.Titles.Clear();
-
 			var title = _chart.Titles.Add("default");
 			title.Text = _report.Query.ToString();
 			title.Alignment = ContentAlignment.TopLeft;
@@ -32,8 +43,6 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 
 		private void SetSeries()
 		{
-			_chart.Series.Clear();
-
 			var serie = _chart.Series.Add("default");
 
 			foreach (var item in _report.Items)
@@ -41,6 +50,12 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 				serie.Points.AddXY(item.Key, item.Count);
 				serie.IsValueShownAsLabel = true;
 			}
+		}
+		
+		private void Clear()
+		{
+			_chart.Titles.Clear();
+			_chart.Series.Clear();
 		}
 	}
 }

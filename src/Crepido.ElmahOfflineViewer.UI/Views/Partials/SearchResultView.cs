@@ -17,7 +17,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 
 		public void LoadTree(IList<ErrorLog> errorLogs)
 		{
-			Clear();
+			ClearView();
 
 			if (errorLogs.Count == 0)
 			{
@@ -33,9 +33,16 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			}
 		}
 		
-		public void Clear()
+		public void ClearView()
 		{
-			_resultTreeView.Nodes.Clear();
+			if (InvokeRequired)
+			{
+				this.InvokeEx(x => x.Clear());
+			}
+			else
+			{
+				Clear();
+			}
 		}
 
 		private TreeNode GetDateFolderNode(string date)
@@ -67,7 +74,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			node.SelectedImageIndex = 2;
 		}
 		
-		private void ResultTreeView_AfterSelect(object sender, TreeViewEventArgs e)
+		private void ResultTreeViewAfterSelect(object sender, TreeViewEventArgs e)
 		{
 			var errorLog = e.Node.Tag as ErrorLog;
 			if (errorLog == null)
@@ -79,6 +86,11 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			{
 				OnErrorLogSelected(this, new ErrorLogSelectedEventArgs(errorLog));
 			}
+		}
+
+		private void Clear()
+		{
+			_resultTreeView.Nodes.Clear();
 		}
 	}
 }

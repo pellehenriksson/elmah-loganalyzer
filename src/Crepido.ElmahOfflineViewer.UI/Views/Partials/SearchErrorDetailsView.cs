@@ -30,7 +30,19 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			}
 		}
 
-		public void Clear()
+		public void ClearView()
+		{
+			if (InvokeRequired)
+			{
+				this.InvokeEx(x => x.ClearView());
+			}
+			else
+			{
+				Clear();
+			}
+		}
+
+		private void Clear()
 		{
 			_hostLabel.Text = string.Empty;
 			_timeLabel.Text = string.Empty;

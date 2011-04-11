@@ -31,10 +31,10 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 		private void InitializeComponent()
 		{
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-			this._searchFilterView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SearchFilterView();
+			this.searchFilterView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SearchFilterView();
 			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
 			this.searchResultTreeView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SearchResultView();
-			this._searchDetailsView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SearchErrorDetailsView();
+			this.searchDetailsView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SearchErrorDetailsView();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
@@ -54,7 +54,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			// 
 			// splitContainer1.Panel1
 			// 
-			this.splitContainer1.Panel1.Controls.Add(this._searchFilterView);
+			this.splitContainer1.Panel1.Controls.Add(this.searchFilterView);
 			// 
 			// splitContainer1.Panel2
 			// 
@@ -65,11 +65,11 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			// 
 			// _searchFilterView
 			// 
-			this._searchFilterView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._searchFilterView.Location = new System.Drawing.Point(0, 0);
-			this._searchFilterView.Name = "_searchFilterView";
-			this._searchFilterView.Size = new System.Drawing.Size(881, 113);
-			this._searchFilterView.TabIndex = 0;
+			this.searchFilterView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.searchFilterView.Location = new System.Drawing.Point(0, 0);
+			this.searchFilterView.Name = "searchFilterView";
+			this.searchFilterView.Size = new System.Drawing.Size(881, 113);
+			this.searchFilterView.TabIndex = 0;
 			// 
 			// splitContainer2
 			// 
@@ -83,7 +83,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			// 
 			// splitContainer2.Panel2
 			// 
-			this.splitContainer2.Panel2.Controls.Add(this._searchDetailsView);
+			this.splitContainer2.Panel2.Controls.Add(this.searchDetailsView);
 			this.splitContainer2.Size = new System.Drawing.Size(881, 490);
 			this.splitContainer2.SplitterDistance = 221;
 			this.splitContainer2.TabIndex = 0;
@@ -98,11 +98,11 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			// 
 			// _searchDetailsView
 			// 
-			this._searchDetailsView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._searchDetailsView.Location = new System.Drawing.Point(0, 0);
-			this._searchDetailsView.Name = "_searchDetailsView";
-			this._searchDetailsView.Size = new System.Drawing.Size(656, 490);
-			this._searchDetailsView.TabIndex = 0;
+			this.searchDetailsView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.searchDetailsView.Location = new System.Drawing.Point(0, 0);
+			this.searchDetailsView.Name = "searchDetailsView";
+			this.searchDetailsView.Size = new System.Drawing.Size(656, 490);
+			this.searchDetailsView.TabIndex = 0;
 			// 
 			// SearchView
 			// 
@@ -127,8 +127,8 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private System.Windows.Forms.SplitContainer splitContainer2;
-		private SearchFilterView _searchFilterView;
+		private SearchFilterView searchFilterView;
 		private SearchResultView searchResultTreeView;
-		private SearchErrorDetailsView _searchDetailsView;
+		private SearchErrorDetailsView searchDetailsView;
 	}
 }

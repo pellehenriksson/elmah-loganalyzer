@@ -44,7 +44,7 @@
 			this._resultTreeView.SelectedImageIndex = 0;
 			this._resultTreeView.Size = new System.Drawing.Size(217, 314);
 			this._resultTreeView.TabIndex = 1;
-			this._resultTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.ResultTreeView_AfterSelect);
+			this._resultTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.ResultTreeViewAfterSelect);
 			// 
 			// _treeImageList
 			// 

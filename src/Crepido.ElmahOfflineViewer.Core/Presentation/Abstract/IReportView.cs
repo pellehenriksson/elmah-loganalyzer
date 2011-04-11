@@ -13,5 +13,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation.Abstract
 		void SetTimeInterval(DateTime startTime, DateTime endTime);
 
 		void DisplayReport(Report report);
+
+		void Clear();
 	}
 }

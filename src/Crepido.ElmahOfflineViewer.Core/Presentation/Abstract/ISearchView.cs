@@ -21,7 +21,9 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation.Abstract
 		void DisplaySearchResult(IList<ErrorLog> errorLogs);
 		
 		void DisplayErrorDetails(ErrorLog error);
-		
+
+		void ClearResult();
+
 		void ClearErrorDetails();
 	}
 }

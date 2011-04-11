@@ -13,7 +13,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 		{
 			InitializeComponent();
 
-			_searchFilterView.OnFilterApplied += SearchFilterViewOnSearchFilterApplied;
+			searchFilterView.OnFilterApplied += SearchFilterViewOnSearchFilterApplied;
 			searchResultTreeView.OnErrorLogSelected += SearchResultTreeViewOnErrorLogSelected;
 		}
 
@@ -23,22 +23,22 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 
 		public void SetTimeInterval(DateTime startTime, DateTime endTime)
 		{
-			_searchFilterView.SetTimeInterval(startTime, endTime);
+			searchFilterView.SetTimeInterval(startTime, endTime);
 		}
 
 		public void LoadTypes(List<string> types)
 		{
-			_searchFilterView.LoadTypes(types);
+			searchFilterView.LoadTypes(types);
 		}
 
 		public void LoadSources(List<string> sources)
 		{
-			_searchFilterView.LoadSources(sources);
+			searchFilterView.LoadSources(sources);
 		}
 
 		public void LoadUsers(List<string> users)
 		{
-			_searchFilterView.LoadUsers(users);
+			searchFilterView.LoadUsers(users);
 		}
 		
 		public void DisplaySearchResult(IList<ErrorLog> errorLogs)
@@ -48,12 +48,17 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 		
 		public void DisplayErrorDetails(ErrorLog error)
 		{
-			_searchDetailsView.DisplayError(error);
+			searchDetailsView.DisplayError(error);
+		}
+
+		public void ClearResult()
+		{
+			searchResultTreeView.ClearView();
 		}
 
 		public void ClearErrorDetails()
 		{
-			_searchDetailsView.Clear();
+			searchDetailsView.ClearView();
 		}
 
 		private void SearchResultTreeViewOnErrorLogSelected(object sender, ErrorLogSelectedEventArgs e)

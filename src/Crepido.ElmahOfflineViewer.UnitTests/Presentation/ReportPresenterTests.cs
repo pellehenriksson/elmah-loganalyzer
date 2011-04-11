@@ -64,5 +64,5 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			// assert
 			view.Verify(x => x.DisplayReport(report), Times.Once());
 		}
-	}
+}
 }

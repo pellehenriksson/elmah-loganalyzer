@@ -32,7 +32,12 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 		{
 			_chartView.DisplayReport(report);
 		}
-		
+
+		public void Clear()
+		{
+			_chartView.ClearView();
+		}
+
 		private void SelectionViewOnReportSelected(object sender, ReportSelectionEventArgs e)
 		{
 			OnReportSelected(this, e);

@@ -38,17 +38,9 @@
 	</Target>
 		
 	<Target Name="Test">
-		<CallTarget Targets="UnitTest" />
-	</Target>
-	
-	<Target Name="UnitTest">
 		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.UnitTests.dll /xml=$(OutputLogsDirectory)unittests_report.xml"  />
 	</Target>
-
-	<Target Name="SystemTest">
-		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.SystemTests.dll /xml=$(OutputLogsDirectory)systemtests_report.xml" />
-	</Target>
-
+	
 	<Target Name="BundleApp">
 		<Copy DestinationFolder="$(OutputAppDirectory)" SourceFiles="@(AppFiles)" />
 	</Target>

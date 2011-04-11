@@ -1,6 +1,7 @@
-﻿using Crepido.ElmahOfflineViewer.Core.Domain;
+﻿using System;
+using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
-using Moq;
+using Crepido.ElmahOfflineViewer.UnitTests._Fakes;
 using NUnit.Framework;
 
 namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
@@ -8,14 +9,6 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 	[TestFixture]
 	public class ErrorLogRepositoryTests : UnitTestBase
 	{
-		private Mock<IDataSourceService> _datasourceService;
-
-		[SetUp]
-		public void Setup()
-		{
-			_datasourceService = new Mock<IDataSourceService>();
-		}
-
 		[Test]
 		public void Initialize_SetsDirectory()
 		{
@@ -114,19 +107,25 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			Assert.That(directory, Is.EqualTo(repository.Directory));
 		}
 
-		private IErrorLogRepository CreateRepository()
+		[Test]
+		public void GetWithFilter_StartAndEndTime()
 		{
-			var repository = new ErrorLogRepository(_datasourceService.Object);
+			// arrange
+			var repository = CreateRepository();
+			var query = new SearchErrorLogQuery { StartTime = new DateTime(2011, 1, 1), EndTime = new DateTime(2011, 1, 3) };
 
-			ConnfigureFilesystemService();
+			// act
+			var result = repository.GetWithFilter(query);
 
-			return repository;
+			// assert
+			Assert.That(result.Count, Is.EqualTo(3));
 		}
-
-		private void ConnfigureFilesystemService()
+		
+		private static IErrorLogRepository CreateRepository()
 		{
-			var errors = CreateErrorLogs();
-			_datasourceService.Setup(x => x.GetLogs(It.IsAny<string>())).Returns(errors);
+			var repository = new ErrorLogRepository(new FakeDataSourceService());
+			repository.Initialize(string.Empty);
+			return repository;
 		}
 	}
 }

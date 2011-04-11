@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 
@@ -11,6 +12,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		public ReportGenerator(IErrorLogRepository repository)
 		{
 			_repository = repository;
+			_repository.OnInitialized += RepositoryOnInitialized;
 		}
 		
 		public Report Create(ReportQuery query)
@@ -95,6 +97,12 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 					select new ReportItem(g.Key.ToShortDateString(), g.Count());
 
 			report.AddRange(query.ToList());
+		}
+
+		private void RepositoryOnInitialized(object sender, RepositoryInitializedEventArgs e)
+		{
+
+			throw new System.NotImplementedException();
 		}
 	}
 }

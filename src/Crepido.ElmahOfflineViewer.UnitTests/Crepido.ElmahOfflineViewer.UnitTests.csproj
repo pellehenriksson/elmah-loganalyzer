@@ -80,8 +80,6 @@
     <EmbeddedResource Include="_TestFiles\error-2011-03-25073303Z.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="_TestFiles\error-2011-03-25073319Z.xml" />
-    <EmbeddedResource Include="_TestFiles\error-2011-03-25073422Z.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="_TestFiles\error-invalidfile.xml" />

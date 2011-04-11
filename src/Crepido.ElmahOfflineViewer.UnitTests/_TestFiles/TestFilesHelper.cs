@@ -15,18 +15,6 @@ namespace Crepido.ElmahOfflineViewer.UnitTests._TestFiles
 			return GetContent(resourceStream, Encoding.UTF8);
 		}
 
-		public static string GetError2()
-		{
-			var resourceStream = GetFile("error-2011-03-25073319Z.xml");
-			return GetContent(resourceStream, Encoding.UTF8);
-		}
-
-		public static string GetError3()
-		{
-			var resourceStream = GetFile("error-2011-03-25073422Z.xml");
-			return GetContent(resourceStream, Encoding.UTF8);
-		}
-
 		public static string GetInvalidErrorFile()
 		{
 			var resourceStream = GetFile("error-invalidfile.xml");

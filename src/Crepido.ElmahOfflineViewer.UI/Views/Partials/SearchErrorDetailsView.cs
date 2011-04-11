@@ -1,0 +1,47 @@
+﻿using System.Windows.Forms;
+using Crepido.ElmahOfflineViewer.Core.Domain;
+
+namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
+{
+	public partial class SearchErrorDetailsView : UserControl
+	{
+		public SearchErrorDetailsView()
+		{
+			InitializeComponent();
+		}
+		
+		public void DisplayError(ErrorLog error)
+		{
+			Clear();
+
+			_hostLabel.Text = error.Host;
+			_timeLabel.Text = error.Time.ToString();
+			_typeLabel.Text = error.Type;
+			_sourceLabel.Text = error.Source;
+			_userLabel.Text = error.User;
+			_urlLabel.Text = error.Url;
+			_messageTextBox.Text = error.Message;
+			_detailsTextBox.Text = error.Details;
+
+			foreach (var variable in error.ServerVariables)
+			{
+				var node = _servervariablesListView.Items.Add(variable.Name);
+				node.SubItems.Add(new ListViewItem.ListViewSubItem(node, variable.Value));
+			}
+		}
+
+		public void Clear()
+		{
+			_hostLabel.Text = string.Empty;
+			_timeLabel.Text = string.Empty;
+			_typeLabel.Text = string.Empty;
+			_sourceLabel.Text = string.Empty;
+			_userLabel.Text = string.Empty;
+			_urlLabel.Text = string.Empty;
+			_messageTextBox.Text = string.Empty;
+			_detailsTextBox.Text = string.Empty;
+
+			_servervariablesListView.Items.Clear();
+		}
+	}
+}

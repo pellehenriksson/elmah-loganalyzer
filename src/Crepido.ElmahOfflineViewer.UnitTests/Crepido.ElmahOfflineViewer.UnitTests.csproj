@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crepido.ElmahOfflineViewer.UnitTests</RootNamespace>
+    <AssemblyName>Crepido.ElmahOfflineViewer.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.2.5.9.10348\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\DateTimeExtensionsTests.cs" />
+    <Compile Include="Common\EnumExtensionsTests.cs" />
+    <Compile Include="Common\StringExtensionsTests.cs" />
+    <Compile Include="Common\UniqueStringListTests.cs" />
+    <Compile Include="Common\UrlResolverTests.cs" />
+    <Compile Include="Domain\ErrorLogFileParserTests.cs" />
+    <Compile Include="Domain\ReportItemTests.cs" />
+    <Compile Include="Domain\SearchErrorLogQueryTests.cs" />
+    <Compile Include="Domain\ErrorLogTests.cs" />
+    <Compile Include="Domain\ErrorLogRepositoryTests.cs" />
+    <Compile Include="Domain\ReportGeneratorTests.cs" />
+    <Compile Include="Domain\ReportQueryTests.cs" />
+    <Compile Include="Domain\ReportTests.cs" />
+    <Compile Include="Domain\RepositoryInitializedEventArgsTests.cs" />
+    <Compile Include="Presentation\ErrorLogSelectedEventArgsTests.cs" />
+    <Compile Include="Presentation\ErrorLogSearchEventArgsTests.cs" />
+    <Compile Include="Presentation\ReportPresenterTests.cs" />
+    <Compile Include="Presentation\ReportSelectionEventArgsTests.cs" />
+    <Compile Include="Presentation\ReportTypeListItemTests.cs" />
+    <Compile Include="Presentation\SearchPresenterTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Domain\ServerVariableTests.cs" />
+    <Compile Include="UnitTestBase.cs" />
+    <Compile Include="_TestFiles\TestFilesHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Crepido.ElmahOfflineViewer.Core\Crepido.ElmahOfflineViewer.Core.csproj">
+      <Project>{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}</Project>
+      <Name>Crepido.ElmahOfflineViewer.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_TestFiles\error-2011-03-25073303Z.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_TestFiles\error-2011-03-25073319Z.xml" />
+    <EmbeddedResource Include="_TestFiles\error-2011-03-25073422Z.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="_TestFiles\error-invalidfile.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

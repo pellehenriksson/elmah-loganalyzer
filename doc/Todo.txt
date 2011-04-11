@@ -1,0 +1,16 @@
+Fixes
+	-> log exception
+	-> don't re-initlaize view when switching between them
+	-> initialzie should clear results/details/charts from views
+	-> logging 
+	-> file parsing stopwatch / measure 
+	-> different parsers (xmldocumet, xdoc, xpath, xmltextreader etc)
+
+Build
+	-> style cop (analyze.proj)
+	-> ndepend
+	-> installer
+
+Functions
+	-> refresh repository event to presenters
+	

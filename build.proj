@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="LocalBuild">
+
+	<UsingTask AssemblyFile="\tools\stylecop\Microsoft.StyleCop.dll" TaskName="StyleCopTask" />
+	
+	<PropertyGroup>
+		<Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+		<OutputDirectory>$(MSBuildProjectDirectory)\_build\</OutputDirectory>
+		<OutputCompileDirectory>$(OutputDirectory)compile\</OutputCompileDirectory>
+		<OutputLogsDirectory>$(OutputDirectory)logs\</OutputLogsDirectory>
+		<OutputAppDirectory>$(OutputDirectory)app\</OutputAppDirectory>
+		<NUnitExe>$(MSBuildProjectDirectory)\packages\NUnit.2.5.9.10348\Tools\nunit-console.exe</NUnitExe>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AppFiles Include="$(OutputCompileDirectory)Crepido.ElmahOfflineViewer.UI.exe" />
+		<AppFiles Include="$(OutputCompileDirectory)Crepido.ElmahOfflineViewer.Core.dll" />
+		<AppFiles Include="$(OutputCompileDirectory)Crepido.ElmahOfflineViewer.UI.exe.config" />
+		<AppFiles Include="$(OutputCompileDirectory)Ninject.dll" />
+		<AppFiles Include="$(OutputCompileDirectory)NLog.dll" />
+	</ItemGroup>
+	
+	<Target Name="Clean">
+		<RemoveDir Directories="$(OutputDirectory)" Condition="Exists($(OutputDirectory))" />
+		<MakeDir Directories="$(OutputDirectory)" />
+		<MakeDir Directories="$(OutputLogsDirectory)" />
+		<MakeDir Directories="$(OutputAppDirectory)" />
+	</Target>
+
+	<Target Name="LocalBuild">
+		<CallTarget Targets="Build" />
+		<CallTarget Targets="Test" />
+		<CallTarget Targets="BundleApp" />
+	</Target>
+	
+	<Target Name="Build" DependsOnTargets="Clean">
+		<MSBuild Targets="ReBuild" Projects="ElmahOfflineViewer.sln" Properties="Configuration=$(Configuration);OutDir=$(OutputCompileDirectory)" />
+	</Target>
+		
+	<Target Name="Test">
+		<CallTarget Targets="UnitTest" />
+	</Target>
+	
+	<Target Name="UnitTest">
+		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.UnitTests.dll /xml=$(OutputLogsDirectory)unittests_report.xml"  />
+	</Target>
+
+	<Target Name="SystemTest">
+		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.SystemTests.dll /xml=$(OutputLogsDirectory)systemtests_report.xml" />
+	</Target>
+
+	<Target Name="BundleApp">
+		<Copy DestinationFolder="$(OutputAppDirectory)" SourceFiles="@(AppFiles)" />
+	</Target>
+	
+</Project> 

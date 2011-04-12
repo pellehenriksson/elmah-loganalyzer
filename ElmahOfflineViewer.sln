@@ -24,10 +24,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crepido.ElmahOfflineViewer.IntegrationTests", "src\Crepido.ElmahOfflineViewer.IntegrationTests\Crepido.ElmahOfflineViewer.IntegrationTests.csproj", "{31B1036D-1402-484A-B0D0-DC77FEAF5FDE}"
 EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -86,8 +82,5 @@ Global
 		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56} = {7DADEC10-E4BE-4C95-9276-714E45774731}
 		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F} = {AF47CE1D-DD9A-44BD-A0C1-0479287FC043}
 		{31B1036D-1402-484A-B0D0-DC77FEAF5FDE} = {AF47CE1D-DD9A-44BD-A0C1-0479287FC043}
-	EndGlobalSection
-	GlobalSection(NDepend) = preSolution
-		Project = ".\ElmahOfflineViewer.ndproj"
 	EndGlobalSection
 EndGlobal

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
@@ -17,9 +18,18 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		
 		public List<ErrorLog> GetLogs(string directory)
 		{
-			var result = new List<ErrorLog>();
+			if(!Directory.Exists(directory))
+			{
+				throw new ApplicationException(string.Format("The directory: {0} was not found", directory));
+			}
+			
 			var files = GetErrorLogFilesFromDirectory(directory);
+			return ParseFiles(files);
+		}
 
+		private List<ErrorLog> ParseFiles(IEnumerable<string> files)
+		{
+			var result = new List<ErrorLog>();
 			foreach (var file in files)
 			{
 				var content = GetContentFor(file);

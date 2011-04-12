@@ -39,6 +39,7 @@
 		
 	<Target Name="Test">
 		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.UnitTests.dll /xml=$(OutputLogsDirectory)unittests_report.xml"  />
+		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.IntegrationTests.dll /xml=$(OutputLogsDirectory)integrationtests_report.xml"  />
 	</Target>
 	
 	<Target Name="BundleApp">

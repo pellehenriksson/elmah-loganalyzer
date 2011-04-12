@@ -56,6 +56,7 @@
     <Compile Include="Domain\ReportQueryTests.cs" />
     <Compile Include="Domain\ReportTests.cs" />
     <Compile Include="Domain\RepositoryInitializedEventArgsTests.cs" />
+    <Compile Include="Sandbox.cs" />
     <Compile Include="_Fakes\FakeDataSourceService.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgsTests.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgsTests.cs" />

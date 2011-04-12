@@ -18,13 +18,23 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		
 		public List<ErrorLog> GetLogs(string directory)
 		{
-			if(!Directory.Exists(directory))
+			if (!Directory.Exists(directory))
 			{
 				throw new ApplicationException(string.Format("The directory: {0} was not found", directory));
 			}
 			
 			var files = GetErrorLogFilesFromDirectory(directory);
 			return ParseFiles(files);
+		}
+
+		private static IEnumerable<string> GetErrorLogFilesFromDirectory(string directory)
+		{
+			return Directory.GetFiles(directory, FileFilterPattern, SearchOption.AllDirectories);
+		}
+
+		private static string GetContentFor(string file)
+		{
+			return File.ReadAllText(file, Encoding.UTF8);
 		}
 
 		private List<ErrorLog> ParseFiles(IEnumerable<string> files)
@@ -44,16 +54,6 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			}
 
 			return result;
-		}
-
-		private static IEnumerable<string> GetErrorLogFilesFromDirectory(string directory)
-		{
-			return Directory.GetFiles(directory, FileFilterPattern, SearchOption.AllDirectories);
-		}
-
-		private static string GetContentFor(string file)
-		{
-			return File.ReadAllText(file, Encoding.UTF8);
 		}
 	}
 }

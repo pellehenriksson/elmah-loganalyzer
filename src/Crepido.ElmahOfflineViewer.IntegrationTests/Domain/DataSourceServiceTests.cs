@@ -9,7 +9,7 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
 	public class DataSourceServiceTests
 	{
 		[Test]
-		public void GetLogs_ShouldReturnParsesFilesFromDisk()
+		public void GetLogs_ShouldReturnParsedFilesFromDisk()
 		{
 			// arrange
 			var source = new DataSourceService(new ErrorLogFileParser());

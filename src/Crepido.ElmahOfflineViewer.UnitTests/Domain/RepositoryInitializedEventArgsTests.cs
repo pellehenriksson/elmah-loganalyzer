@@ -10,10 +10,20 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		public void Ctor_SetsDirectory()
 		{
 			// act
-			var args = new RepositoryInitializedEventArgs(FakeLogsDirectory);
+			var args = new RepositoryInitializedEventArgs(FakeLogsDirectory, 10);
 
 			// assert
 			Assert.That(args.Directory, Is.EqualTo(FakeLogsDirectory));
+		}
+
+		[Test]
+		public void Ctor_SetsTotalNumberOfLogs()
+		{
+			// act
+			var args = new RepositoryInitializedEventArgs(FakeLogsDirectory, 10);
+
+			// assert
+			Assert.That(args.TotalNumberOfLogs, Is.EqualTo(10));
 		}
 	}
 }

@@ -41,11 +41,13 @@ namespace Crepido.ElmahOfflineViewer.UI
 		{
 			selectViewButton.Enabled = false;
 			mainPanel.Controls.Clear();
+			directoryToolStripStatusLabel.Text = string.Empty;
 		}
 
 		private void HandleLoadingFromDirectory(string directory)
 		{
 			SetLoadingState();
+			directoryToolStripStatusLabel.Text = string.Format("Loading logs from: {0}", directory);
 
 			var thread = new Thread(InitializeRepository);
 			thread.Start(directory);
@@ -130,7 +132,7 @@ namespace Crepido.ElmahOfflineViewer.UI
 
 		private void RepositoryOnInitialized(object sender, Core.Domain.RepositoryInitializedEventArgs e)
 		{
-			directoryToolStripStatusLabel.Text = string.Format("Directory: {0}", e.Directory);
+			directoryToolStripStatusLabel.Text = string.Format("Current directory is: {0} Total number of logs: {1}", e.Directory, e.TotalNumberOfLogs);
 		}
 	}
 }

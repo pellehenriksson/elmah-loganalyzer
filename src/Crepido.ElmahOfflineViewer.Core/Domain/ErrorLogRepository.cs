@@ -40,7 +40,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			
 			if (OnInitialized != null)
 			{
-				OnInitialized(this, new RepositoryInitializedEventArgs(Directory));
+				OnInitialized(this, new RepositoryInitializedEventArgs(Directory, _errorLogs.Count));
 			}
 		}
 		

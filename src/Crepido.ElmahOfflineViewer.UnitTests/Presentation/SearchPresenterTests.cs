@@ -140,7 +140,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			var presenter = new SearchPresenter(_view.Object, _repository.Object);
 
 			// act
-			_repository.Raise(x => x.OnInitialized += null, new RepositoryInitializedEventArgs(string.Empty));
+			_repository.Raise(x => x.OnInitialized += null, new RepositoryInitializedEventArgs(string.Empty, 0));
 
 			// assert
 			_view.Verify(x => x.ClearResult(), Times.Once());

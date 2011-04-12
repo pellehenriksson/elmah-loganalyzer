@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Threading;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using NUnit.Framework;
 
@@ -19,6 +21,21 @@ namespace Crepido.ElmahOfflineViewer.UnitTests
 				Console.Out.WriteLine(log.Url);
 				Console.WriteLine("-----------------------------------------------------------");
 			}
+		}
+
+		[Test, Ignore]
+		public void Try_StopWatch()
+		{
+			// arrange
+			var watch = new Stopwatch();
+
+			// act
+			watch.Start();
+			Thread.Sleep(1000);
+			watch.Stop();
+
+			// assert
+			Console.Out.WriteLine(watch.Elapsed.Seconds);
 		}
 	}
 }

@@ -94,7 +94,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			if (filter.Text.HasValue())
 			{
 				query = from e in query
-						where e.Message.Contains(filter.Text) || e.Source.Contains(filter.Text)
+						where e.Message.ContainsText(filter.Text) || e.Details.ContainsText(filter.Text)
 						select e;
 			}
 			

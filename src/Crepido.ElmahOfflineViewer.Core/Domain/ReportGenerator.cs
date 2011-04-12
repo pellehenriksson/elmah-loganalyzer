@@ -101,7 +101,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 		private void RepositoryOnInitialized(object sender, RepositoryInitializedEventArgs e)
 		{
-			//throw new System.NotImplementedException();
+			////throw new System.NotImplementedException();
 		}
 	}
 }

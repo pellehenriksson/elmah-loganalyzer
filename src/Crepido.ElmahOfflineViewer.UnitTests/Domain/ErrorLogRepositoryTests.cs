@@ -110,15 +110,48 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		[Test]
 		public void GetWithFilter_StartAndEndTime()
 		{
+			var query = new SearchErrorLogQuery { StartTime = new DateTime(2011, 1, 1), EndTime = new DateTime(2011, 1, 3) };
+			GetWithFilterTest(query, 3);
+		}
+
+		[Test]
+		public void GetWithFilter_StartAndEndTimeAndType()
+		{
+			var query = new SearchErrorLogQuery { StartTime = new DateTime(2011, 1, 1), EndTime = new DateTime(2011, 1, 4), Type = "System.SomeOtherException" };
+			GetWithFilterTest(query, 2);
+		}
+
+		[Test]
+		public void GetWithFilter_StartAndEndTimeAndSource()
+		{
+			var query = new SearchErrorLogQuery { StartTime = new DateTime(2011, 1, 1), EndTime = new DateTime(2011, 1, 4), Source = "Some.Namespace.Domain" };
+			GetWithFilterTest(query, 2);
+		}
+
+		[Test]
+		public void GetWithFilter_StartAndEndTimeAndUser()
+		{
+			var query = new SearchErrorLogQuery { StartTime = new DateTime(2011, 1, 1), EndTime = new DateTime(2011, 1, 4), User = "nisse" };
+			GetWithFilterTest(query, 1);
+		}
+
+		[Test]
+		public void GetWithFilter_StartAndEndTimeAndText()
+		{
+			var query = new SearchErrorLogQuery { StartTime = new DateTime(2011, 1, 1), EndTime = new DateTime(2011, 1, 4), Text = "serious" };
+			GetWithFilterTest(query, 1);
+		}
+		
+		private static void GetWithFilterTest(SearchErrorLogQuery query, int expectedResult)
+		{
 			// arrange
 			var repository = CreateRepository();
-			var query = new SearchErrorLogQuery { StartTime = new DateTime(2011, 1, 1), EndTime = new DateTime(2011, 1, 3) };
 
 			// act
 			var result = repository.GetWithFilter(query);
 
 			// assert
-			Assert.That(result.Count, Is.EqualTo(3));
+			Assert.That(result.Count, Is.EqualTo(expectedResult));
 		}
 		
 		private static IErrorLogRepository CreateRepository()

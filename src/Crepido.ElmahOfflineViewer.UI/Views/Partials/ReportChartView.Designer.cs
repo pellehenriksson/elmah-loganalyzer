@@ -39,6 +39,8 @@
 			chartArea1.AxisX.IsLabelAutoFit = false;
 			chartArea1.AxisX.LabelStyle.Angle = -90;
 			chartArea1.AxisX.LabelStyle.Interval = 0D;
+			chartArea1.AxisX.TitleFont = new System.Drawing.Font("Consolas", 8F);
+			chartArea1.AxisY.TitleFont = new System.Drawing.Font("Consolas", 8F);
 			chartArea1.Name = "ChartArea1";
 			this._chart.ChartAreas.Add(chartArea1);
 			this._chart.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -46,9 +48,8 @@
 			this._chart.Name = "_chart";
 			this._chart.Size = new System.Drawing.Size(671, 451);
 			this._chart.TabIndex = 0;
-			this._chart.Text = "chart1";
 			// 
-			// ReportChartPartialView
+			// ReportChartView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

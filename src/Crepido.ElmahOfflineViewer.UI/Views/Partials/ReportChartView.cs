@@ -39,12 +39,14 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			var title = _chart.Titles.Add("default");
 			title.Text = _report.Query.ToString();
 			title.Alignment = ContentAlignment.TopLeft;
+			title.Font = GetFont(12);
 		}
 
 		private void SetSeries()
 		{
 			var serie = _chart.Series.Add("default");
-
+			serie.Font = GetFont(10);
+			
 			foreach (var item in _report.Items)
 			{
 				serie.Points.AddXY(item.Key, item.Count);
@@ -56,6 +58,11 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		{
 			_chart.Titles.Clear();
 			_chart.Series.Clear();
+		}
+
+		private Font GetFont(float size)
+		{
+			return new Font("Consolas", size, FontStyle.Bold);
 		}
 	}
 }

@@ -67,7 +67,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\ServerVariableTests.cs" />
     <Compile Include="UnitTestBase.cs" />
-    <Compile Include="_TestFiles\TestFilesHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -77,14 +76,6 @@
       <Project>{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}</Project>
       <Name>Crepido.ElmahOfflineViewer.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="_TestFiles\error-2011-03-25073303Z.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="_TestFiles\error-invalidfile.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

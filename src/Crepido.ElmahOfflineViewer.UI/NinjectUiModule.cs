@@ -23,6 +23,7 @@ namespace Crepido.ElmahOfflineViewer.UI
 			Bind<IReportGenerator>().To<ReportGenerator>();
 			Bind<SearchPresenter>().To<SearchPresenter>();
 			Bind<ReportPresenter>().To<ReportPresenter>();
+			
 			Bind<ILog>().ToMethod(GetLogger);
 		}
 

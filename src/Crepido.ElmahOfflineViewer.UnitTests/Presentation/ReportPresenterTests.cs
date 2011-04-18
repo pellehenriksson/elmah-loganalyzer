@@ -13,6 +13,20 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 	public class ReportPresenterTests : UnitTestBase
 	{
 		[Test]
+		public void Ctor_SetsView()
+		{
+			// arrange
+			var view = new Mock<IReportView>();
+			var generator = new Mock<IReportGenerator>();
+
+			// act
+			var presenter = new ReportPresenter(view.Object, generator.Object);
+			
+			// assert
+			Assert.That(presenter.View, Is.EqualTo(view.Object));
+		}
+
+		[Test]
 		public void Initialize_SetsDefaultTimeInterval()
 		{
 			// arrange

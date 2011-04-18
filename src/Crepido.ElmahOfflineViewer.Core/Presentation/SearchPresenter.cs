@@ -6,50 +6,51 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 {
 	public class SearchPresenter
 	{
-		private readonly ISearchView _view;
 		private readonly IErrorLogRepository _repository;
 
 		public SearchPresenter(ISearchView view, IErrorLogRepository errorLogRepository)
 		{
-			_view = view;
+			View = view;
 			_repository = errorLogRepository;
 
 			RegisterEvents();
 		}
 
+		public ISearchView View { get; private set; }
+
 		public void Initialize()
 		{
-			_view.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today);
-			_view.LoadTypes(_repository.GetTypes());
-			_view.LoadSources(_repository.GetSources());
-			_view.LoadUsers(_repository.GetUsers());
+			View.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today);
+			View.LoadTypes(_repository.GetTypes());
+			View.LoadSources(_repository.GetSources());
+			View.LoadUsers(_repository.GetUsers());
 		}
 
 		private void RegisterEvents()
 		{
-			_view.OnFilterApplied += ViewOnFilterApplied;
-			_view.OnErrorLogSelected += ViewOnErrorLogSelected;
+			View.OnFilterApplied += ViewOnFilterApplied;
+			View.OnErrorLogSelected += ViewOnErrorLogSelected;
 			_repository.OnInitialized += RepositoryOnInitialized;
 		}
 
 		private void RepositoryOnInitialized(object sender, Domain.RepositoryInitializedEventArgs e)
 		{
-			_view.ClearResult();
-			_view.ClearErrorDetails();
+			View.ClearResult();
+			View.ClearErrorDetails();
 		}
 
 		private void ViewOnErrorLogSelected(object sender, ErrorLogSelectedEventArgs e)
 		{
-			_view.DisplayErrorDetails(e.ErrorLog);
+			View.DisplayErrorDetails(e.ErrorLog);
 		}
 
 		private void ViewOnFilterApplied(object sender, ErrorLogSearchEventArgs e)
 		{
-			_view.ClearErrorDetails();
+			View.ClearErrorDetails();
 
 			var result = _repository.GetWithFilter(e.Query);
 
-			_view.DisplaySearchResult(result);
+			View.DisplaySearchResult(result);
 		}
 	}
 }

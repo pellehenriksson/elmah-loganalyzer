@@ -22,6 +22,17 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			_repository = new Mock<IErrorLogRepository>();
 		}
 
+
+		[Test]
+		public void Ctor_SetsView()
+		{
+			// act
+			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+
+			// assert
+			Assert.That(presenter.View, Is.EqualTo(_view.Object));
+		}
+
 		[Test]
 		public void Initialize_SetsDefaultTimeInterval()
 		{

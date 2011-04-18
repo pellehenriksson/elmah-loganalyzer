@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Threading;
 using System.Windows.Forms;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
-using Crepido.ElmahOfflineViewer.Core.Presentation.Abstract;
 using Crepido.ElmahOfflineViewer.UI.Views;
 
 namespace Crepido.ElmahOfflineViewer.UI
@@ -13,7 +11,7 @@ namespace Crepido.ElmahOfflineViewer.UI
 	public partial class MainForm : Form
 	{
 		private readonly IErrorLogRepository _repository;
-		
+
 		public MainForm()
 		{
 			InitializeComponent();
@@ -115,20 +113,18 @@ namespace Crepido.ElmahOfflineViewer.UI
 
 		private void SearchViewMenuItemClick(object sender, EventArgs e)
 		{
-			var view = ServiceLocator.Resolve<ISearchView>();
 			var presenter = ServiceLocator.Resolve<SearchPresenter>();
 			presenter.Initialize();
 
-			LoadView(view as Control);
+			LoadView(presenter.View as Control);
 		}
 
 		private void ReportsViewMenuItemClick(object sender, EventArgs e)
 		{
-			var view = ServiceLocator.Resolve<IReportView>();
 			var presenter = ServiceLocator.Resolve<ReportPresenter>();
 			presenter.Initialize();
 
-			LoadView(view as Control);
+			LoadView(presenter.View as Control);
 		}
 
 		private void RepositoryOnInitialized(object sender, Core.Domain.RepositoryInitializedEventArgs e)

@@ -8,32 +8,33 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 {
 	public class ReportPresenter
 	{
-		private readonly IReportView _view;
 		private readonly IReportGenerator _generator;
 
 		public ReportPresenter(IReportView view, IReportGenerator generator)
 		{
-			_view = view;
+			View = view;
 			_generator = generator;
 
-			RegisterEvent();
+			RegisterEvents();
 		}
+
+		public IReportView View { get; private set; }
 
 		public void Initialize()
 		{
-			_view.LoadReportTypes(BuildReportTypesList());
-			_view.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today);
+			View.LoadReportTypes(BuildReportTypesList());
+			View.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today);
 		}
 
-		private void RegisterEvent()
+		private void RegisterEvents()
 		{
-			_view.OnReportSelected += ViewOnReportSelected;
+			View.OnReportSelected += ViewOnReportSelected;
 		}
 
 		private void ViewOnReportSelected(object sender, ReportSelectionEventArgs e)
 		{
 			var report = _generator.Create(e.Query);
-			_view.DisplayReport(report);
+			View.DisplayReport(report);
 		}
 
 		private List<ReportTypeListItem> BuildReportTypesList()

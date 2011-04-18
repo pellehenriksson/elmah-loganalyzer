@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using NUnit.Framework;
 
@@ -18,6 +19,17 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 
 			// assert
 			Assert.That(report.Query, Is.EqualTo(query));
+		}
+
+		[Test]
+		public void Ctor_QueryIsNull_Throws()
+		{
+			// act
+			var result = Assert.Throws<ArgumentNullException>(() => new Report(null));
+
+			// assert
+			Assert.That(result, Is.Not.Null);
+			Assert.That(result.ParamName, Is.EqualTo("query"));
 		}
 
 		[Test]
@@ -42,6 +54,20 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 
 			// assert
 			Assert.That(report.Items.Count, Is.EqualTo(1));
+		}
+
+		[Test]
+		public void AddRange_RangeIsNull()
+		{
+			// arrange
+			var report = new Report(CreateReportQuery());
+
+			// act
+			var result = Assert.Throws<ArgumentNullException>(() => report.AddRange(null));
+
+			// assert
+			Assert.That(result, Is.Not.Null);
+			Assert.That(result.ParamName, Is.EqualTo("items"));
 		}
 	}
 }

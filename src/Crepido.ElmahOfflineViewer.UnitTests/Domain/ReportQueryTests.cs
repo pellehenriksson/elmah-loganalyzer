@@ -17,7 +17,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var result = query.ToString();
 
 			// assert
-			Assert.That(result, Is.EquivalentTo("By type of exception from 1975-05-14 to 2011-04-08"));
+			Assert.That(result, Is.EquivalentTo("Number of errors per type from 1975-05-14 to 2011-04-08"));
 		}
 	}
 }

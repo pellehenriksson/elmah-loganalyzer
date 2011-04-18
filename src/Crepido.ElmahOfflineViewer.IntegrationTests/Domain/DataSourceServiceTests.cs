@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Crepido.ElmahOfflineViewer.Core.Domain;
+using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
 using NUnit.Framework;
 
 namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
@@ -12,7 +13,7 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
 		public void GetLogs_ShouldReturnParsedFilesFromDisk()
 		{
 			// arrange
-			var source = new DataSourceService(new ErrorLogFileParser());
+			var source = new DataSourceService(new ErrorLogFileParser(new FakeLog()), new FakeLog());
 
 			// act
 			var result = source.GetLogs(Directory.GetCurrentDirectory());
@@ -25,7 +26,7 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
 		public void GetLog_DirectoryDoesNotExist_ThrowsApplicationException()
 		{
 			// arrange
-			var source = new DataSourceService(new ErrorLogFileParser());
+			var source = new DataSourceService(new ErrorLogFileParser(new FakeLog()), new FakeLog());
 
 			// act
 			var result = Assert.Throws<ApplicationException>(() => source.GetLogs(@"x:\invalid\directory"));

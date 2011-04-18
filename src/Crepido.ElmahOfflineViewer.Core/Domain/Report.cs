@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
@@ -6,6 +7,11 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 	{
 		public Report(ReportQuery query)
 		{
+			if (query == null)
+			{
+				throw new ArgumentNullException("query");
+			}
+
 			Query = query;
 			Items = new List<ReportItem>();
 		}
@@ -16,6 +22,11 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 		public void AddRange(List<ReportItem> items)
 		{
+			if (items == null)
+			{
+				throw new ArgumentNullException("items");	
+			}
+
 			Items.AddRange(items);
 		}
 	}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 
-namespace Crepido.ElmahOfflineViewer.UnitTests._Fakes
+namespace Crepido.ElmahOfflineViewer.TestHelpers.Fakes
 {
 	public class FakeDataSourceService : IDataSourceService
 	{

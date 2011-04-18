@@ -1,7 +1,7 @@
 ﻿using System;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
-using Crepido.ElmahOfflineViewer.UnitTests._Fakes;
+using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
 using NUnit.Framework;
 
 namespace Crepido.ElmahOfflineViewer.UnitTests.Domain

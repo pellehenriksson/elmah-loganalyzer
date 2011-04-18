@@ -17,7 +17,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Common
 			var result = type.GetDescription();
 
 			// assert
-			Assert.That("By url", Is.EqualTo(result));
+			Assert.That("Number of errors per url", Is.EqualTo(result));
 		}
 	}
 }

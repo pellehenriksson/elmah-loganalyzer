@@ -4,15 +4,15 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
 	public enum ReportTypeEnum
 	{
-		[Description("By type of exception")]
+		[Description("Number of errors per type")]
 		Type,
-		[Description("By source")]
+		[Description("Number of errors per source")]
 		Source,
-		[Description("By user")]
+		[Description("Number of errors per user")]
 		User,
-		[Description("By url")]
+		[Description("Number of errors per url")]
 		Url,
-		[Description("By day")]
+		[Description("Number of errors per day")]
 		Day
 	}
 }

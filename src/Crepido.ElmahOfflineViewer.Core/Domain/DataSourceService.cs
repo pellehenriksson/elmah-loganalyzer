@@ -3,23 +3,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
 	public class DataSourceService : IDataSourceService
 	{
 		private const string FileFilterPattern = "error-*.xml";
+		
 		private readonly IErrorLogFileParser _parser;
+		private readonly ILog _log;
 
-		public DataSourceService(IErrorLogFileParser parser)
+		public DataSourceService(IErrorLogFileParser parser, ILog log)
 		{
 			_parser = parser;
+			_log = log;
 		}
 		
 		public List<ErrorLog> GetLogs(string directory)
 		{
 			if (!Directory.Exists(directory))
 			{
+				_log.Error(string.Format("Directory: {0} does not exist", directory));
 				throw new ApplicationException(string.Format("The directory: {0} was not found", directory));
 			}
 			
@@ -42,11 +47,14 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			var result = new List<ErrorLog>();
 			foreach (var file in files)
 			{
+				_log.Debug(string.Format("Parsing file: {0}", file));
+
 				var content = GetContentFor(file);
 				var errorLog = _parser.Parse(content);
 
 				if (errorLog == null)
 				{
+					_log.Error(string.Format("Failed to parse file: {0}", file));
 					continue;
 				}
 

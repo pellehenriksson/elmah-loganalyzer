@@ -57,7 +57,6 @@
     <Compile Include="Domain\ReportTests.cs" />
     <Compile Include="Domain\RepositoryInitializedEventArgsTests.cs" />
     <Compile Include="Sandbox.cs" />
-    <Compile Include="_Fakes\FakeDataSourceService.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgsTests.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgsTests.cs" />
     <Compile Include="Presentation\ReportPresenterTests.cs" />
@@ -75,6 +74,10 @@
     <ProjectReference Include="..\Crepido.ElmahOfflineViewer.Core\Crepido.ElmahOfflineViewer.Core.csproj">
       <Project>{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}</Project>
       <Name>Crepido.ElmahOfflineViewer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Crepido.ElmahOfflineViewer.TestHelpers\Crepido.ElmahOfflineViewer.TestHelpers.csproj">
+      <Project>{85191ED2-783E-4599-A0FB-0CB66276A933}</Project>
+      <Name>Crepido.ElmahOfflineViewer.TestHelpers</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

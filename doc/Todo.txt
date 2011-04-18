@@ -1,15 +1,10 @@
 Fixes
-	-> log exception
 	-> don't re-initialize views when switching between them
-	-> initialzie should clear results/details/charts from views
+	-> initialize should clear results/details/charts from views
 	-> logging 
-	-> file parsing stopwatch / measure 
-	-> different parsers (xmldocumet, xdoc, xpath, xmltextreader etc)
 
 Build
-	-> style cop (analyze.proj)
-	-> ndepend
-	-> installer
+	-> style cop (compile time check)
 
 Functions
 	-> refresh repository event to presenters

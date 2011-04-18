@@ -1,0 +1,33 @@
+<stylecopresultscache>
+  <version>10</version>
+  <project key="347777863">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="FakeDataSourceService.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/18/2011 20:23:44</timestamp>
+      <milliseconds>763</milliseconds>
+    </settings>
+    <timestamp>04/14/2011 10:50:27</timestamp>
+    <milliseconds>19</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="FakeLog.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/18/2011 20:23:44</timestamp>
+      <milliseconds>763</milliseconds>
+    </settings>
+    <timestamp>04/14/2011 10:50:27</timestamp>
+    <milliseconds>47</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="AssemblyInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/18/2011 20:23:44</timestamp>
+      <milliseconds>763</milliseconds>
+    </settings>
+    <timestamp>04/14/2011 10:49:18</timestamp>
+    <milliseconds>361</milliseconds>
+    <violations />
+  </sourcecode>
+</stylecopresultscache>

@@ -1,15 +1,23 @@
 ﻿using System;
 using System.Xml;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
 	public class ErrorLogFileParser : IErrorLogFileParser
 	{
+		private readonly ILog _log;
+
 		private XmlDocument _document;
 		private XmlElement _documentRoot;
 		private ErrorLog _errorLog;
 
+		public ErrorLogFileParser(ILog log)
+		{
+			_log = log;
+		}
+		
 		public ErrorLog Parse(string content)
 		{
 			try
@@ -25,8 +33,9 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 				return _errorLog;
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
+				_log.Error(ex);
 				return null;
 			}
 		}

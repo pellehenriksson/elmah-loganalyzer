@@ -1,4 +1,5 @@
 ﻿using Crepido.ElmahOfflineViewer.Core.Domain;
+using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
 using NUnit.Framework;
 
 namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
@@ -10,7 +11,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		public void Parse_ReturnsErrorLogWithFileContent()
 		{
 			// arrange
-			var parser = new ErrorLogFileParser();
+			var parser = new ErrorLogFileParser(new FakeLog());
 
 			// act
 			var result = parser.Parse(GetValidFileContent());
@@ -30,7 +31,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		public void Parse_FileIsNotInCorrectFormat_ReturnsNull()
 		{
 			// arrange
-			var parser = new ErrorLogFileParser();
+			var parser = new ErrorLogFileParser(new FakeLog());
 
 			// act
 			var result = parser.Parse(GetInvalidFileContent());

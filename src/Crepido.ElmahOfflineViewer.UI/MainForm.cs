@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Threading;
 using System.Windows.Forms;
@@ -12,7 +13,7 @@ namespace Crepido.ElmahOfflineViewer.UI
 	public partial class MainForm : Form
 	{
 		private readonly IErrorLogRepository _repository;
-
+		
 		public MainForm()
 		{
 			InitializeComponent();
@@ -24,7 +25,7 @@ namespace Crepido.ElmahOfflineViewer.UI
 
 			HandleLoadingFromDirectory(ConfigurationManager.AppSettings["ErrorsDirectory"]);
 		}
-		
+	
 		private void SetLoadingState()
 		{
 			selectViewButton.Enabled = false;

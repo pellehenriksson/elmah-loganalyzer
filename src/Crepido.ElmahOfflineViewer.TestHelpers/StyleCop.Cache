@@ -3,6 +3,15 @@
   <project key="347777863">
     <configuration>DEBUG;TRACE</configuration>
   </project>
+  <sourcecode name="TestEnum.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/18/2011 20:23:44</timestamp>
+      <milliseconds>763</milliseconds>
+    </settings>
+    <timestamp>04/18/2011 20:28:41</timestamp>
+    <milliseconds>72</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="FakeDataSourceService.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/18/2011 20:23:44</timestamp>

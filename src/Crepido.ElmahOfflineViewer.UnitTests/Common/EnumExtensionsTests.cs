@@ -1,5 +1,5 @@
 ﻿using Crepido.ElmahOfflineViewer.Core.Common;
-using Crepido.ElmahOfflineViewer.Core.Domain;
+using Crepido.ElmahOfflineViewer.TestHelpers;
 using NUnit.Framework;
 
 namespace Crepido.ElmahOfflineViewer.UnitTests.Common
@@ -11,13 +11,26 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Common
 		public void GetDescription_HasAttribute_ReturnsAttributeValue()
 		{
 			// arrange
-			var type = ReportTypeEnum.Url;
+			var type = TestEnum.ValueWithDescriptionAttribute;
 
 			// act
 			var result = type.GetDescription();
 
 			// assert
-			Assert.That("Number of errors per url", Is.EqualTo(result));
+			Assert.That("Hello world", Is.EqualTo(result));
+		}
+
+		[Test]
+		public void GetDescription_HasNoAttribute_ReturnsEnumValueName()
+		{
+			// arrange
+			var type = TestEnum.ValueWithNoDescriptionAttribute;
+
+			// act
+			var result = type.GetDescription();
+
+			// assert
+			Assert.That("ValueWithNoDescriptionAttribute", Is.EqualTo(result));
 		}
 	}
 }

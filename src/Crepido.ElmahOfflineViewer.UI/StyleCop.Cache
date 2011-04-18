@@ -6,13 +6,13 @@
   <project key="-919876697">
     <configuration>DEBUG;TRACE</configuration>
   </project>
-  <sourcecode name="NinjectUiModule.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+  <sourcecode name="ControlExtensions.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/11/2011 15:34:36</timestamp>
       <milliseconds>552</milliseconds>
     </settings>
-    <timestamp>04/14/2011 09:42:10</timestamp>
-    <milliseconds>475</milliseconds>
+    <timestamp>04/08/2011 16:26:52</timestamp>
+    <milliseconds>54</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="Program.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -24,13 +24,13 @@
     <milliseconds>59</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="ControlExtensions.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+  <sourcecode name="NinjectUiModule.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/11/2011 15:34:36</timestamp>
       <milliseconds>552</milliseconds>
     </settings>
-    <timestamp>04/08/2011 16:26:52</timestamp>
-    <milliseconds>54</milliseconds>
+    <timestamp>04/14/2011 09:42:10</timestamp>
+    <milliseconds>475</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="AssemblyInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -58,15 +58,6 @@
     </settings>
     <timestamp>04/12/2011 20:42:55</timestamp>
     <milliseconds>25</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="MainForm.Designer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/11/2011 15:34:36</timestamp>
-      <milliseconds>552</milliseconds>
-    </settings>
-    <timestamp>04/08/2011 23:27:58</timestamp>
-    <milliseconds>852</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="LoadingView.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -105,15 +96,6 @@
     <milliseconds>915</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="ReportChartView.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/11/2011 15:34:36</timestamp>
-      <milliseconds>552</milliseconds>
-    </settings>
-    <timestamp>04/13/2011 09:58:59</timestamp>
-    <milliseconds>540</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="ReportSelectionView.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/11/2011 15:34:36</timestamp>
@@ -121,6 +103,15 @@
     </settings>
     <timestamp>04/09/2011 11:01:41</timestamp>
     <milliseconds>740</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="MainForm.Designer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/11/2011 15:34:36</timestamp>
+      <milliseconds>552</milliseconds>
+    </settings>
+    <timestamp>04/08/2011 23:27:58</timestamp>
+    <milliseconds>852</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="MainForm.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -132,6 +123,15 @@
     <milliseconds>96</milliseconds>
     <violations />
   </sourcecode>
+  <sourcecode name="SearchFilterView.Designer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/11/2011 15:34:36</timestamp>
+      <milliseconds>552</milliseconds>
+    </settings>
+    <timestamp>04/08/2011 13:20:29</timestamp>
+    <milliseconds>455</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="ReportSelectionView.Designer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/11/2011 15:34:36</timestamp>
@@ -139,42 +139,6 @@
     </settings>
     <timestamp>04/08/2011 13:22:15</timestamp>
     <milliseconds>918</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="ReportView.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/11/2011 15:34:36</timestamp>
-      <milliseconds>552</milliseconds>
-    </settings>
-    <timestamp>04/11/2011 15:30:04</timestamp>
-    <milliseconds>232</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="SearchErrorDetailsView.Designer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/11/2011 15:34:36</timestamp>
-      <milliseconds>552</milliseconds>
-    </settings>
-    <timestamp>04/07/2011 22:00:10</timestamp>
-    <milliseconds>509</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="SearchResultView.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/11/2011 15:34:36</timestamp>
-      <milliseconds>552</milliseconds>
-    </settings>
-    <timestamp>04/11/2011 15:32:28</timestamp>
-    <milliseconds>662</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="SearchErrorDetailsView.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/11/2011 15:34:36</timestamp>
-      <milliseconds>552</milliseconds>
-    </settings>
-    <timestamp>04/11/2011 15:32:28</timestamp>
-    <milliseconds>678</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="SearchFilterView.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -186,22 +150,22 @@
     <milliseconds>226</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="SearchView.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+  <sourcecode name="SearchErrorDetailsView.Designer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/11/2011 15:34:36</timestamp>
       <milliseconds>552</milliseconds>
     </settings>
-    <timestamp>04/11/2011 15:23:17</timestamp>
-    <milliseconds>195</milliseconds>
+    <timestamp>04/07/2011 22:00:10</timestamp>
+    <milliseconds>509</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="SearchView.Designer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+  <sourcecode name="SearchErrorDetailsView.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/11/2011 15:34:36</timestamp>
       <milliseconds>552</milliseconds>
     </settings>
-    <timestamp>04/11/2011 15:03:20</timestamp>
-    <milliseconds>724</milliseconds>
+    <timestamp>04/11/2011 15:32:28</timestamp>
+    <milliseconds>678</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="SearchResultView.Designer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -213,6 +177,15 @@
     <milliseconds>832</milliseconds>
     <violations />
   </sourcecode>
+  <sourcecode name="SearchView.Designer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/11/2011 15:34:36</timestamp>
+      <milliseconds>552</milliseconds>
+    </settings>
+    <timestamp>04/11/2011 15:03:20</timestamp>
+    <milliseconds>724</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="ReportView.Designer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/11/2011 15:34:36</timestamp>
@@ -222,13 +195,40 @@
     <milliseconds>67</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="SearchFilterView.Designer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+  <sourcecode name="ReportView.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/11/2011 15:34:36</timestamp>
       <milliseconds>552</milliseconds>
     </settings>
-    <timestamp>04/08/2011 13:20:29</timestamp>
-    <milliseconds>455</milliseconds>
+    <timestamp>04/11/2011 15:30:04</timestamp>
+    <milliseconds>232</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="ReportChartView.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/11/2011 15:34:36</timestamp>
+      <milliseconds>552</milliseconds>
+    </settings>
+    <timestamp>04/13/2011 09:58:59</timestamp>
+    <milliseconds>540</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="SearchResultView.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/11/2011 15:34:36</timestamp>
+      <milliseconds>552</milliseconds>
+    </settings>
+    <timestamp>04/11/2011 15:32:28</timestamp>
+    <milliseconds>662</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="SearchView.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/11/2011 15:34:36</timestamp>
+      <milliseconds>552</milliseconds>
+    </settings>
+    <timestamp>04/11/2011 15:23:17</timestamp>
+    <milliseconds>195</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>

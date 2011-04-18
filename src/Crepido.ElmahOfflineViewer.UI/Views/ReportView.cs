@@ -16,16 +16,32 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			_selectionView.OnReportSelected += SelectionViewOnReportSelected;
 		}
 
+		public event EventHandler OnLoaded;
+
 		public event EventHandler<ReportSelectionEventArgs> OnReportSelected;
 
 		public void LoadReportTypes(List<ReportTypeListItem> types)
 		{
-			_selectionView.LoadTypes(types);
+			if (InvokeRequired)
+			{
+				this.InvokeEx(x => x._selectionView.LoadTypes(types));
+			}
+			else
+			{
+				_selectionView.LoadTypes(types);
+			}
 		}
 
 		public void SetTimeInterval(DateTime startTime, DateTime endTime)
 		{
-			_selectionView.SetTimeInterval(startTime, endTime);
+			if (InvokeRequired)
+			{
+				this.InvokeEx(x => x._selectionView.SetTimeInterval(startTime, endTime));
+			}
+			else
+			{
+				_selectionView.SetTimeInterval(startTime, endTime);
+			}
 		}
 
 		public void DisplayReport(Report report)
@@ -35,12 +51,27 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 
 		public void Clear()
 		{
-			_chartView.ClearView();
+			if (InvokeRequired)
+			{
+				this.InvokeEx(x => x._chartView.ClearView());
+			}
+			else
+			{
+				_chartView.ClearView();
+			}
 		}
 
 		private void SelectionViewOnReportSelected(object sender, ReportSelectionEventArgs e)
 		{
 			OnReportSelected(this, e);
+		}
+
+		private void ReportViewLoad(object sender, EventArgs e)
+		{
+			if (OnLoaded != null)
+			{
+				OnLoaded(this, new EventArgs());
+			}
 		}
 	}
 }

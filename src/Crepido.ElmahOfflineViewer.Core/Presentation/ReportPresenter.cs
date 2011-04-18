@@ -19,22 +19,34 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 		}
 
 		public IReportView View { get; private set; }
-
-		public void Initialize()
+		
+		private void RegisterEvents()
+		{
+			View.OnLoaded += ViewOnLoaded;
+			View.OnReportSelected += ViewOnReportSelected;
+			_generator.OnDataSourceInitialized += GeneratorOnDataSourceInitialized;
+		}
+		
+		private void Initialize()
 		{
 			View.LoadReportTypes(BuildReportTypesList());
 			View.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today);
 		}
 
-		private void RegisterEvents()
+		private void ViewOnLoaded(object sender, EventArgs e)
 		{
-			View.OnReportSelected += ViewOnReportSelected;
+			Initialize();
 		}
 
 		private void ViewOnReportSelected(object sender, ReportSelectionEventArgs e)
 		{
 			var report = _generator.Create(e.Query);
 			View.DisplayReport(report);
+		}
+
+		private void GeneratorOnDataSourceInitialized(object sender, EventArgs e)
+		{
+			Initialize();
 		}
 
 		private List<ReportTypeListItem> BuildReportTypesList()

@@ -6,6 +6,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation.Abstract
 {
 	public interface IReportView
 	{
+		event EventHandler OnLoaded;
+
 		event EventHandler<ReportSelectionEventArgs> OnReportSelected;
 
 		void LoadReportTypes(List<ReportTypeListItem> types);

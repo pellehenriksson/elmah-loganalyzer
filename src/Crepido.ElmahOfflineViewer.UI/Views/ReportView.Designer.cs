@@ -80,6 +80,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			this.Controls.Add(this.splitContainer1);
 			this.Name = "ReportView";
 			this.Size = new System.Drawing.Size(854, 609);
+			this.Load += new System.EventHandler(this.ReportViewLoad);
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

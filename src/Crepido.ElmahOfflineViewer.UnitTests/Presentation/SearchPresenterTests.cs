@@ -21,8 +21,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			_view = new Mock<ISearchView>();
 			_repository = new Mock<IErrorLogRepository>();
 		}
-
-
+		
 		[Test]
 		public void Ctor_SetsView()
 		{

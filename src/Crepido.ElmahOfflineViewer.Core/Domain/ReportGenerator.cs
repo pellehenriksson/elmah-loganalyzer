@@ -14,7 +14,9 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			_repository = repository;
 			_repository.OnInitialized += RepositoryOnInitialized;
 		}
-		
+
+		public event EventHandler OnDataSourceInitialized;
+
 		public Report Create(ReportQuery query)
 		{
 			var report = new Report(query);
@@ -101,7 +103,10 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 		private void RepositoryOnInitialized(object sender, RepositoryInitializedEventArgs e)
 		{
-			////throw new System.NotImplementedException();
+			if (OnDataSourceInitialized != null)
+			{
+				OnDataSourceInitialized(this, new EventArgs());
+			}
 		}
 	}
 }

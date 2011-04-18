@@ -27,32 +27,30 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		}
 
 		[Test]
-		public void Initialize_SetsDefaultTimeInterval()
+		public void ViewOnLoaded_SetsDefaultTimeInterval()
 		{
 			// arrange
 			var view = new Mock<IReportView>();
 			var generator = new Mock<IReportGenerator>();
-
 			var presenter = new ReportPresenter(view.Object, generator.Object);
 
 			// act
-			presenter.Initialize();
+			view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
 			view.Verify(x => x.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today), Times.Once());
 		}
 
 		[Test]
-		public void Initialize_LoadReportTypes()
+		public void ViewOnLoaded_LoadReportTypes()
 		{
 			// arrange
 			var view = new Mock<IReportView>();
 			var generator = new Mock<IReportGenerator>();
-
 			var presenter = new ReportPresenter(view.Object, generator.Object);
 
 			// act
-			presenter.Initialize();
+			view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
 			view.Verify(x => x.LoadReportTypes(It.IsAny<List<ReportTypeListItem>>()), Times.Once());
@@ -78,5 +76,35 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			// assert
 			view.Verify(x => x.DisplayReport(report), Times.Once());
 		}
-}
+
+		[Test]
+		public void GeneratorOnDataSourceInitialized_SetsDefaultTimeInterval()
+		{
+			// arrange
+			var view = new Mock<IReportView>();
+			var generator = new Mock<IReportGenerator>();
+			var presenter = new ReportPresenter(view.Object, generator.Object);
+
+			// act
+			generator.Raise(x => x.OnDataSourceInitialized += null, new EventArgs());
+
+			// assert
+			view.Verify(x => x.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today), Times.Once());
+		}
+
+		[Test]
+		public void GeneratorOnDataSourceInitialized_LoadReportTypes()
+		{
+			// arrange
+			var view = new Mock<IReportView>();
+			var generator = new Mock<IReportGenerator>();
+			var presenter = new ReportPresenter(view.Object, generator.Object);
+
+			// act
+			generator.Raise(x => x.OnDataSourceInitialized += null, new EventArgs());
+
+			// assert
+			view.Verify(x => x.LoadReportTypes(It.IsAny<List<ReportTypeListItem>>()), Times.Once());
+		}
+	}
 }

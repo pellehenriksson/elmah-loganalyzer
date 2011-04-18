@@ -24,14 +24,8 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		
 		public void ClearView()
 		{
-			if (InvokeRequired)
-			{
-				this.InvokeEx(x => x.Clear());
-			}
-			else
-			{
-				Clear();
-			}
+			_chart.Titles.Clear();
+			_chart.Series.Clear();
 		}
 
 		private void SetTitle()
@@ -54,12 +48,6 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			}
 		}
 		
-		private void Clear()
-		{
-			_chart.Titles.Clear();
-			_chart.Series.Clear();
-		}
-
 		private Font GetFont(float size)
 		{
 			return new Font("Consolas", size, FontStyle.Bold);

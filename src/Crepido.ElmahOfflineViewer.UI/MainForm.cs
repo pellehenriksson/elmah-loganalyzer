@@ -122,8 +122,6 @@ namespace Crepido.ElmahOfflineViewer.UI
 		private void ReportsViewMenuItemClick(object sender, EventArgs e)
 		{
 			var presenter = ServiceLocator.Resolve<ReportPresenter>();
-			presenter.Initialize();
-
 			LoadView(presenter.View as Control);
 		}
 

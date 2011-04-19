@@ -42,6 +42,9 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
     <Compile Include="Common\DateTimeExtensionsTests.cs" />
     <Compile Include="Common\EnumExtensionsTests.cs" />
     <Compile Include="Common\StringExtensionsTests.cs" />

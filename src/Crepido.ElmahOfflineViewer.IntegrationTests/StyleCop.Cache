@@ -6,13 +6,13 @@
   <project key="934217046">
     <configuration>DEBUG;TRACE</configuration>
   </project>
-  <sourcecode name="DataSourceServiceTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+  <sourcecode name="SolutionInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/12/2011 20:55:43</timestamp>
       <milliseconds>613</milliseconds>
     </settings>
-    <timestamp>04/14/2011 11:11:40</timestamp>
-    <milliseconds>265</milliseconds>
+    <timestamp>04/19/2011 14:55:34</timestamp>
+    <milliseconds>75</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="AssemblyInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -20,8 +20,17 @@
       <timestamp>04/12/2011 20:55:43</timestamp>
       <milliseconds>613</milliseconds>
     </settings>
-    <timestamp>04/12/2011 19:50:24</timestamp>
-    <milliseconds>934</milliseconds>
+    <timestamp>04/19/2011 14:53:15</timestamp>
+    <milliseconds>794</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="DataSourceServiceTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/12/2011 20:55:43</timestamp>
+      <milliseconds>613</milliseconds>
+    </settings>
+    <timestamp>04/14/2011 11:11:40</timestamp>
+    <milliseconds>265</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>

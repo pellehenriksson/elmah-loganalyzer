@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
     <Compile Include="Common\DateTimeExtensions.cs" />
     <Compile Include="Common\EnumExtensions.cs" />
     <Compile Include="Common\StringExtensions.cs" />

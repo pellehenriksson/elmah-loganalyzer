@@ -6,3 +6,5 @@ Fixes
 
 Build
 	-> style cop (compile time check)
+	-> sand castle
+	-> code cover

@@ -15,6 +15,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Build", "_Build", "{B9A2272D-595F-4798-8FB9-7ACF04F8F3C0}"
 	ProjectSection(SolutionItems) = preProject
 		build.proj = build.proj
+		src\SolutionInfo.cs = src\SolutionInfo.cs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{7DADEC10-E4BE-4C95-9276-714E45774731}"

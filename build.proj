@@ -7,7 +7,7 @@
 		<Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
 		<OutputDirectory>$(MSBuildProjectDirectory)\_build\</OutputDirectory>
 		<OutputCompileDirectory>$(OutputDirectory)compile\</OutputCompileDirectory>
-		<OutputLogsDirectory>$(OutputDirectory)logs\</OutputLogsDirectory>
+		<OutputReportsDirectory>$(OutputDirectory)reports\</OutputReportsDirectory>
 		<OutputAppDirectory>$(OutputDirectory)app\</OutputAppDirectory>
 		<NUnitExe>$(MSBuildProjectDirectory)\packages\NUnit.2.5.9.10348\Tools\nunit-console.exe</NUnitExe>
 	</PropertyGroup>
@@ -23,7 +23,7 @@
 	<Target Name="Clean">
 		<RemoveDir Directories="$(OutputDirectory)" Condition="Exists($(OutputDirectory))" />
 		<MakeDir Directories="$(OutputDirectory)" />
-		<MakeDir Directories="$(OutputLogsDirectory)" />
+		<MakeDir Directories="$(OutputReportsDirectory)" />
 		<MakeDir Directories="$(OutputAppDirectory)" />
 	</Target>
 
@@ -38,8 +38,8 @@
 	</Target>
 		
 	<Target Name="Test">
-		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.UnitTests.dll /xml=$(OutputLogsDirectory)unittests_report.xml"  />
-		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.IntegrationTests.dll /xml=$(OutputLogsDirectory)integrationtests_report.xml"  />
+		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.UnitTests.dll /xml=$(OutputReportsDirectory)unittests_report.xml"  />
+		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.IntegrationTests.dll /xml=$(OutputReportsDirectory)integrationtests_report.xml"  />
 	</Target>
 	
 	<Target Name="BundleApp">

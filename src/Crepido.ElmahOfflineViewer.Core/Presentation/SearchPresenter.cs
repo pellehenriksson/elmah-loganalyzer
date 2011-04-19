@@ -28,10 +28,20 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 
 		private void Initialize()
 		{
-			View.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today);
+			InitializeDateInterval();
+			InitializeFilterValues();
+		}
+
+		private void InitializeFilterValues()
+		{
 			View.LoadTypes(_repository.GetTypes());
 			View.LoadSources(_repository.GetSources());
 			View.LoadUsers(_repository.GetUsers());
+		}
+
+		private void InitializeDateInterval()
+		{
+			View.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today);
 		}
 		
 		private void ViewOnLoaded(object sender, EventArgs e)
@@ -57,6 +67,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 		{
 			View.ClearResult();
 			View.ClearErrorDetails();
+
+			InitializeFilterValues();
 		}
 	}
 }

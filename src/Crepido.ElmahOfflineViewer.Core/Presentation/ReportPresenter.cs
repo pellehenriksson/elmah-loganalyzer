@@ -46,7 +46,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 
 		private void GeneratorOnDataSourceInitialized(object sender, EventArgs e)
 		{
-			Initialize();
+			View.Clear();
 		}
 
 		private List<ReportTypeListItem> BuildReportTypesList()

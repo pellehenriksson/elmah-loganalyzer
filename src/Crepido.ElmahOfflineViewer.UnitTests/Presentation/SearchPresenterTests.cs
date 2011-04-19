@@ -144,7 +144,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		}
 
 		[Test]
-		public void OnInitialized_ShouldClearView()
+		public void OnRepositoryInitialized_ShouldClearView()
 		{
 			// arrange
 			var presenter = new SearchPresenter(_view.Object, _repository.Object);
@@ -155,6 +155,51 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			// assert
 			_view.Verify(x => x.ClearResult(), Times.Once());
 			_view.Verify(x => x.ClearErrorDetails(), Times.Once());
+		}
+
+		[Test]
+		public void OnRepositoryInitialized_ShouldLoadTypesInView()
+		{
+			// arrange
+			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var types = new List<string>();
+			_repository.Setup(x => x.GetTypes()).Returns(types);
+
+			// act
+			_repository.Raise(x => x.OnInitialized += null, new RepositoryInitializedEventArgs(string.Empty, 0));
+
+			// assert
+			_view.Verify(x => x.LoadTypes(types), Times.Once());
+		}
+
+		[Test]
+		public void OnRepositoryInitialized_ShouldLoadSourcesInView()
+		{
+			// arrange
+			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var sources = new List<string>();
+			_repository.Setup(x => x.GetSources()).Returns(sources);
+
+			// act
+			_repository.Raise(x => x.OnInitialized += null, new RepositoryInitializedEventArgs(string.Empty, 0));
+
+			// assert
+			_view.Verify(x => x.LoadSources(sources), Times.Once());
+		}
+
+		[Test]
+		public void OnRepositoryInitialized_ShouldLoadUsersInView()
+		{
+			// arrange
+			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var users = new List<string>();
+			_repository.Setup(x => x.GetUsers()).Returns(users);
+
+			// act
+			_repository.Raise(x => x.OnInitialized += null, new RepositoryInitializedEventArgs(string.Empty, 0));
+
+			// assert
+			_view.Verify(x => x.LoadUsers(users), Times.Once());
 		}
 	}
 }

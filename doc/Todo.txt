@@ -1,5 +1,4 @@
 Fixes
-	-> don't re-initialize views when switching between them
 	-> initialize should clear results/details/charts from views
 	-> logging 
 

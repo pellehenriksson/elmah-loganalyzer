@@ -78,7 +78,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		}
 
 		[Test]
-		public void GeneratorOnDataSourceInitialized_SetsDefaultTimeInterval()
+		public void GeneratorOnDataSourceInitialized_ClearsView()
 		{
 			// arrange
 			var view = new Mock<IReportView>();
@@ -89,22 +89,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			generator.Raise(x => x.OnDataSourceInitialized += null, new EventArgs());
 
 			// assert
-			view.Verify(x => x.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today), Times.Once());
-		}
-
-		[Test]
-		public void GeneratorOnDataSourceInitialized_LoadReportTypes()
-		{
-			// arrange
-			var view = new Mock<IReportView>();
-			var generator = new Mock<IReportGenerator>();
-			var presenter = new ReportPresenter(view.Object, generator.Object);
-
-			// act
-			generator.Raise(x => x.OnDataSourceInitialized += null, new EventArgs());
-
-			// assert
-			view.Verify(x => x.LoadReportTypes(It.IsAny<List<ReportTypeListItem>>()), Times.Once());
+			view.Verify(x => x.Clear(), Times.Once());
 		}
 	}
 }

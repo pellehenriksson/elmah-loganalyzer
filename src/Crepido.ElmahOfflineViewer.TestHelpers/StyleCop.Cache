@@ -21,24 +21,6 @@
     <milliseconds>47</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="SolutionInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/18/2011 20:23:44</timestamp>
-      <milliseconds>763</milliseconds>
-    </settings>
-    <timestamp>04/19/2011 14:55:34</timestamp>
-    <milliseconds>75</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="TestEnum.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/18/2011 20:23:44</timestamp>
-      <milliseconds>763</milliseconds>
-    </settings>
-    <timestamp>04/18/2011 20:28:41</timestamp>
-    <milliseconds>72</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="FakeDataSourceService.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/18/2011 20:23:44</timestamp>
@@ -55,6 +37,24 @@
     </settings>
     <timestamp>04/19/2011 14:53:33</timestamp>
     <milliseconds>703</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="TestEnum.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/18/2011 20:23:44</timestamp>
+      <milliseconds>763</milliseconds>
+    </settings>
+    <timestamp>04/18/2011 20:28:41</timestamp>
+    <milliseconds>72</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="SolutionInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/18/2011 20:23:44</timestamp>
+      <milliseconds>763</milliseconds>
+    </settings>
+    <timestamp>04/19/2011 20:27:04</timestamp>
+    <milliseconds>751</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>

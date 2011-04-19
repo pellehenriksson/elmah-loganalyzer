@@ -24,6 +24,15 @@
   <project key="-1240706109">
     <configuration>DEBUG;TRACE</configuration>
   </project>
+  <sourcecode name="DateIntervalTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/12/2011 15:01:09</timestamp>
+      <milliseconds>537</milliseconds>
+    </settings>
+    <timestamp>04/19/2011 21:48:46</timestamp>
+    <milliseconds>206</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="EnumExtensionsTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/12/2011 15:01:09</timestamp>
@@ -31,42 +40,6 @@
     </settings>
     <timestamp>04/18/2011 20:29:21</timestamp>
     <milliseconds>23</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="DateTimeExtensionsTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/12/2011 15:01:09</timestamp>
-      <milliseconds>537</milliseconds>
-    </settings>
-    <timestamp>04/08/2011 10:32:07</timestamp>
-    <milliseconds>5</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="UniqueStringListTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/12/2011 15:01:09</timestamp>
-      <milliseconds>537</milliseconds>
-    </settings>
-    <timestamp>04/08/2011 10:32:07</timestamp>
-    <milliseconds>195</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="UrlResolverTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/12/2011 15:01:09</timestamp>
-      <milliseconds>537</milliseconds>
-    </settings>
-    <timestamp>04/08/2011 14:27:35</timestamp>
-    <milliseconds>989</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="ErrorLogFileParserTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/12/2011 15:01:09</timestamp>
-      <milliseconds>537</milliseconds>
-    </settings>
-    <timestamp>04/14/2011 11:11:25</timestamp>
-    <milliseconds>977</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="StringExtensionsTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -78,6 +51,42 @@
     <milliseconds>683</milliseconds>
     <violations />
   </sourcecode>
+  <sourcecode name="DateTimeExtensionsTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/12/2011 15:01:09</timestamp>
+      <milliseconds>537</milliseconds>
+    </settings>
+    <timestamp>04/08/2011 10:32:07</timestamp>
+    <milliseconds>5</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="UrlResolverTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/12/2011 15:01:09</timestamp>
+      <milliseconds>537</milliseconds>
+    </settings>
+    <timestamp>04/08/2011 14:27:35</timestamp>
+    <milliseconds>989</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="UniqueStringListTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/12/2011 15:01:09</timestamp>
+      <milliseconds>537</milliseconds>
+    </settings>
+    <timestamp>04/08/2011 10:32:07</timestamp>
+    <milliseconds>195</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="ErrorLogFileParserTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/12/2011 15:01:09</timestamp>
+      <milliseconds>537</milliseconds>
+    </settings>
+    <timestamp>04/14/2011 11:11:25</timestamp>
+    <milliseconds>977</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="ReportItemTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/12/2011 15:01:09</timestamp>
@@ -85,15 +94,6 @@
     </settings>
     <timestamp>04/18/2011 20:31:08</timestamp>
     <milliseconds>961</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="ErrorLogTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/12/2011 15:01:09</timestamp>
-      <milliseconds>537</milliseconds>
-    </settings>
-    <timestamp>04/08/2011 14:29:50</timestamp>
-    <milliseconds>614</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="ReportQueryTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -105,31 +105,22 @@
     <milliseconds>990</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="ReportTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+  <sourcecode name="ServerVariableTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/12/2011 15:01:09</timestamp>
       <milliseconds>537</milliseconds>
     </settings>
-    <timestamp>04/18/2011 20:21:06</timestamp>
-    <milliseconds>748</milliseconds>
+    <timestamp>04/08/2011 10:30:07</timestamp>
+    <milliseconds>105</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="ErrorLogRepositoryTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+  <sourcecode name="ErrorLogTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/12/2011 15:01:09</timestamp>
       <milliseconds>537</milliseconds>
     </settings>
-    <timestamp>04/14/2011 10:50:27</timestamp>
-    <milliseconds>207</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="ReportGeneratorTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/12/2011 15:01:09</timestamp>
-      <milliseconds>537</milliseconds>
-    </settings>
-    <timestamp>04/14/2011 10:50:27</timestamp>
-    <milliseconds>75</milliseconds>
+    <timestamp>04/08/2011 14:29:50</timestamp>
+    <milliseconds>614</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="SearchErrorLogQueryTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -141,13 +132,22 @@
     <milliseconds>108</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="ErrorLogSelectedEventArgsTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+  <sourcecode name="ReportGeneratorTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/12/2011 15:01:09</timestamp>
       <milliseconds>537</milliseconds>
     </settings>
-    <timestamp>04/08/2011 10:29:34</timestamp>
-    <milliseconds>47</milliseconds>
+    <timestamp>04/14/2011 10:50:27</timestamp>
+    <milliseconds>75</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="ErrorLogRepositoryTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/12/2011 15:01:09</timestamp>
+      <milliseconds>537</milliseconds>
+    </settings>
+    <timestamp>04/14/2011 10:50:27</timestamp>
+    <milliseconds>207</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="RepositoryInitializedEventArgsTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -159,22 +159,13 @@
     <milliseconds>306</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="ServerVariableTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+  <sourcecode name="ReportTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/12/2011 15:01:09</timestamp>
       <milliseconds>537</milliseconds>
     </settings>
-    <timestamp>04/08/2011 10:30:07</timestamp>
-    <milliseconds>105</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="ErrorLogSearchEventArgsTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/12/2011 15:01:09</timestamp>
-      <milliseconds>537</milliseconds>
-    </settings>
-    <timestamp>04/08/2011 12:58:32</timestamp>
-    <milliseconds>270</milliseconds>
+    <timestamp>04/18/2011 20:21:06</timestamp>
+    <milliseconds>748</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="ReportSelectionEventArgsTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -186,6 +177,24 @@
     <milliseconds>501</milliseconds>
     <violations />
   </sourcecode>
+  <sourcecode name="ErrorLogSelectedEventArgsTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/12/2011 15:01:09</timestamp>
+      <milliseconds>537</milliseconds>
+    </settings>
+    <timestamp>04/08/2011 10:29:34</timestamp>
+    <milliseconds>47</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="SolutionInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/12/2011 15:01:09</timestamp>
+      <milliseconds>537</milliseconds>
+    </settings>
+    <timestamp>04/19/2011 20:27:04</timestamp>
+    <milliseconds>751</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="ReportTypeListItemTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/12/2011 15:01:09</timestamp>
@@ -195,13 +204,13 @@
     <milliseconds>134</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="AssemblyInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+  <sourcecode name="ErrorLogSearchEventArgsTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/12/2011 15:01:09</timestamp>
       <milliseconds>537</milliseconds>
     </settings>
-    <timestamp>04/19/2011 14:53:48</timestamp>
-    <milliseconds>835</milliseconds>
+    <timestamp>04/08/2011 12:58:32</timestamp>
+    <milliseconds>270</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="ReportPresenterTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -213,22 +222,13 @@
     <milliseconds>554</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="SolutionInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+  <sourcecode name="AssemblyInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>04/12/2011 15:01:09</timestamp>
       <milliseconds>537</milliseconds>
     </settings>
-    <timestamp>04/19/2011 14:55:34</timestamp>
-    <milliseconds>75</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Sandbox.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>04/12/2011 15:01:09</timestamp>
-      <milliseconds>537</milliseconds>
-    </settings>
-    <timestamp>04/14/2011 11:11:31</timestamp>
-    <milliseconds>606</milliseconds>
+    <timestamp>04/19/2011 14:53:48</timestamp>
+    <milliseconds>835</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="UnitTestBase.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -238,6 +238,15 @@
     </settings>
     <timestamp>04/14/2011 10:51:00</timestamp>
     <milliseconds>775</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Sandbox.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>04/12/2011 15:01:09</timestamp>
+      <milliseconds>537</milliseconds>
+    </settings>
+    <timestamp>04/14/2011 11:11:31</timestamp>
+    <milliseconds>606</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="SearchPresenterTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">

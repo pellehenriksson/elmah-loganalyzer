@@ -1,10 +1,8 @@
+Functions
+	-> search filter, checked list boxes, include/exclude flag
+
 Fixes
-	-> initialize should clear results/details/charts from views
 	-> logging 
 
 Build
 	-> style cop (compile time check)
-
-Functions
-	-> refresh repository event to presenters
-	

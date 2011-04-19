@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="LocalBuild">
-
-	<UsingTask AssemblyFile="\tools\stylecop\Microsoft.StyleCop.dll" TaskName="StyleCopTask" />
 	
 	<PropertyGroup>
 		<Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
@@ -11,6 +9,8 @@
 		<OutputAppDirectory>$(OutputDirectory)app\</OutputAppDirectory>
 		<NUnitExe>$(MSBuildProjectDirectory)\packages\NUnit.2.5.9.10348\Tools\nunit-console.exe</NUnitExe>
 	</PropertyGroup>
+
+	<Import Project="$(MSBuildProjectDirectory)\tools\msbuild\MSBuild.Community.Tasks.Targets"/>
 
 	<ItemGroup>
 		<AppFiles Include="$(OutputCompileDirectory)Crepido.ElmahOfflineViewer.UI.exe" />
@@ -28,15 +28,40 @@
 	</Target>
 
 	<Target Name="LocalBuild">
+		<CallTarget Targets="SetAssemblyVersion" />
 		<CallTarget Targets="Build" />
+		<CallTarget Targets="ResetAssemblyVersion" />
 		<CallTarget Targets="Test" />
 		<CallTarget Targets="BundleApp" />
+	</Target>
+	
+	<Target Name="SetAssemblyVersion">
+		<Time>
+			<Output TaskParameter="Month" PropertyName="Month" />
+			<Output TaskParameter="Day"	PropertyName="Day" />
+			<Output TaskParameter="Year" PropertyName="Year" />
+			<Output TaskParameter="Hour" PropertyName="Hour" />
+			<Output TaskParameter="Minute" PropertyName="Minute" />
+			<Output TaskParameter="Second" PropertyName="Second" />
+		</Time>
+		
+		<FileUpdate 
+				Files="$(MSBuildProjectDirectory)\src\SolutionInfo.cs"
+			    Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)"
+			    ReplacementText="$(Year).$(Month).$(Day).$(Hour)$(Minute)$(Second)" />
 	</Target>
 	
 	<Target Name="Build" DependsOnTargets="Clean">
 		<MSBuild Targets="ReBuild" Projects="ElmahOfflineViewer.sln" Properties="Configuration=$(Configuration);OutDir=$(OutputCompileDirectory)" />
 	</Target>
-		
+
+	<Target Name="ResetAssemblyVersion">
+		<FileUpdate
+				Files="$(MSBuildProjectDirectory)\src\SolutionInfo.cs"
+			    Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)"
+			    ReplacementText="1.0.0.0" />
+	</Target>
+			
 	<Target Name="Test">
 		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.UnitTests.dll /xml=$(OutputReportsDirectory)unittests_report.xml"  />
 		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.IntegrationTests.dll /xml=$(OutputReportsDirectory)integrationtests_report.xml"  />

@@ -1,9 +1,9 @@
-using System.Reflection;
+ï»¿using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("Crepido Systems AB")]
 [assembly: AssemblyProduct("ElmahOfflineViewer")]
-[assembly: AssemblyCopyright("Copyright © Crepido Systems AB 2011")]
+[assembly: AssemblyCopyright("Copyright Crepido Systems AB 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

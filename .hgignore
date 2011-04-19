@@ -16,7 +16,7 @@ syntax: glob
 *.tlb
 *.tlh
 *.bak
-*.cache
+*.[Cc]ache
 *.ilk
 *.log
 *.lib
@@ -31,3 +31,4 @@ _ReSharper*/
 [Bb]uild[Ll]og.*
 *.[Pp]ublish.xml
 _build
+

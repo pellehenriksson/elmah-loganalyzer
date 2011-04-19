@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Threading;
 using System.Windows.Forms;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 using Crepido.ElmahOfflineViewer.UI.Views;
@@ -96,7 +97,7 @@ namespace Crepido.ElmahOfflineViewer.UI
 
 		private void DisplayApplicationVersion()
 		{
-			versionStripStatusLabel.Text = Application.ProductVersion;
+			versionStripStatusLabel.Text = string.Format("Build: {0} ({1})", Application.ProductVersion, GetType().Assembly.GetTypeOfBuild());
 		}
 		
 		private void SelectDirectoryButtonClick(object sender, EventArgs e)

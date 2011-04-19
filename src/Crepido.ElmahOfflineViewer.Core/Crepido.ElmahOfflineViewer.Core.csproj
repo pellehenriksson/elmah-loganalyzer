@@ -43,6 +43,7 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
+    <Compile Include="Common\AssemblyExtensions.cs" />
     <Compile Include="Common\DateInterval.cs" />
     <Compile Include="Common\DateTimeExtensions.cs" />
     <Compile Include="Common\EnumExtensions.cs" />

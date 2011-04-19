@@ -48,7 +48,7 @@
 		<FileUpdate 
 				Files="$(MSBuildProjectDirectory)\src\SolutionInfo.cs"
 			    Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)"
-			    ReplacementText="$(Year).$(Month).$(Day).$(Hour)$(Minute)$(Second)" />
+			    ReplacementText="$(Year).$(Month).$(Day).$(Hour)$(Minute)" />
 	</Target>
 	
 	<Target Name="Build" DependsOnTargets="Clean">

@@ -17,26 +17,26 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 		}
 
 		public ISearchView View { get; private set; }
+		
+		private void RegisterEvents()
+		{
+			View.OnLoaded += ViewOnLoaded;
+			View.OnFilterApplied += ViewOnFilterApplied;
+			View.OnErrorLogSelected += ViewOnErrorLogSelected;
+			_repository.OnInitialized += RepositoryOnInitialized;
+		}
 
-		public void Initialize()
+		private void Initialize()
 		{
 			View.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today);
 			View.LoadTypes(_repository.GetTypes());
 			View.LoadSources(_repository.GetSources());
 			View.LoadUsers(_repository.GetUsers());
 		}
-
-		private void RegisterEvents()
+		
+		private void ViewOnLoaded(object sender, EventArgs e)
 		{
-			View.OnFilterApplied += ViewOnFilterApplied;
-			View.OnErrorLogSelected += ViewOnErrorLogSelected;
-			_repository.OnInitialized += RepositoryOnInitialized;
-		}
-
-		private void RepositoryOnInitialized(object sender, Domain.RepositoryInitializedEventArgs e)
-		{
-			View.ClearResult();
-			View.ClearErrorDetails();
+			Initialize();
 		}
 
 		private void ViewOnErrorLogSelected(object sender, ErrorLogSelectedEventArgs e)
@@ -51,6 +51,12 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 			var result = _repository.GetWithFilter(e.Query);
 
 			View.DisplaySearchResult(result);
+		}
+
+		private void RepositoryOnInitialized(object sender, Domain.RepositoryInitializedEventArgs e)
+		{
+			View.ClearResult();
+			View.ClearErrorDetails();
 		}
 	}
 }

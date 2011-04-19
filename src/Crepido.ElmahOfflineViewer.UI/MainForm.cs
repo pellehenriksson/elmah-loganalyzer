@@ -114,8 +114,6 @@ namespace Crepido.ElmahOfflineViewer.UI
 		private void SearchViewMenuItemClick(object sender, EventArgs e)
 		{
 			var presenter = ServiceLocator.Resolve<SearchPresenter>();
-			presenter.Initialize();
-
 			LoadView(presenter.View as Control);
 		}
 

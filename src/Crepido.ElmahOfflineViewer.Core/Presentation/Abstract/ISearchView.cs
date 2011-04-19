@@ -6,6 +6,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation.Abstract
 {
 	public interface ISearchView
 	{
+		event EventHandler OnLoaded;
+
 		event EventHandler<ErrorLogSearchEventArgs> OnFilterApplied;
 
 		event EventHandler<ErrorLogSelectedEventArgs> OnErrorLogSelected;

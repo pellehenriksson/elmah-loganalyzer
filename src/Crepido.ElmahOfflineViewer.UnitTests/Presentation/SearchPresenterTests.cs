@@ -33,20 +33,20 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		}
 
 		[Test]
-		public void Initialize_SetsDefaultTimeInterval()
+		public void ViewOnLoaded_SetsDefaultTimeInterval()
 		{
 			// arrange
 			var presenter = new SearchPresenter(_view.Object, _repository.Object);
 
 			// act
-			presenter.Initialize();
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
 			_view.Verify(x => x.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today), Times.Once());
 		}
 
 		[Test]
-		public void Initialize_ShouldLoadTypesInView()
+		public void ViewOnLoaded_ShouldLoadTypesInView()
 		{
 			// arrange
 			var presenter = new SearchPresenter(_view.Object, _repository.Object);
@@ -55,14 +55,14 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			_repository.Setup(x => x.GetTypes()).Returns(types);
 
 			// act
-			presenter.Initialize();
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
 			_view.Verify(x => x.LoadTypes(types), Times.Once());
 		}
 
 		[Test]
-		public void Initialize_ShouldLoadSourcesInView()
+		public void ViewOnLoaded_ShouldLoadSourcesInView()
 		{
 			// arrange
 			var presenter = new SearchPresenter(_view.Object, _repository.Object);
@@ -71,14 +71,14 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			_repository.Setup(x => x.GetSources()).Returns(sources);
 
 			// act
-			presenter.Initialize();
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
 			_view.Verify(x => x.LoadSources(sources), Times.Once());
 		}
 
 		[Test]
-		public void Initialize_ShouldLoadUsersInView()
+		public void ViewOnLoaded_ShouldLoadUsersInView()
 		{
 			// arrange
 			var presenter = new SearchPresenter(_view.Object, _repository.Object);
@@ -87,7 +87,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			_repository.Setup(x => x.GetUsers()).Returns(users);
 
 			// act
-			presenter.Initialize();
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
 			_view.Verify(x => x.LoadUsers(users), Times.Once());

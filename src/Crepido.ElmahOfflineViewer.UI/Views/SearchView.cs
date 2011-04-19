@@ -17,6 +17,8 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			searchResultTreeView.OnErrorLogSelected += SearchResultTreeViewOnErrorLogSelected;
 		}
 
+		public event EventHandler OnLoaded;
+
 		public event EventHandler<ErrorLogSearchEventArgs> OnFilterApplied;
 
 		public event EventHandler<ErrorLogSelectedEventArgs> OnErrorLogSelected;
@@ -74,6 +76,14 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			if (OnFilterApplied != null)
 			{
 				OnFilterApplied(this, e);
+			}
+		}
+
+		private void SearchViewLoad(object sender, EventArgs e)
+		{
+			if (OnLoaded != null)
+			{
+				OnLoaded(this, new EventArgs());
 			}
 		}
 	}

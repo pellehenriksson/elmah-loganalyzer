@@ -1,4 +1,5 @@
 ﻿using System;
+using Crepido.ElmahOfflineViewer.Core.Common;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
@@ -12,13 +13,11 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		
 		public string Text { get; set; }
 		
-		public DateTime StartTime { get; set; }
+		public DateInterval Interval { get; set; }
 		
-		public DateTime EndTime { get; set; }
-
 		public static SearchErrorLogQuery Create(ReportQuery reportQuery)
 		{
-			var query = new SearchErrorLogQuery { StartTime = reportQuery.StartTime, EndTime = reportQuery.EndTime };
+			var query = new SearchErrorLogQuery { Interval = reportQuery.Interval };
 			return query;
 		}
 	}

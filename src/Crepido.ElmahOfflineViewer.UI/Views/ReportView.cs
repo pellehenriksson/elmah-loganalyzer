@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 using Crepido.ElmahOfflineViewer.Core.Presentation.Abstract;
@@ -32,15 +33,15 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			}
 		}
 
-		public void SetTimeInterval(DateTime startTime, DateTime endTime)
+		public void SetTimeInterval(DateInterval interval)
 		{
 			if (InvokeRequired)
 			{
-				this.InvokeEx(x => x._selectionView.SetTimeInterval(startTime, endTime));
+				this.InvokeEx(x => x._selectionView.SetTimeInterval(interval));
 			}
 			else
 			{
-				_selectionView.SetTimeInterval(startTime, endTime);
+				_selectionView.SetTimeInterval(interval);
 			}
 		}
 

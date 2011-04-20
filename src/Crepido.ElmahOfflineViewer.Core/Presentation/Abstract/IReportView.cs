@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 
 namespace Crepido.ElmahOfflineViewer.Core.Presentation.Abstract
@@ -12,7 +13,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation.Abstract
 
 		void LoadReportTypes(List<ReportTypeListItem> types);
 
-		void SetTimeInterval(DateTime startTime, DateTime endTime);
+		void SetTimeInterval(DateInterval interval);
 
 		void DisplayReport(Report report);
 

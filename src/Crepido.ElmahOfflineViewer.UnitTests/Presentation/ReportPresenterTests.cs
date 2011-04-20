@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
@@ -33,14 +34,15 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			var view = new Mock<IReportView>();
 			var generator = new Mock<IReportGenerator>();
 			var presenter = new ReportPresenter(view.Object, generator.Object);
+			var expectedInterval = new DateInterval(DateTime.Today.AddDays(-7), DateTime.Today);
 
 			// act
 			view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
-			view.Verify(x => x.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today), Times.Once());
+			view.Verify(x => x.SetTimeInterval(It.Is<DateInterval>(y => y.Equals(expectedInterval))), Times.Once());
 		}
-
+		
 		[Test]
 		public void ViewOnLoaded_LoadReportTypes()
 		{

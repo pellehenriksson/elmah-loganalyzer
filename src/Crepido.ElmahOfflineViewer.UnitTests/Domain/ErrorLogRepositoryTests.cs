@@ -1,4 +1,5 @@
 ﻿using System;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
@@ -110,35 +111,35 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		[Test]
 		public void GetWithFilter_StartAndEndTime()
 		{
-			var query = new SearchErrorLogQuery { StartTime = new DateTime(2011, 1, 1), EndTime = new DateTime(2011, 1, 3) };
+			var query = new SearchErrorLogQuery { Interval = new DateInterval(new DateTime(2011, 1, 1), new DateTime(2011, 1, 3)) };
 			GetWithFilterTest(query, 3);
 		}
 
 		[Test]
 		public void GetWithFilter_StartAndEndTimeAndType()
 		{
-			var query = new SearchErrorLogQuery { StartTime = new DateTime(2011, 1, 1), EndTime = new DateTime(2011, 1, 4), Type = "System.SomeOtherException" };
+			var query = new SearchErrorLogQuery { Interval = CreateInterval(), Type = "System.SomeOtherException" };
 			GetWithFilterTest(query, 2);
 		}
 
 		[Test]
 		public void GetWithFilter_StartAndEndTimeAndSource()
 		{
-			var query = new SearchErrorLogQuery { StartTime = new DateTime(2011, 1, 1), EndTime = new DateTime(2011, 1, 4), Source = "Some.Namespace.Domain" };
+			var query = new SearchErrorLogQuery { Interval = CreateInterval(), Source = "Some.Namespace.Domain" };
 			GetWithFilterTest(query, 2);
 		}
 
 		[Test]
 		public void GetWithFilter_StartAndEndTimeAndUser()
 		{
-			var query = new SearchErrorLogQuery { StartTime = new DateTime(2011, 1, 1), EndTime = new DateTime(2011, 1, 4), User = "nisse" };
+			var query = new SearchErrorLogQuery { Interval = CreateInterval(), User = "nisse" };
 			GetWithFilterTest(query, 1);
 		}
 
 		[Test]
 		public void GetWithFilter_StartAndEndTimeAndText()
 		{
-			var query = new SearchErrorLogQuery { StartTime = new DateTime(2011, 1, 1), EndTime = new DateTime(2011, 1, 4), Text = "serious" };
+			var query = new SearchErrorLogQuery { Interval = CreateInterval(), Text = "serious" };
 			GetWithFilterTest(query, 1);
 		}
 		
@@ -159,6 +160,11 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var repository = new ErrorLogRepository(new FakeDataSourceService());
 			repository.Initialize(string.Empty);
 			return repository;
+		}
+
+		private static DateInterval CreateInterval()
+		{
+			return new DateInterval(new DateTime(2011, 1, 1), new DateTime(2011, 1, 4));
 		}
 	}
 }

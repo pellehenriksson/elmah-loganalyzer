@@ -1,4 +1,5 @@
 ﻿using System;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
@@ -14,7 +15,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypeEnum.Type, new DateTime(2011, 1, 1), new DateTime(2011, 4, 8));
+			var query = new ReportQuery(ReportTypeEnum.Type, CreateInterval());
 
 			// act
 			var result = generator.Create(query);
@@ -28,7 +29,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypeEnum.Source, new DateTime(2011, 1, 1), new DateTime(2011, 4, 8));
+			var query = new ReportQuery(ReportTypeEnum.Source, CreateInterval());
 
 			// act
 			var result = generator.Create(query);
@@ -42,7 +43,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypeEnum.User, new DateTime(2011, 1, 1), new DateTime(2011, 4, 8));
+			var query = new ReportQuery(ReportTypeEnum.User, CreateInterval());
 
 			// act
 			var result = generator.Create(query);
@@ -56,7 +57,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypeEnum.Url, new DateTime(2011, 1, 1), new DateTime(2011, 4, 8));
+			var query = new ReportQuery(ReportTypeEnum.Url, CreateInterval());
 
 			// act
 			var result = generator.Create(query);
@@ -70,7 +71,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypeEnum.Day, new DateTime(2011, 1, 1), new DateTime(2011, 4, 8));
+			var query = new ReportQuery(ReportTypeEnum.Day, CreateInterval());
 
 			// act
 			var result = generator.Create(query);
@@ -85,6 +86,11 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			repository.Initialize(string.Empty);
 
 			return new ReportGenerator(repository);
+		}
+
+		private static DateInterval CreateInterval()
+		{
+			return new DateInterval(new DateTime(2011, 1, 1), new DateTime(2011, 4, 8));
 		}
 	}
 }

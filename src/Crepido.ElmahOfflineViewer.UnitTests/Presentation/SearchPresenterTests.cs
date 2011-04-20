@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
@@ -37,12 +38,13 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		{
 			// arrange
 			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var expectedInterval = new DateInterval(DateTime.Today.AddDays(-7), DateTime.Today);
 
 			// act
 			_view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
-			_view.Verify(x => x.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today), Times.Once());
+			_view.Verify(x => x.SetTimeInterval(It.Is<DateInterval>(y => y.Equals(expectedInterval))), Times.Once());
 		}
 
 		[Test]

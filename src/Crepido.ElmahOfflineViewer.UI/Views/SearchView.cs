@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 using Crepido.ElmahOfflineViewer.Core.Presentation.Abstract;
@@ -23,9 +24,9 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 
 		public event EventHandler<ErrorLogSelectedEventArgs> OnErrorLogSelected;
 
-		public void SetTimeInterval(DateTime startTime, DateTime endTime)
+		public void SetTimeInterval(DateInterval interval)
 		{
-			searchFilterView.SetTimeInterval(startTime, endTime);
+			searchFilterView.SetTimeInterval(interval);
 		}
 
 		public void LoadTypes(List<string> types)

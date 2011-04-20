@@ -17,8 +17,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var result = SearchErrorLogQuery.Create(reportQuery);
 
 			// assert
-			Assert.That(result.StartTime, Is.EqualTo(reportQuery.StartTime));
-			Assert.That(result.EndTime, Is.EqualTo(reportQuery.EndTime));
+			Assert.That(result.Interval, Is.EqualTo(reportQuery.Interval));
 		}
 	}
 }

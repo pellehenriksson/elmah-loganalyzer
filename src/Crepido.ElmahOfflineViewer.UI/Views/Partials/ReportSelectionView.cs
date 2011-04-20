@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 
@@ -15,10 +16,9 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 
 		public event EventHandler<ReportSelectionEventArgs> OnReportSelected;
 
-		public void SetTimeInterval(DateTime startTime, DateTime endTime)
+		public void SetTimeInterval(DateInterval interval)
 		{
-			_startDateTimePicker.Value = startTime;
-			_endDateTimePicker.Value = endTime;
+			dateIntervalView.SetInterval(interval);
 		}
 
 		public void LoadTypes(List<ReportTypeListItem> types)
@@ -47,7 +47,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		private ReportQuery BuildQuery()
 		{
 			var reportType = (ReportTypeListItem)_reportsComboBox.SelectedItem;
-			return new ReportQuery(reportType.ReportType, _startDateTimePicker.Value, _endDateTimePicker.Value);
+			return new ReportQuery(reportType.ReportType, dateIntervalView.GetInterval());
 		}
 	}
 }

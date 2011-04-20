@@ -67,7 +67,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		public IList<ErrorLog> GetWithFilter(SearchErrorLogQuery filter)
 		{
 			var query = from e in _errorLogs
-						where e.Time.Date.IsBetween(filter.StartTime, filter.EndTime)
+						where e.Time.Date.IsBetween(filter.Interval.StartDate, filter.Interval.EndDate)
 			            select e;
 
 			if (filter.Type.HasValue())

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 using Crepido.ElmahOfflineViewer.Core.Presentation.Abstract;
@@ -30,7 +31,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 		private void Initialize()
 		{
 			View.LoadReportTypes(BuildReportTypesList());
-			View.SetTimeInterval(DateTime.Today.AddDays(-7), DateTime.Today);
+			View.SetTimeInterval(new DateInterval(DateTime.Today.AddDays(-7), DateTime.Today));
 		}
 
 		private void ViewOnLoaded(object sender, EventArgs e)

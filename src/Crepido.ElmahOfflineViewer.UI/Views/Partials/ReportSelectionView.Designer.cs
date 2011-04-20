@@ -28,48 +28,11 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label6 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this._endDateTimePicker = new System.Windows.Forms.DateTimePicker();
-			this._startDateTimePicker = new System.Windows.Forms.DateTimePicker();
 			this._reportsComboBox = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this._showButton = new System.Windows.Forms.Button();
+			this.dateIntervalView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.DateIntervalView();
 			this.SuspendLayout();
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(167, 17);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(23, 13);
-			this.label6.TabIndex = 2;
-			this.label6.Text = "To:";
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(16, 16);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(33, 13);
-			this.label3.TabIndex = 0;
-			this.label3.Text = "From:";
-			// 
-			// _endDateTimePicker
-			// 
-			this._endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this._endDateTimePicker.Location = new System.Drawing.Point(196, 17);
-			this._endDateTimePicker.Name = "_endDateTimePicker";
-			this._endDateTimePicker.Size = new System.Drawing.Size(105, 20);
-			this._endDateTimePicker.TabIndex = 3;
-			// 
-			// _startDateTimePicker
-			// 
-			this._startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this._startDateTimePicker.Location = new System.Drawing.Point(55, 16);
-			this._startDateTimePicker.Name = "_startDateTimePicker";
-			this._startDateTimePicker.Size = new System.Drawing.Size(105, 20);
-			this._startDateTimePicker.TabIndex = 1;
 			// 
 			// _reportsComboBox
 			// 
@@ -99,17 +62,21 @@
 			this._showButton.UseVisualStyleBackColor = true;
 			this._showButton.Click += new System.EventHandler(this.ShowButtonClick);
 			// 
+			// dateIntervalView
+			// 
+			this.dateIntervalView.Location = new System.Drawing.Point(14, 12);
+			this.dateIntervalView.Name = "dateIntervalView";
+			this.dateIntervalView.Size = new System.Drawing.Size(291, 25);
+			this.dateIntervalView.TabIndex = 7;
+			// 
 			// ReportSelectionView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.dateIntervalView);
 			this.Controls.Add(this._showButton);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this._reportsComboBox);
-			this.Controls.Add(this.label6);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this._endDateTimePicker);
-			this.Controls.Add(this._startDateTimePicker);
 			this.Name = "ReportSelectionView";
 			this.Size = new System.Drawing.Size(870, 66);
 			this.ResumeLayout(false);
@@ -119,12 +86,9 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.DateTimePicker _endDateTimePicker;
-		private System.Windows.Forms.DateTimePicker _startDateTimePicker;
 		private System.Windows.Forms.ComboBox _reportsComboBox;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button _showButton;
+		private DateIntervalView dateIntervalView;
 	}
 }

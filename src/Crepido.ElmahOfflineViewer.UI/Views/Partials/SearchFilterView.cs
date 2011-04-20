@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 
@@ -30,10 +31,9 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			LoadCombobox(_sourceComboBox, sources);
 		}
 
-		public void SetTimeInterval(DateTime startTime, DateTime endTime)
+		public void SetTimeInterval(DateInterval interval)
 		{
-			_startDateTimePicker.Value = startTime;
-			_endDateTimePicker.Value = endTime;
+			dateIntervalView.SetInterval(interval);
 		}
 
 		private void LoadCombobox(ComboBox comboBox, IEnumerable<string> values)
@@ -57,8 +57,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			       		Source = _sourceComboBox.SelectedItem.ToString(),
 			       		User = _usersComboBox.SelectedItem.ToString(),
 			       		Text = _textTextbox.Text,
-			       		StartTime = _startDateTimePicker.Value,
-			       		EndTime = _endDateTimePicker.Value
+						Interval = dateIntervalView.GetInterval()
 			       	};
 		}
 		

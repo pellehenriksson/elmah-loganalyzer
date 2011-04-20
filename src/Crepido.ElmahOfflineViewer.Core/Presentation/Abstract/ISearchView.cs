@@ -21,6 +21,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation.Abstract
 
 		void LoadUsers(List<string> users);
 
+		void LoadUrls(List<string> urls);
+
 		void DisplaySearchResult(IList<ErrorLog> errorLogs);
 		
 		void DisplayErrorDetails(ErrorLog error);

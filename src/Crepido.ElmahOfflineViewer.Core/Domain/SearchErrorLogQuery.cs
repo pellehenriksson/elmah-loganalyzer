@@ -1,5 +1,4 @@
-﻿using System;
-using Crepido.ElmahOfflineViewer.Core.Common;
+﻿using Crepido.ElmahOfflineViewer.Core.Common;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
@@ -12,6 +11,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		public string User { get; set; }
 		
 		public string Text { get; set; }
+
+		public string Url { get; set; }
 		
 		public DateInterval Interval { get; set; }
 		

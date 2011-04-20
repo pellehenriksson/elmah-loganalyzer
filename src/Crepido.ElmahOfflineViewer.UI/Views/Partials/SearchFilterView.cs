@@ -18,17 +18,22 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		
 		public void LoadTypes(IList<string> types)
 		{
-			LoadCombobox(_typeComboBox, types);
+			LoadCombobox(typeComboBox, types);
 		}
 
 		public void LoadUsers(IList<string> users)
 		{
-			LoadCombobox(_usersComboBox, users);
+			LoadCombobox(usersComboBox, users);
 		}
 		
 		public void LoadSources(IList<string> sources)
 		{
-			LoadCombobox(_sourceComboBox, sources);
+			LoadCombobox(sourceComboBox, sources);
+		}
+
+		public void LoadUrls(IList<string> urls)
+		{
+			LoadCombobox(urlsComboBox, urls);
 		}
 
 		public void SetDateInterval(DateInterval interval)
@@ -53,10 +58,11 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		{
 			return new SearchErrorLogQuery
 			       	{
-			       		Type = _typeComboBox.SelectedItem.ToString(),
-			       		Source = _sourceComboBox.SelectedItem.ToString(),
-			       		User = _usersComboBox.SelectedItem.ToString(),
-			       		Text = _textTextbox.Text,
+			       		Type = typeComboBox.SelectedItem.ToString(),
+			       		Source = sourceComboBox.SelectedItem.ToString(),
+			       		User = usersComboBox.SelectedItem.ToString(),
+			       		Text = textTextbox.Text,
+						Url = urlsComboBox.SelectedItem.ToString(),
 						Interval = dateIntervalView.GetInterval()
 			       	};
 		}

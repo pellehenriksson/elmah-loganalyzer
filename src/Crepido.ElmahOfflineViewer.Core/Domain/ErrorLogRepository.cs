@@ -14,6 +14,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		private readonly UniqueStringList _types = new UniqueStringList();
 		private readonly UniqueStringList _users = new UniqueStringList();
 		private readonly UniqueStringList _sources = new UniqueStringList();
+		private readonly UniqueStringList _urls = new UniqueStringList();
 
 		public ErrorLogRepository(IDataSourceService datasourceService)
 		{
@@ -36,6 +37,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 				_types.Add(error.Type);
 				_users.Add(error.User);
 				_sources.Add(error.Source);
+				_urls.Add(error.CleanUrl);
 			}
 			
 			if (OnInitialized != null)
@@ -63,7 +65,12 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		{
 			return _users.List;
 		}
-		
+
+		public List<string> GetUrls()
+		{
+			return _urls.List;
+		}
+
 		public IList<ErrorLog> GetWithFilter(SearchErrorLogQuery filter)
 		{
 			var query = from e in _errorLogs
@@ -88,6 +95,13 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			{
 				query = from e in query
 						where e.User == filter.User
+						select e;
+			}
+
+			if (filter.Url.HasValue())
+			{
+				query = from e in query
+						where e.CleanUrl == filter.Url
 						select e;
 			}
 

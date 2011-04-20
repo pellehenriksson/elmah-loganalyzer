@@ -43,7 +43,12 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 		{
 			searchFilterView.LoadUsers(users);
 		}
-		
+
+		public void LoadUrls(List<string> urls)
+		{
+			searchFilterView.LoadUrls(urls);
+		}
+
 		public void DisplaySearchResult(IList<ErrorLog> errorLogs)
 		{
 			searchResultTreeView.LoadTree(errorLogs);

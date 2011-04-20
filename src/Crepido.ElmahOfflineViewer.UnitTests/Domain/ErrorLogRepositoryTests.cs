@@ -77,6 +77,19 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		}
 
 		[Test]
+		public void Initialize_LoadUrlsIntoMemory()
+		{
+			// arrange
+			var repository = CreateRepository();
+
+			// act
+			repository.Initialize(FakeLogsDirectory);
+
+			// assert
+			Assert.That(repository.GetUrls().Count, Is.EqualTo(2));
+		}
+
+		[Test]
 		public void OnInitialized_IsRasiedAfterInitialize()
 		{
 			// arrange
@@ -141,6 +154,13 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		{
 			var query = new SearchErrorLogQuery { Interval = CreateInterval(), Text = "serious" };
 			GetWithFilterTest(query, 1);
+		}
+
+		[Test]
+		public void GetWithFilter_StartAndEndTimeAndUrl()
+		{
+			var query = new SearchErrorLogQuery { Interval = CreateInterval(), Url = "some/path" };
+			GetWithFilterTest(query, 2);
 		}
 		
 		private static void GetWithFilterTest(SearchErrorLogQuery query, int expectedResult)

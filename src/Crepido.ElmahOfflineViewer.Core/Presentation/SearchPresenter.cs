@@ -38,6 +38,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 			View.LoadTypes(_repository.GetTypes());
 			View.LoadSources(_repository.GetSources());
 			View.LoadUsers(_repository.GetUsers());
+			View.LoadUrls(_repository.GetUrls());
 		}
 
 		private void InitializeDateInterval()

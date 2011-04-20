@@ -20,5 +20,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain.Abstract
 		List<string> GetSources();
 		
 		List<string> GetUsers();
+
+		List<string> GetUrls();
 	}
 }

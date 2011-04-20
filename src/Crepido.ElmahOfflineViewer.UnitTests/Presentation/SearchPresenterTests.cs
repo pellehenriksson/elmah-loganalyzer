@@ -94,6 +94,22 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			// assert
 			_view.Verify(x => x.LoadUsers(users), Times.Once());
 		}
+
+		[Test]
+		public void ViewOnLoaded_ShouldLoadUrlsInView()
+		{
+			// arrange
+			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+
+			var urls = new List<string>();
+			_repository.Setup(x => x.GetUrls()).Returns(urls);
+
+			// act
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
+
+			// assert
+			_view.Verify(x => x.LoadUrls(urls), Times.Once());
+		}
 		
 		[Test]
 		public void OnFilterApplied_ShouldClearErrorDetails()

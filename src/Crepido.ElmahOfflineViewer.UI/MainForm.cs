@@ -126,7 +126,7 @@ namespace Crepido.ElmahOfflineViewer.UI
 
 		private void RepositoryOnInitialized(object sender, Core.Domain.RepositoryInitializedEventArgs e)
 		{
-			directoryToolStripStatusLabel.Text = string.Format("Current directory is: {0} Total number of logs: {1}", e.Directory, e.TotalNumberOfLogs);
+			directoryToolStripStatusLabel.Text = string.Format("Directory : {0} Logs found: {1}", e.Directory, e.TotalNumberOfLogs);
 		}
 	}
 }

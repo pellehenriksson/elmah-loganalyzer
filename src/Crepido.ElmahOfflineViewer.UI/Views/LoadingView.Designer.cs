@@ -40,7 +40,7 @@
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(766, 417);
 			this.label1.TabIndex = 0;
-			this.label1.Text = "Processing error logs, please wait....";
+			this.label1.Text = "Loading logs, please wait....";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// LoadingView

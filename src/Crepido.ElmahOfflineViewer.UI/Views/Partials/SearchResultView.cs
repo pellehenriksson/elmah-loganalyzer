@@ -71,14 +71,14 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		
 		private void CreateNoResultsNode()
 		{
-			var node = _resultTreeView.Nodes.Add("No error logs found");
+			var node = _resultTreeView.Nodes.Add("No logs found");
 			node.ImageIndex = 2;
 			node.SelectedImageIndex = 2;
 		}
 		
 		private void DisplayNumberOfErrors(int numberOfErrors)
 		{
-			numberOfResultsLabel.Text = string.Format("Errors found: {0}", numberOfErrors);
+			numberOfResultsLabel.Text = string.Format("Logs found: {0}", numberOfErrors);
 		}
 
 		private void ResultTreeViewAfterSelect(object sender, TreeViewEventArgs e)

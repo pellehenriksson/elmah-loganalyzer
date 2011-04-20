@@ -121,6 +121,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			_types.Clear();
 			_users.Clear();
 			_sources.Clear();
+			_urls.Clear();
 		}
 	}
 }

@@ -14,6 +14,19 @@ namespace Crepido.ElmahOfflineViewer.Core.Common
 
 		public DateTime EndDate { get; private set; }
 
+		public static DateInterval Create(DateIntervalSpanEnum span, DateTime today)
+		{
+			switch (span)
+			{
+				case DateIntervalSpanEnum.Week:
+					return new DateInterval(today.AddDays(-7), today);
+				case DateIntervalSpanEnum.Month:
+					return new DateInterval(today.AddMonths(-1), today);
+			}
+
+			return null;
+		}
+		
 		public override bool Equals(object obj)
 		{
 			return base.Equals(obj);

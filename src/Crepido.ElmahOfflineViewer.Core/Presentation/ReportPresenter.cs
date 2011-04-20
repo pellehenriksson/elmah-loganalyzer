@@ -31,7 +31,9 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 		private void Initialize()
 		{
 			View.LoadReportTypes(BuildReportTypesList());
-			View.SetDateInterval(new DateInterval(DateTime.Today.AddDays(-7), DateTime.Today));
+			
+			var interval = DateInterval.Create(DateIntervalSpanEnum.Week, DateTime.Today);
+			View.SetDateInterval(interval);
 		}
 
 		private void ViewOnLoaded(object sender, EventArgs e)

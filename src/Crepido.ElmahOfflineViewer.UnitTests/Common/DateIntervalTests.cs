@@ -54,10 +54,10 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Common
 		public void Equals_OtherInstanceIsNull_IsFalse()
 		{
 			// arrange
-			var interval1 = new DateInterval(new DateTime(1975, 5, 14), new DateTime(2011, 4, 20));
+			var interval = new DateInterval(new DateTime(1975, 5, 14), new DateTime(2011, 4, 20));
 
 			// act
-			var result = interval1.Equals(null);
+			var result = interval.Equals(null);
 
 			// assert
 			Assert.That(result, Is.False);
@@ -67,13 +67,54 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Common
 		public void Equals_OtherIntervalIsSameInstance_IsTrue()
 		{
 			// arrange
-			var interval1 = new DateInterval(new DateTime(1975, 5, 14), new DateTime(2011, 4, 20));
+			var interval = new DateInterval(new DateTime(1975, 5, 14), new DateTime(2011, 4, 20));
 
 			// act
-			var result = interval1.Equals(interval1);
+			var result = interval.Equals(interval);
 
 			// assert
 			Assert.That(result, Is.True);
+		}
+
+		[Test]
+		public void ToString_ReturnsShortDateFormatOfStartAndEndDate()
+		{
+			// arrange
+			var interval = new DateInterval(new DateTime(1975, 5, 14), new DateTime(2011, 4, 20));
+
+			// act
+			var result = interval.ToString();
+			
+			// assert
+			Assert.That(result, Is.EqualTo("1975-05-14 2011-04-20"));
+		}
+
+		[Test]
+		public void Create_Week_StartDateIsSevendDaysBackEndDateIsCurrentDate()
+		{
+			// arrange
+			var today = new DateTime(2011, 5, 17);
+
+			// act
+			var result = DateInterval.Create(DateIntervalSpanEnum.Week, today);
+
+			// assert
+			Assert.That(result.StartDate, Is.EqualTo(new DateTime(2011, 5, 10)));
+			Assert.That(result.EndDate, Is.EqualTo(today));
+		}
+
+		[Test]
+		public void Create_Month_StartDateIsThirthyDaysBackEndDateIsCurrentDate()
+		{
+			// arrange
+			var today = new DateTime(2011, 5, 17);
+
+			// act
+			var result = DateInterval.Create(DateIntervalSpanEnum.Month, today);
+
+			// assert
+			Assert.That(result.StartDate, Is.EqualTo(new DateTime(2011, 4, 17)));
+			Assert.That(result.EndDate, Is.EqualTo(today));
 		}
 	}
 }

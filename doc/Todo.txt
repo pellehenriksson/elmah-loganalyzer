@@ -1,10 +1,8 @@
 Functions
 	-> som animation in loading view
 	-> search filter, checked list boxes, include/exclude flag
-	-> search filter, select urls
 	-> search and report select date interval week month year, custom
 	-> navigate from report to search result
-	-> naming errorlog | log | error
 
 Fixes
 	-> logging 

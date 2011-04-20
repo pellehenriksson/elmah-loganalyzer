@@ -19,6 +19,8 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		{
 			ClearView();
 
+			DisplayNumberOfErrors(errorLogs.Count);
+			
 			if (errorLogs.Count == 0)
 			{
 				CreateNoResultsNode();
@@ -74,6 +76,11 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			node.SelectedImageIndex = 2;
 		}
 		
+		private void DisplayNumberOfErrors(int numberOfErrors)
+		{
+			numberOfResultsLabel.Text = string.Format("Errors found: {0}", numberOfErrors);
+		}
+
 		private void ResultTreeViewAfterSelect(object sender, TreeViewEventArgs e)
 		{
 			var errorLog = e.Node.Tag as ErrorLog;

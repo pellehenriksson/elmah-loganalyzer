@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Todo", "_Todo", "{984CEB5C-ADFC-4A10-B999-6A95D5974A85}"
 	ProjectSection(SolutionItems) = preProject
-		doc\Todo.txt = doc\Todo.txt
+		..\doc\Todo.txt = ..\doc\Todo.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Build", "_Build", "{B9A2272D-595F-4798-8FB9-7ACF04F8F3C0}"

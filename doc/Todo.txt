@@ -1,7 +1,7 @@
 Functions
 	-> search filter, checked list boxes, include/exclude flag
+	-> search filter, select urls
 	-> search and report select date interval week month year, custom
-	-> show number of logs in result tree
 	-> navigate from report to search result
 
 Fixes
@@ -11,6 +11,3 @@ Build
 	-> style cop (compile time check)
 	-> sand castle
 	-> code cover
-	
-Other
-	-> move .sln and related files to to src directory

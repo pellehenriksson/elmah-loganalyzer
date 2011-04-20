@@ -16,7 +16,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 
 		public event EventHandler<ReportSelectionEventArgs> OnReportSelected;
 
-		public void SetTimeInterval(DateInterval interval)
+		public void SetDateInterval(DateInterval interval)
 		{
 			dateIntervalView.SetInterval(interval);
 		}

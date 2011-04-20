@@ -33,15 +33,15 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			}
 		}
 
-		public void SetTimeInterval(DateInterval interval)
+		public void SetDateInterval(DateInterval interval)
 		{
 			if (InvokeRequired)
 			{
-				this.InvokeEx(x => x._selectionView.SetTimeInterval(interval));
+				this.InvokeEx(x => x._selectionView.SetDateInterval(interval));
 			}
 			else
 			{
-				_selectionView.SetTimeInterval(interval);
+				_selectionView.SetDateInterval(interval);
 			}
 		}
 

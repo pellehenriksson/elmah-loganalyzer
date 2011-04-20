@@ -3,8 +3,6 @@ Functions
 	-> search filter, select urls
 	-> search and report select date interval week month year, custom
 	-> navigate from report to search result
-	-> date interval as a separate view
-	-> time in domain should be date instead
 
 Fixes
 	-> logging 

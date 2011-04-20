@@ -13,7 +13,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation.Abstract
 
 		event EventHandler<ErrorLogSelectedEventArgs> OnErrorLogSelected;
 
-		void SetTimeInterval(DateInterval interval);
+		void SetDateInterval(DateInterval interval);
 
 		void LoadTypes(List<string> types);
 

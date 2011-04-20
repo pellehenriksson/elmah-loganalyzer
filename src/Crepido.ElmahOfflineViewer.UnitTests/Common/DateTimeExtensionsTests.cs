@@ -54,5 +54,47 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Common
 			// assert
 			Assert.That(result, Is.True);
 		}
+
+		[Test]
+		public void IsBetween_WithDateInterval_IsBewteen_IsTrue()
+		{
+			// arrange
+			var interval = new DateInterval(new DateTime(2001, 1, 1), new DateTime(2001, 12, 31));
+			var date = new DateTime(2001, 5, 14);
+
+			// act
+			var result = date.IsBetween(interval);
+
+			// assert
+			Assert.That(result, Is.True);
+		}
+
+		[Test]
+		public void IsBetween_WithDateInterval_IsBefore_IsFalse()
+		{
+			// arrange
+			var interval = new DateInterval(new DateTime(2001, 1, 1), new DateTime(2001, 12, 31));
+			var date = new DateTime(1999, 5, 14);
+
+			// act
+			var result = date.IsBetween(interval);
+
+			// assert
+			Assert.That(result, Is.False);
+		}
+
+		[Test]
+		public void IsBewteen_DateIntervalIsNull_Throws()
+		{
+			// arrange
+			var date = new DateTime(1999, 5, 14);
+
+			// act
+			var result = Assert.Throws<ArgumentNullException>(() => date.IsBetween(null));
+
+			// assert
+			Assert.That(result, Is.Not.Null);
+			Assert.That(result.ParamName, Is.EqualTo("interval"));
+		}
 	}
 }

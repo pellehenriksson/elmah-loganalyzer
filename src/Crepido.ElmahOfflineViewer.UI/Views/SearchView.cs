@@ -24,9 +24,9 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 
 		public event EventHandler<ErrorLogSelectedEventArgs> OnErrorLogSelected;
 
-		public void SetTimeInterval(DateInterval interval)
+		public void SetDateInterval(DateInterval interval)
 		{
-			searchFilterView.SetTimeInterval(interval);
+			searchFilterView.SetDateInterval(interval);
 		}
 
 		public void LoadTypes(List<string> types)

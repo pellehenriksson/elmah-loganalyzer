@@ -13,7 +13,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation.Abstract
 
 		void LoadReportTypes(List<ReportTypeListItem> types);
 
-		void SetTimeInterval(DateInterval interval);
+		void SetDateInterval(DateInterval interval);
 
 		void DisplayReport(Report report);
 

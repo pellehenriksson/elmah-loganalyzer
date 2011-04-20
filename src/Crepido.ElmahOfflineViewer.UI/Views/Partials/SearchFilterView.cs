@@ -31,7 +31,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			LoadCombobox(_sourceComboBox, sources);
 		}
 
-		public void SetTimeInterval(DateInterval interval)
+		public void SetDateInterval(DateInterval interval)
 		{
 			dateIntervalView.SetInterval(interval);
 		}

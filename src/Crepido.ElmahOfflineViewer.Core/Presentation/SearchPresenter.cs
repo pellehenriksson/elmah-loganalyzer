@@ -42,7 +42,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 
 		private void InitializeDateInterval()
 		{
-			View.SetTimeInterval(new DateInterval(DateTime.Today.AddDays(-7), DateTime.Today));
+			View.SetDateInterval(new DateInterval(DateTime.Today.AddDays(-7), DateTime.Today));
 		}
 		
 		private void ViewOnLoaded(object sender, EventArgs e)

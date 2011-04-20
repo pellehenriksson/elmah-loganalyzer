@@ -40,7 +40,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
-			view.Verify(x => x.SetTimeInterval(It.Is<DateInterval>(y => y.Equals(expectedInterval))), Times.Once());
+			view.Verify(x => x.SetDateInterval(It.Is<DateInterval>(y => y.Equals(expectedInterval))), Times.Once());
 		}
 		
 		[Test]

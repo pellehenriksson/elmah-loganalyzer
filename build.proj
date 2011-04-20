@@ -4,6 +4,7 @@
 	<PropertyGroup>
 		<Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
 		<OutputDirectory>$(MSBuildProjectDirectory)\_build\</OutputDirectory>
+		<SourceDirectory>$(MSBuildProjectDirectory)\src\</SourceDirectory>
 		<OutputCompileDirectory>$(OutputDirectory)compile\</OutputCompileDirectory>
 		<OutputReportsDirectory>$(OutputDirectory)reports\</OutputReportsDirectory>
 		<OutputAppDirectory>$(OutputDirectory)app\</OutputAppDirectory>
@@ -46,18 +47,18 @@
 		</Time>
 		
 		<FileUpdate 
-				Files="$(MSBuildProjectDirectory)\src\SolutionInfo.cs"
+				Files="$(SourceDirectory)SolutionInfo.cs"
 			    Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)"
 			    ReplacementText="$(Year).$(Month).$(Day).$(Hour)$(Minute)" />
 	</Target>
 	
 	<Target Name="Build" DependsOnTargets="Clean">
-		<MSBuild Targets="ReBuild" Projects="ElmahOfflineViewer.sln" Properties="Configuration=$(Configuration);OutDir=$(OutputCompileDirectory)" />
+		<MSBuild Targets="ReBuild" Projects="$(SourceDirectory)ElmahOfflineViewer.sln" Properties="Configuration=$(Configuration);OutDir=$(OutputCompileDirectory)" />
 	</Target>
 
 	<Target Name="ResetAssemblyVersion">
 		<FileUpdate
-				Files="$(MSBuildProjectDirectory)\src\SolutionInfo.cs"
+				Files="$(SourceDirectory)SolutionInfo.cs"
 			    Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)"
 			    ReplacementText="1.0.0.0" />
 	</Target>

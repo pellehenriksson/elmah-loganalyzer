@@ -1,12 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crepido.ElmahOfflineViewer.UI", "src\Crepido.ElmahOfflineViewer.UI\Crepido.ElmahOfflineViewer.UI.csproj", "{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crepido.ElmahOfflineViewer.Core", "src\Crepido.ElmahOfflineViewer.Core\Crepido.ElmahOfflineViewer.Core.csproj", "{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crepido.ElmahOfflineViewer.UnitTests", "src\Crepido.ElmahOfflineViewer.UnitTests\Crepido.ElmahOfflineViewer.UnitTests.csproj", "{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Todo", "_Todo", "{984CEB5C-ADFC-4A10-B999-6A95D5974A85}"
 	ProjectSection(SolutionItems) = preProject
 		doc\Todo.txt = doc\Todo.txt
@@ -14,17 +8,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Todo", "_Todo", "{984CEB5C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Build", "_Build", "{B9A2272D-595F-4798-8FB9-7ACF04F8F3C0}"
 	ProjectSection(SolutionItems) = preProject
-		build.proj = build.proj
-		src\SolutionInfo.cs = src\SolutionInfo.cs
+		..\build.proj = ..\build.proj
+		SolutionInfo.cs = SolutionInfo.cs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{7DADEC10-E4BE-4C95-9276-714E45774731}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{AF47CE1D-DD9A-44BD-A0C1-0479287FC043}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crepido.ElmahOfflineViewer.IntegrationTests", "src\Crepido.ElmahOfflineViewer.IntegrationTests\Crepido.ElmahOfflineViewer.IntegrationTests.csproj", "{31B1036D-1402-484A-B0D0-DC77FEAF5FDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crepido.ElmahOfflineViewer.Core", "Crepido.ElmahOfflineViewer.Core\Crepido.ElmahOfflineViewer.Core.csproj", "{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crepido.ElmahOfflineViewer.TestHelpers", "src\Crepido.ElmahOfflineViewer.TestHelpers\Crepido.ElmahOfflineViewer.TestHelpers.csproj", "{85191ED2-783E-4599-A0FB-0CB66276A933}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crepido.ElmahOfflineViewer.UI", "Crepido.ElmahOfflineViewer.UI\Crepido.ElmahOfflineViewer.UI.csproj", "{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crepido.ElmahOfflineViewer.IntegrationTests", "Crepido.ElmahOfflineViewer.IntegrationTests\Crepido.ElmahOfflineViewer.IntegrationTests.csproj", "{31B1036D-1402-484A-B0D0-DC77FEAF5FDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crepido.ElmahOfflineViewer.TestHelpers", "Crepido.ElmahOfflineViewer.TestHelpers\Crepido.ElmahOfflineViewer.TestHelpers.csproj", "{85191ED2-783E-4599-A0FB-0CB66276A933}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crepido.ElmahOfflineViewer.UnitTests", "Crepido.ElmahOfflineViewer.UnitTests\Crepido.ElmahOfflineViewer.UnitTests.csproj", "{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,16 +36,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Debug|x86.ActiveCfg = Debug|x86
-		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Debug|x86.Build.0 = Debug|x86
-		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Release|Any CPU.ActiveCfg = Release|x86
-		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Release|Mixed Platforms.Build.0 = Release|x86
-		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Release|x86.ActiveCfg = Release|x86
-		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Release|x86.Build.0 = Release|x86
 		{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -56,16 +46,16 @@ Global
 		{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}.Release|x86.ActiveCfg = Release|Any CPU
-		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Release|x86.ActiveCfg = Release|Any CPU
+		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Debug|x86.ActiveCfg = Debug|x86
+		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Debug|x86.Build.0 = Debug|x86
+		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Release|Any CPU.ActiveCfg = Release|x86
+		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Release|Mixed Platforms.Build.0 = Release|x86
+		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Release|x86.ActiveCfg = Release|x86
+		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56}.Release|x86.Build.0 = Release|x86
 		{31B1036D-1402-484A-B0D0-DC77FEAF5FDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{31B1036D-1402-484A-B0D0-DC77FEAF5FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31B1036D-1402-484A-B0D0-DC77FEAF5FDE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -86,6 +76,16 @@ Global
 		{85191ED2-783E-4599-A0FB-0CB66276A933}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{85191ED2-783E-4599-A0FB-0CB66276A933}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{85191ED2-783E-4599-A0FB-0CB66276A933}.Release|x86.ActiveCfg = Release|Any CPU
+		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,8 +93,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E} = {7DADEC10-E4BE-4C95-9276-714E45774731}
 		{F3A0A7BA-8EC4-42D2-B137-6596F507BB56} = {7DADEC10-E4BE-4C95-9276-714E45774731}
-		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F} = {AF47CE1D-DD9A-44BD-A0C1-0479287FC043}
 		{31B1036D-1402-484A-B0D0-DC77FEAF5FDE} = {AF47CE1D-DD9A-44BD-A0C1-0479287FC043}
 		{85191ED2-783E-4599-A0FB-0CB66276A933} = {AF47CE1D-DD9A-44BD-A0C1-0479287FC043}
+		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F} = {AF47CE1D-DD9A-44BD-A0C1-0479287FC043}
 	EndGlobalSection
 EndGlobal

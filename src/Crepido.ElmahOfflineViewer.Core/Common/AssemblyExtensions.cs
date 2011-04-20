@@ -10,7 +10,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Common
 		{
 			return assembly.GetCustomAttributes(false)
 					.Where(attribute => attribute.GetType() == Type.GetType("System.Diagnostics.DebuggableAttribute"))
-					.Any(attribute => ((System.Diagnostics.DebuggableAttribute) attribute).IsJITTrackingEnabled) ? "Debug" : "Release";
+					.Any(attribute => ((System.Diagnostics.DebuggableAttribute)attribute).IsJITTrackingEnabled) ? "Debug" : "Release";
 		}
 	}
 }

@@ -36,7 +36,7 @@
 			this.selectViewButton = new System.Windows.Forms.ToolStripDropDownButton();
 			this.searchViewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.reportsViewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this._selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
+			this.selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
 			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
 			this.mainPanel = new System.Windows.Forms.Panel();
 			this._mainStatusStrip.SuspendLayout();
@@ -80,7 +80,7 @@
 			// 
 			this._mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectViewButton,
-            this._selectDirectoryButton});
+            this.selectDirectoryButton});
 			this._mainToolStrip.Location = new System.Drawing.Point(0, 0);
 			this._mainToolStrip.Name = "_mainToolStrip";
 			this._mainToolStrip.Size = new System.Drawing.Size(1135, 25);
@@ -112,14 +112,14 @@
 			this.reportsViewMenuItem.Text = "Reports";
 			this.reportsViewMenuItem.Click += new System.EventHandler(this.ReportsViewMenuItemClick);
 			// 
-			// _selectDirectoryButton
+			// selectDirectoryButton
 			// 
-			this._selectDirectoryButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.folder_bug;
-			this._selectDirectoryButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._selectDirectoryButton.Name = "_selectDirectoryButton";
-			this._selectDirectoryButton.Size = new System.Drawing.Size(108, 22);
-			this._selectDirectoryButton.Text = "Select directory";
-			this._selectDirectoryButton.Click += new System.EventHandler(this.SelectDirectoryButtonClick);
+			this.selectDirectoryButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.folder_bug;
+			this.selectDirectoryButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.selectDirectoryButton.Name = "selectDirectoryButton";
+			this.selectDirectoryButton.Size = new System.Drawing.Size(108, 22);
+			this.selectDirectoryButton.Text = "Select directory";
+			this.selectDirectoryButton.Click += new System.EventHandler(this.SelectDirectoryButtonClick);
 			// 
 			// _folderBrowserDialog
 			// 
@@ -159,7 +159,7 @@
 		private System.Windows.Forms.StatusStrip _mainStatusStrip;
 		private System.Windows.Forms.ToolStrip _mainToolStrip;
 		private System.Windows.Forms.ToolStripStatusLabel directoryToolStripStatusLabel;
-		private System.Windows.Forms.ToolStripButton _selectDirectoryButton;
+		private System.Windows.Forms.ToolStripButton selectDirectoryButton;
 		private System.Windows.Forms.FolderBrowserDialog _folderBrowserDialog;
 		private System.Windows.Forms.ToolStripStatusLabel versionStripStatusLabel;
 		private System.Windows.Forms.ToolStripDropDownButton selectViewButton;

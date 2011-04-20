@@ -22,24 +22,38 @@ namespace Crepido.ElmahOfflineViewer.UI
 			_repository = ServiceLocator.Resolve<IErrorLogRepository>();
 			_repository.OnInitialized += RepositoryOnInitialized;
 
+			var directory = ConfigurationManager.AppSettings["ErrorsDirectory"];
+			
+			if (!directory.HasValue())
+			{
+				SetErrorLoadingState();
+				return;
+			}
+
 			HandleLoadingFromDirectory(ConfigurationManager.AppSettings["ErrorsDirectory"]);
 		}
 	
 		private void SetLoadingState()
 		{
 			selectViewButton.Enabled = false;
+			selectDirectoryButton.Enabled = false;
+
 			LoadView(new LoadingView());
 		}
 
 		private void SetReadyForWorkState()
 		{
 			selectViewButton.Enabled = true;
+			selectDirectoryButton.Enabled = true;
+
 			mainPanel.Controls.Clear();
 		}
 		
 		private void SetErrorLoadingState()
 		{
 			selectViewButton.Enabled = false;
+			selectDirectoryButton.Enabled = true;
+			
 			mainPanel.Controls.Clear();
 			directoryToolStripStatusLabel.Text = string.Empty;
 		}
@@ -92,7 +106,14 @@ namespace Crepido.ElmahOfflineViewer.UI
 		
 		private void DisplayError(object ex)
 		{
-			MessageBox.Show(this, ex.ToString(), @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			var error = ex as Exception;
+			
+			if (error == null)
+			{
+				return;
+			}
+
+			MessageBox.Show(this, error.Message, @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
 
 		private void DisplayApplicationVersion()

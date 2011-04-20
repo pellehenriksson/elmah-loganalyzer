@@ -38,36 +38,36 @@
 			// 
 			this._reportsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this._reportsComboBox.FormattingEnabled = true;
-			this._reportsComboBox.Location = new System.Drawing.Point(371, 16);
+			this._reportsComboBox.Location = new System.Drawing.Point(357, 16);
 			this._reportsComboBox.Name = "_reportsComboBox";
 			this._reportsComboBox.Size = new System.Drawing.Size(383, 21);
-			this._reportsComboBox.TabIndex = 5;
+			this._reportsComboBox.TabIndex = 2;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(323, 16);
+			this.label1.Location = new System.Drawing.Point(309, 16);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(42, 13);
-			this.label1.TabIndex = 4;
+			this.label1.TabIndex = 1;
 			this.label1.Text = "Report:";
 			// 
 			// _showButton
 			// 
-			this._showButton.Location = new System.Drawing.Point(770, 17);
+			this._showButton.Location = new System.Drawing.Point(746, 16);
 			this._showButton.Name = "_showButton";
 			this._showButton.Size = new System.Drawing.Size(75, 23);
-			this._showButton.TabIndex = 6;
+			this._showButton.TabIndex = 3;
 			this._showButton.Text = "Show";
 			this._showButton.UseVisualStyleBackColor = true;
 			this._showButton.Click += new System.EventHandler(this.ShowButtonClick);
 			// 
 			// dateIntervalView
 			// 
-			this.dateIntervalView.Location = new System.Drawing.Point(14, 12);
+			this.dateIntervalView.Location = new System.Drawing.Point(3, 3);
 			this.dateIntervalView.Name = "dateIntervalView";
-			this.dateIntervalView.Size = new System.Drawing.Size(291, 25);
-			this.dateIntervalView.TabIndex = 7;
+			this.dateIntervalView.Size = new System.Drawing.Size(291, 66);
+			this.dateIntervalView.TabIndex = 0;
 			// 
 			// ReportSelectionView
 			// 
@@ -78,7 +78,7 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this._reportsComboBox);
 			this.Name = "ReportSelectionView";
-			this.Size = new System.Drawing.Size(870, 66);
+			this.Size = new System.Drawing.Size(828, 49);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

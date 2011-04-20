@@ -37,36 +37,36 @@
 			// toLabel
 			// 
 			this.toLabel.AutoSize = true;
-			this.toLabel.Location = new System.Drawing.Point(152, 4);
+			this.toLabel.Location = new System.Drawing.Point(158, 12);
 			this.toLabel.Name = "toLabel";
 			this.toLabel.Size = new System.Drawing.Size(23, 13);
-			this.toLabel.TabIndex = 6;
+			this.toLabel.TabIndex = 2;
 			this.toLabel.Text = "To:";
 			// 
 			// fromLabel
 			// 
 			this.fromLabel.AutoSize = true;
-			this.fromLabel.Location = new System.Drawing.Point(1, 3);
+			this.fromLabel.Location = new System.Drawing.Point(7, 11);
 			this.fromLabel.Name = "fromLabel";
 			this.fromLabel.Size = new System.Drawing.Size(33, 13);
-			this.fromLabel.TabIndex = 4;
+			this.fromLabel.TabIndex = 0;
 			this.fromLabel.Text = "From:";
 			// 
 			// endDateTimePicker
 			// 
 			this.endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.endDateTimePicker.Location = new System.Drawing.Point(181, 4);
+			this.endDateTimePicker.Location = new System.Drawing.Point(187, 12);
 			this.endDateTimePicker.Name = "endDateTimePicker";
 			this.endDateTimePicker.Size = new System.Drawing.Size(105, 20);
-			this.endDateTimePicker.TabIndex = 7;
+			this.endDateTimePicker.TabIndex = 3;
 			// 
 			// startDateTimePicker
 			// 
 			this.startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.startDateTimePicker.Location = new System.Drawing.Point(40, 3);
+			this.startDateTimePicker.Location = new System.Drawing.Point(46, 11);
 			this.startDateTimePicker.Name = "startDateTimePicker";
 			this.startDateTimePicker.Size = new System.Drawing.Size(105, 20);
-			this.startDateTimePicker.TabIndex = 5;
+			this.startDateTimePicker.TabIndex = 1;
 			// 
 			// DateIntervalView
 			// 
@@ -77,7 +77,7 @@
 			this.Controls.Add(this.endDateTimePicker);
 			this.Controls.Add(this.startDateTimePicker);
 			this.Name = "DateIntervalView";
-			this.Size = new System.Drawing.Size(291, 25);
+			this.Size = new System.Drawing.Size(300, 37);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

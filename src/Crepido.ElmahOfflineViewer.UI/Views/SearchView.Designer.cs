@@ -60,7 +60,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
 			this.splitContainer1.Size = new System.Drawing.Size(881, 607);
-			this.splitContainer1.SplitterDistance = 145;
+			this.splitContainer1.SplitterDistance = 197;
 			this.splitContainer1.TabIndex = 0;
 			// 
 			// searchFilterView
@@ -68,7 +68,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			this.searchFilterView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.searchFilterView.Location = new System.Drawing.Point(0, 0);
 			this.searchFilterView.Name = "searchFilterView";
-			this.searchFilterView.Size = new System.Drawing.Size(881, 145);
+			this.searchFilterView.Size = new System.Drawing.Size(881, 197);
 			this.searchFilterView.TabIndex = 0;
 			// 
 			// splitContainer2
@@ -84,7 +84,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			// splitContainer2.Panel2
 			// 
 			this.splitContainer2.Panel2.Controls.Add(this.searchDetailsView);
-			this.splitContainer2.Size = new System.Drawing.Size(881, 458);
+			this.splitContainer2.Size = new System.Drawing.Size(881, 406);
 			this.splitContainer2.SplitterDistance = 221;
 			this.splitContainer2.TabIndex = 0;
 			// 
@@ -93,7 +93,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			this.searchResultTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.searchResultTreeView.Location = new System.Drawing.Point(0, 0);
 			this.searchResultTreeView.Name = "searchResultTreeView";
-			this.searchResultTreeView.Size = new System.Drawing.Size(221, 458);
+			this.searchResultTreeView.Size = new System.Drawing.Size(221, 406);
 			this.searchResultTreeView.TabIndex = 0;
 			// 
 			// searchDetailsView
@@ -101,7 +101,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			this.searchDetailsView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.searchDetailsView.Location = new System.Drawing.Point(0, 0);
 			this.searchDetailsView.Name = "searchDetailsView";
-			this.searchDetailsView.Size = new System.Drawing.Size(656, 458);
+			this.searchDetailsView.Size = new System.Drawing.Size(656, 406);
 			this.searchDetailsView.TabIndex = 0;
 			// 
 			// SearchView

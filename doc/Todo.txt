@@ -2,6 +2,8 @@ Functions
 	-> search filter, checked list boxes, include/exclude flag
 	-> search and report select date interval week month year, custom
 	-> navigate from report to search result
+	-> handle if no url in app.config
+	-> handle if no valid url
 
 Fixes
 	-> logging 
@@ -10,3 +12,5 @@ Build
 	-> style cop (compile time check)
 	-> sand castle
 	-> code cover
+	-> clean app.config
+	-> set log level error in app.config

@@ -3,6 +3,7 @@ using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
+using Moq;
 using NUnit.Framework;
 
 namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
@@ -78,6 +79,25 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 
 			// assert
 			Assert.That(result.Items.Count, Is.EqualTo(4));
+		}
+
+		[Test]
+		public void RepositoryOnInitialized_RaisesOnDataSourceInitializedEvent()
+		{
+			// arrange
+			var repository = new Mock<IErrorLogRepository>();
+			var generator = new ReportGenerator(repository.Object);
+			var eventWasRaised = false;
+
+			// act
+			generator.OnDataSourceInitialized += delegate
+			                                     	{
+			                                     		eventWasRaised = true;
+			                                     	};
+			repository.Raise(x => x.OnInitialized += null, new RepositoryInitializedEventArgs(string.Empty, 0));
+
+			// assert
+			Assert.That(eventWasRaised, Is.True);
 		}
 		
 		private static IReportGenerator CreateGenerator()

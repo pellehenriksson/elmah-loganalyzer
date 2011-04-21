@@ -2,9 +2,11 @@ Functions
 	-> search filter, checked list boxes, include/exclude flag
 	-> search and report select date interval week month year, custom
 	-> navigate from report to search result
+	-> search filter view is ugly
 
 Fixes
 	-> logging 
+		->
 
 Build
 	-> style cop (compile time check)

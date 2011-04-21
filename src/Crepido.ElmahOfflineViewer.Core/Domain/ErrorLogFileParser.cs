@@ -57,7 +57,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		private void ParseServerVariables()
 		{
 			var variables = _documentRoot.SelectNodes("//serverVariables//item");
-			if (variables == null)
+			if (variables == null || variables.Count == 0)
 			{
 				return;
 			}

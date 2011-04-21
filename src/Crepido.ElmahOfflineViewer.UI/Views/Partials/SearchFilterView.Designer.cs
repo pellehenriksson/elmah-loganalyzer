@@ -64,7 +64,7 @@
 			// 
 			this.usersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.usersComboBox.FormattingEnabled = true;
-			this.usersComboBox.Location = new System.Drawing.Point(416, 73);
+			this.usersComboBox.Location = new System.Drawing.Point(397, 73);
 			this.usersComboBox.Name = "usersComboBox";
 			this.usersComboBox.Size = new System.Drawing.Size(293, 21);
 			this.usersComboBox.TabIndex = 8;
@@ -72,7 +72,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(382, 73);
+			this.label4.Location = new System.Drawing.Point(363, 73);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(32, 13);
 			this.label4.TabIndex = 7;
@@ -80,7 +80,7 @@
 			// 
 			// searchButton
 			// 
-			this.searchButton.Location = new System.Drawing.Point(715, 137);
+			this.searchButton.Location = new System.Drawing.Point(997, 71);
 			this.searchButton.Name = "searchButton";
 			this.searchButton.Size = new System.Drawing.Size(75, 23);
 			this.searchButton.TabIndex = 11;
@@ -90,17 +90,17 @@
 			// 
 			// textTextbox
 			// 
-			this.textTextbox.Location = new System.Drawing.Point(59, 126);
+			this.textTextbox.Location = new System.Drawing.Point(715, 44);
 			this.textTextbox.Multiline = true;
 			this.textTextbox.Name = "textTextbox";
 			this.textTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.textTextbox.Size = new System.Drawing.Size(650, 34);
+			this.textTextbox.Size = new System.Drawing.Size(276, 50);
 			this.textTextbox.TabIndex = 10;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(56, 110);
+			this.label2.Location = new System.Drawing.Point(712, 28);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(157, 13);
 			this.label2.TabIndex = 9;
@@ -127,7 +127,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(382, 47);
+			this.label3.Location = new System.Drawing.Point(363, 47);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(28, 13);
 			this.label3.TabIndex = 3;
@@ -137,7 +137,7 @@
 			// 
 			this.urlsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.urlsComboBox.FormattingEnabled = true;
-			this.urlsComboBox.Location = new System.Drawing.Point(416, 44);
+			this.urlsComboBox.Location = new System.Drawing.Point(397, 44);
 			this.urlsComboBox.Name = "urlsComboBox";
 			this.urlsComboBox.Size = new System.Drawing.Size(293, 21);
 			this.urlsComboBox.TabIndex = 4;
@@ -166,7 +166,7 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.typeComboBox);
 			this.Name = "SearchFilterView";
-			this.Size = new System.Drawing.Size(803, 173);
+			this.Size = new System.Drawing.Size(1085, 110);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

@@ -3,6 +3,7 @@ Functions
 	-> search and report select date interval week month year, custom
 	-> navigate from report to search result
 	-> search filter view is ugly
+	-> exlude non unique files (use error id)
 
 Fixes
 	-> logging 

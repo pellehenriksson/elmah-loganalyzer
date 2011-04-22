@@ -57,7 +57,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 					_log.Error(string.Format("Failed to parse file: {0}", file));
 					continue;
 				}
-
+				
 				result.Add(errorLog);
 			}
 

@@ -14,8 +14,9 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			ServerVariables = new List<ServerVariable>();
 		}
 
-		public ErrorLog(string type, string source, DateTime time, string user, string url) : this()
+		public ErrorLog(Guid id, string type, string source, DateTime time, string user, string url) : this()
 		{
+			ErrorId = id.ToString();
 			Type = type;
 			Source = source;
 			Time = time;

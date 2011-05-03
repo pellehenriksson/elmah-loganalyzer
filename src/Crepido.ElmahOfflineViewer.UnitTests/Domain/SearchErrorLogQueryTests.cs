@@ -1,5 +1,4 @@
-﻿using System;
-using Crepido.ElmahOfflineViewer.Core.Domain;
+﻿using Crepido.ElmahOfflineViewer.Core.Domain;
 using NUnit.Framework;
 
 namespace Crepido.ElmahOfflineViewer.UnitTests.Domain

@@ -78,7 +78,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
 
 			cache.Setup(x => x.Get<ClientInformation>(It.IsAny<string>())).Returns((ClientInformation)null);
 
-			var response = "agent_type=Browser;agent_name=Internet Explorer;agent_version=7.0;os_type=Windows;os_name=Windows XP;os_versionName=;os_versionNumber=;os_producer=;os_producerURL=;linux_distibution=Null;agent_language=;agent_languageTag=;";
+			const string response = "agent_type=Browser;agent_name=Internet Explorer;agent_version=7.0;os_type=Windows;os_name=Windows XP;os_versionName=;os_versionNumber=;os_producer=;os_producerURL=;linux_distibution=Null;agent_language=;agent_languageTag=;";
 			webrequest.Setup(x => x.Request(It.IsAny<string>())).Returns(response);
 
 			var resolver = new UserAgentStringClientInformationResolver(webrequest.Object, cache.Object);

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Abstract;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain

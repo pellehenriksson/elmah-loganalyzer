@@ -47,6 +47,14 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			}
 		}
 
+		private static void CreateErrorLogNode(TreeNode dateFolderNode, ErrorLog errorLog)
+		{
+			var node = dateFolderNode.Nodes.Add(errorLog.Time.ToString());
+			node.Tag = errorLog;
+			node.ImageIndex = 1;
+			node.SelectedImageIndex = 1;
+		}
+
 		private TreeNode GetDateFolderNode(string date)
 		{
 			return _resultTreeView.Nodes.ContainsKey(date) ? _resultTreeView.Nodes[date] : null;
@@ -59,14 +67,6 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			node.SelectedImageIndex = 0;
 
 			return node;
-		}
-
-		private void CreateErrorLogNode(TreeNode dateFolderNode, ErrorLog errorLog)
-		{
-			var node = dateFolderNode.Nodes.Add(errorLog.Time.ToString());
-			node.Tag = errorLog;
-			node.ImageIndex = 1;
-			node.SelectedImageIndex = 1;
 		}
 		
 		private void CreateNoResultsNode()

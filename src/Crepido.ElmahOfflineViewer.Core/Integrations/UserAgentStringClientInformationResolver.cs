@@ -43,11 +43,12 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations
 			var response = _webRequestHelper.Request(url);
 			var values = DictionaryBuilder.BuildFromText(response);
 			
-			result = new ClientInformation();
-
-			result.Platform = values[UserAgentStringParameters.OsType];
-			result.OperatingSystem = values[UserAgentStringParameters.OsName];
-			result.Browser = values[UserAgentStringParameters.AgentName] + " " + values[UserAgentStringParameters.AgentVersion];
+			result = new ClientInformation
+			         	{
+			         		Platform = values[UserAgentStringParameters.OsType],
+			         		OperatingSystem = values[UserAgentStringParameters.OsName],
+			         		Browser = values[UserAgentStringParameters.AgentName] + " " + values[UserAgentStringParameters.AgentVersion]
+			         	};
 
 			_cacheHeper.Set(url, result);
 

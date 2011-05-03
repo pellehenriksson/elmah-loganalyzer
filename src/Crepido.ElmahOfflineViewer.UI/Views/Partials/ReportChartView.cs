@@ -12,7 +12,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		{
 			InitializeComponent();
 		}
-
+		
 		public void DisplayReport(Report report)
 		{
 			_report = report;
@@ -26,6 +26,11 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		{
 			_chart.Titles.Clear();
 			_chart.Series.Clear();
+		}
+
+		private static Font GetFont(float size)
+		{
+			return new Font("Consolas", size, FontStyle.Bold);
 		}
 
 		private void SetTitle()
@@ -46,11 +51,6 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 				serie.Points.AddXY(item.Key, item.Count);
 				serie.IsValueShownAsLabel = true;
 			}
-		}
-		
-		private Font GetFont(float size)
-		{
-			return new Font("Consolas", size, FontStyle.Bold);
 		}
 	}
 }

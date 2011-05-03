@@ -20,7 +20,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		
 		public List<ReportItem> Items { get; private set; }
 
-		public void AddRange(List<ReportItem> items)
+		public void AddRange(IEnumerable<ReportItem> items)
 		{
 			if (items == null)
 			{

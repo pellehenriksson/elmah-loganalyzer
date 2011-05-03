@@ -2,10 +2,10 @@
 {
 	public static class HttpServerVariables
 	{
-		public static readonly string LogonUser = "LOGON_USER";
+		public const string LogonUser = "LOGON_USER";
 
-		public static readonly string Url = "URL";
+		public const string Url = "URL";
 
-		public static readonly string HttpUserAgent = "HTTP_USER_AGENT";
+		public const string HttpUserAgent = "HTTP_USER_AGENT";
 	}
 }

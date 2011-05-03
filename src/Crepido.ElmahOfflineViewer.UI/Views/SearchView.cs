@@ -29,22 +29,22 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			searchFilterView.SetDateInterval(interval);
 		}
 
-		public void LoadTypes(List<string> types)
+		public void LoadTypes(IEnumerable<string> types)
 		{
 			searchFilterView.LoadTypes(types);
 		}
 
-		public void LoadSources(List<string> sources)
+		public void LoadSources(IEnumerable<string> sources)
 		{
 			searchFilterView.LoadSources(sources);
 		}
 
-		public void LoadUsers(List<string> users)
+		public void LoadUsers(IEnumerable<string> users)
 		{
 			searchFilterView.LoadUsers(users);
 		}
 
-		public void LoadUrls(List<string> urls)
+		public void LoadUrls(IEnumerable<string> urls)
 		{
 			searchFilterView.LoadUrls(urls);
 		}

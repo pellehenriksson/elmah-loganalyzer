@@ -11,7 +11,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Common
 		public void GetDescription_HasAttribute_ReturnsAttributeValue()
 		{
 			// arrange
-			var type = TestEnum.ValueWithDescriptionAttribute;
+			const TestEnum type = TestEnum.ValueWithDescriptionAttribute;
 
 			// act
 			var result = type.GetDescription();
@@ -24,7 +24,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Common
 		public void GetDescription_HasNoAttribute_ReturnsEnumValueName()
 		{
 			// arrange
-			var type = TestEnum.ValueWithNoDescriptionAttribute;
+			const TestEnum type = TestEnum.ValueWithNoDescriptionAttribute;
 
 			// act
 			var result = type.GetDescription();

@@ -73,26 +73,26 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		}
 
 		[Test]
-		public void AddServerVariable_NameIsLogon_User_SetAsUser()
+		public void AddServerVariable_NameIsLogon_User_SetAsUserInLowerCase()
 		{
 			// arrange
 			var error = new ErrorLog();
 
 			// act
-			error.AddServerVariable(HttpServerVariables.LogonUser, @"domain\user");
+			error.AddServerVariable(HttpServerVariables.LogonUser, @"DOMAIN\user");
 			
 			// assert
 			Assert.That(error.User, Is.EqualTo(@"domain\user"));
 		}
-
+		
 		[Test]
-		public void AddServerVariable_NameIsURL_SetAsUrl()
+		public void AddServerVariable_NameIsURL_SetAsUrlInLowerCase()
 		{
 			// arrange
 			var error = new ErrorLog();
 
 			// act
-			error.AddServerVariable(HttpServerVariables.Url, @"/some/kind/of/monster");
+			error.AddServerVariable(HttpServerVariables.Url, @"/Some/Kind/Of/Monster");
 
 			// assert
 			Assert.That(error.Url, Is.EqualTo(@"/some/kind/of/monster"));

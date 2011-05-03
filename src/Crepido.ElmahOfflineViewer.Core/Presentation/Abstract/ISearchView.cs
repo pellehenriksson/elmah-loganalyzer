@@ -15,13 +15,13 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation.Abstract
 
 		void SetDateInterval(DateInterval interval);
 
-		void LoadTypes(List<string> types);
+		void LoadTypes(IEnumerable<string> types);
 
-		void LoadSources(List<string> sources);
+		void LoadSources(IEnumerable<string> sources);
 
-		void LoadUsers(List<string> users);
+		void LoadUsers(IEnumerable<string> users);
 
-		void LoadUrls(List<string> urls);
+		void LoadUrls(IEnumerable<string> urls);
 
 		void DisplaySearchResult(IList<ErrorLog> errorLogs);
 		

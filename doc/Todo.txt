@@ -2,17 +2,9 @@ Functions
 	-> search filter, checked list boxes, include/exclude flag
 	-> navigate from report to search result
 	-> exlude non unique files (use error id)
-	
 	-> googla / binga med felmeddelande, exceptions etc
-	-> local http_user_agent parser
-	-> move user id to client information tab
+	-> user id to client information tab
 	-> client machine name to client information tab
-
-Fixes
-	-> logging 
-		-> WebRequest Helper
-		-> ClientInformation Resolver
-		-> urls and user ids in all lowercase
 
 Build
 	-> style cop (compile time check)

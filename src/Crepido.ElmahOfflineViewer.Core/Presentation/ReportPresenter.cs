@@ -20,7 +20,20 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 		}
 
 		public IReportView View { get; private set; }
-		
+
+		private static IEnumerable<ReportTypeListItem> BuildReportTypesList()
+		{
+			var list = new List<ReportTypeListItem>();
+
+			list.Add(new ReportTypeListItem(ReportTypeEnum.Url));
+			list.Add(new ReportTypeListItem(ReportTypeEnum.Type));
+			list.Add(new ReportTypeListItem(ReportTypeEnum.Source));
+			list.Add(new ReportTypeListItem(ReportTypeEnum.Day));
+			list.Add(new ReportTypeListItem(ReportTypeEnum.User));
+
+			return list;
+		}
+
 		private void RegisterEvents()
 		{
 			View.OnLoaded += ViewOnLoaded;
@@ -50,19 +63,6 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 		private void GeneratorOnDataSourceInitialized(object sender, EventArgs e)
 		{
 			View.Clear();
-		}
-
-		private List<ReportTypeListItem> BuildReportTypesList()
-		{
-			var list = new List<ReportTypeListItem>();
-
-			list.Add(new ReportTypeListItem(ReportTypeEnum.Url));
-			list.Add(new ReportTypeListItem(ReportTypeEnum.Type));
-			list.Add(new ReportTypeListItem(ReportTypeEnum.Source));
-			list.Add(new ReportTypeListItem(ReportTypeEnum.Day));
-			list.Add(new ReportTypeListItem(ReportTypeEnum.User));
-
-			return list;
 		}
 	}
 }

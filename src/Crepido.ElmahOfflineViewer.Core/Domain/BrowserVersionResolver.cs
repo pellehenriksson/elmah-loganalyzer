@@ -16,7 +16,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 	{
 		public static string Resolve(string browserName, string httpUserAgent)
 		{
-			if(!httpUserAgent.ContainsText(browserName, true))
+			if (!httpUserAgent.ContainsText(browserName, true))
 			{
 				return "UNKNOWN";
 			}

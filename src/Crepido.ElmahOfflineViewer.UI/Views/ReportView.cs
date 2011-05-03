@@ -21,7 +21,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 
 		public event EventHandler<ReportSelectionEventArgs> OnReportSelected;
 
-		public void LoadReportTypes(List<ReportTypeListItem> types)
+		public void LoadReportTypes(IEnumerable<ReportTypeListItem> types)
 		{
 			if (InvokeRequired)
 			{

@@ -16,22 +16,22 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 
 		public event EventHandler<ErrorLogSearchEventArgs> OnFilterApplied;
 		
-		public void LoadTypes(IList<string> types)
+		public void LoadTypes(IEnumerable<string> types)
 		{
 			LoadCombobox(typeComboBox, types);
 		}
 
-		public void LoadUsers(IList<string> users)
+		public void LoadUsers(IEnumerable<string> users)
 		{
 			LoadCombobox(usersComboBox, users);
 		}
 		
-		public void LoadSources(IList<string> sources)
+		public void LoadSources(IEnumerable<string> sources)
 		{
 			LoadCombobox(sourceComboBox, sources);
 		}
 
-		public void LoadUrls(IList<string> urls)
+		public void LoadUrls(IEnumerable<string> urls)
 		{
 			LoadCombobox(urlsComboBox, urls);
 		}
@@ -41,7 +41,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			dateIntervalView.SetInterval(interval);
 		}
 
-		private void LoadCombobox(ComboBox comboBox, IEnumerable<string> values)
+		private static void LoadCombobox(ComboBox comboBox, IEnumerable<string> values)
 		{
 			comboBox.Items.Clear();
 			comboBox.Items.Add(string.Empty);

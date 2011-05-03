@@ -11,7 +11,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation.Abstract
 
 		event EventHandler<ReportSelectionEventArgs> OnReportSelected;
 
-		void LoadReportTypes(List<ReportTypeListItem> types);
+		void LoadReportTypes(IEnumerable<ReportTypeListItem> types);
 
 		void SetDateInterval(DateInterval interval);
 

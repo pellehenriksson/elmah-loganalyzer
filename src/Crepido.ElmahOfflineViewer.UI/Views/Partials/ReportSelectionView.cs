@@ -21,7 +21,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			dateIntervalView.SetInterval(interval);
 		}
 
-		public void LoadTypes(List<ReportTypeListItem> types)
+		public void LoadTypes(IEnumerable<ReportTypeListItem> types)
 		{
 			_reportsComboBox.Items.Clear();
 

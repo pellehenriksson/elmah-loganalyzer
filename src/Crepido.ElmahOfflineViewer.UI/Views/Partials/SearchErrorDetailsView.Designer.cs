@@ -300,7 +300,7 @@
 			// 
 			this.browserLabel.AutoSize = true;
 			this.browserLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.browserLabel.Location = new System.Drawing.Point(129, 61);
+			this.browserLabel.Location = new System.Drawing.Point(129, 20);
 			this.browserLabel.Name = "browserLabel";
 			this.browserLabel.Size = new System.Drawing.Size(61, 13);
 			this.browserLabel.TabIndex = 7;
@@ -310,7 +310,7 @@
 			// 
 			this.label12.AutoSize = true;
 			this.label12.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label12.Location = new System.Drawing.Point(14, 61);
+			this.label12.Location = new System.Drawing.Point(14, 20);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(55, 13);
 			this.label12.TabIndex = 6;
@@ -320,7 +320,7 @@
 			// 
 			this.operatingSystemLabel.AutoSize = true;
 			this.operatingSystemLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.operatingSystemLabel.Location = new System.Drawing.Point(129, 37);
+			this.operatingSystemLabel.Location = new System.Drawing.Point(129, 42);
 			this.operatingSystemLabel.Name = "operatingSystemLabel";
 			this.operatingSystemLabel.Size = new System.Drawing.Size(115, 13);
 			this.operatingSystemLabel.TabIndex = 5;
@@ -330,7 +330,7 @@
 			// 
 			this.label10.AutoSize = true;
 			this.label10.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label10.Location = new System.Drawing.Point(14, 37);
+			this.label10.Location = new System.Drawing.Point(14, 42);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(109, 13);
 			this.label10.TabIndex = 4;
@@ -340,7 +340,7 @@
 			// 
 			this.platformLabel.AutoSize = true;
 			this.platformLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.platformLabel.Location = new System.Drawing.Point(129, 14);
+			this.platformLabel.Location = new System.Drawing.Point(129, 68);
 			this.platformLabel.Name = "platformLabel";
 			this.platformLabel.Size = new System.Drawing.Size(67, 13);
 			this.platformLabel.TabIndex = 3;
@@ -350,7 +350,7 @@
 			// 
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(14, 14);
+			this.label8.Location = new System.Drawing.Point(14, 68);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(61, 13);
 			this.label8.TabIndex = 2;

@@ -63,12 +63,12 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		{
 			if (name == HttpServerVariables.LogonUser)
 			{
-				User = value;
+				User = value.ToLowerInvariant();
 			}
 
 			if (name == HttpServerVariables.Url)
 			{
-				Url = value;
+				Url = value.ToLowerInvariant();
 				CleanUrl = UrlResolver.Resolve(Url);
 			}
 

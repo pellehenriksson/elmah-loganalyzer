@@ -45,7 +45,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var result = resolver.Resolve(httpUserAgent);
 
 			// assert
-			Assert.That(result.Browser, Is.EqualTo("Internet Explorer"));
+			Assert.That(result.Browser, Is.EqualTo("Internet Explorer 8.0"));
 		}
 
 		[Test]
@@ -59,7 +59,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var result = resolver.Resolve(httpUserAgent);
 
 			// assert
-			Assert.That(result.Browser, Is.EqualTo("FireFox"));
+			Assert.That(result.Browser, Is.EqualTo("FireFox 3.6.16"));
 		}
 
 		[Test]
@@ -73,7 +73,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var result = resolver.Resolve(httpUserAgent);
 
 			// assert
-			Assert.That(result.Browser, Is.EqualTo("Safari"));
+			Assert.That(result.Browser, Is.EqualTo("Safari 533.21.1"));
 		}
 
 		[Test]
@@ -87,7 +87,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var result = resolver.Resolve(httpUserAgent);
 
 			// assert
-			Assert.That(result.Browser, Is.EqualTo("Chrome"));
+			Assert.That(result.Browser, Is.EqualTo("Chrome 10.0.648.204"));
 		}
 
 		[Test]
@@ -101,7 +101,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var result = resolver.Resolve(httpUserAgent);
 
 			// assert
-			Assert.That(result.Browser, Is.EqualTo("Opera"));
+			Assert.That(result.Browser, Is.EqualTo("Opera 7.50"));
 		}
 
 		[Test]
@@ -205,5 +205,4 @@ Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; Rogers Hi-Speed Internet; Cra
 Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2) Opera 7.11 [en] 
 Mozilla/4.0 (compatible; MSIE 6.0; X11; Linux i686) Opera 7.23  [en] 
 Mozilla/4.0 (compatible; MSIE 6.0; X11; Linux i686) Opera 7.50  [en] 
-
 */

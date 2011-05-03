@@ -52,6 +52,7 @@
     <Compile Include="Common\StringExtensionsTests.cs" />
     <Compile Include="Common\UniqueStringListTests.cs" />
     <Compile Include="Common\UrlResolverTests.cs" />
+    <Compile Include="Domain\BrowserVersionResolverTests.cs" />
     <Compile Include="Domain\ClientInformationResolverTests.cs" />
     <Compile Include="Domain\ErrorLogFileParserTests.cs" />
     <Compile Include="Domain\ReportItemTests.cs" />

@@ -27,12 +27,13 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 			SplitHttpUserAgent(httpUserAgent);
 
-			var information = new ClientInformation();
+			var information = new ClientInformation
+			                  	{
+			                  		Browser = ResolveBrowser(),
+			                  		Platform = ResolvePlatform(),
+			                  		OperatingSystem = ResolveOperatingSystem()
+			                  	};
 
-			information.Browser = ResolveBrowser();
-			information.Platform = ResolvePlatform();
-			information.OperatingSystem = ResolveOperatingSystem();
-			
 			return information;
 		}
 
@@ -53,29 +54,34 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		{
 			if (_lastSegment.ContainsText(Constants.Browsers.Chrome, true))
 			{
-				return Constants.Browsers.Chrome;
+				var version = BrowserVersionResolver.Resolve(Constants.Browsers.Chrome, _httpUserAgent);
+				return string.Format("{0} {1}", Constants.Browsers.Chrome, version);
 			}
 
 			if (_lastSegment.ContainsText(Constants.Browsers.FireFox, true))
 			{
-				return Constants.Browsers.FireFox;
+				var version = BrowserVersionResolver.Resolve(Constants.Browsers.FireFox, _httpUserAgent);
+				return string.Format("{0} {1}", Constants.Browsers.FireFox, version);
 			}
 
 			if (_lastSegment.ContainsText(Constants.Browsers.Safari, true))
 			{
-				return Constants.Browsers.Safari;
+				var version = BrowserVersionResolver.Resolve(Constants.Browsers.Safari, _httpUserAgent);
+				return string.Format("{0} {1}", Constants.Browsers.Safari, version);
 			}
 
 			if (_lastSegment.ContainsText(Constants.Browsers.Opera, true))
 			{
-				return Constants.Browsers.Opera;
+				var version = BrowserVersionResolver.Resolve(Constants.Browsers.Opera, _httpUserAgent);
+				return string.Format("{0} {1}", Constants.Browsers.Opera, version);
 			}
 			
 			foreach (var value in _parenthesisSegmentValues)
 			{
 				if (value.ContainsText("MSIE", true))
 				{
-					return Constants.Browsers.InternetExplorer;
+					var version = BrowserVersionResolver.Resolve("MSIE", _httpUserAgent);
+					return string.Format("{0} {1}", Constants.Browsers.InternetExplorer, version);
 				}
 			}
 

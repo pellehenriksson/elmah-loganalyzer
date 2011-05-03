@@ -63,6 +63,7 @@
     <Compile Include="Domain\ReportTests.cs" />
     <Compile Include="Domain\RepositoryInitializedEventArgsTests.cs" />
     <Compile Include="Domain\ClientInformationTests.cs" />
+    <Compile Include="Domain\WindowsOperatingSystemNameResolverTests.cs" />
     <Compile Include="Integrations\UserAgentStringClientInformationResolverTests.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgsTests.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgsTests.cs" />

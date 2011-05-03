@@ -19,8 +19,7 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Integrations
 			var result = resolver.Resolve(httpUserAgent);
 
 			// assert
-			Assert.That(result.Browser, Is.EqualTo("Internet Explorer"));
-			Assert.That(result.BrowserVersion, Is.EqualTo("7.0"));
+			Assert.That(result.Browser, Is.EqualTo("Internet Explorer 7.0"));
 			Assert.That(result.Platform, Is.EqualTo("Windows"));
 			Assert.That(result.OperatingSystem, Is.EqualTo("Windows XP"));
 		}

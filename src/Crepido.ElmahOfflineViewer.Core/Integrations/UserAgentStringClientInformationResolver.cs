@@ -47,8 +47,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations
 
 			result.Platform = values[UserAgentStringParameters.OsType];
 			result.OperatingSystem = values[UserAgentStringParameters.OsName];
-			result.Browser = values[UserAgentStringParameters.AgentName];
-			result.BrowserVersion = values[UserAgentStringParameters.AgentVersion];
+			result.Browser = values[UserAgentStringParameters.AgentName] + " " + values[UserAgentStringParameters.AgentVersion];
 
 			_cacheHeper.Set(url, result);
 

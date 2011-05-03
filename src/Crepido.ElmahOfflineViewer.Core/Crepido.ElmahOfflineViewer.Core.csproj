@@ -74,6 +74,7 @@
     <Compile Include="Domain\RepositoryInitializedEventArgs.cs" />
     <Compile Include="Domain\ClientInformation.cs" />
     <Compile Include="Domain\HttpServerVariables.cs" />
+    <Compile Include="Domain\WindowsOperatingSystemNameResolver.cs" />
     <Compile Include="Infrastructure\Abstract\ICacheHelper.cs" />
     <Compile Include="Infrastructure\Abstract\ILog.cs" />
     <Compile Include="Infrastructure\Abstract\IWebRequestHelper.cs" />

@@ -32,7 +32,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			information.Browser = ResolveBrowser();
 			information.Platform = ResolvePlatform();
 			information.OperatingSystem = ResolveOperatingSystem();
-
+			
 			return information;
 		}
 
@@ -42,9 +42,10 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			var rightParenthesisIndex = _httpUserAgent.IndexOf(')');
 			
 			var parenthesisSegmentLength = rightParenthesisIndex - leftParenthesisIndex;
-
 			_parenthesisSegment = httpUserAgent.Substring(leftParenthesisIndex, parenthesisSegmentLength);
+
 			_parenthesisSegmentValues = _parenthesisSegment.Split(';');
+			
 			_lastSegment = httpUserAgent.Substring(rightParenthesisIndex);
 		}
 
@@ -63,6 +64,11 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			if (_lastSegment.ContainsText(Constants.Browsers.Safari, true))
 			{
 				return Constants.Browsers.Safari;
+			}
+
+			if (_lastSegment.ContainsText(Constants.Browsers.Opera, true))
+			{
+				return Constants.Browsers.Opera;
 			}
 			
 			foreach (var value in _parenthesisSegmentValues)
@@ -88,6 +94,11 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 				return Constants.Platforms.Windows;
 			}
 
+			if (_httpUserAgent.ContainsText(Constants.Platforms.Linux, true))
+			{
+				return Constants.Platforms.Linux;
+			}
+
 			return Constants.Platforms.Unknown;
 		}
 
@@ -95,14 +106,21 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		{
 			foreach (var value in _parenthesisSegmentValues)
 			{
-				if (value.ContainsText("Windows NT", true))
+				var temp = value.Trim();
+
+				if (temp.ContainsText("Windows NT", true))
 				{
-					return value;
+					return WindowsOperatingSystemNameResolver.Resolve(value);
 				}
 
-				if (value.ContainsText("Mac OS", true))
+				if (temp.ContainsText("Mac OS", true))
 				{
-					return value;
+					return temp;
+				}
+
+				if (temp.ContainsText("Linux", true))
+				{
+					return temp;
 				}
 			}
 

@@ -25,7 +25,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 
 			platformLabel.Text = error.ClientInformation.Platform;
 			operatingSystemLabel.Text = error.ClientInformation.OperatingSystem;
-			browserLabel.Text = error.ClientInformation.BrowserDisplayName;
+			browserLabel.Text = error.ClientInformation.Browser;
 			
 			foreach (var variable in error.ServerVariables)
 			{

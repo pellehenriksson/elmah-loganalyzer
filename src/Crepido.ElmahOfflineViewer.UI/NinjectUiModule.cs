@@ -1,6 +1,8 @@
 ﻿using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Abstract;
+using Crepido.ElmahOfflineViewer.Core.Integrations;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 using Crepido.ElmahOfflineViewer.Core.Presentation.Abstract;
 using Crepido.ElmahOfflineViewer.UI.Views;
@@ -23,7 +25,10 @@ namespace Crepido.ElmahOfflineViewer.UI
 			Bind<IReportGenerator>().To<ReportGenerator>();
 			Bind<SearchPresenter>().To<SearchPresenter>();
 			Bind<ReportPresenter>().To<ReportPresenter>();
-			
+			Bind<ICacheHelper>().To<CacheHelper>();
+			Bind<IWebRequestHelper>().To<WebRequestHelper>();
+			Bind<IClientInformationResolver>().To<UserAgentStringClientInformationResolver>();
+
 			Bind<ILog>().ToMethod(GetLogger);
 		}
 

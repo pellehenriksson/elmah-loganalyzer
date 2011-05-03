@@ -102,7 +102,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		
 		private static IReportGenerator CreateGenerator()
 		{
-			var repository = new ErrorLogRepository(new FakeDataSourceService());
+			var repository = new ErrorLogRepository(new FakeDataSourceService(), new FakeClientInformationResolver());
 			repository.Initialize(string.Empty);
 
 			return new ReportGenerator(repository);

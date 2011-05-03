@@ -7,11 +7,16 @@
 			return !string.IsNullOrWhiteSpace(value);
 		}
 
-		public static bool ContainsText(this string value, string part)
+		public static bool ContainsText(this string value, string part, bool caseInsensitive = false)
 		{
 			if (!value.HasValue())
 			{
 				return false;
+			}
+
+			if (caseInsensitive)
+			{
+				return value.ToLowerInvariant().Contains(part.ToLowerInvariant());
 			}
 
 			return value.Contains(part);

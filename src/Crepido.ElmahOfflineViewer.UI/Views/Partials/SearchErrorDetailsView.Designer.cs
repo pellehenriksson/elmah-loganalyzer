@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this._detailsTabControl = new System.Windows.Forms.TabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.errorTabPage = new System.Windows.Forms.TabPage();
 			this._urlLabel = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this._userLabel = new System.Windows.Forms.Label();
@@ -47,22 +47,31 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this._hostLabel = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.clientTabPage = new System.Windows.Forms.TabPage();
+			this.browserLabel = new System.Windows.Forms.Label();
+			this.label12 = new System.Windows.Forms.Label();
+			this.operatingSystemLabel = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.platformLabel = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
+			this.serverVariablesTabPage = new System.Windows.Forms.TabPage();
 			this._servervariablesListView = new System.Windows.Forms.ListView();
 			this._nameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this._valueColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this._detailsTabControl.SuspendLayout();
-			this.tabPage1.SuspendLayout();
+			this.errorTabPage.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this._messageTabPage.SuspendLayout();
 			this._detailsTabPage.SuspendLayout();
-			this.tabPage2.SuspendLayout();
+			this.clientTabPage.SuspendLayout();
+			this.serverVariablesTabPage.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// _detailsTabControl
 			// 
-			this._detailsTabControl.Controls.Add(this.tabPage1);
-			this._detailsTabControl.Controls.Add(this.tabPage2);
+			this._detailsTabControl.Controls.Add(this.errorTabPage);
+			this._detailsTabControl.Controls.Add(this.clientTabPage);
+			this._detailsTabControl.Controls.Add(this.serverVariablesTabPage);
 			this._detailsTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._detailsTabControl.Location = new System.Drawing.Point(0, 0);
 			this._detailsTabControl.Name = "_detailsTabControl";
@@ -70,28 +79,28 @@
 			this._detailsTabControl.Size = new System.Drawing.Size(612, 386);
 			this._detailsTabControl.TabIndex = 0;
 			// 
-			// tabPage1
+			// errorTabPage
 			// 
-			this.tabPage1.Controls.Add(this._urlLabel);
-			this.tabPage1.Controls.Add(this.label6);
-			this.tabPage1.Controls.Add(this._userLabel);
-			this.tabPage1.Controls.Add(this.label4);
-			this.tabPage1.Controls.Add(this.tabControl1);
-			this.tabPage1.Controls.Add(this._sourceLabel);
-			this.tabPage1.Controls.Add(this.label2);
-			this.tabPage1.Controls.Add(this._typeLabel);
-			this.tabPage1.Controls.Add(this.label5);
-			this.tabPage1.Controls.Add(this._timeLabel);
-			this.tabPage1.Controls.Add(this.label3);
-			this.tabPage1.Controls.Add(this._hostLabel);
-			this.tabPage1.Controls.Add(this.label1);
-			this.tabPage1.Location = new System.Drawing.Point(4, 22);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(604, 360);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "Error";
-			this.tabPage1.UseVisualStyleBackColor = true;
+			this.errorTabPage.Controls.Add(this._urlLabel);
+			this.errorTabPage.Controls.Add(this.label6);
+			this.errorTabPage.Controls.Add(this._userLabel);
+			this.errorTabPage.Controls.Add(this.label4);
+			this.errorTabPage.Controls.Add(this.tabControl1);
+			this.errorTabPage.Controls.Add(this._sourceLabel);
+			this.errorTabPage.Controls.Add(this.label2);
+			this.errorTabPage.Controls.Add(this._typeLabel);
+			this.errorTabPage.Controls.Add(this.label5);
+			this.errorTabPage.Controls.Add(this._timeLabel);
+			this.errorTabPage.Controls.Add(this.label3);
+			this.errorTabPage.Controls.Add(this._hostLabel);
+			this.errorTabPage.Controls.Add(this.label1);
+			this.errorTabPage.Location = new System.Drawing.Point(4, 22);
+			this.errorTabPage.Name = "errorTabPage";
+			this.errorTabPage.Padding = new System.Windows.Forms.Padding(3);
+			this.errorTabPage.Size = new System.Drawing.Size(604, 360);
+			this.errorTabPage.TabIndex = 0;
+			this.errorTabPage.Text = "Error";
+			this.errorTabPage.UseVisualStyleBackColor = true;
 			// 
 			// _urlLabel
 			// 
@@ -272,16 +281,91 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Host:";
 			// 
-			// tabPage2
+			// clientTabPage
 			// 
-			this.tabPage2.Controls.Add(this._servervariablesListView);
-			this.tabPage2.Location = new System.Drawing.Point(4, 22);
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(604, 360);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Server Variables";
-			this.tabPage2.UseVisualStyleBackColor = true;
+			this.clientTabPage.Controls.Add(this.browserLabel);
+			this.clientTabPage.Controls.Add(this.label12);
+			this.clientTabPage.Controls.Add(this.operatingSystemLabel);
+			this.clientTabPage.Controls.Add(this.label10);
+			this.clientTabPage.Controls.Add(this.platformLabel);
+			this.clientTabPage.Controls.Add(this.label8);
+			this.clientTabPage.Location = new System.Drawing.Point(4, 22);
+			this.clientTabPage.Name = "clientTabPage";
+			this.clientTabPage.Size = new System.Drawing.Size(604, 360);
+			this.clientTabPage.TabIndex = 2;
+			this.clientTabPage.Text = "Client Information";
+			this.clientTabPage.UseVisualStyleBackColor = true;
+			// 
+			// browserLabel
+			// 
+			this.browserLabel.AutoSize = true;
+			this.browserLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.browserLabel.Location = new System.Drawing.Point(129, 61);
+			this.browserLabel.Name = "browserLabel";
+			this.browserLabel.Size = new System.Drawing.Size(61, 13);
+			this.browserLabel.TabIndex = 7;
+			this.browserLabel.Text = "[Browser]";
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label12.Location = new System.Drawing.Point(14, 61);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(55, 13);
+			this.label12.TabIndex = 6;
+			this.label12.Text = "Browser:";
+			// 
+			// operatingSystemLabel
+			// 
+			this.operatingSystemLabel.AutoSize = true;
+			this.operatingSystemLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.operatingSystemLabel.Location = new System.Drawing.Point(129, 37);
+			this.operatingSystemLabel.Name = "operatingSystemLabel";
+			this.operatingSystemLabel.Size = new System.Drawing.Size(115, 13);
+			this.operatingSystemLabel.TabIndex = 5;
+			this.operatingSystemLabel.Text = "[Operating system]";
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label10.Location = new System.Drawing.Point(14, 37);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(109, 13);
+			this.label10.TabIndex = 4;
+			this.label10.Text = "Operating system:";
+			// 
+			// platformLabel
+			// 
+			this.platformLabel.AutoSize = true;
+			this.platformLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.platformLabel.Location = new System.Drawing.Point(129, 14);
+			this.platformLabel.Name = "platformLabel";
+			this.platformLabel.Size = new System.Drawing.Size(67, 13);
+			this.platformLabel.TabIndex = 3;
+			this.platformLabel.Text = "[Platform]";
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label8.Location = new System.Drawing.Point(14, 14);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(61, 13);
+			this.label8.TabIndex = 2;
+			this.label8.Text = "Platform:";
+			// 
+			// serverVariablesTabPage
+			// 
+			this.serverVariablesTabPage.Controls.Add(this._servervariablesListView);
+			this.serverVariablesTabPage.Location = new System.Drawing.Point(4, 22);
+			this.serverVariablesTabPage.Name = "serverVariablesTabPage";
+			this.serverVariablesTabPage.Padding = new System.Windows.Forms.Padding(3);
+			this.serverVariablesTabPage.Size = new System.Drawing.Size(604, 360);
+			this.serverVariablesTabPage.TabIndex = 1;
+			this.serverVariablesTabPage.Text = "Server Variables";
+			this.serverVariablesTabPage.UseVisualStyleBackColor = true;
 			// 
 			// _servervariablesListView
 			// 
@@ -309,7 +393,7 @@
 			this._valueColumnHeader.Text = "Value";
 			this._valueColumnHeader.Width = 438;
 			// 
-			// ErrorDetailsView
+			// SearchErrorDetailsView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -317,14 +401,16 @@
 			this.Name = "SearchErrorDetailsView";
 			this.Size = new System.Drawing.Size(612, 386);
 			this._detailsTabControl.ResumeLayout(false);
-			this.tabPage1.ResumeLayout(false);
-			this.tabPage1.PerformLayout();
+			this.errorTabPage.ResumeLayout(false);
+			this.errorTabPage.PerformLayout();
 			this.tabControl1.ResumeLayout(false);
 			this._messageTabPage.ResumeLayout(false);
 			this._messageTabPage.PerformLayout();
 			this._detailsTabPage.ResumeLayout(false);
 			this._detailsTabPage.PerformLayout();
-			this.tabPage2.ResumeLayout(false);
+			this.clientTabPage.ResumeLayout(false);
+			this.clientTabPage.PerformLayout();
+			this.serverVariablesTabPage.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -332,14 +418,12 @@
 		#endregion
 
 		private System.Windows.Forms.TabControl _detailsTabControl;
-		private System.Windows.Forms.TabPage tabPage1;
-		private System.Windows.Forms.TabPage tabPage2;
+		private System.Windows.Forms.TabPage errorTabPage;
+		private System.Windows.Forms.TabPage serverVariablesTabPage;
 		private System.Windows.Forms.Label _typeLabel;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label _timeLabel;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label _hostLabel;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label _sourceLabel;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TabControl tabControl1;
@@ -354,5 +438,14 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label _urlLabel;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label _hostLabel;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TabPage clientTabPage;
+		private System.Windows.Forms.Label browserLabel;
+		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.Label operatingSystemLabel;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Label platformLabel;
+		private System.Windows.Forms.Label label8;
 	}
 }

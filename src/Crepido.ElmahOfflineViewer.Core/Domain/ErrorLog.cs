@@ -6,12 +6,10 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
 	public class ErrorLog
 	{
-		private const string ServerVariableUser = "LOGON_USER";
-		private const string ServerVariableUrl = "URL";
-
 		public ErrorLog()
 		{
 			ServerVariables = new List<ServerVariable>();
+			ClientInformation = new ClientInformation();
 		}
 
 		public ErrorLog(Guid id, string type, string source, DateTime time, string user, string url) : this()
@@ -45,19 +43,38 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 		public string CleanUrl { get; private set; }
 
+		public string HttpUserAgent { get; private set; }
+
 		public List<ServerVariable> ServerVariables { get; private set; }
+
+		public ClientInformation ClientInformation { get; private set; }
+
+		public void SetClientInformation(ClientInformation information)
+		{
+			if (information == null)
+			{
+				throw new ArgumentNullException("information");	
+			}
+
+			ClientInformation = information;
+		}
 
 		public void AddServerVariable(string name, string value)
 		{
-			if (name == ServerVariableUser)
+			if (name == HttpServerVariables.LogonUser)
 			{
 				User = value;
 			}
 
-			if (name == ServerVariableUrl)
+			if (name == HttpServerVariables.Url)
 			{
 				Url = value;
 				CleanUrl = UrlResolver.Resolve(Url);
+			}
+
+			if (name == HttpServerVariables.HttpUserAgent)
+			{
+				HttpUserAgent = value;
 			}
 
 			ServerVariables.Add(new ServerVariable(name, value));

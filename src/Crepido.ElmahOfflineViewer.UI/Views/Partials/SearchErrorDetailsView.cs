@@ -23,6 +23,10 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			_messageTextBox.Text = error.Message;
 			_detailsTextBox.Text = error.Details;
 
+			platformLabel.Text = error.ClientInformation.Platform;
+			operatingSystemLabel.Text = error.ClientInformation.OperatingSystem;
+			browserLabel.Text = error.ClientInformation.BrowserDisplayName;
+			
 			foreach (var variable in error.ServerVariables)
 			{
 				var node = _servervariablesListView.Items.Add(variable.Name);
@@ -52,6 +56,10 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			_urlLabel.Text = string.Empty;
 			_messageTextBox.Text = string.Empty;
 			_detailsTextBox.Text = string.Empty;
+
+			platformLabel.Text = string.Empty;
+			operatingSystemLabel.Text = string.Empty;
+			browserLabel.Text = string.Empty;
 
 			_servervariablesListView.Items.Clear();
 		}

@@ -9,6 +9,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 	public class ErrorLogRepository : IErrorLogRepository
 	{
 		private readonly IDataSourceService _datasourceService;
+		private readonly IClientInformationResolver _clientInformationResolver;
 		private readonly List<ErrorLog> _errorLogs = new List<ErrorLog>();
 		
 		private readonly UniqueStringList _types = new UniqueStringList();
@@ -16,9 +17,10 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		private readonly UniqueStringList _sources = new UniqueStringList();
 		private readonly UniqueStringList _urls = new UniqueStringList();
 
-		public ErrorLogRepository(IDataSourceService datasourceService)
+		public ErrorLogRepository(IDataSourceService datasourceService, IClientInformationResolver clientInformationResolver)
 		{
 			_datasourceService = datasourceService;
+			_clientInformationResolver = clientInformationResolver;
 		}
 
 		public event EventHandler<RepositoryInitializedEventArgs> OnInitialized;
@@ -38,6 +40,9 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 				_users.Add(error.User);
 				_sources.Add(error.Source);
 				_urls.Add(error.CleanUrl);
+
+				// fult!
+				error.SetClientInformation(_clientInformationResolver.Resolve(error.HttpUserAgent));
 			}
 			
 			if (OnInitialized != null)

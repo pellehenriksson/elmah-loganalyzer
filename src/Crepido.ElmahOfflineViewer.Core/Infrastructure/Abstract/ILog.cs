@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
+namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Abstract
 {
 	public interface ILog
 	{

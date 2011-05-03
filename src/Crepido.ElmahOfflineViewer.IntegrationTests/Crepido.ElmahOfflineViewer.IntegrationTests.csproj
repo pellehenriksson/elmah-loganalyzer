@@ -43,6 +43,9 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="Domain\DataSourceServiceTests.cs" />
+    <Compile Include="Infrastructure\CacheHelperTests.cs" />
+    <Compile Include="Infrastructure\WebRequestHelperTests.cs" />
+    <Compile Include="Integrations\UserAgentStringClientInformationResolverTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

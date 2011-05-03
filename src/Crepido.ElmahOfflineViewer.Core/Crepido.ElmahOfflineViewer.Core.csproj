@@ -37,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -47,10 +48,15 @@
     <Compile Include="Common\DateInterval.cs" />
     <Compile Include="Common\DateIntervalSpanEnum.cs" />
     <Compile Include="Common\DateTimeExtensions.cs" />
+    <Compile Include="Common\DictionaryBuilder.cs" />
     <Compile Include="Common\EnumExtensions.cs" />
     <Compile Include="Common\StringExtensions.cs" />
     <Compile Include="Common\UniqueStringList.cs" />
     <Compile Include="Common\UrlResolver.cs" />
+    <Compile Include="Constants\Browsers.cs" />
+    <Compile Include="Constants\Platforms.cs" />
+    <Compile Include="Domain\Abstract\IClientInformationResolver.cs" />
+    <Compile Include="Domain\ClientInformationResolver.cs" />
     <Compile Include="Domain\ErrorLog.cs" />
     <Compile Include="Domain\ErrorLogFileParser.cs" />
     <Compile Include="Domain\ReportItem.cs" />
@@ -66,8 +72,16 @@
     <Compile Include="Domain\ReportGenerator.cs" />
     <Compile Include="Domain\ReportQuery.cs" />
     <Compile Include="Domain\RepositoryInitializedEventArgs.cs" />
-    <Compile Include="Infrastructure\ILog.cs" />
+    <Compile Include="Domain\ClientInformation.cs" />
+    <Compile Include="Domain\HttpServerVariables.cs" />
+    <Compile Include="Infrastructure\Abstract\ICacheHelper.cs" />
+    <Compile Include="Infrastructure\Abstract\ILog.cs" />
+    <Compile Include="Infrastructure\Abstract\IWebRequestHelper.cs" />
+    <Compile Include="Infrastructure\CacheHelper.cs" />
     <Compile Include="Infrastructure\Log.cs" />
+    <Compile Include="Infrastructure\WebRequestHelper.cs" />
+    <Compile Include="Integrations\UserAgentStringClientInformationResolver.cs" />
+    <Compile Include="Integrations\UserAgentStringParameters.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgs.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgs.cs" />
     <Compile Include="Presentation\Abstract\ISearchView.cs" />

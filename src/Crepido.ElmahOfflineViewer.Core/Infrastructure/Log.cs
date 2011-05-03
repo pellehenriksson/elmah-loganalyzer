@@ -1,4 +1,5 @@
 ﻿using System;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Abstract;
 using NLog;
 
 namespace Crepido.ElmahOfflineViewer.Core.Infrastructure

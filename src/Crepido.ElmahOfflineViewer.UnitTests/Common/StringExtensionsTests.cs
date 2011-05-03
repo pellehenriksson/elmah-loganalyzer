@@ -95,5 +95,25 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Common
 			// assert
 			Assert.That(value.ContainsText("world"), Is.True);
 		}
+		
+		[Test]
+		public void ContainsText_IsCaseInsensitiveDoesNotContainsText_IsFalse()
+		{
+			// arrange
+			const string value = "hello world";
+
+			// assert
+			Assert.That(value.ContainsText("text", true), Is.False);
+		}
+
+		[Test]
+		public void ContainsText__IsCaseInsensitiveContainsText_IsTrue()
+		{
+			// arrange
+			const string value = "hello WoRLD";
+
+			// assert
+			Assert.That(value.ContainsText("WORLD", true), Is.True);
+		}
 	}
 }

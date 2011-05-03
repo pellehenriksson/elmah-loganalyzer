@@ -1,15 +1,23 @@
 Functions
 	-> search filter, checked list boxes, include/exclude flag
-	-> search and report select date interval week month year, custom
 	-> navigate from report to search result
-	-> search filter view is ugly
 	-> exlude non unique files (use error id)
+	
+	-> googla / binga med felmeddelande, exceptions etc
+	-> local http_user_agent parser
 
+		
 Fixes
 	-> logging 
-		->
+		-> WebRequest Helper
+		-> ClientInformaiton Resolver
 
 Build
 	-> style cop (compile time check)
 	-> sand castle
 	-> code cover
+
+
+http://www.w3schools.com/asp/coll_servervariables.asp
+http://renegademinds.com/TipsTricks/DevelopersCorner/HTTP_USER_AGENT/tabid/84/Default.aspx
+http://useragentstring.com/index.php

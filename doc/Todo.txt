@@ -1,13 +1,12 @@
 Functions
 	-> search filter, checked list boxes, include/exclude flag
 	-> navigate from report to search result
-	-> exlude non unique files (use error id)
 	-> googla / binga med felmeddelande, exceptions etc
-	-> user id to client information tab
-	-> client machine name to client information tab
 
 Build
-	-> style cop (compile time check)
 	-> sand castle
 	-> code cover
+
+Urls
+	-> http://blogs.msdn.com/b/sourceanalysis/archive/2008/05/24/source-analysis-msbuild-integration.aspx
 

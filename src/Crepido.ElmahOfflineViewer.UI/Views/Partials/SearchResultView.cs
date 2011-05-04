@@ -78,7 +78,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		
 		private void DisplayNumberOfErrors(int numberOfErrors)
 		{
-			numberOfResultsLabel.Text = string.Format("Logs found: {0}", numberOfErrors);
+			_numberOfResultsLabel.Text = string.Format("Logs found: {0}", numberOfErrors);
 		}
 
 		private void ResultTreeViewAfterSelect(object sender, TreeViewEventArgs e)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Crepido.ElmahOfflineViewer.Core.Common;
+using Crepido.ElmahOfflineViewer.Core.Constants;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
@@ -45,6 +46,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 		public string HttpUserAgent { get; private set; }
 
+		public string LocalIpAddress { get; private set; }
+
 		public List<ServerVariable> ServerVariables { get; private set; }
 
 		public ClientInformation ClientInformation { get; private set; }
@@ -75,6 +78,11 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			if (name == HttpServerVariables.HttpUserAgent)
 			{
 				HttpUserAgent = value;
+			}
+
+			if (name == HttpServerVariables.LocalAddress)
+			{
+				LocalIpAddress = value;
 			}
 
 			ServerVariables.Add(new ServerVariable(name, value));

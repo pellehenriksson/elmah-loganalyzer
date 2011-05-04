@@ -1,4 +1,5 @@
 ﻿using System;
+using Crepido.ElmahOfflineViewer.Core.Constants;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using NUnit.Framework;
 
@@ -109,6 +110,19 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 
 			// assert
 			Assert.That(error.HttpUserAgent, Is.EqualTo(@"/some/kind/of/monster"));
+		}
+
+		[Test]
+		public void AddServerVariable_NameIsLoacalAddress_SetAsLocalIpAddress()
+		{
+			// arrange
+			var error = new ErrorLog();
+
+			// act
+			error.AddServerVariable(HttpServerVariables.LocalAddress, "127.0.0.1");
+
+			// assert
+			Assert.That(error.LocalIpAddress, Is.EqualTo("127.0.0.1"));
 		}
 	}
 }

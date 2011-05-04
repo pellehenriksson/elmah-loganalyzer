@@ -14,24 +14,26 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		{
 			Clear();
 
-			_hostLabel.Text = error.Host;
 			_timeLabel.Text = error.Time.ToString();
 			_typeLabel.Text = error.Type;
 			_sourceLabel.Text = error.Source;
 			_userLabel.Text = error.User;
-			_urlLabel.Text = error.Url;
 			_messageTextBox.Text = error.Message;
 			_detailsTextBox.Text = error.Details;
 
-			platformLabel.Text = error.ClientInformation.Platform;
-			operatingSystemLabel.Text = error.ClientInformation.OperatingSystem;
-			browserLabel.Text = error.ClientInformation.Browser;
+			_urlLabel.Text = error.Url;
+			_platformLabel.Text = error.ClientInformation.Platform;
+			_operatingSystemLabel.Text = error.ClientInformation.OperatingSystem;
+			_browserLabel.Text = error.ClientInformation.Browser;
+			_ipAddressLabel.Text = error.LocalIpAddress;
 			
 			foreach (var variable in error.ServerVariables)
 			{
 				var node = _servervariablesListView.Items.Add(variable.Name);
 				node.SubItems.Add(new ListViewItem.ListViewSubItem(node, variable.Value));
 			}
+			
+			_servervariablesListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
 		}
 
 		public void ClearView()
@@ -48,18 +50,18 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 
 		private void Clear()
 		{
-			_hostLabel.Text = string.Empty;
 			_timeLabel.Text = string.Empty;
 			_typeLabel.Text = string.Empty;
 			_sourceLabel.Text = string.Empty;
 			_userLabel.Text = string.Empty;
-			_urlLabel.Text = string.Empty;
 			_messageTextBox.Text = string.Empty;
 			_detailsTextBox.Text = string.Empty;
 
-			platformLabel.Text = string.Empty;
-			operatingSystemLabel.Text = string.Empty;
-			browserLabel.Text = string.Empty;
+			_urlLabel.Text = string.Empty;
+			_platformLabel.Text = string.Empty;
+			_operatingSystemLabel.Text = string.Empty;
+			_browserLabel.Text = string.Empty;
+			_ipAddressLabel.Text = string.Empty;
 
 			_servervariablesListView.Items.Clear();
 		}

@@ -61,7 +61,7 @@
 		<FileUpdate
 				Files="$(SourceDirectory)SolutionInfo.cs"
 			    Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)"
-			    ReplacementText="1.0.0.0" />
+			    ReplacementText="0.0.0.0" />
 	</Target>
 			
 	<Target Name="Test">

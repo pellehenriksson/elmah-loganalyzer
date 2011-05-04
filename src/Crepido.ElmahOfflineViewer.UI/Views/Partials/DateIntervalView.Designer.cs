@@ -28,54 +28,54 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.toLabel = new System.Windows.Forms.Label();
-			this.fromLabel = new System.Windows.Forms.Label();
-			this.endDateTimePicker = new System.Windows.Forms.DateTimePicker();
-			this.startDateTimePicker = new System.Windows.Forms.DateTimePicker();
+			this._toLabel = new System.Windows.Forms.Label();
+			this._fromLabel = new System.Windows.Forms.Label();
+			this._endDateTimePicker = new System.Windows.Forms.DateTimePicker();
+			this._startDateTimePicker = new System.Windows.Forms.DateTimePicker();
 			this.SuspendLayout();
 			// 
-			// toLabel
+			// _toLabel
 			// 
-			this.toLabel.AutoSize = true;
-			this.toLabel.Location = new System.Drawing.Point(158, 12);
-			this.toLabel.Name = "toLabel";
-			this.toLabel.Size = new System.Drawing.Size(23, 13);
-			this.toLabel.TabIndex = 2;
-			this.toLabel.Text = "To:";
+			this._toLabel.AutoSize = true;
+			this._toLabel.Location = new System.Drawing.Point(158, 12);
+			this._toLabel.Name = "_toLabel";
+			this._toLabel.Size = new System.Drawing.Size(23, 13);
+			this._toLabel.TabIndex = 2;
+			this._toLabel.Text = "To:";
 			// 
-			// fromLabel
+			// _fromLabel
 			// 
-			this.fromLabel.AutoSize = true;
-			this.fromLabel.Location = new System.Drawing.Point(7, 11);
-			this.fromLabel.Name = "fromLabel";
-			this.fromLabel.Size = new System.Drawing.Size(33, 13);
-			this.fromLabel.TabIndex = 0;
-			this.fromLabel.Text = "From:";
+			this._fromLabel.AutoSize = true;
+			this._fromLabel.Location = new System.Drawing.Point(7, 11);
+			this._fromLabel.Name = "_fromLabel";
+			this._fromLabel.Size = new System.Drawing.Size(33, 13);
+			this._fromLabel.TabIndex = 0;
+			this._fromLabel.Text = "From:";
 			// 
-			// endDateTimePicker
+			// _endDateTimePicker
 			// 
-			this.endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.endDateTimePicker.Location = new System.Drawing.Point(187, 12);
-			this.endDateTimePicker.Name = "endDateTimePicker";
-			this.endDateTimePicker.Size = new System.Drawing.Size(105, 20);
-			this.endDateTimePicker.TabIndex = 3;
+			this._endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this._endDateTimePicker.Location = new System.Drawing.Point(187, 12);
+			this._endDateTimePicker.Name = "_endDateTimePicker";
+			this._endDateTimePicker.Size = new System.Drawing.Size(105, 20);
+			this._endDateTimePicker.TabIndex = 3;
 			// 
-			// startDateTimePicker
+			// _startDateTimePicker
 			// 
-			this.startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.startDateTimePicker.Location = new System.Drawing.Point(46, 11);
-			this.startDateTimePicker.Name = "startDateTimePicker";
-			this.startDateTimePicker.Size = new System.Drawing.Size(105, 20);
-			this.startDateTimePicker.TabIndex = 1;
+			this._startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this._startDateTimePicker.Location = new System.Drawing.Point(46, 11);
+			this._startDateTimePicker.Name = "_startDateTimePicker";
+			this._startDateTimePicker.Size = new System.Drawing.Size(105, 20);
+			this._startDateTimePicker.TabIndex = 1;
 			// 
 			// DateIntervalView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.toLabel);
-			this.Controls.Add(this.fromLabel);
-			this.Controls.Add(this.endDateTimePicker);
-			this.Controls.Add(this.startDateTimePicker);
+			this.Controls.Add(this._toLabel);
+			this.Controls.Add(this._fromLabel);
+			this.Controls.Add(this._endDateTimePicker);
+			this.Controls.Add(this._startDateTimePicker);
 			this.Name = "DateIntervalView";
 			this.Size = new System.Drawing.Size(300, 37);
 			this.ResumeLayout(false);
@@ -85,9 +85,9 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label toLabel;
-		private System.Windows.Forms.Label fromLabel;
-		private System.Windows.Forms.DateTimePicker endDateTimePicker;
-		private System.Windows.Forms.DateTimePicker startDateTimePicker;
+		private System.Windows.Forms.Label _toLabel;
+		private System.Windows.Forms.Label _fromLabel;
+		private System.Windows.Forms.DateTimePicker _endDateTimePicker;
+		private System.Windows.Forms.DateTimePicker _startDateTimePicker;
 	}
 }

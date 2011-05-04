@@ -32,14 +32,14 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.usersComboBox = new System.Windows.Forms.ComboBox();
 			this.label4 = new System.Windows.Forms.Label();
-			this.searchButton = new System.Windows.Forms.Button();
-			this.textTextbox = new System.Windows.Forms.TextBox();
+			this._searchButton = new System.Windows.Forms.Button();
+			this._textTextbox = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.typeComboBox = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.urlsComboBox = new System.Windows.Forms.ComboBox();
-			this.dateIntervalView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.DateIntervalView();
+			this._dateIntervalView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.DateIntervalView();
 			this.SuspendLayout();
 			// 
 			// sourceComboBox
@@ -78,24 +78,24 @@
 			this.label4.TabIndex = 7;
 			this.label4.Text = "User:";
 			// 
-			// searchButton
+			// _searchButton
 			// 
-			this.searchButton.Location = new System.Drawing.Point(997, 71);
-			this.searchButton.Name = "searchButton";
-			this.searchButton.Size = new System.Drawing.Size(75, 23);
-			this.searchButton.TabIndex = 11;
-			this.searchButton.Text = "Search";
-			this.searchButton.UseVisualStyleBackColor = true;
-			this.searchButton.Click += new System.EventHandler(this.SearchButtonClick);
+			this._searchButton.Location = new System.Drawing.Point(997, 71);
+			this._searchButton.Name = "_searchButton";
+			this._searchButton.Size = new System.Drawing.Size(75, 23);
+			this._searchButton.TabIndex = 11;
+			this._searchButton.Text = "Search";
+			this._searchButton.UseVisualStyleBackColor = true;
+			this._searchButton.Click += new System.EventHandler(this.SearchButtonClick);
 			// 
-			// textTextbox
+			// _textTextbox
 			// 
-			this.textTextbox.Location = new System.Drawing.Point(715, 44);
-			this.textTextbox.Multiline = true;
-			this.textTextbox.Name = "textTextbox";
-			this.textTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.textTextbox.Size = new System.Drawing.Size(276, 50);
-			this.textTextbox.TabIndex = 10;
+			this._textTextbox.Location = new System.Drawing.Point(715, 44);
+			this._textTextbox.Multiline = true;
+			this._textTextbox.Name = "_textTextbox";
+			this._textTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+			this._textTextbox.Size = new System.Drawing.Size(276, 50);
+			this._textTextbox.TabIndex = 10;
 			// 
 			// label2
 			// 
@@ -142,26 +142,26 @@
 			this.urlsComboBox.Size = new System.Drawing.Size(293, 21);
 			this.urlsComboBox.TabIndex = 4;
 			// 
-			// dateIntervalView
+			// _dateIntervalView
 			// 
-			this.dateIntervalView.Location = new System.Drawing.Point(59, 0);
-			this.dateIntervalView.Name = "dateIntervalView";
-			this.dateIntervalView.Size = new System.Drawing.Size(305, 41);
-			this.dateIntervalView.TabIndex = 0;
+			this._dateIntervalView.Location = new System.Drawing.Point(59, 0);
+			this._dateIntervalView.Name = "_dateIntervalView";
+			this._dateIntervalView.Size = new System.Drawing.Size(305, 41);
+			this._dateIntervalView.TabIndex = 0;
 			// 
 			// SearchFilterView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.dateIntervalView);
+			this.Controls.Add(this._dateIntervalView);
 			this.Controls.Add(this.urlsComboBox);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.sourceComboBox);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.usersComboBox);
 			this.Controls.Add(this.label4);
-			this.Controls.Add(this.searchButton);
-			this.Controls.Add(this.textTextbox);
+			this.Controls.Add(this._searchButton);
+			this.Controls.Add(this._textTextbox);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.typeComboBox);
@@ -178,14 +178,14 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.ComboBox usersComboBox;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Button searchButton;
-		private System.Windows.Forms.TextBox textTextbox;
+		private System.Windows.Forms.Button _searchButton;
+		private System.Windows.Forms.TextBox _textTextbox;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ComboBox typeComboBox;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.ComboBox urlsComboBox;
-		private DateIntervalView dateIntervalView;
+		private DateIntervalView _dateIntervalView;
 
 
 

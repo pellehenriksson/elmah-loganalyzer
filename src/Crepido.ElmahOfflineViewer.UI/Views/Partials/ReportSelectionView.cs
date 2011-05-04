@@ -18,7 +18,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 
 		public void SetDateInterval(DateInterval interval)
 		{
-			dateIntervalView.SetInterval(interval);
+			_dateIntervalView.SetInterval(interval);
 		}
 
 		public void LoadTypes(IEnumerable<ReportTypeListItem> types)
@@ -47,7 +47,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		private ReportQuery BuildQuery()
 		{
 			var reportType = (ReportTypeListItem)_reportsComboBox.SelectedItem;
-			return new ReportQuery(reportType.ReportType, dateIntervalView.GetInterval());
+			return new ReportQuery(reportType.ReportType, _dateIntervalView.GetInterval());
 		}
 	}
 }

@@ -12,13 +12,13 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 
 		public void SetInterval(DateInterval interval)
 		{
-			startDateTimePicker.Value = interval.StartDate;
-			endDateTimePicker.Value = interval.EndDate;
+			_startDateTimePicker.Value = interval.StartDate;
+			_endDateTimePicker.Value = interval.EndDate;
 		}
 		
 		public DateInterval GetInterval()
 		{
-			return new DateInterval(startDateTimePicker.Value, endDateTimePicker.Value);
+			return new DateInterval(_startDateTimePicker.Value, _endDateTimePicker.Value);
 		}
 	}
 }

@@ -33,7 +33,7 @@
 			this._resultTreeView = new System.Windows.Forms.TreeView();
 			this._treeImageList = new System.Windows.Forms.ImageList(this.components);
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.numberOfResultsLabel = new System.Windows.Forms.Label();
+			this._numberOfResultsLabel = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -61,7 +61,7 @@
 			// 
 			this.tableLayoutPanel1.ColumnCount = 1;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.Controls.Add(this.numberOfResultsLabel, 0, 1);
+			this.tableLayoutPanel1.Controls.Add(this._numberOfResultsLabel, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this._resultTreeView, 0, 0);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -72,15 +72,15 @@
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(217, 314);
 			this.tableLayoutPanel1.TabIndex = 2;
 			// 
-			// numberOfResultsLabel
+			// _numberOfResultsLabel
 			// 
-			this.numberOfResultsLabel.AutoSize = true;
-			this.numberOfResultsLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.numberOfResultsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.numberOfResultsLabel.Location = new System.Drawing.Point(3, 294);
-			this.numberOfResultsLabel.Name = "numberOfResultsLabel";
-			this.numberOfResultsLabel.Size = new System.Drawing.Size(211, 20);
-			this.numberOfResultsLabel.TabIndex = 3;
+			this._numberOfResultsLabel.AutoSize = true;
+			this._numberOfResultsLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this._numberOfResultsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._numberOfResultsLabel.Location = new System.Drawing.Point(3, 294);
+			this._numberOfResultsLabel.Name = "_numberOfResultsLabel";
+			this._numberOfResultsLabel.Size = new System.Drawing.Size(211, 20);
+			this._numberOfResultsLabel.TabIndex = 3;
 			// 
 			// SearchResultView
 			// 
@@ -100,6 +100,6 @@
 		private System.Windows.Forms.TreeView _resultTreeView;
 		private System.Windows.Forms.ImageList _treeImageList;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-		private System.Windows.Forms.Label numberOfResultsLabel;
+		private System.Windows.Forms.Label _numberOfResultsLabel;
 	}
 }

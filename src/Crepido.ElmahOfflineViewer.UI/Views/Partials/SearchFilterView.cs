@@ -38,7 +38,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 
 		public void SetDateInterval(DateInterval interval)
 		{
-			dateIntervalView.SetInterval(interval);
+			_dateIntervalView.SetInterval(interval);
 		}
 
 		private static void LoadCombobox(ComboBox comboBox, IEnumerable<string> values)
@@ -61,9 +61,9 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			       		Type = typeComboBox.SelectedItem.ToString(),
 			       		Source = sourceComboBox.SelectedItem.ToString(),
 			       		User = usersComboBox.SelectedItem.ToString(),
-			       		Text = textTextbox.Text,
+			       		Text = _textTextbox.Text,
 						Url = urlsComboBox.SelectedItem.ToString(),
-						Interval = dateIntervalView.GetInterval()
+						Interval = _dateIntervalView.GetInterval()
 			       	};
 		}
 		

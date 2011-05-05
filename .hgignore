@@ -32,3 +32,4 @@ _ReSharper*/
 *.[Pp]ublish.xml
 _build
 _localbuild
+_password.*

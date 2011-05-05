@@ -13,7 +13,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		private readonly List<ErrorLog> _errorLogs = new List<ErrorLog>();
 		
 		private readonly UniqueStringList _types = new UniqueStringList();
-		private readonly UniqueStringList _users = new UniqueStringList();
+		private readonly UniqueStringList _users = new UniqueStringList(true);
 		private readonly UniqueStringList _sources = new UniqueStringList();
 		private readonly UniqueStringList _urls = new UniqueStringList();
 
@@ -75,48 +75,25 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		{
 			return _urls.List;
 		}
-
+		
 		public IList<ErrorLog> GetWithFilter(SearchErrorLogQuery filter)
 		{
 			var query = from e in _errorLogs
-						where e.Time.Date.IsBetween(filter.Interval)
-			            select e;
-
-			if (filter.Type.HasValue())
-			{
-				query = from e in query
-				        where e.Type == filter.Type
-				        select e;
-			}
-
-			if (filter.Source.HasValue())
-			{
-				query = from e in query
-						where e.Source == filter.Source
-						select e;
-			}
-
-			if (filter.User.HasValue())
-			{
-				query = from e in query
-						where e.User == filter.User
-						select e;
-			}
-
-			if (filter.Url.HasValue())
-			{
-				query = from e in query
-						where e.CleanUrl == filter.Url
-						select e;
-			}
+			        where 
+						e.Time.Date.IsBetween(filter.Interval) &&
+						filter.Types.Items.InvertedContains(e.Type, filter.Types.IncludeItems) &&
+						filter.Sources.Items.InvertedContains(e.Source, filter.Sources.IncludeItems) &&
+						filter.Urls.Items.InvertedContains(e.CleanUrl, filter.Urls.IncludeItems) &&
+						filter.Users.Items.InvertedContains(e.User, filter.Users.IncludeItems)
+			        select e;
 
 			if (filter.Text.HasValue())
 			{
 				query = from e in query
-						where e.Message.ContainsText(filter.Text) || e.Details.ContainsText(filter.Text)
+						where e.Message.ContainsText(filter.Text, true) || e.Details.ContainsText(filter.Text, true)
 						select e;
 			}
-			
+
 			return query.OrderByDescending(x => x.Time).ToList();
 		}
 		

@@ -7,18 +7,39 @@ namespace Crepido.ElmahOfflineViewer.Core.Common
 	{
 		private readonly SortedList<string, string> _list = new SortedList<string, string>();
 
+		public UniqueStringList()
+		{
+		}
+
+		public UniqueStringList(bool allowEmptyValue)
+		{
+			AllowEmptyValue = allowEmptyValue;
+		}
+		
 		public List<string> List
 		{
 			get { return _list.Values.ToList(); }
 		}
+		
+		private bool AllowEmptyValue { get; set; }
 
 		public void Add(string item)
 		{
-			if (!item.HasValue())
+			if (AllowEmptyValue)
 			{
-				return;
+				if (item == null)
+				{
+					return;
+				}
 			}
-
+			else
+			{
+				if (!item.HasValue())
+				{
+					return;
+				}
+			}
+			
 			if (_list.ContainsKey(item))
 			{
 				return;

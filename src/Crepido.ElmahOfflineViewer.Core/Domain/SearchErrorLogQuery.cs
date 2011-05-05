@@ -4,18 +4,26 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
 	public class SearchErrorLogQuery
 	{
-		public string Type { get; set; }
+		public SearchErrorLogQuery()
+		{
+			Types = new SearchErrorLogQueryParameter();
+			Sources = new SearchErrorLogQueryParameter();
+			Users = new SearchErrorLogQueryParameter();
+			Urls  = new SearchErrorLogQueryParameter();
+		}
 
-		public string Source { get; set; }
-		
-		public string User { get; set; }
-		
-		public string Text { get; set; }
+		public SearchErrorLogQueryParameter Types { get; set; }
 
-		public string Url { get; set; }
+		public SearchErrorLogQueryParameter Sources { get; set; }
+
+		public SearchErrorLogQueryParameter Users { get; set; }
+
+		public SearchErrorLogQueryParameter Urls { get; set; }
 		
 		public DateInterval Interval { get; set; }
-		
+
+		public string Text { get; set; }
+
 		public static SearchErrorLogQuery Create(ReportQuery reportQuery)
 		{
 			var query = new SearchErrorLogQuery { Interval = reportQuery.Interval };

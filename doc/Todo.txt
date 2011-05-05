@@ -1,7 +1,8 @@
 Functions
-	-> search filter, checked list boxes, include/exclude flag
 	-> navigate from report to search result
 	-> googla / binga med felmeddelande, exceptions etc
+	-> yellow screen of death tab
+	-> tests for search with filter
 
 Build
 	-> sand castle

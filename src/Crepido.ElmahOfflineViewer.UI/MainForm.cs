@@ -22,7 +22,7 @@ namespace Crepido.ElmahOfflineViewer.UI
 			_repository = ServiceLocator.Resolve<IErrorLogRepository>();
 			_repository.OnInitialized += RepositoryOnInitialized;
 
-			var directory = ConfigurationManager.AppSettings["ErrorsDirectory"];
+			var directory = ConfigurationManager.AppSettings["LogsDirectory"];
 			
 			if (!directory.HasValue())
 			{
@@ -30,7 +30,7 @@ namespace Crepido.ElmahOfflineViewer.UI
 				return;
 			}
 
-			HandleLoadingFromDirectory(ConfigurationManager.AppSettings["ErrorsDirectory"]);
+			HandleLoadingFromDirectory(directory);
 		}
 	
 		private void SetLoadingState()

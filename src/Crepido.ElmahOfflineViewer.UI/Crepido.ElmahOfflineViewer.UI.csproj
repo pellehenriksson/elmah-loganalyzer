@@ -14,7 +14,7 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-	<StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -103,6 +103,12 @@
     <Compile Include="Views\Partials\SearchResultView.Designer.cs">
       <DependentUpon>SearchResultView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Partials\SelectorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Partials\SelectorView.Designer.cs">
+      <DependentUpon>SelectorView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SearchView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     <EmbeddedResource Include="Views\Partials\SearchResultView.resx">
       <DependentUpon>SearchResultView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Partials\SelectorView.resx">
+      <DependentUpon>SelectorView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SearchView.resx">
       <DependentUpon>SearchView.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,7 +203,7 @@
     <None Include="Resources\loading.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.4\Microsoft.StyleCop.targets" /> 
+  <Import Project="$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.4\Microsoft.StyleCop.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

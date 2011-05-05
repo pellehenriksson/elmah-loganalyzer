@@ -3,7 +3,7 @@
 	
 	<PropertyGroup>
 		<Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
-		<OutputDirectory>$(MSBuildProjectDirectory)\_build\</OutputDirectory>
+		<OutputDirectory>$(MSBuildProjectDirectory)\_localbuild\</OutputDirectory>
 		<SourceDirectory>$(MSBuildProjectDirectory)\src\</SourceDirectory>
 		<OutputCompileDirectory>$(OutputDirectory)compile\</OutputCompileDirectory>
 		<OutputReportsDirectory>$(OutputDirectory)reports\</OutputReportsDirectory>

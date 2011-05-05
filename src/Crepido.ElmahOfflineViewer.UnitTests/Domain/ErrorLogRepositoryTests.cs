@@ -128,6 +128,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			GetWithFilterTest(query, 3);
 		}
 
+		/*
 		[Test]
 		public void GetWithFilter_StartAndEndTimeAndType()
 		{
@@ -162,7 +163,8 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var query = new SearchErrorLogQuery { Interval = CreateInterval(), Url = "some/path" };
 			GetWithFilterTest(query, 2);
 		}
-		
+		*/
+
 		private static void GetWithFilterTest(SearchErrorLogQuery query, int expectedResult)
 		{
 			// arrange

@@ -120,5 +120,18 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Common
 			// assert
 			Assert.That(list.List.Count, Is.EqualTo(0));
 		}
+
+		[Test]
+		public void Add_ListAllowsEmptyValue_AddsValue()
+		{
+			// arrange
+			var list = new UniqueStringList(true);
+
+			// act
+			list.Add(string.Empty);
+
+			// assert
+			Assert.That(list.List.Count, Is.EqualTo(1));
+		}
 	}
 }

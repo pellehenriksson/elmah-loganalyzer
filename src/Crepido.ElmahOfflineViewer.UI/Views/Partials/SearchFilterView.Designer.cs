@@ -28,59 +28,41 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.sourceComboBox = new System.Windows.Forms.ComboBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.usersComboBox = new System.Windows.Forms.ComboBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this._searchButton = new System.Windows.Forms.Button();
 			this._textTextbox = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.typeComboBox = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.urlsComboBox = new System.Windows.Forms.ComboBox();
+			this._usersSelectorView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SelectorView();
+			this._urlsSelectorView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SelectorView();
+			this._sourcesSelectorView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SelectorView();
+			this._typeSelectorView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SelectorView();
 			this._dateIntervalView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.DateIntervalView();
 			this.SuspendLayout();
-			// 
-			// sourceComboBox
-			// 
-			this.sourceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.sourceComboBox.FormattingEnabled = true;
-			this.sourceComboBox.Location = new System.Drawing.Point(59, 73);
-			this.sourceComboBox.Name = "sourceComboBox";
-			this.sourceComboBox.Size = new System.Drawing.Size(293, 21);
-			this.sourceComboBox.TabIndex = 6;
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(9, 73);
+			this.label5.Location = new System.Drawing.Point(242, 5);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(44, 13);
-			this.label5.TabIndex = 5;
-			this.label5.Text = "Source:";
-			// 
-			// usersComboBox
-			// 
-			this.usersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.usersComboBox.FormattingEnabled = true;
-			this.usersComboBox.Location = new System.Drawing.Point(397, 73);
-			this.usersComboBox.Name = "usersComboBox";
-			this.usersComboBox.Size = new System.Drawing.Size(293, 21);
-			this.usersComboBox.TabIndex = 8;
+			this.label5.Size = new System.Drawing.Size(41, 13);
+			this.label5.TabIndex = 2;
+			this.label5.Text = "Source";
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(363, 73);
+			this.label4.Location = new System.Drawing.Point(715, 5);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(32, 13);
-			this.label4.TabIndex = 7;
-			this.label4.Text = "User:";
+			this.label4.Size = new System.Drawing.Size(34, 13);
+			this.label4.TabIndex = 6;
+			this.label4.Text = "Users";
 			// 
 			// _searchButton
 			// 
-			this._searchButton.Location = new System.Drawing.Point(997, 71);
+			this._searchButton.Location = new System.Drawing.Point(1162, 180);
 			this._searchButton.Name = "_searchButton";
 			this._searchButton.Size = new System.Drawing.Size(75, 23);
 			this._searchButton.TabIndex = 11;
@@ -90,17 +72,17 @@
 			// 
 			// _textTextbox
 			// 
-			this._textTextbox.Location = new System.Drawing.Point(715, 44);
+			this._textTextbox.Location = new System.Drawing.Point(954, 65);
 			this._textTextbox.Multiline = true;
 			this._textTextbox.Name = "_textTextbox";
 			this._textTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this._textTextbox.Size = new System.Drawing.Size(276, 50);
+			this._textTextbox.Size = new System.Drawing.Size(283, 109);
 			this._textTextbox.TabIndex = 10;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(712, 28);
+			this.label2.Location = new System.Drawing.Point(951, 49);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(157, 13);
 			this.label2.TabIndex = 9;
@@ -109,64 +91,74 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(9, 47);
+			this.label1.Location = new System.Drawing.Point(12, 5);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(34, 13);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Type:";
-			// 
-			// typeComboBox
-			// 
-			this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.typeComboBox.FormattingEnabled = true;
-			this.typeComboBox.Location = new System.Drawing.Point(59, 47);
-			this.typeComboBox.Name = "typeComboBox";
-			this.typeComboBox.Size = new System.Drawing.Size(293, 21);
-			this.typeComboBox.TabIndex = 2;
+			this.label1.Size = new System.Drawing.Size(31, 13);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "Type";
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(363, 47);
+			this.label3.Location = new System.Drawing.Point(477, 5);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(28, 13);
-			this.label3.TabIndex = 3;
-			this.label3.Text = "Urls:";
+			this.label3.Size = new System.Drawing.Size(25, 13);
+			this.label3.TabIndex = 4;
+			this.label3.Text = "Urls";
 			// 
-			// urlsComboBox
+			// _usersSelectorView
 			// 
-			this.urlsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.urlsComboBox.FormattingEnabled = true;
-			this.urlsComboBox.Location = new System.Drawing.Point(397, 44);
-			this.urlsComboBox.Name = "urlsComboBox";
-			this.urlsComboBox.Size = new System.Drawing.Size(293, 21);
-			this.urlsComboBox.TabIndex = 4;
+			this._usersSelectorView.Location = new System.Drawing.Point(712, 21);
+			this._usersSelectorView.Name = "_usersSelectorView";
+			this._usersSelectorView.Size = new System.Drawing.Size(236, 182);
+			this._usersSelectorView.TabIndex = 7;
+			// 
+			// _urlsSelectorView
+			// 
+			this._urlsSelectorView.Location = new System.Drawing.Point(476, 21);
+			this._urlsSelectorView.Name = "_urlsSelectorView";
+			this._urlsSelectorView.Size = new System.Drawing.Size(238, 182);
+			this._urlsSelectorView.TabIndex = 5;
+			// 
+			// _sourcesSelectorView
+			// 
+			this._sourcesSelectorView.Location = new System.Drawing.Point(242, 21);
+			this._sourcesSelectorView.Name = "_sourcesSelectorView";
+			this._sourcesSelectorView.Size = new System.Drawing.Size(238, 182);
+			this._sourcesSelectorView.TabIndex = 3;
+			// 
+			// _typeSelectorView
+			// 
+			this._typeSelectorView.Location = new System.Drawing.Point(6, 21);
+			this._typeSelectorView.Name = "_typeSelectorView";
+			this._typeSelectorView.Size = new System.Drawing.Size(245, 182);
+			this._typeSelectorView.TabIndex = 1;
 			// 
 			// _dateIntervalView
 			// 
-			this._dateIntervalView.Location = new System.Drawing.Point(59, 0);
+			this._dateIntervalView.Location = new System.Drawing.Point(940, 5);
 			this._dateIntervalView.Name = "_dateIntervalView";
 			this._dateIntervalView.Size = new System.Drawing.Size(305, 41);
-			this._dateIntervalView.TabIndex = 0;
+			this._dateIntervalView.TabIndex = 8;
 			// 
 			// SearchFilterView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this._usersSelectorView);
+			this.Controls.Add(this._urlsSelectorView);
+			this.Controls.Add(this._sourcesSelectorView);
+			this.Controls.Add(this._typeSelectorView);
 			this.Controls.Add(this._dateIntervalView);
-			this.Controls.Add(this.urlsComboBox);
 			this.Controls.Add(this.label3);
-			this.Controls.Add(this.sourceComboBox);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.usersComboBox);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this._searchButton);
 			this.Controls.Add(this._textTextbox);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.typeComboBox);
 			this.Name = "SearchFilterView";
-			this.Size = new System.Drawing.Size(1085, 110);
+			this.Size = new System.Drawing.Size(1244, 213);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -174,18 +166,18 @@
 
 		#endregion
 
-		private System.Windows.Forms.ComboBox sourceComboBox;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.ComboBox usersComboBox;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button _searchButton;
 		private System.Windows.Forms.TextBox _textTextbox;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ComboBox typeComboBox;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.ComboBox urlsComboBox;
 		private DateIntervalView _dateIntervalView;
+		private SelectorView _typeSelectorView;
+		private SelectorView _sourcesSelectorView;
+		private SelectorView _urlsSelectorView;
+		private SelectorView _usersSelectorView;
 
 
 

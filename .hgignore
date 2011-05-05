@@ -31,4 +31,4 @@ _ReSharper*/
 [Bb]uild[Ll]og.*
 *.[Pp]ublish.xml
 _build
-
+_localbuild

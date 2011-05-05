@@ -79,7 +79,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.searchDetailsView);
 			this.splitContainer1.Size = new System.Drawing.Size(1242, 387);
-			this.splitContainer1.SplitterDistance = 330;
+			this.splitContainer1.SplitterDistance = 234;
 			this.splitContainer1.TabIndex = 1;
 			// 
 			// searchResultView
@@ -87,7 +87,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			this.searchResultView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.searchResultView.Location = new System.Drawing.Point(0, 0);
 			this.searchResultView.Name = "searchResultView";
-			this.searchResultView.Size = new System.Drawing.Size(330, 387);
+			this.searchResultView.Size = new System.Drawing.Size(234, 387);
 			this.searchResultView.TabIndex = 0;
 			// 
 			// searchDetailsView
@@ -95,7 +95,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			this.searchDetailsView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.searchDetailsView.Location = new System.Drawing.Point(0, 0);
 			this.searchDetailsView.Name = "searchDetailsView";
-			this.searchDetailsView.Size = new System.Drawing.Size(908, 387);
+			this.searchDetailsView.Size = new System.Drawing.Size(1004, 387);
 			this.searchDetailsView.TabIndex = 0;
 			// 
 			// SearchView

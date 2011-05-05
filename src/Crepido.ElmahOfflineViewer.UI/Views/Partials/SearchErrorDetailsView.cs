@@ -33,6 +33,8 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			LoadListView(_cookiesListView, error.Cookies);
 			LoadListView(_formsListView, error.FormValues);
 			LoadListView(_querystringListView, error.QuerystringValues);
+
+			_browser.DocumentText = new YellowScreenOfDeathBuilder(error).GetHtml();
 		}
 
 		public void ClearView()

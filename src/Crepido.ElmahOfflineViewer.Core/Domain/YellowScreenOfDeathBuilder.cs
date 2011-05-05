@@ -1,4 +1,6 @@
-﻿namespace Crepido.ElmahOfflineViewer.Core.Domain
+﻿using System;
+
+namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
 	public class YellowScreenOfDeathBuilder
 	{
@@ -8,17 +10,22 @@
 		}
 
 		public ErrorLog ErrorLog { get; private set; }
+		
+		public string GetHtml()
+		{
+			var template = Templates.YellowScreenOfDeath;
 
-		public string Application { get; private set; }
+			template = template.Replace("@APPLICATION@", "/");
+			template = template.Replace("@MESSAGE@", System.Net.WebUtility.HtmlEncode(ErrorLog.Message));
+			template = template.Replace("@TYPE@", System.Net.WebUtility.HtmlEncode(ErrorLog.Type));
+			template = template.Replace("@STACK_TRACE@", ConvertLineBreaks(ErrorLog.Details));
 
-		public string ExceptionDetails { get; private set; }
+			return template;
+		}
 
-		public string SourceError { get; private set; }
-
-		public string SourceFile { get; private set; }
-
-		public string StackTrace { get; private set; }
-
-		public string VersionInformation { get; private set; }
+		private static string ConvertLineBreaks(string text)
+		{
+			return text.Replace(Environment.NewLine, "</br>");
+		}
 	}
 }

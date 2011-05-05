@@ -3,6 +3,7 @@ Functions
 	-> googla / binga med felmeddelande, exceptions etc
 	-> yellow screen of death tab
 	-> tests for search with filter
+	-> hide tab if no values in details tabs
 
 Build
 	-> sand castle

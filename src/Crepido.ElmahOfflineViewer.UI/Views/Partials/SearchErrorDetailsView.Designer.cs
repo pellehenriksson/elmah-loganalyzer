@@ -32,7 +32,7 @@
 			this.errorTabPage = new System.Windows.Forms.TabPage();
 			this._urlLabel = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this._errorTabControl = new System.Windows.Forms.TabControl();
 			this._messageTabPage = new System.Windows.Forms.TabPage();
 			this._messageTextBox = new System.Windows.Forms.TextBox();
 			this._detailsTabPage = new System.Windows.Forms.TabPage();
@@ -54,32 +54,35 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this._platformLabel = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
+			this.formsTabPage = new System.Windows.Forms.TabPage();
+			this._formsListView = new System.Windows.Forms.ListView();
+			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.cookiesTabPage = new System.Windows.Forms.TabPage();
+			this._cookiesListView = new System.Windows.Forms.ListView();
+			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.queryStringTabPage = new System.Windows.Forms.TabPage();
+			this._querystringListView = new System.Windows.Forms.ListView();
+			this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.serverVariablesTabPage = new System.Windows.Forms.TabPage();
 			this._servervariablesListView = new System.Windows.Forms.ListView();
 			this._nameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this._valueColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.cookiesTabPage = new System.Windows.Forms.TabPage();
-			this.formsTabPage = new System.Windows.Forms.TabPage();
-			this.queryStringTabPage = new System.Windows.Forms.TabPage();
-			this._formsListView = new System.Windows.Forms.ListView();
-			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this._cookiesListView = new System.Windows.Forms.ListView();
-			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this._querystringListView = new System.Windows.Forms.ListView();
-			this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this._yellowScreenOfDeathTabPage = new System.Windows.Forms.TabPage();
+			this._browser = new System.Windows.Forms.WebBrowser();
 			this._detailsTabControl.SuspendLayout();
 			this.errorTabPage.SuspendLayout();
-			this.tabControl1.SuspendLayout();
+			this._errorTabControl.SuspendLayout();
 			this._messageTabPage.SuspendLayout();
 			this._detailsTabPage.SuspendLayout();
 			this.clientTabPage.SuspendLayout();
-			this.serverVariablesTabPage.SuspendLayout();
-			this.cookiesTabPage.SuspendLayout();
 			this.formsTabPage.SuspendLayout();
+			this.cookiesTabPage.SuspendLayout();
 			this.queryStringTabPage.SuspendLayout();
+			this.serverVariablesTabPage.SuspendLayout();
+			this._yellowScreenOfDeathTabPage.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// _detailsTabControl
@@ -101,7 +104,7 @@
 			// 
 			this.errorTabPage.Controls.Add(this._urlLabel);
 			this.errorTabPage.Controls.Add(this.label6);
-			this.errorTabPage.Controls.Add(this.tabControl1);
+			this.errorTabPage.Controls.Add(this._errorTabControl);
 			this.errorTabPage.Controls.Add(this._sourceLabel);
 			this.errorTabPage.Controls.Add(this.label2);
 			this.errorTabPage.Controls.Add(this._typeLabel);
@@ -136,18 +139,19 @@
 			this.label6.TabIndex = 10;
 			this.label6.Text = "Url:";
 			// 
-			// tabControl1
+			// _errorTabControl
 			// 
-			this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this._errorTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.tabControl1.Controls.Add(this._messageTabPage);
-			this.tabControl1.Controls.Add(this._detailsTabPage);
-			this.tabControl1.Location = new System.Drawing.Point(6, 115);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(592, 239);
-			this.tabControl1.TabIndex = 8;
+			this._errorTabControl.Controls.Add(this._messageTabPage);
+			this._errorTabControl.Controls.Add(this._detailsTabPage);
+			this._errorTabControl.Controls.Add(this._yellowScreenOfDeathTabPage);
+			this._errorTabControl.Location = new System.Drawing.Point(6, 113);
+			this._errorTabControl.Name = "_errorTabControl";
+			this._errorTabControl.SelectedIndex = 0;
+			this._errorTabControl.Size = new System.Drawing.Size(592, 241);
+			this._errorTabControl.TabIndex = 8;
 			// 
 			// _messageTabPage
 			// 
@@ -155,7 +159,7 @@
 			this._messageTabPage.Location = new System.Drawing.Point(4, 22);
 			this._messageTabPage.Name = "_messageTabPage";
 			this._messageTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this._messageTabPage.Size = new System.Drawing.Size(584, 213);
+			this._messageTabPage.Size = new System.Drawing.Size(584, 215);
 			this._messageTabPage.TabIndex = 0;
 			this._messageTabPage.Text = "Message";
 			this._messageTabPage.UseVisualStyleBackColor = true;
@@ -169,7 +173,7 @@
 			this._messageTextBox.Name = "_messageTextBox";
 			this._messageTextBox.ReadOnly = true;
 			this._messageTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this._messageTextBox.Size = new System.Drawing.Size(578, 207);
+			this._messageTextBox.Size = new System.Drawing.Size(578, 209);
 			this._messageTextBox.TabIndex = 0;
 			// 
 			// _detailsTabPage
@@ -178,7 +182,7 @@
 			this._detailsTabPage.Location = new System.Drawing.Point(4, 22);
 			this._detailsTabPage.Name = "_detailsTabPage";
 			this._detailsTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this._detailsTabPage.Size = new System.Drawing.Size(584, 213);
+			this._detailsTabPage.Size = new System.Drawing.Size(584, 215);
 			this._detailsTabPage.TabIndex = 1;
 			this._detailsTabPage.Text = "Details";
 			this._detailsTabPage.UseVisualStyleBackColor = true;
@@ -192,7 +196,7 @@
 			this._detailsTextBox.Name = "_detailsTextBox";
 			this._detailsTextBox.ReadOnly = true;
 			this._detailsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this._detailsTextBox.Size = new System.Drawing.Size(578, 207);
+			this._detailsTextBox.Size = new System.Drawing.Size(578, 209);
 			this._detailsTextBox.TabIndex = 0;
 			// 
 			// _sourceLabel
@@ -374,6 +378,114 @@
 			this.label8.TabIndex = 2;
 			this.label8.Text = "Platform:";
 			// 
+			// formsTabPage
+			// 
+			this.formsTabPage.Controls.Add(this._formsListView);
+			this.formsTabPage.Location = new System.Drawing.Point(4, 22);
+			this.formsTabPage.Name = "formsTabPage";
+			this.formsTabPage.Size = new System.Drawing.Size(604, 360);
+			this.formsTabPage.TabIndex = 4;
+			this.formsTabPage.Text = "Forms";
+			this.formsTabPage.UseVisualStyleBackColor = true;
+			// 
+			// _formsListView
+			// 
+			this._formsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+			this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._formsListView.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._formsListView.FullRowSelect = true;
+			this._formsListView.GridLines = true;
+			this._formsListView.Location = new System.Drawing.Point(0, 0);
+			this._formsListView.Name = "_formsListView";
+			this._formsListView.Size = new System.Drawing.Size(604, 360);
+			this._formsListView.TabIndex = 1;
+			this._formsListView.UseCompatibleStateImageBehavior = false;
+			this._formsListView.View = System.Windows.Forms.View.Details;
+			// 
+			// columnHeader1
+			// 
+			this.columnHeader1.Text = "Name";
+			this.columnHeader1.Width = 134;
+			// 
+			// columnHeader2
+			// 
+			this.columnHeader2.Text = "Value";
+			this.columnHeader2.Width = 438;
+			// 
+			// cookiesTabPage
+			// 
+			this.cookiesTabPage.Controls.Add(this._cookiesListView);
+			this.cookiesTabPage.Location = new System.Drawing.Point(4, 22);
+			this.cookiesTabPage.Name = "cookiesTabPage";
+			this.cookiesTabPage.Size = new System.Drawing.Size(604, 360);
+			this.cookiesTabPage.TabIndex = 3;
+			this.cookiesTabPage.Text = "Cookies";
+			this.cookiesTabPage.UseVisualStyleBackColor = true;
+			// 
+			// _cookiesListView
+			// 
+			this._cookiesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4});
+			this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._cookiesListView.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._cookiesListView.FullRowSelect = true;
+			this._cookiesListView.GridLines = true;
+			this._cookiesListView.Location = new System.Drawing.Point(0, 0);
+			this._cookiesListView.Name = "_cookiesListView";
+			this._cookiesListView.Size = new System.Drawing.Size(604, 360);
+			this._cookiesListView.TabIndex = 1;
+			this._cookiesListView.UseCompatibleStateImageBehavior = false;
+			this._cookiesListView.View = System.Windows.Forms.View.Details;
+			// 
+			// columnHeader3
+			// 
+			this.columnHeader3.Text = "Name";
+			this.columnHeader3.Width = 134;
+			// 
+			// columnHeader4
+			// 
+			this.columnHeader4.Text = "Value";
+			this.columnHeader4.Width = 438;
+			// 
+			// queryStringTabPage
+			// 
+			this.queryStringTabPage.Controls.Add(this._querystringListView);
+			this.queryStringTabPage.Location = new System.Drawing.Point(4, 22);
+			this.queryStringTabPage.Name = "queryStringTabPage";
+			this.queryStringTabPage.Size = new System.Drawing.Size(604, 360);
+			this.queryStringTabPage.TabIndex = 5;
+			this.queryStringTabPage.Text = "Querystring";
+			this.queryStringTabPage.UseVisualStyleBackColor = true;
+			// 
+			// _querystringListView
+			// 
+			this._querystringListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader6});
+			this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._querystringListView.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._querystringListView.FullRowSelect = true;
+			this._querystringListView.GridLines = true;
+			this._querystringListView.Location = new System.Drawing.Point(0, 0);
+			this._querystringListView.Name = "_querystringListView";
+			this._querystringListView.Size = new System.Drawing.Size(604, 360);
+			this._querystringListView.TabIndex = 1;
+			this._querystringListView.UseCompatibleStateImageBehavior = false;
+			this._querystringListView.View = System.Windows.Forms.View.Details;
+			// 
+			// columnHeader5
+			// 
+			this.columnHeader5.Text = "Name";
+			this.columnHeader5.Width = 134;
+			// 
+			// columnHeader6
+			// 
+			this.columnHeader6.Text = "Value";
+			this.columnHeader6.Width = 438;
+			// 
 			// serverVariablesTabPage
 			// 
 			this.serverVariablesTabPage.Controls.Add(this._servervariablesListView);
@@ -411,113 +523,25 @@
 			this._valueColumnHeader.Text = "Value";
 			this._valueColumnHeader.Width = 438;
 			// 
-			// cookiesTabPage
+			// _yellowScreenOfDeathTabPage
 			// 
-			this.cookiesTabPage.Controls.Add(this._cookiesListView);
-			this.cookiesTabPage.Location = new System.Drawing.Point(4, 22);
-			this.cookiesTabPage.Name = "cookiesTabPage";
-			this.cookiesTabPage.Size = new System.Drawing.Size(604, 360);
-			this.cookiesTabPage.TabIndex = 3;
-			this.cookiesTabPage.Text = "Cookies";
-			this.cookiesTabPage.UseVisualStyleBackColor = true;
+			this._yellowScreenOfDeathTabPage.Controls.Add(this._browser);
+			this._yellowScreenOfDeathTabPage.Location = new System.Drawing.Point(4, 22);
+			this._yellowScreenOfDeathTabPage.Name = "_yellowScreenOfDeathTabPage";
+			this._yellowScreenOfDeathTabPage.Padding = new System.Windows.Forms.Padding(3);
+			this._yellowScreenOfDeathTabPage.Size = new System.Drawing.Size(584, 215);
+			this._yellowScreenOfDeathTabPage.TabIndex = 2;
+			this._yellowScreenOfDeathTabPage.Text = "Yellow Screen Of Death";
+			this._yellowScreenOfDeathTabPage.UseVisualStyleBackColor = true;
 			// 
-			// formsTabPage
+			// _browser
 			// 
-			this.formsTabPage.Controls.Add(this._formsListView);
-			this.formsTabPage.Location = new System.Drawing.Point(4, 22);
-			this.formsTabPage.Name = "formsTabPage";
-			this.formsTabPage.Size = new System.Drawing.Size(604, 360);
-			this.formsTabPage.TabIndex = 4;
-			this.formsTabPage.Text = "Forms";
-			this.formsTabPage.UseVisualStyleBackColor = true;
-			// 
-			// queryStringTabPage
-			// 
-			this.queryStringTabPage.Controls.Add(this._querystringListView);
-			this.queryStringTabPage.Location = new System.Drawing.Point(4, 22);
-			this.queryStringTabPage.Name = "queryStringTabPage";
-			this.queryStringTabPage.Size = new System.Drawing.Size(604, 360);
-			this.queryStringTabPage.TabIndex = 5;
-			this.queryStringTabPage.Text = "Querystring";
-			this.queryStringTabPage.UseVisualStyleBackColor = true;
-			// 
-			// _formsListView
-			// 
-			this._formsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-			this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._formsListView.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._formsListView.FullRowSelect = true;
-			this._formsListView.GridLines = true;
-			this._formsListView.Location = new System.Drawing.Point(0, 0);
-			this._formsListView.Name = "_formsListView";
-			this._formsListView.Size = new System.Drawing.Size(604, 360);
-			this._formsListView.TabIndex = 1;
-			this._formsListView.UseCompatibleStateImageBehavior = false;
-			this._formsListView.View = System.Windows.Forms.View.Details;
-			// 
-			// columnHeader1
-			// 
-			this.columnHeader1.Text = "Name";
-			this.columnHeader1.Width = 134;
-			// 
-			// columnHeader2
-			// 
-			this.columnHeader2.Text = "Value";
-			this.columnHeader2.Width = 438;
-			// 
-			// _cookiesListView
-			// 
-			this._cookiesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader4});
-			this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._cookiesListView.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._cookiesListView.FullRowSelect = true;
-			this._cookiesListView.GridLines = true;
-			this._cookiesListView.Location = new System.Drawing.Point(0, 0);
-			this._cookiesListView.Name = "_cookiesListView";
-			this._cookiesListView.Size = new System.Drawing.Size(604, 360);
-			this._cookiesListView.TabIndex = 1;
-			this._cookiesListView.UseCompatibleStateImageBehavior = false;
-			this._cookiesListView.View = System.Windows.Forms.View.Details;
-			// 
-			// columnHeader3
-			// 
-			this.columnHeader3.Text = "Name";
-			this.columnHeader3.Width = 134;
-			// 
-			// columnHeader4
-			// 
-			this.columnHeader4.Text = "Value";
-			this.columnHeader4.Width = 438;
-			// 
-			// _querystringListView
-			// 
-			this._querystringListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6});
-			this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._querystringListView.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._querystringListView.FullRowSelect = true;
-			this._querystringListView.GridLines = true;
-			this._querystringListView.Location = new System.Drawing.Point(0, 0);
-			this._querystringListView.Name = "_querystringListView";
-			this._querystringListView.Size = new System.Drawing.Size(604, 360);
-			this._querystringListView.TabIndex = 1;
-			this._querystringListView.UseCompatibleStateImageBehavior = false;
-			this._querystringListView.View = System.Windows.Forms.View.Details;
-			// 
-			// columnHeader5
-			// 
-			this.columnHeader5.Text = "Name";
-			this.columnHeader5.Width = 134;
-			// 
-			// columnHeader6
-			// 
-			this.columnHeader6.Text = "Value";
-			this.columnHeader6.Width = 438;
+			this._browser.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._browser.Location = new System.Drawing.Point(3, 3);
+			this._browser.MinimumSize = new System.Drawing.Size(20, 20);
+			this._browser.Name = "_browser";
+			this._browser.Size = new System.Drawing.Size(578, 209);
+			this._browser.TabIndex = 0;
 			// 
 			// SearchErrorDetailsView
 			// 
@@ -529,17 +553,18 @@
 			this._detailsTabControl.ResumeLayout(false);
 			this.errorTabPage.ResumeLayout(false);
 			this.errorTabPage.PerformLayout();
-			this.tabControl1.ResumeLayout(false);
+			this._errorTabControl.ResumeLayout(false);
 			this._messageTabPage.ResumeLayout(false);
 			this._messageTabPage.PerformLayout();
 			this._detailsTabPage.ResumeLayout(false);
 			this._detailsTabPage.PerformLayout();
 			this.clientTabPage.ResumeLayout(false);
 			this.clientTabPage.PerformLayout();
-			this.serverVariablesTabPage.ResumeLayout(false);
-			this.cookiesTabPage.ResumeLayout(false);
 			this.formsTabPage.ResumeLayout(false);
+			this.cookiesTabPage.ResumeLayout(false);
 			this.queryStringTabPage.ResumeLayout(false);
+			this.serverVariablesTabPage.ResumeLayout(false);
+			this._yellowScreenOfDeathTabPage.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -555,7 +580,7 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label _sourceLabel;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.TabControl _errorTabControl;
 		private System.Windows.Forms.TabPage _messageTabPage;
 		private System.Windows.Forms.TabPage _detailsTabPage;
 		private System.Windows.Forms.TextBox _messageTextBox;
@@ -588,5 +613,7 @@
 		private System.Windows.Forms.ListView _querystringListView;
 		private System.Windows.Forms.ColumnHeader columnHeader5;
 		private System.Windows.Forms.ColumnHeader columnHeader6;
+		private System.Windows.Forms.TabPage _yellowScreenOfDeathTabPage;
+		private System.Windows.Forms.WebBrowser _browser;
 	}
 }

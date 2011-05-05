@@ -25,6 +25,9 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			Assert.That(result.Message, Is.EqualTo("A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)"));
 			Assert.That(result.Source, Is.EqualTo(".Net SqlClient Data Provider"));
 			Assert.That(result.ServerVariables.Count > 0);
+			Assert.That(result.Cookies.Count, Is.EqualTo(5));
+			Assert.That(result.FormValues.Count, Is.EqualTo(16));
+			Assert.That(result.QuerystringValues.Count, Is.EqualTo(1));
 		}
 
 		[Test]
@@ -210,6 +213,78 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
       <value string=""Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3)"" />
     </item>
   </serverVariables>
+ <queryString>
+    <item name=""_"">
+      <value string=""1302082367896"" />
+    </item>
+  </queryString>
+<form>
+    <item name=""UrvalsKriterier.TraktdirektivGrupp-input"">
+      <value string=""Energi"" />
+    </item>
+    <item name=""UrvalsKriterier.TraktdirektivGrupp"">
+      <value string=""3"" />
+    </item>
+    <item name=""UrvalsKriterier.Trakttyp-input"">
+      <value string="" - Alla statusar - "" />
+    </item>
+    <item name=""UrvalsKriterier.Trakttyp"">
+      <value string="" "" />
+    </item>
+    <item name=""UrvalsKriterier.VerksamhetsomradeId-input"">
+      <value string="" - Alla verksamhetsområden - "" />
+    </item>
+    <item name=""UrvalsKriterier.VerksamhetsomradeId"">
+      <value string=""00000000-0000-0000-0000-000000000000"" />
+    </item>
+    <item name=""UrvalsKriterier.TraktstatusKod-input"">
+      <value string=""- Alla statusar - "" />
+    </item>
+    <item name=""UrvalsKriterier.TraktstatusKod"">
+      <value string="" "" />
+    </item>
+    <item name=""UrvalsKriterier.VerksamhetId-input"">
+      <value string="" - Alla verksamheter - "" />
+    </item>
+    <item name=""UrvalsKriterier.VerksamhetId"">
+      <value string=""00000000-0000-0000-0000-000000000000"" />
+    </item>
+    <item name=""UrvalsKriterier.LeverantorsNummer"">
+      <value string=""730882"" />
+    </item>
+    <item name=""UrvalsKriterier.Ursprung"">
+      <value string="" "" />
+    </item>
+    <item name=""UrvalsKriterier.Uppdrag"">
+      <value string="""" />
+    </item>
+    <item name=""UrvalsKriterier.Del"">
+      <value string="""" />
+    </item>
+    <item name=""UrvalsKriterier.DatumFrom"">
+      <value string="""" />
+    </item>
+    <item name=""UrvalsKriterier.DatumTom"">
+      <value string="""" />
+    </item>
+  </form>
+  <cookies>
+    <item name=""__utma"">
+      <value string=""54171946.793290681.1297241289.1297241289.1297241289.1"" />
+    </item>
+    <item name=""__utmz"">
+      <value string=""54171946.1297241289.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)"" />
+    </item>
+    <item name=""ASP.NET_SessionId"">
+      <value string=""ppfgeatyit2ivlcxkbbvxs2u"" />
+    </item>
+    <item name=""TraktdirektivGrupp"">
+      <value string=""3"" />
+    </item>
+    <item name=""TraktstatusKod"">
+      <value string="""" />
+    </item>
+  </cookies>
 </error>";
 		}
 

@@ -30,6 +30,9 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 				ParseAttributes();
 				ParseServerVariables();
+				ParseFormValues();
+				ParseQuerystringValues();
+				ParseCookies();
 
 				return _errorLog;
 			}
@@ -68,6 +71,57 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 				var value = node.ChildNodes[0].Attributes["string"].InnerText;
 
 				_errorLog.AddServerVariable(name, value);
+			}
+		}
+
+		private void ParseFormValues()
+		{
+			var formvalues = _documentRoot.SelectNodes("//form//item");
+			if (formvalues == null || formvalues.Count == 0)
+			{
+				return;
+			}
+
+			foreach (XmlNode node in formvalues)
+			{
+				var name = node.Attributes["name"].InnerText;
+				var value = node.ChildNodes[0].Attributes["string"].InnerText;
+
+				_errorLog.AddFormValue(name, value);
+			}
+		}
+		
+		private void ParseCookies()
+		{
+			var cookies = _documentRoot.SelectNodes("//cookies//item");
+			if (cookies == null || cookies.Count == 0)
+			{
+				return;
+			}
+
+			foreach (XmlNode node in cookies)
+			{
+				var name = node.Attributes["name"].InnerText;
+				var value = node.ChildNodes[0].Attributes["string"].InnerText;
+
+				_errorLog.AddCookie(name, value);
+			}
+		}
+
+		private void ParseQuerystringValues()
+		{
+			var cookies = _documentRoot.SelectNodes("//queryString//item");
+			if (cookies == null || cookies.Count == 0)
+			{
+				return;
+			}
+
+			foreach (XmlNode node in cookies)
+			{
+				var name = node.Attributes["name"].InnerText;
+				var value = node.ChildNodes[0].Attributes["string"].InnerText;
+
+				_errorLog.AddQuerystringValue(name, value);
 			}
 		}
 		

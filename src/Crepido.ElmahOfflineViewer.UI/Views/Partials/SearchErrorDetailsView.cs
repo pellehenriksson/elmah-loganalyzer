@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 
 namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
@@ -26,14 +28,11 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			_operatingSystemLabel.Text = error.ClientInformation.OperatingSystem;
 			_browserLabel.Text = error.ClientInformation.Browser;
 			_ipAddressLabel.Text = error.LocalIpAddress;
-			
-			foreach (var variable in error.ServerVariables)
-			{
-				var node = _servervariablesListView.Items.Add(variable.Name);
-				node.SubItems.Add(new ListViewItem.ListViewSubItem(node, variable.Value));
-			}
-			
-			_servervariablesListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+
+			LoadListView(_servervariablesListView, error.ServerVariables);
+			LoadListView(_cookiesListView, error.Cookies);
+			LoadListView(_formsListView, error.FormValues);
+			LoadListView(_querystringListView, error.QuerystringValues);
 		}
 
 		public void ClearView()
@@ -46,6 +45,21 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			{
 				Clear();
 			}
+		}
+
+		private static void LoadListView(ListView listview, IEnumerable<KeyValuePair> values)
+		{
+			listview.Items.Clear();
+
+			foreach (var value in values)
+			{
+				var node = listview.Items.Add(value.Name);
+				node.SubItems.Add(new ListViewItem.ListViewSubItem(node, value.Value));
+			}
+
+			listview.AutoResizeColumns(listview.Items.Count > 0
+			                           	? ColumnHeaderAutoResizeStyle.ColumnContent
+			                           	: ColumnHeaderAutoResizeStyle.HeaderSize);
 		}
 
 		private void Clear()
@@ -64,6 +78,9 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			_ipAddressLabel.Text = string.Empty;
 
 			_servervariablesListView.Items.Clear();
+			_cookiesListView.Items.Clear();
+			_formsListView.Items.Clear();
+			_querystringListView.Items.Clear();
 		}
 	}
 }

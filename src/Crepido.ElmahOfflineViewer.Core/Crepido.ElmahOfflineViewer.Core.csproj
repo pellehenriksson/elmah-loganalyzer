@@ -78,7 +78,9 @@
     <Compile Include="Domain\ClientInformation.cs" />
     <Compile Include="Constants\HttpServerVariables.cs" />
     <Compile Include="Domain\SearchErrorLogQueryParameter.cs" />
+    <Compile Include="Common\KeyValuePair.cs" />
     <Compile Include="Domain\WindowsOperatingSystemNameResolver.cs" />
+    <Compile Include="Domain\YellowScreenOfDeathBuilder.cs" />
     <Compile Include="Infrastructure\Abstract\ICacheHelper.cs" />
     <Compile Include="Infrastructure\Abstract\ILog.cs" />
     <Compile Include="Infrastructure\Abstract\IWebRequestHelper.cs" />
@@ -97,7 +99,6 @@
     <Compile Include="Presentation\ReportPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.4\Microsoft.StyleCop.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

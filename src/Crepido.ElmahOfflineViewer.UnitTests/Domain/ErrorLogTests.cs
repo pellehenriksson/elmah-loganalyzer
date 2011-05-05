@@ -19,6 +19,36 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		}
 
 		[Test]
+		public void Ctor_HasEmptyCookiesList()
+		{
+			// act
+			var error = new ErrorLog();
+
+			// assert
+			Assert.That(error.Cookies.Count, Is.EqualTo(0));
+		}
+
+		[Test]
+		public void Ctor_HasEmptyFormValuesList()
+		{
+			// act
+			var error = new ErrorLog();
+
+			// assert
+			Assert.That(error.FormValues.Count, Is.EqualTo(0));
+		}
+
+		[Test]
+		public void Ctor_HasEmptyQuerystringValuesList()
+		{
+			// act
+			var error = new ErrorLog();
+
+			// assert
+			Assert.That(error.QuerystringValues.Count, Is.EqualTo(0));
+		}
+		
+		[Test]
 		public void Ctor_HasClientInformation()
 		{
 			// arrange
@@ -113,7 +143,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		}
 
 		[Test]
-		public void AddServerVariable_NameIsLoacalAddress_SetAsLocalIpAddress()
+		public void AddServerVariable_NameIsLocalAddress_SetAsLocalIpAddress()
 		{
 			// arrange
 			var error = new ErrorLog();
@@ -123,6 +153,51 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 
 			// assert
 			Assert.That(error.LocalIpAddress, Is.EqualTo("127.0.0.1"));
+		}
+
+		[Test]
+		public void AddCookie_Adds()
+		{
+			// arrange
+			var error = new ErrorLog();
+
+			// act
+			error.AddCookie("name", "value");
+
+			// assert
+			Assert.That(error.Cookies.Count, Is.EqualTo(1));
+			Assert.That(error.Cookies[0].Name, Is.EqualTo("name"));
+			Assert.That(error.Cookies[0].Value, Is.EqualTo("value"));
+		}
+
+		[Test]
+		public void AddFormValue_Adds()
+		{
+			// arrange
+			var error = new ErrorLog();
+
+			// act
+			error.AddFormValue("name", "value");
+
+			// assert
+			Assert.That(error.FormValues.Count, Is.EqualTo(1));
+			Assert.That(error.FormValues[0].Name, Is.EqualTo("name"));
+			Assert.That(error.FormValues[0].Value, Is.EqualTo("value"));
+		}
+
+		[Test]
+		public void AddQueryStringValue_Adds()
+		{
+			// arrange
+			var error = new ErrorLog();
+
+			// act
+			error.AddQuerystringValue("name", "value");
+
+			// assert
+			Assert.That(error.QuerystringValues.Count, Is.EqualTo(1));
+			Assert.That(error.QuerystringValues[0].Name, Is.EqualTo("name"));
+			Assert.That(error.QuerystringValues[0].Value, Is.EqualTo("value"));
 		}
 	}
 }

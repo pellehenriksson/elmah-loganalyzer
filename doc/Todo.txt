@@ -1,14 +1,21 @@
 Functions
 	-> navigate from report to search result
-	-> googla / binga med felmeddelande, exceptions etc
-	-> tests for search with filter
+	-> googla med felmeddelande, exceptions etc
+	-> query stack overflow
 	-> hide tab if no values in details tabs ?
 	-> tool tip on selector items should show full text
+	-> translations
+	-> pretty diagrams
+	-> configure http user agent resolver
 
 Build
-	-> sand castle
-	-> code cover
+	-> msbuild log
+	-> include license file in build
 
-Urls
-	-> http://blogs.msdn.com/b/sourceanalysis/archive/2008/05/24/source-analysis-msbuild-integration.aspx
+Fix
+	-> tests for search with filter 
+	-> abstract folders
+	-> logging
 
+Other
+	-> run with profiler

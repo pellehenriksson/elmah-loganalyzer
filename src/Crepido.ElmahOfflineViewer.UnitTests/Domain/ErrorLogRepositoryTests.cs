@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
@@ -124,47 +125,62 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		[Test]
 		public void GetWithFilter_StartAndEndTime()
 		{
-			var query = new SearchErrorLogQuery { Interval = new DateInterval(new DateTime(2011, 1, 1), new DateTime(2011, 1, 3)) };
+			var query = CreateQueryThatIncluedEverything();
+			query.Interval = new DateInterval(new DateTime(2011, 1, 1), new DateTime(2011, 1, 3));
+			
 			GetWithFilterTest(query, 3);
 		}
 
-		/*
 		[Test]
 		public void GetWithFilter_StartAndEndTimeAndType()
 		{
-			var query = new SearchErrorLogQuery { Interval = CreateInterval(), Type = "System.SomeOtherException" };
+			var query = CreateQueryThatIncluedEverything();
+			query.Interval = CreateIntervalThatIncludesEvertyhing();
+			query.Types = new SearchErrorLogQueryParameter(true, new List<string> { "System.InvalidOperationException" });
+			
 			GetWithFilterTest(query, 2);
 		}
-
+		
 		[Test]
 		public void GetWithFilter_StartAndEndTimeAndSource()
 		{
-			var query = new SearchErrorLogQuery { Interval = CreateInterval(), Source = "Some.Namespace.Domain" };
+			var query = CreateQueryThatIncluedEverything();
+			query.Interval = CreateIntervalThatIncludesEvertyhing();
+			query.Sources = new SearchErrorLogQueryParameter(true, new List<string> { "Some.Namespace.Domain" });
+
 			GetWithFilterTest(query, 2);
 		}
-
+		
 		[Test]
 		public void GetWithFilter_StartAndEndTimeAndUser()
 		{
-			var query = new SearchErrorLogQuery { Interval = CreateInterval(), User = "nisse" };
+			var query = CreateQueryThatIncluedEverything();
+			query.Interval = CreateIntervalThatIncludesEvertyhing();
+			query.Users = new SearchErrorLogQueryParameter(true, new List<string> { "nisse" });
+
 			GetWithFilterTest(query, 1);
 		}
-
+		
 		[Test]
 		public void GetWithFilter_StartAndEndTimeAndText()
 		{
-			var query = new SearchErrorLogQuery { Interval = CreateInterval(), Text = "serious" };
+			var query = CreateQueryThatIncluedEverything();
+			query.Interval = CreateIntervalThatIncludesEvertyhing();
+			query.Text = "serious";
+
 			GetWithFilterTest(query, 1);
 		}
 
 		[Test]
 		public void GetWithFilter_StartAndEndTimeAndUrl()
 		{
-			var query = new SearchErrorLogQuery { Interval = CreateInterval(), Url = "some/path" };
+			var query = CreateQueryThatIncluedEverything();
+			query.Interval = CreateIntervalThatIncludesEvertyhing();
+			query.Urls = new SearchErrorLogQueryParameter(true, new List<string> { "some/path" });
+
 			GetWithFilterTest(query, 2);
 		}
-		*/
-
+		
 		private static void GetWithFilterTest(SearchErrorLogQuery query, int expectedResult)
 		{
 			// arrange
@@ -184,7 +200,20 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			return repository;
 		}
 
-		private static DateInterval CreateInterval()
+		private static SearchErrorLogQuery CreateQueryThatIncluedEverything()
+		{
+			var repository = CreateRepository();
+			var query = new SearchErrorLogQuery();
+
+			query.Types = new SearchErrorLogQueryParameter(true, repository.GetTypes());
+			query.Sources = new SearchErrorLogQueryParameter(true, repository.GetSources());
+			query.Urls = new SearchErrorLogQueryParameter(true, repository.GetUrls());
+			query.Users = new SearchErrorLogQueryParameter(true, repository.GetUsers());
+			
+			return query;
+		}
+
+		private static DateInterval CreateIntervalThatIncludesEvertyhing()
 		{
 			return new DateInterval(new DateTime(2011, 1, 1), new DateTime(2011, 1, 4));
 		}

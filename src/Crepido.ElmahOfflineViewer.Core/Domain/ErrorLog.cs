@@ -15,17 +15,6 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			QuerystringValues = new List<KeyValuePair>();
 			ClientInformation = new ClientInformation();
 		}
-
-		public ErrorLog(Guid id, string type, string source, DateTime time, string user, string url) : this()
-		{
-			ErrorId = id.ToString();
-			Type = type;
-			Source = source;
-			Time = time;
-			User = user;
-			Url = url;
-			CleanUrl = UrlResolver.Resolve(Url);
-		}
 		
 		public string ErrorId { get; set; }
 

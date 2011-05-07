@@ -180,6 +180,16 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 
 			GetWithFilterTest(query, 2);
 		}
+
+		[Test]
+		public void GetWithFilter_StartAndEndTimeExludeAllTypes()
+		{
+			var query = CreateQueryThatIncluedEverything();
+			query.Interval = CreateIntervalThatIncludesEvertyhing();
+			query.Types.IncludeItems = false;
+
+			GetWithFilterTest(query, 0);
+		}
 		
 		private static void GetWithFilterTest(SearchErrorLogQuery query, int expectedResult)
 		{

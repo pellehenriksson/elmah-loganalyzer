@@ -49,10 +49,20 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			}
 		}
 
-		private static void LoadListView(ListView listview, IEnumerable<KeyValuePair> values)
+		private static void LoadListView(ListView listview, List<KeyValuePair> values)
 		{
 			listview.Items.Clear();
+			var hideTab = values.Count == 0;
 
+			if (hideTab)
+			{
+				((TabPage)listview.Parent).Visible = false;
+			}
+			else
+			{
+				((TabPage)listview.Parent).Visible = true;
+			}
+			
 			foreach (var value in values)
 			{
 				var node = listview.Items.Add(value.Name);

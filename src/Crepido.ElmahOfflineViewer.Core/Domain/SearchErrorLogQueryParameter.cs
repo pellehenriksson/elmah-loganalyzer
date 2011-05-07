@@ -15,7 +15,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			Items = items;
 		}
 
-		public bool IncludeItems { get; private set; }
+		public bool IncludeItems { get; set; }
 
 		public List<string> Items { get; private set; }
 	}

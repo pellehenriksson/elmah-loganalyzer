@@ -35,7 +35,8 @@ namespace Crepido.ElmahOfflineViewer.UI
 	
 		private void SetLoadingState()
 		{
-			selectViewButton.Enabled = false;
+			showSearchViewButton.Enabled = false;
+			showReportViewButton.Enabled = false;
 			selectDirectoryButton.Enabled = false;
 
 			LoadView(new LoadingView());
@@ -43,7 +44,8 @@ namespace Crepido.ElmahOfflineViewer.UI
 
 		private void SetReadyForWorkState()
 		{
-			selectViewButton.Enabled = true;
+			showSearchViewButton.Enabled = true;
+			showReportViewButton.Enabled = true;
 			selectDirectoryButton.Enabled = true;
 
 			mainPanel.Controls.Clear();
@@ -51,7 +53,8 @@ namespace Crepido.ElmahOfflineViewer.UI
 		
 		private void SetErrorLoadingState()
 		{
-			selectViewButton.Enabled = false;
+			showSearchViewButton.Enabled = false;
+			showReportViewButton.Enabled = false;
 			selectDirectoryButton.Enabled = true;
 			
 			mainPanel.Controls.Clear();
@@ -132,22 +135,17 @@ namespace Crepido.ElmahOfflineViewer.UI
 
 			HandleLoadingFromDirectory(_folderBrowserDialog.SelectedPath);
 		}
-
-		private void SearchViewMenuItemClick(object sender, EventArgs e)
+		
+		private void ShowSearchViewButtonClick(object sender, EventArgs e)
 		{
 			var presenter = ServiceLocator.Resolve<SearchPresenter>();
 			LoadView(presenter.View as Control);
 		}
 
-		private void ReportsViewMenuItemClick(object sender, EventArgs e)
+		private void ShowReportViewButtonClick(object sender, EventArgs e)
 		{
 			var presenter = ServiceLocator.Resolve<ReportPresenter>();
 			LoadView(presenter.View as Control);
-		}
-
-		private void RepositoryOnInitialized(object sender, Core.Domain.RepositoryInitializedEventArgs e)
-		{
-			directoryToolStripStatusLabel.Text = string.Format("Directory : {0} Logs found: {1}", e.Directory, e.TotalNumberOfLogs);
 		}
 	}
 }

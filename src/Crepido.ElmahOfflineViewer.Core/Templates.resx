@@ -207,13 +207,10 @@
 	&lt;table width="100%" bgcolor="#ffffcc"&gt;
 		&lt;tr&gt;
 			&lt;td&gt;
-				&lt;code&gt;@SOURCE_ERROR@&lt;/code&gt;
+				&lt;code&gt;@SOURCE@&lt;/code&gt;
 			&lt;/td&gt;
 		&lt;/tr&gt;
 	&lt;/table&gt;
-	&lt;br /&gt;
-	&lt;b&gt;Source File: &lt;/b&gt;@SOURCE_FILE@
-	&lt;br /&gt;
 	&lt;br /&gt;
 	&lt;b&gt;Stack trace:&lt;/b&gt;
 	&lt;br /&gt;

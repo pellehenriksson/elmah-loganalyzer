@@ -1,9 +1,9 @@
 Functions
 	-> navigate from report to search result
 	-> googla / binga med felmeddelande, exceptions etc
-	-> yellow screen of death tab
 	-> tests for search with filter
-	-> hide tab if no values in details tabs
+	-> hide tab if no values in details tabs ?
+	-> tool tip on selector items should show full text
 
 Build
 	-> sand castle

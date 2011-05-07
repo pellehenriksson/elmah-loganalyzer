@@ -11,9 +11,21 @@ namespace Crepido.ElmahOfflineViewer.UnitTests
 			get { return @"c:\logs"; }
 		}
 
-		protected static ErrorLog FakeErrorLog
+		protected static ErrorLog CreateFakeErrorLog()
 		{
-			get { return new ErrorLog(); }
+			var errorLog = new ErrorLog();
+			errorLog.Type = "System.InvalidOperationException";
+			errorLog.Source = "System.Web.Mvc";
+			errorLog.Message =
+				"The IControllerFactory 'Sodra.PP.Web.Helpers.UnityMapControllerFactory' did not return a controller for the name 'seh'.";
+
+			errorLog.Details = @"System.InvalidOperationException: The IControllerFactory 'Sodra.PP.Web.Helpers.UnityMapControllerFactory' did not return a controller for the name 'seh'.
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)";
+
+			return errorLog;
 		}
 		
 		protected static ReportQuery CreateReportQuery()

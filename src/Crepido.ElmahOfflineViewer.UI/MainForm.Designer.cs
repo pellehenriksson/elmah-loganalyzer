@@ -33,12 +33,11 @@
 			this.directoryToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.versionStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._mainToolStrip = new System.Windows.Forms.ToolStrip();
-			this.selectViewButton = new System.Windows.Forms.ToolStripDropDownButton();
-			this.searchViewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.reportsViewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
 			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
 			this.mainPanel = new System.Windows.Forms.Panel();
+			this.showReportViewButton = new System.Windows.Forms.ToolStripButton();
+			this.showSearchViewButton = new System.Windows.Forms.ToolStripButton();
 			this._mainStatusStrip.SuspendLayout();
 			this._mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -79,38 +78,14 @@
 			// _mainToolStrip
 			// 
 			this._mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.selectViewButton,
+            this.showSearchViewButton,
+            this.showReportViewButton,
             this.selectDirectoryButton});
 			this._mainToolStrip.Location = new System.Drawing.Point(0, 0);
 			this._mainToolStrip.Name = "_mainToolStrip";
 			this._mainToolStrip.Size = new System.Drawing.Size(1135, 25);
 			this._mainToolStrip.TabIndex = 1;
 			this._mainToolStrip.Text = "toolStrip1";
-			// 
-			// selectViewButton
-			// 
-			this.selectViewButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.searchViewMenuItem,
-            this.reportsViewMenuItem});
-			this.selectViewButton.Image = ((System.Drawing.Image)(resources.GetObject("selectViewButton.Image")));
-			this.selectViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.selectViewButton.Name = "selectViewButton";
-			this.selectViewButton.Size = new System.Drawing.Size(94, 22);
-			this.selectViewButton.Text = "Select view";
-			// 
-			// searchViewMenuItem
-			// 
-			this.searchViewMenuItem.Name = "searchViewMenuItem";
-			this.searchViewMenuItem.Size = new System.Drawing.Size(114, 22);
-			this.searchViewMenuItem.Text = "Search";
-			this.searchViewMenuItem.Click += new System.EventHandler(this.SearchViewMenuItemClick);
-			// 
-			// reportsViewMenuItem
-			// 
-			this.reportsViewMenuItem.Name = "reportsViewMenuItem";
-			this.reportsViewMenuItem.Size = new System.Drawing.Size(114, 22);
-			this.reportsViewMenuItem.Text = "Reports";
-			this.reportsViewMenuItem.Click += new System.EventHandler(this.ReportsViewMenuItemClick);
 			// 
 			// selectDirectoryButton
 			// 
@@ -133,6 +108,24 @@
 			this.mainPanel.Name = "mainPanel";
 			this.mainPanel.Size = new System.Drawing.Size(1135, 679);
 			this.mainPanel.TabIndex = 2;
+			// 
+			// showReportViewButton
+			// 
+			this.showReportViewButton.Image = ((System.Drawing.Image)(resources.GetObject("showReportViewButton.Image")));
+			this.showReportViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.showReportViewButton.Name = "showReportViewButton";
+			this.showReportViewButton.Size = new System.Drawing.Size(67, 22);
+			this.showReportViewButton.Text = "Reports";
+			this.showReportViewButton.Click += new System.EventHandler(this.ShowReportViewButtonClick);
+			// 
+			// showSearchViewButton
+			// 
+			this.showSearchViewButton.Image = ((System.Drawing.Image)(resources.GetObject("showSearchViewButton.Image")));
+			this.showSearchViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.showSearchViewButton.Name = "showSearchViewButton";
+			this.showSearchViewButton.Size = new System.Drawing.Size(62, 22);
+			this.showSearchViewButton.Text = "Search";
+			this.showSearchViewButton.Click += new System.EventHandler(this.ShowSearchViewButtonClick);
 			// 
 			// MainForm
 			// 
@@ -162,9 +155,13 @@
 		private System.Windows.Forms.ToolStripButton selectDirectoryButton;
 		private System.Windows.Forms.FolderBrowserDialog _folderBrowserDialog;
 		private System.Windows.Forms.ToolStripStatusLabel versionStripStatusLabel;
-		private System.Windows.Forms.ToolStripDropDownButton selectViewButton;
-		private System.Windows.Forms.ToolStripMenuItem searchViewMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem reportsViewMenuItem;
 		private System.Windows.Forms.Panel mainPanel;
+		private System.Windows.Forms.ToolStripButton showSearchViewButton;
+		private System.Windows.Forms.ToolStripButton showReportViewButton;
+
+		private void RepositoryOnInitialized(object sender, Core.Domain.RepositoryInitializedEventArgs e)
+		{
+			directoryToolStripStatusLabel.Text = string.Format("Directory : {0} Logs found: {1}", e.Directory, e.TotalNumberOfLogs);
+		}
 	}
 }

@@ -10,7 +10,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		public void Ctor_SetsErrorLog()
 		{
 			// arrange
-			var errorlog = FakeErrorLog;
+			var errorlog = CreateFakeErrorLog();
 			var builder = new YellowScreenOfDeathBuilder(errorlog);
 			
 			// assert
@@ -18,13 +18,17 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		}
 
 		[Test]
-		public void Build_BuildHtmlContent()
+		public void GetHtml_BuildHtmlContent()
 		{
 			// arrange
+			var errorlog = CreateFakeErrorLog();
+			var builder = new YellowScreenOfDeathBuilder(errorlog);
 
 			// act
+			var result = builder.GetHtml();
 
 			// assert
+			Assert.That(result, Is.Not.Null);
 		}
 	}
 }

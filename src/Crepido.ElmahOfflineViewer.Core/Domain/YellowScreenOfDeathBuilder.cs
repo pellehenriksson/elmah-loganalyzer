@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
@@ -16,9 +17,10 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			var template = Templates.YellowScreenOfDeath;
 
 			template = template.Replace("@APPLICATION@", "/");
-			template = template.Replace("@MESSAGE@", System.Net.WebUtility.HtmlEncode(ErrorLog.Message));
-			template = template.Replace("@TYPE@", System.Net.WebUtility.HtmlEncode(ErrorLog.Type));
-			template = template.Replace("@STACK_TRACE@", ConvertLineBreaks(ErrorLog.Details));
+			template = template.Replace("@MESSAGE@", WebUtility.HtmlEncode(ErrorLog.Message));
+			template = template.Replace("@TYPE@", WebUtility.HtmlEncode(ErrorLog.Type));
+			template = template.Replace("@SOURCE@", WebUtility.HtmlEncode(ErrorLog.Source));
+			template = template.Replace("@STACK_TRACE@", ConvertLineBreaks(WebUtility.HtmlEncode(ErrorLog.Details)));
 
 			return template;
 		}

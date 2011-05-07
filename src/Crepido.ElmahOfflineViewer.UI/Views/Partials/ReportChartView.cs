@@ -18,7 +18,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			_report = report;
 
 			ClearView();
-			SetTitle();
+		SetTitle();
 			SetSeries();
 		}
 		
@@ -30,7 +30,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 
 		private static Font GetFont(float size)
 		{
-			return new Font("Consolas", size, FontStyle.Bold);
+			return new Font("Microsoft Sans Serif", size, FontStyle.Bold);
 		}
 
 		private void SetTitle()

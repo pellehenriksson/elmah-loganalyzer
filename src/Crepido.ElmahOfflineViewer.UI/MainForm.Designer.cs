@@ -33,11 +33,11 @@
 			this.directoryToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.versionStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._mainToolStrip = new System.Windows.Forms.ToolStrip();
+			this.showSearchViewButton = new System.Windows.Forms.ToolStripButton();
+			this.showReportViewButton = new System.Windows.Forms.ToolStripButton();
 			this.selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
 			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
 			this.mainPanel = new System.Windows.Forms.Panel();
-			this.showReportViewButton = new System.Windows.Forms.ToolStripButton();
-			this.showSearchViewButton = new System.Windows.Forms.ToolStripButton();
 			this._mainStatusStrip.SuspendLayout();
 			this._mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -49,7 +49,7 @@
             this.versionStripStatusLabel});
 			this._mainStatusStrip.Location = new System.Drawing.Point(0, 704);
 			this._mainStatusStrip.Name = "_mainStatusStrip";
-			this._mainStatusStrip.Size = new System.Drawing.Size(1135, 24);
+			this._mainStatusStrip.Size = new System.Drawing.Size(1264, 24);
 			this._mainStatusStrip.TabIndex = 0;
 			this._mainStatusStrip.Text = "statusStrip1";
 			// 
@@ -60,7 +60,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this.directoryToolStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.directoryToolStripStatusLabel.Name = "directoryToolStripStatusLabel";
-			this.directoryToolStripStatusLabel.Size = new System.Drawing.Size(1062, 19);
+			this.directoryToolStripStatusLabel.Size = new System.Drawing.Size(1191, 19);
 			this.directoryToolStripStatusLabel.Spring = true;
 			this.directoryToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -83,9 +83,27 @@
             this.selectDirectoryButton});
 			this._mainToolStrip.Location = new System.Drawing.Point(0, 0);
 			this._mainToolStrip.Name = "_mainToolStrip";
-			this._mainToolStrip.Size = new System.Drawing.Size(1135, 25);
+			this._mainToolStrip.Size = new System.Drawing.Size(1264, 25);
 			this._mainToolStrip.TabIndex = 1;
 			this._mainToolStrip.Text = "toolStrip1";
+			// 
+			// showSearchViewButton
+			// 
+			this.showSearchViewButton.Image = ((System.Drawing.Image)(resources.GetObject("showSearchViewButton.Image")));
+			this.showSearchViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.showSearchViewButton.Name = "showSearchViewButton";
+			this.showSearchViewButton.Size = new System.Drawing.Size(62, 22);
+			this.showSearchViewButton.Text = "Search";
+			this.showSearchViewButton.Click += new System.EventHandler(this.ShowSearchViewButtonClick);
+			// 
+			// showReportViewButton
+			// 
+			this.showReportViewButton.Image = ((System.Drawing.Image)(resources.GetObject("showReportViewButton.Image")));
+			this.showReportViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.showReportViewButton.Name = "showReportViewButton";
+			this.showReportViewButton.Size = new System.Drawing.Size(67, 22);
+			this.showReportViewButton.Text = "Reports";
+			this.showReportViewButton.Click += new System.EventHandler(this.ShowReportViewButtonClick);
 			// 
 			// selectDirectoryButton
 			// 
@@ -106,32 +124,14 @@
 			this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.mainPanel.Location = new System.Drawing.Point(0, 25);
 			this.mainPanel.Name = "mainPanel";
-			this.mainPanel.Size = new System.Drawing.Size(1135, 679);
+			this.mainPanel.Size = new System.Drawing.Size(1264, 679);
 			this.mainPanel.TabIndex = 2;
-			// 
-			// showReportViewButton
-			// 
-			this.showReportViewButton.Image = ((System.Drawing.Image)(resources.GetObject("showReportViewButton.Image")));
-			this.showReportViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.showReportViewButton.Name = "showReportViewButton";
-			this.showReportViewButton.Size = new System.Drawing.Size(67, 22);
-			this.showReportViewButton.Text = "Reports";
-			this.showReportViewButton.Click += new System.EventHandler(this.ShowReportViewButtonClick);
-			// 
-			// showSearchViewButton
-			// 
-			this.showSearchViewButton.Image = ((System.Drawing.Image)(resources.GetObject("showSearchViewButton.Image")));
-			this.showSearchViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.showSearchViewButton.Name = "showSearchViewButton";
-			this.showSearchViewButton.Size = new System.Drawing.Size(62, 22);
-			this.showSearchViewButton.Text = "Search";
-			this.showSearchViewButton.Click += new System.EventHandler(this.ShowSearchViewButtonClick);
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1135, 728);
+			this.ClientSize = new System.Drawing.Size(1264, 728);
 			this.Controls.Add(this.mainPanel);
 			this.Controls.Add(this._mainToolStrip);
 			this.Controls.Add(this._mainStatusStrip);

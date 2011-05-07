@@ -54,7 +54,7 @@
 	</Target>
 	
 	<Target Name="Build" DependsOnTargets="Clean">
-		<MSBuild Targets="ReBuild" Projects="$(SourceDirectory)ElmahOfflineViewer.sln" Properties="Configuration=$(Configuration);OutDir=$(OutputCompileDirectory)" />
+		<MSBuild Targets="ReBuild" Projects="$(SourceDirectory)ElmahOfflineViewer.sln" Properties="Configuration=$(Configuration);OutDir=$(OutputCompileDirectory);" />
 	</Target>
 
 	<Target Name="ResetAssemblyVersion">

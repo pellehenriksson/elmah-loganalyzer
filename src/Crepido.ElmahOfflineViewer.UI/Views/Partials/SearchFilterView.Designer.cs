@@ -28,13 +28,9 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label5 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
 			this._searchButton = new System.Windows.Forms.Button();
 			this._textTextbox = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			this._usersSelectorView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SelectorView();
 			this._urlsSelectorView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SelectorView();
 			this._sourcesSelectorView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SelectorView();
@@ -42,27 +38,9 @@
 			this._dateIntervalView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.DateIntervalView();
 			this.SuspendLayout();
 			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(242, 5);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(41, 13);
-			this.label5.TabIndex = 2;
-			this.label5.Text = "Source";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(715, 5);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(34, 13);
-			this.label4.TabIndex = 6;
-			this.label4.Text = "Users";
-			// 
 			// _searchButton
 			// 
-			this._searchButton.Location = new System.Drawing.Point(1162, 180);
+			this._searchButton.Location = new System.Drawing.Point(1192, 158);
 			this._searchButton.Name = "_searchButton";
 			this._searchButton.Size = new System.Drawing.Size(75, 23);
 			this._searchButton.TabIndex = 11;
@@ -72,73 +50,59 @@
 			// 
 			// _textTextbox
 			// 
-			this._textTextbox.Location = new System.Drawing.Point(954, 65);
+			this._textTextbox.Location = new System.Drawing.Point(984, 61);
 			this._textTextbox.Multiline = true;
 			this._textTextbox.Name = "_textTextbox";
 			this._textTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this._textTextbox.Size = new System.Drawing.Size(283, 109);
+			this._textTextbox.Size = new System.Drawing.Size(283, 91);
 			this._textTextbox.TabIndex = 10;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(951, 49);
+			this.label2.Location = new System.Drawing.Point(981, 45);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(157, 13);
 			this.label2.TabIndex = 9;
 			this.label2.Text = "Error message/Details contains:";
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(12, 5);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(31, 13);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Type";
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(477, 5);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(25, 13);
-			this.label3.TabIndex = 4;
-			this.label3.Text = "Urls";
-			// 
 			// _usersSelectorView
 			// 
-			this._usersSelectorView.Location = new System.Drawing.Point(712, 21);
+			this._usersSelectorView.Caption = "Users";
+			this._usersSelectorView.Location = new System.Drawing.Point(739, 5);
 			this._usersSelectorView.Name = "_usersSelectorView";
 			this._usersSelectorView.Size = new System.Drawing.Size(236, 182);
 			this._usersSelectorView.TabIndex = 7;
 			// 
 			// _urlsSelectorView
 			// 
-			this._urlsSelectorView.Location = new System.Drawing.Point(476, 21);
+			this._urlsSelectorView.Caption = "Urls";
+			this._urlsSelectorView.Location = new System.Drawing.Point(498, 5);
 			this._urlsSelectorView.Name = "_urlsSelectorView";
 			this._urlsSelectorView.Size = new System.Drawing.Size(238, 182);
 			this._urlsSelectorView.TabIndex = 5;
 			// 
 			// _sourcesSelectorView
 			// 
-			this._sourcesSelectorView.Location = new System.Drawing.Point(242, 21);
+			this._sourcesSelectorView.Caption = "Sources";
+			this._sourcesSelectorView.Location = new System.Drawing.Point(254, 5);
 			this._sourcesSelectorView.Name = "_sourcesSelectorView";
 			this._sourcesSelectorView.Size = new System.Drawing.Size(238, 182);
 			this._sourcesSelectorView.TabIndex = 3;
 			// 
 			// _typeSelectorView
 			// 
-			this._typeSelectorView.Location = new System.Drawing.Point(6, 21);
+			this._typeSelectorView.Caption = "Types";
+			this._typeSelectorView.Location = new System.Drawing.Point(3, 5);
 			this._typeSelectorView.Name = "_typeSelectorView";
 			this._typeSelectorView.Size = new System.Drawing.Size(245, 182);
 			this._typeSelectorView.TabIndex = 1;
 			// 
 			// _dateIntervalView
 			// 
-			this._dateIntervalView.Location = new System.Drawing.Point(940, 5);
+			this._dateIntervalView.Location = new System.Drawing.Point(974, 0);
 			this._dateIntervalView.Name = "_dateIntervalView";
-			this._dateIntervalView.Size = new System.Drawing.Size(305, 41);
+			this._dateIntervalView.Size = new System.Drawing.Size(302, 29);
 			this._dateIntervalView.TabIndex = 8;
 			// 
 			// SearchFilterView
@@ -150,15 +114,11 @@
 			this.Controls.Add(this._sourcesSelectorView);
 			this.Controls.Add(this._typeSelectorView);
 			this.Controls.Add(this._dateIntervalView);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this.label5);
-			this.Controls.Add(this.label4);
 			this.Controls.Add(this._searchButton);
 			this.Controls.Add(this._textTextbox);
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
 			this.Name = "SearchFilterView";
-			this.Size = new System.Drawing.Size(1244, 213);
+			this.Size = new System.Drawing.Size(1277, 193);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -166,13 +126,9 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button _searchButton;
 		private System.Windows.Forms.TextBox _textTextbox;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label3;
 		private DateIntervalView _dateIntervalView;
 		private SelectorView _typeSelectorView;
 		private SelectorView _sourcesSelectorView;

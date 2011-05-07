@@ -1,39 +1,42 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 {
 	public partial class SelectorView : UserControl
 	{
+		private const int ScrollBarWidth = 21;
+
 		public SelectorView()
 		{
 			InitializeComponent();
 			Initialize();
 		}
 		
-		public void LoadValues(IEnumerable<string> values)
+		public string Caption
 		{
-			itemsListBox.Items.Clear();
-			foreach (var value in values)
-			{
-				itemsListBox.Items.Add(value, CheckState.Checked);
-			}
+			get { return _itemsListView.Columns[0].Text;  }
+			set { _itemsListView.Columns[0].Text = value; }
 		}
 
-		public List<string> GetValues()
+		public void LoadValues(IEnumerable<string> values)
 		{
-			var result = new List<string>();
+			_itemsListView.Items.Clear();
+
+			foreach (var value in values)
 			{
-				for (var index = 0; index < itemsListBox.Items.Count; index++)
-				{
-					if (itemsListBox.GetItemChecked(index))
-					{
-						result.Add(itemsListBox.Items[index].ToString());
-					}
-				}
+				var item = _itemsListView.Items.Add(value);
+				item.ToolTipText = value;
+				item.Checked = true;
 			}
 
-			return result;
+			SetItemColumnsWidth();
+		}
+		
+		public List<string> GetValues()
+		{
+			return (from ListViewItem item in _itemsListView.CheckedItems select item.Text).ToList();
 		}
 
 		public bool GetMode()
@@ -43,18 +46,21 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 
 		private void Initialize()
 		{
-			itemsListBox.CheckOnClick = true;
-
 			modeComboBox.Items.Add("Include");
 			modeComboBox.Items.Add("Exclude");
 			modeComboBox.SelectedIndex = 0;
 		}
 
+		private void SetItemColumnsWidth()
+		{
+			_itemsListView.Columns[0].Width = _itemsListView.Width - ScrollBarWidth;
+		}
+
 		private void HandleSelection(bool check)
 		{
-			for (var index = 0; index < itemsListBox.Items.Count; index++)
+			for (var index = 0; index < _itemsListView.Items.Count; index++)
 			{
-				itemsListBox.SetItemChecked(index, check);
+				_itemsListView.Items[index].Checked = check;
 			}
 		}
 

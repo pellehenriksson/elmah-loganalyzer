@@ -2,18 +2,10 @@ Functions
 	-> navigate from report to search result
 	-> googla med felmeddelande, exceptions etc
 	-> query stack overflow
-	-> tool tip on selector items should show full text
 	-> translations
 	-> pretty diagrams
 	-> configure http user agent resolver
 
-Build
-	-> msbuild log
-	-> include license file in build
-
 Fix
-	-> abstract folders
+	-> skip abstract folders
 	-> logging
-
-Other
-	-> run with profiler

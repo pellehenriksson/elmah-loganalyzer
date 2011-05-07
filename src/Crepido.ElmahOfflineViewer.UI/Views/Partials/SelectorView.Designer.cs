@@ -29,9 +29,10 @@
 		private void InitializeComponent()
 		{
 			this.modeComboBox = new System.Windows.Forms.ComboBox();
-			this.itemsListBox = new System.Windows.Forms.CheckedListBox();
 			this.allButton = new System.Windows.Forms.Button();
 			this.noneButton = new System.Windows.Forms.Button();
+			this._itemsListView = new System.Windows.Forms.ListView();
+			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.SuspendLayout();
 			// 
 			// modeComboBox
@@ -42,15 +43,6 @@
 			this.modeComboBox.Name = "modeComboBox";
 			this.modeComboBox.Size = new System.Drawing.Size(97, 21);
 			this.modeComboBox.TabIndex = 0;
-			// 
-			// itemsListBox
-			// 
-			this.itemsListBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.itemsListBox.FormattingEnabled = true;
-			this.itemsListBox.Location = new System.Drawing.Point(3, 30);
-			this.itemsListBox.Name = "itemsListBox";
-			this.itemsListBox.Size = new System.Drawing.Size(228, 124);
-			this.itemsListBox.TabIndex = 1;
 			// 
 			// allButton
 			// 
@@ -74,13 +66,34 @@
 			this.noneButton.UseVisualStyleBackColor = true;
 			this.noneButton.Click += new System.EventHandler(this.NoneButtonClick);
 			// 
+			// _itemsListView
+			// 
+			this._itemsListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this._itemsListView.CheckBoxes = true;
+			this._itemsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+			this._itemsListView.Location = new System.Drawing.Point(3, 30);
+			this._itemsListView.Name = "_itemsListView";
+			this._itemsListView.ShowItemToolTips = true;
+			this._itemsListView.Size = new System.Drawing.Size(228, 124);
+			this._itemsListView.TabIndex = 4;
+			this._itemsListView.UseCompatibleStateImageBehavior = false;
+			this._itemsListView.View = System.Windows.Forms.View.Details;
+			// 
+			// columnHeader1
+			// 
+			this.columnHeader1.Text = "";
+			this.columnHeader1.Width = 200;
+			// 
 			// SelectorView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this._itemsListView);
 			this.Controls.Add(this.noneButton);
 			this.Controls.Add(this.allButton);
-			this.Controls.Add(this.itemsListBox);
 			this.Controls.Add(this.modeComboBox);
 			this.Name = "SelectorView";
 			this.Size = new System.Drawing.Size(234, 182);
@@ -91,9 +104,10 @@
 		#endregion
 
 		private System.Windows.Forms.ComboBox modeComboBox;
-		private System.Windows.Forms.CheckedListBox itemsListBox;
 		private System.Windows.Forms.Button allButton;
 		private System.Windows.Forms.Button noneButton;
+		private System.Windows.Forms.ListView _itemsListView;
+		private System.Windows.Forms.ColumnHeader columnHeader1;
 
 
 	}

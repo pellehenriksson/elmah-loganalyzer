@@ -31,8 +31,8 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 		private void InitializeComponent()
 		{
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.selectionView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.ReportSelectionView();
-			this.chartView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.ReportChartView();
+			this._selectionView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.ReportSelectionView();
+			this._chartView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.ReportChartView();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -40,8 +40,8 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			// 
 			this.tableLayoutPanel1.ColumnCount = 1;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.Controls.Add(this.selectionView, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.chartView, 0, 1);
+			this.tableLayoutPanel1.Controls.Add(this._selectionView, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this._chartView, 0, 1);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -51,21 +51,21 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(854, 609);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
-			// selectionView
+			// _selectionView
 			// 
-			this.selectionView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.selectionView.Location = new System.Drawing.Point(3, 3);
-			this.selectionView.Name = "selectionView";
-			this.selectionView.Size = new System.Drawing.Size(848, 49);
-			this.selectionView.TabIndex = 0;
+			this._selectionView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._selectionView.Location = new System.Drawing.Point(3, 3);
+			this._selectionView.Name = "_selectionView";
+			this._selectionView.Size = new System.Drawing.Size(848, 49);
+			this._selectionView.TabIndex = 0;
 			// 
-			// chartView
+			// _chartView
 			// 
-			this.chartView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.chartView.Location = new System.Drawing.Point(3, 58);
-			this.chartView.Name = "chartView";
-			this.chartView.Size = new System.Drawing.Size(848, 548);
-			this.chartView.TabIndex = 1;
+			this._chartView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._chartView.Location = new System.Drawing.Point(3, 58);
+			this._chartView.Name = "_chartView";
+			this._chartView.Size = new System.Drawing.Size(848, 548);
+			this._chartView.TabIndex = 1;
 			// 
 			// ReportView
 			// 
@@ -83,8 +83,8 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 		#endregion
 
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-		private ReportSelectionView selectionView;
-		private ReportChartView chartView;
+		private ReportSelectionView _selectionView;
+		private ReportChartView _chartView;
 
 	}
 }

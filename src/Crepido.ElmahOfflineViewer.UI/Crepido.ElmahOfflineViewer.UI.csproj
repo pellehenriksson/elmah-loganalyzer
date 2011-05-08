@@ -133,6 +133,9 @@
     <Compile Include="Views\ReportView.Designer.cs">
       <DependentUpon>ReportView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\FilterSelector.resx">
+      <DependentUpon>FilterSelector.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\NameValuePairListView.resx">
       <DependentUpon>NameValuePairListView.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,9 +169,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Partials\SearchResultView.resx">
       <DependentUpon>SearchResultView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\SelectorView.resx">
-      <DependentUpon>FilterSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SearchView.resx">
       <DependentUpon>SearchView.cs</DependentUpon>

@@ -14,7 +14,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 		{
 			InitializeComponent();
 
-			selectionView.OnReportSelected += SelectionViewOnReportSelected;
+			_selectionView.OnReportSelected += SelectionViewOnReportSelected;
 		}
 
 		public event EventHandler OnLoaded;
@@ -25,11 +25,11 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 		{
 			if (InvokeRequired)
 			{
-				this.InvokeEx(x => x.selectionView.LoadTypes(types));
+				this.InvokeEx(x => x._selectionView.LoadTypes(types));
 			}
 			else
 			{
-				selectionView.LoadTypes(types);
+				_selectionView.LoadTypes(types);
 			}
 		}
 
@@ -37,28 +37,28 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 		{
 			if (InvokeRequired)
 			{
-				this.InvokeEx(x => x.selectionView.SetDateInterval(interval));
+				this.InvokeEx(x => x._selectionView.SetDateInterval(interval));
 			}
 			else
 			{
-				selectionView.SetDateInterval(interval);
+				_selectionView.SetDateInterval(interval);
 			}
 		}
 
 		public void DisplayReport(Report report)
 		{
-			chartView.DisplayReport(report);
+			_chartView.DisplayReport(report);
 		}
 
 		public void Clear()
 		{
 			if (InvokeRequired)
 			{
-				this.InvokeEx(x => x.chartView.ClearView());
+				this.InvokeEx(x => x._chartView.ClearView());
 			}
 			else
 			{
-				chartView.ClearView();
+				_chartView.ClearView();
 			}
 		}
 

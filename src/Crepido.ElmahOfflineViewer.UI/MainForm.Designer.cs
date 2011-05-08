@@ -33,11 +33,11 @@
 			this.directoryToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.versionStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._mainToolStrip = new System.Windows.Forms.ToolStrip();
-			this.showSearchViewButton = new System.Windows.Forms.ToolStripButton();
-			this.showReportViewButton = new System.Windows.Forms.ToolStripButton();
-			this.selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
+			this._selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
+			this._showSearchViewButton = new System.Windows.Forms.ToolStripButton();
+			this._showReportViewButton = new System.Windows.Forms.ToolStripButton();
 			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-			this.mainPanel = new System.Windows.Forms.Panel();
+			this._mainPanel = new System.Windows.Forms.Panel();
 			this._mainStatusStrip.SuspendLayout();
 			this._mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -78,61 +78,61 @@
 			// _mainToolStrip
 			// 
 			this._mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.selectDirectoryButton,
-            this.showSearchViewButton,
-            this.showReportViewButton});
+            this._selectDirectoryButton,
+            this._showSearchViewButton,
+            this._showReportViewButton});
 			this._mainToolStrip.Location = new System.Drawing.Point(0, 0);
 			this._mainToolStrip.Name = "_mainToolStrip";
 			this._mainToolStrip.Size = new System.Drawing.Size(1264, 25);
 			this._mainToolStrip.TabIndex = 1;
 			this._mainToolStrip.Text = "toolStrip1";
 			// 
-			// showSearchViewButton
+			// _selectDirectoryButton
 			// 
-			this.showSearchViewButton.Image = ((System.Drawing.Image)(resources.GetObject("showSearchViewButton.Image")));
-			this.showSearchViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.showSearchViewButton.Name = "showSearchViewButton";
-			this.showSearchViewButton.Size = new System.Drawing.Size(62, 22);
-			this.showSearchViewButton.Text = "Search";
-			this.showSearchViewButton.Click += new System.EventHandler(this.ShowSearchViewButtonClick);
+			this._selectDirectoryButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.folder_bug;
+			this._selectDirectoryButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._selectDirectoryButton.Name = "_selectDirectoryButton";
+			this._selectDirectoryButton.Size = new System.Drawing.Size(108, 22);
+			this._selectDirectoryButton.Text = "Select directory";
+			this._selectDirectoryButton.Click += new System.EventHandler(this.SelectDirectoryButtonClick);
 			// 
-			// showReportViewButton
+			// _showSearchViewButton
 			// 
-			this.showReportViewButton.Image = ((System.Drawing.Image)(resources.GetObject("showReportViewButton.Image")));
-			this.showReportViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.showReportViewButton.Name = "showReportViewButton";
-			this.showReportViewButton.Size = new System.Drawing.Size(67, 22);
-			this.showReportViewButton.Text = "Reports";
-			this.showReportViewButton.Click += new System.EventHandler(this.ShowReportViewButtonClick);
+			this._showSearchViewButton.Image = ((System.Drawing.Image)(resources.GetObject("_showSearchViewButton.Image")));
+			this._showSearchViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._showSearchViewButton.Name = "_showSearchViewButton";
+			this._showSearchViewButton.Size = new System.Drawing.Size(62, 22);
+			this._showSearchViewButton.Text = "Search";
+			this._showSearchViewButton.Click += new System.EventHandler(this.ShowSearchViewButtonClick);
 			// 
-			// selectDirectoryButton
+			// _showReportViewButton
 			// 
-			this.selectDirectoryButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.folder_bug;
-			this.selectDirectoryButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.selectDirectoryButton.Name = "selectDirectoryButton";
-			this.selectDirectoryButton.Size = new System.Drawing.Size(108, 22);
-			this.selectDirectoryButton.Text = "Select directory";
-			this.selectDirectoryButton.Click += new System.EventHandler(this.SelectDirectoryButtonClick);
+			this._showReportViewButton.Image = ((System.Drawing.Image)(resources.GetObject("_showReportViewButton.Image")));
+			this._showReportViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._showReportViewButton.Name = "_showReportViewButton";
+			this._showReportViewButton.Size = new System.Drawing.Size(67, 22);
+			this._showReportViewButton.Text = "Reports";
+			this._showReportViewButton.Click += new System.EventHandler(this.ShowReportViewButtonClick);
 			// 
 			// _folderBrowserDialog
 			// 
 			this._folderBrowserDialog.Description = "Select a folder with ELMAH log files";
 			this._folderBrowserDialog.ShowNewFolderButton = false;
 			// 
-			// mainPanel
+			// _mainPanel
 			// 
-			this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.mainPanel.Location = new System.Drawing.Point(0, 25);
-			this.mainPanel.Name = "mainPanel";
-			this.mainPanel.Size = new System.Drawing.Size(1264, 679);
-			this.mainPanel.TabIndex = 2;
+			this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._mainPanel.Location = new System.Drawing.Point(0, 25);
+			this._mainPanel.Name = "_mainPanel";
+			this._mainPanel.Size = new System.Drawing.Size(1264, 679);
+			this._mainPanel.TabIndex = 2;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1264, 728);
-			this.Controls.Add(this.mainPanel);
+			this.Controls.Add(this._mainPanel);
 			this.Controls.Add(this._mainToolStrip);
 			this.Controls.Add(this._mainStatusStrip);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -152,12 +152,12 @@
 		private System.Windows.Forms.StatusStrip _mainStatusStrip;
 		private System.Windows.Forms.ToolStrip _mainToolStrip;
 		private System.Windows.Forms.ToolStripStatusLabel directoryToolStripStatusLabel;
-		private System.Windows.Forms.ToolStripButton selectDirectoryButton;
+		private System.Windows.Forms.ToolStripButton _selectDirectoryButton;
 		private System.Windows.Forms.FolderBrowserDialog _folderBrowserDialog;
 		private System.Windows.Forms.ToolStripStatusLabel versionStripStatusLabel;
-		private System.Windows.Forms.Panel mainPanel;
-		private System.Windows.Forms.ToolStripButton showSearchViewButton;
-		private System.Windows.Forms.ToolStripButton showReportViewButton;
+		private System.Windows.Forms.Panel _mainPanel;
+		private System.Windows.Forms.ToolStripButton _showSearchViewButton;
+		private System.Windows.Forms.ToolStripButton _showReportViewButton;
 
 		private void RepositoryOnInitialized(object sender, Core.Domain.RepositoryInitializedEventArgs e)
 		{

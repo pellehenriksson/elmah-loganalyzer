@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.modeComboBox = new System.Windows.Forms.ComboBox();
-			this.allButton = new System.Windows.Forms.Button();
-			this.noneButton = new System.Windows.Forms.Button();
+			this._modeComboBox = new System.Windows.Forms.ComboBox();
+			this._allButton = new System.Windows.Forms.Button();
+			this._noneButton = new System.Windows.Forms.Button();
 			this._itemsListView = new System.Windows.Forms.ListView();
 			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this._itemsListContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -39,36 +39,36 @@
 			this._itemsListContextMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// modeComboBox
+			// _modeComboBox
 			// 
-			this.modeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.modeComboBox.FormattingEnabled = true;
-			this.modeComboBox.Location = new System.Drawing.Point(3, 3);
-			this.modeComboBox.Name = "modeComboBox";
-			this.modeComboBox.Size = new System.Drawing.Size(97, 21);
-			this.modeComboBox.TabIndex = 0;
+			this._modeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._modeComboBox.FormattingEnabled = true;
+			this._modeComboBox.Location = new System.Drawing.Point(3, 3);
+			this._modeComboBox.Name = "_modeComboBox";
+			this._modeComboBox.Size = new System.Drawing.Size(97, 21);
+			this._modeComboBox.TabIndex = 0;
 			// 
-			// allButton
+			// _allButton
 			// 
-			this.allButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.allButton.Location = new System.Drawing.Point(3, 160);
-			this.allButton.Name = "allButton";
-			this.allButton.Size = new System.Drawing.Size(46, 20);
-			this.allButton.TabIndex = 2;
-			this.allButton.Text = "All";
-			this.allButton.UseVisualStyleBackColor = true;
-			this.allButton.Click += new System.EventHandler(this.AllButtonClick);
+			this._allButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._allButton.Location = new System.Drawing.Point(3, 160);
+			this._allButton.Name = "_allButton";
+			this._allButton.Size = new System.Drawing.Size(46, 20);
+			this._allButton.TabIndex = 2;
+			this._allButton.Text = "All";
+			this._allButton.UseVisualStyleBackColor = true;
+			this._allButton.Click += new System.EventHandler(this.AllButtonClick);
 			// 
-			// noneButton
+			// _noneButton
 			// 
-			this.noneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.noneButton.Location = new System.Drawing.Point(55, 160);
-			this.noneButton.Name = "noneButton";
-			this.noneButton.Size = new System.Drawing.Size(45, 20);
-			this.noneButton.TabIndex = 3;
-			this.noneButton.Text = "None";
-			this.noneButton.UseVisualStyleBackColor = true;
-			this.noneButton.Click += new System.EventHandler(this.NoneButtonClick);
+			this._noneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._noneButton.Location = new System.Drawing.Point(55, 160);
+			this._noneButton.Name = "_noneButton";
+			this._noneButton.Size = new System.Drawing.Size(45, 20);
+			this._noneButton.TabIndex = 3;
+			this._noneButton.Text = "None";
+			this._noneButton.UseVisualStyleBackColor = true;
+			this._noneButton.Click += new System.EventHandler(this.NoneButtonClick);
 			// 
 			// _itemsListView
 			// 
@@ -112,9 +112,9 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this._itemsListView);
-			this.Controls.Add(this.noneButton);
-			this.Controls.Add(this.allButton);
-			this.Controls.Add(this.modeComboBox);
+			this.Controls.Add(this._noneButton);
+			this.Controls.Add(this._allButton);
+			this.Controls.Add(this._modeComboBox);
 			this.Name = "SelectorView";
 			this.Size = new System.Drawing.Size(234, 182);
 			this._itemsListContextMenu.ResumeLayout(false);
@@ -124,9 +124,9 @@
 
 		#endregion
 
-		private System.Windows.Forms.ComboBox modeComboBox;
-		private System.Windows.Forms.Button allButton;
-		private System.Windows.Forms.Button noneButton;
+		private System.Windows.Forms.ComboBox _modeComboBox;
+		private System.Windows.Forms.Button _allButton;
+		private System.Windows.Forms.Button _noneButton;
 		private System.Windows.Forms.ListView _itemsListView;
 		private System.Windows.Forms.ColumnHeader columnHeader1;
 		private System.Windows.Forms.ContextMenuStrip _itemsListContextMenu;

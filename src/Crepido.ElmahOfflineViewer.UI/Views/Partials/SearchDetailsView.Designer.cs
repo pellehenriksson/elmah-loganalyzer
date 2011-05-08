@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this._detailsTabControl = new System.Windows.Forms.TabControl();
-			this.errorTabPage = new System.Windows.Forms.TabPage();
+			this._errorTabPage = new System.Windows.Forms.TabPage();
 			this._sourceLabel = new System.Windows.Forms.TextBox();
 			this._typeLabel = new System.Windows.Forms.TextBox();
 			this._urlLabel = new System.Windows.Forms.TextBox();
@@ -45,7 +45,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.clientTabPage = new System.Windows.Forms.TabPage();
+			this._clientTabPage = new System.Windows.Forms.TabPage();
 			this._ipAddressLabel = new System.Windows.Forms.TextBox();
 			this._platformLabel = new System.Windows.Forms.TextBox();
 			this._operatingSystemLabel = new System.Windows.Forms.TextBox();
@@ -56,35 +56,35 @@
 			this.label12 = new System.Windows.Forms.Label();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.formsTabPage = new System.Windows.Forms.TabPage();
-			this.cookiesTabPage = new System.Windows.Forms.TabPage();
-			this.queryStringTabPage = new System.Windows.Forms.TabPage();
-			this.serverVariablesTabPage = new System.Windows.Forms.TabPage();
+			this._formsTabPage = new System.Windows.Forms.TabPage();
 			this._formsListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
+			this._cookiesTabPage = new System.Windows.Forms.TabPage();
 			this._cookiesListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
+			this._queryStringTabPage = new System.Windows.Forms.TabPage();
 			this._querystringListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
+			this._serverVariablesTabPage = new System.Windows.Forms.TabPage();
 			this._serverVariablesListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
 			this._detailsTabControl.SuspendLayout();
-			this.errorTabPage.SuspendLayout();
+			this._errorTabPage.SuspendLayout();
 			this._errorTabControl.SuspendLayout();
 			this._messageTabPage.SuspendLayout();
 			this._detailsTabPage.SuspendLayout();
 			this._yellowScreenOfDeathTabPage.SuspendLayout();
-			this.clientTabPage.SuspendLayout();
-			this.formsTabPage.SuspendLayout();
-			this.cookiesTabPage.SuspendLayout();
-			this.queryStringTabPage.SuspendLayout();
-			this.serverVariablesTabPage.SuspendLayout();
+			this._clientTabPage.SuspendLayout();
+			this._formsTabPage.SuspendLayout();
+			this._cookiesTabPage.SuspendLayout();
+			this._queryStringTabPage.SuspendLayout();
+			this._serverVariablesTabPage.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// _detailsTabControl
 			// 
-			this._detailsTabControl.Controls.Add(this.errorTabPage);
-			this._detailsTabControl.Controls.Add(this.clientTabPage);
-			this._detailsTabControl.Controls.Add(this.formsTabPage);
-			this._detailsTabControl.Controls.Add(this.cookiesTabPage);
-			this._detailsTabControl.Controls.Add(this.queryStringTabPage);
-			this._detailsTabControl.Controls.Add(this.serverVariablesTabPage);
+			this._detailsTabControl.Controls.Add(this._errorTabPage);
+			this._detailsTabControl.Controls.Add(this._clientTabPage);
+			this._detailsTabControl.Controls.Add(this._formsTabPage);
+			this._detailsTabControl.Controls.Add(this._cookiesTabPage);
+			this._detailsTabControl.Controls.Add(this._queryStringTabPage);
+			this._detailsTabControl.Controls.Add(this._serverVariablesTabPage);
 			this._detailsTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._detailsTabControl.Location = new System.Drawing.Point(0, 0);
 			this._detailsTabControl.Name = "_detailsTabControl";
@@ -92,24 +92,24 @@
 			this._detailsTabControl.Size = new System.Drawing.Size(612, 386);
 			this._detailsTabControl.TabIndex = 0;
 			// 
-			// errorTabPage
+			// _errorTabPage
 			// 
-			this.errorTabPage.BackColor = System.Drawing.Color.White;
-			this.errorTabPage.Controls.Add(this._sourceLabel);
-			this.errorTabPage.Controls.Add(this._typeLabel);
-			this.errorTabPage.Controls.Add(this._urlLabel);
-			this.errorTabPage.Controls.Add(this._timeLabel);
-			this.errorTabPage.Controls.Add(this.label6);
-			this.errorTabPage.Controls.Add(this._errorTabControl);
-			this.errorTabPage.Controls.Add(this.label2);
-			this.errorTabPage.Controls.Add(this.label5);
-			this.errorTabPage.Controls.Add(this.label3);
-			this.errorTabPage.Location = new System.Drawing.Point(4, 22);
-			this.errorTabPage.Name = "errorTabPage";
-			this.errorTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this.errorTabPage.Size = new System.Drawing.Size(604, 360);
-			this.errorTabPage.TabIndex = 0;
-			this.errorTabPage.Text = "Error";
+			this._errorTabPage.BackColor = System.Drawing.Color.White;
+			this._errorTabPage.Controls.Add(this._sourceLabel);
+			this._errorTabPage.Controls.Add(this._typeLabel);
+			this._errorTabPage.Controls.Add(this._urlLabel);
+			this._errorTabPage.Controls.Add(this._timeLabel);
+			this._errorTabPage.Controls.Add(this.label6);
+			this._errorTabPage.Controls.Add(this._errorTabControl);
+			this._errorTabPage.Controls.Add(this.label2);
+			this._errorTabPage.Controls.Add(this.label5);
+			this._errorTabPage.Controls.Add(this.label3);
+			this._errorTabPage.Location = new System.Drawing.Point(4, 22);
+			this._errorTabPage.Name = "_errorTabPage";
+			this._errorTabPage.Padding = new System.Windows.Forms.Padding(3);
+			this._errorTabPage.Size = new System.Drawing.Size(604, 360);
+			this._errorTabPage.TabIndex = 0;
+			this._errorTabPage.Text = "Error";
 			// 
 			// _sourceLabel
 			// 
@@ -283,24 +283,24 @@
 			this.label3.TabIndex = 2;
 			this.label3.Text = "Time:";
 			// 
-			// clientTabPage
+			// _clientTabPage
 			// 
-			this.clientTabPage.BackColor = System.Drawing.Color.White;
-			this.clientTabPage.Controls.Add(this._ipAddressLabel);
-			this.clientTabPage.Controls.Add(this._platformLabel);
-			this.clientTabPage.Controls.Add(this._operatingSystemLabel);
-			this.clientTabPage.Controls.Add(this._browserLabel);
-			this.clientTabPage.Controls.Add(this._userLabel);
-			this.clientTabPage.Controls.Add(this.label9);
-			this.clientTabPage.Controls.Add(this.label4);
-			this.clientTabPage.Controls.Add(this.label12);
-			this.clientTabPage.Controls.Add(this.label10);
-			this.clientTabPage.Controls.Add(this.label8);
-			this.clientTabPage.Location = new System.Drawing.Point(4, 22);
-			this.clientTabPage.Name = "clientTabPage";
-			this.clientTabPage.Size = new System.Drawing.Size(604, 360);
-			this.clientTabPage.TabIndex = 2;
-			this.clientTabPage.Text = "Client Information";
+			this._clientTabPage.BackColor = System.Drawing.Color.White;
+			this._clientTabPage.Controls.Add(this._ipAddressLabel);
+			this._clientTabPage.Controls.Add(this._platformLabel);
+			this._clientTabPage.Controls.Add(this._operatingSystemLabel);
+			this._clientTabPage.Controls.Add(this._browserLabel);
+			this._clientTabPage.Controls.Add(this._userLabel);
+			this._clientTabPage.Controls.Add(this.label9);
+			this._clientTabPage.Controls.Add(this.label4);
+			this._clientTabPage.Controls.Add(this.label12);
+			this._clientTabPage.Controls.Add(this.label10);
+			this._clientTabPage.Controls.Add(this.label8);
+			this._clientTabPage.Location = new System.Drawing.Point(4, 22);
+			this._clientTabPage.Name = "_clientTabPage";
+			this._clientTabPage.Size = new System.Drawing.Size(604, 360);
+			this._clientTabPage.TabIndex = 2;
+			this._clientTabPage.Text = "Client Information";
 			// 
 			// _ipAddressLabel
 			// 
@@ -417,46 +417,15 @@
 			this.label8.TabIndex = 2;
 			this.label8.Text = "Platform:";
 			// 
-			// formsTabPage
+			// _formsTabPage
 			// 
-			this.formsTabPage.Controls.Add(this._formsListView);
-			this.formsTabPage.Location = new System.Drawing.Point(4, 22);
-			this.formsTabPage.Name = "formsTabPage";
-			this.formsTabPage.Size = new System.Drawing.Size(604, 360);
-			this.formsTabPage.TabIndex = 4;
-			this.formsTabPage.Text = "Forms";
-			this.formsTabPage.UseVisualStyleBackColor = true;
-			// 
-			// cookiesTabPage
-			// 
-			this.cookiesTabPage.Controls.Add(this._cookiesListView);
-			this.cookiesTabPage.Location = new System.Drawing.Point(4, 22);
-			this.cookiesTabPage.Name = "cookiesTabPage";
-			this.cookiesTabPage.Size = new System.Drawing.Size(604, 360);
-			this.cookiesTabPage.TabIndex = 3;
-			this.cookiesTabPage.Text = "Cookies";
-			this.cookiesTabPage.UseVisualStyleBackColor = true;
-			// 
-			// queryStringTabPage
-			// 
-			this.queryStringTabPage.Controls.Add(this._querystringListView);
-			this.queryStringTabPage.Location = new System.Drawing.Point(4, 22);
-			this.queryStringTabPage.Name = "queryStringTabPage";
-			this.queryStringTabPage.Size = new System.Drawing.Size(604, 360);
-			this.queryStringTabPage.TabIndex = 5;
-			this.queryStringTabPage.Text = "Querystring";
-			this.queryStringTabPage.UseVisualStyleBackColor = true;
-			// 
-			// serverVariablesTabPage
-			// 
-			this.serverVariablesTabPage.Controls.Add(this._serverVariablesListView);
-			this.serverVariablesTabPage.Location = new System.Drawing.Point(4, 22);
-			this.serverVariablesTabPage.Name = "serverVariablesTabPage";
-			this.serverVariablesTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this.serverVariablesTabPage.Size = new System.Drawing.Size(604, 360);
-			this.serverVariablesTabPage.TabIndex = 1;
-			this.serverVariablesTabPage.Text = "Server Variables";
-			this.serverVariablesTabPage.UseVisualStyleBackColor = true;
+			this._formsTabPage.Controls.Add(this._formsListView);
+			this._formsTabPage.Location = new System.Drawing.Point(4, 22);
+			this._formsTabPage.Name = "_formsTabPage";
+			this._formsTabPage.Size = new System.Drawing.Size(604, 360);
+			this._formsTabPage.TabIndex = 4;
+			this._formsTabPage.Text = "Forms";
+			this._formsTabPage.UseVisualStyleBackColor = true;
 			// 
 			// _formsListView
 			// 
@@ -466,6 +435,16 @@
 			this._formsListView.Size = new System.Drawing.Size(604, 360);
 			this._formsListView.TabIndex = 0;
 			// 
+			// _cookiesTabPage
+			// 
+			this._cookiesTabPage.Controls.Add(this._cookiesListView);
+			this._cookiesTabPage.Location = new System.Drawing.Point(4, 22);
+			this._cookiesTabPage.Name = "_cookiesTabPage";
+			this._cookiesTabPage.Size = new System.Drawing.Size(604, 360);
+			this._cookiesTabPage.TabIndex = 3;
+			this._cookiesTabPage.Text = "Cookies";
+			this._cookiesTabPage.UseVisualStyleBackColor = true;
+			// 
 			// _cookiesListView
 			// 
 			this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -474,6 +453,16 @@
 			this._cookiesListView.Size = new System.Drawing.Size(604, 360);
 			this._cookiesListView.TabIndex = 0;
 			// 
+			// _queryStringTabPage
+			// 
+			this._queryStringTabPage.Controls.Add(this._querystringListView);
+			this._queryStringTabPage.Location = new System.Drawing.Point(4, 22);
+			this._queryStringTabPage.Name = "_queryStringTabPage";
+			this._queryStringTabPage.Size = new System.Drawing.Size(604, 360);
+			this._queryStringTabPage.TabIndex = 5;
+			this._queryStringTabPage.Text = "Querystring";
+			this._queryStringTabPage.UseVisualStyleBackColor = true;
+			// 
 			// _querystringListView
 			// 
 			this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -481,6 +470,17 @@
 			this._querystringListView.Name = "_querystringListView";
 			this._querystringListView.Size = new System.Drawing.Size(604, 360);
 			this._querystringListView.TabIndex = 0;
+			// 
+			// _serverVariablesTabPage
+			// 
+			this._serverVariablesTabPage.Controls.Add(this._serverVariablesListView);
+			this._serverVariablesTabPage.Location = new System.Drawing.Point(4, 22);
+			this._serverVariablesTabPage.Name = "_serverVariablesTabPage";
+			this._serverVariablesTabPage.Padding = new System.Windows.Forms.Padding(3);
+			this._serverVariablesTabPage.Size = new System.Drawing.Size(604, 360);
+			this._serverVariablesTabPage.TabIndex = 1;
+			this._serverVariablesTabPage.Text = "Server Variables";
+			this._serverVariablesTabPage.UseVisualStyleBackColor = true;
 			// 
 			// _serverVariablesListView
 			// 
@@ -498,20 +498,20 @@
 			this.Name = "SearchDetailsView";
 			this.Size = new System.Drawing.Size(612, 386);
 			this._detailsTabControl.ResumeLayout(false);
-			this.errorTabPage.ResumeLayout(false);
-			this.errorTabPage.PerformLayout();
+			this._errorTabPage.ResumeLayout(false);
+			this._errorTabPage.PerformLayout();
 			this._errorTabControl.ResumeLayout(false);
 			this._messageTabPage.ResumeLayout(false);
 			this._messageTabPage.PerformLayout();
 			this._detailsTabPage.ResumeLayout(false);
 			this._detailsTabPage.PerformLayout();
 			this._yellowScreenOfDeathTabPage.ResumeLayout(false);
-			this.clientTabPage.ResumeLayout(false);
-			this.clientTabPage.PerformLayout();
-			this.formsTabPage.ResumeLayout(false);
-			this.cookiesTabPage.ResumeLayout(false);
-			this.queryStringTabPage.ResumeLayout(false);
-			this.serverVariablesTabPage.ResumeLayout(false);
+			this._clientTabPage.ResumeLayout(false);
+			this._clientTabPage.PerformLayout();
+			this._formsTabPage.ResumeLayout(false);
+			this._cookiesTabPage.ResumeLayout(false);
+			this._queryStringTabPage.ResumeLayout(false);
+			this._serverVariablesTabPage.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -519,8 +519,8 @@
 		#endregion
 
 		private System.Windows.Forms.TabControl _detailsTabControl;
-		private System.Windows.Forms.TabPage errorTabPage;
-		private System.Windows.Forms.TabPage serverVariablesTabPage;
+		private System.Windows.Forms.TabPage _errorTabPage;
+		private System.Windows.Forms.TabPage _serverVariablesTabPage;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
@@ -530,15 +530,15 @@
 		private System.Windows.Forms.TextBox _messageTextBox;
 		private System.Windows.Forms.TextBox _detailsTextBox;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TabPage clientTabPage;
+		private System.Windows.Forms.TabPage _clientTabPage;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.TabPage formsTabPage;
-		private System.Windows.Forms.TabPage cookiesTabPage;
-		private System.Windows.Forms.TabPage queryStringTabPage;
+		private System.Windows.Forms.TabPage _formsTabPage;
+		private System.Windows.Forms.TabPage _cookiesTabPage;
+		private System.Windows.Forms.TabPage _queryStringTabPage;
 		private System.Windows.Forms.TabPage _yellowScreenOfDeathTabPage;
 		private System.Windows.Forms.WebBrowser _browser;
 		private System.Windows.Forms.TextBox _timeLabel;

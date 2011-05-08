@@ -41,14 +41,14 @@ namespace Crepido.ElmahOfflineViewer.UI.Controls
 
 		public bool GetMode()
 		{
-			return modeComboBox.SelectedIndex == 0;
+			return _modeComboBox.SelectedIndex == 0;
 		}
 
 		private void Initialize()
 		{
-			modeComboBox.Items.Add("Include");
-			modeComboBox.Items.Add("Exclude");
-			modeComboBox.SelectedIndex = 0;
+			_modeComboBox.Items.Add("Include");
+			_modeComboBox.Items.Add("Exclude");
+			_modeComboBox.SelectedIndex = 0;
 		}
 
 		private void SetItemColumnsWidth()

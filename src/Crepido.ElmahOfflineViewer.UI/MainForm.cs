@@ -35,29 +35,29 @@ namespace Crepido.ElmahOfflineViewer.UI
 	
 		private void SetLoadingState()
 		{
-			showSearchViewButton.Enabled = false;
-			showReportViewButton.Enabled = false;
-			selectDirectoryButton.Enabled = false;
+			_showSearchViewButton.Enabled = false;
+			_showReportViewButton.Enabled = false;
+			_selectDirectoryButton.Enabled = false;
 
 			LoadView(new LoadingView());
 		}
 
 		private void SetReadyForWorkState()
 		{
-			showSearchViewButton.Enabled = true;
-			showReportViewButton.Enabled = true;
-			selectDirectoryButton.Enabled = true;
+			_showSearchViewButton.Enabled = true;
+			_showReportViewButton.Enabled = true;
+			_selectDirectoryButton.Enabled = true;
 
-			mainPanel.Controls.Clear();
+			_mainPanel.Controls.Clear();
 		}
 		
 		private void SetErrorLoadingState()
 		{
-			showSearchViewButton.Enabled = false;
-			showReportViewButton.Enabled = false;
-			selectDirectoryButton.Enabled = true;
+			_showSearchViewButton.Enabled = false;
+			_showReportViewButton.Enabled = false;
+			_selectDirectoryButton.Enabled = true;
 			
-			mainPanel.Controls.Clear();
+			_mainPanel.Controls.Clear();
 			directoryToolStripStatusLabel.Text = string.Empty;
 		}
 
@@ -102,8 +102,8 @@ namespace Crepido.ElmahOfflineViewer.UI
 
 		private void LoadView(Control view)
 		{
-			mainPanel.Controls.Clear();
-			mainPanel.Controls.Add(view);
+			_mainPanel.Controls.Clear();
+			_mainPanel.Controls.Add(view);
 			view.Dock = DockStyle.Fill;
 		}
 		

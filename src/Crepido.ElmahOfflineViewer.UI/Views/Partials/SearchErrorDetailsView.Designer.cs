@@ -30,29 +30,22 @@
 		{
 			this._detailsTabControl = new System.Windows.Forms.TabControl();
 			this.errorTabPage = new System.Windows.Forms.TabPage();
-			this._urlLabel = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this._errorTabControl = new System.Windows.Forms.TabControl();
 			this._messageTabPage = new System.Windows.Forms.TabPage();
 			this._messageTextBox = new System.Windows.Forms.TextBox();
 			this._detailsTabPage = new System.Windows.Forms.TabPage();
 			this._detailsTextBox = new System.Windows.Forms.TextBox();
-			this._sourceLabel = new System.Windows.Forms.Label();
+			this._yellowScreenOfDeathTabPage = new System.Windows.Forms.TabPage();
+			this._browser = new System.Windows.Forms.WebBrowser();
 			this.label2 = new System.Windows.Forms.Label();
-			this._typeLabel = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this._timeLabel = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.clientTabPage = new System.Windows.Forms.TabPage();
-			this._ipAddressLabel = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
-			this._userLabel = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this._browserLabel = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
-			this._operatingSystemLabel = new System.Windows.Forms.Label();
 			this.label10 = new System.Windows.Forms.Label();
-			this._platformLabel = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.formsTabPage = new System.Windows.Forms.TabPage();
 			this._formsListView = new System.Windows.Forms.ListView();
@@ -70,19 +63,26 @@
 			this._servervariablesListView = new System.Windows.Forms.ListView();
 			this._nameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this._valueColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this._yellowScreenOfDeathTabPage = new System.Windows.Forms.TabPage();
-			this._browser = new System.Windows.Forms.WebBrowser();
+			this._timeLabel = new System.Windows.Forms.TextBox();
+			this._urlLabel = new System.Windows.Forms.TextBox();
+			this._typeLabel = new System.Windows.Forms.TextBox();
+			this._sourceLabel = new System.Windows.Forms.TextBox();
+			this._userLabel = new System.Windows.Forms.TextBox();
+			this._browserLabel = new System.Windows.Forms.TextBox();
+			this._operatingSystemLabel = new System.Windows.Forms.TextBox();
+			this._platformLabel = new System.Windows.Forms.TextBox();
+			this._ipAddressLabel = new System.Windows.Forms.TextBox();
 			this._detailsTabControl.SuspendLayout();
 			this.errorTabPage.SuspendLayout();
 			this._errorTabControl.SuspendLayout();
 			this._messageTabPage.SuspendLayout();
 			this._detailsTabPage.SuspendLayout();
+			this._yellowScreenOfDeathTabPage.SuspendLayout();
 			this.clientTabPage.SuspendLayout();
 			this.formsTabPage.SuspendLayout();
 			this.cookiesTabPage.SuspendLayout();
 			this.queryStringTabPage.SuspendLayout();
 			this.serverVariablesTabPage.SuspendLayout();
-			this._yellowScreenOfDeathTabPage.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// _detailsTabControl
@@ -102,14 +102,15 @@
 			// 
 			// errorTabPage
 			// 
+			this.errorTabPage.BackColor = System.Drawing.Color.White;
+			this.errorTabPage.Controls.Add(this._sourceLabel);
+			this.errorTabPage.Controls.Add(this._typeLabel);
 			this.errorTabPage.Controls.Add(this._urlLabel);
+			this.errorTabPage.Controls.Add(this._timeLabel);
 			this.errorTabPage.Controls.Add(this.label6);
 			this.errorTabPage.Controls.Add(this._errorTabControl);
-			this.errorTabPage.Controls.Add(this._sourceLabel);
 			this.errorTabPage.Controls.Add(this.label2);
-			this.errorTabPage.Controls.Add(this._typeLabel);
 			this.errorTabPage.Controls.Add(this.label5);
-			this.errorTabPage.Controls.Add(this._timeLabel);
 			this.errorTabPage.Controls.Add(this.label3);
 			this.errorTabPage.Location = new System.Drawing.Point(4, 22);
 			this.errorTabPage.Name = "errorTabPage";
@@ -117,17 +118,6 @@
 			this.errorTabPage.Size = new System.Drawing.Size(604, 360);
 			this.errorTabPage.TabIndex = 0;
 			this.errorTabPage.Text = "Error";
-			this.errorTabPage.UseVisualStyleBackColor = true;
-			// 
-			// _urlLabel
-			// 
-			this._urlLabel.AutoSize = true;
-			this._urlLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._urlLabel.Location = new System.Drawing.Point(71, 37);
-			this._urlLabel.Name = "_urlLabel";
-			this._urlLabel.Size = new System.Drawing.Size(37, 13);
-			this._urlLabel.TabIndex = 11;
-			this._urlLabel.Text = "[Url]";
 			// 
 			// label6
 			// 
@@ -199,15 +189,25 @@
 			this._detailsTextBox.Size = new System.Drawing.Size(578, 209);
 			this._detailsTextBox.TabIndex = 0;
 			// 
-			// _sourceLabel
+			// _yellowScreenOfDeathTabPage
 			// 
-			this._sourceLabel.AutoSize = true;
-			this._sourceLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._sourceLabel.Location = new System.Drawing.Point(71, 85);
-			this._sourceLabel.Name = "_sourceLabel";
-			this._sourceLabel.Size = new System.Drawing.Size(55, 13);
-			this._sourceLabel.TabIndex = 7;
-			this._sourceLabel.Text = "[Source]";
+			this._yellowScreenOfDeathTabPage.Controls.Add(this._browser);
+			this._yellowScreenOfDeathTabPage.Location = new System.Drawing.Point(4, 22);
+			this._yellowScreenOfDeathTabPage.Name = "_yellowScreenOfDeathTabPage";
+			this._yellowScreenOfDeathTabPage.Padding = new System.Windows.Forms.Padding(3);
+			this._yellowScreenOfDeathTabPage.Size = new System.Drawing.Size(584, 215);
+			this._yellowScreenOfDeathTabPage.TabIndex = 2;
+			this._yellowScreenOfDeathTabPage.Text = "Yellow Screen Of Death";
+			this._yellowScreenOfDeathTabPage.UseVisualStyleBackColor = true;
+			// 
+			// _browser
+			// 
+			this._browser.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._browser.Location = new System.Drawing.Point(3, 3);
+			this._browser.MinimumSize = new System.Drawing.Size(20, 20);
+			this._browser.Name = "_browser";
+			this._browser.Size = new System.Drawing.Size(578, 209);
+			this._browser.TabIndex = 0;
 			// 
 			// label2
 			// 
@@ -219,16 +219,6 @@
 			this.label2.TabIndex = 6;
 			this.label2.Text = "Source:";
 			// 
-			// _typeLabel
-			// 
-			this._typeLabel.AutoSize = true;
-			this._typeLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._typeLabel.Location = new System.Drawing.Point(71, 61);
-			this._typeLabel.Name = "_typeLabel";
-			this._typeLabel.Size = new System.Drawing.Size(73, 13);
-			this._typeLabel.TabIndex = 5;
-			this._typeLabel.Text = "[Exception]";
-			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
@@ -238,16 +228,6 @@
 			this.label5.Size = new System.Drawing.Size(37, 13);
 			this.label5.TabIndex = 4;
 			this.label5.Text = "Type:";
-			// 
-			// _timeLabel
-			// 
-			this._timeLabel.AutoSize = true;
-			this._timeLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._timeLabel.Location = new System.Drawing.Point(71, 15);
-			this._timeLabel.Name = "_timeLabel";
-			this._timeLabel.Size = new System.Drawing.Size(43, 13);
-			this._timeLabel.TabIndex = 3;
-			this._timeLabel.Text = "[Time]";
 			// 
 			// label3
 			// 
@@ -261,118 +241,68 @@
 			// 
 			// clientTabPage
 			// 
+			this.clientTabPage.BackColor = System.Drawing.Color.White;
 			this.clientTabPage.Controls.Add(this._ipAddressLabel);
-			this.clientTabPage.Controls.Add(this.label9);
-			this.clientTabPage.Controls.Add(this._userLabel);
-			this.clientTabPage.Controls.Add(this.label4);
-			this.clientTabPage.Controls.Add(this._browserLabel);
-			this.clientTabPage.Controls.Add(this.label12);
-			this.clientTabPage.Controls.Add(this._operatingSystemLabel);
-			this.clientTabPage.Controls.Add(this.label10);
 			this.clientTabPage.Controls.Add(this._platformLabel);
+			this.clientTabPage.Controls.Add(this._operatingSystemLabel);
+			this.clientTabPage.Controls.Add(this._browserLabel);
+			this.clientTabPage.Controls.Add(this._userLabel);
+			this.clientTabPage.Controls.Add(this.label9);
+			this.clientTabPage.Controls.Add(this.label4);
+			this.clientTabPage.Controls.Add(this.label12);
+			this.clientTabPage.Controls.Add(this.label10);
 			this.clientTabPage.Controls.Add(this.label8);
 			this.clientTabPage.Location = new System.Drawing.Point(4, 22);
 			this.clientTabPage.Name = "clientTabPage";
 			this.clientTabPage.Size = new System.Drawing.Size(604, 360);
 			this.clientTabPage.TabIndex = 2;
 			this.clientTabPage.Text = "Client Information";
-			this.clientTabPage.UseVisualStyleBackColor = true;
-			// 
-			// _ipAddressLabel
-			// 
-			this._ipAddressLabel.AutoSize = true;
-			this._ipAddressLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._ipAddressLabel.Location = new System.Drawing.Point(134, 114);
-			this._ipAddressLabel.Name = "_ipAddressLabel";
-			this._ipAddressLabel.Size = new System.Drawing.Size(31, 13);
-			this._ipAddressLabel.TabIndex = 13;
-			this._ipAddressLabel.Text = "[IP]";
 			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label9.Location = new System.Drawing.Point(16, 114);
+			this.label9.Location = new System.Drawing.Point(16, 110);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(73, 13);
 			this.label9.TabIndex = 12;
 			this.label9.Text = "IP Address:";
 			// 
-			// _userLabel
-			// 
-			this._userLabel.AutoSize = true;
-			this._userLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._userLabel.Location = new System.Drawing.Point(134, 17);
-			this._userLabel.Name = "_userLabel";
-			this._userLabel.Size = new System.Drawing.Size(43, 13);
-			this._userLabel.TabIndex = 11;
-			this._userLabel.Text = "[User]";
-			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(16, 17);
+			this.label4.Location = new System.Drawing.Point(16, 15);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(37, 13);
 			this.label4.TabIndex = 10;
 			this.label4.Text = "User:";
 			// 
-			// _browserLabel
-			// 
-			this._browserLabel.AutoSize = true;
-			this._browserLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._browserLabel.Location = new System.Drawing.Point(134, 42);
-			this._browserLabel.Name = "_browserLabel";
-			this._browserLabel.Size = new System.Drawing.Size(61, 13);
-			this._browserLabel.TabIndex = 7;
-			this._browserLabel.Text = "[Browser]";
-			// 
 			// label12
 			// 
 			this.label12.AutoSize = true;
 			this.label12.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label12.Location = new System.Drawing.Point(16, 42);
+			this.label12.Location = new System.Drawing.Point(16, 38);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(55, 13);
 			this.label12.TabIndex = 6;
 			this.label12.Text = "Browser:";
 			// 
-			// _operatingSystemLabel
-			// 
-			this._operatingSystemLabel.AutoSize = true;
-			this._operatingSystemLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._operatingSystemLabel.Location = new System.Drawing.Point(134, 64);
-			this._operatingSystemLabel.Name = "_operatingSystemLabel";
-			this._operatingSystemLabel.Size = new System.Drawing.Size(115, 13);
-			this._operatingSystemLabel.TabIndex = 5;
-			this._operatingSystemLabel.Text = "[Operating system]";
-			// 
 			// label10
 			// 
 			this.label10.AutoSize = true;
 			this.label10.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label10.Location = new System.Drawing.Point(16, 64);
+			this.label10.Location = new System.Drawing.Point(16, 60);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(109, 13);
 			this.label10.TabIndex = 4;
 			this.label10.Text = "Operating system:";
 			// 
-			// _platformLabel
-			// 
-			this._platformLabel.AutoSize = true;
-			this._platformLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._platformLabel.Location = new System.Drawing.Point(134, 90);
-			this._platformLabel.Name = "_platformLabel";
-			this._platformLabel.Size = new System.Drawing.Size(67, 13);
-			this._platformLabel.TabIndex = 3;
-			this._platformLabel.Text = "[Platform]";
-			// 
 			// label8
 			// 
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(16, 90);
+			this.label8.Location = new System.Drawing.Point(16, 86);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(61, 13);
 			this.label8.TabIndex = 2;
@@ -523,25 +453,122 @@
 			this._valueColumnHeader.Text = "Value";
 			this._valueColumnHeader.Width = 438;
 			// 
-			// _yellowScreenOfDeathTabPage
+			// _timeLabel
 			// 
-			this._yellowScreenOfDeathTabPage.Controls.Add(this._browser);
-			this._yellowScreenOfDeathTabPage.Location = new System.Drawing.Point(4, 22);
-			this._yellowScreenOfDeathTabPage.Name = "_yellowScreenOfDeathTabPage";
-			this._yellowScreenOfDeathTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this._yellowScreenOfDeathTabPage.Size = new System.Drawing.Size(584, 215);
-			this._yellowScreenOfDeathTabPage.TabIndex = 2;
-			this._yellowScreenOfDeathTabPage.Text = "Yellow Screen Of Death";
-			this._yellowScreenOfDeathTabPage.UseVisualStyleBackColor = true;
+			this._timeLabel.BackColor = System.Drawing.Color.White;
+			this._timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._timeLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._timeLabel.Location = new System.Drawing.Point(79, 15);
+			this._timeLabel.Name = "_timeLabel";
+			this._timeLabel.ReadOnly = true;
+			this._timeLabel.Size = new System.Drawing.Size(298, 13);
+			this._timeLabel.TabIndex = 11;
+			this._timeLabel.TabStop = false;
+			this._timeLabel.Text = "[Time]";
 			// 
-			// _browser
+			// _urlLabel
 			// 
-			this._browser.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._browser.Location = new System.Drawing.Point(3, 3);
-			this._browser.MinimumSize = new System.Drawing.Size(20, 20);
-			this._browser.Name = "_browser";
-			this._browser.Size = new System.Drawing.Size(578, 209);
-			this._browser.TabIndex = 0;
+			this._urlLabel.BackColor = System.Drawing.Color.White;
+			this._urlLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._urlLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._urlLabel.Location = new System.Drawing.Point(79, 37);
+			this._urlLabel.Name = "_urlLabel";
+			this._urlLabel.ReadOnly = true;
+			this._urlLabel.Size = new System.Drawing.Size(512, 13);
+			this._urlLabel.TabIndex = 12;
+			this._urlLabel.TabStop = false;
+			this._urlLabel.Text = "[Url]";
+			// 
+			// _typeLabel
+			// 
+			this._typeLabel.BackColor = System.Drawing.Color.White;
+			this._typeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._typeLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._typeLabel.Location = new System.Drawing.Point(79, 61);
+			this._typeLabel.Name = "_typeLabel";
+			this._typeLabel.ReadOnly = true;
+			this._typeLabel.Size = new System.Drawing.Size(512, 13);
+			this._typeLabel.TabIndex = 13;
+			this._typeLabel.TabStop = false;
+			this._typeLabel.Text = "[Type]";
+			// 
+			// _sourceLabel
+			// 
+			this._sourceLabel.BackColor = System.Drawing.Color.White;
+			this._sourceLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._sourceLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._sourceLabel.Location = new System.Drawing.Point(79, 85);
+			this._sourceLabel.Name = "_sourceLabel";
+			this._sourceLabel.ReadOnly = true;
+			this._sourceLabel.Size = new System.Drawing.Size(512, 13);
+			this._sourceLabel.TabIndex = 14;
+			this._sourceLabel.TabStop = false;
+			this._sourceLabel.Text = "[Source]";
+			// 
+			// _userLabel
+			// 
+			this._userLabel.BackColor = System.Drawing.Color.White;
+			this._userLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._userLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._userLabel.Location = new System.Drawing.Point(137, 15);
+			this._userLabel.Name = "_userLabel";
+			this._userLabel.ReadOnly = true;
+			this._userLabel.Size = new System.Drawing.Size(452, 13);
+			this._userLabel.TabIndex = 14;
+			this._userLabel.TabStop = false;
+			this._userLabel.Text = "[User]";
+			// 
+			// _browserLabel
+			// 
+			this._browserLabel.BackColor = System.Drawing.Color.White;
+			this._browserLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._browserLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._browserLabel.Location = new System.Drawing.Point(137, 38);
+			this._browserLabel.Name = "_browserLabel";
+			this._browserLabel.ReadOnly = true;
+			this._browserLabel.Size = new System.Drawing.Size(452, 13);
+			this._browserLabel.TabIndex = 15;
+			this._browserLabel.TabStop = false;
+			this._browserLabel.Text = "[Browser]";
+			// 
+			// _operatingSystemLabel
+			// 
+			this._operatingSystemLabel.BackColor = System.Drawing.Color.White;
+			this._operatingSystemLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._operatingSystemLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._operatingSystemLabel.Location = new System.Drawing.Point(137, 60);
+			this._operatingSystemLabel.Name = "_operatingSystemLabel";
+			this._operatingSystemLabel.ReadOnly = true;
+			this._operatingSystemLabel.Size = new System.Drawing.Size(452, 13);
+			this._operatingSystemLabel.TabIndex = 16;
+			this._operatingSystemLabel.TabStop = false;
+			this._operatingSystemLabel.Text = "[Operating System]";
+			// 
+			// _platformLabel
+			// 
+			this._platformLabel.BackColor = System.Drawing.Color.White;
+			this._platformLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._platformLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._platformLabel.Location = new System.Drawing.Point(137, 86);
+			this._platformLabel.Name = "_platformLabel";
+			this._platformLabel.ReadOnly = true;
+			this._platformLabel.Size = new System.Drawing.Size(452, 13);
+			this._platformLabel.TabIndex = 17;
+			this._platformLabel.TabStop = false;
+			this._platformLabel.Text = "[Platform]";
+			// 
+			// _ipAddressLabel
+			// 
+			this._ipAddressLabel.BackColor = System.Drawing.Color.White;
+			this._ipAddressLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._ipAddressLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._ipAddressLabel.Location = new System.Drawing.Point(137, 110);
+			this._ipAddressLabel.Name = "_ipAddressLabel";
+			this._ipAddressLabel.ReadOnly = true;
+			this._ipAddressLabel.Size = new System.Drawing.Size(452, 13);
+			this._ipAddressLabel.TabIndex = 18;
+			this._ipAddressLabel.TabStop = false;
+			this._ipAddressLabel.Text = "[IP]";
 			// 
 			// SearchErrorDetailsView
 			// 
@@ -558,13 +585,13 @@
 			this._messageTabPage.PerformLayout();
 			this._detailsTabPage.ResumeLayout(false);
 			this._detailsTabPage.PerformLayout();
+			this._yellowScreenOfDeathTabPage.ResumeLayout(false);
 			this.clientTabPage.ResumeLayout(false);
 			this.clientTabPage.PerformLayout();
 			this.formsTabPage.ResumeLayout(false);
 			this.cookiesTabPage.ResumeLayout(false);
 			this.queryStringTabPage.ResumeLayout(false);
 			this.serverVariablesTabPage.ResumeLayout(false);
-			this._yellowScreenOfDeathTabPage.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -574,11 +601,8 @@
 		private System.Windows.Forms.TabControl _detailsTabControl;
 		private System.Windows.Forms.TabPage errorTabPage;
 		private System.Windows.Forms.TabPage serverVariablesTabPage;
-		private System.Windows.Forms.Label _typeLabel;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label _timeLabel;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label _sourceLabel;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TabControl _errorTabControl;
 		private System.Windows.Forms.TabPage _messageTabPage;
@@ -588,18 +612,12 @@
 		private System.Windows.Forms.ListView _servervariablesListView;
 		private System.Windows.Forms.ColumnHeader _nameColumnHeader;
 		private System.Windows.Forms.ColumnHeader _valueColumnHeader;
-		private System.Windows.Forms.Label _urlLabel;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TabPage clientTabPage;
-		private System.Windows.Forms.Label _browserLabel;
 		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.Label _operatingSystemLabel;
 		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.Label _platformLabel;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label _userLabel;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label _ipAddressLabel;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.TabPage formsTabPage;
 		private System.Windows.Forms.TabPage cookiesTabPage;
@@ -615,5 +633,14 @@
 		private System.Windows.Forms.ColumnHeader columnHeader6;
 		private System.Windows.Forms.TabPage _yellowScreenOfDeathTabPage;
 		private System.Windows.Forms.WebBrowser _browser;
+		private System.Windows.Forms.TextBox _timeLabel;
+		private System.Windows.Forms.TextBox _sourceLabel;
+		private System.Windows.Forms.TextBox _typeLabel;
+		private System.Windows.Forms.TextBox _urlLabel;
+		private System.Windows.Forms.TextBox _ipAddressLabel;
+		private System.Windows.Forms.TextBox _platformLabel;
+		private System.Windows.Forms.TextBox _operatingSystemLabel;
+		private System.Windows.Forms.TextBox _browserLabel;
+		private System.Windows.Forms.TextBox _userLabel;
 	}
 }

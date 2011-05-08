@@ -58,6 +58,7 @@
     <Compile Include="Constants\Browsers.cs" />
     <Compile Include="Constants\Platforms.cs" />
     <Compile Include="Domain\Abstract\IClientInformationResolver.cs" />
+    <Compile Include="Domain\Abstract\IErrorSearchLauncher.cs" />
     <Compile Include="Domain\BrowserVersionResolver.cs" />
     <Compile Include="Domain\ClientInformationResolver.cs" />
     <Compile Include="Domain\ErrorLog.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Infrastructure\CacheHelper.cs" />
     <Compile Include="Infrastructure\Log.cs" />
     <Compile Include="Infrastructure\WebRequestHelper.cs" />
+    <Compile Include="Integrations\GoogleErrorSearchLauncher.cs" />
     <Compile Include="Integrations\UserAgentStringClientInformationResolver.cs" />
     <Compile Include="Integrations\UserAgentStringParameters.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgs.cs" />

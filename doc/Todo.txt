@@ -5,6 +5,7 @@ Functions
 	-> translations
 	-> pretty diagrams
 	-> configure http user agent resolver
+	-> select/copy values from list view items
 
 Fix
 	-> skip abstract folders

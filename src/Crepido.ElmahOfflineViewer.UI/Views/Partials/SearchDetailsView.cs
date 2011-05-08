@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Windows.Forms;
-using Crepido.ElmahOfflineViewer.Core.Common;
+﻿using System.Windows.Forms;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 
 namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 {
-	public partial class SearchErrorDetailsView : UserControl
+	public partial class SearchDetailsView : UserControl
 	{
-		public SearchErrorDetailsView()
+		public SearchDetailsView()
 		{
 			InitializeComponent();
 		}
@@ -29,10 +27,10 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			_browserLabel.Text = error.ClientInformation.Browser;
 			_ipAddressLabel.Text = error.LocalIpAddress;
 
-			LoadListView(_servervariablesListView, error.ServerVariables);
-			LoadListView(_cookiesListView, error.Cookies);
-			LoadListView(_formsListView, error.FormValues);
-			LoadListView(_querystringListView, error.QuerystringValues);
+			_formsListView.LoadValues(error.FormValues);
+			_cookiesListView.LoadValues(error.Cookies);
+			_querystringListView.LoadValues(error.QuerystringValues);
+			_serverVariablesListView.LoadValues(error.ServerVariables);
 
 			_browser.DocumentText = new YellowScreenOfDeathBuilder(error).GetHtml();
 		}
@@ -48,22 +46,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 				Clear();
 			}
 		}
-
-		private static void LoadListView(ListView listview, IEnumerable<KeyValuePair> values)
-		{
-			listview.Items.Clear();
 		
-			foreach (var value in values)
-			{
-				var node = listview.Items.Add(value.Name);
-				node.SubItems.Add(new ListViewItem.ListViewSubItem(node, value.Value));
-			}
-
-			listview.AutoResizeColumns(listview.Items.Count > 0
-			                           	? ColumnHeaderAutoResizeStyle.ColumnContent
-			                           	: ColumnHeaderAutoResizeStyle.HeaderSize);
-		}
-
 		private void Clear()
 		{
 			_timeLabel.Text = string.Empty;
@@ -79,10 +62,10 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			_browserLabel.Text = string.Empty;
 			_ipAddressLabel.Text = string.Empty;
 
-			_servervariablesListView.Items.Clear();
-			_cookiesListView.Items.Clear();
-			_formsListView.Items.Clear();
-			_querystringListView.Items.Clear();
+			_formsListView.ClearValues();
+			_cookiesListView.ClearValues();
+			_querystringListView.ClearValues();
+			_serverVariablesListView.ClearValues();
 
 			_browser.DocumentText = string.Empty;
 		}

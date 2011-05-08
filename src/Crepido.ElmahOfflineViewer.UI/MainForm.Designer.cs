@@ -78,9 +78,9 @@
 			// _mainToolStrip
 			// 
 			this._mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectDirectoryButton,
             this.showSearchViewButton,
-            this.showReportViewButton,
-            this.selectDirectoryButton});
+            this.showReportViewButton});
 			this._mainToolStrip.Location = new System.Drawing.Point(0, 0);
 			this._mainToolStrip.Name = "_mainToolStrip";
 			this._mainToolStrip.Size = new System.Drawing.Size(1264, 25);

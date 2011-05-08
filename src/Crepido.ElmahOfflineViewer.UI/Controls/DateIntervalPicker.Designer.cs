@@ -1,6 +1,6 @@
-﻿namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
+﻿namespace Crepido.ElmahOfflineViewer.UI.Controls
 {
-	partial class DateIntervalView
+	partial class DateIntervalPicker
 	{
 		/// <summary> 
 		/// Required designer variable.

@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
+namespace Crepido.ElmahOfflineViewer.UI.Controls
 {
 	public partial class SelectorView : UserControl
 	{
@@ -72,6 +72,34 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		private void NoneButtonClick(object sender, System.EventArgs e)
 		{
 			HandleSelection(false);
+		}
+
+		private void ItemsListContextMenuItemClicked(object sender, ToolStripItemClickedEventArgs e)
+		{
+			if (e.ClickedItem.Text == "Copy value")
+			{
+				var selectedValue = _itemsListView.SelectedItems[0].Text;
+				Clipboard.SetText(selectedValue);
+			}
+		}
+
+		private void ItemsListViewMouseClick(object sender, MouseEventArgs e)
+		{
+			if (_itemsListView.Items.Count == 0)
+			{
+				return;
+			}
+
+			if (_itemsListView.SelectedItems.Count == 0)
+			{
+				return;
+			}
+
+			if (e.Button == MouseButtons.Right)
+			{
+				_itemsListView.ContextMenuStrip = _itemsListContextMenu;
+				_itemsListContextMenu.Show(_itemsListView, MousePosition);
+			}
 		}
 	}
 }

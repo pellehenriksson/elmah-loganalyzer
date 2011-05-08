@@ -57,6 +57,12 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="ControlExtensions.cs" />
+    <Compile Include="Controls\NameValuePairListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NameValuePairListView.Designer.cs">
+      <DependentUpon>NameValuePairListView.cs</DependentUpon>
+    </Compile>
     <Compile Include="NinjectUiModule.cs" />
     <Compile Include="Views\LoadingView.cs">
       <SubType>UserControl</SubType>
@@ -65,17 +71,17 @@
       <DependentUpon>LoadingView.cs</DependentUpon>
     </Compile>
     <Compile Include="ServiceLocator.cs" />
-    <Compile Include="Views\Partials\DateIntervalView.cs">
+    <Compile Include="Controls\DateIntervalPicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Partials\DateIntervalView.Designer.cs">
-      <DependentUpon>DateIntervalView.cs</DependentUpon>
+    <Compile Include="Controls\DateIntervalPicker.Designer.cs">
+      <DependentUpon>DateIntervalPicker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Partials\SearchErrorDetailsView.cs">
+    <Compile Include="Views\Partials\SearchDetailsView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Partials\SearchErrorDetailsView.Designer.cs">
-      <DependentUpon>SearchErrorDetailsView.cs</DependentUpon>
+    <Compile Include="Views\Partials\SearchDetailsView.Designer.cs">
+      <DependentUpon>SearchDetailsView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Partials\SearchFilterView.cs">
       <SubType>UserControl</SubType>
@@ -103,11 +109,11 @@
     <Compile Include="Views\Partials\SearchResultView.Designer.cs">
       <DependentUpon>SearchResultView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Partials\SelectorView.cs">
+    <Compile Include="Controls\FilterSelector.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Partials\SelectorView.Designer.cs">
-      <DependentUpon>SelectorView.cs</DependentUpon>
+    <Compile Include="Controls\SelectorView.Designer.cs">
+      <DependentUpon>FilterSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SearchView.cs">
       <SubType>UserControl</SubType>
@@ -127,14 +133,17 @@
     <Compile Include="Views\ReportView.Designer.cs">
       <DependentUpon>ReportView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\NameValuePairListView.resx">
+      <DependentUpon>NameValuePairListView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoadingView.resx">
       <DependentUpon>LoadingView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Partials\DateIntervalView.resx">
-      <DependentUpon>DateIntervalView.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\DateIntervalPicker.resx">
+      <DependentUpon>DateIntervalPicker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Partials\SearchErrorDetailsView.resx">
-      <DependentUpon>SearchErrorDetailsView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Partials\SearchDetailsView.resx">
+      <DependentUpon>SearchDetailsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Partials\SearchFilterView.resx">
       <DependentUpon>SearchFilterView.cs</DependentUpon>
@@ -158,8 +167,8 @@
     <EmbeddedResource Include="Views\Partials\SearchResultView.resx">
       <DependentUpon>SearchResultView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Partials\SelectorView.resx">
-      <DependentUpon>SelectorView.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\SelectorView.resx">
+      <DependentUpon>FilterSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SearchView.resx">
       <DependentUpon>SearchView.cs</DependentUpon>

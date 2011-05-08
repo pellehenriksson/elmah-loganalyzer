@@ -1,6 +1,6 @@
 ﻿namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 {
-	partial class SearchErrorDetailsView
+	partial class SearchDetailsView
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -30,6 +30,10 @@
 		{
 			this._detailsTabControl = new System.Windows.Forms.TabControl();
 			this.errorTabPage = new System.Windows.Forms.TabPage();
+			this._sourceLabel = new System.Windows.Forms.TextBox();
+			this._typeLabel = new System.Windows.Forms.TextBox();
+			this._urlLabel = new System.Windows.Forms.TextBox();
+			this._timeLabel = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this._errorTabControl = new System.Windows.Forms.TabControl();
 			this._messageTabPage = new System.Windows.Forms.TabPage();
@@ -42,36 +46,24 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.clientTabPage = new System.Windows.Forms.TabPage();
+			this._ipAddressLabel = new System.Windows.Forms.TextBox();
+			this._platformLabel = new System.Windows.Forms.TextBox();
+			this._operatingSystemLabel = new System.Windows.Forms.TextBox();
+			this._browserLabel = new System.Windows.Forms.TextBox();
+			this._userLabel = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.formsTabPage = new System.Windows.Forms.TabPage();
-			this._formsListView = new System.Windows.Forms.ListView();
-			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.cookiesTabPage = new System.Windows.Forms.TabPage();
-			this._cookiesListView = new System.Windows.Forms.ListView();
-			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.queryStringTabPage = new System.Windows.Forms.TabPage();
-			this._querystringListView = new System.Windows.Forms.ListView();
-			this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.serverVariablesTabPage = new System.Windows.Forms.TabPage();
-			this._servervariablesListView = new System.Windows.Forms.ListView();
-			this._nameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this._valueColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this._timeLabel = new System.Windows.Forms.TextBox();
-			this._urlLabel = new System.Windows.Forms.TextBox();
-			this._typeLabel = new System.Windows.Forms.TextBox();
-			this._sourceLabel = new System.Windows.Forms.TextBox();
-			this._userLabel = new System.Windows.Forms.TextBox();
-			this._browserLabel = new System.Windows.Forms.TextBox();
-			this._operatingSystemLabel = new System.Windows.Forms.TextBox();
-			this._platformLabel = new System.Windows.Forms.TextBox();
-			this._ipAddressLabel = new System.Windows.Forms.TextBox();
+			this._formsListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
+			this._cookiesListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
+			this._querystringListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
+			this._serverVariablesListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
 			this._detailsTabControl.SuspendLayout();
 			this.errorTabPage.SuspendLayout();
 			this._errorTabControl.SuspendLayout();
@@ -118,6 +110,58 @@
 			this.errorTabPage.Size = new System.Drawing.Size(604, 360);
 			this.errorTabPage.TabIndex = 0;
 			this.errorTabPage.Text = "Error";
+			// 
+			// _sourceLabel
+			// 
+			this._sourceLabel.BackColor = System.Drawing.Color.White;
+			this._sourceLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._sourceLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._sourceLabel.Location = new System.Drawing.Point(79, 85);
+			this._sourceLabel.Name = "_sourceLabel";
+			this._sourceLabel.ReadOnly = true;
+			this._sourceLabel.Size = new System.Drawing.Size(512, 13);
+			this._sourceLabel.TabIndex = 14;
+			this._sourceLabel.TabStop = false;
+			this._sourceLabel.Text = "[Source]";
+			// 
+			// _typeLabel
+			// 
+			this._typeLabel.BackColor = System.Drawing.Color.White;
+			this._typeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._typeLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._typeLabel.Location = new System.Drawing.Point(79, 61);
+			this._typeLabel.Name = "_typeLabel";
+			this._typeLabel.ReadOnly = true;
+			this._typeLabel.Size = new System.Drawing.Size(512, 13);
+			this._typeLabel.TabIndex = 13;
+			this._typeLabel.TabStop = false;
+			this._typeLabel.Text = "[Type]";
+			// 
+			// _urlLabel
+			// 
+			this._urlLabel.BackColor = System.Drawing.Color.White;
+			this._urlLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._urlLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._urlLabel.Location = new System.Drawing.Point(79, 37);
+			this._urlLabel.Name = "_urlLabel";
+			this._urlLabel.ReadOnly = true;
+			this._urlLabel.Size = new System.Drawing.Size(512, 13);
+			this._urlLabel.TabIndex = 12;
+			this._urlLabel.TabStop = false;
+			this._urlLabel.Text = "[Url]";
+			// 
+			// _timeLabel
+			// 
+			this._timeLabel.BackColor = System.Drawing.Color.White;
+			this._timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._timeLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._timeLabel.Location = new System.Drawing.Point(79, 15);
+			this._timeLabel.Name = "_timeLabel";
+			this._timeLabel.ReadOnly = true;
+			this._timeLabel.Size = new System.Drawing.Size(298, 13);
+			this._timeLabel.TabIndex = 11;
+			this._timeLabel.TabStop = false;
+			this._timeLabel.Text = "[Time]";
 			// 
 			// label6
 			// 
@@ -258,6 +302,71 @@
 			this.clientTabPage.TabIndex = 2;
 			this.clientTabPage.Text = "Client Information";
 			// 
+			// _ipAddressLabel
+			// 
+			this._ipAddressLabel.BackColor = System.Drawing.Color.White;
+			this._ipAddressLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._ipAddressLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._ipAddressLabel.Location = new System.Drawing.Point(137, 110);
+			this._ipAddressLabel.Name = "_ipAddressLabel";
+			this._ipAddressLabel.ReadOnly = true;
+			this._ipAddressLabel.Size = new System.Drawing.Size(452, 13);
+			this._ipAddressLabel.TabIndex = 18;
+			this._ipAddressLabel.TabStop = false;
+			this._ipAddressLabel.Text = "[IP]";
+			// 
+			// _platformLabel
+			// 
+			this._platformLabel.BackColor = System.Drawing.Color.White;
+			this._platformLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._platformLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._platformLabel.Location = new System.Drawing.Point(137, 86);
+			this._platformLabel.Name = "_platformLabel";
+			this._platformLabel.ReadOnly = true;
+			this._platformLabel.Size = new System.Drawing.Size(452, 13);
+			this._platformLabel.TabIndex = 17;
+			this._platformLabel.TabStop = false;
+			this._platformLabel.Text = "[Platform]";
+			// 
+			// _operatingSystemLabel
+			// 
+			this._operatingSystemLabel.BackColor = System.Drawing.Color.White;
+			this._operatingSystemLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._operatingSystemLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._operatingSystemLabel.Location = new System.Drawing.Point(137, 60);
+			this._operatingSystemLabel.Name = "_operatingSystemLabel";
+			this._operatingSystemLabel.ReadOnly = true;
+			this._operatingSystemLabel.Size = new System.Drawing.Size(452, 13);
+			this._operatingSystemLabel.TabIndex = 16;
+			this._operatingSystemLabel.TabStop = false;
+			this._operatingSystemLabel.Text = "[Operating System]";
+			// 
+			// _browserLabel
+			// 
+			this._browserLabel.BackColor = System.Drawing.Color.White;
+			this._browserLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._browserLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._browserLabel.Location = new System.Drawing.Point(137, 38);
+			this._browserLabel.Name = "_browserLabel";
+			this._browserLabel.ReadOnly = true;
+			this._browserLabel.Size = new System.Drawing.Size(452, 13);
+			this._browserLabel.TabIndex = 15;
+			this._browserLabel.TabStop = false;
+			this._browserLabel.Text = "[Browser]";
+			// 
+			// _userLabel
+			// 
+			this._userLabel.BackColor = System.Drawing.Color.White;
+			this._userLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._userLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._userLabel.Location = new System.Drawing.Point(137, 15);
+			this._userLabel.Name = "_userLabel";
+			this._userLabel.ReadOnly = true;
+			this._userLabel.Size = new System.Drawing.Size(452, 13);
+			this._userLabel.TabIndex = 14;
+			this._userLabel.TabStop = false;
+			this._userLabel.Text = "[User]";
+			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
@@ -318,32 +427,6 @@
 			this.formsTabPage.Text = "Forms";
 			this.formsTabPage.UseVisualStyleBackColor = true;
 			// 
-			// _formsListView
-			// 
-			this._formsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-			this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._formsListView.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._formsListView.FullRowSelect = true;
-			this._formsListView.GridLines = true;
-			this._formsListView.Location = new System.Drawing.Point(0, 0);
-			this._formsListView.Name = "_formsListView";
-			this._formsListView.Size = new System.Drawing.Size(604, 360);
-			this._formsListView.TabIndex = 1;
-			this._formsListView.UseCompatibleStateImageBehavior = false;
-			this._formsListView.View = System.Windows.Forms.View.Details;
-			// 
-			// columnHeader1
-			// 
-			this.columnHeader1.Text = "Name";
-			this.columnHeader1.Width = 134;
-			// 
-			// columnHeader2
-			// 
-			this.columnHeader2.Text = "Value";
-			this.columnHeader2.Width = 438;
-			// 
 			// cookiesTabPage
 			// 
 			this.cookiesTabPage.Controls.Add(this._cookiesListView);
@@ -353,32 +436,6 @@
 			this.cookiesTabPage.TabIndex = 3;
 			this.cookiesTabPage.Text = "Cookies";
 			this.cookiesTabPage.UseVisualStyleBackColor = true;
-			// 
-			// _cookiesListView
-			// 
-			this._cookiesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader4});
-			this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._cookiesListView.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._cookiesListView.FullRowSelect = true;
-			this._cookiesListView.GridLines = true;
-			this._cookiesListView.Location = new System.Drawing.Point(0, 0);
-			this._cookiesListView.Name = "_cookiesListView";
-			this._cookiesListView.Size = new System.Drawing.Size(604, 360);
-			this._cookiesListView.TabIndex = 1;
-			this._cookiesListView.UseCompatibleStateImageBehavior = false;
-			this._cookiesListView.View = System.Windows.Forms.View.Details;
-			// 
-			// columnHeader3
-			// 
-			this.columnHeader3.Text = "Name";
-			this.columnHeader3.Width = 134;
-			// 
-			// columnHeader4
-			// 
-			this.columnHeader4.Text = "Value";
-			this.columnHeader4.Width = 438;
 			// 
 			// queryStringTabPage
 			// 
@@ -390,35 +447,9 @@
 			this.queryStringTabPage.Text = "Querystring";
 			this.queryStringTabPage.UseVisualStyleBackColor = true;
 			// 
-			// _querystringListView
-			// 
-			this._querystringListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6});
-			this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._querystringListView.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._querystringListView.FullRowSelect = true;
-			this._querystringListView.GridLines = true;
-			this._querystringListView.Location = new System.Drawing.Point(0, 0);
-			this._querystringListView.Name = "_querystringListView";
-			this._querystringListView.Size = new System.Drawing.Size(604, 360);
-			this._querystringListView.TabIndex = 1;
-			this._querystringListView.UseCompatibleStateImageBehavior = false;
-			this._querystringListView.View = System.Windows.Forms.View.Details;
-			// 
-			// columnHeader5
-			// 
-			this.columnHeader5.Text = "Name";
-			this.columnHeader5.Width = 134;
-			// 
-			// columnHeader6
-			// 
-			this.columnHeader6.Text = "Value";
-			this.columnHeader6.Width = 438;
-			// 
 			// serverVariablesTabPage
 			// 
-			this.serverVariablesTabPage.Controls.Add(this._servervariablesListView);
+			this.serverVariablesTabPage.Controls.Add(this._serverVariablesListView);
 			this.serverVariablesTabPage.Location = new System.Drawing.Point(4, 22);
 			this.serverVariablesTabPage.Name = "serverVariablesTabPage";
 			this.serverVariablesTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -427,155 +458,44 @@
 			this.serverVariablesTabPage.Text = "Server Variables";
 			this.serverVariablesTabPage.UseVisualStyleBackColor = true;
 			// 
-			// _servervariablesListView
+			// _formsListView
 			// 
-			this._servervariablesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this._nameColumnHeader,
-            this._valueColumnHeader});
-			this._servervariablesListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._servervariablesListView.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._servervariablesListView.FullRowSelect = true;
-			this._servervariablesListView.GridLines = true;
-			this._servervariablesListView.Location = new System.Drawing.Point(3, 3);
-			this._servervariablesListView.Name = "_servervariablesListView";
-			this._servervariablesListView.Size = new System.Drawing.Size(598, 354);
-			this._servervariablesListView.TabIndex = 0;
-			this._servervariablesListView.UseCompatibleStateImageBehavior = false;
-			this._servervariablesListView.View = System.Windows.Forms.View.Details;
+			this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._formsListView.Location = new System.Drawing.Point(0, 0);
+			this._formsListView.Name = "_formsListView";
+			this._formsListView.Size = new System.Drawing.Size(604, 360);
+			this._formsListView.TabIndex = 0;
 			// 
-			// _nameColumnHeader
+			// _cookiesListView
 			// 
-			this._nameColumnHeader.Text = "Name";
-			this._nameColumnHeader.Width = 134;
+			this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._cookiesListView.Location = new System.Drawing.Point(0, 0);
+			this._cookiesListView.Name = "_cookiesListView";
+			this._cookiesListView.Size = new System.Drawing.Size(604, 360);
+			this._cookiesListView.TabIndex = 0;
 			// 
-			// _valueColumnHeader
+			// _querystringListView
 			// 
-			this._valueColumnHeader.Text = "Value";
-			this._valueColumnHeader.Width = 438;
+			this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._querystringListView.Location = new System.Drawing.Point(0, 0);
+			this._querystringListView.Name = "_querystringListView";
+			this._querystringListView.Size = new System.Drawing.Size(604, 360);
+			this._querystringListView.TabIndex = 0;
 			// 
-			// _timeLabel
+			// _serverVariablesListView
 			// 
-			this._timeLabel.BackColor = System.Drawing.Color.White;
-			this._timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this._timeLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._timeLabel.Location = new System.Drawing.Point(79, 15);
-			this._timeLabel.Name = "_timeLabel";
-			this._timeLabel.ReadOnly = true;
-			this._timeLabel.Size = new System.Drawing.Size(298, 13);
-			this._timeLabel.TabIndex = 11;
-			this._timeLabel.TabStop = false;
-			this._timeLabel.Text = "[Time]";
+			this._serverVariablesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._serverVariablesListView.Location = new System.Drawing.Point(3, 3);
+			this._serverVariablesListView.Name = "_serverVariablesListView";
+			this._serverVariablesListView.Size = new System.Drawing.Size(598, 354);
+			this._serverVariablesListView.TabIndex = 0;
 			// 
-			// _urlLabel
-			// 
-			this._urlLabel.BackColor = System.Drawing.Color.White;
-			this._urlLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this._urlLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._urlLabel.Location = new System.Drawing.Point(79, 37);
-			this._urlLabel.Name = "_urlLabel";
-			this._urlLabel.ReadOnly = true;
-			this._urlLabel.Size = new System.Drawing.Size(512, 13);
-			this._urlLabel.TabIndex = 12;
-			this._urlLabel.TabStop = false;
-			this._urlLabel.Text = "[Url]";
-			// 
-			// _typeLabel
-			// 
-			this._typeLabel.BackColor = System.Drawing.Color.White;
-			this._typeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this._typeLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._typeLabel.Location = new System.Drawing.Point(79, 61);
-			this._typeLabel.Name = "_typeLabel";
-			this._typeLabel.ReadOnly = true;
-			this._typeLabel.Size = new System.Drawing.Size(512, 13);
-			this._typeLabel.TabIndex = 13;
-			this._typeLabel.TabStop = false;
-			this._typeLabel.Text = "[Type]";
-			// 
-			// _sourceLabel
-			// 
-			this._sourceLabel.BackColor = System.Drawing.Color.White;
-			this._sourceLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this._sourceLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._sourceLabel.Location = new System.Drawing.Point(79, 85);
-			this._sourceLabel.Name = "_sourceLabel";
-			this._sourceLabel.ReadOnly = true;
-			this._sourceLabel.Size = new System.Drawing.Size(512, 13);
-			this._sourceLabel.TabIndex = 14;
-			this._sourceLabel.TabStop = false;
-			this._sourceLabel.Text = "[Source]";
-			// 
-			// _userLabel
-			// 
-			this._userLabel.BackColor = System.Drawing.Color.White;
-			this._userLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this._userLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._userLabel.Location = new System.Drawing.Point(137, 15);
-			this._userLabel.Name = "_userLabel";
-			this._userLabel.ReadOnly = true;
-			this._userLabel.Size = new System.Drawing.Size(452, 13);
-			this._userLabel.TabIndex = 14;
-			this._userLabel.TabStop = false;
-			this._userLabel.Text = "[User]";
-			// 
-			// _browserLabel
-			// 
-			this._browserLabel.BackColor = System.Drawing.Color.White;
-			this._browserLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this._browserLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._browserLabel.Location = new System.Drawing.Point(137, 38);
-			this._browserLabel.Name = "_browserLabel";
-			this._browserLabel.ReadOnly = true;
-			this._browserLabel.Size = new System.Drawing.Size(452, 13);
-			this._browserLabel.TabIndex = 15;
-			this._browserLabel.TabStop = false;
-			this._browserLabel.Text = "[Browser]";
-			// 
-			// _operatingSystemLabel
-			// 
-			this._operatingSystemLabel.BackColor = System.Drawing.Color.White;
-			this._operatingSystemLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this._operatingSystemLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._operatingSystemLabel.Location = new System.Drawing.Point(137, 60);
-			this._operatingSystemLabel.Name = "_operatingSystemLabel";
-			this._operatingSystemLabel.ReadOnly = true;
-			this._operatingSystemLabel.Size = new System.Drawing.Size(452, 13);
-			this._operatingSystemLabel.TabIndex = 16;
-			this._operatingSystemLabel.TabStop = false;
-			this._operatingSystemLabel.Text = "[Operating System]";
-			// 
-			// _platformLabel
-			// 
-			this._platformLabel.BackColor = System.Drawing.Color.White;
-			this._platformLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this._platformLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._platformLabel.Location = new System.Drawing.Point(137, 86);
-			this._platformLabel.Name = "_platformLabel";
-			this._platformLabel.ReadOnly = true;
-			this._platformLabel.Size = new System.Drawing.Size(452, 13);
-			this._platformLabel.TabIndex = 17;
-			this._platformLabel.TabStop = false;
-			this._platformLabel.Text = "[Platform]";
-			// 
-			// _ipAddressLabel
-			// 
-			this._ipAddressLabel.BackColor = System.Drawing.Color.White;
-			this._ipAddressLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this._ipAddressLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._ipAddressLabel.Location = new System.Drawing.Point(137, 110);
-			this._ipAddressLabel.Name = "_ipAddressLabel";
-			this._ipAddressLabel.ReadOnly = true;
-			this._ipAddressLabel.Size = new System.Drawing.Size(452, 13);
-			this._ipAddressLabel.TabIndex = 18;
-			this._ipAddressLabel.TabStop = false;
-			this._ipAddressLabel.Text = "[IP]";
-			// 
-			// SearchErrorDetailsView
+			// SearchDetailsView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this._detailsTabControl);
-			this.Name = "SearchErrorDetailsView";
+			this.Name = "SearchDetailsView";
 			this.Size = new System.Drawing.Size(612, 386);
 			this._detailsTabControl.ResumeLayout(false);
 			this.errorTabPage.ResumeLayout(false);
@@ -609,9 +529,6 @@
 		private System.Windows.Forms.TabPage _detailsTabPage;
 		private System.Windows.Forms.TextBox _messageTextBox;
 		private System.Windows.Forms.TextBox _detailsTextBox;
-		private System.Windows.Forms.ListView _servervariablesListView;
-		private System.Windows.Forms.ColumnHeader _nameColumnHeader;
-		private System.Windows.Forms.ColumnHeader _valueColumnHeader;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TabPage clientTabPage;
 		private System.Windows.Forms.Label label12;
@@ -622,15 +539,6 @@
 		private System.Windows.Forms.TabPage formsTabPage;
 		private System.Windows.Forms.TabPage cookiesTabPage;
 		private System.Windows.Forms.TabPage queryStringTabPage;
-		private System.Windows.Forms.ListView _formsListView;
-		private System.Windows.Forms.ColumnHeader columnHeader1;
-		private System.Windows.Forms.ColumnHeader columnHeader2;
-		private System.Windows.Forms.ListView _cookiesListView;
-		private System.Windows.Forms.ColumnHeader columnHeader3;
-		private System.Windows.Forms.ColumnHeader columnHeader4;
-		private System.Windows.Forms.ListView _querystringListView;
-		private System.Windows.Forms.ColumnHeader columnHeader5;
-		private System.Windows.Forms.ColumnHeader columnHeader6;
 		private System.Windows.Forms.TabPage _yellowScreenOfDeathTabPage;
 		private System.Windows.Forms.WebBrowser _browser;
 		private System.Windows.Forms.TextBox _timeLabel;
@@ -642,5 +550,9 @@
 		private System.Windows.Forms.TextBox _operatingSystemLabel;
 		private System.Windows.Forms.TextBox _browserLabel;
 		private System.Windows.Forms.TextBox _userLabel;
+		private Controls.NameValuePairListView _formsListView;
+		private Controls.NameValuePairListView _cookiesListView;
+		private Controls.NameValuePairListView _querystringListView;
+		private Controls.NameValuePairListView _serverVariablesListView;
 	}
 }

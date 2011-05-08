@@ -4,13 +4,13 @@ using NUnit.Framework;
 namespace Crepido.ElmahOfflineViewer.UnitTests.Common
 {
 	[TestFixture]
-	public class KeyValuePairTests : UnitTestBase
+	public class NameValuePairTests : UnitTestBase
 	{
 		[Test]
 		public void Ctor_SetsNameAndValue()
 		{
 			// act
-			var pair = new KeyValuePair("name", "value");
+			var pair = new NameValuePair("name", "value");
 
 			// assert
 			Assert.That(pair.Name, Is.EqualTo("name"));

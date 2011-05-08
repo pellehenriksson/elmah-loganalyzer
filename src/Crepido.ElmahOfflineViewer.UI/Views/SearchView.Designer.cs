@@ -34,7 +34,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			this.searchFilterView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SearchFilterView();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.searchResultView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SearchResultView();
-			this.searchDetailsView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SearchErrorDetailsView();
+			this.searchDetailsView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SearchDetailsView();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -121,7 +121,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 		private SearchFilterView searchFilterView;
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private SearchResultView searchResultView;
-		private SearchErrorDetailsView searchDetailsView;
+		private SearchDetailsView searchDetailsView;
 
 	}
 }

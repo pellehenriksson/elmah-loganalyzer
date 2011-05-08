@@ -9,10 +9,10 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 	{
 		public ErrorLog()
 		{
-			ServerVariables = new List<KeyValuePair>();
-			Cookies = new List<KeyValuePair>();
-			FormValues = new List<KeyValuePair>();
-			QuerystringValues = new List<KeyValuePair>();
+			ServerVariables = new List<NameValuePair>();
+			Cookies = new List<NameValuePair>();
+			FormValues = new List<NameValuePair>();
+			QuerystringValues = new List<NameValuePair>();
 			ClientInformation = new ClientInformation();
 		}
 		
@@ -40,13 +40,13 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 		public string LocalIpAddress { get; private set; }
 
-		public List<KeyValuePair> ServerVariables { get; private set; }
+		public List<NameValuePair> ServerVariables { get; private set; }
 
-		public List<KeyValuePair> QuerystringValues { get; private set; }
+		public List<NameValuePair> QuerystringValues { get; private set; }
 
-		public List<KeyValuePair> FormValues { get; private set; }
+		public List<NameValuePair> FormValues { get; private set; }
 
-		public List<KeyValuePair> Cookies { get; private set; }
+		public List<NameValuePair> Cookies { get; private set; }
 
 		public ClientInformation ClientInformation { get; private set; }
 
@@ -83,22 +83,22 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 				LocalIpAddress = value;
 			}
 
-			ServerVariables.Add(new KeyValuePair(name, value));
+			ServerVariables.Add(new NameValuePair(name, value));
 		}
 
 		public void AddQuerystringValue(string name, string value)
 		{
-			QuerystringValues.Add(new KeyValuePair(name, value));
+			QuerystringValues.Add(new NameValuePair(name, value));
 		}
 
 		public void AddFormValue(string name, string value)
 		{
-			FormValues.Add(new KeyValuePair(name, value));
+			FormValues.Add(new NameValuePair(name, value));
 		}
 
 		public void AddCookie(string name, string value)
 		{
-			Cookies.Add(new KeyValuePair(name, value));
+			Cookies.Add(new NameValuePair(name, value));
 		}
 	}
 }

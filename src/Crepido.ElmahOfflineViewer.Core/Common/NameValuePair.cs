@@ -1,8 +1,8 @@
 ﻿namespace Crepido.ElmahOfflineViewer.Core.Common
 {
-	public class KeyValuePair
+	public class NameValuePair
 	{
-		public KeyValuePair(string name, string value)
+		public NameValuePair(string name, string value)
 		{
 			Name = name;
 			Value = value;

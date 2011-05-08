@@ -1,4 +1,6 @@
-﻿namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
+﻿using Crepido.ElmahOfflineViewer.UI.Controls;
+
+namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 {
 	partial class SearchFilterView
 	{
@@ -31,11 +33,11 @@
 			this._searchButton = new System.Windows.Forms.Button();
 			this._textTextbox = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this._usersSelectorView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SelectorView();
-			this._urlsSelectorView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SelectorView();
-			this._sourcesSelectorView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SelectorView();
-			this._typeSelectorView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.SelectorView();
-			this._dateIntervalView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.DateIntervalView();
+			this._usersSelector = new Crepido.ElmahOfflineViewer.UI.Controls.SelectorView();
+			this._urlsSelector = new Crepido.ElmahOfflineViewer.UI.Controls.SelectorView();
+			this._sourcesSelector = new Crepido.ElmahOfflineViewer.UI.Controls.SelectorView();
+			this._typesSelector = new Crepido.ElmahOfflineViewer.UI.Controls.SelectorView();
+			this._dateIntervalPicker = new Crepido.ElmahOfflineViewer.UI.Controls.DateIntervalPicker();
 			this.SuspendLayout();
 			// 
 			// _searchButton
@@ -66,54 +68,54 @@
 			this.label2.TabIndex = 9;
 			this.label2.Text = "Error message/Details contains:";
 			// 
-			// _usersSelectorView
+			// _usersSelector
 			// 
-			this._usersSelectorView.Caption = "Users";
-			this._usersSelectorView.Location = new System.Drawing.Point(739, 5);
-			this._usersSelectorView.Name = "_usersSelectorView";
-			this._usersSelectorView.Size = new System.Drawing.Size(236, 182);
-			this._usersSelectorView.TabIndex = 7;
+			this._usersSelector.Caption = "Users";
+			this._usersSelector.Location = new System.Drawing.Point(739, 5);
+			this._usersSelector.Name = "_usersSelector";
+			this._usersSelector.Size = new System.Drawing.Size(236, 182);
+			this._usersSelector.TabIndex = 7;
 			// 
-			// _urlsSelectorView
+			// _urlsSelector
 			// 
-			this._urlsSelectorView.Caption = "Urls";
-			this._urlsSelectorView.Location = new System.Drawing.Point(498, 5);
-			this._urlsSelectorView.Name = "_urlsSelectorView";
-			this._urlsSelectorView.Size = new System.Drawing.Size(238, 182);
-			this._urlsSelectorView.TabIndex = 5;
+			this._urlsSelector.Caption = "Urls";
+			this._urlsSelector.Location = new System.Drawing.Point(498, 5);
+			this._urlsSelector.Name = "_urlsSelector";
+			this._urlsSelector.Size = new System.Drawing.Size(238, 182);
+			this._urlsSelector.TabIndex = 5;
 			// 
-			// _sourcesSelectorView
+			// _sourcesSelector
 			// 
-			this._sourcesSelectorView.Caption = "Sources";
-			this._sourcesSelectorView.Location = new System.Drawing.Point(254, 5);
-			this._sourcesSelectorView.Name = "_sourcesSelectorView";
-			this._sourcesSelectorView.Size = new System.Drawing.Size(238, 182);
-			this._sourcesSelectorView.TabIndex = 3;
+			this._sourcesSelector.Caption = "Sources";
+			this._sourcesSelector.Location = new System.Drawing.Point(254, 5);
+			this._sourcesSelector.Name = "_sourcesSelector";
+			this._sourcesSelector.Size = new System.Drawing.Size(238, 182);
+			this._sourcesSelector.TabIndex = 3;
 			// 
-			// _typeSelectorView
+			// _typesSelector
 			// 
-			this._typeSelectorView.Caption = "Types";
-			this._typeSelectorView.Location = new System.Drawing.Point(3, 5);
-			this._typeSelectorView.Name = "_typeSelectorView";
-			this._typeSelectorView.Size = new System.Drawing.Size(245, 182);
-			this._typeSelectorView.TabIndex = 1;
+			this._typesSelector.Caption = "Types";
+			this._typesSelector.Location = new System.Drawing.Point(3, 5);
+			this._typesSelector.Name = "_typesSelector";
+			this._typesSelector.Size = new System.Drawing.Size(245, 182);
+			this._typesSelector.TabIndex = 1;
 			// 
-			// _dateIntervalView
+			// _dateIntervalPicker
 			// 
-			this._dateIntervalView.Location = new System.Drawing.Point(974, 0);
-			this._dateIntervalView.Name = "_dateIntervalView";
-			this._dateIntervalView.Size = new System.Drawing.Size(302, 29);
-			this._dateIntervalView.TabIndex = 8;
+			this._dateIntervalPicker.Location = new System.Drawing.Point(974, 0);
+			this._dateIntervalPicker.Name = "_dateIntervalPicker";
+			this._dateIntervalPicker.Size = new System.Drawing.Size(302, 29);
+			this._dateIntervalPicker.TabIndex = 8;
 			// 
 			// SearchFilterView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this._usersSelectorView);
-			this.Controls.Add(this._urlsSelectorView);
-			this.Controls.Add(this._sourcesSelectorView);
-			this.Controls.Add(this._typeSelectorView);
-			this.Controls.Add(this._dateIntervalView);
+			this.Controls.Add(this._usersSelector);
+			this.Controls.Add(this._urlsSelector);
+			this.Controls.Add(this._sourcesSelector);
+			this.Controls.Add(this._typesSelector);
+			this.Controls.Add(this._dateIntervalPicker);
 			this.Controls.Add(this._searchButton);
 			this.Controls.Add(this._textTextbox);
 			this.Controls.Add(this.label2);
@@ -129,11 +131,11 @@
 		private System.Windows.Forms.Button _searchButton;
 		private System.Windows.Forms.TextBox _textTextbox;
 		private System.Windows.Forms.Label label2;
-		private DateIntervalView _dateIntervalView;
-		private SelectorView _typeSelectorView;
-		private SelectorView _sourcesSelectorView;
-		private SelectorView _urlsSelectorView;
-		private SelectorView _usersSelectorView;
+		private DateIntervalPicker _dateIntervalPicker;
+		private SelectorView _typesSelector;
+		private SelectorView _sourcesSelector;
+		private SelectorView _urlsSelector;
+		private SelectorView _usersSelector;
 
 
 

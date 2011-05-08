@@ -1,4 +1,6 @@
-﻿namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
+﻿using Crepido.ElmahOfflineViewer.UI.Controls;
+
+namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 {
 	partial class ReportSelectionView
 	{
@@ -31,7 +33,7 @@
 			this._reportsComboBox = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this._showButton = new System.Windows.Forms.Button();
-			this._dateIntervalView = new Crepido.ElmahOfflineViewer.UI.Views.Partials.DateIntervalView();
+			this._dateIntervalPicker = new DateIntervalPicker();
 			this.SuspendLayout();
 			// 
 			// _reportsComboBox
@@ -62,18 +64,18 @@
 			this._showButton.UseVisualStyleBackColor = true;
 			this._showButton.Click += new System.EventHandler(this.ShowButtonClick);
 			// 
-			// _dateIntervalView
+			// _dateIntervalPicker
 			// 
-			this._dateIntervalView.Location = new System.Drawing.Point(3, 3);
-			this._dateIntervalView.Name = "_dateIntervalView";
-			this._dateIntervalView.Size = new System.Drawing.Size(291, 66);
-			this._dateIntervalView.TabIndex = 0;
+			this._dateIntervalPicker.Location = new System.Drawing.Point(3, 3);
+			this._dateIntervalPicker.Name = "_dateIntervalPicker";
+			this._dateIntervalPicker.Size = new System.Drawing.Size(291, 66);
+			this._dateIntervalPicker.TabIndex = 0;
 			// 
 			// ReportSelectionView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this._dateIntervalView);
+			this.Controls.Add(this._dateIntervalPicker);
 			this.Controls.Add(this._showButton);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this._reportsComboBox);
@@ -89,6 +91,6 @@
 		private System.Windows.Forms.ComboBox _reportsComboBox;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button _showButton;
-		private DateIntervalView _dateIntervalView;
+		private DateIntervalPicker _dateIntervalPicker;
 	}
 }

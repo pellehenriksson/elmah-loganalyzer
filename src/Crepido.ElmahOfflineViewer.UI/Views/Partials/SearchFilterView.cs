@@ -18,39 +18,39 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		
 		public void LoadTypes(IEnumerable<string> types)
 		{
-			_typeSelectorView.LoadValues(types);
+			_typesSelector.LoadValues(types);
 		}
 
 		public void LoadUsers(IEnumerable<string> users)
 		{
-			_usersSelectorView.LoadValues(users);
+			_usersSelector.LoadValues(users);
 		}
 		
 		public void LoadSources(IEnumerable<string> sources)
 		{
-			_sourcesSelectorView.LoadValues(sources);
+			_sourcesSelector.LoadValues(sources);
 		}
 
 		public void LoadUrls(IEnumerable<string> urls)
 		{
-			_urlsSelectorView.LoadValues(urls);
+			_urlsSelector.LoadValues(urls);
 		}
 
 		public void SetDateInterval(DateInterval interval)
 		{
-			_dateIntervalView.SetInterval(interval);
+			_dateIntervalPicker.SetInterval(interval);
 		}
 		
 		private SearchErrorLogQuery BuildQuery()
 		{
 			return new SearchErrorLogQuery
 			       	{
-			       		Types = new SearchErrorLogQueryParameter(_typeSelectorView.GetMode(), _typeSelectorView.GetValues()),
-						Sources = new SearchErrorLogQueryParameter(_sourcesSelectorView.GetMode(), _sourcesSelectorView.GetValues()),
-						Users = new SearchErrorLogQueryParameter(_usersSelectorView.GetMode(), _usersSelectorView.GetValues()),
-						Urls = new SearchErrorLogQueryParameter(_urlsSelectorView.GetMode(), _urlsSelectorView.GetValues()),
+			       		Types = new SearchErrorLogQueryParameter(_typesSelector.GetMode(), _typesSelector.GetValues()),
+						Sources = new SearchErrorLogQueryParameter(_sourcesSelector.GetMode(), _sourcesSelector.GetValues()),
+						Users = new SearchErrorLogQueryParameter(_usersSelector.GetMode(), _usersSelector.GetValues()),
+						Urls = new SearchErrorLogQueryParameter(_urlsSelector.GetMode(), _urlsSelector.GetValues()),
 			       		Text = _textTextbox.Text,
-						Interval = _dateIntervalView.GetInterval()
+						Interval = _dateIntervalPicker.GetInterval()
 			       	};
 		}
 		

@@ -10,3 +10,5 @@ Functions
 Fix
 	-> skip abstract folders
 	-> logging
+	-> prefix local variabels with _ in UI project
+	-> all images as resources in 'Resources' folder

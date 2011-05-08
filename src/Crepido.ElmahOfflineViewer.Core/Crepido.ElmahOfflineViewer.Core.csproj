@@ -79,7 +79,7 @@
     <Compile Include="Domain\ClientInformation.cs" />
     <Compile Include="Constants\HttpServerVariables.cs" />
     <Compile Include="Domain\SearchErrorLogQueryParameter.cs" />
-    <Compile Include="Common\KeyValuePair.cs" />
+    <Compile Include="Common\NameValuePair.cs" />
     <Compile Include="Domain\WindowsOperatingSystemNameResolver.cs" />
     <Compile Include="Domain\YellowScreenOfDeathBuilder.cs" />
     <Compile Include="Infrastructure\Abstract\ICacheHelper.cs" />

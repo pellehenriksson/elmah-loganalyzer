@@ -1,11 +1,11 @@
 ﻿using System.Windows.Forms;
 using Crepido.ElmahOfflineViewer.Core.Common;
 
-namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
+namespace Crepido.ElmahOfflineViewer.UI.Controls
 {
-	public partial class DateIntervalView : UserControl
+	public partial class DateIntervalPicker : UserControl
 	{
-		public DateIntervalView()
+		public DateIntervalPicker()
 		{
 			InitializeComponent();
 		}

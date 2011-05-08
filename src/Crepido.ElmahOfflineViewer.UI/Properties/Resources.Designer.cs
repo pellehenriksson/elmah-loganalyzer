@@ -60,30 +60,30 @@ namespace Crepido.ElmahOfflineViewer.UI.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap folder {
-            get {
-                object obj = ResourceManager.GetObject("folder", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap folder_bug {
-            get {
-                object obj = ResourceManager.GetObject("folder_bug", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap folder_go {
-            get {
-                object obj = ResourceManager.GetObject("folder_go", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap loading {
             get {
                 object obj = ResourceManager.GetObject("loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap report {
+            get {
+                object obj = ResourceManager.GetObject("report", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap select_directory {
+            get {
+                object obj = ResourceManager.GetObject("select_directory", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

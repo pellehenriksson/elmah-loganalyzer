@@ -33,11 +33,11 @@
 			this.directoryToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.versionStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._mainToolStrip = new System.Windows.Forms.ToolStrip();
+			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+			this._mainPanel = new System.Windows.Forms.Panel();
 			this._selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
 			this._showSearchViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showReportViewButton = new System.Windows.Forms.ToolStripButton();
-			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-			this._mainPanel = new System.Windows.Forms.Panel();
 			this._mainStatusStrip.SuspendLayout();
 			this._mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -87,33 +87,6 @@
 			this._mainToolStrip.TabIndex = 1;
 			this._mainToolStrip.Text = "toolStrip1";
 			// 
-			// _selectDirectoryButton
-			// 
-			this._selectDirectoryButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.folder_bug;
-			this._selectDirectoryButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._selectDirectoryButton.Name = "_selectDirectoryButton";
-			this._selectDirectoryButton.Size = new System.Drawing.Size(108, 22);
-			this._selectDirectoryButton.Text = "Select directory";
-			this._selectDirectoryButton.Click += new System.EventHandler(this.SelectDirectoryButtonClick);
-			// 
-			// _showSearchViewButton
-			// 
-			this._showSearchViewButton.Image = ((System.Drawing.Image)(resources.GetObject("_showSearchViewButton.Image")));
-			this._showSearchViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._showSearchViewButton.Name = "_showSearchViewButton";
-			this._showSearchViewButton.Size = new System.Drawing.Size(62, 22);
-			this._showSearchViewButton.Text = "Search";
-			this._showSearchViewButton.Click += new System.EventHandler(this.ShowSearchViewButtonClick);
-			// 
-			// _showReportViewButton
-			// 
-			this._showReportViewButton.Image = ((System.Drawing.Image)(resources.GetObject("_showReportViewButton.Image")));
-			this._showReportViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._showReportViewButton.Name = "_showReportViewButton";
-			this._showReportViewButton.Size = new System.Drawing.Size(67, 22);
-			this._showReportViewButton.Text = "Reports";
-			this._showReportViewButton.Click += new System.EventHandler(this.ShowReportViewButtonClick);
-			// 
 			// _folderBrowserDialog
 			// 
 			this._folderBrowserDialog.Description = "Select a folder with ELMAH log files";
@@ -126,6 +99,33 @@
 			this._mainPanel.Name = "_mainPanel";
 			this._mainPanel.Size = new System.Drawing.Size(1264, 679);
 			this._mainPanel.TabIndex = 2;
+			// 
+			// _selectDirectoryButton
+			// 
+			this._selectDirectoryButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.select_directory;
+			this._selectDirectoryButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._selectDirectoryButton.Name = "_selectDirectoryButton";
+			this._selectDirectoryButton.Size = new System.Drawing.Size(108, 22);
+			this._selectDirectoryButton.Text = "Select directory";
+			this._selectDirectoryButton.Click += new System.EventHandler(this.SelectDirectoryButtonClick);
+			// 
+			// _showSearchViewButton
+			// 
+			this._showSearchViewButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.search;
+			this._showSearchViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._showSearchViewButton.Name = "_showSearchViewButton";
+			this._showSearchViewButton.Size = new System.Drawing.Size(62, 22);
+			this._showSearchViewButton.Text = "Search";
+			this._showSearchViewButton.Click += new System.EventHandler(this.ShowSearchViewButtonClick);
+			// 
+			// _showReportViewButton
+			// 
+			this._showReportViewButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.report;
+			this._showReportViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._showReportViewButton.Name = "_showReportViewButton";
+			this._showReportViewButton.Size = new System.Drawing.Size(67, 22);
+			this._showReportViewButton.Text = "Reports";
+			this._showReportViewButton.Click += new System.EventHandler(this.ShowReportViewButtonClick);
 			// 
 			// MainForm
 			// 

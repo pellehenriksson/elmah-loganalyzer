@@ -194,15 +194,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\folder.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\folder_bug.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\folder_go.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Crepido.ElmahOfflineViewer.Core\Crepido.ElmahOfflineViewer.Core.csproj">
       <Project>{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}</Project>
       <Name>Crepido.ElmahOfflineViewer.Core</Name>
@@ -210,6 +201,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select_directory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.4\Microsoft.StyleCop.targets" />

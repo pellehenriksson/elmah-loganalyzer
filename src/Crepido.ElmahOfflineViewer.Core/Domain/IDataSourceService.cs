@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Crepido.ElmahOfflineViewer.Core.Domain.Abstract
+namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
 	public interface IDataSourceService
 	{

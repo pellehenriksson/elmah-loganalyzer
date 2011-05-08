@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
-using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
 using NUnit.Framework;
 

@@ -1,6 +1,6 @@
 ﻿using System;
 using Crepido.ElmahOfflineViewer.Core.Domain;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure.Abstract;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 using Crepido.ElmahOfflineViewer.Core.Integrations;
 using Moq;
 using NUnit.Framework;

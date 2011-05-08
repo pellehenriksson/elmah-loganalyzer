@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
-using Crepido.ElmahOfflineViewer.Core.Presentation.Abstract;
 
 namespace Crepido.ElmahOfflineViewer.UI.Views
 {

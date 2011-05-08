@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
-using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
-using Crepido.ElmahOfflineViewer.Core.Presentation.Abstract;
 using Moq;
 using NUnit.Framework;
 

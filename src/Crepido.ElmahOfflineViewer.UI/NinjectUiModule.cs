@@ -1,9 +1,6 @@
 ﻿using Crepido.ElmahOfflineViewer.Core.Domain;
-using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure.Abstract;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
-using Crepido.ElmahOfflineViewer.Core.Presentation.Abstract;
 using Crepido.ElmahOfflineViewer.UI.Views;
 using Ninject.Activation;
 using Ninject.Modules;

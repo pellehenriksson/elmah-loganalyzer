@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.Caching;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure.Abstract;
 
 namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
 {

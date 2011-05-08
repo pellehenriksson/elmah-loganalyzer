@@ -1,8 +1,7 @@
 ﻿using System;
 using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
-using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure.Abstract;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
 namespace Crepido.ElmahOfflineViewer.Core.Integrations
 {

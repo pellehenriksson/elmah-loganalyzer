@@ -3,7 +3,7 @@ using System.Configuration;
 using System.Threading;
 using System.Windows.Forms;
 using Crepido.ElmahOfflineViewer.Core.Common;
-using Crepido.ElmahOfflineViewer.Core.Domain.Abstract;
+using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 using Crepido.ElmahOfflineViewer.UI.Views;
 

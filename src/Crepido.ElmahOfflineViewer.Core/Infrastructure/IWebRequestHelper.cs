@@ -1,4 +1,4 @@
-﻿namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Abstract
+﻿namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
 {
 	public interface IWebRequestHelper
 	{

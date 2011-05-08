@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Net;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure.Abstract;
 
 namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
 {

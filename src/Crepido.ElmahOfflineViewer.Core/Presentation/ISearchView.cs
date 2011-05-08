@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 
-namespace Crepido.ElmahOfflineViewer.Core.Presentation.Abstract
+namespace Crepido.ElmahOfflineViewer.Core.Presentation
 {
 	public interface ISearchView
 	{

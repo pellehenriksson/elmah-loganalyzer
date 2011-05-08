@@ -89,7 +89,7 @@
 			this._detailsTabControl.Location = new System.Drawing.Point(0, 0);
 			this._detailsTabControl.Name = "_detailsTabControl";
 			this._detailsTabControl.SelectedIndex = 0;
-			this._detailsTabControl.Size = new System.Drawing.Size(612, 386);
+			this._detailsTabControl.Size = new System.Drawing.Size(680, 431);
 			this._detailsTabControl.TabIndex = 0;
 			// 
 			// _errorTabPage
@@ -107,7 +107,7 @@
 			this._errorTabPage.Location = new System.Drawing.Point(4, 22);
 			this._errorTabPage.Name = "_errorTabPage";
 			this._errorTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this._errorTabPage.Size = new System.Drawing.Size(604, 360);
+			this._errorTabPage.Size = new System.Drawing.Size(672, 405);
 			this._errorTabPage.TabIndex = 0;
 			this._errorTabPage.Text = "Error";
 			// 
@@ -184,7 +184,7 @@
 			this._errorTabControl.Location = new System.Drawing.Point(6, 113);
 			this._errorTabControl.Name = "_errorTabControl";
 			this._errorTabControl.SelectedIndex = 0;
-			this._errorTabControl.Size = new System.Drawing.Size(592, 241);
+			this._errorTabControl.Size = new System.Drawing.Size(660, 286);
 			this._errorTabControl.TabIndex = 8;
 			// 
 			// _messageTabPage
@@ -193,7 +193,7 @@
 			this._messageTabPage.Location = new System.Drawing.Point(4, 22);
 			this._messageTabPage.Name = "_messageTabPage";
 			this._messageTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this._messageTabPage.Size = new System.Drawing.Size(584, 215);
+			this._messageTabPage.Size = new System.Drawing.Size(652, 260);
 			this._messageTabPage.TabIndex = 0;
 			this._messageTabPage.Text = "Message";
 			this._messageTabPage.UseVisualStyleBackColor = true;
@@ -207,7 +207,7 @@
 			this._messageTextBox.Name = "_messageTextBox";
 			this._messageTextBox.ReadOnly = true;
 			this._messageTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this._messageTextBox.Size = new System.Drawing.Size(578, 209);
+			this._messageTextBox.Size = new System.Drawing.Size(646, 254);
 			this._messageTextBox.TabIndex = 0;
 			// 
 			// _detailsTabPage
@@ -496,7 +496,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this._detailsTabControl);
 			this.Name = "SearchDetailsView";
-			this.Size = new System.Drawing.Size(612, 386);
+			this.Size = new System.Drawing.Size(680, 431);
 			this._detailsTabControl.ResumeLayout(false);
 			this._errorTabPage.ResumeLayout(false);
 			this._errorTabPage.PerformLayout();

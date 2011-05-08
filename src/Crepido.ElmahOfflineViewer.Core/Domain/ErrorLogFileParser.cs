@@ -58,24 +58,27 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 		private void ParseServerVariables()
 		{
-			var variables = _documentRoot.SelectNodes("//serverVariables//item");
-			if (variables == null || variables.Count == 0)
-			{
-				return;
-			}
-
-			foreach (XmlNode node in variables)
-			{
-				var name = node.Attributes["name"].InnerText;
-				var value = node.ChildNodes[0].Attributes["string"].InnerText;
-
-				_errorLog.AddServerVariable(name, value);
-			}
+			ParseSegment(_errorLog.AddServerVariable, "//serverVariables//item");
 		}
-
+		
 		private void ParseFormValues()
 		{
-			var formvalues = _documentRoot.SelectNodes("//form//item");
+			ParseSegment(_errorLog.AddFormValue, "//form//item");
+		}
+		
+		private void ParseCookies()
+		{
+			ParseSegment(_errorLog.AddCookie, "//cookies//item");
+		}
+
+		private void ParseQuerystringValues()
+		{
+			ParseSegment(_errorLog.AddQuerystringValue, "//queryString//item");
+		}
+
+		private void ParseSegment(Action<string, string> method, string segmentPath)
+		{
+			var formvalues = _documentRoot.SelectNodes(segmentPath);
 			if (formvalues == null || formvalues.Count == 0)
 			{
 				return;
@@ -86,41 +89,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 				var name = node.Attributes["name"].InnerText;
 				var value = node.ChildNodes[0].Attributes["string"].InnerText;
 
-				_errorLog.AddFormValue(name, value);
-			}
-		}
-		
-		private void ParseCookies()
-		{
-			var cookies = _documentRoot.SelectNodes("//cookies//item");
-			if (cookies == null || cookies.Count == 0)
-			{
-				return;
-			}
-
-			foreach (XmlNode node in cookies)
-			{
-				var name = node.Attributes["name"].InnerText;
-				var value = node.ChildNodes[0].Attributes["string"].InnerText;
-
-				_errorLog.AddCookie(name, value);
-			}
-		}
-
-		private void ParseQuerystringValues()
-		{
-			var cookies = _documentRoot.SelectNodes("//queryString//item");
-			if (cookies == null || cookies.Count == 0)
-			{
-				return;
-			}
-
-			foreach (XmlNode node in cookies)
-			{
-				var name = node.Attributes["name"].InnerText;
-				var value = node.ChildNodes[0].Attributes["string"].InnerText;
-
-				_errorLog.AddQuerystringValue(name, value);
+				method.Invoke(name, value);
 			}
 		}
 		

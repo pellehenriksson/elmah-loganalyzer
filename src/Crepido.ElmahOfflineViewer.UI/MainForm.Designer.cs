@@ -118,12 +118,13 @@
 			// 
 			// _showSettingsViewButton
 			// 
+			this._showSettingsViewButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this._showSettingsViewButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.settings;
 			this._showSettingsViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._showSettingsViewButton.Name = "_showSettingsViewButton";
 			this._showSettingsViewButton.Size = new System.Drawing.Size(69, 22);
 			this._showSettingsViewButton.Text = "Settings";
-			this._showSettingsViewButton.Click += new System.EventHandler(ShowSettingsViewButtonClick);
+			this._showSettingsViewButton.Click += new System.EventHandler(this.ShowSettingsViewButtonClick);
 			// 
 			// _folderBrowserDialog
 			// 

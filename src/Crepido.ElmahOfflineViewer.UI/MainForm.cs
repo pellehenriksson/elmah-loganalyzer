@@ -9,7 +9,9 @@ using Crepido.ElmahOfflineViewer.UI.Views;
 
 namespace Crepido.ElmahOfflineViewer.UI
 {
-	public partial class MainForm : Form
+    using System.Linq;
+
+    public partial class MainForm : Form
 	{
 		private readonly IErrorLogRepository _repository;
 
@@ -22,15 +24,22 @@ namespace Crepido.ElmahOfflineViewer.UI
 			_repository = ServiceLocator.Resolve<IErrorLogRepository>();
 			_repository.OnInitialized += RepositoryOnInitialized;
 
-			var directory = ConfigurationManager.AppSettings["LogsDirectory"];
-			
-			if (!directory.HasValue())
-			{
-				SetErrorLoadingState();
-				return;
-			}
+		    var directory = Environment.GetCommandLineArgs()
+                                        .Skip(1)
+                                        .FirstOrDefault(arg => arg.HasValue());
 
-			HandleLoadingFromDirectory(directory);
+            if (!directory.HasValue())
+            {
+                directory = ConfigurationManager.AppSettings["LogsDirectory"];
+
+                if (!directory.HasValue())
+                {
+                    SetErrorLoadingState();
+                    return;
+                }
+            }
+
+		    HandleLoadingFromDirectory(directory);
 		}
 	
 		private void SetLoadingState()

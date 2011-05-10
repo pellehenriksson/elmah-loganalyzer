@@ -33,11 +33,12 @@
 			this.directoryToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.versionStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._mainToolStrip = new System.Windows.Forms.ToolStrip();
-			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-			this._mainPanel = new System.Windows.Forms.Panel();
 			this._selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
 			this._showSearchViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showReportViewButton = new System.Windows.Forms.ToolStripButton();
+			this._showSettingsViewButton = new System.Windows.Forms.ToolStripButton();
+			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+			this._mainPanel = new System.Windows.Forms.Panel();
 			this._mainStatusStrip.SuspendLayout();
 			this._mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -80,25 +81,13 @@
 			this._mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._selectDirectoryButton,
             this._showSearchViewButton,
-            this._showReportViewButton});
+            this._showReportViewButton,
+            this._showSettingsViewButton});
 			this._mainToolStrip.Location = new System.Drawing.Point(0, 0);
 			this._mainToolStrip.Name = "_mainToolStrip";
 			this._mainToolStrip.Size = new System.Drawing.Size(1264, 25);
 			this._mainToolStrip.TabIndex = 1;
 			this._mainToolStrip.Text = "toolStrip1";
-			// 
-			// _folderBrowserDialog
-			// 
-			this._folderBrowserDialog.Description = "Select a folder with ELMAH log files";
-			this._folderBrowserDialog.ShowNewFolderButton = false;
-			// 
-			// _mainPanel
-			// 
-			this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._mainPanel.Location = new System.Drawing.Point(0, 25);
-			this._mainPanel.Name = "_mainPanel";
-			this._mainPanel.Size = new System.Drawing.Size(1264, 679);
-			this._mainPanel.TabIndex = 2;
 			// 
 			// _selectDirectoryButton
 			// 
@@ -126,6 +115,28 @@
 			this._showReportViewButton.Size = new System.Drawing.Size(67, 22);
 			this._showReportViewButton.Text = "Reports";
 			this._showReportViewButton.Click += new System.EventHandler(this.ShowReportViewButtonClick);
+			// 
+			// _showSettingsViewButton
+			// 
+			this._showSettingsViewButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.settings;
+			this._showSettingsViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._showSettingsViewButton.Name = "_showSettingsViewButton";
+			this._showSettingsViewButton.Size = new System.Drawing.Size(69, 22);
+			this._showSettingsViewButton.Text = "Settings";
+			this._showSettingsViewButton.Click += new System.EventHandler(ShowSettingsViewButtonClick);
+			// 
+			// _folderBrowserDialog
+			// 
+			this._folderBrowserDialog.Description = "Select a folder with ELMAH log files";
+			this._folderBrowserDialog.ShowNewFolderButton = false;
+			// 
+			// _mainPanel
+			// 
+			this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._mainPanel.Location = new System.Drawing.Point(0, 25);
+			this._mainPanel.Name = "_mainPanel";
+			this._mainPanel.Size = new System.Drawing.Size(1264, 679);
+			this._mainPanel.TabIndex = 2;
 			// 
 			// MainForm
 			// 
@@ -163,5 +174,7 @@
 		{
 			directoryToolStripStatusLabel.Text = string.Format("Directory : {0} Logs found: {1}", e.Directory, e.TotalNumberOfLogs);
 		}
+
+		private System.Windows.Forms.ToolStripButton _showSettingsViewButton;
 	}
 }

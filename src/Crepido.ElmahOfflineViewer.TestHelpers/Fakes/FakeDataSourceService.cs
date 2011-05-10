@@ -5,7 +5,7 @@ using Crepido.ElmahOfflineViewer.Core.Domain;
 
 namespace Crepido.ElmahOfflineViewer.TestHelpers.Fakes
 {
-	public class FakeDataSourceService : IDataSourceService
+	public class FakeDataSourceService : IErrorLogSourceService
 	{
 		private readonly List<ErrorLog> _logs = new List<ErrorLog>();
 

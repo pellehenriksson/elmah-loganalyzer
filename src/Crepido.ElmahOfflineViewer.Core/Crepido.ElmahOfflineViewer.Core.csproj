@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -65,10 +66,10 @@
     <Compile Include="Domain\ReportItem.cs" />
     <Compile Include="Domain\SearchErrorLogQuery.cs" />
     <Compile Include="Domain\ErrorLogRepository.cs" />
-    <Compile Include="Domain\DataSourceService.cs" />
+    <Compile Include="Domain\FileErrorLogSourceService.cs" />
     <Compile Include="Domain\IErrorLogFileParser.cs" />
     <Compile Include="Domain\IErrorLogRepository.cs" />
-    <Compile Include="Domain\IDataSourceService.cs" />
+    <Compile Include="Domain\IErrorLogSourceService.cs" />
     <Compile Include="Domain\IReportGenerator.cs" />
     <Compile Include="Domain\Report.cs" />
     <Compile Include="Domain\ReportTypeEnum.cs" />
@@ -79,13 +80,21 @@
     <Compile Include="Constants\HttpServerVariables.cs" />
     <Compile Include="Domain\SearchErrorLogQueryParameter.cs" />
     <Compile Include="Common\NameValuePair.cs" />
+    <Compile Include="Domain\SqlServerErrorLogSourceService.cs" />
     <Compile Include="Domain\WindowsOperatingSystemNameResolver.cs" />
     <Compile Include="Domain\YellowScreenOfDeathBuilder.cs" />
     <Compile Include="Infrastructure\ICacheHelper.cs" />
     <Compile Include="Infrastructure\ILog.cs" />
+    <Compile Include="Infrastructure\ISettingsManager.cs" />
     <Compile Include="Infrastructure\IWebRequestHelper.cs" />
     <Compile Include="Infrastructure\CacheHelper.cs" />
     <Compile Include="Infrastructure\Log.cs" />
+    <Compile Include="Infrastructure\UserSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>UserSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\SettingsManager.cs" />
     <Compile Include="Infrastructure\WebRequestHelper.cs" />
     <Compile Include="Integrations\BingErrorSearchLauncher.cs" />
     <Compile Include="Integrations\ErrorSearchLauncherBase.cs" />
@@ -96,10 +105,12 @@
     <Compile Include="Presentation\ErrorLogSearchEventArgs.cs" />
     <Compile Include="Presentation\ISearchView.cs" />
     <Compile Include="Presentation\IReportView.cs" />
+    <Compile Include="Presentation\ISettingsView.cs" />
     <Compile Include="Presentation\ReportSelectionEventArgs.cs" />
     <Compile Include="Presentation\ReportTypeListItem.cs" />
     <Compile Include="Presentation\SearchPresenter.cs" />
     <Compile Include="Presentation\ReportPresenter.cs" />
+    <Compile Include="Presentation\SettingsPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templates.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -115,6 +126,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Templates.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Infrastructure\UserSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>UserSettings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.4\Microsoft.StyleCop.targets" />

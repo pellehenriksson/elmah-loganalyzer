@@ -78,6 +78,7 @@
     <Compile Include="Presentation\ReportSelectionEventArgsTests.cs" />
     <Compile Include="Presentation\ReportTypeListItemTests.cs" />
     <Compile Include="Presentation\SearchPresenterTests.cs" />
+    <Compile Include="Presentation\SettingsPresenterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\NameValuePairTests.cs" />
     <Compile Include="Sandbox.cs" />

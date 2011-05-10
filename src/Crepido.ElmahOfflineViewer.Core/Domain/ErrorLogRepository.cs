@@ -7,7 +7,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
 	public class ErrorLogRepository : IErrorLogRepository
 	{
-		private readonly IDataSourceService _datasourceService;
+		private readonly IErrorLogSourceService _datasourceService;
 		private readonly IClientInformationResolver _clientInformationResolver;
 		private readonly List<ErrorLog> _errorLogs = new List<ErrorLog>();
 		
@@ -16,7 +16,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		private readonly UniqueStringList _sources = new UniqueStringList();
 		private readonly UniqueStringList _urls = new UniqueStringList();
 
-		public ErrorLogRepository(IDataSourceService datasourceService, IClientInformationResolver clientInformationResolver)
+		public ErrorLogRepository(IErrorLogSourceService datasourceService, IClientInformationResolver clientInformationResolver)
 		{
 			_datasourceService = datasourceService;
 			_clientInformationResolver = clientInformationResolver;

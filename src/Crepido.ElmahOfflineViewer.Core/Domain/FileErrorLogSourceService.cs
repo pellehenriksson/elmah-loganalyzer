@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
-	public class DataSourceService : IDataSourceService
+	public class FileErrorLogSourceService : IErrorLogSourceService
 	{
 		private const string FileFilterPattern = "error-*.xml";
 		
 		private readonly IErrorLogFileParser _parser;
+		private readonly ISettingsManager _settingsManager;
 		private readonly ILog _log;
 
-		public DataSourceService(IErrorLogFileParser parser, ILog log)
+		public FileErrorLogSourceService(IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
 		{
 			_parser = parser;
+			_settingsManager = settingsManager;
 			_log = log;
 		}
 		
@@ -26,17 +29,24 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 				_log.Error(string.Format("Directory: {0} does not exist", directory));
 				throw new ApplicationException(string.Format("The directory: {0} was not found", directory));
 			}
-			
+
 			var files = GetErrorLogFilesFromDirectory(directory);
 			return ParseFiles(files);
 		}
 
-		private static IEnumerable<string> GetErrorLogFilesFromDirectory(string directory)
+		private IEnumerable<string> GetErrorLogFilesFromDirectory(string directory)
 		{
-			return Directory.GetFiles(directory, FileFilterPattern, SearchOption.AllDirectories);
+			var files = Directory.GetFiles(directory, FileFilterPattern, SearchOption.AllDirectories);
+
+			if (_settingsManager.GetMaxNumberOfLogs() == -1)
+			{
+				return files;
+			}
+
+			return files.OrderByDescending(x => x).Take(_settingsManager.GetMaxNumberOfLogs());
 		}
 
-		private static string GetContentFor(string file)
+		private string GetContentFor(string file)
 		{
 			return File.ReadAllText(file, Encoding.UTF8);
 		}
@@ -56,7 +66,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 					_log.Error(string.Format("Failed to parse file: {0}", file));
 					continue;
 				}
-				
+
 				result.Add(errorLog);
 			}
 

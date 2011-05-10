@@ -15,7 +15,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			QuerystringValues = new List<NameValuePair>();
 			ClientInformation = new ClientInformation();
 		}
-		
+
 		public string ErrorId { get; set; }
 
 		public string Host { get; set; }

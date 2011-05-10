@@ -14,7 +14,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests
 		public void SpitOut()
 		{
 			var logger = new FakeLog();
-			var source = new DataSourceService(new ErrorLogFileParser(logger), logger);
+			var source = new FileDataSourceService(new ErrorLogFileParser(logger), logger);
 			var repository = new ErrorLogRepository(source, new FakeClientInformationResolver());
 
 			const string path = "c:\\temp\\elmah";

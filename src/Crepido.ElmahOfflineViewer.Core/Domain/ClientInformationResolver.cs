@@ -12,11 +12,6 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 		public ClientInformation Resolve(string httpUserAgent)
 		{
-			if (httpUserAgent == null)
-			{
-				throw new ArgumentNullException("httpUserAgent");	
-			}
-
 			if (!httpUserAgent.HasValue())
 			{
 				return new ClientInformation();

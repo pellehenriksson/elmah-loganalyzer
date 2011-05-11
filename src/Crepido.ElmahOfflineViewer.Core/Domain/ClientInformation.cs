@@ -1,14 +1,14 @@
-﻿namespace Crepido.ElmahOfflineViewer.Core.Domain
+﻿using Crepido.ElmahOfflineViewer.Core.Constants;
+
+namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
 	public class ClientInformation
 	{
-		private const string DefaultValue = "UNKNOWN";
-
 		public ClientInformation()
 		{
-			Platform = DefaultValue;
-			OperatingSystem = DefaultValue;
-			Browser = DefaultValue;
+			Platform = Platforms.Unknown;
+			OperatingSystem = "UNKNOWN";
+			Browser = Browsers.Unknown;
 		}
 
 		public string Browser { get; set; }

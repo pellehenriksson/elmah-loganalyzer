@@ -7,7 +7,14 @@ using NUnit.Framework;
 namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
 {
 	[TestFixture]
-	public class SqlServerErrorLogSourceServiceTests
+	public class SqlServerErrorLogSourceTests
 	{
+		[SetUp]
+		public void FixtureSetup()
+		{
+		}
+
+		// drop and recreate the database
+		// baseload the database
 	}
 }

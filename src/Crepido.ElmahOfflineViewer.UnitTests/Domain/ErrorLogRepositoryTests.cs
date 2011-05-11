@@ -204,7 +204,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		
 		private static IErrorLogRepository CreateRepository()
 		{
-			var repository = new ErrorLogRepository(new FakeDataSourceService(), new FakeClientInformationResolver());
+			var repository = new ErrorLogRepository(new FakeDataSource(), new FakeClientInformationResolver());
 			repository.Initialize(string.Empty);
 			return repository;
 		}

@@ -6,18 +6,21 @@ using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
-	public class SqlServerErrorLogSourceService : IErrorLogSourceService
+	public class SqlServerErrorLogSource : IErrorLogSource
 	{
 		private readonly IErrorLogFileParser _parser;
 		private readonly ISettingsManager _settingsManager;
 		private readonly ILog _log;
 
-		public SqlServerErrorLogSourceService(IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
+		public SqlServerErrorLogSource(IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log, string path)
 		{
 			_parser = parser;
 			_settingsManager = settingsManager;
 			_log = log;
+			Path = path;
 		}
+
+		public string Path { get; private set; }
 
 		public List<ErrorLog> GetLogs(string directory)
 		{
@@ -53,8 +56,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 		private string ResolveQuery()
 		{
-			const string selectWithLimit = "SELECT TOP {0} AllXml FROM ELMAH_Error;";
-			const string selectAll = "SELECT AllXml FROM ELMAH_Error;";
+			const string selectWithLimit = "SELECT TOP {0} AllXml FROM ELMAH_Error ORDER BY TimeUtc;";
+			const string selectAll = "SELECT AllXml FROM ELMAH_Error ORDER BY TimeUtc;";
 
 			return _settingsManager.GetMaxNumberOfLogs() == -1 ? selectAll : selectWithLimit;
 		}

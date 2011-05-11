@@ -2,8 +2,10 @@
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
-	public interface IErrorLogSourceService
+	public interface IErrorLogSource
 	{
+		string Path { get; }
+
 		List<ErrorLog> GetLogs(string directory);
 	}
 }

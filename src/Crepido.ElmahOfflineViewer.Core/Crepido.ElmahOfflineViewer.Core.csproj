@@ -58,7 +58,7 @@
     <Compile Include="Common\UrlResolver.cs" />
     <Compile Include="Constants\Browsers.cs" />
     <Compile Include="Constants\Platforms.cs" />
-    <Compile Include="Domain\ErrorLogSourceServiceFactory.cs" />
+    <Compile Include="Domain\ErrorLogSourceFactory.cs" />
     <Compile Include="Domain\IClientInformationResolver.cs" />
     <Compile Include="Domain\BrowserVersionResolver.cs" />
     <Compile Include="Domain\ClientInformationResolver.cs" />
@@ -67,10 +67,10 @@
     <Compile Include="Domain\ReportItem.cs" />
     <Compile Include="Domain\SearchErrorLogQuery.cs" />
     <Compile Include="Domain\ErrorLogRepository.cs" />
-    <Compile Include="Domain\FileErrorLogSourceService.cs" />
+    <Compile Include="Domain\FileErrorLogSource.cs" />
     <Compile Include="Domain\IErrorLogFileParser.cs" />
     <Compile Include="Domain\IErrorLogRepository.cs" />
-    <Compile Include="Domain\IErrorLogSourceService.cs" />
+    <Compile Include="Domain\IErrorLogSource.cs" />
     <Compile Include="Domain\IReportGenerator.cs" />
     <Compile Include="Domain\Report.cs" />
     <Compile Include="Domain\ReportTypeEnum.cs" />
@@ -81,7 +81,7 @@
     <Compile Include="Constants\HttpServerVariables.cs" />
     <Compile Include="Domain\SearchErrorLogQueryParameter.cs" />
     <Compile Include="Common\NameValuePair.cs" />
-    <Compile Include="Domain\SqlServerErrorLogSourceService.cs" />
+    <Compile Include="Domain\SqlServerErrorLogSource.cs" />
     <Compile Include="Domain\WindowsOperatingSystemNameResolver.cs" />
     <Compile Include="Domain\YellowScreenOfDeathBuilder.cs" />
     <Compile Include="Infrastructure\ICacheHelper.cs" />

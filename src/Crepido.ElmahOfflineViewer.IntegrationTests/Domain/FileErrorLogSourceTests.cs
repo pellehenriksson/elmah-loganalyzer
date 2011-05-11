@@ -7,13 +7,13 @@ using NUnit.Framework;
 namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
 {
 	[TestFixture]
-	public class FileErrorLogSourceServiceTests
+	public class FileErrorLogSourceTests
 	{
 		[Test]
 		public void GetLogs_ParsesAllLogsInDirectory()
 		{
 			// arrange
-			var source = new FileErrorLogSourceService(new ErrorLogFileParser(new FakeLog()), new FakeSettingsManager(), new FakeLog());
+			var source = new FileErrorLogSource(new ErrorLogFileParser(new FakeLog()), new FakeSettingsManager(), new FakeLog());
 
 			// act
 			var result = source.GetLogs(Directory.GetCurrentDirectory());
@@ -29,7 +29,7 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
 			var settings = new FakeSettingsManager();
 			settings.SetMaxNumberOfLogs(10);
 
-			var source = new FileErrorLogSourceService(new ErrorLogFileParser(new FakeLog()), settings, new FakeLog());
+			var source = new FileErrorLogSource(new ErrorLogFileParser(new FakeLog()), settings, new FakeLog());
 
 			// act
 			var result = source.GetLogs(Directory.GetCurrentDirectory());
@@ -42,7 +42,7 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
 		public void GetLogs_DirectoryDoesNotExist_ThrowsApplicationException()
 		{
 			// arrange
-			var source = new FileErrorLogSourceService(new ErrorLogFileParser(new FakeLog()), new FakeSettingsManager(), new FakeLog());
+			var source = new FileErrorLogSource(new ErrorLogFileParser(new FakeLog()), new FakeSettingsManager(), new FakeLog());
 
 			// act
 			var result = Assert.Throws<ApplicationException>(() => source.GetLogs(@"x:\invalid\directory"));

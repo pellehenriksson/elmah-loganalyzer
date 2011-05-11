@@ -7,7 +7,7 @@ using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
-	public class FileErrorLogSourceService : IErrorLogSourceService
+	public class FileErrorLogSource : IErrorLogSource
 	{
 		private const string FileFilterPattern = "error-*.xml";
 		
@@ -15,13 +15,15 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		private readonly ISettingsManager _settingsManager;
 		private readonly ILog _log;
 
-		public FileErrorLogSourceService(IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
+		public FileErrorLogSource(IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
 		{
 			_parser = parser;
 			_settingsManager = settingsManager;
 			_log = log;
 		}
-		
+
+		public string Path { get; private set; }
+
 		public List<ErrorLog> GetLogs(string directory)
 		{
 			if (!Directory.Exists(directory))

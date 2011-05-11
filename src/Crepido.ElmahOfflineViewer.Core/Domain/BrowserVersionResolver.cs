@@ -26,7 +26,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			// position right after browser name
 			var firstPositionVersionNumber = firstPositionBrowserName + browserName.Length + 1;
 			
-			// sub string startign with version number
+			// sub string starting with version number
 			var temp = httpUserAgent.Substring(firstPositionVersionNumber);
 
 			// calculate the length of version number

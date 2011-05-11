@@ -19,7 +19,7 @@ namespace Crepido.ElmahOfflineViewer.UI
 			
 			Bind<IErrorLogRepository>().To<ErrorLogRepository>().InSingletonScope();
 			Bind<ISettingsManager>().To<SettingsManager>();
-			Bind<IErrorLogSourceService>().To<FileErrorLogSourceService>();
+			Bind<IErrorLogSource>().To<FileErrorLogSource>();
 			Bind<IErrorLogFileParser>().To<ErrorLogFileParser>();
 			Bind<IReportGenerator>().To<ReportGenerator>();
 			Bind<SearchPresenter>().To<SearchPresenter>();

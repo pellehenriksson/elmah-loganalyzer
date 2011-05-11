@@ -6,11 +6,11 @@ using Crepido.ElmahOfflineViewer.Core.Domain;
 
 namespace Crepido.ElmahOfflineViewer.TestHelpers.Fakes
 {
-	public class FakeDataSourceService : IErrorLogSourceService
+	public class FakeDataSource : IErrorLogSource
 	{
 		private readonly List<ErrorLog> _logs = new List<ErrorLog>();
 
-		public FakeDataSourceService()
+		public FakeDataSource()
 		{
 			AddToLogs("System.InvalidOperationException", "some really serious error!", "Some.Namespace.Core", new DateTime(2011, 1, 1), "nisse", "some/path");
 			AddToLogs("System.InvalidOperationException", string.Empty, "Some.Namespace.Data", new DateTime(2011, 1, 2), "kalle", "some/path");
@@ -18,7 +18,9 @@ namespace Crepido.ElmahOfflineViewer.TestHelpers.Fakes
 			AddToLogs("System.SomeOtherException", string.Empty, "Some.Namespace.Domain", new DateTime(2011, 1, 4), "rulle", "some/other/path");
 			AddToLogs("System.Exception", string.Empty, "Some.NamespaceOther.Domain", new DateTime(2011, 1, 4), null, null);
 		}
-		
+
+		public string Path { get; set; }
+
 		public List<ErrorLog> GetLogs(string directory)
 		{
 			return _logs;

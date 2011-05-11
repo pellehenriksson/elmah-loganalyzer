@@ -43,8 +43,8 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
-    <Compile Include="Domain\FileErrorLogSourceServiceTests.cs" />
-    <Compile Include="Domain\SqlServerErrorLogSourceServiceTests.cs" />
+    <Compile Include="Domain\FileErrorLogSourceTests.cs" />
+    <Compile Include="Domain\SqlServerErrorLogSourceTests.cs" />
     <Compile Include="Infrastructure\CacheHelperTests.cs" />
     <Compile Include="Infrastructure\WebRequestHelperTests.cs" />
     <Compile Include="Integrations\UserAgentStringClientInformationResolverTests.cs" />
@@ -60,8 +60,11 @@
       <Name>Crepido.ElmahOfflineViewer.TestHelpers</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="_DatabaseScripts\SQLServer.sql" />
     <Content Include="_TestFiles\error-2011-04-10142706Z-d0da432d-fd3c-45b6-baf1-2cf49a5724e8.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -123,6 +126,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.4\Microsoft.StyleCop.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

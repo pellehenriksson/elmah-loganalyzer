@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Crepido.ElmahOfflineViewer.Core.Infrastructure {
+namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Settings {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

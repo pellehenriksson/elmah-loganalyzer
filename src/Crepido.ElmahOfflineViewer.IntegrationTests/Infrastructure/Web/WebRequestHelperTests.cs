@@ -1,8 +1,8 @@
 ﻿using System.Net;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 using NUnit.Framework;
 
-namespace Crepido.ElmahOfflineViewer.IntegrationTests.Infrastructure
+namespace Crepido.ElmahOfflineViewer.IntegrationTests.Infrastructure.Web
 {
 	[TestFixture]
 	public class WebRequestHelperTests

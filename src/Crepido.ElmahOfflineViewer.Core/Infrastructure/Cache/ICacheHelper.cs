@@ -1,4 +1,4 @@
-﻿namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
+﻿namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Cache
 {
 	public interface ICacheHelper
 	{

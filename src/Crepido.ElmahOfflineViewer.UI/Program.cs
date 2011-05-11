@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Crepido.ElmahOfflineViewer.UI.Forms;
 
 namespace Crepido.ElmahOfflineViewer.UI
 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Logging;
 
 namespace Crepido.ElmahOfflineViewer.TestHelpers.Fakes
 {

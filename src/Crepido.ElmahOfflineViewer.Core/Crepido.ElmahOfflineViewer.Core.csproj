@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\..\packages\Ninject.2.2.1.0\lib\.NetFramework 4.0\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="NLog">
       <HintPath>..\..\packages\NLog.2.0.0.0\lib\NET40\NLog.dll</HintPath>
     </Reference>
@@ -64,6 +67,7 @@
     <Compile Include="Domain\ClientInformationResolver.cs" />
     <Compile Include="Domain\ErrorLog.cs" />
     <Compile Include="Domain\ErrorLogFileParser.cs" />
+    <Compile Include="Domain\IErrorLogSourceFactory.cs" />
     <Compile Include="Domain\ReportItem.cs" />
     <Compile Include="Domain\SearchErrorLogQuery.cs" />
     <Compile Include="Domain\ErrorLogRepository.cs" />
@@ -84,19 +88,20 @@
     <Compile Include="Domain\SqlServerErrorLogSource.cs" />
     <Compile Include="Domain\WindowsOperatingSystemNameResolver.cs" />
     <Compile Include="Domain\YellowScreenOfDeathBuilder.cs" />
-    <Compile Include="Infrastructure\ICacheHelper.cs" />
-    <Compile Include="Infrastructure\ILog.cs" />
-    <Compile Include="Infrastructure\ISettingsManager.cs" />
-    <Compile Include="Infrastructure\IWebRequestHelper.cs" />
-    <Compile Include="Infrastructure\CacheHelper.cs" />
-    <Compile Include="Infrastructure\Log.cs" />
-    <Compile Include="Infrastructure\UserSettings.Designer.cs">
+    <Compile Include="Infrastructure\Cache\ICacheHelper.cs" />
+    <Compile Include="Infrastructure\Logging\ILog.cs" />
+    <Compile Include="Infrastructure\Settings\ISettingsManager.cs" />
+    <Compile Include="Infrastructure\Web\IWebRequestHelper.cs" />
+    <Compile Include="Infrastructure\Cache\CacheHelper.cs" />
+    <Compile Include="Infrastructure\Logging\Log.cs" />
+    <Compile Include="Infrastructure\Dependencies\NinjectCoreModule.cs" />
+    <Compile Include="Infrastructure\Settings\UserSettings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>UserSettings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\SettingsManager.cs" />
-    <Compile Include="Infrastructure\WebRequestHelper.cs" />
+    <Compile Include="Infrastructure\Settings\SettingsManager.cs" />
+    <Compile Include="Infrastructure\Web\WebRequestHelper.cs" />
     <Compile Include="Integrations\BingErrorSearchLauncher.cs" />
     <Compile Include="Integrations\ErrorSearchLauncherBase.cs" />
     <Compile Include="Integrations\GoogleErrorSearchLauncher.cs" />
@@ -130,10 +135,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Infrastructure\UserSettings.settings">
+    <None Include="Infrastructure\Settings\UserSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>UserSettings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="_Diagrams\Domain.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.4\Microsoft.StyleCop.targets" />

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
+﻿namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Settings
 {
 	public class SettingsManager : ISettingsManager
 	{

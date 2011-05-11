@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Cache;
 using NUnit.Framework;
 
-namespace Crepido.ElmahOfflineViewer.IntegrationTests.Infrastructure
+namespace Crepido.ElmahOfflineViewer.IntegrationTests.Infrastructure.Cache
 {
 	[TestFixture]
 	public class CacheHelperTests

@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Logging;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Settings;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {

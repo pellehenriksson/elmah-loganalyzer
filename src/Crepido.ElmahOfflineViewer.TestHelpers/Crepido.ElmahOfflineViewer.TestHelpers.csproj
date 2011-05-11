@@ -41,6 +41,7 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="Fakes\FakeClientInformationResolver.cs" />
+    <Compile Include="Fakes\FakeDataSourceFactory.cs" />
     <Compile Include="Fakes\FakeSettingsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Fakes\FakeDataSource.cs" />

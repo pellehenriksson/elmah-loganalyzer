@@ -1,4 +1,6 @@
 ﻿using Crepido.ElmahOfflineViewer.Core.Infrastructure;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Cache;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 using Crepido.ElmahOfflineViewer.Core.Integrations;
 using NUnit.Framework;
 

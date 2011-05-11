@@ -3,15 +3,17 @@ using System.Data.Common;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
-	public class ErrorLogSourceFactory
+	public class ErrorLogSourceFactory : IErrorLogSourceFactory
 	{
 		public IErrorLogSource Build(string path)
 		{
 			if (IsConnectionString(path))
 			{
+				// todo: resolve with ninject
 				return new SqlServerErrorLogSource(null, null, null, null);
 			}
 
+			// todo: resolve with ninject
 			return new FileErrorLogSource(null, null, null);
 		}
 

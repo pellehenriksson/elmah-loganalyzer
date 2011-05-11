@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace Crepido.ElmahOfflineViewer.UI
+namespace Crepido.ElmahOfflineViewer.UI.Forms
 {
 	public partial class AboutForm : Form
 	{

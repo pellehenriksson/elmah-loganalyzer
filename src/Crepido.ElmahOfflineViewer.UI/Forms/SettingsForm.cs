@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 
-namespace Crepido.ElmahOfflineViewer.UI
+namespace Crepido.ElmahOfflineViewer.UI.Forms
 {
 	public partial class SettingsForm : Form, ISettingsView
 	{

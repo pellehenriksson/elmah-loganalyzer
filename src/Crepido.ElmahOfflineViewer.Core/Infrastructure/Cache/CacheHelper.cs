@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Caching;
 
-namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
+namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Cache
 {
 	public class CacheHelper : ICacheHelper
 	{

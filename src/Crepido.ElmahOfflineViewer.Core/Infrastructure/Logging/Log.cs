@@ -1,7 +1,7 @@
 ﻿using System;
 using NLog;
 
-namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
+namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Logging
 {
 	public class Log : ILog
 	{

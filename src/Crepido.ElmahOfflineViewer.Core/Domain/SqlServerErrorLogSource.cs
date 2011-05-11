@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Logging;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Settings;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {

@@ -1,4 +1,4 @@
-﻿namespace Crepido.ElmahOfflineViewer.UI
+﻿namespace Crepido.ElmahOfflineViewer.UI.Forms
 {
 	partial class AboutForm
 	{

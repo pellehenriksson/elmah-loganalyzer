@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using Crepido.ElmahOfflineViewer.Core.Common;
@@ -7,11 +8,9 @@ using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 using Crepido.ElmahOfflineViewer.UI.Views;
 
-namespace Crepido.ElmahOfflineViewer.UI
+namespace Crepido.ElmahOfflineViewer.UI.Forms
 {
-    using System.Linq;
-
-    public partial class MainForm : Form
+	public partial class MainForm : Form
 	{
 		private readonly IErrorLogRepository _repository;
 

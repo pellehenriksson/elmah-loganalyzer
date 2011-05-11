@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Net;
 
-namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
+namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Web
 {
 	public class WebRequestHelper : IWebRequestHelper
 	{

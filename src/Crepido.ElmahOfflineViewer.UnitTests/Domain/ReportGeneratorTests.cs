@@ -21,7 +21,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var result = generator.Create(query);
 
 			// assert
-			Assert.That(result.Items.Count, Is.EqualTo(2));
+			Assert.That(result.Items.Count, Is.EqualTo(3));
 		}
 
 		[Test]
@@ -35,7 +35,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var result = generator.Create(query);
 
 			// assert
-			Assert.That(result.Items.Count, Is.EqualTo(3));
+			Assert.That(result.Items.Count, Is.EqualTo(4));
 		}
 
 		[Test]
@@ -49,7 +49,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var result = generator.Create(query);
 
 			// assert
-			Assert.That(result.Items.Count, Is.EqualTo(3));
+			Assert.That(result.Items.Count, Is.EqualTo(4));
 		}
 		
 		[Test]
@@ -63,7 +63,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var result = generator.Create(query);
 
 			// assert
-			Assert.That(result.Items.Count, Is.EqualTo(2));
+			Assert.That(result.Items.Count, Is.EqualTo(3));
 		}
 
 		[Test]

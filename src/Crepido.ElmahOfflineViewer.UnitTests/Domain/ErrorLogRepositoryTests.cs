@@ -34,7 +34,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			repository.Initialize(FakeLogsDirectory);
 			
 			// assert
-			Assert.That(repository.GetAll().Count, Is.EqualTo(4));
+			Assert.That(repository.GetAll().Count, Is.EqualTo(5));
 		}
 
 		[Test]
@@ -47,7 +47,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			repository.Initialize(FakeLogsDirectory);
 
 			// assert
-			Assert.That(repository.GetTypes().Count, Is.EqualTo(2));
+			Assert.That(repository.GetTypes().Count, Is.EqualTo(3));
 		}
 		
 		[Test]
@@ -73,7 +73,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			repository.Initialize(FakeLogsDirectory);
 
 			// assert
-			Assert.That(repository.GetSources().Count, Is.EqualTo(3));
+			Assert.That(repository.GetSources().Count, Is.EqualTo(4));
 		}
 
 		[Test]

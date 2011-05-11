@@ -8,17 +8,16 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 	public class ClientInformationResolverTests : UnitTestBase
 	{
 		[Test]
-		public void Resolve_HttpUserAgenIsNull_Throws()
+		public void Resolve_HttpUserAgentIsNull_RetunsEmptyClientInformation()
 		{
 			// arrange
 			var resolver = new ClientInformationResolver();
 
 			// act
-			var result = Assert.Throws<ArgumentNullException>(() => resolver.Resolve(null));
+			var result = resolver.Resolve(null);
 
 			// assert
 			Assert.That(result, Is.Not.Null);
-			Assert.That(result.ParamName, Is.EqualTo("httpUserAgent"));
 		}
 
 		[Test]

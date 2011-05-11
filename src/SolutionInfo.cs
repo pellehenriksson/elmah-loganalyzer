@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("Crepido Systems AB")]
-[assembly: AssemblyProduct("ElmahOfflineViewer")]
+[assembly: AssemblyProduct("Elmah Offline Viewer")]
 [assembly: AssemblyCopyright("Copyright Crepido Systems AB 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

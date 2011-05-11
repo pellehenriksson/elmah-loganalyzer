@@ -83,6 +83,7 @@
 			this.Controls.Add(this._saveButton);
 			this.Controls.Add(this._numberOfLogsToLoadComboBox);
 			this.Controls.Add(this.label1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "SettingsForm";

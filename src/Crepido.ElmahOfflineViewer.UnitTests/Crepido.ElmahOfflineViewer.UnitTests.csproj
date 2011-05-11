@@ -57,6 +57,7 @@
     <Compile Include="Domain\BrowserVersionResolverTests.cs" />
     <Compile Include="Domain\ClientInformationResolverTests.cs" />
     <Compile Include="Domain\ErrorLogFileParserTests.cs" />
+    <Compile Include="Domain\ErrorLogSourceServiceFactoryTests.cs" />
     <Compile Include="Domain\ReportItemTests.cs" />
     <Compile Include="Domain\SearchErrorLogQueryParameterTests.cs" />
     <Compile Include="Domain\SearchErrorLogQueryTests.cs" />

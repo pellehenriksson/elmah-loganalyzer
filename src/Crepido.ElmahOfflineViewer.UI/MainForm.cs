@@ -166,5 +166,11 @@ namespace Crepido.ElmahOfflineViewer.UI
 			var view = presenter.View as Form;
 			view.ShowDialog(this);
 		}
+
+		private void ShowAboutButtonClick(object sender, EventArgs e)
+		{
+			var view = new AboutForm();
+			view.ShowDialog(this);
+		}
 	}
 }

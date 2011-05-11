@@ -36,6 +36,7 @@
 			this._selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
 			this._showSearchViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showReportViewButton = new System.Windows.Forms.ToolStripButton();
+			this._showAboutButton = new System.Windows.Forms.ToolStripButton();
 			this._showSettingsViewButton = new System.Windows.Forms.ToolStripButton();
 			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
 			this._mainPanel = new System.Windows.Forms.Panel();
@@ -82,6 +83,7 @@
             this._selectDirectoryButton,
             this._showSearchViewButton,
             this._showReportViewButton,
+            this._showAboutButton,
             this._showSettingsViewButton});
 			this._mainToolStrip.Location = new System.Drawing.Point(0, 0);
 			this._mainToolStrip.Name = "_mainToolStrip";
@@ -105,6 +107,7 @@
 			this._showSearchViewButton.Name = "_showSearchViewButton";
 			this._showSearchViewButton.Size = new System.Drawing.Size(62, 22);
 			this._showSearchViewButton.Text = "Search";
+			this._showSearchViewButton.ToolTipText = "Search logs";
 			this._showSearchViewButton.Click += new System.EventHandler(this.ShowSearchViewButtonClick);
 			// 
 			// _showReportViewButton
@@ -114,7 +117,18 @@
 			this._showReportViewButton.Name = "_showReportViewButton";
 			this._showReportViewButton.Size = new System.Drawing.Size(67, 22);
 			this._showReportViewButton.Text = "Reports";
+			this._showReportViewButton.ToolTipText = "View reports";
 			this._showReportViewButton.Click += new System.EventHandler(this.ShowReportViewButtonClick);
+			// 
+			// _showAboutButton
+			// 
+			this._showAboutButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+			this._showAboutButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.about;
+			this._showAboutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._showAboutButton.Name = "_showAboutButton";
+			this._showAboutButton.Size = new System.Drawing.Size(60, 22);
+			this._showAboutButton.Text = "About";
+			this._showAboutButton.Click += new System.EventHandler(this.ShowAboutButtonClick);
 			// 
 			// _showSettingsViewButton
 			// 
@@ -124,6 +138,7 @@
 			this._showSettingsViewButton.Name = "_showSettingsViewButton";
 			this._showSettingsViewButton.Size = new System.Drawing.Size(69, 22);
 			this._showSettingsViewButton.Text = "Settings";
+			this._showSettingsViewButton.ToolTipText = "Change settings";
 			this._showSettingsViewButton.Click += new System.EventHandler(this.ShowSettingsViewButtonClick);
 			// 
 			// _folderBrowserDialog
@@ -177,5 +192,6 @@
 		}
 
 		private System.Windows.Forms.ToolStripButton _showSettingsViewButton;
+		private System.Windows.Forms.ToolStripButton _showAboutButton;
 	}
 }

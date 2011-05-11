@@ -103,7 +103,21 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			Assert.That(result.Browser, Is.EqualTo("Opera 7.50"));
 		}
 
-		[Test]
+        [Test]
+        public void Resolve_BrowserIsPerl_ResolvesBrowser()
+        {
+            // arrange
+            var resolver = new ClientInformationResolver();
+            const string httpUserAgent = "libwww-perl/5.803";
+
+            // act
+            var result = resolver.Resolve(httpUserAgent);
+
+            // assert
+            Assert.That(result.Browser, Is.EqualTo("UNKNOWN"));
+        }
+        
+        [Test]
 		public void Resolve_PlatformIsWindows_ResolvesPlatform()
 		{
 			// arrange

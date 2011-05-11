@@ -35,13 +35,19 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		{
 			var leftParenthesisIndex = _httpUserAgent.IndexOf('(');
 			var rightParenthesisIndex = _httpUserAgent.IndexOf(')');
-			
-			var parenthesisSegmentLength = rightParenthesisIndex - leftParenthesisIndex;
-			_parenthesisSegment = httpUserAgent.Substring(leftParenthesisIndex, parenthesisSegmentLength);
 
-			_parenthesisSegmentValues = _parenthesisSegment.Split(';');
-			
-			_lastSegment = httpUserAgent.Substring(rightParenthesisIndex);
+            var hasParenthesizedSegment = leftParenthesisIndex >= 0 && rightParenthesisIndex > leftParenthesisIndex;
+
+            var parenthesisSegmentLength = rightParenthesisIndex - leftParenthesisIndex;
+            _parenthesisSegment = hasParenthesizedSegment 
+                                ? httpUserAgent.Substring(leftParenthesisIndex, parenthesisSegmentLength)
+                                : string.Empty;
+
+            _parenthesisSegmentValues = _parenthesisSegment.Split(';');
+
+            _lastSegment = hasParenthesizedSegment
+                         ? httpUserAgent.Substring(rightParenthesisIndex)
+                         : httpUserAgent;
 		}
 
 		private string ResolveBrowser()

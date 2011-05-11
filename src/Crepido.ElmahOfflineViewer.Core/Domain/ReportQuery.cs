@@ -2,7 +2,9 @@
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
-	public class ReportQuery
+    using System;
+
+    public class ReportQuery
 	{
 		public ReportQuery(ReportTypeEnum reportType, DateInterval interval)
 		{
@@ -13,10 +15,15 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		public ReportTypeEnum ReportType { get; private set; }
 
 		public DateInterval Interval { get; private set; }
-		
-		public override string ToString()
+
+        public override string ToString()
+        {
+            return ToString(null);
+        }
+
+        public string ToString(IFormatProvider provider)
 		{
-			return string.Format("{0} from {1} to {2}", ReportType.GetDescription(), Interval.StartDate.ToShortDateString(), Interval.EndDate.ToShortDateString());
+			return string.Format(provider, "{0} from {1:d} to {2:d}", ReportType.GetDescription(), Interval.StartDate, Interval.EndDate);
 		}
 	}
 }

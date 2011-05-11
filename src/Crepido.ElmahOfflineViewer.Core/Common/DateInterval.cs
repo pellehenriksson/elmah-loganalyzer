@@ -57,7 +57,12 @@ namespace Crepido.ElmahOfflineViewer.Core.Common
 
 		public override string ToString()
 		{
-			return string.Format("{0} {1}", StartDate.ToShortDateString(), EndDate.ToShortDateString());
+			return ToString(null);
 		}
+
+        public string ToString(IFormatProvider provider)
+        {
+            return string.Format(provider, "{0:d} {1:d}", StartDate, EndDate);
+        }
 	}
 }

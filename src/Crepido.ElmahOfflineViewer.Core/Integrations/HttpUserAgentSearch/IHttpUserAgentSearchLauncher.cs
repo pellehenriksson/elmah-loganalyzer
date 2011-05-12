@@ -1,8 +1,8 @@
 ﻿using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
-namespace Crepido.ElmahOfflineViewer.Core.Integrations
+namespace Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentSearch
 {
-	public interface IHttpUserAgentStringSearchLauncher
+	public interface IHttpUserAgentSearchLauncher
 	{
 		IProcessHelper ProcessHelper { get; }
 

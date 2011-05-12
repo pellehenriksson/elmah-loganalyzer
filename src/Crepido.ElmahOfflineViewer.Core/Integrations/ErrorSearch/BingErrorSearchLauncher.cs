@@ -1,6 +1,6 @@
 ﻿using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
-namespace Crepido.ElmahOfflineViewer.Core.Integrations
+namespace Crepido.ElmahOfflineViewer.Core.Integrations.ErrorSearch
 {
 	public class BingErrorSearchLauncher : ErrorSearchLauncherBase
 	{

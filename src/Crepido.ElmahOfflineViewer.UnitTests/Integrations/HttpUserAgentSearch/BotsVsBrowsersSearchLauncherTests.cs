@@ -1,7 +1,8 @@
-﻿using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
+﻿using Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentSearch;
+using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
 using NUnit.Framework;
 
-namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
+namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations.HttpUserAgentSearch
 {
 	[TestFixture]
 	public class BotsVsBrowsersSearchLauncherTests : UnitTestBase
@@ -13,7 +14,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
 			var helper = new FakeProcessHelper();
 			
 			// act
-			var launcher = new Core.Integrations.BotsVsBrowsersSearchLauncher(helper);
+			var launcher = new BotsVsBrowsersSearchLauncher(helper);
 
 			// assert
 			Assert.That(launcher.ProcessHelper, Is.EqualTo(helper));
@@ -24,7 +25,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
 		{
 			// arrange
 			var helper = new FakeProcessHelper();
-			var launcher = new Core.Integrations.BotsVsBrowsersSearchLauncher(helper);
+			var launcher = new BotsVsBrowsersSearchLauncher(helper);
 			const string httpUserAgent = "AdsBot-Google-Mobile (Android; +http://www.google.com/adsbot.html) AppleWebKit";
 
 			// act

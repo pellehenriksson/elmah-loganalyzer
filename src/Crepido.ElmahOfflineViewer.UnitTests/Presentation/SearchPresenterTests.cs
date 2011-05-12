@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Integrations;
+using Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentSearch;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 using Moq;
 using NUnit.Framework;
@@ -14,14 +15,14 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 	{
 		private Mock<ISearchView> _view;
 		private Mock<IErrorLogRepository> _repository;
-		private Mock<IHttpUserAgentStringSearchLauncher> _searchLauncher;
+		private Mock<IHttpUserAgentSearchLauncher> _searchLauncher;
 
 		[SetUp]
 		public void Setup()
 		{
 			_view = new Mock<ISearchView>();
 			_repository = new Mock<IErrorLogRepository>();
-			_searchLauncher = new Mock<IHttpUserAgentStringSearchLauncher>();
+			_searchLauncher = new Mock<IHttpUserAgentSearchLauncher>();
 		}
 		
 		[Test]

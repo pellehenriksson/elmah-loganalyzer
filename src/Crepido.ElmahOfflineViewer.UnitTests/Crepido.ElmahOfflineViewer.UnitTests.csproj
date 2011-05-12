@@ -71,9 +71,10 @@
     <Compile Include="Domain\SqlServerErrorLogSourceServiceTests.cs" />
     <Compile Include="Domain\WindowsOperatingSystemNameResolverTests.cs" />
     <Compile Include="Domain\YellowScreenOfDeathBuilderTests.cs" />
-    <Compile Include="Integrations\BingErrorSearchLauncherTests.cs" />
-    <Compile Include="Integrations\BotsVsBrowsersSearchLauncherTests.cs" />
-    <Compile Include="Integrations\GoogleErrorSearchLauncherTests.cs" />
+    <Compile Include="Integrations\ErrorSearch\BingErrorSearchLauncherTests.cs" />
+    <Compile Include="Integrations\HttpUserAgentSearch\BotsVsBrowsersSearchLauncherTests.cs" />
+    <Compile Include="Integrations\ErrorSearch\GoogleErrorSearchLauncherTests.cs" />
+    <Compile Include="Integrations\HttpUserAgentSearch\UserAgentStringSearchLauncherTests.cs" />
     <Compile Include="Integrations\UserAgentStringClientInformationResolverTests.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgsTests.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgsTests.cs" />

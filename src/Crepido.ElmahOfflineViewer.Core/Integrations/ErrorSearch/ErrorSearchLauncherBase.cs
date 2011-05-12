@@ -2,7 +2,7 @@
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
-namespace Crepido.ElmahOfflineViewer.Core.Integrations
+namespace Crepido.ElmahOfflineViewer.Core.Integrations.ErrorSearch
 {
 	public abstract class ErrorSearchLauncherBase
 	{

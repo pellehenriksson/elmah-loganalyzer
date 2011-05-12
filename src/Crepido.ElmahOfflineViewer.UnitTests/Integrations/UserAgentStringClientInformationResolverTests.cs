@@ -20,7 +20,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
 			var cache = new Mock<ICacheHelper>();
 			var webrequest = new Mock<IWebRequestHelper>();
 
-			var resolver = new UserAgentStringClientInformationResolver(webrequest.Object, cache.Object);
+			var resolver = new HttpUserAgentStringClientInformationResolver(webrequest.Object, cache.Object);
 
 			// act
 			var result = Assert.Throws<ArgumentNullException>(() => resolver.Resolve(null));
@@ -37,7 +37,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
 			var cache = new Mock<ICacheHelper>();
 			var webrequest = new Mock<IWebRequestHelper>();
 
-			var resolver = new UserAgentStringClientInformationResolver(webrequest.Object, cache.Object);
+			var resolver = new HttpUserAgentStringClientInformationResolver(webrequest.Object, cache.Object);
 
 			// act
 			var result = resolver.Resolve(string.Empty);
@@ -60,7 +60,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
 			var information = new ClientInformation();
 			cache.Setup(x => x.Get<ClientInformation>(It.IsAny<string>())).Returns(information);
 
-			var resolver = new UserAgentStringClientInformationResolver(webrequest.Object, cache.Object);
+			var resolver = new HttpUserAgentStringClientInformationResolver(webrequest.Object, cache.Object);
 			
 			// act
 			var result = resolver.Resolve(HttpUserAgent);
@@ -82,7 +82,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
 			const string response = "agent_type=Browser;agent_name=Internet Explorer;agent_version=7.0;os_type=Windows;os_name=Windows XP;os_versionName=;os_versionNumber=;os_producer=;os_producerURL=;linux_distibution=Null;agent_language=;agent_languageTag=;";
 			webrequest.Setup(x => x.Request(It.IsAny<string>())).Returns(response);
 
-			var resolver = new UserAgentStringClientInformationResolver(webrequest.Object, cache.Object);
+			var resolver = new HttpUserAgentStringClientInformationResolver(webrequest.Object, cache.Object);
 
 			// act
 			var result = resolver.Resolve(HttpUserAgent);

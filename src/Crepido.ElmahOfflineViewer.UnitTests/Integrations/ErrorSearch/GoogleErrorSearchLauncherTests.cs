@@ -1,8 +1,8 @@
-﻿using Crepido.ElmahOfflineViewer.Core.Integrations;
+﻿using Crepido.ElmahOfflineViewer.Core.Integrations.ErrorSearch;
 using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
 using NUnit.Framework;
 
-namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
+namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations.ErrorSearch
 {
 	[TestFixture]
 	public class GoogleErrorSearchLauncherTests : UnitTestBase

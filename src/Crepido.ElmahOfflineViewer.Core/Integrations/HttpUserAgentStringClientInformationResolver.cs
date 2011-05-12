@@ -6,14 +6,14 @@ using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 
 namespace Crepido.ElmahOfflineViewer.Core.Integrations
 {
-	public class UserAgentStringClientInformationResolver : IClientInformationResolver
+	public class HttpUserAgentStringClientInformationResolver : IClientInformationResolver
 	{
 		private readonly IWebRequestHelper _webRequestHelper;
 		private readonly ICacheHelper _cacheHeper;
 
 		private const string Url = "http://useragentstring.com";
 
-		public UserAgentStringClientInformationResolver(IWebRequestHelper webRequestHelper, ICacheHelper cacheHeper)
+		public HttpUserAgentStringClientInformationResolver(IWebRequestHelper webRequestHelper, ICacheHelper cacheHeper)
 		{
 			_webRequestHelper = webRequestHelper;
 			_cacheHeper = cacheHeper;

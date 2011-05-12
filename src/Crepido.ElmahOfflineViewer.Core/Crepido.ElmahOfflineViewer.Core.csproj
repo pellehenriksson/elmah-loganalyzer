@@ -105,12 +105,14 @@
     </Compile>
     <Compile Include="Infrastructure\Settings\SettingsManager.cs" />
     <Compile Include="Infrastructure\Web\WebRequestHelper.cs" />
-    <Compile Include="Integrations\BingErrorSearchLauncher.cs" />
-    <Compile Include="Integrations\BotsVsBrowsersSearchLauncher.cs" />
-    <Compile Include="Integrations\ErrorSearchLauncherBase.cs" />
-    <Compile Include="Integrations\GoogleErrorSearchLauncher.cs" />
-    <Compile Include="Integrations\IHttpUserAgentStringSearchLauncher.cs" />
-    <Compile Include="Integrations\UserAgentStringClientInformationResolver.cs" />
+    <Compile Include="Integrations\ErrorSearch\BingErrorSearchLauncher.cs" />
+    <Compile Include="Integrations\HttpUserAgentSearch\BotsVsBrowsersSearchLauncher.cs" />
+    <Compile Include="Integrations\ErrorSearch\ErrorSearchLauncherBase.cs" />
+    <Compile Include="Integrations\ErrorSearch\GoogleErrorSearchLauncher.cs" />
+    <Compile Include="Integrations\HttpUserAgentSearch\HttpUserAgentSearchLauncherBase.cs" />
+    <Compile Include="Integrations\HttpUserAgentSearch\IHttpUserAgentSearchLauncher.cs" />
+    <Compile Include="Integrations\HttpUserAgentStringClientInformationResolver.cs" />
+    <Compile Include="Integrations\HttpUserAgentSearch\UserAgentStringSearchLauncher.cs" />
     <Compile Include="Integrations\UserAgentStringParameters.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgs.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgs.cs" />

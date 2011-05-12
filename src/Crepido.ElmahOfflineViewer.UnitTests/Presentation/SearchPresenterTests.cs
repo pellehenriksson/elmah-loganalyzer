@@ -221,6 +221,20 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			_view.Verify(x => x.LoadUsers(users), Times.Once());
 		}
 
+		[Test]
+		public void ViewOnSearchHttpUserAgentInformation_ShouldLaunchSearch()
+		{
+			// arrange
+			var presenter = BuildPresenter();
+			const string httpUserAgent = "dsBot-Google-Mobile (Android; +http://www.google.com/adsbot.html) AppleWebKit";
+
+			// act
+			_view.Raise(x => x.OnSearchHttpUserAgentInformation += null, new SearchHttpUserAgentInformationEventArgs(httpUserAgent));
+
+			// assert
+			_searchLauncher.Verify(x => x.Launch(httpUserAgent), Times.Once());
+		}
+		
 		private SearchPresenter BuildPresenter()
 		{
 			return new SearchPresenter(_view.Object, _repository.Object, _searchLauncher.Object);

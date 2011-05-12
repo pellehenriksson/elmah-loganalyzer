@@ -1,9 +1,7 @@
 ﻿using System;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure.Dependencies;
 using Ninject;
-using Ninject.Modules;
 
-namespace Crepido.ElmahOfflineViewer.UI
+namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Dependencies
 {
 	public static class ServiceLocator
 	{
@@ -11,7 +9,6 @@ namespace Crepido.ElmahOfflineViewer.UI
 
 		static ServiceLocator()
 		{
-			// Kernel.Load(new INinjectModule[] { new NinjectUiModule(), new NinjectCoreModule() });
 			Kernel.Load(AppDomain.CurrentDomain.GetAssemblies());
 		}
 

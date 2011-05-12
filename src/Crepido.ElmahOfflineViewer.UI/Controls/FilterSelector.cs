@@ -76,7 +76,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Controls
 
 		private void ItemsListContextMenuItemClicked(object sender, ToolStripItemClickedEventArgs e)
 		{
-			if (e.ClickedItem.Text == "Copy value")
+			if (e.ClickedItem.Text == @"Copy value")
 			{
 				var selectedValue = _itemsListView.SelectedItems[0].Text;
 				Clipboard.SetText(selectedValue);

@@ -52,8 +52,8 @@
 			this._infoLabel.Name = "_infoLabel";
 			this._infoLabel.Size = new System.Drawing.Size(428, 45);
 			this._infoLabel.TabIndex = 1;
-			this._infoLabel.Text = "The ELMAH Offline Viewer is an open source project started by by Pelle Henriksson" +
-    " in 2011 (pelle.henriksson@google.com)";
+			this._infoLabel.Text = "The ELMAH Offline Viewer is an open source project started by pelle.henriksson@gm" +
+    "ail.com";
 			// 
 			// label1
 			// 

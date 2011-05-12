@@ -89,6 +89,7 @@
     <Compile Include="Domain\WindowsOperatingSystemNameResolver.cs" />
     <Compile Include="Domain\YellowScreenOfDeathBuilder.cs" />
     <Compile Include="Infrastructure\Cache\ICacheHelper.cs" />
+    <Compile Include="Infrastructure\Dependencies\ServiceLocator.cs" />
     <Compile Include="Infrastructure\Logging\ILog.cs" />
     <Compile Include="Infrastructure\IProcessHelper.cs" />
     <Compile Include="Infrastructure\ProcessHelper.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Presentation\ISettingsView.cs" />
     <Compile Include="Presentation\ReportSelectionEventArgs.cs" />
     <Compile Include="Presentation\ReportTypeListItem.cs" />
+    <Compile Include="Presentation\SearchHttpUserAgentInformationEventArgs.cs" />
     <Compile Include="Presentation\SearchPresenter.cs" />
     <Compile Include="Presentation\ReportPresenter.cs" />
     <Compile Include="Presentation\SettingsPresenter.cs" />

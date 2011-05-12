@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Crepido.ElmahOfflineViewer.Core.Common;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Settings;
 
 namespace Crepido.ElmahOfflineViewer.Core.Presentation
@@ -10,13 +9,13 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 	{
 		private static readonly List<NameValuePair> MaxNumberOfLogOptions = new List<NameValuePair>
 		                                                                    	{
-		                                                                    		new NameValuePair("All", "-1"), 
-																					new NameValuePair("50", "50"), 
-																					new NameValuePair("100", "100"), 
-																					new NameValuePair("200", "200"), 
-																					new NameValuePair("300", "300"), 
-																					new NameValuePair("400", "400"), 
-																					new NameValuePair("500", "500")
+		                                                                    		new NameValuePair("All logs", "-1"), 
+																					new NameValuePair("50 latest", "50"), 
+																					new NameValuePair("100 latest", "100"), 
+																					new NameValuePair("200 latest", "200"), 
+																					new NameValuePair("300 latest", "300"), 
+																					new NameValuePair("400 latest", "400"), 
+																					new NameValuePair("500 latest", "500")
 		                                                                    	};
 
 		private readonly ISettingsManager _settingsManager;

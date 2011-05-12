@@ -15,13 +15,16 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 
 			_FilterView.OnFilterApplied += SearchFilterViewOnSearchFilterApplied;
 			_resultView.OnErrorLogSelected += SearchResultTreeViewOnErrorLogSelected;
+			_detailsView.OnSearchHttpUserAgentInformationClicked += DetailsViewOnSearchHttpUserAgentInformationClicked;
 		}
-
+		
 		public event EventHandler OnLoaded;
 
 		public event EventHandler<ErrorLogSearchEventArgs> OnFilterApplied;
 
 		public event EventHandler<ErrorLogSelectedEventArgs> OnErrorLogSelected;
+
+		public event EventHandler<SearchHttpUserAgentInformationEventArgs> OnSearchHttpUserAgentInformation;
 
 		public void SetDateInterval(DateInterval interval)
 		{
@@ -89,6 +92,14 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 			if (OnLoaded != null)
 			{
 				OnLoaded(this, new EventArgs());
+			}
+		}
+
+		private void DetailsViewOnSearchHttpUserAgentInformationClicked(object sender, SearchHttpUserAgentInformationEventArgs e)
+		{
+			if (OnSearchHttpUserAgentInformation != null)
+			{
+				OnSearchHttpUserAgentInformation(this, e);
 			}
 		}
 	}

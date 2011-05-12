@@ -1,4 +1,5 @@
-﻿using Crepido.ElmahOfflineViewer.UI.Views.Partials;
+﻿using Crepido.ElmahOfflineViewer.Core.Presentation;
+using Crepido.ElmahOfflineViewer.UI.Views.Partials;
 
 namespace Crepido.ElmahOfflineViewer.UI.Views
 {
@@ -122,6 +123,5 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private SearchResultView _resultView;
 		private SearchDetailsView _detailsView;
-
 	}
 }

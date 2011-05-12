@@ -1,5 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using Crepido.ElmahOfflineViewer.Core.Domain;
+using Crepido.ElmahOfflineViewer.Core.Presentation;
 
 namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 {
@@ -8,31 +10,40 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 		public SearchDetailsView()
 		{
 			InitializeComponent();
+			_httpUserAgentStringSearckLinkLabel.Visible = false;
 		}
-		
+
+		public event EventHandler<SearchHttpUserAgentInformationEventArgs> OnSearchHttpUserAgentInformationClicked;
+
+		private ErrorLog ErrorLog { get; set; }
+
 		public void DisplayError(ErrorLog error)
 		{
+			ErrorLog = error;
+
 			Clear();
 
-			_timeLabel.Text = error.Time.ToString();
-			_typeLabel.Text = error.Type;
-			_sourceLabel.Text = error.Source;
-			_userLabel.Text = error.User;
-			_messageTextBox.Text = error.Message;
-			_detailsTextBox.Text = error.Details;
+			_timeLabel.Text = ErrorLog.Time.ToString();
+			_typeLabel.Text = ErrorLog.Type;
+			_sourceLabel.Text = ErrorLog.Source;
+			_userLabel.Text = ErrorLog.User;
+			_messageTextBox.Text = ErrorLog.Message;
+			_detailsTextBox.Text = ErrorLog.Details;
 
-			_urlLabel.Text = error.Url;
-			_platformLabel.Text = error.ClientInformation.Platform;
-			_operatingSystemLabel.Text = error.ClientInformation.OperatingSystem;
-			_browserLabel.Text = error.ClientInformation.Browser;
-			_ipAddressLabel.Text = error.LocalIpAddress;
+			_urlLabel.Text = ErrorLog.Url;
+			_platformLabel.Text = ErrorLog.ClientInformation.Platform;
+			_operatingSystemLabel.Text = ErrorLog.ClientInformation.OperatingSystem;
+			_browserLabel.Text = ErrorLog.ClientInformation.Browser;
+			_ipAddressLabel.Text = ErrorLog.LocalIpAddress;
+			_descriptionLabel.Text = ErrorLog.ClientInformation.Description;
+			_httpUserAgentStringSearckLinkLabel.Visible = true;
 
-			_formsListView.LoadValues(error.FormValues);
-			_cookiesListView.LoadValues(error.Cookies);
-			_querystringListView.LoadValues(error.QuerystringValues);
-			_serverVariablesListView.LoadValues(error.ServerVariables);
+			_formsListView.LoadValues(ErrorLog.FormValues);
+			_cookiesListView.LoadValues(ErrorLog.Cookies);
+			_querystringListView.LoadValues(ErrorLog.QuerystringValues);
+			_serverVariablesListView.LoadValues(ErrorLog.ServerVariables);
 
-			_browser.DocumentText = new YellowScreenOfDeathBuilder(error).GetHtml();
+			_browser.DocumentText = new YellowScreenOfDeathBuilder(ErrorLog).GetHtml();
 		}
 
 		public void ClearView()
@@ -61,6 +72,8 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			_operatingSystemLabel.Text = string.Empty;
 			_browserLabel.Text = string.Empty;
 			_ipAddressLabel.Text = string.Empty;
+			_descriptionLabel.Text = string.Empty;
+			_httpUserAgentStringSearckLinkLabel.Visible = false;
 
 			_formsListView.ClearValues();
 			_cookiesListView.ClearValues();
@@ -68,6 +81,14 @@ namespace Crepido.ElmahOfflineViewer.UI.Views.Partials
 			_serverVariablesListView.ClearValues();
 
 			_browser.DocumentText = string.Empty;
+		}
+
+		private void HttpUserAgentStringSearckLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			if (OnSearchHttpUserAgentInformationClicked != null)
+			{
+				OnSearchHttpUserAgentInformationClicked(this, new SearchHttpUserAgentInformationEventArgs(ErrorLog.ClientInformation.HttpUserAgentString));
+			}
 		}
 	}
 }

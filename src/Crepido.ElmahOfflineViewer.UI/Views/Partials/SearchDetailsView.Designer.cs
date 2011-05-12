@@ -46,6 +46,8 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this._clientTabPage = new System.Windows.Forms.TabPage();
+			this._httpUserAgentStringSearckLinkLabel = new System.Windows.Forms.LinkLabel();
+			this._descriptionLabel = new System.Windows.Forms.Label();
 			this._ipAddressLabel = new System.Windows.Forms.TextBox();
 			this._platformLabel = new System.Windows.Forms.TextBox();
 			this._operatingSystemLabel = new System.Windows.Forms.TextBox();
@@ -57,12 +59,12 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this._formsTabPage = new System.Windows.Forms.TabPage();
-			this._formsListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
 			this._cookiesTabPage = new System.Windows.Forms.TabPage();
-			this._cookiesListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
 			this._queryStringTabPage = new System.Windows.Forms.TabPage();
-			this._querystringListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
 			this._serverVariablesTabPage = new System.Windows.Forms.TabPage();
+			this._formsListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
+			this._cookiesListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
+			this._querystringListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
 			this._serverVariablesListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
 			this._detailsTabControl.SuspendLayout();
 			this._errorTabPage.SuspendLayout();
@@ -200,6 +202,7 @@
 			// 
 			// _messageTextBox
 			// 
+			this._messageTextBox.BackColor = System.Drawing.Color.White;
 			this._messageTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._messageTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._messageTextBox.Location = new System.Drawing.Point(3, 3);
@@ -216,13 +219,14 @@
 			this._detailsTabPage.Location = new System.Drawing.Point(4, 22);
 			this._detailsTabPage.Name = "_detailsTabPage";
 			this._detailsTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this._detailsTabPage.Size = new System.Drawing.Size(584, 215);
+			this._detailsTabPage.Size = new System.Drawing.Size(652, 260);
 			this._detailsTabPage.TabIndex = 1;
 			this._detailsTabPage.Text = "Details";
 			this._detailsTabPage.UseVisualStyleBackColor = true;
 			// 
 			// _detailsTextBox
 			// 
+			this._detailsTextBox.BackColor = System.Drawing.Color.White;
 			this._detailsTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._detailsTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._detailsTextBox.Location = new System.Drawing.Point(3, 3);
@@ -230,7 +234,7 @@
 			this._detailsTextBox.Name = "_detailsTextBox";
 			this._detailsTextBox.ReadOnly = true;
 			this._detailsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this._detailsTextBox.Size = new System.Drawing.Size(578, 209);
+			this._detailsTextBox.Size = new System.Drawing.Size(646, 254);
 			this._detailsTextBox.TabIndex = 0;
 			// 
 			// _yellowScreenOfDeathTabPage
@@ -239,7 +243,7 @@
 			this._yellowScreenOfDeathTabPage.Location = new System.Drawing.Point(4, 22);
 			this._yellowScreenOfDeathTabPage.Name = "_yellowScreenOfDeathTabPage";
 			this._yellowScreenOfDeathTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this._yellowScreenOfDeathTabPage.Size = new System.Drawing.Size(584, 215);
+			this._yellowScreenOfDeathTabPage.Size = new System.Drawing.Size(652, 260);
 			this._yellowScreenOfDeathTabPage.TabIndex = 2;
 			this._yellowScreenOfDeathTabPage.Text = "Yellow Screen Of Death";
 			this._yellowScreenOfDeathTabPage.UseVisualStyleBackColor = true;
@@ -250,7 +254,7 @@
 			this._browser.Location = new System.Drawing.Point(3, 3);
 			this._browser.MinimumSize = new System.Drawing.Size(20, 20);
 			this._browser.Name = "_browser";
-			this._browser.Size = new System.Drawing.Size(578, 209);
+			this._browser.Size = new System.Drawing.Size(646, 254);
 			this._browser.TabIndex = 0;
 			// 
 			// label2
@@ -286,6 +290,8 @@
 			// _clientTabPage
 			// 
 			this._clientTabPage.BackColor = System.Drawing.Color.White;
+			this._clientTabPage.Controls.Add(this._httpUserAgentStringSearckLinkLabel);
+			this._clientTabPage.Controls.Add(this._descriptionLabel);
 			this._clientTabPage.Controls.Add(this._ipAddressLabel);
 			this._clientTabPage.Controls.Add(this._platformLabel);
 			this._clientTabPage.Controls.Add(this._operatingSystemLabel);
@@ -298,9 +304,27 @@
 			this._clientTabPage.Controls.Add(this.label8);
 			this._clientTabPage.Location = new System.Drawing.Point(4, 22);
 			this._clientTabPage.Name = "_clientTabPage";
-			this._clientTabPage.Size = new System.Drawing.Size(604, 360);
+			this._clientTabPage.Size = new System.Drawing.Size(672, 405);
 			this._clientTabPage.TabIndex = 2;
 			this._clientTabPage.Text = "Client Information";
+			// 
+			// _httpUserAgentStringSearckLinkLabel
+			// 
+			this._httpUserAgentStringSearckLinkLabel.AutoSize = true;
+			this._httpUserAgentStringSearckLinkLabel.Location = new System.Drawing.Point(16, 221);
+			this._httpUserAgentStringSearckLinkLabel.Name = "_httpUserAgentStringSearckLinkLabel";
+			this._httpUserAgentStringSearckLinkLabel.Size = new System.Drawing.Size(199, 13);
+			this._httpUserAgentStringSearckLinkLabel.TabIndex = 20;
+			this._httpUserAgentStringSearckLinkLabel.TabStop = true;
+			this._httpUserAgentStringSearckLinkLabel.Text = "Find more client information details online";
+			this._httpUserAgentStringSearckLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.HttpUserAgentStringSearckLinkLabelLinkClicked);
+			// 
+			// _descriptionLabel
+			// 
+			this._descriptionLabel.Location = new System.Drawing.Point(19, 146);
+			this._descriptionLabel.Name = "_descriptionLabel";
+			this._descriptionLabel.Size = new System.Drawing.Size(632, 61);
+			this._descriptionLabel.TabIndex = 19;
 			// 
 			// _ipAddressLabel
 			// 
@@ -422,54 +446,30 @@
 			this._formsTabPage.Controls.Add(this._formsListView);
 			this._formsTabPage.Location = new System.Drawing.Point(4, 22);
 			this._formsTabPage.Name = "_formsTabPage";
-			this._formsTabPage.Size = new System.Drawing.Size(604, 360);
+			this._formsTabPage.Size = new System.Drawing.Size(672, 405);
 			this._formsTabPage.TabIndex = 4;
 			this._formsTabPage.Text = "Forms";
 			this._formsTabPage.UseVisualStyleBackColor = true;
-			// 
-			// _formsListView
-			// 
-			this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._formsListView.Location = new System.Drawing.Point(0, 0);
-			this._formsListView.Name = "_formsListView";
-			this._formsListView.Size = new System.Drawing.Size(604, 360);
-			this._formsListView.TabIndex = 0;
 			// 
 			// _cookiesTabPage
 			// 
 			this._cookiesTabPage.Controls.Add(this._cookiesListView);
 			this._cookiesTabPage.Location = new System.Drawing.Point(4, 22);
 			this._cookiesTabPage.Name = "_cookiesTabPage";
-			this._cookiesTabPage.Size = new System.Drawing.Size(604, 360);
+			this._cookiesTabPage.Size = new System.Drawing.Size(672, 405);
 			this._cookiesTabPage.TabIndex = 3;
 			this._cookiesTabPage.Text = "Cookies";
 			this._cookiesTabPage.UseVisualStyleBackColor = true;
-			// 
-			// _cookiesListView
-			// 
-			this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._cookiesListView.Location = new System.Drawing.Point(0, 0);
-			this._cookiesListView.Name = "_cookiesListView";
-			this._cookiesListView.Size = new System.Drawing.Size(604, 360);
-			this._cookiesListView.TabIndex = 0;
 			// 
 			// _queryStringTabPage
 			// 
 			this._queryStringTabPage.Controls.Add(this._querystringListView);
 			this._queryStringTabPage.Location = new System.Drawing.Point(4, 22);
 			this._queryStringTabPage.Name = "_queryStringTabPage";
-			this._queryStringTabPage.Size = new System.Drawing.Size(604, 360);
+			this._queryStringTabPage.Size = new System.Drawing.Size(672, 405);
 			this._queryStringTabPage.TabIndex = 5;
 			this._queryStringTabPage.Text = "Querystring";
 			this._queryStringTabPage.UseVisualStyleBackColor = true;
-			// 
-			// _querystringListView
-			// 
-			this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._querystringListView.Location = new System.Drawing.Point(0, 0);
-			this._querystringListView.Name = "_querystringListView";
-			this._querystringListView.Size = new System.Drawing.Size(604, 360);
-			this._querystringListView.TabIndex = 0;
 			// 
 			// _serverVariablesTabPage
 			// 
@@ -477,17 +477,41 @@
 			this._serverVariablesTabPage.Location = new System.Drawing.Point(4, 22);
 			this._serverVariablesTabPage.Name = "_serverVariablesTabPage";
 			this._serverVariablesTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this._serverVariablesTabPage.Size = new System.Drawing.Size(604, 360);
+			this._serverVariablesTabPage.Size = new System.Drawing.Size(672, 405);
 			this._serverVariablesTabPage.TabIndex = 1;
 			this._serverVariablesTabPage.Text = "Server Variables";
 			this._serverVariablesTabPage.UseVisualStyleBackColor = true;
+			// 
+			// _formsListView
+			// 
+			this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._formsListView.Location = new System.Drawing.Point(0, 0);
+			this._formsListView.Name = "_formsListView";
+			this._formsListView.Size = new System.Drawing.Size(672, 405);
+			this._formsListView.TabIndex = 0;
+			// 
+			// _cookiesListView
+			// 
+			this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._cookiesListView.Location = new System.Drawing.Point(0, 0);
+			this._cookiesListView.Name = "_cookiesListView";
+			this._cookiesListView.Size = new System.Drawing.Size(672, 405);
+			this._cookiesListView.TabIndex = 0;
+			// 
+			// _querystringListView
+			// 
+			this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._querystringListView.Location = new System.Drawing.Point(0, 0);
+			this._querystringListView.Name = "_querystringListView";
+			this._querystringListView.Size = new System.Drawing.Size(672, 405);
+			this._querystringListView.TabIndex = 0;
 			// 
 			// _serverVariablesListView
 			// 
 			this._serverVariablesListView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._serverVariablesListView.Location = new System.Drawing.Point(3, 3);
 			this._serverVariablesListView.Name = "_serverVariablesListView";
-			this._serverVariablesListView.Size = new System.Drawing.Size(598, 354);
+			this._serverVariablesListView.Size = new System.Drawing.Size(666, 399);
 			this._serverVariablesListView.TabIndex = 0;
 			// 
 			// SearchDetailsView
@@ -554,5 +578,7 @@
 		private Controls.NameValuePairListView _cookiesListView;
 		private Controls.NameValuePairListView _querystringListView;
 		private Controls.NameValuePairListView _serverVariablesListView;
+		private System.Windows.Forms.Label _descriptionLabel;
+		private System.Windows.Forms.LinkLabel _httpUserAgentStringSearckLinkLabel;
 	}
 }

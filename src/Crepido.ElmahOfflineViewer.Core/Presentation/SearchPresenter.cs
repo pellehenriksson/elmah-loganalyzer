@@ -26,9 +26,10 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 			View.OnLoaded += ViewOnLoaded;
 			View.OnFilterApplied += ViewOnFilterApplied;
 			View.OnErrorLogSelected += ViewOnErrorLogSelected;
+			View.OnSearchHttpUserAgentInformation += ViewOnSearchHttpUserAgentInformation;
 			_repository.OnInitialized += RepositoryOnInitialized;
 		}
-
+		
 		private void Initialize()
 		{
 			InitializeDateInterval();
@@ -68,12 +69,17 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 			View.DisplaySearchResult(result);
 		}
 
-		private void RepositoryOnInitialized(object sender, Domain.RepositoryInitializedEventArgs e)
+		private void RepositoryOnInitialized(object sender, RepositoryInitializedEventArgs e)
 		{
 			View.ClearResult();
 			View.ClearErrorDetails();
 
 			InitializeFilterValues();
+		}
+
+		private void ViewOnSearchHttpUserAgentInformation(object sender, SearchHttpUserAgentInformationEventArgs e)
+		{
+			_httpUserAgentStringSearchLauncher.Launch(e.HttpUserAgentString);	
 		}
 	}
 }

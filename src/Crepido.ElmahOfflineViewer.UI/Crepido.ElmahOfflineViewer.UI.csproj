@@ -82,7 +82,6 @@
     <Compile Include="Views\LoadingView.Designer.cs">
       <DependentUpon>LoadingView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServiceLocator.cs" />
     <Compile Include="Controls\DateIntervalPicker.cs">
       <SubType>UserControl</SubType>
     </Compile>

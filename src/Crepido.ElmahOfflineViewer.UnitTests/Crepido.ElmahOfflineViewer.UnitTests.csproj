@@ -81,6 +81,7 @@
     <Compile Include="Presentation\ReportPresenterTests.cs" />
     <Compile Include="Presentation\ReportSelectionEventArgsTests.cs" />
     <Compile Include="Presentation\ReportTypeListItemTests.cs" />
+    <Compile Include="Presentation\SearchHttpUserAgentInformationEventArgsTests.cs" />
     <Compile Include="Presentation\SearchPresenterTests.cs" />
     <Compile Include="Presentation\SettingsPresenterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

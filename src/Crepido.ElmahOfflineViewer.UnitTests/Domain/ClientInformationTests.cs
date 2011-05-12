@@ -35,5 +35,25 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			// assert
 			Assert.That(info.Browser, Is.EqualTo("UNKNOWN"));
 		}
+
+		[Test]
+		public void Ctor_HasEmptyDescription()
+		{
+			// arrange
+			var info = new ClientInformation();
+			
+			// assert
+			Assert.That(info.Description, Is.EqualTo(string.Empty));
+		}
+
+		[Test]
+		public void Ctor_HasEmptyHttpUserAgentString()
+		{
+			// arrange
+			var info = new ClientInformation();
+
+			// assert
+			Assert.That(info.HttpUserAgentString, Is.EqualTo(string.Empty));
+		}
 	}
 }

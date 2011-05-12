@@ -3,6 +3,7 @@ using Crepido.ElmahOfflineViewer.Core.Infrastructure.Cache;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Logging;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Settings;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
+using Crepido.ElmahOfflineViewer.Core.Integrations;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 using Ninject.Activation;
 using Ninject.Modules;
@@ -25,6 +26,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Dependencies
 			Bind<ICacheHelper>().To<CacheHelper>();
 			Bind<IWebRequestHelper>().To<WebRequestHelper>();
 			Bind<IClientInformationResolver>().To<ClientInformationResolver>();
+			Bind<IProcessHelper>().To<ProcessHelper>();
+			Bind<IHttpUserAgentStringSearchLauncher>().To<BotsVsBrowsersSearchLauncher>();
 
 			Bind<ILog>().ToMethod(GetLogger);
 		}

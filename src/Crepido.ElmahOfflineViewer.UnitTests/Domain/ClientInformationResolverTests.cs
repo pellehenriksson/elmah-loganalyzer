@@ -34,7 +34,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		}
 
 		[Test]
-		public void Resolve_HttpUserAgentIsLibWWWPearl_ReturnsClientInformation()
+		public void Resolve_HttpUserAgentIsLibWWWPearlIsUnresolvable_ReturnsClientInformationWithOriginalHttpUsetAgent()
 		{
 			// arrange
 			const string httpUserAgent = "DeadLinkCheck/0.4.0 libwww-perl/5.803";
@@ -47,6 +47,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			Assert.That(result.Browser, Is.EqualTo(Browsers.Unknown));
 			Assert.That(result.Platform, Is.EqualTo(Platforms.Unknown));
 			Assert.That(result.OperatingSystem, Is.EqualTo(string.Empty));
+			Assert.That(result.HttpUserAgentString, Is.EqualTo(httpUserAgent));
 		}
 		
 		[Test]

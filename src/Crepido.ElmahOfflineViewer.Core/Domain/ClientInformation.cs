@@ -9,6 +9,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			Platform = Platforms.Unknown;
 			OperatingSystem = "UNKNOWN";
 			Browser = Browsers.Unknown;
+			Description = string.Empty;
+			HttpUserAgentString = string.Empty;
 		}
 
 		public string Browser { get; set; }
@@ -16,5 +18,9 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		public string Platform { get; set; }
 
 		public string OperatingSystem { get; set; }
+
+		public string Description { get; set; }
+
+		public string HttpUserAgentString { get; set; }
 	}
 }

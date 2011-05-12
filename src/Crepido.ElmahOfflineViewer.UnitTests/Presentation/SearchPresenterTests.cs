@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
+using Crepido.ElmahOfflineViewer.Core.Integrations;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 using Moq;
 using NUnit.Framework;
@@ -13,19 +14,21 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 	{
 		private Mock<ISearchView> _view;
 		private Mock<IErrorLogRepository> _repository;
+		private Mock<IHttpUserAgentStringSearchLauncher> _searchLauncher;
 
 		[SetUp]
 		public void Setup()
 		{
 			_view = new Mock<ISearchView>();
 			_repository = new Mock<IErrorLogRepository>();
+			_searchLauncher = new Mock<IHttpUserAgentStringSearchLauncher>();
 		}
 		
 		[Test]
 		public void Ctor_SetsView()
 		{
 			// act
-			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var presenter = BuildPresenter();
 
 			// assert
 			Assert.That(presenter.View, Is.EqualTo(_view.Object));
@@ -35,7 +38,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		public void ViewOnLoaded_SetsDefaultTimeInterval()
 		{
 			// arrange
-			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var presenter = BuildPresenter();
 			var expectedInterval = new DateInterval(DateTime.Today.AddDays(-7), DateTime.Today);
 
 			// act
@@ -49,7 +52,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		public void ViewOnLoaded_ShouldLoadTypesInView()
 		{
 			// arrange
-			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var presenter = BuildPresenter();
 
 			var types = new List<string>();
 			_repository.Setup(x => x.GetTypes()).Returns(types);
@@ -65,7 +68,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		public void ViewOnLoaded_ShouldLoadSourcesInView()
 		{
 			// arrange
-			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var presenter = BuildPresenter();
 
 			var sources = new List<string>();
 			_repository.Setup(x => x.GetSources()).Returns(sources);
@@ -81,7 +84,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		public void ViewOnLoaded_ShouldLoadUsersInView()
 		{
 			// arrange
-			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var presenter = BuildPresenter();
 
 			var users = new List<string>();
 			_repository.Setup(x => x.GetUsers()).Returns(users);
@@ -97,7 +100,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		public void ViewOnLoaded_ShouldLoadUrlsInView()
 		{
 			// arrange
-			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var presenter = BuildPresenter();
 
 			var urls = new List<string>();
 			_repository.Setup(x => x.GetUrls()).Returns(urls);
@@ -113,7 +116,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		public void OnFilterApplied_ShouldClearErrorDetails()
 		{
 			// arrange
-			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var presenter = BuildPresenter();
 			var filter = new SearchErrorLogQuery();
 			var args = new ErrorLogSearchEventArgs(filter);
 			var searchResult = new List<ErrorLog>();
@@ -131,7 +134,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		public void OnFilterApplied_ShouldDisplaySearchResult()
 		{
 			// arrange
-			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var presenter = BuildPresenter();
 			var filter = new SearchErrorLogQuery();
 			var args = new ErrorLogSearchEventArgs(filter);
 			var searchResult = new List<ErrorLog>();
@@ -149,7 +152,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		public void OnErrorSelected_ShouldDisplayErrorDetails()
 		{
 			// arrange
-			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var presenter = BuildPresenter();
 			var error = new ErrorLog();
 
 			// act
@@ -163,7 +166,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		public void OnRepositoryInitialized_ShouldClearView()
 		{
 			// arrange
-			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var presenter = BuildPresenter();
 
 			// act
 			_repository.Raise(x => x.OnInitialized += null, new RepositoryInitializedEventArgs(string.Empty, 0));
@@ -177,7 +180,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		public void OnRepositoryInitialized_ShouldLoadTypesInView()
 		{
 			// arrange
-			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var presenter = BuildPresenter();
 			var types = new List<string>();
 			_repository.Setup(x => x.GetTypes()).Returns(types);
 
@@ -192,7 +195,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		public void OnRepositoryInitialized_ShouldLoadSourcesInView()
 		{
 			// arrange
-			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var presenter = BuildPresenter();
 			var sources = new List<string>();
 			_repository.Setup(x => x.GetSources()).Returns(sources);
 
@@ -207,7 +210,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 		public void OnRepositoryInitialized_ShouldLoadUsersInView()
 		{
 			// arrange
-			var presenter = new SearchPresenter(_view.Object, _repository.Object);
+			var presenter = BuildPresenter();
 			var users = new List<string>();
 			_repository.Setup(x => x.GetUsers()).Returns(users);
 
@@ -216,6 +219,11 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 
 			// assert
 			_view.Verify(x => x.LoadUsers(users), Times.Once());
+		}
+
+		private SearchPresenter BuildPresenter()
+		{
+			return new SearchPresenter(_view.Object, _repository.Object, _searchLauncher.Object);
 		}
 	}
 }

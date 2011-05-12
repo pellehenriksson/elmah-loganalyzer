@@ -90,6 +90,8 @@
     <Compile Include="Domain\YellowScreenOfDeathBuilder.cs" />
     <Compile Include="Infrastructure\Cache\ICacheHelper.cs" />
     <Compile Include="Infrastructure\Logging\ILog.cs" />
+    <Compile Include="Infrastructure\IProcessHelper.cs" />
+    <Compile Include="Infrastructure\ProcessHelper.cs" />
     <Compile Include="Infrastructure\Settings\ISettingsManager.cs" />
     <Compile Include="Infrastructure\Web\IWebRequestHelper.cs" />
     <Compile Include="Infrastructure\Cache\CacheHelper.cs" />
@@ -103,8 +105,10 @@
     <Compile Include="Infrastructure\Settings\SettingsManager.cs" />
     <Compile Include="Infrastructure\Web\WebRequestHelper.cs" />
     <Compile Include="Integrations\BingErrorSearchLauncher.cs" />
+    <Compile Include="Integrations\BotsVsBrowsersSearchLauncher.cs" />
     <Compile Include="Integrations\ErrorSearchLauncherBase.cs" />
     <Compile Include="Integrations\GoogleErrorSearchLauncher.cs" />
+    <Compile Include="Integrations\IHttpUserAgentStringSearchLauncher.cs" />
     <Compile Include="Integrations\UserAgentStringClientInformationResolver.cs" />
     <Compile Include="Integrations\UserAgentStringParameters.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgs.cs" />

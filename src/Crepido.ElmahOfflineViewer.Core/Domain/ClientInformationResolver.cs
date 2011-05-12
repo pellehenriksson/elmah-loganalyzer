@@ -1,5 +1,4 @@
-﻿using System;
-using Crepido.ElmahOfflineViewer.Core.Common;
+﻿using Crepido.ElmahOfflineViewer.Core.Common;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
@@ -25,7 +24,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			                  	{
 			                  		Browser = ResolveBrowser(),
 			                  		Platform = ResolvePlatform(),
-			                  		OperatingSystem = ResolveOperatingSystem()
+			                  		OperatingSystem = ResolveOperatingSystem(),
+			                  		HttpUserAgentString = _httpUserAgent
 			                  	};
 
 			return information;

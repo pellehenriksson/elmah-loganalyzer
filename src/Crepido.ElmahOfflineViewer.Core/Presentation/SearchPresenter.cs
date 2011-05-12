@@ -1,17 +1,20 @@
 ﻿using System;
 using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
+using Crepido.ElmahOfflineViewer.Core.Integrations;
 
 namespace Crepido.ElmahOfflineViewer.Core.Presentation
 {
 	public class SearchPresenter
 	{
 		private readonly IErrorLogRepository _repository;
+		private readonly IHttpUserAgentStringSearchLauncher _httpUserAgentStringSearchLauncher;
 
-		public SearchPresenter(ISearchView view, IErrorLogRepository errorLogRepository)
+		public SearchPresenter(ISearchView view, IErrorLogRepository errorLogRepository, IHttpUserAgentStringSearchLauncher httpUserAgentStringSearchLauncher)
 		{
 			View = view;
 			_repository = errorLogRepository;
+			_httpUserAgentStringSearchLauncher = httpUserAgentStringSearchLauncher;
 
 			RegisterEvents();
 		}

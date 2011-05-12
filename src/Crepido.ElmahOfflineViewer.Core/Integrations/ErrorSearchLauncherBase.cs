@@ -1,29 +1,29 @@
 ﻿using System;
-using System.Diagnostics;
 using Crepido.ElmahOfflineViewer.Core.Domain;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
 namespace Crepido.ElmahOfflineViewer.Core.Integrations
 {
 	public abstract class ErrorSearchLauncherBase
 	{
-		protected ErrorSearchLauncherBase(ErrorLog errorLog)
+		protected ErrorSearchLauncherBase(IProcessHelper processHelper)
 		{
-			if (errorLog == null)
-			{
-				throw new ArgumentNullException("errorLog");	
-			}
-
-			ErrorLog = errorLog;
-		}
-		
-		public ErrorLog ErrorLog { get; private set; }
-		
-		public void Launch()
-		{
-			var url = BuildSearchUrl();
-			Process.Start(url);
+			ProcessHelper = processHelper;
 		}
 
-		public abstract string BuildSearchUrl();
+		public IProcessHelper ProcessHelper { get; private set; }
+
+		public void Launch(ErrorLog errorLog)
+		{
+			var url = BuildUrl(errorLog);
+			ProcessHelper.Run(url);
+		}
+
+		public abstract string GetUrlTemplate();
+
+		private string BuildUrl(ErrorLog errorLog)
+		{
+			return string.Format(GetUrlTemplate(), Uri.EscapeDataString(errorLog.Type), Uri.EscapeDataString(errorLog.Source));
+		}
 	}
 }

@@ -4,11 +4,11 @@ namespace Crepido.ElmahOfflineViewer.TestHelpers.Fakes
 {
 	public class FakeProcessHelper : IProcessHelper
 	{
-		public string Url { get; private set; }
+		public string RunWithUrl { get; private set; }
 
-		public void Start(string url)
+		public void Run(string url)
 		{
-			Url = url;
+			RunWithUrl = url;
 		}
 	}
 }

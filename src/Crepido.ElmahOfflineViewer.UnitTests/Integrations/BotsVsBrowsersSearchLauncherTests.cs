@@ -31,7 +31,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
 			launcher.Launch(httpUserAgent);
 
 			// assert
-			Assert.That(helper.Url, Is.EqualTo("http://www.botsvsbrowsers.com/listings.asp?search=AdsBot-Google-Mobile%20(Android%3B%20%2Bhttp%3A%2F%2Fwww.google.com%2Fadsbot.html)%20AppleWebKit"));
+			Assert.That(helper.RunWithUrl, Is.EqualTo("http://www.botsvsbrowsers.com/listings.asp?search=AdsBot-Google-Mobile%20(Android%3B%20%2Bhttp%3A%2F%2Fwww.google.com%2Fadsbot.html)%20AppleWebKit"));
 		}
 	}
 }

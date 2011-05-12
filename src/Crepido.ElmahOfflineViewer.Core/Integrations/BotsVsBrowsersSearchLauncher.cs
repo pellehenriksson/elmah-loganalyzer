@@ -17,7 +17,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations
 		public void Launch(string httpUserAgentString)
 		{
 			var url = BuildSearchUrl(httpUserAgentString);
-			ProcessHelper.Start(url);
+			ProcessHelper.Run(url);
 		}
 
 		private static string BuildSearchUrl(string httpUserAgentString)

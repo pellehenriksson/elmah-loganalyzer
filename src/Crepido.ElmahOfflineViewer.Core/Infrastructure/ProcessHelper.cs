@@ -4,7 +4,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
 {
 	public class ProcessHelper : IProcessHelper
 	{
-		public void Start(string url)
+		public void Run(string url)
 		{
 			Process.Start(url);
 		}

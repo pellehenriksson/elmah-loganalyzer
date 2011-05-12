@@ -1,4 +1,4 @@
-﻿using Crepido.ElmahOfflineViewer.Core.Domain;
+﻿using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
 namespace Crepido.ElmahOfflineViewer.Core.Integrations
 {
@@ -6,13 +6,13 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations
 	{
 		private const string UrlTemplate = "http://www.bing.com/search?q={0}+{1}";
 
-		public BingErrorSearchLauncher(ErrorLog errorLog) : base(errorLog)
+		public BingErrorSearchLauncher(IProcessHelper processHelper) : base(processHelper)
 		{
 		}
 
-		public override string BuildSearchUrl()
+		public override string GetUrlTemplate()
 		{
-			return string.Format(UrlTemplate, ErrorLog.Type, ErrorLog.Source);
+			return UrlTemplate;
 		}
 	}
 }

@@ -2,6 +2,6 @@
 {
 	public interface IProcessHelper
 	{
-		void Start(string url);
+		void Run(string url);
 	}
 }

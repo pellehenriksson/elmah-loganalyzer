@@ -1,4 +1,4 @@
-﻿using System.Net;
+﻿using System;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
 namespace Crepido.ElmahOfflineViewer.Core.Integrations
@@ -22,7 +22,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations
 
 		private static string BuildSearchUrl(string httpUserAgentString)
 		{
-			return string.Format(UrlTemplate, WebUtility.HtmlEncode(httpUserAgentString));
+			return string.Format(UrlTemplate, Uri.EscapeDataString(httpUserAgentString));
 		}
 	}
 }

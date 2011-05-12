@@ -1,5 +1,4 @@
-﻿using System.Net;
-using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
+﻿using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
 using NUnit.Framework;
 
 namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
@@ -32,9 +31,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
 			launcher.Launch(httpUserAgent);
 
 			// assert
-			var expected = string.Format("http://www.botsvsbrowsers.com/listings.asp?search={0}", WebUtility.HtmlEncode(httpUserAgent));
-
-			Assert.That(helper.Url, Is.EqualTo(expected));
+			Assert.That(helper.Url, Is.EqualTo("http://www.botsvsbrowsers.com/listings.asp?search=AdsBot-Google-Mobile%20(Android%3B%20%2Bhttp%3A%2F%2Fwww.google.com%2Fadsbot.html)%20AppleWebKit"));
 		}
 	}
 }

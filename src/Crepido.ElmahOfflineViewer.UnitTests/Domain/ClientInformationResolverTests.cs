@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Crepido.ElmahOfflineViewer.Core.Constants;
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using NUnit.Framework;
 
@@ -21,7 +21,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		}
 
 		[Test]
-		public void Resolve_HttpUserAgentIsEmpty_RetunsEmptyClientInformation()
+		public void Resolve_HttpUserAgentIsEmpty_ReturnsEmptyClientInformation()
 		{
 			// arrange
 			var resolver = new ClientInformationResolver();
@@ -33,6 +33,22 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			Assert.That(result, Is.Not.Null);
 		}
 
+		[Test]
+		public void Resolve_HttpUserAgentIsLibWWWPearl_ReturnsClientInformation()
+		{
+			// arrange
+			const string httpUserAgent = "DeadLinkCheck/0.4.0 libwww-perl/5.803";
+			var resolver = new ClientInformationResolver();
+
+			// act
+			var result = resolver.Resolve(httpUserAgent);
+
+			// assert
+			Assert.That(result.Browser, Is.EqualTo(Browsers.Unknown));
+			Assert.That(result.Platform, Is.EqualTo(Platforms.Unknown));
+			Assert.That(result.OperatingSystem, Is.EqualTo(string.Empty));
+		}
+		
 		[Test]
 		public void Resolve_BrowserIsInternetExplorer_ResolvesBrowser()
 		{

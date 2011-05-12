@@ -1,7 +1,6 @@
 ﻿using System;
 using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Cache;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 

@@ -46,7 +46,7 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this._clientTabPage = new System.Windows.Forms.TabPage();
-			this._httpUserAgentStringSearckLinkLabel = new System.Windows.Forms.LinkLabel();
+			this._httpUserAgentStringButton = new System.Windows.Forms.Button();
 			this._descriptionLabel = new System.Windows.Forms.Label();
 			this._ipAddressLabel = new System.Windows.Forms.TextBox();
 			this._platformLabel = new System.Windows.Forms.TextBox();
@@ -59,12 +59,12 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this._formsTabPage = new System.Windows.Forms.TabPage();
-			this._cookiesTabPage = new System.Windows.Forms.TabPage();
-			this._queryStringTabPage = new System.Windows.Forms.TabPage();
-			this._serverVariablesTabPage = new System.Windows.Forms.TabPage();
 			this._formsListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
+			this._cookiesTabPage = new System.Windows.Forms.TabPage();
 			this._cookiesListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
+			this._queryStringTabPage = new System.Windows.Forms.TabPage();
 			this._querystringListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
+			this._serverVariablesTabPage = new System.Windows.Forms.TabPage();
 			this._serverVariablesListView = new Crepido.ElmahOfflineViewer.UI.Controls.NameValuePairListView();
 			this._detailsTabControl.SuspendLayout();
 			this._errorTabPage.SuspendLayout();
@@ -290,7 +290,7 @@
 			// _clientTabPage
 			// 
 			this._clientTabPage.BackColor = System.Drawing.Color.White;
-			this._clientTabPage.Controls.Add(this._httpUserAgentStringSearckLinkLabel);
+			this._clientTabPage.Controls.Add(this._httpUserAgentStringButton);
 			this._clientTabPage.Controls.Add(this._descriptionLabel);
 			this._clientTabPage.Controls.Add(this._ipAddressLabel);
 			this._clientTabPage.Controls.Add(this._platformLabel);
@@ -308,16 +308,15 @@
 			this._clientTabPage.TabIndex = 2;
 			this._clientTabPage.Text = "Client Information";
 			// 
-			// _httpUserAgentStringSearckLinkLabel
+			// _httpUserAgentStringButton
 			// 
-			this._httpUserAgentStringSearckLinkLabel.AutoSize = true;
-			this._httpUserAgentStringSearckLinkLabel.Location = new System.Drawing.Point(16, 221);
-			this._httpUserAgentStringSearckLinkLabel.Name = "_httpUserAgentStringSearckLinkLabel";
-			this._httpUserAgentStringSearckLinkLabel.Size = new System.Drawing.Size(199, 13);
-			this._httpUserAgentStringSearckLinkLabel.TabIndex = 20;
-			this._httpUserAgentStringSearckLinkLabel.TabStop = true;
-			this._httpUserAgentStringSearckLinkLabel.Text = "Find more client information details online";
-			this._httpUserAgentStringSearckLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.HttpUserAgentStringSearckLinkLabelLinkClicked);
+			this._httpUserAgentStringButton.Location = new System.Drawing.Point(19, 220);
+			this._httpUserAgentStringButton.Name = "_httpUserAgentStringButton";
+			this._httpUserAgentStringButton.Size = new System.Drawing.Size(392, 23);
+			this._httpUserAgentStringButton.TabIndex = 21;
+			this._httpUserAgentStringButton.Text = "Find more client information details online (http://www.useragentstring.com)";
+			this._httpUserAgentStringButton.UseVisualStyleBackColor = true;
+			this._httpUserAgentStringButton.Click += new System.EventHandler(this.HttpUserAgentStringButtonClick);
 			// 
 			// _descriptionLabel
 			// 
@@ -451,6 +450,14 @@
 			this._formsTabPage.Text = "Forms";
 			this._formsTabPage.UseVisualStyleBackColor = true;
 			// 
+			// _formsListView
+			// 
+			this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._formsListView.Location = new System.Drawing.Point(0, 0);
+			this._formsListView.Name = "_formsListView";
+			this._formsListView.Size = new System.Drawing.Size(672, 405);
+			this._formsListView.TabIndex = 0;
+			// 
 			// _cookiesTabPage
 			// 
 			this._cookiesTabPage.Controls.Add(this._cookiesListView);
@@ -460,6 +467,14 @@
 			this._cookiesTabPage.TabIndex = 3;
 			this._cookiesTabPage.Text = "Cookies";
 			this._cookiesTabPage.UseVisualStyleBackColor = true;
+			// 
+			// _cookiesListView
+			// 
+			this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._cookiesListView.Location = new System.Drawing.Point(0, 0);
+			this._cookiesListView.Name = "_cookiesListView";
+			this._cookiesListView.Size = new System.Drawing.Size(672, 405);
+			this._cookiesListView.TabIndex = 0;
 			// 
 			// _queryStringTabPage
 			// 
@@ -471,6 +486,14 @@
 			this._queryStringTabPage.Text = "Querystring";
 			this._queryStringTabPage.UseVisualStyleBackColor = true;
 			// 
+			// _querystringListView
+			// 
+			this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._querystringListView.Location = new System.Drawing.Point(0, 0);
+			this._querystringListView.Name = "_querystringListView";
+			this._querystringListView.Size = new System.Drawing.Size(672, 405);
+			this._querystringListView.TabIndex = 0;
+			// 
 			// _serverVariablesTabPage
 			// 
 			this._serverVariablesTabPage.Controls.Add(this._serverVariablesListView);
@@ -481,30 +504,6 @@
 			this._serverVariablesTabPage.TabIndex = 1;
 			this._serverVariablesTabPage.Text = "Server Variables";
 			this._serverVariablesTabPage.UseVisualStyleBackColor = true;
-			// 
-			// _formsListView
-			// 
-			this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._formsListView.Location = new System.Drawing.Point(0, 0);
-			this._formsListView.Name = "_formsListView";
-			this._formsListView.Size = new System.Drawing.Size(672, 405);
-			this._formsListView.TabIndex = 0;
-			// 
-			// _cookiesListView
-			// 
-			this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._cookiesListView.Location = new System.Drawing.Point(0, 0);
-			this._cookiesListView.Name = "_cookiesListView";
-			this._cookiesListView.Size = new System.Drawing.Size(672, 405);
-			this._cookiesListView.TabIndex = 0;
-			// 
-			// _querystringListView
-			// 
-			this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._querystringListView.Location = new System.Drawing.Point(0, 0);
-			this._querystringListView.Name = "_querystringListView";
-			this._querystringListView.Size = new System.Drawing.Size(672, 405);
-			this._querystringListView.TabIndex = 0;
 			// 
 			// _serverVariablesListView
 			// 
@@ -579,6 +578,6 @@
 		private Controls.NameValuePairListView _querystringListView;
 		private Controls.NameValuePairListView _serverVariablesListView;
 		private System.Windows.Forms.Label _descriptionLabel;
-		private System.Windows.Forms.LinkLabel _httpUserAgentStringSearckLinkLabel;
+		private System.Windows.Forms.Button _httpUserAgentStringButton;
 	}
 }

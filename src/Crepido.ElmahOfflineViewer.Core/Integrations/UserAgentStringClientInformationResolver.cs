@@ -57,7 +57,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations
 		
 		private static string BuildUrl(string httpUserAgent)
 		{
-			var querystring = System.Net.WebUtility.HtmlEncode(httpUserAgent);
+			var querystring = Uri.EscapeDataString(httpUserAgent);
 			return string.Format("{0}?uas={1}&getText=all", Url, querystring);
 		}
 	}

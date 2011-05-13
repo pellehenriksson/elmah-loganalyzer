@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Crepido.ElmahOfflineViewer.Core.Domain;
+﻿using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
 using NUnit.Framework;
 

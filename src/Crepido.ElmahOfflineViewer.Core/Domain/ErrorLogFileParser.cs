@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Xml;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Logging;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain

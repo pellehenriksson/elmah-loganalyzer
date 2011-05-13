@@ -3,7 +3,6 @@ using Crepido.ElmahOfflineViewer.Core.Infrastructure.Cache;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Logging;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Settings;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
-using Crepido.ElmahOfflineViewer.Core.Integrations;
 using Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentSearch;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 using Ninject.Activation;

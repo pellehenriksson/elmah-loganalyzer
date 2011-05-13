@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Text;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
@@ -14,15 +15,15 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		
 		public string GetHtml()
 		{
-			var template = Templates.YellowScreenOfDeath;
+			var template = new StringBuilder(Templates.YellowScreenOfDeath);
+	
+			template.Replace("@APPLICATION@", "/");
+			template.Replace("@MESSAGE@", WebUtility.HtmlEncode(ErrorLog.Message));
+			template.Replace("@TYPE@", WebUtility.HtmlEncode(ErrorLog.Type));
+			template.Replace("@SOURCE@", WebUtility.HtmlEncode(ErrorLog.Source));
+			template.Replace("@STACK_TRACE@", ConvertLineBreaks(WebUtility.HtmlEncode(ErrorLog.Details)));
 
-			template = template.Replace("@APPLICATION@", "/");
-			template = template.Replace("@MESSAGE@", WebUtility.HtmlEncode(ErrorLog.Message));
-			template = template.Replace("@TYPE@", WebUtility.HtmlEncode(ErrorLog.Type));
-			template = template.Replace("@SOURCE@", WebUtility.HtmlEncode(ErrorLog.Source));
-			template = template.Replace("@STACK_TRACE@", ConvertLineBreaks(WebUtility.HtmlEncode(ErrorLog.Details)));
-
-			return template;
+			return template.ToString();
 		}
 
 		private static string ConvertLineBreaks(string text)

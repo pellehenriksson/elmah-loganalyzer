@@ -164,7 +164,7 @@
 			this.Controls.Add(this._mainStatusStrip);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainForm";
-			this.Text = "Crepido ELMAH Offline Viewer";
+			this.Text = "ELMAH Offline Viewer";
 			this._mainStatusStrip.ResumeLayout(false);
 			this._mainStatusStrip.PerformLayout();
 			this._mainToolStrip.ResumeLayout(false);

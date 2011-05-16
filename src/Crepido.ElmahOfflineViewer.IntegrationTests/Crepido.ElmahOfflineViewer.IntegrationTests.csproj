@@ -45,14 +45,11 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
-    <Compile Include="DatabaseHelper.cs" />
     <Compile Include="Domain\FileErrorLogSourceTests.cs" />
-    <Compile Include="Domain\SqlServerErrorLogSourceTests.cs" />
     <Compile Include="Infrastructure\Cache\CacheHelperTests.cs" />
     <Compile Include="Infrastructure\Web\WebRequestHelperTests.cs" />
     <Compile Include="Integrations\UserAgentStringClientInformationResolverTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DatabaseTestDataHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Crepido.ElmahOfflineViewer.Core\Crepido.ElmahOfflineViewer.Core.csproj">
@@ -65,10 +62,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="_DatabaseScripts\MsSqlServer.txt" />
     <Content Include="_TestFiles\error-2011-04-10142706Z-d0da432d-fd3c-45b6-baf1-2cf49a5724e8.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

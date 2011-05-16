@@ -62,7 +62,6 @@
     <Compile Include="Constants\Browsers.cs" />
     <Compile Include="Constants\Platforms.cs" />
     <Compile Include="Domain\ErrorLogFileIncludeOriginalLogParser.cs" />
-    <Compile Include="Domain\ErrorLogSourceFactory.cs" />
     <Compile Include="Domain\IClientInformationResolver.cs" />
     <Compile Include="Domain\BrowserVersionResolver.cs" />
     <Compile Include="Domain\ClientInformationResolver.cs" />
@@ -86,7 +85,6 @@
     <Compile Include="Constants\HttpServerVariables.cs" />
     <Compile Include="Domain\SearchErrorLogQueryParameter.cs" />
     <Compile Include="Common\NameValuePair.cs" />
-    <Compile Include="Domain\SqlServerErrorLogSource.cs" />
     <Compile Include="Domain\WindowsOperatingSystemNameResolver.cs" />
     <Compile Include="Domain\YellowScreenOfDeathBuilder.cs" />
     <Compile Include="Infrastructure\Cache\ICacheHelper.cs" />

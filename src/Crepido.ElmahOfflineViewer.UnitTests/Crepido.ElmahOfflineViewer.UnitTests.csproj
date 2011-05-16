@@ -57,7 +57,6 @@
     <Compile Include="Domain\BrowserVersionResolverTests.cs" />
     <Compile Include="Domain\ClientInformationResolverTests.cs" />
     <Compile Include="Domain\ErrorLogFileParserTests.cs" />
-    <Compile Include="Domain\ErrorLogSourceFactoryTests.cs" />
     <Compile Include="Domain\ReportItemTests.cs" />
     <Compile Include="Domain\SearchErrorLogQueryParameterTests.cs" />
     <Compile Include="Domain\SearchErrorLogQueryTests.cs" />
@@ -68,7 +67,6 @@
     <Compile Include="Domain\ReportTests.cs" />
     <Compile Include="Domain\RepositoryInitializedEventArgsTests.cs" />
     <Compile Include="Domain\ClientInformationTests.cs" />
-    <Compile Include="Domain\SqlServerErrorLogSourceServiceTests.cs" />
     <Compile Include="Domain\WindowsOperatingSystemNameResolverTests.cs" />
     <Compile Include="Domain\YellowScreenOfDeathBuilderTests.cs" />
     <Compile Include="Integrations\ErrorSearch\BingErrorSearchLauncherTests.cs" />

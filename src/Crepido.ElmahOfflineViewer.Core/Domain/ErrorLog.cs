@@ -29,9 +29,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		public string Details { get; set; }
 		
 		public DateTime Time { get; set; }
-
-		public string OriginalLog { get; set; }
-
+		
 		public string User { get; private set; }
 
 		public string Url { get; private set; }

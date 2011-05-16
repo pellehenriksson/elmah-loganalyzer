@@ -61,7 +61,6 @@
     <Compile Include="Common\UrlResolver.cs" />
     <Compile Include="Constants\Browsers.cs" />
     <Compile Include="Constants\Platforms.cs" />
-    <Compile Include="Domain\ErrorLogFileIncludeOriginalLogParser.cs" />
     <Compile Include="Domain\IClientInformationResolver.cs" />
     <Compile Include="Domain\BrowserVersionResolver.cs" />
     <Compile Include="Domain\ClientInformationResolver.cs" />

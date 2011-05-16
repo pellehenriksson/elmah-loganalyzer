@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this._mainStatusStrip = new System.Windows.Forms.StatusStrip();
 			this.directoryToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.versionStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -162,7 +161,6 @@
 			this.Controls.Add(this._mainPanel);
 			this.Controls.Add(this._mainToolStrip);
 			this.Controls.Add(this._mainStatusStrip);
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainForm";
 			this.Text = "ELMAH Offline Viewer";
 			this._mainStatusStrip.ResumeLayout(false);

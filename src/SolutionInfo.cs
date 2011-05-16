@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyCompany("Crepido Systems AB")]
+[assembly: AssemblyCompany("pelle.henriksson@gmail.com")]
 [assembly: AssemblyProduct("Elmah Offline Viewer")]
-[assembly: AssemblyCopyright("Copyright Crepido Systems AB 2011")]
+[assembly: AssemblyCopyright("Copyright Pelle Henriksson 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

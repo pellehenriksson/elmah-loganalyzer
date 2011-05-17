@@ -4,7 +4,7 @@ using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Cache;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 
-namespace Crepido.ElmahOfflineViewer.Core.Integrations
+namespace Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentResolving
 {
 	public class HttpUserAgentStringClientInformationResolver : IClientInformationResolver
 	{

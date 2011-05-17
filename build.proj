@@ -20,12 +20,17 @@
 		<AppFiles Include="$(OutputCompileDirectory)Ninject.dll" />
 		<AppFiles Include="$(OutputCompileDirectory)NLog.dll" />
 	</ItemGroup>
+
+	<ItemGroup>
+		<ElmahExporterFiles Include="$(OutputCompileDirectory)_ElmahExporter\**\*.*" />
+	</ItemGroup>
 	
 	<Target Name="Clean">
 		<RemoveDir Directories="$(OutputDirectory)" Condition="Exists($(OutputDirectory))" />
 		<MakeDir Directories="$(OutputDirectory)" />
 		<MakeDir Directories="$(OutputReportsDirectory)" />
 		<MakeDir Directories="$(OutputAppDirectory)" />
+		<MakeDir Directories="$(OutputAppDirectory)_ElmahExporter" />
 	</Target>
 
 	<Target Name="LocalBuild">
@@ -70,12 +75,13 @@
 	</Target>
 	
 	<Target Name="BundleApp">
-		<Copy DestinationFolder="$(OutputAppDirectory)" SourceFiles="@(AppFiles)" />
-	</Target>
+		<Copy SourceFiles="@(AppFiles)" DestinationFolder="$(OutputAppDirectory)"/>
+		<Copy SourceFiles="@(ElmahExporterFiles)" DestinationFolder="$(OutputAppDirectory)_ElmahExporter"/>
+</Target>
 
 	<Target Name="ZipApp">
 		<Zip 
-			Files="@(AppFiles)"
+			Files="@(AppFiles);@(ElmahExporterFiles)"
 			WorkingDirectory="$(OutputCompileDirectory)"
 			ZipFileName="$(OutputDirectory)ElmahOfflineViewer-$(Configuration)-$(Year).$(Month).$(Day).$(Hour)$(Minute).zip"/>
 	</Target>

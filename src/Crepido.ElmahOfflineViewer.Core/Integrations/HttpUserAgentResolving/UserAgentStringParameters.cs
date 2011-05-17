@@ -1,4 +1,4 @@
-﻿namespace Crepido.ElmahOfflineViewer.Core.Integrations
+﻿namespace Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentResolving
 {
 	public static class UserAgentStringParameters
 	{

@@ -1,4 +1,5 @@
-﻿using Crepido.ElmahOfflineViewer.Core.Infrastructure;
+﻿using System;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
 namespace Crepido.ElmahOfflineViewer.TestHelpers.Fakes
 {
@@ -6,9 +7,17 @@ namespace Crepido.ElmahOfflineViewer.TestHelpers.Fakes
 	{
 		public string RunWithUrl { get; private set; }
 
+		public string RunWithArguments { get; set; }
+
 		public void Run(string url)
 		{
 			RunWithUrl = url;
+		}
+
+		public void Run(string url, string arguments)
+		{
+			RunWithUrl = url;
+			RunWithArguments = arguments;
 		}
 	}
 }

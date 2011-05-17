@@ -1,6 +1,7 @@
 ﻿using Crepido.ElmahOfflineViewer.Core.Infrastructure.Cache;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 using Crepido.ElmahOfflineViewer.Core.Integrations;
+using Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentResolving;
 using NUnit.Framework;
 
 namespace Crepido.ElmahOfflineViewer.IntegrationTests.Integrations

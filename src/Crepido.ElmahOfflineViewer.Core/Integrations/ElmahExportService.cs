@@ -8,7 +8,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations
 {
 	public class ElmahExportService
 	{
-		private ISettingsManager _settingsManager;
+		private readonly ISettingsManager _settingsManager;
 		private readonly ILog _log;
 		private readonly IProcessHelper _processHelper;
 
@@ -19,27 +19,25 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations
 			_processHelper = processHelper;
 		}
 		
-		public string Download(string url)
+		public string Download(Uri url)
 		{
-			// path to the schema exp
-			var exePath = Path.Combine(Directory.GetCurrentDirectory(), "elmahexp.exe");
+			var exporterPath = Path.Combine(Directory.GetCurrentDirectory(), "_ElmahExporter\\elmahexp.exe");
 
-			// build download directory from path
-			var downloadDirectory = Path.Combine(Directory.GetCurrentDirectory(), "www.someapp.com");
+			if (!File.Exists(exporterPath))
+			{
+				Console.Out.WriteLine("Failed to find the path " + exporterPath);
+			}
 
-			// call expoter with url number of logs
-
-			// return download directory
-			
-			// handle all errors from elmahexp.exe)
+			var downloadDirectory = Path.GetDirectoryName(exporterPath);
 
 			try
 			{
-				_processHelper.Run("");
+				var arguments = string.Format("\"{0}\" \"--trace\" \"--output-dir\" \"{1}\"", url, downloadDirectory);
+				_processHelper.Run(exporterPath, arguments);
 
-				return string.Empty;
+				return downloadDirectory;
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				_log.Error(ex);
 				throw;

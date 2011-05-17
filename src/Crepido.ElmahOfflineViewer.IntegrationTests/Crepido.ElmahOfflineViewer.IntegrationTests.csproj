@@ -48,6 +48,7 @@
     <Compile Include="Domain\FileErrorLogSourceTests.cs" />
     <Compile Include="Infrastructure\Cache\CacheHelperTests.cs" />
     <Compile Include="Infrastructure\Web\WebRequestHelperTests.cs" />
+    <Compile Include="Integrations\ElmahExportServiceTests.cs" />
     <Compile Include="Integrations\UserAgentStringClientInformationResolverTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

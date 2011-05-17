@@ -2,11 +2,11 @@
 using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Cache;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
-using Crepido.ElmahOfflineViewer.Core.Integrations;
+using Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentResolving;
 using Moq;
 using NUnit.Framework;
 
-namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
+namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations.HttpUserAgentResolving
 {
 	[TestFixture]
 	public class UserAgentStringClientInformationResolverTests : UnitTestBase

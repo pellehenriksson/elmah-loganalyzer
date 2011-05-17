@@ -103,6 +103,7 @@
     </Compile>
     <Compile Include="Infrastructure\Settings\SettingsManager.cs" />
     <Compile Include="Infrastructure\Web\WebRequestHelper.cs" />
+    <Compile Include="Integrations\ElmahExportService.cs" />
     <Compile Include="Integrations\ErrorSearch\BingErrorSearchLauncher.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\BotsVsBrowsersSearchLauncher.cs" />
     <Compile Include="Integrations\ErrorSearch\ErrorSearchLauncherBase.cs" />

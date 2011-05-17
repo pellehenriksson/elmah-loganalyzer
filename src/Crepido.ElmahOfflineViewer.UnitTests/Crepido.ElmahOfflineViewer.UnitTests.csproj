@@ -69,6 +69,7 @@
     <Compile Include="Domain\ClientInformationTests.cs" />
     <Compile Include="Domain\WindowsOperatingSystemNameResolverTests.cs" />
     <Compile Include="Domain\YellowScreenOfDeathBuilderTests.cs" />
+    <Compile Include="Integrations\ElmahExportServiceTests.cs" />
     <Compile Include="Integrations\ErrorSearch\BingErrorSearchLauncherTests.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\BotsVsBrowsersSearchLauncherTests.cs" />
     <Compile Include="Integrations\ErrorSearch\GoogleErrorSearchLauncherTests.cs" />

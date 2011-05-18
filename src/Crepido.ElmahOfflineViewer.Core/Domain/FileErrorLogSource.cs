@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.FileSystem;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Logging;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Settings;
 
@@ -11,13 +10,15 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 	public class FileErrorLogSource : IErrorLogSource
 	{
 		private const string FileFilterPattern = "error-*.xml";
-		
+
+		private readonly IFileSystemHelper _fileSystemHelper;
 		private readonly IErrorLogFileParser _parser;
 		private readonly ISettingsManager _settingsManager;
 		private readonly ILog _log;
 
-		public FileErrorLogSource(IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
+		public FileErrorLogSource(IFileSystemHelper fileSystemHelper, IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
 		{
+			_fileSystemHelper = fileSystemHelper;
 			_parser = parser;
 			_settingsManager = settingsManager;
 			_log = log;
@@ -27,7 +28,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 		public List<ErrorLog> GetLogs(string directory)
 		{
-			if (!Directory.Exists(directory))
+			if (!_fileSystemHelper.DirectoryExists(directory))
 			{
 				_log.Error(string.Format("Directory: {0} does not exist", directory));
 				throw new ApplicationException(string.Format("The directory: {0} was not found", directory));
@@ -39,7 +40,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 		private IEnumerable<string> GetErrorLogFilesFromDirectory(string directory)
 		{
-			var files = Directory.GetFiles(directory, FileFilterPattern, SearchOption.AllDirectories);
+			var files = _fileSystemHelper.GetFilesFromDirectory(directory, FileFilterPattern);
 
 			if (_settingsManager.GetMaxNumberOfLogs() == -1)
 			{
@@ -51,7 +52,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 		private string GetContentFor(string file)
 		{
-			return File.ReadAllText(file, Encoding.UTF8);
+			return _fileSystemHelper.GetFileContent(file);
 		}
 
 		private List<ErrorLog> ParseFiles(IEnumerable<string> files)

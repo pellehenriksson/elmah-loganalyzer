@@ -12,6 +12,7 @@ namespace Crepido.ElmahOfflineViewer.UI
 			Bind<ISearchView>().To<SearchView>().InSingletonScope();
 			Bind<IReportView>().To<ReportView>().InSingletonScope();
 			Bind<ISettingsView>().To<SettingsForm>();
+			Bind<ISelectServerView>().To<SelectServerForm>();
 		}
 	}
 }

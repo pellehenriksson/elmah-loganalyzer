@@ -5,17 +5,16 @@ using NUnit.Framework;
 namespace Crepido.ElmahOfflineViewer.IntegrationTests.Infrastructure.Web
 {
 	[TestFixture]
-	public class WebRequestHelperTests
+	public class WebRequestHelperTests : IntegrationTestBase
 	{
 		[Test]
 		public void Request_ShouldReturnResponse()
 		{
 			// arrange
 			var helper = new WebRequestHelper();
-			const string url = "http://www.google.com";
 
 			// act
-			var result = helper.Request(url);
+			var result = helper.Request(ExistingUrl);
 
 			// assert
 			Assert.That(result.Contains("<title>Google</title>"));
@@ -26,10 +25,9 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Infrastructure.Web
 		{
 			// arrange
 			var helper = new WebRequestHelper();
-			const string url = "http://www.bluttanblä.com";
 
 			// act
-			var result = Assert.Throws<WebException>(() => helper.Request(url));
+			var result = Assert.Throws<WebException>(() => helper.Request(NonExistantUrl));
 
 			// assert
 			Assert.That(result, Is.Not.Null);

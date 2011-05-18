@@ -6,7 +6,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentSearch
 	{
 		private const string UrlTemplate = "http://www.botsvsbrowsers.com/listings.asp?search={0}";
 
-		public BotsVsBrowsersSearchLauncher(IProcessHelper processHelper) : base(processHelper)
+		public BotsVsBrowsersSearchLauncher(IProcessStarter processStarter) : base(processStarter)
 		{
 		}
 		

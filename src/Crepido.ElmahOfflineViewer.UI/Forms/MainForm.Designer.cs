@@ -33,13 +33,13 @@
 			this.versionStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._mainToolStrip = new System.Windows.Forms.ToolStrip();
 			this._selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
+			this._selectServerButton = new System.Windows.Forms.ToolStripButton();
 			this._showSearchViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showReportViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showAboutButton = new System.Windows.Forms.ToolStripButton();
 			this._showSettingsViewButton = new System.Windows.Forms.ToolStripButton();
 			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
 			this._mainPanel = new System.Windows.Forms.Panel();
-			this._selectServerButton = new System.Windows.Forms.ToolStripButton();
 			this._mainStatusStrip.SuspendLayout();
 			this._mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -101,6 +101,15 @@
 			this._selectDirectoryButton.Text = "Select directory";
 			this._selectDirectoryButton.Click += new System.EventHandler(this.SelectDirectoryButtonClick);
 			// 
+			// _selectServerButton
+			// 
+			this._selectServerButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.server;
+			this._selectServerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._selectServerButton.Name = "_selectServerButton";
+			this._selectServerButton.Size = new System.Drawing.Size(92, 22);
+			this._selectServerButton.Text = "Select server";
+			this._selectServerButton.Click += new System.EventHandler(this.SelectServerButtonClick);
+			// 
 			// _showSearchViewButton
 			// 
 			this._showSearchViewButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.search;
@@ -154,14 +163,6 @@
 			this._mainPanel.Name = "_mainPanel";
 			this._mainPanel.Size = new System.Drawing.Size(1264, 679);
 			this._mainPanel.TabIndex = 2;
-			// 
-			// _selectServerButton
-			// 
-			this._selectServerButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.server;
-			this._selectServerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._selectServerButton.Name = "_selectServerButton";
-			this._selectServerButton.Size = new System.Drawing.Size(92, 22);
-			this._selectServerButton.Text = "Select server";
 			// 
 			// MainForm
 			// 

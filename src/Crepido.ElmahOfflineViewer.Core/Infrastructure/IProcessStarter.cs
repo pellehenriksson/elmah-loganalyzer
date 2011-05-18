@@ -1,6 +1,6 @@
 ﻿namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
 {
-	public interface IProcessHelper
+	public interface IProcessStarter
 	{
 		void Run(string url);
 

@@ -1,22 +1,22 @@
 ﻿using System;
-using System.IO;
 using Crepido.ElmahOfflineViewer.Core.Domain;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.FileSystem;
 using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
 using NUnit.Framework;
 
 namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
 {
 	[TestFixture]
-	public class FileErrorLogSourceTests
+	public class FileErrorLogSourceTests : IntegrationTestBase
 	{
 		[Test]
 		public void GetLogs_ParsesAllLogsInDirectory()
 		{
 			// arrange
-			var source = new FileErrorLogSource(new ErrorLogFileParser(new FakeLog()), new FakeSettingsManager(), new FakeLog());
+			var source = CreateSource();
 
 			// act
-			var result = source.GetLogs(Directory.GetCurrentDirectory());
+			var result = source.GetLogs(TestFilesDirectory);
 
 			// assert
 			Assert.That(result.Count, Is.EqualTo(20));
@@ -29,10 +29,10 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
 			var settings = new FakeSettingsManager();
 			settings.SetMaxNumberOfLogs(10);
 
-			var source = new FileErrorLogSource(new ErrorLogFileParser(new FakeLog()), settings, new FakeLog());
+			var source = new FileErrorLogSource(new FileSystemHelper(), new ErrorLogFileParser(new FakeLog()), settings, new FakeLog());
 
 			// act
-			var result = source.GetLogs(Directory.GetCurrentDirectory());
+			var result = source.GetLogs(TestFilesDirectory);
 
 			// assert
 			Assert.That(result.Count, Is.EqualTo(10));
@@ -42,7 +42,7 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
 		public void GetLogs_DirectoryDoesNotExist_ThrowsApplicationException()
 		{
 			// arrange
-			var source = new FileErrorLogSource(new ErrorLogFileParser(new FakeLog()), new FakeSettingsManager(), new FakeLog());
+			var source = CreateSource();
 
 			// act
 			var result = Assert.Throws<ApplicationException>(() => source.GetLogs(@"x:\invalid\directory"));
@@ -50,6 +50,11 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
 			// assert
 			Assert.That(result, Is.Not.Null);
 			Assert.That(result.Message, Is.EqualTo(@"The directory: x:\invalid\directory was not found"));
+		}
+
+		private static FileErrorLogSource CreateSource()
+		{
+			return new FileErrorLogSource(new FileSystemHelper(), new ErrorLogFileParser(new FakeLog()), new FakeSettingsManager(), new FakeLog());
 		}
 	}
 }

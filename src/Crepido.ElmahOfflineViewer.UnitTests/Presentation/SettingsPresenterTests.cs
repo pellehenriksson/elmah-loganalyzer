@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Crepido.ElmahOfflineViewer.Core.Common;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Settings;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 using Moq;

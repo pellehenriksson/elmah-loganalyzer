@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace Crepido.ElmahOfflineViewer.IntegrationTests.Infrastructure.Cache
 {
 	[TestFixture]
-	public class CacheHelperTests
+	public class CacheHelperTests : IntegrationTestBase
 	{
 		[Test]
 		public void Get_NotInCache_ReturnsNull()

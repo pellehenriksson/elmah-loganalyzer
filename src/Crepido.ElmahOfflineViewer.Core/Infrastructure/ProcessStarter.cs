@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
 {
-	public class ProcessHelper : IProcessHelper
+	public class ProcessStarter : IProcessStarter
 	{
 		public void Run(string url)
 		{

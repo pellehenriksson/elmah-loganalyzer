@@ -53,9 +53,11 @@
     <Compile Include="Common\ListExtensionsTests.cs" />
     <Compile Include="Common\StringExtensionsTests.cs" />
     <Compile Include="Common\UniqueStringListTests.cs" />
-    <Compile Include="Common\UrlResolverTests.cs" />
+    <Compile Include="Common\UrlCleanerTests.cs" />
     <Compile Include="Domain\BrowserVersionResolverTests.cs" />
     <Compile Include="Domain\ClientInformationResolverTests.cs" />
+    <Compile Include="Domain\CsvParserTests.cs" />
+    <Compile Include="Domain\ErrorLogDownloaderTests.cs" />
     <Compile Include="Domain\ErrorLogFileParserTests.cs" />
     <Compile Include="Domain\ReportItemTests.cs" />
     <Compile Include="Domain\SearchErrorLogQueryParameterTests.cs" />
@@ -82,10 +84,10 @@
     <Compile Include="Presentation\ReportTypeListItemTests.cs" />
     <Compile Include="Presentation\SearchHttpUserAgentInformationEventArgsTests.cs" />
     <Compile Include="Presentation\SearchPresenterTests.cs" />
+    <Compile Include="Presentation\SelectServerPresenterTests.cs" />
     <Compile Include="Presentation\SettingsPresenterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\NameValuePairTests.cs" />
-    <Compile Include="Sandbox.cs" />
     <Compile Include="UnitTestBase.cs" />
   </ItemGroup>
   <ItemGroup>

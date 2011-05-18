@@ -1,5 +1,6 @@
 ﻿using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Cache;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.FileSystem;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Logging;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Settings;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
@@ -23,12 +24,14 @@ namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Dependencies
 			Bind<SearchPresenter>().To<SearchPresenter>();
 			Bind<ReportPresenter>().To<ReportPresenter>();
 			Bind<SettingsPresenter>().To<SettingsPresenter>();
+			Bind<SelectServerPresenter>().To<SelectServerPresenter>();
 			Bind<ICacheHelper>().To<CacheHelper>();
 			Bind<IWebRequestHelper>().To<WebRequestHelper>();
 			Bind<IClientInformationResolver>().To<ClientInformationResolver>();
-			Bind<IProcessHelper>().To<ProcessHelper>();
+			Bind<IProcessStarter>().To<ProcessStarter>();
+			Bind<IUrlPing>().To<UrlPing>();
 			Bind<IHttpUserAgentSearchLauncher>().To<UserAgentStringSearchLauncher>();
-
+			Bind<IFileSystemHelper>().To<FileSystemHelper>();
 			Bind<ILog>().ToMethod(GetLogger);
 		}
 

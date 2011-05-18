@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.FileSystem;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Logging;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Settings;
 
@@ -8,22 +9,24 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations
 {
 	public class ElmahExportService
 	{
+		private readonly IFileSystemHelper _fileSystemHelper;
 		private readonly ISettingsManager _settingsManager;
 		private readonly ILog _log;
-		private readonly IProcessHelper _processHelper;
+		private readonly IProcessStarter _processStarter;
 
-		public ElmahExportService(ISettingsManager settingsManager, ILog log, IProcessHelper processHelper)
+		public ElmahExportService(IFileSystemHelper fileSystemHelper, ISettingsManager settingsManager, IProcessStarter processStarter, ILog log)
 		{
+			_fileSystemHelper = fileSystemHelper;
 			_settingsManager = settingsManager;
 			_log = log;
-			_processHelper = processHelper;
+			_processStarter = processStarter;
 		}
 		
 		public string Download(Uri url)
 		{
-			var exporterPath = Path.Combine(Directory.GetCurrentDirectory(), "_ElmahExporter\\elmahexp.exe");
+			var exporterPath = Path.Combine(_fileSystemHelper.GetCurrentDirectory(), "_ElmahExporter\\elmahexp.exe");
 
-			if (!File.Exists(exporterPath))
+			if (!_fileSystemHelper.FileExists(exporterPath))
 			{
 				Console.Out.WriteLine("Failed to find the path " + exporterPath);
 			}
@@ -33,7 +36,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations
 			try
 			{
 				var arguments = string.Format("\"{0}\" \"--trace\" \"--output-dir\" \"{1}\"", url, downloadDirectory);
-				_processHelper.Run(exporterPath, arguments);
+				_processStarter.Run(exporterPath, arguments);
 
 				return downloadDirectory;
 			}

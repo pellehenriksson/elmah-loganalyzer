@@ -70,7 +70,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			if (name == HttpServerVariables.Url)
 			{
 				Url = value.ToLowerInvariant();
-				CleanUrl = UrlResolver.Resolve(Url);
+				CleanUrl = UrlCleaner.Clean(Url);
 			}
 
 			if (name == HttpServerVariables.HttpUserAgent)

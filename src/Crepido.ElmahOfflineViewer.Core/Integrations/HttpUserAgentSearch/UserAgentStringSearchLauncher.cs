@@ -6,7 +6,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentSearch
 	{
 		private const string UrlTemplate = "http://www.useragentstring.com/?uas={0}&key=pelHenriGmCom";
 
-		public UserAgentStringSearchLauncher(IProcessHelper processHelper) : base(processHelper)
+		public UserAgentStringSearchLauncher(IProcessStarter processStarter) : base(processStarter)
 		{
 		}
 		

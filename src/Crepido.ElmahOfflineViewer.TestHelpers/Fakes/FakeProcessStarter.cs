@@ -3,7 +3,7 @@ using Crepido.ElmahOfflineViewer.Core.Infrastructure;
 
 namespace Crepido.ElmahOfflineViewer.TestHelpers.Fakes
 {
-	public class FakeProcessHelper : IProcessHelper
+	public class FakeProcessStarter : IProcessStarter
 	{
 		public string RunWithUrl { get; private set; }
 

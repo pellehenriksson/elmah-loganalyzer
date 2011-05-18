@@ -6,7 +6,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations.ErrorSearch
 	{
 		private const string UrlTemplate = "http://www.google.com/search?q={0}+{1}";
 
-		public GoogleErrorSearchLauncher(IProcessHelper processHelper) : base(processHelper)
+		public GoogleErrorSearchLauncher(IProcessStarter processStarter) : base(processStarter)
 		{
 		}
 

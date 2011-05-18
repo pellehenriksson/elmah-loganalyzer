@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Domain;
-using Crepido.ElmahOfflineViewer.Core.Integrations;
 using Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentSearch;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 using Moq;

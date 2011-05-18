@@ -172,5 +172,12 @@ namespace Crepido.ElmahOfflineViewer.UI.Forms
 			var view = new AboutForm();
 			view.ShowDialog(this);
 		}
+
+		private void SelectServerButtonClick(object sender, EventArgs e)
+		{
+			var presenter = ServiceLocator.Resolve<SelectServerPresenter>();
+			var view = presenter.View as Form;
+			view.ShowDialog(this);
+		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.FileSystem;
 using Crepido.ElmahOfflineViewer.Core.Integrations;
 using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
 using NUnit.Framework;
@@ -13,8 +14,8 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
 		public void Download_StartElmahExp()
 		{
 			// arrange
-			var helper = new FakeProcessHelper();
-			var service = new ElmahExportService(new FakeSettingsManager(), new FakeLog(), helper);
+			var starter = new FakeProcessStarter();
+			var service = new ElmahExportService(new FileSystemHelper(), new FakeSettingsManager(), starter, new FakeLog());
 			var url = new Uri("http://localhost:49899/elmah.axd");
 
 			// act
@@ -22,14 +23,14 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations
 
 			// assert
 			var expected = string.Format("{0} {1}", Path.Combine(Directory.GetCurrentDirectory(), "_ElmahExporter\\elmahexp.exe"), url);
-			Assert.That(helper.RunWithUrl, Is.EqualTo(expected));
+			Assert.That(starter.RunWithUrl, Is.EqualTo(expected));
 		}
 
 		[Test]
 		public void Download_DownloadSucceeds_ReturnsDownloadDirectory()
 		{
 			// arrange
-			var service = new ElmahExportService(new FakeSettingsManager(), new FakeLog(), new FakeProcessHelper());
+			var service = new ElmahExportService(new FileSystemHelper(), new FakeSettingsManager(), new FakeProcessStarter(), new FakeLog());
 			var url = new Uri("http://localhost:49899/elmah.axd");
 
 			// act

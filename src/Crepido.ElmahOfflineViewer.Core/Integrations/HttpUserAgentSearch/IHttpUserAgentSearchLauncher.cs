@@ -4,7 +4,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentSearch
 {
 	public interface IHttpUserAgentSearchLauncher
 	{
-		IProcessHelper ProcessHelper { get; }
+		IProcessStarter ProcessStarter { get; }
 
 		void Launch(string httpUserAgentString);
 	}

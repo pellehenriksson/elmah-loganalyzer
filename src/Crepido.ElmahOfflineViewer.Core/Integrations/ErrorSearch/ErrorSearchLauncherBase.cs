@@ -6,17 +6,17 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations.ErrorSearch
 {
 	public abstract class ErrorSearchLauncherBase
 	{
-		protected ErrorSearchLauncherBase(IProcessHelper processHelper)
+		protected ErrorSearchLauncherBase(IProcessStarter processStarter)
 		{
-			ProcessHelper = processHelper;
+			ProcessStarter = processStarter;
 		}
 
-		public IProcessHelper ProcessHelper { get; private set; }
+		public IProcessStarter ProcessStarter { get; private set; }
 
 		public void Launch(ErrorLog errorLog)
 		{
 			var url = BuildUrl(errorLog);
-			ProcessHelper.Run(url);
+			ProcessStarter.Run(url);
 		}
 
 		public abstract string GetUrlTemplate();

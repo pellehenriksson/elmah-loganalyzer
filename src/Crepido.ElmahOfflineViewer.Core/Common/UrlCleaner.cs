@@ -2,11 +2,11 @@
 
 namespace Crepido.ElmahOfflineViewer.Core.Common
 {
-	public static class UrlResolver
+	public static class UrlCleaner
 	{
 		private const string WebformsFileExtension = ".aspx";
 		
-		public static string Resolve(string url)
+		public static string Clean(string url)
 		{
 			if (IsRootUrl(url))
 			{

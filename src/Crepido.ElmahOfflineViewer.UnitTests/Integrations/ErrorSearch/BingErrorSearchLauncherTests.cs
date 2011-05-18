@@ -11,15 +11,15 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations.ErrorSearch
 		public void Launch_BuildUrlAndLaunch()
 		{
 			// arrange
-			var helper = new FakeProcessHelper();
-			var launcher = new BingErrorSearchLauncher(helper);
+			var starter = new FakeProcessStarter();
+			var launcher = new BingErrorSearchLauncher(starter);
 			var errorLog = CreateFakeErrorLog();
 			
 			// act
 			launcher.Launch(errorLog);
 
 			// assert
-			Assert.That(helper.RunWithUrl, Is.EqualTo("http://www.bing.com/search?q=System.InvalidOperationException+System.Web.Mvc"));
+			Assert.That(starter.RunWithUrl, Is.EqualTo("http://www.bing.com/search?q=System.InvalidOperationException+System.Web.Mvc"));
 		}
 	}
 }

@@ -11,29 +11,27 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		public IEnumerable<KeyValuePair<Uri, DateTime>> Parse(string content)
 		{
 			var bytes = Encoding.Unicode.GetBytes(content);
-			var stream = new MemoryStream(bytes);
+			using (var stream = new MemoryStream(bytes))
+            using (var parser = new TextFieldParser(stream) { TextFieldType = FieldType.Delimited })
+            {
+                parser.SetDelimiters(",");
 
-			var parser = new TextFieldParser(stream) { TextFieldType = FieldType.Delimited };
-			parser.SetDelimiters(",");
+                var hasPassedHeaderRow = false;
+                while (!parser.EndOfData)
+                {
+                    var currentRow = parser.ReadFields();
 
-			var hasPassedHeaderRow = false;
-			while (!parser.EndOfData)
-			{
-				var currentRow = parser.ReadFields();
+                    if (hasPassedHeaderRow)
+                    {
+                        var date = Convert.ToDateTime(currentRow[2]);
+                        var detailsUrl = new Uri(currentRow[9]);
 
-				if (hasPassedHeaderRow)
-				{
-					var date = Convert.ToDateTime(currentRow[2]);
-					var detailsUrl = new Uri(currentRow[9]);
+                        yield return new KeyValuePair<Uri, DateTime>(detailsUrl, date);
+                    }
 
-					yield return new KeyValuePair<Uri, DateTime>(detailsUrl, date);
-				}
-
-				hasPassedHeaderRow = true;
-			}
-
-			stream.Close();
-			stream.Dispose();
+                    hasPassedHeaderRow = true;
+                }
+            }
 		}
 	}
 }

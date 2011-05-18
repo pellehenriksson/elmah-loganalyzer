@@ -2,7 +2,9 @@
 
 namespace Crepido.ElmahOfflineViewer.TestHelpers.Fakes
 {
-	public class FakeUrlPing : IUrlPing
+    using System;
+
+    public class FakeUrlPing : IUrlPing
 	{
 		private readonly bool _returnValue;
 
@@ -15,7 +17,7 @@ namespace Crepido.ElmahOfflineViewer.TestHelpers.Fakes
 			_returnValue = returnValue;
 		}
 
-		public bool Ping(string url)
+		public bool Ping(Uri url)
 		{
 			return _returnValue;
 		}

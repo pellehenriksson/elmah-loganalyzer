@@ -1,7 +1,9 @@
 ﻿namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Web
 {
+	using System;
+
 	public interface IWebRequestHelper
 	{
-		string Request(string url);
+		string Uri(Uri url);
 	}
 }

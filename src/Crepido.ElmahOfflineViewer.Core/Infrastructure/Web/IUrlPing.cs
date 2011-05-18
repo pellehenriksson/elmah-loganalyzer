@@ -1,7 +1,9 @@
 namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Web
 {
-	public interface IUrlPing
+    using System;
+
+    public interface IUrlPing
 	{
-		bool Ping(string url);
+		bool Ping(Uri url);
 	}
 }

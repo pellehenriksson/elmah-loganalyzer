@@ -21,13 +21,13 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			_settingsManager = settingsManager;
 		}
 
-		public string ServerUrl { get; private set; }
+		public Uri ServerUrl { get; private set; }
 
 		public string DownloadDirectory { get; private set; }
 
-		public Dictionary<string, DateTime> CsvContent { get; private set; }
+		public Dictionary<Uri, DateTime> CsvContent { get; private set; }
 
-		public void Download(string url)
+		public void Download(Uri url)
 		{
 			ServerUrl = url;
 
@@ -48,14 +48,14 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 					continue;
 				}
 
-				var xmlContent = _webRequst.Request(errorlogXmlDownloadUrl);
+				var xmlContent = _webRequst.Uri(errorlogXmlDownloadUrl);
 				_fileSystemsHelper.CreateTextFile(errorlogFilePath, xmlContent);
 			}
 		}
 
 		private void ResolveDownloadDirectory()
 		{
-			var folder = new Uri(ServerUrl).Host;
+			var folder = ServerUrl.Host;
 			DownloadDirectory = Path.Combine(_fileSystemsHelper.GetCurrentDirectory(), folder);
 		}
 
@@ -69,19 +69,19 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		
 		private void ResolveLogsAvailableForDownload()
 		{
-			var csvContent = _webRequst.Request(ServerUrl);
+			var csvContent = _webRequst.Uri(ServerUrl);
 			var parser = new CsvParser();
 			CsvContent = parser.Parse(csvContent);
 		}
 
-		private IEnumerable<KeyValuePair<string, DateTime>> ResolveLogsToDownload()
+		private IEnumerable<KeyValuePair<Uri, DateTime>> ResolveLogsToDownload()
 		{
 			return _settingsManager.GetMaxNumberOfLogs() == -1 ? CsvContent : CsvContent.Take(_settingsManager.GetMaxNumberOfLogs());
 		}
 		
-		private string ResolveErrorLogDownloadUrl(KeyValuePair<string, DateTime> entry)
+		private Uri ResolveErrorLogDownloadUrl(KeyValuePair<Uri, DateTime> entry)
 		{
-			return entry.Key.Replace("/details?", "/xml?");
+			return new Uri(entry.Key.AbsoluteUri.Replace("/details?", "/xml?"));
 		}
 
 		private bool ErrorlogAlreadyDownloaded(string path)
@@ -89,12 +89,12 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			return _fileSystemsHelper.FileExists(path);
 		}
 
-		private string ResolveErrorLogFileName(string detailsUrl, DateTime time)
+		private string ResolveErrorLogFileName(Uri detailsUrl, DateTime time)
 		{
 			const string template = "error-{0}-{1}.xml";
 
-			var startIndex = detailsUrl.LastIndexOf('=');
-			var id = detailsUrl.Substring(startIndex + 1);
+			var startIndex = detailsUrl.AbsoluteUri.LastIndexOf('=');
+			var id = detailsUrl.AbsoluteUri.Substring(startIndex + 1);
 
 			var date = time.ToString().Replace(":", string.Empty).Replace(" ", "-") + "Z";
 

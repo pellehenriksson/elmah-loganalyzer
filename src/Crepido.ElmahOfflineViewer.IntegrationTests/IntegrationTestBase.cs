@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace Crepido.ElmahOfflineViewer.IntegrationTests
 {
@@ -14,14 +15,14 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests
 			get { return Path.Combine(TestFilesDirectory, "errorlog.csv"); }
 		}
 
-		public string ExistingUrl
+		public Uri ExistingUrl
 		{
-			get { return "http://www.google.com"; }
+			get { return new Uri("http://www.google.com"); }
 		}
 
-		public string NonExistantUrl
+		public Uri NonExistantUrl
 		{
-			get { return "http://www.bluttanblä.com"; }
+			get { return new Uri("http://www.bluttanblä.com"); }
 		}
 	}
 }

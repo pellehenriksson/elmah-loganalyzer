@@ -14,7 +14,7 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Infrastructure.Web
 			var helper = new WebRequestHelper();
 
 			// act
-			var result = helper.Request(ExistingUrl);
+			var result = helper.Uri(ExistingUrl);
 
 			// assert
 			Assert.That(result.Contains("<title>Google</title>"));
@@ -27,7 +27,7 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Infrastructure.Web
 			var helper = new WebRequestHelper();
 
 			// act
-			var result = Assert.Throws<WebException>(() => helper.Request(NonExistantUrl));
+			var result = Assert.Throws<WebException>(() => helper.Uri(NonExistantUrl));
 
 			// assert
 			Assert.That(result, Is.Not.Null);

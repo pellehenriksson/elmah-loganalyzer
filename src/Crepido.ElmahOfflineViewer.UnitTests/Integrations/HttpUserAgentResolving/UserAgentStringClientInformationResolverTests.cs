@@ -46,7 +46,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations.HttpUserAgentResolvi
 			Assert.That(result, Is.Not.Null);
 
 			cache.Verify(x => x.Get<ClientInformation>(It.IsAny<string>()), Times.Never());
-			webrequest.Verify(x => x.Request(It.IsAny<string>()), Times.Never());
+			webrequest.Verify(x => x.Uri(It.IsAny<Uri>()), Times.Never());
 			cache.Verify(x => x.Set(It.IsAny<string>(), It.IsAny<ClientInformation>()), Times.Never());
 		}
 
@@ -67,7 +67,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations.HttpUserAgentResolvi
 
 			// assert
 			Assert.That(result, Is.EqualTo(information));
-			webrequest.Verify(x => x.Request(It.IsAny<string>()), Times.Never());
+			webrequest.Verify(x => x.Uri(It.IsAny<Uri>()), Times.Never());
 		}
 
 		[Test]
@@ -80,7 +80,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations.HttpUserAgentResolvi
 			cache.Setup(x => x.Get<ClientInformation>(It.IsAny<string>())).Returns((ClientInformation)null);
 
 			const string response = "agent_type=Browser;agent_name=Internet Explorer;agent_version=7.0;os_type=Windows;os_name=Windows XP;os_versionName=;os_versionNumber=;os_producer=;os_producerURL=;linux_distibution=Null;agent_language=;agent_languageTag=;";
-			webrequest.Setup(x => x.Request(It.IsAny<string>())).Returns(response);
+			webrequest.Setup(x => x.Uri(It.IsAny<Uri>())).Returns(response);
 
 			var resolver = new HttpUserAgentStringClientInformationResolver(webrequest.Object, cache.Object);
 

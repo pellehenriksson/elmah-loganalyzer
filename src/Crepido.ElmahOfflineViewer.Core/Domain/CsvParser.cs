@@ -8,7 +8,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
 	public class CsvParser
 	{
-		public Dictionary<string, DateTime> Parse(string content)
+		public Dictionary<Uri, DateTime> Parse(string content)
 		{
 			var bytes = Encoding.ASCII.GetBytes(content);
 			var stream = new MemoryStream(bytes);
@@ -16,7 +16,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			var parser = new TextFieldParser(stream) { TextFieldType = FieldType.Delimited };
 			parser.SetDelimiters(",");
 
-			var result = new Dictionary<string, DateTime>();
+			var result = new Dictionary<Uri, DateTime>();
 
 			var hasPassedHeaderRow = false;
 			while (!parser.EndOfData)
@@ -26,7 +26,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 				if (hasPassedHeaderRow)
 				{
 					var date = Convert.ToDateTime(currentRow[2]);
-					var detailsUrl = currentRow[9];
+					var detailsUrl = new Uri(currentRow[9]);
 
 					result.Add(detailsUrl, date);
 				}

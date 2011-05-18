@@ -3,9 +3,11 @@ using System.Net;
 
 namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Web
 {
-	public class WebRequestHelper : IWebRequestHelper
+    using System;
+
+    public class WebRequestHelper : IWebRequestHelper
 	{
-		public string Request(string url)
+		public string Uri(Uri url)
 		{
 			string result;
 

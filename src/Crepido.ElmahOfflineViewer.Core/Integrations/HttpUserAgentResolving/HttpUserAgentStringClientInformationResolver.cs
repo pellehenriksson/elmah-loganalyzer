@@ -33,32 +33,32 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentResolving
 
 			var url = BuildUrl(httpUserAgent);
 
-			var result = _cacheHeper.Get<ClientInformation>(url);
+			var result = _cacheHeper.Get<ClientInformation>(url.AbsoluteUri);
 
 			if (result != null)
 			{
 				return result;
 			}
 
-			var response = _webRequestHelper.Request(url);
+			var response = _webRequestHelper.Uri(url);
 			var values = DictionaryBuilder.BuildFromText(response);
 			
 			result = new ClientInformation
-			         	{
-			         		Platform = values[UserAgentStringParameters.OsType],
-			         		OperatingSystem = values[UserAgentStringParameters.OsName],
-			         		Browser = values[UserAgentStringParameters.AgentName] + " " + values[UserAgentStringParameters.AgentVersion]
-			         	};
+						{
+							Platform = values[UserAgentStringParameters.OsType],
+							OperatingSystem = values[UserAgentStringParameters.OsName],
+							Browser = values[UserAgentStringParameters.AgentName] + " " + values[UserAgentStringParameters.AgentVersion]
+						};
 
-			_cacheHeper.Set(url, result);
+			_cacheHeper.Set(url.AbsoluteUri, result);
 
 			return result;
 		}
 		
-		private static string BuildUrl(string httpUserAgent)
+		private static Uri BuildUrl(string httpUserAgent)
 		{
 			var querystring = Uri.EscapeDataString(httpUserAgent);
-			return string.Format("{0}?uas={1}&getText=all", Url, querystring);
+			return new Uri(string.Format("{0}?uas={1}&getText=all", Url, querystring));
 		}
 	}
 }

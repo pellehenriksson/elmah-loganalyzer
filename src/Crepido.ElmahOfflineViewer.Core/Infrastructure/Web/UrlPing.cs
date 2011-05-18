@@ -2,9 +2,11 @@
 
 namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Web
 {
-	public class UrlPing : IUrlPing
+    using System;
+
+    public class UrlPing : IUrlPing
 	{
-		public bool Ping(string url)
+		public bool Ping(Uri url)
 		{
 			var request = (HttpWebRequest)WebRequest.Create(url);
 

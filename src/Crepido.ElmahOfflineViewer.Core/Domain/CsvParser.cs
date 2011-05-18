@@ -10,7 +10,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 	{
 		public IEnumerable<KeyValuePair<Uri, DateTime>> Parse(string content)
 		{
-			var bytes = Encoding.ASCII.GetBytes(content);
+			var bytes = Encoding.Unicode.GetBytes(content);
 			var stream = new MemoryStream(bytes);
 
 			var parser = new TextFieldParser(stream) { TextFieldType = FieldType.Delimited };

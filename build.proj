@@ -20,10 +20,6 @@
 		<AppFiles Include="$(OutputCompileDirectory)Ninject.dll" />
 		<AppFiles Include="$(OutputCompileDirectory)NLog.dll" />
 	</ItemGroup>
-
-	<ItemGroup>
-		<ElmahExporterFiles Include="$(OutputCompileDirectory)_ElmahExporter\**\*.*" />
-	</ItemGroup>
 	
 	<Target Name="Clean">
 		<RemoveDir Directories="$(OutputDirectory)" Condition="Exists($(OutputDirectory))" />
@@ -76,7 +72,6 @@
 	
 	<Target Name="BundleApp">
 		<Copy SourceFiles="@(AppFiles)" DestinationFolder="$(OutputAppDirectory)"/>
-		<Copy SourceFiles="@(ElmahExporterFiles)" DestinationFolder="$(OutputAppDirectory)_ElmahExporter"/>
 </Target>
 
 	<Target Name="ZipApp">

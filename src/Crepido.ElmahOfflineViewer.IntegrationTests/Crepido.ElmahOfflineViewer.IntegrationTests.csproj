@@ -50,7 +50,6 @@
     <Compile Include="Infrastructure\FileSystem\FileSystemHelperTests.cs" />
     <Compile Include="Infrastructure\Web\UrlPingTests.cs" />
     <Compile Include="Infrastructure\Web\WebRequestHelperTests.cs" />
-    <Compile Include="Integrations\ElmahExportServiceTests.cs" />
     <Compile Include="Integrations\UserAgentStringClientInformationResolverTests.cs" />
     <Compile Include="IntegrationTestBase.cs" />
     <Compile Include="Domain\ErrorLogDownloaderTests.cs" />

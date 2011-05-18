@@ -111,7 +111,6 @@
     <Compile Include="Infrastructure\Settings\SettingsManager.cs" />
     <Compile Include="Infrastructure\Web\UrlPing.cs" />
     <Compile Include="Infrastructure\Web\WebRequestHelper.cs" />
-    <Compile Include="Integrations\ElmahExportService.cs" />
     <Compile Include="Integrations\ErrorSearch\BingErrorSearchLauncher.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\BotsVsBrowsersSearchLauncher.cs" />
     <Compile Include="Integrations\ErrorSearch\ErrorSearchLauncherBase.cs" />
@@ -143,24 +142,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Domain\YellowScreenOfDeathTemplate.htm" />
-    <Content Include="_ElmahExporter\Elmah.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="_ElmahExporter\elmahexp.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="_ElmahExporter\Fizzler.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="_ElmahExporter\Fizzler.Systems.HtmlAgilityPack.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="_ElmahExporter\HtmlAgilityPack.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="_ElmahExporter\Mannex.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Templates.resx">

@@ -39,6 +39,7 @@
 			this._showSettingsViewButton = new System.Windows.Forms.ToolStripButton();
 			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
 			this._mainPanel = new System.Windows.Forms.Panel();
+			this._selectServerButton = new System.Windows.Forms.ToolStripButton();
 			this._mainStatusStrip.SuspendLayout();
 			this._mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -80,6 +81,7 @@
 			// 
 			this._mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._selectDirectoryButton,
+            this._selectServerButton,
             this._showSearchViewButton,
             this._showReportViewButton,
             this._showAboutButton,
@@ -153,6 +155,14 @@
 			this._mainPanel.Size = new System.Drawing.Size(1264, 679);
 			this._mainPanel.TabIndex = 2;
 			// 
+			// _selectServerButton
+			// 
+			this._selectServerButton.Image = global::Crepido.ElmahOfflineViewer.UI.Properties.Resources.server;
+			this._selectServerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._selectServerButton.Name = "_selectServerButton";
+			this._selectServerButton.Size = new System.Drawing.Size(92, 22);
+			this._selectServerButton.Text = "Select server";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,5 +201,6 @@
 
 		private System.Windows.Forms.ToolStripButton _showSettingsViewButton;
 		private System.Windows.Forms.ToolStripButton _showAboutButton;
+		private System.Windows.Forms.ToolStripButton _selectServerButton;
 	}
 }

@@ -5,14 +5,14 @@ namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
 {
 	public class ProcessStarter : IProcessStarter
 	{
-		public void Run(string url)
+		public void Run(Uri url)
 		{
-			Process.Start(url);
+			Process.Start(url.AbsoluteUri);
 		}
 
-		public void Run(string url, string arguments)
+		public void Run(Uri url, string arguments)
 		{
-			Process.Start(url, arguments);
+			Process.Start(url.AbsoluteUri, arguments);
 		}
 	}
 }

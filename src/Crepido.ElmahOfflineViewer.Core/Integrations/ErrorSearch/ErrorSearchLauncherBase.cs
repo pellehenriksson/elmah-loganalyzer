@@ -21,9 +21,9 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations.ErrorSearch
 
 		public abstract string GetUrlTemplate();
 
-		private string BuildUrl(ErrorLog errorLog)
+		private Uri BuildUrl(ErrorLog errorLog)
 		{
-			return string.Format(GetUrlTemplate(), Uri.EscapeDataString(errorLog.Type), Uri.EscapeDataString(errorLog.Source));
+			return new Uri(string.Format(GetUrlTemplate(), Uri.EscapeDataString(errorLog.Type), Uri.EscapeDataString(errorLog.Source)));
 		}
 	}
 }

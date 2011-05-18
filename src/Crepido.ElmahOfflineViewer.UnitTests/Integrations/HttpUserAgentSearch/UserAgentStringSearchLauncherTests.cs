@@ -34,7 +34,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations.HttpUserAgentSearch
 
 			// assert
 			Console.Out.WriteLine(starter.RunWithUrl);
-			Assert.That(starter.RunWithUrl, Is.EqualTo("http://www.useragentstring.com/?uas=Mozilla%2F5.0%20(Windows%20NT%205.1)%20AppleWebKit%2F534.25%20(KHTML%2C%20like%20Gecko)%20Chrome%2F12.0.706.0%20Safari%2F534.25&key=pelHenriGmCom"));
+			Assert.That(starter.RunWithUrl, Is.EqualTo(new Uri("http://www.useragentstring.com/?uas=Mozilla%2F5.0%20(Windows%20NT%205.1)%20AppleWebKit%2F534.25%20(KHTML%2C%20like%20Gecko)%20Chrome%2F12.0.706.0%20Safari%2F534.25&key=pelHenriGmCom")));
 		}
 	}
 }

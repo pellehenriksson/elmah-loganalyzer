@@ -1,9 +1,11 @@
 ﻿namespace Crepido.ElmahOfflineViewer.Core.Infrastructure
 {
+	using System;
+
 	public interface IProcessStarter
 	{
-		void Run(string url);
+		void Run(Uri url);
 
-		void Run(string url, string arguments);
+		void Run(Uri url, string arguments);
 	}
 }

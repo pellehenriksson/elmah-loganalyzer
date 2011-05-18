@@ -1,4 +1,5 @@
-﻿using Crepido.ElmahOfflineViewer.Core.Integrations.ErrorSearch;
+﻿using System;
+using Crepido.ElmahOfflineViewer.Core.Integrations.ErrorSearch;
 using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
 using NUnit.Framework;
 
@@ -19,7 +20,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations.ErrorSearch
 			launcher.Launch(errorLog);
 
 			// assert
-			Assert.That(starter.RunWithUrl, Is.EqualTo("http://www.google.com/search?q=System.InvalidOperationException+System.Web.Mvc"));
+			Assert.That(starter.RunWithUrl, Is.EqualTo(new Uri("http://www.google.com/search?q=System.InvalidOperationException+System.Web.Mvc")));
 		}
 	}
 }

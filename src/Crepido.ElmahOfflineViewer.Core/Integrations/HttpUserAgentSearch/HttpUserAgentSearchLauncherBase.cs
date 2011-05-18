@@ -20,9 +20,9 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentSearch
 
 		public abstract string GetUrlTemplate();
 
-		private string BuildUrl(string httpUserAgentString)
+		private Uri BuildUrl(string httpUserAgentString)
 		{
-			return string.Format(GetUrlTemplate(), Uri.EscapeDataString(httpUserAgentString));
+			return new Uri(string.Format(GetUrlTemplate(), Uri.EscapeDataString(httpUserAgentString)));
 		}
 	}
 }

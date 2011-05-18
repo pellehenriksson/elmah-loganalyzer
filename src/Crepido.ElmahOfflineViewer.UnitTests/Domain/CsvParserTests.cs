@@ -1,4 +1,5 @@
-﻿using Crepido.ElmahOfflineViewer.Core.Domain;
+﻿using System.Linq;
+using Crepido.ElmahOfflineViewer.Core.Domain;
 using NUnit.Framework;
 
 namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
@@ -16,7 +17,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			var result = parser.Parse(GetCsvContent());
 
 			// assert
-			Assert.That(result.Count, Is.EqualTo(10));
+			Assert.That(result.Count(), Is.EqualTo(10));
 		}
 	}
 }

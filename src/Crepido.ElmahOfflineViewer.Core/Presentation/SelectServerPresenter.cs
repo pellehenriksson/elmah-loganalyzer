@@ -1,4 +1,5 @@
 ﻿using System;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 
 namespace Crepido.ElmahOfflineViewer.Core.Presentation
@@ -25,6 +26,12 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 		private void View_OnConnectToServer(object sender, EventArgs e)
 		{
 			View.ClearErrorMessage();
+			
+			if (!View.Url.HasValue())
+			{
+				View.DisplayErrorMessage("Invalid url");
+				return;
+			}
 
 			try
 			{
@@ -41,6 +48,10 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 			catch (ArgumentException)
 			{
 				View.DisplayErrorMessage("Invalid url");
+			}
+			catch (Exception ex)
+			{
+				View.DisplayErrorMessage(ex.Message);
 			}
 		}
 	}

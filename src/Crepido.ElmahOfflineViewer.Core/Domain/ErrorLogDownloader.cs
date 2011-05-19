@@ -69,7 +69,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
         
         private void ResolveLogsAvailableForDownload()
         {
-            var csvContent = _webRequst.Uri(ServerUrl);
+        	var downloadUrl = new ElmahUrlHelper().ResolveCsvDownloadUrl(ServerUrl);
+			var csvContent = _webRequst.Uri(downloadUrl);
             var parser = new CsvParser();
             CsvContent = parser.Parse(csvContent).ToList(/* materialize */);
         }

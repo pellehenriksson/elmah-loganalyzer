@@ -57,6 +57,7 @@
     <Compile Include="Domain\BrowserVersionResolverTests.cs" />
     <Compile Include="Domain\ClientInformationResolverTests.cs" />
     <Compile Include="Domain\CsvParserTests.cs" />
+    <Compile Include="Domain\ElmahUrlHelperTests.cs" />
     <Compile Include="Domain\ErrorLogDownloaderTests.cs" />
     <Compile Include="Domain\ErrorLogFileParserTests.cs" />
     <Compile Include="Domain\ReportItemTests.cs" />

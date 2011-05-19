@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.FileSystem;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Settings;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
-	using System.Diagnostics;
-	using System.Threading.Tasks;
-
 	public class ErrorLogDownloader : IErrorLogDownloader
 	{
 		private readonly IWebRequestHelper _webRequst;

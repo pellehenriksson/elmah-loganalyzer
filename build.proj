@@ -26,7 +26,6 @@
 		<MakeDir Directories="$(OutputDirectory)" />
 		<MakeDir Directories="$(OutputReportsDirectory)" />
 		<MakeDir Directories="$(OutputAppDirectory)" />
-		<MakeDir Directories="$(OutputAppDirectory)_ElmahExporter" />
 	</Target>
 
 	<Target Name="LocalBuild">

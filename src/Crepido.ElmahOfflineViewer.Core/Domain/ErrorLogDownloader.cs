@@ -54,7 +54,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 					Xml = webRequst.Uri(downloadUrl),
 				};
 
-			Parallel.ForEach(errors, error => SaveXmlToFile(error.Xml, error.FilePath));
+			Parallel.ForEach(errors, error => _fileSystemsHelper.CreateTextFile(error.FilePath, error.Xml));
 		}
 
 		private static Uri ResolveErrorLogDownloadUrl(KeyValuePair<Uri, DateTime> entry)
@@ -71,12 +71,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			return string.Format(CultureInfo.InvariantCulture, template, time.ToUniversalTime(), id);
 		}
 
-		private void SaveXmlToFile(string xml, string path)
-		{
-			_fileSystemsHelper.CreateTextFile(path, xml);
-		}
-
-		private void ResolveDownloadDirectory()
+	    private void ResolveDownloadDirectory()
 		{
 			var folder = ServerUrl.Host;
 			DownloadDirectory = Path.Combine(_fileSystemsHelper.GetCurrentDirectory(), folder);

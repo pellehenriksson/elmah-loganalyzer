@@ -82,7 +82,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
         
         private Uri ResolveErrorLogDownloadUrl(KeyValuePair<Uri, DateTime> entry)
         {
-            return new Uri(entry.Key.AbsoluteUri.Replace("/details?", "/xml?"));
+            return new Uri(entry.Key.AbsoluteUri.Replace("/detail?", "/xml?"));
         }
 
         private bool ErrorlogAlreadyDownloaded(string path)

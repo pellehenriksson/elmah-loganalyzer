@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 				parser.SetDelimiters(",");
 				foreach (var currentRow in parser.Read().Skip(/* headers */ 1))
 				{
-					var date = Convert.ToDateTime(currentRow[2]);
+					var date = DateTime.Parse(currentRow[2], CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AllowWhiteSpaces);
 					var detailsUrl = new Uri(currentRow[9]);
 					yield return new KeyValuePair<Uri, DateTime>(detailsUrl, date);
 				}

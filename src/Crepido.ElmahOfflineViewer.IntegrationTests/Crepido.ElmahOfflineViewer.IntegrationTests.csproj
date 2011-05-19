@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{31B1036D-1402-484A-B0D0-DC77FEAF5FDE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crepido.ElmahOfflineViewer.IntegrationTests</RootNamespace>
+    <AssemblyName>Crepido.ElmahOfflineViewer.IntegrationTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.2.5.9.10348\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Domain\FileErrorLogSourceTests.cs" />
+    <Compile Include="Infrastructure\Cache\CacheHelperTests.cs" />
+    <Compile Include="Infrastructure\FileSystem\FileSystemHelperTests.cs" />
+    <Compile Include="Infrastructure\Web\UrlPingTests.cs" />
+    <Compile Include="Infrastructure\Web\WebRequestHelperTests.cs" />
+    <Compile Include="Integrations\UserAgentStringClientInformationResolverTests.cs" />
+    <Compile Include="IntegrationTestBase.cs" />
+    <Compile Include="Domain\ErrorLogDownloaderTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Crepido.ElmahOfflineViewer.Core\Crepido.ElmahOfflineViewer.Core.csproj">
+      <Project>{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}</Project>
+      <Name>Crepido.ElmahOfflineViewer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Crepido.ElmahOfflineViewer.TestHelpers\Crepido.ElmahOfflineViewer.TestHelpers.csproj">
+      <Project>{85191ED2-783E-4599-A0FB-0CB66276A933}</Project>
+      <Name>Crepido.ElmahOfflineViewer.TestHelpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="_TestFiles\error-2011-04-10142706Z-d0da432d-fd3c-45b6-baf1-2cf49a5724e8.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10143402Z-46b40f46-e852-43b6-a621-f36572db1540.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10143407Z-c4ae9a20-7e3d-4d0b-b294-7a0fc64a9d2d.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10145543Z-9738a2d5-ed65-4b8f-9de0-f959065cc2c6.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10151719Z-0503bbfd-c00d-4e86-a04e-233a3e28a33b.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10155128Z-6c61d6fe-880e-4254-b40c-09b76151d2ea.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10155511Z-2b4ec3e8-ad96-4a0f-8e45-189738139fad.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10155511Z-f601113d-67d5-4712-800f-cae6231440e4.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10161341Z-103140b2-9646-470b-ac01-8e64df868ca2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10172858Z-d04cb7aa-7c19-42ad-afa9-0f5fa178d095.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10173259Z-cba1ab77-bb73-4da8-9f81-a0cf38a98648.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10174013Z-56904591-0b89-4b08-8939-71664c21e1ca.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10174654Z-0dfe2b1e-f1c0-46e4-a014-cad09b538ace.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10185254Z-f08d69d2-38d9-4171-a7c0-0126bb910222.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10185625Z-ab57c794-7eaa-4cf6-acf3-9a373226d935.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10185856Z-e139351e-f8d0-48d0-bf09-1087d7bd17d2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10185903Z-c5c8ee33-9bcf-4866-ac72-e8c8f9a31732.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10192311Z-4cec37ef-2d72-4134-9b3e-69c3907c14a4.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10200104Z-4e224093-a99c-4acf-9d66-b81502e05bb9.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_TestFiles\error-2011-04-10210151Z-7b1026a7-5a62-4949-8132-0e9f4a5cd90a.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="_TestFiles\errorlog.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_TestFiles\errorlog_1.2.csv" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.4\Microsoft.StyleCop.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

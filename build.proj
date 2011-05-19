@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="LocalBuild">
+	
+	<PropertyGroup>
+		<Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+		<OutputDirectory>$(MSBuildProjectDirectory)\_localbuild\</OutputDirectory>
+		<SourceDirectory>$(MSBuildProjectDirectory)\src\</SourceDirectory>
+		<OutputCompileDirectory>$(OutputDirectory)compile\</OutputCompileDirectory>
+		<OutputReportsDirectory>$(OutputDirectory)reports\</OutputReportsDirectory>
+		<OutputAppDirectory>$(OutputDirectory)app\</OutputAppDirectory>
+		<NUnitExe>$(MSBuildProjectDirectory)\packages\NUnit.2.5.9.10348\Tools\nunit-console.exe</NUnitExe>
+	</PropertyGroup>
+
+	<Import Project="$(MSBuildProjectDirectory)\tools\msbuild\MSBuild.Community.Tasks.Targets"/>
+
+	<ItemGroup>
+		<AppFiles Include="$(OutputCompileDirectory)Crepido.ElmahOfflineViewer.UI.exe" />
+		<AppFiles Include="$(OutputCompileDirectory)Crepido.ElmahOfflineViewer.Core.dll" />
+		<AppFiles Include="$(OutputCompileDirectory)Crepido.ElmahOfflineViewer.UI.exe.config" />
+		<AppFiles Include="$(OutputCompileDirectory)Ninject.dll" />
+		<AppFiles Include="$(OutputCompileDirectory)NLog.dll" />
+	</ItemGroup>
+	
+	<Target Name="Clean">
+		<RemoveDir Directories="$(OutputDirectory)" Condition="Exists($(OutputDirectory))" />
+		<MakeDir Directories="$(OutputDirectory)" />
+		<MakeDir Directories="$(OutputReportsDirectory)" />
+		<MakeDir Directories="$(OutputAppDirectory)" />
+		<MakeDir Directories="$(OutputAppDirectory)_ElmahExporter" />
+	</Target>
+
+	<Target Name="LocalBuild">
+		<CallTarget Targets="SetAssemblyVersion" />
+		<CallTarget Targets="Build" />
+		<CallTarget Targets="ResetAssemblyVersion" />
+		<CallTarget Targets="Test" />
+		<CallTarget Targets="BundleApp" />
+		<CallTarget Targets="ZipApp" />
+	</Target>
+	
+	<Target Name="SetAssemblyVersion">
+		<Time>
+			<Output TaskParameter="Month" PropertyName="Month" />
+			<Output TaskParameter="Day"	PropertyName="Day" />
+			<Output TaskParameter="Year" PropertyName="Year" />
+			<Output TaskParameter="Hour" PropertyName="Hour" />
+			<Output TaskParameter="Minute" PropertyName="Minute" />
+			<Output TaskParameter="Second" PropertyName="Second" />
+		</Time>
+		
+		<FileUpdate 
+				Files="$(SourceDirectory)SolutionInfo.cs"
+			    Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)"
+			    ReplacementText="$(Year).$(Month).$(Day).$(Hour)$(Minute)" />
+	</Target>
+	
+	<Target Name="Build" DependsOnTargets="Clean">
+		<MSBuild Targets="ReBuild" Projects="$(SourceDirectory)ElmahOfflineViewer.sln" Properties="Configuration=$(Configuration);OutDir=$(OutputCompileDirectory);" />
+	</Target>
+
+	<Target Name="ResetAssemblyVersion">
+		<FileUpdate
+				Files="$(SourceDirectory)SolutionInfo.cs"
+			    Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)"
+			    ReplacementText="0.0.0.0" />
+	</Target>
+			
+	<Target Name="Test">
+		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.UnitTests.dll /xml=$(OutputReportsDirectory)unittests_report.xml"  />
+		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)Crepido.ElmahOfflineViewer.IntegrationTests.dll /xml=$(OutputReportsDirectory)integrationtests_report.xml"  />
+	</Target>
+	
+	<Target Name="BundleApp">
+		<Copy SourceFiles="@(AppFiles)" DestinationFolder="$(OutputAppDirectory)"/>
+</Target>
+
+	<Target Name="ZipApp">
+		<Zip 
+			Files="@(AppFiles);@(ElmahExporterFiles)"
+			WorkingDirectory="$(OutputCompileDirectory)"
+			ZipFileName="$(OutputDirectory)ElmahOfflineViewer-$(Configuration)-$(Year).$(Month).$(Day).$(Hour)$(Minute).zip"/>
+	</Target>
+	
+</Project> 

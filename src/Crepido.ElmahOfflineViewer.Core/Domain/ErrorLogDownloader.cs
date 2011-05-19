@@ -59,6 +59,20 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
             Parallel.ForEach(errors, error => SaveXmlToFile(error.Xml, error.FilePath));
         }
 
+        private static Uri ResolveErrorLogDownloadUrl(KeyValuePair<Uri, DateTime> entry)
+        {
+            return new Uri(entry.Key.AbsoluteUri.Replace("/detail?", "/xml?"));
+        }
+
+        private static string ResolveErrorLogFileName(Uri detailsUrl, DateTime time)
+        {
+            const string template = "error-{0:yyyy'-'MM'-'dd}T{0:HHmmss}Z-{1}.xml";
+
+            var startIndex = detailsUrl.AbsoluteUri.LastIndexOf('=');
+            var id = detailsUrl.AbsoluteUri.Substring(startIndex + 1);
+            return string.Format(CultureInfo.InvariantCulture, template, time.ToUniversalTime(), id);
+        }
+
         private void SaveXmlToFile(string xml, string path)
         {
             _fileSystemsHelper.CreateTextFile(path, xml);
@@ -91,23 +105,9 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
             return _settingsManager.GetMaxNumberOfLogs() == -1 ? CsvContent : CsvContent.Take(_settingsManager.GetMaxNumberOfLogs());
         }
         
-        private Uri ResolveErrorLogDownloadUrl(KeyValuePair<Uri, DateTime> entry)
-        {
-            return new Uri(entry.Key.AbsoluteUri.Replace("/detail?", "/xml?"));
-        }
-
         private bool ErrorlogAlreadyDownloaded(string path)
         {
             return _fileSystemsHelper.FileExists(path);
-        }
-
-        private string ResolveErrorLogFileName(Uri detailsUrl, DateTime time)
-        {
-            const string template = "error-{0:yyyy'-'MM'-'dd}T{0:HHmmss}Z-{1}.xml";
-
-            var startIndex = detailsUrl.AbsoluteUri.LastIndexOf('=');
-            var id = detailsUrl.AbsoluteUri.Substring(startIndex + 1);
-            return string.Format(CultureInfo.InvariantCulture, template, time.ToUniversalTime(), id);
         }
     }
 }

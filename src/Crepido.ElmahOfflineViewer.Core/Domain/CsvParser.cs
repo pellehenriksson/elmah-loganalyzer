@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Crepido.ElmahOfflineViewer.Core.Common;
 using Microsoft.VisualBasic.FileIO;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
-	using Crepido.ElmahOfflineViewer.Core.Common;
-
 	public class CsvParser
 	{
 		public IEnumerable<KeyValuePair<Uri, DateTime>> Parse(string content)

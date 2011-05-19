@@ -33,6 +33,9 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this._urlTextBox = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
+			this._errorGroupBox = new System.Windows.Forms.GroupBox();
+			this._errorMessageLabel = new System.Windows.Forms.Label();
+			this._errorGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// _cancelButton
@@ -82,11 +85,30 @@
 			this.label2.TabIndex = 2;
 			this.label2.Text = "Example: http://www.myapp.com/elmah.axd";
 			// 
+			// _errorGroupBox
+			// 
+			this._errorGroupBox.Controls.Add(this._errorMessageLabel);
+			this._errorGroupBox.Location = new System.Drawing.Point(89, 67);
+			this._errorGroupBox.Name = "_errorGroupBox";
+			this._errorGroupBox.Size = new System.Drawing.Size(400, 66);
+			this._errorGroupBox.TabIndex = 6;
+			this._errorGroupBox.TabStop = false;
+			this._errorGroupBox.Text = "Error";
+			// 
+			// _errorMessageLabel
+			// 
+			this._errorMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._errorMessageLabel.Location = new System.Drawing.Point(3, 16);
+			this._errorMessageLabel.Name = "_errorMessageLabel";
+			this._errorMessageLabel.Size = new System.Drawing.Size(394, 47);
+			this._errorMessageLabel.TabIndex = 0;
+			// 
 			// SelectServerForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(501, 202);
+			this.Controls.Add(this._errorGroupBox);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this._urlTextBox);
 			this.Controls.Add(this.label1);
@@ -99,6 +121,7 @@
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Select server";
+			this._errorGroupBox.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -111,5 +134,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox _urlTextBox;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.GroupBox _errorGroupBox;
+		private System.Windows.Forms.Label _errorMessageLabel;
 	}
 }

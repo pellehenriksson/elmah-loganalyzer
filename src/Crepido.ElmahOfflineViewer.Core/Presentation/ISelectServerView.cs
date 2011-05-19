@@ -8,6 +8,10 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 
 		string Url { get; }
 
-		void DisplayErrorMessage();
+		void DisplayErrorMessage(string message);
+
+		void ClearErrorMessage();
+
+		void CloseView();
 	}
 }

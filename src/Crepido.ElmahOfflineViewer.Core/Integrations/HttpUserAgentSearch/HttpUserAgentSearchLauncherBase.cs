@@ -1,21 +1,21 @@
 ﻿using System;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 
 namespace Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentSearch
 {
 	public abstract class HttpUserAgentSearchLauncherBase
 	{
-		protected HttpUserAgentSearchLauncherBase(IProcessStarter processStarter)
+		protected HttpUserAgentSearchLauncherBase(IUrlNavigationLauncher urlNavigationLauncher)
 		{
-			ProcessStarter = processStarter;
+			UrlNavigationLauncher = urlNavigationLauncher;
 		}
 
-		public IProcessStarter ProcessStarter { get; private set; }
+		public IUrlNavigationLauncher UrlNavigationLauncher { get; private set; }
 
 		public void Launch(string httpUserAgentString)
 		{
 			var url = BuildUrl(httpUserAgentString);
-			ProcessStarter.Run(url);
+			UrlNavigationLauncher.Launch(url);
 		}
 
 		public abstract string GetUrlTemplate();

@@ -12,20 +12,20 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations.HttpUserAgentSearch
 		public void Ctor_SetsProcessHelper()
 		{
 			// arrange
-			var starter = new FakeProcessStarter();
+			var starter = new FakeUrlNavigationLauncher();
 
 			// act
 			var launcher = new UserAgentStringSearchLauncher(starter);
 
 			// assert
-			Assert.That(launcher.ProcessStarter, Is.EqualTo(starter));
+			Assert.That(launcher.UrlNavigationLauncher, Is.EqualTo(starter));
 		}
 
 		[Test]
 		public void Launch_BuildUrlAndLaunch()
 		{
 			// arrange
-			var starter = new FakeProcessStarter();
+			var starter = new FakeUrlNavigationLauncher();
 			var launcher = new UserAgentStringSearchLauncher(starter);
 			const string httpUserAgent = "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/534.25 (KHTML, like Gecko) Chrome/12.0.706.0 Safari/534.25";
 

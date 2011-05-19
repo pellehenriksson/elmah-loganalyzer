@@ -1,10 +1,10 @@
-﻿using Crepido.ElmahOfflineViewer.Core.Infrastructure;
+﻿using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 
 namespace Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentSearch
 {
 	public interface IHttpUserAgentSearchLauncher
 	{
-		IProcessStarter ProcessStarter { get; }
+		IUrlNavigationLauncher UrlNavigationLauncher { get; }
 
 		void Launch(string httpUserAgentString);
 	}

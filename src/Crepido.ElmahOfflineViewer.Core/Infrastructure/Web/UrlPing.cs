@@ -12,6 +12,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Web
 
 			try
 			{
+				//// todo: should verify that elmah.axd responded and not just some server
 				using (var response = (HttpWebResponse)request.GetResponse())
 				{
 					return response.StatusCode == HttpStatusCode.OK;

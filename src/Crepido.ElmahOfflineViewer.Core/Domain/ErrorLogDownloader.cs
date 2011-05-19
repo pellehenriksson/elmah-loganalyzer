@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.FileSystem;
@@ -92,14 +93,11 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
         private string ResolveErrorLogFileName(Uri detailsUrl, DateTime time)
         {
-            const string template = "error-{0}-{1}.xml";
+            const string template = "error-{0:yyyy'-'MM'-'dd}T{0:HHmmss}Z-{1}.xml";
 
             var startIndex = detailsUrl.AbsoluteUri.LastIndexOf('=');
             var id = detailsUrl.AbsoluteUri.Substring(startIndex + 1);
-
-            var date = time.ToString().Replace(":", string.Empty).Replace(" ", "-") + "Z";
-
-            return string.Format(template, date, id);
+            return string.Format(CultureInfo.InvariantCulture, template, time.ToUniversalTime(), id);
         }
     }
 }

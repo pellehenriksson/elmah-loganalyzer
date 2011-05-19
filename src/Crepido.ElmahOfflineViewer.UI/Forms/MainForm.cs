@@ -47,6 +47,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Forms
 			_showSearchViewButton.Enabled = false;
 			_showReportViewButton.Enabled = false;
 			_selectDirectoryButton.Enabled = false;
+			_selectServerButton.Enabled = false;
 			_showSettingsViewButton.Enabled = false;
 
 			LoadView(new LoadingView());
@@ -57,6 +58,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Forms
 			_showSearchViewButton.Enabled = true;
 			_showReportViewButton.Enabled = true;
 			_selectDirectoryButton.Enabled = true;
+			_selectServerButton.Enabled = true;
 			_showSettingsViewButton.Enabled = true;
 
 			_mainPanel.Controls.Clear();
@@ -67,6 +69,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Forms
 			_showSearchViewButton.Enabled = false;
 			_showReportViewButton.Enabled = false;
 			_selectDirectoryButton.Enabled = true;
+			_selectServerButton.Enabled = true;
 			_showSettingsViewButton.Enabled = true;
 			
 			_mainPanel.Controls.Clear();
@@ -145,6 +148,8 @@ namespace Crepido.ElmahOfflineViewer.UI.Forms
 		
 		private void SelectDirectoryButtonClick(object sender, EventArgs e)
 		{
+			_folderBrowserDialog.SelectedPath = _repository.Directory;
+
 			var result = _folderBrowserDialog.ShowDialog(this);
 
 			if (result != DialogResult.OK)

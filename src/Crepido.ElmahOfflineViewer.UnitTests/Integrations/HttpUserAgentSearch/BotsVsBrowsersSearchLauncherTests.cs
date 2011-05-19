@@ -12,20 +12,20 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations.HttpUserAgentSearch
 		public void Ctor_SetsProcessHelper()
 		{
 			// arrange
-			var starter = new FakeProcessStarter();
+			var starter = new FakeUrlNavigationLauncher();
 			
 			// act
 			var launcher = new BotsVsBrowsersSearchLauncher(starter);
 
 			// assert
-			Assert.That(launcher.ProcessStarter, Is.EqualTo(starter));
+			Assert.That(launcher.UrlNavigationLauncher, Is.EqualTo(starter));
 		}
 
 		[Test]
 		public void Launch_BuildUrlAndLaunch()
 		{
 			// arrange
-			var starter = new FakeProcessStarter();
+			var starter = new FakeUrlNavigationLauncher();
 			var launcher = new BotsVsBrowsersSearchLauncher(starter);
 			const string httpUserAgent = "AdsBot-Google-Mobile (Android; +http://www.google.com/adsbot.html) AppleWebKit";
 

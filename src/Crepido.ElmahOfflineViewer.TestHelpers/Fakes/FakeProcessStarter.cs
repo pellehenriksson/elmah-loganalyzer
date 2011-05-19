@@ -1,23 +1,15 @@
 ﻿using System;
-using Crepido.ElmahOfflineViewer.Core.Infrastructure;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 
 namespace Crepido.ElmahOfflineViewer.TestHelpers.Fakes
 {
-	public class FakeProcessStarter : IProcessStarter
+	public class FakeUrlNavigationLauncher : IUrlNavigationLauncher
 	{
 		public Uri RunWithUrl { get; private set; }
 
-		public string RunWithArguments { get; set; }
-
-		public void Run(Uri url)
+		public void Launch(Uri url)
 		{
 			RunWithUrl = url;
-		}
-
-		public void Run(Uri url, string arguments)
-		{
-			RunWithUrl = url;
-			RunWithArguments = arguments;
 		}
 	}
 }

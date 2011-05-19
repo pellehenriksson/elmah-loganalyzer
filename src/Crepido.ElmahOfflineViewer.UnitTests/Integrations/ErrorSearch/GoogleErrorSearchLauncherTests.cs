@@ -12,7 +12,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Integrations.ErrorSearch
 		public void Launch_BuildUrlAndLaunch()
 		{
 			// arrange
-			var starter = new FakeProcessStarter();
+			var starter = new FakeUrlNavigationLauncher();
 			var launcher = new GoogleErrorSearchLauncher(starter);
 			var errorLog = CreateFakeErrorLog();
 

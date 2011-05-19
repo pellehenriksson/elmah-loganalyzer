@@ -28,7 +28,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Dependencies
 			Bind<ICacheHelper>().To<CacheHelper>();
 			Bind<IWebRequestHelper>().To<WebRequestHelper>();
 			Bind<IClientInformationResolver>().To<ClientInformationResolver>();
-			Bind<IProcessStarter>().To<ProcessStarter>();
+			Bind<IUrlNavigationLauncher>().To<UrlNavigationLauncher>();
 			Bind<IUrlPing>().To<UrlPing>();
 			Bind<IHttpUserAgentSearchLauncher>().To<UserAgentStringSearchLauncher>();
 			Bind<IFileSystemHelper>().To<FileSystemHelper>();

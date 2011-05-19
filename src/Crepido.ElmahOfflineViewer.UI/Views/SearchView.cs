@@ -33,21 +33,45 @@ namespace Crepido.ElmahOfflineViewer.UI.Views
 
 		public void LoadTypes(IEnumerable<string> types)
 		{
+			if (InvokeRequired)
+			{
+				this.InvokeEx(x => x._FilterView.LoadTypes(types));
+				return;
+			}
+
 			_FilterView.LoadTypes(types);
 		}
 
 		public void LoadSources(IEnumerable<string> sources)
 		{
+			if (InvokeRequired)
+			{
+				this.InvokeEx(x => x._FilterView.LoadSources(sources));
+				return;
+			}
+
 			_FilterView.LoadSources(sources);
 		}
 
 		public void LoadUsers(IEnumerable<string> users)
 		{
+			if (InvokeRequired)
+			{
+				this.InvokeEx(x => x._FilterView.LoadUsers(users));
+				return;
+			}
+
 			_FilterView.LoadUsers(users);
 		}
 
 		public void LoadUrls(IEnumerable<string> urls)
 		{
+			if (InvokeRequired)
+			{
+				this.InvokeEx(x => x._FilterView.LoadUrls(urls));
+				return;
+			}
+
 			_FilterView.LoadUrls(urls);
 		}
 

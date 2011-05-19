@@ -60,8 +60,8 @@ namespace Crepido.ElmahOfflineViewer.UI.Forms
 			_selectDirectoryButton.Enabled = true;
 			_selectServerButton.Enabled = true;
 			_showSettingsViewButton.Enabled = true;
-
-			_mainPanel.Controls.Clear();
+			
+			LoadSearchView();
 		}
 		
 		private void SetErrorLoadingState()
@@ -159,13 +159,18 @@ namespace Crepido.ElmahOfflineViewer.UI.Forms
 
 			HandleLoadingFromDirectory(_folderBrowserDialog.SelectedPath);
 		}
-		
-		private void ShowSearchViewButtonClick(object sender, EventArgs e)
+
+		private void LoadSearchView()
 		{
 			var presenter = ServiceLocator.Resolve<SearchPresenter>();
 			LoadView(presenter.View as Control);
 		}
 
+		private void ShowSearchViewButtonClick(object sender, EventArgs e)
+		{
+			LoadSearchView();
+		}
+		
 		private void ShowReportViewButtonClick(object sender, EventArgs e)
 		{
 			var presenter = ServiceLocator.Resolve<ReportPresenter>();

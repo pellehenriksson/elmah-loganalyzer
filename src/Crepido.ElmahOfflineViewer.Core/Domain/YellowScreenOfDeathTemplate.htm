@@ -1,0 +1,106 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>@MESSAGE@</title>
+	<style type="text/css">
+		body
+		{
+			font-family: "Verdana";
+			font-weight: normal;
+			font-size: .7em;
+			color: black;
+		}
+		p
+		{
+			font-family: "Verdana";
+			font-weight: normal;
+			color: black;
+			margin-top: -5px;
+		}
+		b
+		{
+			font-family: "Verdana";
+			font-weight: bold;
+			color: black;
+			margin-top: -5px;
+		}
+		h1
+		{
+			font-family: "Verdana";
+			font-weight: normal;
+			font-size: 18pt;
+			color: red;
+		}
+		h2
+		{
+			font-family: "Verdana";
+			font-weight: normal;
+			font-size: 14pt;
+			color: maroon;
+		}
+		pre
+		{
+			font-family: "Lucida Console";
+			font-size: .9em;
+		}
+		.marker
+		{
+			font-weight: bold;
+			color: black;
+			text-decoration: none;
+		}
+		.version
+		{
+			color: gray;
+		}
+		.error
+		{
+			margin-bottom: 10px;
+		}
+		.expandable
+		{
+			text-decoration: underline;
+			font-weight: bold;
+			color: navy;
+			cursor: hand;
+		}
+	</style>
+</head>
+<body bgcolor="white">
+	<h1>
+		Server Error in '@APPLICATION@' Application.</h1>
+	<hr width="100%" size="1" color="silver" />
+	<h2>
+		<i>@MESSAGE@</i>
+	</h2>
+	<b>Description:</b>An unhandled exception occurred during the execution of the current
+	web request. Please review the stack trace for more information about the error
+	and where it originated in the code.
+	<br />
+	<br />
+	<b>Exception Details: </b>@TYPE@: @MESSAGE@
+	<br />
+	<br />
+	<b>Source Error:</b>
+	<br />
+	<br />
+	<table width="100%" bgcolor="#ffffcc">
+		<tr>
+			<td>
+				<code>@SOURCE@</code>
+			</td>
+		</tr>
+	</table>
+	<br />
+	<b>Stack trace:</b>
+	<br />
+	<br />
+	<table width="100%" bgcolor="#ffffcc">
+		<tr>
+			<td>
+				<code>@STACK_TRACE@</code>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

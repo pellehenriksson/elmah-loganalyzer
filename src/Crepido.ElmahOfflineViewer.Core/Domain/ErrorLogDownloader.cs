@@ -9,6 +9,9 @@ using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
+    using System.Diagnostics;
+    using System.Threading.Tasks;
+
     public class ErrorLogDownloader : IErrorLogDownloader
     {
         private readonly IWebRequestHelper _webRequst;
@@ -36,22 +39,29 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
             CreateDownloadDirectory();
             ResolveLogsAvailableForDownload();
 
-            var logsToDownload = ResolveLogsToDownload();
+            var entries = ResolveLogsToDownload();
 
-            foreach (var log in logsToDownload)
-            {
-                var errorlogXmlDownloadUrl = ResolveErrorLogDownloadUrl(log);
-                var errorlogFileName = ResolveErrorLogFileName(errorlogXmlDownloadUrl, log.Value);
-                var errorlogFilePath = Path.Combine(DownloadDirectory, errorlogFileName);
+            var webRequst = _webRequst;
+            var downloadDirectory = DownloadDirectory;
 
-                if (ErrorlogAlreadyDownloaded(errorlogFilePath))
+            var errors = // ...
+                from entry in entries 
+                let downloadUrl = ResolveErrorLogDownloadUrl(entry)
+                let fileName = ResolveErrorLogFileName(downloadUrl, entry.Value)
+                let path = Path.Combine(downloadDirectory, fileName)
+                where !ErrorlogAlreadyDownloaded(path)
+                select new
                 {
-                    continue;
-                }
+                    FilePath = path,
+                    Xml = webRequst.Uri(downloadUrl),
+                };
 
-                var xmlContent = _webRequst.Uri(errorlogXmlDownloadUrl);
-                _fileSystemsHelper.CreateTextFile(errorlogFilePath, xmlContent);
-            }
+            Parallel.ForEach(errors, error => SaveXmlToFile(error.Xml, error.FilePath));
+        }
+
+        private void SaveXmlToFile(string xml, string path)
+        {
+            _fileSystemsHelper.CreateTextFile(path, xml);
         }
 
         private void ResolveDownloadDirectory()

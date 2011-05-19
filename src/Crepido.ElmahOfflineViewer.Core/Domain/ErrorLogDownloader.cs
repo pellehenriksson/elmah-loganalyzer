@@ -40,16 +40,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
             foreach (var log in logsToDownload)
             {
                 var errorlogXmlDownloadUrl = ResolveErrorLogDownloadUrl(log);
-
-            	Console.Out.WriteLine(errorlogXmlDownloadUrl);
-
                 var errorlogFileName = ResolveErrorLogFileName(errorlogXmlDownloadUrl, log.Value);
-
-            	Console.Out.WriteLine(errorlogFileName);
-
                 var errorlogFilePath = Path.Combine(DownloadDirectory, errorlogFileName);
-
-            	Console.Out.WriteLine(errorlogFilePath);
 
                 if (ErrorlogAlreadyDownloaded(errorlogFilePath))
                 {
@@ -77,14 +69,19 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
         
         private void ResolveLogsAvailableForDownload()
         {
-        	var downloadCsvUrl = new Uri(ServerUrl + "/download");
+        	var downloadCsvUrl = ResolveDownloadCsvUrl();
 			var csvContent = _webRequst.Uri(downloadCsvUrl);
             var parser = new CsvParser();
 
             CsvContent = parser.Parse(csvContent).ToList(/* materialize */);
         }
 
-        private IEnumerable<KeyValuePair<Uri, DateTime>> ResolveLogsToDownload()
+    	private Uri ResolveDownloadCsvUrl()
+    	{
+    		return new Uri(ServerUrl + "/download");
+    	}
+		
+    	private IEnumerable<KeyValuePair<Uri, DateTime>> ResolveLogsToDownload()
         {
             return _settingsManager.GetMaxNumberOfLogs() == -1 ? CsvContent : CsvContent.Take(_settingsManager.GetMaxNumberOfLogs());
         }

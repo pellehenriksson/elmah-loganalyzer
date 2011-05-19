@@ -11,21 +11,23 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
     public class ErrorLogDownloader : IErrorLogDownloader
     {
         private readonly IWebRequestHelper _webRequst;
-        private readonly IFileSystemHelper _fileSystemsHelper;
-        private readonly ISettingsManager _settingsManager;
+        private readonly IFileSystemHelper _fileSystemHelper;
+    	private readonly ICsvParser _csvParser;
+		private readonly ISettingsManager _settingsManager;
         
-        public ErrorLogDownloader(IWebRequestHelper webRequst, IFileSystemHelper fileSystemHelper, ISettingsManager settingsManager)
+        public ErrorLogDownloader(IWebRequestHelper webRequst, IFileSystemHelper fileSystemHelper, ICsvParser csvParser, ISettingsManager settingsManager)
         {
             _webRequst = webRequst;
-            _fileSystemsHelper = fileSystemHelper;
+            _fileSystemHelper = fileSystemHelper;
+        	_csvParser = csvParser;
             _settingsManager = settingsManager;
         }
-
-        public Uri ServerUrl { get; private set; }
-
+	
         public string DownloadDirectory { get; private set; }
 
-        public IEnumerable<KeyValuePair<Uri, DateTime>> CsvContent { get; private set; }
+		private Uri ServerUrl { get; set; }
+		
+        private IEnumerable<KeyValuePair<Uri, DateTime>> CsvContent { get; set; }
 
         public void Download(Uri url)
         {
@@ -49,21 +51,21 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
                 }
 
                 var xmlContent = _webRequst.Uri(errorlogXmlDownloadUrl);
-                _fileSystemsHelper.CreateTextFile(errorlogFilePath, xmlContent);
+                _fileSystemHelper.CreateTextFile(errorlogFilePath, xmlContent);
             }
         }
 
         private void ResolveDownloadDirectory()
         {
             var folder = ServerUrl.Host;
-            DownloadDirectory = Path.Combine(_fileSystemsHelper.GetCurrentDirectory(), folder);
+            DownloadDirectory = Path.Combine(_fileSystemHelper.GetCurrentDirectory(), folder);
         }
 
         private void CreateDownloadDirectory()
         {
-            if (!_fileSystemsHelper.DirectoryExists(DownloadDirectory))
+            if (!_fileSystemHelper.DirectoryExists(DownloadDirectory))
             {
-                _fileSystemsHelper.CreateDirectory(DownloadDirectory);
+                _fileSystemHelper.CreateDirectory(DownloadDirectory);
             }
         }
         
@@ -71,8 +73,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
         {
         	var downloadUrl = new ElmahUrlHelper().ResolveCsvDownloadUrl(ServerUrl);
 			var csvContent = _webRequst.Uri(downloadUrl);
-            var parser = new CsvParser();
-            CsvContent = parser.Parse(csvContent).ToList(/* materialize */);
+			CsvContent = _csvParser.Parse(csvContent).ToList(/* materialize */);
         }
 
         private IEnumerable<KeyValuePair<Uri, DateTime>> ResolveLogsToDownload()
@@ -87,7 +88,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
         private bool ErrorlogAlreadyDownloaded(string path)
         {
-            return _fileSystemsHelper.FileExists(path);
+            return _fileSystemHelper.FileExists(path);
         }
 
         private string ResolveErrorLogFileName(Uri detailsUrl, DateTime time)

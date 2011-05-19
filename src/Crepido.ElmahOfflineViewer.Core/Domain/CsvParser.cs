@@ -8,7 +8,7 @@ using Microsoft.VisualBasic.FileIO;
 
 namespace Crepido.ElmahOfflineViewer.Core.Domain
 {
-	public class CsvParser
+	public class CsvParser : ICsvParser
 	{
 		public IEnumerable<KeyValuePair<Uri, DateTime>> Parse(string content)
 		{

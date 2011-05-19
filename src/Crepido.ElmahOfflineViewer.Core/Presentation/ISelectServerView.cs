@@ -6,7 +6,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 	{
 		event EventHandler OnConnectToServer;
 
-		string Url { get; }
+		string Url { get; set; }
 
 		void DisplayErrorMessage(string message);
 

@@ -17,6 +17,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Forms
 		public string Url
 		{
 			get { return _urlTextBox.Text; }
+			set { _urlTextBox.Text = value; }
 		}
 
 		public void DisplayErrorMessage(string message)

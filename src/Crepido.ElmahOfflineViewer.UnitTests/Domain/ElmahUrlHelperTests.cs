@@ -34,5 +34,33 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			// assert
 			Assert.That(result.AbsoluteUri, Is.EqualTo("http://www.test.com/elmah.axd/download"));
 		}
+
+		[Test]
+		public void ResolveElmahRootUrl_UrlIsDefaultRoot_ReturnsUrl()
+		{
+			// arrange
+			var helper = new ElmahUrlHelper();
+			var serverUri = new Uri("http://www.test.com/elmah.axd");
+
+			// act
+			var result = helper.ResolveElmahRootUrl(serverUri);
+
+			// assert
+			Assert.That(result, Is.EqualTo(serverUri));
+		}
+
+		[Test]
+		public void ResolveElmahRootUrl_UrlIsMissingElmahExtension_ReturnWithAddedElmahExtension()
+		{
+			// arrange
+			var helper = new ElmahUrlHelper();
+			var serverUri = new Uri("http://www.test.com");
+
+			// act
+			var result = helper.ResolveElmahRootUrl(serverUri);
+
+			// assert
+			Assert.That(result.AbsoluteUri, Is.EqualTo("http://www.test.com/elmah.axd"));
+		}
 	}
 }

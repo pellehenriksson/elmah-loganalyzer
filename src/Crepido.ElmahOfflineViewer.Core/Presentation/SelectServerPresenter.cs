@@ -1,5 +1,6 @@
 ﻿using System;
 using Crepido.ElmahOfflineViewer.Core.Common;
+using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 
 namespace Crepido.ElmahOfflineViewer.Core.Presentation
@@ -35,7 +36,11 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 
 			try
 			{
-				var serverResponded = _urlPing.Ping(new Uri(View.Url));
+				var serverUrl = new Uri(View.Url);
+				serverUrl = new ElmahUrlHelper().ResolveElmahRootUrl(serverUrl);
+				View.Url = serverUrl.AbsoluteUri;
+
+				var serverResponded = _urlPing.Ping(serverUrl);
 
 				if (!serverResponded)
 				{

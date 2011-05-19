@@ -31,6 +31,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Dependencies
 			Bind<IUrlNavigationLauncher>().To<UrlNavigationLauncher>();
 			Bind<IErrorLogDownloader>().To<ErrorLogDownloader>();
 			Bind<IUrlPing>().To<UrlPing>();
+			Bind<ICsvParser>().To<CsvParser>();
 			Bind<IHttpUserAgentSearchLauncher>().To<UserAgentStringSearchLauncher>();
 			Bind<IFileSystemHelper>().To<FileSystemHelper>();
 			Bind<ILog>().ToMethod(GetLogger);

@@ -69,6 +69,7 @@
     <Compile Include="Domain\ClientInformationResolver.cs" />
     <Compile Include="Domain\ErrorLog.cs" />
     <Compile Include="Domain\ErrorLogFileParser.cs" />
+    <Compile Include="Domain\ICsvParser.cs" />
     <Compile Include="Domain\IErrorLogDownloader.cs" />
     <Compile Include="Domain\IErrorLogSourceFactory.cs" />
     <Compile Include="Domain\ErrorLogDownloader.cs" />

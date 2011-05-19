@@ -1,4 +1,4 @@
-﻿using Crepido.ElmahOfflineViewer.Core.Infrastructure;
+﻿using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 
 namespace Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentSearch
 {
@@ -6,7 +6,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentSearch
 	{
 		private const string UrlTemplate = "http://www.useragentstring.com/?uas={0}&key=pelHenriGmCom";
 
-		public UserAgentStringSearchLauncher(IProcessStarter processStarter) : base(processStarter)
+		public UserAgentStringSearchLauncher(IUrlNavigationLauncher urlNavigationLauncher) : base(urlNavigationLauncher)
 		{
 		}
 		

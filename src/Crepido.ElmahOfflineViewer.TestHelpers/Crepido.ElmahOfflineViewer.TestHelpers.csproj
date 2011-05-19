@@ -42,7 +42,7 @@
     </Compile>
     <Compile Include="Fakes\FakeClientInformationResolver.cs" />
     <Compile Include="Fakes\FakeDataSourceFactory.cs" />
-    <Compile Include="Fakes\FakeProcessStarter.cs" />
+    <Compile Include="Fakes\FakeUrlNavigationLauncher.cs" />
     <Compile Include="Fakes\FakeSettingsManager.cs" />
     <Compile Include="Fakes\FakeUrlPing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

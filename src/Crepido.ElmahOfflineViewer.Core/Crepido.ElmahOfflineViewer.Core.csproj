@@ -63,6 +63,7 @@
     <Compile Include="Constants\Browsers.cs" />
     <Compile Include="Constants\Platforms.cs" />
     <Compile Include="Domain\CsvParser.cs" />
+    <Compile Include="Domain\ElmahUrlHelper.cs" />
     <Compile Include="Domain\IClientInformationResolver.cs" />
     <Compile Include="Domain\BrowserVersionResolver.cs" />
     <Compile Include="Domain\ClientInformationResolver.cs" />
@@ -96,9 +97,8 @@
     <Compile Include="Infrastructure\FileSystem\FileSystemHelper.cs" />
     <Compile Include="Infrastructure\FileSystem\IFileSystemHelper.cs" />
     <Compile Include="Infrastructure\Logging\ILog.cs" />
-    <Compile Include="Infrastructure\IProcessStarter.cs" />
-    <Compile Include="Infrastructure\ProcessStarter.cs" />
     <Compile Include="Infrastructure\Settings\ISettingsManager.cs" />
+    <Compile Include="Infrastructure\Web\IUrlNavigationLauncher.cs" />
     <Compile Include="Infrastructure\Web\IUrlPing.cs" />
     <Compile Include="Infrastructure\Web\IWebRequestHelper.cs" />
     <Compile Include="Infrastructure\Cache\CacheHelper.cs" />
@@ -110,6 +110,7 @@
       <DependentUpon>UserSettings.settings</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Settings\SettingsManager.cs" />
+    <Compile Include="Infrastructure\Web\UrlNavigationLauncher.cs" />
     <Compile Include="Infrastructure\Web\UrlPing.cs" />
     <Compile Include="Infrastructure\Web\WebRequestHelper.cs" />
     <Compile Include="Integrations\ErrorSearch\BingErrorSearchLauncher.cs" />

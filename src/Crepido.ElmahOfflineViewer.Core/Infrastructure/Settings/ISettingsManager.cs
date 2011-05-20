@@ -2,6 +2,8 @@
 {
 	public interface ISettingsManager
 	{
+		bool ShouldGetAllLogs { get;  }
+
 		int GetMaxNumberOfLogs();
 
 		void SetMaxNumberOfLogs(int maxNumberOfLogs);

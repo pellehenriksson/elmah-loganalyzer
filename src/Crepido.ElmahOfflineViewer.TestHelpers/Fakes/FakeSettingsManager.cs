@@ -12,6 +12,11 @@ namespace Crepido.ElmahOfflineViewer.TestHelpers.Fakes
 			SetMaxNumberOfLogs(-1);
 		}
 
+		public bool ShouldGetAllLogs
+		{
+			get { return GetMaxNumberOfLogs() == -1;  }
+		}
+
 		public int GetMaxNumberOfLogs()
 		{
 			return _maxNumberOfLogs;

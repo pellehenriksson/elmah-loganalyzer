@@ -96,7 +96,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 		private IEnumerable<KeyValuePair<Uri, DateTime>> ResolveLogsToDownload()
 		{
-			return _settingsManager.GetMaxNumberOfLogs() == -1 ? CsvContent : CsvContent.Take(_settingsManager.GetMaxNumberOfLogs());
+			return _settingsManager.ShouldGetAllLogs ? CsvContent : CsvContent.Take(_settingsManager.GetMaxNumberOfLogs());
 		}
 		
 		private bool ErrorlogAlreadyDownloaded(string path)

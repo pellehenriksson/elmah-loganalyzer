@@ -42,7 +42,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		{
 			var files = _fileSystemHelper.GetFilesFromDirectory(directory, FileFilterPattern);
 
-			if (_settingsManager.GetMaxNumberOfLogs() == -1)
+			if (_settingsManager.ShouldGetAllLogs)
 			{
 				return files;
 			}

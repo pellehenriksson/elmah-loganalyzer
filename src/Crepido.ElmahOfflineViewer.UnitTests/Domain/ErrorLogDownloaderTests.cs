@@ -41,7 +41,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			downloader.Download(url);
 
 			// assert
-			_fileSystemHelper.Verify(x => x.CreateDirectory("c:\\test\\www.test.com"), Times.Once());
+			_fileSystemHelper.Verify(x => x.CreateDirectory("c:\\test\\www.test.com_80"), Times.Once());
 		}
 
 		[Test]

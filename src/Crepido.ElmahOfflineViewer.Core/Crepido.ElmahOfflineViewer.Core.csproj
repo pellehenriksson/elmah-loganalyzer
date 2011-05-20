@@ -63,6 +63,7 @@
     <Compile Include="Constants\Browsers.cs" />
     <Compile Include="Constants\Platforms.cs" />
     <Compile Include="Domain\CsvParser.cs" />
+    <Compile Include="Domain\DownloadDirectoryResolver.cs" />
     <Compile Include="Domain\ElmahUrlHelper.cs" />
     <Compile Include="Domain\IClientInformationResolver.cs" />
     <Compile Include="Domain\BrowserVersionResolver.cs" />

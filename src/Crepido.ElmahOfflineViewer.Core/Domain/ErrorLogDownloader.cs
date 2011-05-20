@@ -74,8 +74,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		}
 
 	    private void ResolveDownloadDirectory()
-		{
-			var folder = ServerUrl.Host;
+	    {
+	    	var folder = DownloadDirectoryResolver.Resolve(ServerUrl);
 			DownloadDirectory = Path.Combine(_fileSystemsHelper.GetCurrentDirectory(), folder);
 		}
 

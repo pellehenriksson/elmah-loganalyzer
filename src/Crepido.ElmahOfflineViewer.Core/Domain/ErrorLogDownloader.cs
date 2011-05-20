@@ -14,12 +14,14 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 	{
 		private readonly IWebRequestHelper _webRequst;
 		private readonly IFileSystemHelper _fileSystemsHelper;
+		private readonly ICsvParser _csvParser;
 		private readonly ISettingsManager _settingsManager;
 		
-		public ErrorLogDownloader(IWebRequestHelper webRequst, IFileSystemHelper fileSystemHelper, ISettingsManager settingsManager)
+		public ErrorLogDownloader(IWebRequestHelper webRequst, IFileSystemHelper fileSystemHelper, ICsvParser csvParser, ISettingsManager settingsManager)
 		{
 			_webRequst = webRequst;
 			_fileSystemsHelper = fileSystemHelper;
+			_csvParser = csvParser;
 			_settingsManager = settingsManager;
 		}
 
@@ -89,8 +91,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		{
 			var downloadUrl = new ElmahUrlHelper().ResolveCsvDownloadUrl(ServerUrl);
 			var csvContent = _webRequst.Uri(downloadUrl);
-			var parser = new CsvParser();
-			CsvContent = parser.Parse(csvContent).ToList(/* materialize */);
+			CsvContent = _csvParser.Parse(csvContent).ToList(/* materialize */);
 		}
 
 		private IEnumerable<KeyValuePair<Uri, DateTime>> ResolveLogsToDownload()

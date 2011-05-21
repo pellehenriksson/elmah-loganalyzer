@@ -38,24 +38,25 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 
 			try
 			{
-				var connection = new NetworkConnection(e.Url);
+				var elmahUrl = new ElmahUrlHelper().ResolveElmahRootUrl(e.Url);
+				var connection = new NetworkConnection(elmahUrl);
+
 				if (e.HasCredentials)
 				{
 					connection.SetCredentials(e.UserName, e.Password, e.Domain);
 				}
-
-				//// verify connection.url end with elmah.axd
-				//// var serverUrl = new ElmahUrlHelper().ResolveElmahRootUrl(connection.Uri);
-
+				
 				var serverResponded = _urlPing.Ping(connection);
 
 				if (!serverResponded)
 				{
+					// should include more information about the failure
 					View.DisplayErrorMessage("Failed to connect to server");
 					return;
 				}
 
 				Connnection = connection;
+
 				View.CloseView();
 			}
 			catch (ArgumentException)

@@ -40,13 +40,13 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		{
 			// arrange
 			var helper = new ElmahUrlHelper();
-			var serverUri = new Uri("http://www.test.com/elmah.axd");
+			var url = "http://www.test.com/elmah.axd";
 
 			// act
-			var result = helper.ResolveElmahRootUrl(serverUri);
+			var result = helper.ResolveElmahRootUrl(url);
 
 			// assert
-			Assert.That(result, Is.EqualTo(serverUri));
+			Assert.That(result, Is.EqualTo(url));
 		}
 
 		[Test]
@@ -54,13 +54,13 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		{
 			// arrange
 			var helper = new ElmahUrlHelper();
-			var serverUri = new Uri("http://www.test.com");
+			const string url = "http://www.test.com";
 
 			// act
-			var result = helper.ResolveElmahRootUrl(serverUri);
+			var result = helper.ResolveElmahRootUrl(url);
 
 			// assert
-			Assert.That(result.AbsoluteUri, Is.EqualTo("http://www.test.com/elmah.axd"));
+			Assert.That(result, Is.EqualTo("http://www.test.com/elmah.axd"));
 		}
 	}
 }

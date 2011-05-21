@@ -41,6 +41,7 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this._domainTextBox = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
 			this._errorGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -158,11 +159,20 @@
 			this.label5.TabIndex = 7;
 			this.label5.Text = "Domain:";
 			// 
+			// label6
+			// 
+			this.label6.Location = new System.Drawing.Point(358, 88);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(131, 46);
+			this.label6.TabIndex = 12;
+			this.label6.Text = "Not required unless you need to supply Windows credentials to the server.";
+			// 
 			// SelectServerForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(501, 261);
+			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this._domainTextBox);
 			this.Controls.Add(this.label4);
@@ -203,5 +213,6 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox _domainTextBox;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label6;
 	}
 }

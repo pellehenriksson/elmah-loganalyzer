@@ -25,7 +25,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Settings {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
         public int MaxNumberOfLogs {
             get {
                 return ((int)(this["MaxNumberOfLogs"]));

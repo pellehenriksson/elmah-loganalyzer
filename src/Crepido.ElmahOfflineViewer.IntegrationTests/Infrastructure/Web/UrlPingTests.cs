@@ -1,4 +1,5 @@
-﻿using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
+﻿using Crepido.ElmahOfflineViewer.Core.Domain;
+using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 using NUnit.Framework;
 
 namespace Crepido.ElmahOfflineViewer.IntegrationTests.Infrastructure.Web
@@ -6,14 +7,14 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Infrastructure.Web
 	[TestFixture]
 	public class UrlPingTests : IntegrationTestBase
 	{
-		[Test]
+		[Test][Ignore("set up local elmah")]
 		public void Ping_ServerRespondedWithOk_ReturnsTrue()
 		{
 			// arrange
 			var helper = new UrlPing();
 
 			// act
-			var result = helper.Ping(ExistingUrl);
+			var result = helper.Ping(new NetworkConnection(ExistingUrl));
 
 			// assert
 			Assert.That(result, Is.True);
@@ -26,7 +27,7 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Infrastructure.Web
 			var helper = new UrlPing();
 
 			// act
-			var result = helper.Ping(NonExistantUrl);
+			var result = helper.Ping(new NetworkConnection(NonExistantUrl));
 
 			// assert
 			Assert.That(result, Is.False);

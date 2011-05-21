@@ -6,8 +6,6 @@ using NUnit.Framework;
 
 namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
 {
-	using System;
-
 	[TestFixture]
 	public class ErrorLogDownloaderTests
 	{
@@ -16,7 +14,7 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests.Domain
 		{
 			var downloader = new ErrorLogDownloader(new WebRequestHelper(), new FileSystemHelper(), new CsvParser(), new FakeSettingsManager());
 			const string url = "http://localhost:49899/elmah.axd/download";
-			downloader.Download(new Uri(url));
+			downloader.Download(new NetworkConnection(url));
 		}
 	}
 }

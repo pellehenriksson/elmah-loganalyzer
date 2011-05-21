@@ -1,21 +1,26 @@
 ﻿using System.Net;
+using Crepido.ElmahOfflineViewer.Core.Domain;
 
 namespace Crepido.ElmahOfflineViewer.Core.Infrastructure.Web
 {
-	using System;
-
 	public class UrlPing : IUrlPing
 	{
-		public bool Ping(Uri url)
+		public bool Ping(NetworkConnection connection)
 		{
-			var request = (HttpWebRequest)WebRequest.Create(url);
+			var request = (HttpWebRequest)WebRequest.Create(connection.Uri);
+
+			if (connection.HasCredentials)
+			{
+				request.UseDefaultCredentials = false;
+				request.Credentials = connection.GetCredentials();
+			}
 
 			try
 			{
-				//// todo: should verify that elmah.axd responded and not just some server
 				using (var response = (HttpWebResponse)request.GetResponse())
 				{
-					return response.StatusCode == HttpStatusCode.OK;
+					var responseUrl = response.ResponseUri.AbsoluteUri;
+					return connection.Uri.AbsoluteUri == responseUrl;
 				}
 			}
 			catch (WebException)

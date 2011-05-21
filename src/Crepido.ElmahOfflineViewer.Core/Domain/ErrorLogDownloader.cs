@@ -25,15 +25,15 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			_settingsManager = settingsManager;
 		}
 
-		public Uri ServerUrl { get; private set; }
+		public NetworkConnection Connection { get; private set; }
 
 		public string DownloadDirectory { get; private set; }
 
 		public IEnumerable<KeyValuePair<Uri, DateTime>> CsvContent { get; private set; }
 
-		public void Download(Uri url)
+		public void Download(NetworkConnection connection)
 		{
-			ServerUrl = url;
+			Connection = connection;
 
 			ResolveDownloadDirectory();
 			CreateDownloadDirectory();
@@ -46,8 +46,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 			var errors = // ...
 				from entry in entries 
-				let downloadUrl = ResolveErrorLogDownloadUrl(entry)
-				let fileName = ResolveErrorLogFileName(downloadUrl, entry.Value)
+				let downloadUrl = ResolveErrorLogDownloadUrl(Connection, entry)
+				let fileName = ResolveErrorLogFileName(downloadUrl.Uri, entry.Value)
 				let path = Path.Combine(downloadDirectory, fileName)
 				where !ErrorlogAlreadyDownloaded(path)
 				select new
@@ -59,9 +59,16 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			Parallel.ForEach(errors, error => _fileSystemsHelper.CreateTextFile(error.FilePath, error.Xml));
 		}
 
-		private static Uri ResolveErrorLogDownloadUrl(KeyValuePair<Uri, DateTime> entry)
+		private static NetworkConnection ResolveErrorLogDownloadUrl(NetworkConnection connection, KeyValuePair<Uri, DateTime> entry)
 		{
-			return new Uri(entry.Key.AbsoluteUri.Replace("/detail?", "/xml?"));
+			var url = entry.Key.AbsoluteUri.Replace("/detail?", "/xml?");
+			
+			if (connection.IsHttps)
+			{
+				url = url.Replace("http:", "https:");
+			}
+
+			return connection.CopyWithCredentials(url);
 		}
 
 		private static string ResolveErrorLogFileName(Uri detailsUrl, DateTime time)
@@ -70,12 +77,13 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 
 			var startIndex = detailsUrl.AbsoluteUri.LastIndexOf('=');
 			var id = detailsUrl.AbsoluteUri.Substring(startIndex + 1);
+			
 			return string.Format(CultureInfo.InvariantCulture, template, time.ToUniversalTime(), id);
 		}
 
 	    private void ResolveDownloadDirectory()
 	    {
-	    	var folder = DownloadDirectoryResolver.Resolve(ServerUrl);
+	    	var folder = DownloadDirectoryResolver.Resolve(Connection.Uri);
 			DownloadDirectory = Path.Combine(_fileSystemsHelper.GetCurrentDirectory(), folder);
 		}
 
@@ -89,8 +97,10 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 		
 		private void ResolveLogsAvailableForDownload()
 		{
-			var downloadUrl = new ElmahUrlHelper().ResolveCsvDownloadUrl(ServerUrl);
-			var csvContent = _webRequst.Uri(downloadUrl);
+			var downloadUrl = new ElmahUrlHelper().ResolveCsvDownloadUrl(Connection.Uri);
+			var connection = Connection.CopyWithCredentials(downloadUrl.AbsoluteUri);
+
+			var csvContent = _webRequst.Uri(connection);
 			CsvContent = _csvParser.Parse(csvContent).ToList(/* materialize */);
 		}
 

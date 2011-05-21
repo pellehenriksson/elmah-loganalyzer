@@ -58,6 +58,7 @@
     <Compile Include="Domain\ClientInformationResolverTests.cs" />
     <Compile Include="Domain\CsvParserTests.cs" />
     <Compile Include="Domain\DownloadDirectoryResolverTests.cs" />
+    <Compile Include="Domain\NetworkConnectionTests.cs" />
     <Compile Include="Domain\ElmahUrlHelperTests.cs" />
     <Compile Include="Domain\ErrorLogDownloaderTests.cs" />
     <Compile Include="Domain\ErrorLogFileParserTests.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Integrations\ErrorSearch\GoogleErrorSearchLauncherTests.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\UserAgentStringSearchLauncherTests.cs" />
     <Compile Include="Integrations\HttpUserAgentResolving\UserAgentStringClientInformationResolverTests.cs" />
+    <Compile Include="Presentation\ConnectToServerEventArgsTests.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgsTests.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgsTests.cs" />
     <Compile Include="Presentation\ReportPresenterTests.cs" />

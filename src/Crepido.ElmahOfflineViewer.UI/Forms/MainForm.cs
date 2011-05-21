@@ -76,10 +76,10 @@ namespace Crepido.ElmahOfflineViewer.UI.Forms
 			directoryToolStripStatusLabel.Text = string.Empty;
 		}
 
-		private void HandleDownloadingLogs(string url)
+		private void HandleDownloadingLogs(NetworkConnection connection)
 		{
 			var downloader = ServiceLocator.Resolve<IErrorLogDownloader>();
-			downloader.Download(new Uri(url));
+			downloader.Download(connection);
 			HandleLoadingFromDirectory(downloader.DownloadDirectory);
 		}
 		
@@ -198,8 +198,8 @@ namespace Crepido.ElmahOfflineViewer.UI.Forms
 
 			if (dialogResult == DialogResult.OK)
 			{
-				var url = ((ISelectServerView)view).Url;
-				HandleDownloadingLogs(url);
+				var connection = presenter.Connnection;
+				HandleDownloadingLogs(connection);
 			}
 		}
 	}

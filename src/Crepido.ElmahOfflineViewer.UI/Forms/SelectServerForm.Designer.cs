@@ -35,16 +35,22 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this._errorGroupBox = new System.Windows.Forms.GroupBox();
 			this._errorMessageLabel = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this._userNameTextBox = new System.Windows.Forms.TextBox();
+			this._passwordTextBox = new System.Windows.Forms.TextBox();
+			this.label4 = new System.Windows.Forms.Label();
+			this._domainTextBox = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
 			this._errorGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// _cancelButton
 			// 
 			this._cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this._cancelButton.Location = new System.Drawing.Point(414, 167);
+			this._cancelButton.Location = new System.Drawing.Point(414, 226);
 			this._cancelButton.Name = "_cancelButton";
 			this._cancelButton.Size = new System.Drawing.Size(75, 23);
-			this._cancelButton.TabIndex = 4;
+			this._cancelButton.TabIndex = 11;
 			this._cancelButton.Text = "Cancel";
 			this._cancelButton.UseVisualStyleBackColor = true;
 			this._cancelButton.Click += new System.EventHandler(this.CancelButtonClick);
@@ -52,10 +58,10 @@
 			// _connectButton
 			// 
 			this._connectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this._connectButton.Location = new System.Drawing.Point(333, 167);
+			this._connectButton.Location = new System.Drawing.Point(333, 226);
 			this._connectButton.Name = "_connectButton";
 			this._connectButton.Size = new System.Drawing.Size(75, 23);
-			this._connectButton.TabIndex = 3;
+			this._connectButton.TabIndex = 10;
 			this._connectButton.Text = "Connect";
 			this._connectButton.UseVisualStyleBackColor = true;
 			this._connectButton.Click += new System.EventHandler(this.ConnectButtonClick);
@@ -88,10 +94,10 @@
 			// _errorGroupBox
 			// 
 			this._errorGroupBox.Controls.Add(this._errorMessageLabel);
-			this._errorGroupBox.Location = new System.Drawing.Point(89, 67);
+			this._errorGroupBox.Location = new System.Drawing.Point(89, 153);
 			this._errorGroupBox.Name = "_errorGroupBox";
 			this._errorGroupBox.Size = new System.Drawing.Size(400, 66);
-			this._errorGroupBox.TabIndex = 6;
+			this._errorGroupBox.TabIndex = 9;
 			this._errorGroupBox.TabStop = false;
 			this._errorGroupBox.Text = "Error";
 			// 
@@ -103,11 +109,66 @@
 			this._errorMessageLabel.Size = new System.Drawing.Size(394, 47);
 			this._errorMessageLabel.TabIndex = 0;
 			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(15, 75);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(61, 13);
+			this.label3.TabIndex = 3;
+			this.label3.Text = "User name:";
+			// 
+			// _userNameTextBox
+			// 
+			this._userNameTextBox.Location = new System.Drawing.Point(89, 75);
+			this._userNameTextBox.Name = "_userNameTextBox";
+			this._userNameTextBox.Size = new System.Drawing.Size(259, 20);
+			this._userNameTextBox.TabIndex = 4;
+			// 
+			// _passwordTextBox
+			// 
+			this._passwordTextBox.Location = new System.Drawing.Point(89, 101);
+			this._passwordTextBox.Name = "_passwordTextBox";
+			this._passwordTextBox.PasswordChar = '*';
+			this._passwordTextBox.Size = new System.Drawing.Size(259, 20);
+			this._passwordTextBox.TabIndex = 6;
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(15, 104);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(56, 13);
+			this.label4.TabIndex = 5;
+			this.label4.Text = "Password:";
+			// 
+			// _domainTextBox
+			// 
+			this._domainTextBox.Location = new System.Drawing.Point(89, 127);
+			this._domainTextBox.Name = "_domainTextBox";
+			this._domainTextBox.Size = new System.Drawing.Size(259, 20);
+			this._domainTextBox.TabIndex = 8;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(15, 130);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(46, 13);
+			this.label5.TabIndex = 7;
+			this.label5.Text = "Domain:";
+			// 
 			// SelectServerForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(501, 202);
+			this.ClientSize = new System.Drawing.Size(501, 261);
+			this.Controls.Add(this.label5);
+			this.Controls.Add(this._domainTextBox);
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this._passwordTextBox);
+			this.Controls.Add(this._userNameTextBox);
+			this.Controls.Add(this.label3);
 			this.Controls.Add(this._errorGroupBox);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this._urlTextBox);
@@ -136,5 +197,11 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.GroupBox _errorGroupBox;
 		private System.Windows.Forms.Label _errorMessageLabel;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.TextBox _userNameTextBox;
+		private System.Windows.Forms.TextBox _passwordTextBox;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox _domainTextBox;
+		private System.Windows.Forms.Label label5;
 	}
 }

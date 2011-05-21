@@ -64,6 +64,7 @@
     <Compile Include="Constants\Platforms.cs" />
     <Compile Include="Domain\CsvParser.cs" />
     <Compile Include="Domain\DownloadDirectoryResolver.cs" />
+    <Compile Include="Domain\NetworkConnection.cs" />
     <Compile Include="Domain\ElmahUrlHelper.cs" />
     <Compile Include="Domain\IClientInformationResolver.cs" />
     <Compile Include="Domain\BrowserVersionResolver.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Integrations\HttpUserAgentResolving\HttpUserAgentStringClientInformationResolver.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\UserAgentStringSearchLauncher.cs" />
     <Compile Include="Integrations\HttpUserAgentResolving\UserAgentStringParameters.cs" />
+    <Compile Include="Presentation\ConnectToServerEventArgs.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgs.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgs.cs" />
     <Compile Include="Presentation\ISearchView.cs" />

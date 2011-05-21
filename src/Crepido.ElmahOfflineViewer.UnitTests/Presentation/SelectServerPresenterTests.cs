@@ -1,4 +1,5 @@
 ﻿using System;
+using Crepido.ElmahOfflineViewer.Core.Domain;
 using Crepido.ElmahOfflineViewer.Core.Infrastructure.Web;
 using Crepido.ElmahOfflineViewer.Core.Presentation;
 using Crepido.ElmahOfflineViewer.TestHelpers.Fakes;
@@ -29,7 +30,7 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			var presenter = new SelectServerPresenter(view.Object, new FakeUrlPing());
 
 			// act
-			view.Raise(x => x.OnConnectToServer += null, new EventArgs());
+			view.Raise(x => x.OnConnectToServer += null, new ConnectToServerEventArgs(string.Empty, string.Empty, string.Empty, string.Empty));
 
 			// assert
 			view.Verify(x => x.ClearErrorMessage(), Times.Once());
@@ -43,13 +44,12 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			var view = new Mock<ISelectServerView>();
 			var ping = new Mock<IUrlPing>();
 
-			view.Setup(x => x.Url).Returns("http://www.test.nu/elmah.axd");
-			ping.Setup(x => x.Ping(It.IsAny<Uri>())).Returns(false);
+			ping.Setup(x => x.Ping(It.IsAny<NetworkConnection>())).Returns(false);
 
 			var presenter = new SelectServerPresenter(view.Object, ping.Object);
 
 			// act
-			view.Raise(x => x.OnConnectToServer += null, new EventArgs());
+			view.Raise(x => x.OnConnectToServer += null, new ConnectToServerEventArgs("http://www.test.nu/elmah.axd", string.Empty, string.Empty, string.Empty));
 
 			// assert
 			view.Verify(x => x.ClearErrorMessage(), Times.Once());
@@ -63,13 +63,12 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			var view = new Mock<ISelectServerView>();
 			var ping = new Mock<IUrlPing>();
 
-			view.Setup(x => x.Url).Returns("http://www.test.nu/elmah.axd");
-			ping.Setup(x => x.Ping(It.IsAny<Uri>())).Returns(true);
+			ping.Setup(x => x.Ping(It.IsAny<NetworkConnection>())).Returns(true);
 
 			var presenter = new SelectServerPresenter(view.Object, ping.Object);
 
 			// act
-			view.Raise(x => x.OnConnectToServer += null, new EventArgs());
+			view.Raise(x => x.OnConnectToServer += null, new ConnectToServerEventArgs("http://www.test.nu/elmah.axd", string.Empty, string.Empty, string.Empty));
 
 			// assert
 			view.Verify(x => x.ClearErrorMessage(), Times.Once());
@@ -83,13 +82,12 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Presentation
 			var view = new Mock<ISelectServerView>();
 			var ping = new Mock<IUrlPing>();
 
-			view.Setup(x => x.Url).Returns("http://www.test.nu/elmah.axd");
-			ping.Setup(x => x.Ping(It.IsAny<Uri>())).Throws(new ApplicationException("some error"));
+			ping.Setup(x => x.Ping(It.IsAny<NetworkConnection>())).Throws(new ApplicationException("some error"));
 
 			var presenter = new SelectServerPresenter(view.Object, ping.Object);
 
 			// act
-			view.Raise(x => x.OnConnectToServer += null, new EventArgs());
+			view.Raise(x => x.OnConnectToServer += null, new ConnectToServerEventArgs("http://www.test.nu/elmah.axd", string.Empty, string.Empty, string.Empty));
 
 			// assert
 			view.Verify(x => x.ClearErrorMessage(), Times.Once());

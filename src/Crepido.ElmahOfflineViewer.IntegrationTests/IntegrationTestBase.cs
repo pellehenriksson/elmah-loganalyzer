@@ -15,14 +15,14 @@ namespace Crepido.ElmahOfflineViewer.IntegrationTests
 			get { return Path.Combine(TestFilesDirectory, "errorlog.csv"); }
 		}
 
-		public Uri ExistingUrl
+		public string ExistingUrl
 		{
-			get { return new Uri("http://www.google.com"); }
+			get { return "http://www.google.com"; }
 		}
 
-		public Uri NonExistantUrl
+		public string NonExistantUrl
 		{
-			get { return new Uri("http://www.bluttanblä.com"); }
+			get { return "http://www.bluttanblä.com"; }
 		}
 	}
 }

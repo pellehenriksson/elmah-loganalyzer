@@ -4,7 +4,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 {
 	public interface ISelectServerView
 	{
-		event EventHandler OnConnectToServer;
+		event EventHandler<ConnectToServerEventArgs> OnConnectToServer;
 
 		string Url { get; set; }
 

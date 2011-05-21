@@ -32,13 +32,13 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		{
 			// arrange
 			var downloader = CreateDownloader();
-			var url = new Uri("http://www.test.com/elmah.axd");
+			var connection = new NetworkConnection("http://www.test.com/elmah.axd");
 
 			SetUpDefaultPath();
 			_fileSystemHelper.Setup(x => x.DirectoryExists("c:\\test\\www.test.com")).Returns(false);
 
 			// act
-			downloader.Download(url);
+			downloader.Download(connection);
 
 			// assert
 			_fileSystemHelper.Verify(x => x.CreateDirectory("c:\\test\\www.test.com_80"), Times.Once());
@@ -49,13 +49,13 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 		{
 			// arrange
 			var downloader = CreateDownloader();
-			var url = new Uri("http://www.test.com/elmah.axd");
+			var connection = new NetworkConnection("http://www.test.com/elmah.axd");
 
 			SetUpDefaultPath();
 			_fileSystemHelper.Setup(x => x.DirectoryExists("c:\\test\\www.test.com")).Returns(true);
 
 			// act
-			downloader.Download(url);
+			downloader.Download(connection);
 
 			// assert
 			_fileSystemHelper.Verify(x => x.CreateDirectory("c:\\test\\www.test.com"), Times.Never());
@@ -93,10 +93,10 @@ namespace Crepido.ElmahOfflineViewer.UnitTests.Domain
 			const string xmlContet = "<xml>somefakecontent</xml>";
 
 			_fileSystemHelper.Setup(x => x.GetCurrentDirectory()).Returns("c:\\test");
-			_webRequestHelper.Setup(x => x.Uri(It.IsAny<Uri>())).Returns(string.Empty);
+			_webRequestHelper.Setup(x => x.Uri(It.IsAny<NetworkConnection>())).Returns(string.Empty);
 			_csvParser.Setup(x => x.Parse(It.IsAny<string>())).Returns(csvContent);
 			_fileSystemHelper.Setup(x => x.FileExists("error-2011-5-14-123010z-ee1539b7-7e2a-41a6-a970-d018557b447b.xml")).Returns(false);
-			_webRequestHelper.Setup(x => x.Uri(It.IsAny<Uri>())).Returns(xmlContet);
+			_webRequestHelper.Setup(x => x.Uri(It.IsAny<NetworkConnection>())).Returns(xmlContet);
 		}
 	}
 }

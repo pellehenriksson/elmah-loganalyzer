@@ -12,7 +12,7 @@ namespace Crepido.ElmahOfflineViewer.UI.Forms
 			_errorGroupBox.Visible = false;
 		}
 
-		public event EventHandler OnConnectToServer;
+		public event EventHandler<ConnectToServerEventArgs> OnConnectToServer;
 
 		public string Url
 		{
@@ -41,7 +41,13 @@ namespace Crepido.ElmahOfflineViewer.UI.Forms
 		{
 			if (OnConnectToServer != null)
 			{
-				OnConnectToServer(this, new EventArgs());
+				var args = new ConnectToServerEventArgs(
+					_urlTextBox.Text, 
+					_userNameTextBox.Text, 
+					_passwordTextBox.Text,
+				    _domainTextBox.Text);
+
+				OnConnectToServer(this, args);
 			}
 		}
 

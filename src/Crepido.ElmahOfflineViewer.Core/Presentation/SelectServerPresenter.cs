@@ -19,16 +19,18 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 
 		public ISelectServerView View { get; private set; }
 
+		public NetworkConnection Connnection { get; private set; }
+
 		private void RegisterEvents()
 		{
 			View.OnConnectToServer += View_OnConnectToServer;
 		}
 
-		private void View_OnConnectToServer(object sender, EventArgs e)
+		private void View_OnConnectToServer(object sender, ConnectToServerEventArgs e)
 		{
 			View.ClearErrorMessage();
 			
-			if (!View.Url.HasValue())
+			if (!e.Url.HasValue())
 			{
 				View.DisplayErrorMessage("Invalid url");
 				return;
@@ -36,11 +38,16 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 
 			try
 			{
-				var serverUrl = new Uri(View.Url);
-				serverUrl = new ElmahUrlHelper().ResolveElmahRootUrl(serverUrl);
-				View.Url = serverUrl.AbsoluteUri;
+				var connection = new NetworkConnection(e.Url);
+				if (e.HasCredentials)
+				{
+					connection.SetCredentials(e.UserName, e.Password, e.Domain);
+				}
 
-				var serverResponded = _urlPing.Ping(serverUrl);
+				//// verify connection.url end with elmah.axd
+				//// var serverUrl = new ElmahUrlHelper().ResolveElmahRootUrl(connection.Uri);
+
+				var serverResponded = _urlPing.Ping(connection);
 
 				if (!serverResponded)
 				{
@@ -48,6 +55,7 @@ namespace Crepido.ElmahOfflineViewer.Core.Presentation
 					return;
 				}
 
+				Connnection = connection;
 				View.CloseView();
 			}
 			catch (ArgumentException)

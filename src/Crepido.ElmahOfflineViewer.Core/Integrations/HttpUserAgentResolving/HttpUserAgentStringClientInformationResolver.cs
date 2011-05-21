@@ -40,7 +40,8 @@ namespace Crepido.ElmahOfflineViewer.Core.Integrations.HttpUserAgentResolving
 				return result;
 			}
 
-			var response = _webRequestHelper.Uri(url);
+			var connection = new NetworkConnection(url.AbsoluteUri);
+			var response = _webRequestHelper.Uri(connection);
 			var values = DictionaryBuilder.BuildFromText(response);
 			
 			result = new ClientInformation

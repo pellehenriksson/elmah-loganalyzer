@@ -10,12 +10,12 @@ namespace Crepido.ElmahOfflineViewer.Core.Domain
 			return downloadUrl;
 		}
 
-		public Uri ResolveElmahRootUrl(Uri serverUrl)
+		public string ResolveElmahRootUrl(string serverUrl)
 		{
-			if (!serverUrl.AbsoluteUri.EndsWith("elmah.axd"))
+			if (!serverUrl.Contains("elmah.axd"))
 			{
-				var newUrl = serverUrl.AbsoluteUri + "elmah.axd";
-				return new Uri(newUrl);
+				var newUrl = serverUrl.EndsWith("/") ? serverUrl + "elmah.axd" : serverUrl + "/elmah.axd";
+				return newUrl;
 			}
 
 			return serverUrl;

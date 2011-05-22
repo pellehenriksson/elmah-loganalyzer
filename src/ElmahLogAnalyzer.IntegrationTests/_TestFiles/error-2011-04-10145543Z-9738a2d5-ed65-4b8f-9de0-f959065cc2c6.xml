@@ -1,0 +1,189 @@
+﻿<error errorId="9738a2d5-ed65-4b8f-9de0-f959065cc2c6" host="VAX-VS251" type="System.InvalidOperationException" message="The IControllerFactory 'Sodra.PP.Web.Helpers.UnityMapControllerFactory' did not return a controller for the name 'default.aspx'." source="System.Web.Mvc" detail="System.InvalidOperationException: The IControllerFactory 'Sodra.PP.Web.Helpers.UnityMapControllerFactory' did not return a controller for the name 'default.aspx'.&#xD;&#xA;   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController&amp; controller, IControllerFactory&amp; factory)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="SODRA\ent-miksa" time="2011-04-10T14:55:43.9037056Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:no-cache&#xD;&#xA;HTTP_CONNECTION:Keep-Alive&#xD;&#xA;HTTP_ACCEPT:image/jpeg, application/x-ms-application, image/gif, application/xaml+xml, image/pjpeg, application/x-ms-xbap, application/x-esobi, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */*&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:sv-SE&#xD;&#xA;HTTP_AUTHORIZATION:NTLM TlRMTVNTUAADAAAAGAAYAHYAAAAYABgAjgAAAAoACgBIAAAAEgASAFIAAAASABIAZAAAAAAAAACmAAAABYKIogUCzg4AAAAPcwBvAGQAcgBhAGUAbgB0AC0AbQBpAGsAcwBhAFYAQQBYAC0AUwBFADAAOQA5AEkP7dpQI/vwAAAAAAAAAAAAAAAAAAAAAPzxRXdFZSN/iXfD0zLgcLKr/BLV5+dXrA==&#xD;&#xA;HTTP_COOKIE:logondata=acc=0&amp;lgn=ent-miksa; input_settings=active_sbo=971; s_vi=[CS]v1|26657D77850109F3-6000010140006EAA[CE]; __utma=54171946.43371282.1296891466.1298133898.1298193398.4; __utmz=54171946.1296891466.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);&#xD;&#xA;HTTP_HOST:entreprenor.sodra.com:443&#xD;&#xA;HTTP_REFERER:https://entreprenor.sodra.com/CookieAuth.dll?GetLogon?curl=Z2Fdefault.aspx&amp;reason=0&amp;formdir=8&#xD;&#xA;HTTP_USER_AGENT:Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; eSobiSubscriber 2.0.4.16; .NET4.0C; .NET4.0E)&#xD;&#xA;HTTP_REVERSE_VIA:VAX-SE099&#xD;&#xA;HTTP_X_EXPERIENCE:Premium&#xD;&#xA;HTTP_X_LOGONTYPE:Public&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: no-cache&#xD;&#xA;Connection: Keep-Alive&#xD;&#xA;Accept: image/jpeg, application/x-ms-application, image/gif, application/xaml+xml, image/pjpeg, application/x-ms-xbap, application/x-esobi, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */*&#xD;&#xA;Accept-Language: sv-SE&#xD;&#xA;Authorization: NTLM TlRMTVNTUAADAAAAGAAYAHYAAAAYABgAjgAAAAoACgBIAAAAEgASAFIAAAASABIAZAAAAAAAAACmAAAABYKIogUCzg4AAAAPcwBvAGQAcgBhAGUAbgB0AC0AbQBpAGsAcwBhAFYAQQBYAC0AUwBFADAAOQA5AEkP7dpQI/vwAAAAAAAAAAAAAAAAAAAAAPzxRXdFZSN/iXfD0zLgcLKr/BLV5+dXrA==&#xD;&#xA;Cookie: logondata=acc=0&amp;lgn=ent-miksa; input_settings=active_sbo=971; s_vi=[CS]v1|26657D77850109F3-6000010140006EAA[CE]; __utma=54171946.43371282.1296891466.1298133898.1298193398.4; __utmz=54171946.1296891466.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);&#xD;&#xA;Host: entreprenor.sodra.com:443&#xD;&#xA;Referer: https://entreprenor.sodra.com/CookieAuth.dll?GetLogon?curl=Z2Fdefault.aspx&amp;reason=0&amp;formdir=8&#xD;&#xA;User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; eSobiSubscriber 2.0.4.16; .NET4.0C; .NET4.0E)&#xD;&#xA;Reverse-Via: VAX-SE099&#xD;&#xA;X-Experience: Premium&#xD;&#xA;X-LogonType: Public&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/1/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Produktionsportal\website\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="NTLM" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="SODRA\ent-miksa" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="sodra\ent-miksa" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="SODRA\ent-miksa" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="1" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/1" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="172.21.192.251" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/default.aspx" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Produktionsportal\website\default.aspx" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="172.21.8.99" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="172.21.8.99" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="64569" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/default.aspx" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="entreprenor.sodra.com" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="80" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/7.5" />
+    </item>
+    <item name="URL">
+      <value string="/default.aspx" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="Keep-Alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="image/jpeg, application/x-ms-application, image/gif, application/xaml+xml, image/pjpeg, application/x-ms-xbap, application/x-esobi, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */*" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="sv-SE" />
+    </item>
+    <item name="HTTP_AUTHORIZATION">
+      <value string="NTLM TlRMTVNTUAADAAAAGAAYAHYAAAAYABgAjgAAAAoACgBIAAAAEgASAFIAAAASABIAZAAAAAAAAACmAAAABYKIogUCzg4AAAAPcwBvAGQAcgBhAGUAbgB0AC0AbQBpAGsAcwBhAFYAQQBYAC0AUwBFADAAOQA5AEkP7dpQI/vwAAAAAAAAAAAAAAAAAAAAAPzxRXdFZSN/iXfD0zLgcLKr/BLV5+dXrA==" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="logondata=acc=0&amp;lgn=ent-miksa; input_settings=active_sbo=971; s_vi=[CS]v1|26657D77850109F3-6000010140006EAA[CE]; __utma=54171946.43371282.1296891466.1298133898.1298193398.4; __utmz=54171946.1296891466.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="entreprenor.sodra.com:443" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="https://entreprenor.sodra.com/CookieAuth.dll?GetLogon?curl=Z2Fdefault.aspx&amp;reason=0&amp;formdir=8" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; eSobiSubscriber 2.0.4.16; .NET4.0C; .NET4.0E)" />
+    </item>
+    <item name="HTTP_REVERSE_VIA">
+      <value string="VAX-SE099" />
+    </item>
+    <item name="HTTP_X_EXPERIENCE">
+      <value string="Premium" />
+    </item>
+    <item name="HTTP_X_LOGONTYPE">
+      <value string="Public" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="logondata">
+      <value string="acc=0&amp;lgn=ent-miksa" />
+    </item>
+    <item name="input_settings">
+      <value string="active_sbo=971" />
+    </item>
+    <item name="s_vi">
+      <value string="[CS]v1|26657D77850109F3-6000010140006EAA[CE]" />
+    </item>
+    <item name="__utma">
+      <value string="54171946.43371282.1296891466.1298133898.1298193398.4" />
+    </item>
+    <item name="__utmz">
+      <value string="54171946.1296891466.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="y2q3xicmtyimkln31gzkrasw" />
+    </item>
+  </cookies>
+</error>

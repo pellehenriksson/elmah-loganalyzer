@@ -1,0 +1,201 @@
+﻿<error errorId="6c61d6fe-880e-4254-b40c-09b76151d2ea" host="VAX-VS251" type="System.ServiceModel.FaultException" message="System.Web.Services.Protocols.SoapException: Server was unable to process request. ---&gt; WsOPApp.MyException: Unable to find requested document.&#xA;   at WsOPApp.getdoc.GetDocument(String docIdString, String metaDocId) in C:\svn_crepido\wsop\WsOPApp\getdoc.asmx.cs:line 118&#xA;   at WsOPApp.getdoc.GetDocumentByMetaDocId(String metaDocIdString) in C:\svn_crepido\wsop\WsOPApp\getdoc.asmx.cs:line 270&#xA;   --- End of inner exception stack trace ---" source="mscorlib" detail="Sodra.PP.Infrastructure.Integrations.Wsop.ArkivetSao+WsopCommunicationException: Kommunikationsfel vid anrop till Arkivet GetDoc. ---&gt; System.ServiceModel.FaultException: System.Web.Services.Protocols.SoapException: Server was unable to process request. ---&gt; WsOPApp.MyException: Unable to find requested document.&#xA;   at WsOPApp.getdoc.GetDocument(String docIdString, String metaDocId) in C:\svn_crepido\wsop\WsOPApp\getdoc.asmx.cs:line 118&#xA;   at WsOPApp.getdoc.GetDocumentByMetaDocId(String metaDocIdString) in C:\svn_crepido\wsop\WsOPApp\getdoc.asmx.cs:line 270&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;&#xD;&#xA;Server stack trace: &#xD;&#xA;   at System.ServiceModel.Channels.ServiceChannel.HandleReply(ProxyOperationRuntime operation, ProxyRpc&amp; rpc)&#xD;&#xA;   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)&#xD;&#xA;   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)&#xD;&#xA;   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)&#xD;&#xA;&#xD;&#xA;Exception rethrown at [0]: &#xD;&#xA;   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)&#xD;&#xA;   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)&#xD;&#xA;   at Sodra.PP.Infrastructure.Integrations.Wsop.getdocSoap.GetDocumentByMetaDocId(GetDocumentByMetaDocIdRequest request)&#xD;&#xA;   at Sodra.PP.Infrastructure.Integrations.Wsop.getdocSoapClient.Sodra.PP.Infrastructure.Integrations.Wsop.getdocSoap.GetDocumentByMetaDocId(GetDocumentByMetaDocIdRequest request) in c:\TeamCity\buildAgent\work\302a8c3a4d7b7af2\src\Sodra.PP\Sodra.PP.Infrastructure.Integrations\Wsop\ArkivetService.cs:line 245&#xD;&#xA;   at Sodra.PP.Infrastructure.Integrations.Wsop.ArkivetSao.GetDocumentByDokumentId(String wsopDokumentId) in c:\TeamCity\buildAgent\work\302a8c3a4d7b7af2\src\Sodra.PP\Sodra.PP.Infrastructure.Integrations\Wsop\ArkivetSao.cs:line 53&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;&#xD;&#xA;Server stack trace: &#xD;&#xA;   at Sodra.PP.Infrastructure.Integrations.Wsop.ArkivetSao.GetDocumentByDokumentId(String wsopDokumentId) in c:\TeamCity\buildAgent\work\302a8c3a4d7b7af2\src\Sodra.PP\Sodra.PP.Infrastructure.Integrations\Wsop\ArkivetSao.cs:line 59&#xD;&#xA;&#xD;&#xA;Exception rethrown at [0]: &#xD;&#xA;   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)&#xD;&#xA;   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)&#xD;&#xA;   at Sodra.PP.Infrastructure.Integrations.Wsop.IArkivetSao.GetDocumentByDokumentId(String metaDocIdString)&#xD;&#xA;   at Sodra.PP.Application.FakturaAppService.GetFakturaPdf(String wsopDokumentId) in c:\TeamCity\buildAgent\work\302a8c3a4d7b7af2\src\Sodra.PP\Sodra.PP.Application\FakturaAppService.cs:line 450&#xD;&#xA;&#xD;&#xA;Exception rethrown at [1]: &#xD;&#xA;   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)&#xD;&#xA;   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)&#xD;&#xA;   at Sodra.PP.Application.Interfaces.IFakturaAppService.GetFakturaPdf(String wsopDokumentId)&#xD;&#xA;   at Sodra.PP.Web.Controllers.FakturaController.HamtaFakturaPdf(Guid id) in c:\TeamCity\buildAgent\work\302a8c3a4d7b7af2\src\Sodra.PP\Sodra.PP.Web\Controllers\FakturaController.cs:line 421&#xD;&#xA;   at lambda_method(Closure , ControllerBase , Object[] )&#xD;&#xA;   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.&lt;&gt;c__DisplayClassd.&lt;InvokeActionMethodWithFilters&gt;b__a()&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)" user="SODRA\ent-perol" time="2011-04-10T15:51:28.9965886Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:Keep-Alive&#xD;&#xA;HTTP_ACCEPT:image/gif, image/jpeg, image/pjpeg, application/x-ms-application, application/vnd.ms-xpsdocument, application/xaml+xml, application/x-ms-xbap, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/x-shockwave-flash, */*&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:sv&#xD;&#xA;HTTP_COOKIE:s_vi=[CS]v1|2578C90685011E2F-4000010E20330A3D[CE]; __utma=54171946.876575249.1296639851.1302270453.1302449777.72; __utmz=54171946.1296639851.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); s_cc=true; s_sq=sodraprod%3D%2526pid%253DSodra%252520-%252520skogsagare%25252C%252520travaror%25252C%252520pappersmassa%25252C%252520interiortra%252520och%252520skogliga%252520tjanster.%2526pidt%253D1%2526oid%253Dhttp%25253A//www.sodra.com/entreprenor/%2526ot%253DA%2526oi%253D181; __utmb=54171946.1.10.1302449777; __utmc=54171946; logondata=acc=0&amp;lgn=ent-perol; input_settings=active_sbo=962; ASP.NET_SessionId=ur3rot2dvwgyailnhx1ih1cd; AterrapportArbetslag=300056b2-9c5d-4ad9-ac26-ff164683f878; Faktura_Arbetslag=300056b2-9c5d-4ad9-ac26-ff164683f878;&#xD;&#xA;HTTP_HOST:entreprenor.sodra.com:443&#xD;&#xA;HTTP_REFERER:https://entreprenor.sodra.com/Faktura/Lista&#xD;&#xA;HTTP_USER_AGENT:Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; GTB6.6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E; BRI/2)&#xD;&#xA;HTTP_REVERSE_VIA:VAX-SE099&#xD;&#xA;HTTP_X_EXPERIENCE:Premium&#xD;&#xA;HTTP_X_LOGONTYPE:Public&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: Keep-Alive&#xD;&#xA;Accept: image/gif, image/jpeg, image/pjpeg, application/x-ms-application, application/vnd.ms-xpsdocument, application/xaml+xml, application/x-ms-xbap, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/x-shockwave-flash, */*&#xD;&#xA;Accept-Language: sv&#xD;&#xA;Cookie: s_vi=[CS]v1|2578C90685011E2F-4000010E20330A3D[CE]; __utma=54171946.876575249.1296639851.1302270453.1302449777.72; __utmz=54171946.1296639851.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); s_cc=true; s_sq=sodraprod%3D%2526pid%253DSodra%252520-%252520skogsagare%25252C%252520travaror%25252C%252520pappersmassa%25252C%252520interiortra%252520och%252520skogliga%252520tjanster.%2526pidt%253D1%2526oid%253Dhttp%25253A//www.sodra.com/entreprenor/%2526ot%253DA%2526oi%253D181; __utmb=54171946.1.10.1302449777; __utmc=54171946; logondata=acc=0&amp;lgn=ent-perol; input_settings=active_sbo=962; ASP.NET_SessionId=ur3rot2dvwgyailnhx1ih1cd; AterrapportArbetslag=300056b2-9c5d-4ad9-ac26-ff164683f878; Faktura_Arbetslag=300056b2-9c5d-4ad9-ac26-ff164683f878;&#xD;&#xA;Host: entreprenor.sodra.com:443&#xD;&#xA;Referer: https://entreprenor.sodra.com/Faktura/Lista&#xD;&#xA;User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; GTB6.6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E; BRI/2)&#xD;&#xA;Reverse-Via: VAX-SE099&#xD;&#xA;X-Experience: Premium&#xD;&#xA;X-LogonType: Public&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/1/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Produktionsportal\website\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="NTLM" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="SODRA\ent-perol" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="sodra\ent-perol" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="SODRA\ent-perol" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="1" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/1" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="172.21.192.251" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Faktura/HamtaFakturaPdf/a1d535e0-9f23-477c-81d1-9ec10125ea57" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Produktionsportal\website\Faktura\HamtaFakturaPdf\a1d535e0-9f23-477c-81d1-9ec10125ea57" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="172.21.8.99" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="172.21.8.99" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="5329" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Faktura/HamtaFakturaPdf/a1d535e0-9f23-477c-81d1-9ec10125ea57" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="entreprenor.sodra.com" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="80" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/7.5" />
+    </item>
+    <item name="URL">
+      <value string="/Faktura/HamtaFakturaPdf/a1d535e0-9f23-477c-81d1-9ec10125ea57" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="Keep-Alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="image/gif, image/jpeg, image/pjpeg, application/x-ms-application, application/vnd.ms-xpsdocument, application/xaml+xml, application/x-ms-xbap, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/x-shockwave-flash, */*" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="sv" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="s_vi=[CS]v1|2578C90685011E2F-4000010E20330A3D[CE]; __utma=54171946.876575249.1296639851.1302270453.1302449777.72; __utmz=54171946.1296639851.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); s_cc=true; s_sq=sodraprod%3D%2526pid%253DSodra%252520-%252520skogsagare%25252C%252520travaror%25252C%252520pappersmassa%25252C%252520interiortra%252520och%252520skogliga%252520tjanster.%2526pidt%253D1%2526oid%253Dhttp%25253A//www.sodra.com/entreprenor/%2526ot%253DA%2526oi%253D181; __utmb=54171946.1.10.1302449777; __utmc=54171946; logondata=acc=0&amp;lgn=ent-perol; input_settings=active_sbo=962; ASP.NET_SessionId=ur3rot2dvwgyailnhx1ih1cd; AterrapportArbetslag=300056b2-9c5d-4ad9-ac26-ff164683f878; Faktura_Arbetslag=300056b2-9c5d-4ad9-ac26-ff164683f878;" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="entreprenor.sodra.com:443" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="https://entreprenor.sodra.com/Faktura/Lista" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; GTB6.6; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E; BRI/2)" />
+    </item>
+    <item name="HTTP_REVERSE_VIA">
+      <value string="VAX-SE099" />
+    </item>
+    <item name="HTTP_X_EXPERIENCE">
+      <value string="Premium" />
+    </item>
+    <item name="HTTP_X_LOGONTYPE">
+      <value string="Public" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="s_vi">
+      <value string="[CS]v1|2578C90685011E2F-4000010E20330A3D[CE]" />
+    </item>
+    <item name="__utma">
+      <value string="54171946.876575249.1296639851.1302270453.1302449777.72" />
+    </item>
+    <item name="__utmz">
+      <value string="54171946.1296639851.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)" />
+    </item>
+    <item name="s_cc">
+      <value string="true" />
+    </item>
+    <item name="s_sq">
+      <value string="sodraprod%3D%2526pid%253DSodra%252520-%252520skogsagare%25252C%252520travaror%25252C%252520pappersmassa%25252C%252520interiortra%252520och%252520skogliga%252520tjanster.%2526pidt%253D1%2526oid%253Dhttp%25253A//www.sodra.com/entreprenor/%2526ot%253DA%2526oi%253D181" />
+    </item>
+    <item name="__utmb">
+      <value string="54171946.1.10.1302449777" />
+    </item>
+    <item name="__utmc">
+      <value string="54171946" />
+    </item>
+    <item name="logondata">
+      <value string="acc=0&amp;lgn=ent-perol" />
+    </item>
+    <item name="input_settings">
+      <value string="active_sbo=962" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="ur3rot2dvwgyailnhx1ih1cd" />
+    </item>
+    <item name="AterrapportArbetslag">
+      <value string="300056b2-9c5d-4ad9-ac26-ff164683f878" />
+    </item>
+    <item name="Faktura_Arbetslag">
+      <value string="300056b2-9c5d-4ad9-ac26-ff164683f878" />
+    </item>
+  </cookies>
+</error>

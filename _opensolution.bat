@@ -1,1 +1,1 @@
-src\ElmahOfflineViewer.sln
+src\ElmahLogAnalyzer.sln

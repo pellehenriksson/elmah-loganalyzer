@@ -1,0 +1,204 @@
+﻿<error errorId="d04cb7aa-7c19-42ad-afa9-0f5fa178d095" host="VAX-VS251" type="System.Web.HttpException" message="The remote host closed the connection. The error code is 0x800703E3." source="System.Web" detail="System.Web.HttpException (0x800703E3): The remote host closed the connection. The error code is 0x800703E3.&#xD;&#xA;   at System.Web.Hosting.IIS7WorkerRequest.RaiseCommunicationError(Int32 result, Boolean throwOnDisconnect)&#xD;&#xA;   at System.Web.Hosting.IIS7WorkerRequest.ExplicitFlush()&#xD;&#xA;   at System.Web.HttpResponse.Flush(Boolean finalFlush)&#xD;&#xA;   at System.Web.HttpResponse.End()&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.&lt;&gt;c__DisplayClass14.&lt;InvokeActionResultWithFilters&gt;b__11()&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)" user="SODRA\ent-tomsn" time="2011-04-10T17:28:58.6886362Z" statusCode="500">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:Keep-Alive&#xD;&#xA;HTTP_ACCEPT:image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/x-shockwave-flash, */*&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:sv&#xD;&#xA;HTTP_COOKIE:s_vi=[CS]v1|479C475C000078D8-A000CAA00000287[CE]; __utma=54171946.695896936.1296586711.1302239745.1302456335.65; __utmz=54171946.1296586711.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmb=54171946.1.10.1302456335; s_cc=true; s_sq=sodraprod%3D%2526pid%253DSodra%252520-%252520skogsagare%25252C%252520travaror%25252C%252520pappersmassa%25252C%252520interiortra%252520och%252520skogliga%252520tjanster.%2526pidt%253D1%2526oid%253Dhttp%25253A//www.sodra.com/entreprenor/%2526ot%253DA%2526oi%253D181; __utmc=54171946; input_settings=active_sbo=964; logondata=acc=0&amp;lgn=ent-tomsn; ASP.NET_SessionId=1qvmk3n5cbcuiext2sf4yk3j; RuttplanArbetslag=cb888304-199e-4814-b761-ff20c7e0712b; RuttplanStatus=2;&#xD;&#xA;HTTP_HOST:entreprenor.sodra.com:443&#xD;&#xA;HTTP_REFERER:https://entreprenor.sodra.com/Ruttplan/Lista&#xD;&#xA;HTTP_USER_AGENT:Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322)&#xD;&#xA;HTTP_REVERSE_VIA:VAX-SE099&#xD;&#xA;HTTP_UA_CPU:x86&#xD;&#xA;HTTP_X_EXPERIENCE:Premium&#xD;&#xA;HTTP_X_LOGONTYPE:Public&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: Keep-Alive&#xD;&#xA;Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/x-shockwave-flash, */*&#xD;&#xA;Accept-Language: sv&#xD;&#xA;Cookie: s_vi=[CS]v1|479C475C000078D8-A000CAA00000287[CE]; __utma=54171946.695896936.1296586711.1302239745.1302456335.65; __utmz=54171946.1296586711.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmb=54171946.1.10.1302456335; s_cc=true; s_sq=sodraprod%3D%2526pid%253DSodra%252520-%252520skogsagare%25252C%252520travaror%25252C%252520pappersmassa%25252C%252520interiortra%252520och%252520skogliga%252520tjanster.%2526pidt%253D1%2526oid%253Dhttp%25253A//www.sodra.com/entreprenor/%2526ot%253DA%2526oi%253D181; __utmc=54171946; input_settings=active_sbo=964; logondata=acc=0&amp;lgn=ent-tomsn; ASP.NET_SessionId=1qvmk3n5cbcuiext2sf4yk3j; RuttplanArbetslag=cb888304-199e-4814-b761-ff20c7e0712b; RuttplanStatus=2;&#xD;&#xA;Host: entreprenor.sodra.com:443&#xD;&#xA;Referer: https://entreprenor.sodra.com/Ruttplan/Lista&#xD;&#xA;User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322)&#xD;&#xA;Reverse-Via: VAX-SE099&#xD;&#xA;UA-CPU: x86&#xD;&#xA;X-Experience: Premium&#xD;&#xA;X-LogonType: Public&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/1/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Produktionsportal\website\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="NTLM" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="SODRA\ent-tomsn" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="sodra\ent-tomsn" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="SODRA\ent-tomsn" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="1" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/1" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="172.21.192.251" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Ruttplan/HamtaTraktdirektivPdf/c155a657-6d0a-4d82-b598-9eb701099a9f" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Produktionsportal\website\Ruttplan\HamtaTraktdirektivPdf\c155a657-6d0a-4d82-b598-9eb701099a9f" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="172.21.8.99" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="172.21.8.99" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="18019" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Ruttplan/HamtaTraktdirektivPdf/c155a657-6d0a-4d82-b598-9eb701099a9f" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="entreprenor.sodra.com" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="80" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/7.5" />
+    </item>
+    <item name="URL">
+      <value string="/Ruttplan/HamtaTraktdirektivPdf/c155a657-6d0a-4d82-b598-9eb701099a9f" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="Keep-Alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/x-shockwave-flash, */*" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="sv" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="s_vi=[CS]v1|479C475C000078D8-A000CAA00000287[CE]; __utma=54171946.695896936.1296586711.1302239745.1302456335.65; __utmz=54171946.1296586711.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmb=54171946.1.10.1302456335; s_cc=true; s_sq=sodraprod%3D%2526pid%253DSodra%252520-%252520skogsagare%25252C%252520travaror%25252C%252520pappersmassa%25252C%252520interiortra%252520och%252520skogliga%252520tjanster.%2526pidt%253D1%2526oid%253Dhttp%25253A//www.sodra.com/entreprenor/%2526ot%253DA%2526oi%253D181; __utmc=54171946; input_settings=active_sbo=964; logondata=acc=0&amp;lgn=ent-tomsn; ASP.NET_SessionId=1qvmk3n5cbcuiext2sf4yk3j; RuttplanArbetslag=cb888304-199e-4814-b761-ff20c7e0712b; RuttplanStatus=2;" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="entreprenor.sodra.com:443" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="https://entreprenor.sodra.com/Ruttplan/Lista" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322)" />
+    </item>
+    <item name="HTTP_REVERSE_VIA">
+      <value string="VAX-SE099" />
+    </item>
+    <item name="HTTP_UA_CPU">
+      <value string="x86" />
+    </item>
+    <item name="HTTP_X_EXPERIENCE">
+      <value string="Premium" />
+    </item>
+    <item name="HTTP_X_LOGONTYPE">
+      <value string="Public" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="s_vi">
+      <value string="[CS]v1|479C475C000078D8-A000CAA00000287[CE]" />
+    </item>
+    <item name="__utma">
+      <value string="54171946.695896936.1296586711.1302239745.1302456335.65" />
+    </item>
+    <item name="__utmz">
+      <value string="54171946.1296586711.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)" />
+    </item>
+    <item name="__utmb">
+      <value string="54171946.1.10.1302456335" />
+    </item>
+    <item name="s_cc">
+      <value string="true" />
+    </item>
+    <item name="s_sq">
+      <value string="sodraprod%3D%2526pid%253DSodra%252520-%252520skogsagare%25252C%252520travaror%25252C%252520pappersmassa%25252C%252520interiortra%252520och%252520skogliga%252520tjanster.%2526pidt%253D1%2526oid%253Dhttp%25253A//www.sodra.com/entreprenor/%2526ot%253DA%2526oi%253D181" />
+    </item>
+    <item name="__utmc">
+      <value string="54171946" />
+    </item>
+    <item name="input_settings">
+      <value string="active_sbo=964" />
+    </item>
+    <item name="logondata">
+      <value string="acc=0&amp;lgn=ent-tomsn" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="1qvmk3n5cbcuiext2sf4yk3j" />
+    </item>
+    <item name="RuttplanArbetslag">
+      <value string="cb888304-199e-4814-b761-ff20c7e0712b" />
+    </item>
+    <item name="RuttplanStatus">
+      <value string="2" />
+    </item>
+  </cookies>
+</error>

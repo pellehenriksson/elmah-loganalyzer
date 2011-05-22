@@ -1,0 +1,204 @@
+﻿<error errorId="f601113d-67d5-4712-800f-cae6231440e4" host="VAX-VS251" type="System.InvalidOperationException" message="You cannot call render more than once." source="Telerik.Web.Mvc" detail="System.Web.HttpException (0x80004005): Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerWrapper'. ---&gt; System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---&gt; System.InvalidOperationException: You cannot call render more than once.&#xD;&#xA;   at Telerik.Web.Mvc.UI.StyleSheetRegistrar.Render()&#xD;&#xA;   at ASP.views_shared_commonheader_ascx.__Render__control1(HtmlTextWriter __w, Control parameterContainer)&#xD;&#xA;   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)&#xD;&#xA;   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)&#xD;&#xA;   at System.Web.Mvc.ViewPage.Render(HtmlTextWriter writer)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.HandleError(Exception e)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(HttpContext context)&#xD;&#xA;   at System.Web.Mvc.ViewPage.ProcessRequest(HttpContext context)&#xD;&#xA;   at System.Web.Mvc.ViewUserControl.ViewUserControlContainerPage.ProcessRequest(HttpContext context)&#xD;&#xA;   at System.Web.Mvc.ViewPage.RenderView(ViewContext viewContext)&#xD;&#xA;   at System.Web.Mvc.ViewUserControl.RenderViewAndRestoreContentType(ViewPage containerPage, ViewContext viewContext)&#xD;&#xA;   at ASP.views_shared_site_master.__RenderHead1(HtmlTextWriter __w, Control parameterContainer)&#xD;&#xA;   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)&#xD;&#xA;   at System.Web.UI.HtmlControls.HtmlHead.RenderChildren(HtmlTextWriter writer)&#xD;&#xA;   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)&#xD;&#xA;   at ASP.views_shared_site_master.__Render__control1(HtmlTextWriter __w, Control parameterContainer)&#xD;&#xA;   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)&#xD;&#xA;   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)&#xD;&#xA;   at System.Web.Mvc.ViewPage.Render(HtmlTextWriter writer)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest()&#xD;&#xA;   at System.Web.UI.Page.ProcessRequest(HttpContext context)&#xD;&#xA;   at System.Web.Mvc.ViewPage.ProcessRequest(HttpContext context)&#xD;&#xA;   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.&lt;&gt;c__DisplayClass4.&lt;Wrap&gt;b__3()&#xD;&#xA;   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)&#xD;&#xA;   at System.Web.HttpServerUtility.ExecuteInternal(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage, VirtualPath path, VirtualPath filePath, String physPath, Exception error, String queryStringOverride)&#xD;&#xA;   at System.Web.HttpServerUtility.ExecuteInternal(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage, VirtualPath path, VirtualPath filePath, String physPath, Exception error, String queryStringOverride)&#xD;&#xA;   at System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage)&#xD;&#xA;   at System.Web.HttpServerUtilityWrapper.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)&#xD;&#xA;   at System.Web.Mvc.ViewPage.RenderView(ViewContext viewContext)&#xD;&#xA;   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)&#xD;&#xA;   at System.Web.Mvc.Controller.ExecuteCore()&#xD;&#xA;   at System.Web.Mvc.MvcHandler.&lt;&gt;c__DisplayClass8.&lt;BeginProcessRequest&gt;b__4()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass1.&lt;MakeVoidDelegate&gt;b__0()&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="SODRA\ent-klari" time="2011-04-10T15:55:11.9873686Z" statusCode="500" webHostHtmlMessage="&lt;html&gt;&#xD;&#xA;    &lt;head&gt;&#xD;&#xA;        &lt;title&gt;You cannot call render more than once.&lt;/title&gt;&#xD;&#xA;        &lt;style&gt;&#xD;&#xA;         body {font-family:&quot;Verdana&quot;;font-weight:normal;font-size: .7em;color:black;} &#xD;&#xA;         p {font-family:&quot;Verdana&quot;;font-weight:normal;color:black;margin-top: -5px}&#xD;&#xA;         b {font-family:&quot;Verdana&quot;;font-weight:bold;color:black;margin-top: -5px}&#xD;&#xA;         H1 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:18pt;color:red }&#xD;&#xA;         H2 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:14pt;color:maroon }&#xD;&#xA;         pre {font-family:&quot;Lucida Console&quot;;font-size: .9em}&#xD;&#xA;         .marker {font-weight: bold; color: black;text-decoration: none;}&#xD;&#xA;         .version {color: gray;}&#xD;&#xA;         .error {margin-bottom: 10px;}&#xD;&#xA;         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }&#xD;&#xA;        &lt;/style&gt;&#xD;&#xA;    &lt;/head&gt;&#xD;&#xA;&#xD;&#xA;    &lt;body bgcolor=&quot;white&quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;span&gt;&lt;H1&gt;Server Error in '/' Application.&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h2&gt; &lt;i&gt;You cannot call render more than once.&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;&#xD;&#xA;&#xD;&#xA;            &lt;font face=&quot;Arial, Helvetica, Geneva, SunSans-Regular, sans-serif &quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Description: &lt;/b&gt;An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; Exception Details: &lt;/b&gt;System.InvalidOperationException: You cannot call render more than once.&lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Source Error:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&#xD;&#xA;&#xD;&#xA;The source code that generated this unhandled exception can only be shown when compiled in debug mode. To enable this, please follow one of the below steps, then request the URL:&lt;br&gt;&lt;br&gt;1. Add a &amp;quot;Debug=true&amp;quot; directive at the top of the file that generated the error. Example:&lt;br&gt;&lt;br&gt; &amp;nbsp;&amp;nbsp;&amp;lt;%@ Page Language=&amp;quot;C#&amp;quot; Debug=&amp;quot;true&amp;quot; %&amp;gt;&lt;br&gt;&lt;br&gt;or:&lt;br&gt;&lt;br&gt;2) Add the following section to the configuration file of your application:&lt;br&gt;&lt;br&gt;&amp;lt;configuration&amp;gt;&lt;br&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;system.web&amp;gt;&lt;br&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;compilation debug=&amp;quot;true&amp;quot;/&amp;gt;&lt;br&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;lt;/system.web&amp;gt;&lt;br&gt;&amp;lt;/configuration&amp;gt;&lt;br&gt;&lt;br&gt; Note that this second technique will cause all files within a given application to be compiled in debug mode. The first technique will cause only that particular file to be compiled in debug mode.&lt;br&gt;&lt;br&gt;Important: Running applications in debug mode does incur a memory/performance overhead. You should make sure that an application has debugging disabled before deploying into production scenario.&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;Stack Trace:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;[InvalidOperationException: You cannot call render more than once.]&#xD;&#xA;   Telerik.Web.Mvc.UI.StyleSheetRegistrar.Render() +127&#xD;&#xA;   ASP.views_shared_commonheader_ascx.__Render__control1(HtmlTextWriter __w, Control parameterContainer) +328&#xD;&#xA;   System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children) +131&#xD;&#xA;   System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children) +246&#xD;&#xA;   System.Web.Mvc.ViewPage.Render(HtmlTextWriter writer) +85&#xD;&#xA;   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +5274&#xD;&#xA;&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;    &lt;/body&gt;&#xD;&#xA;&lt;/html&gt;&#xD;&#xA;">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:Keep-Alive&#xD;&#xA;HTTP_ACCEPT:application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5&#xD;&#xA;HTTP_ACCEPT_CHARSET:ISO-8859-1,utf-8;q=0.7,*;q=0.3&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4&#xD;&#xA;HTTP_COOKIE:__utmz=54171946.1300811726.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); s_vi=[CS]v1|26C467E705162A71-400001A3401D4A32[CE]; ASP.NET_SessionId=anlvq24lenwlkkj0gwmhrxsk; Arbetsrapport_Arbetslag=00000000-0000-0000-0000-000000000000; RuttplanArbetslag=c7667fbc-eb88-419a-a1cf-9eb100080109; RuttplanStatus=-1; s_cc=true; __utma=54171946.1017002013.1300811726.1302430498.1302439695.5; __utmc=54171946; s_sq=sodraprod%3D%2526pid%253DSodra%252520-%252520skogsagare%25252C%252520travaror%25252C%252520pappersmassa%25252C%252520interiortra%252520och%252520skogliga%252520tjanster.%2526pidt%253D1%2526oid%253Dhttp%25253A//www.sodra.com/entreprenor/%2526ot%253DA; logondata=acc=0&amp;lgn=ent-klari; Faktura_Arbetslag=c7667fbc-eb88-419a-a1cf-9eb100080109;&#xD;&#xA;HTTP_HOST:entreprenor.sodra.com:443&#xD;&#xA;HTTP_REFERER:https://entreprenor.sodra.com/Aterrapport/Lista&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.204 Safari/534.16&#xD;&#xA;HTTP_REVERSE_VIA:VAX-SE099&#xD;&#xA;HTTP_X_EXPERIENCE:Premium&#xD;&#xA;HTTP_X_LOGONTYPE:Public&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: Keep-Alive&#xD;&#xA;Accept: application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5&#xD;&#xA;Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3&#xD;&#xA;Accept-Language: sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4&#xD;&#xA;Cookie: __utmz=54171946.1300811726.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); s_vi=[CS]v1|26C467E705162A71-400001A3401D4A32[CE]; ASP.NET_SessionId=anlvq24lenwlkkj0gwmhrxsk; Arbetsrapport_Arbetslag=00000000-0000-0000-0000-000000000000; RuttplanArbetslag=c7667fbc-eb88-419a-a1cf-9eb100080109; RuttplanStatus=-1; s_cc=true; __utma=54171946.1017002013.1300811726.1302430498.1302439695.5; __utmc=54171946; s_sq=sodraprod%3D%2526pid%253DSodra%252520-%252520skogsagare%25252C%252520travaror%25252C%252520pappersmassa%25252C%252520interiortra%252520och%252520skogliga%252520tjanster.%2526pidt%253D1%2526oid%253Dhttp%25253A//www.sodra.com/entreprenor/%2526ot%253DA; logondata=acc=0&amp;lgn=ent-klari; Faktura_Arbetslag=c7667fbc-eb88-419a-a1cf-9eb100080109;&#xD;&#xA;Host: entreprenor.sodra.com:443&#xD;&#xA;Referer: https://entreprenor.sodra.com/Aterrapport/Lista&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.204 Safari/534.16&#xD;&#xA;Reverse-Via: VAX-SE099&#xD;&#xA;X-Experience: Premium&#xD;&#xA;X-LogonType: Public&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/1/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Produktionsportal\website\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="NTLM" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="SODRA\ent-klari" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="sodra\ent-klari" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="SODRA\ent-klari" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="1" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/1" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="172.21.192.251" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Aterrapport/Create/53810ef0-8504-4cbd-8e78-9eb1009561f8" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Produktionsportal\website\Aterrapport\Create\53810ef0-8504-4cbd-8e78-9eb1009561f8" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="172.21.8.99" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="172.21.8.99" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="8219" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Aterrapport/Create/53810ef0-8504-4cbd-8e78-9eb1009561f8" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="entreprenor.sodra.com" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="80" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/7.5" />
+    </item>
+    <item name="URL">
+      <value string="/Aterrapport/Create/53810ef0-8504-4cbd-8e78-9eb1009561f8" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="Keep-Alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5" />
+    </item>
+    <item name="HTTP_ACCEPT_CHARSET">
+      <value string="ISO-8859-1,utf-8;q=0.7,*;q=0.3" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="sv-SE,sv;q=0.8,en-US;q=0.6,en;q=0.4" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__utmz=54171946.1300811726.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); s_vi=[CS]v1|26C467E705162A71-400001A3401D4A32[CE]; ASP.NET_SessionId=anlvq24lenwlkkj0gwmhrxsk; Arbetsrapport_Arbetslag=00000000-0000-0000-0000-000000000000; RuttplanArbetslag=c7667fbc-eb88-419a-a1cf-9eb100080109; RuttplanStatus=-1; s_cc=true; __utma=54171946.1017002013.1300811726.1302430498.1302439695.5; __utmc=54171946; s_sq=sodraprod%3D%2526pid%253DSodra%252520-%252520skogsagare%25252C%252520travaror%25252C%252520pappersmassa%25252C%252520interiortra%252520och%252520skogliga%252520tjanster.%2526pidt%253D1%2526oid%253Dhttp%25253A//www.sodra.com/entreprenor/%2526ot%253DA; logondata=acc=0&amp;lgn=ent-klari; Faktura_Arbetslag=c7667fbc-eb88-419a-a1cf-9eb100080109;" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="entreprenor.sodra.com:443" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="https://entreprenor.sodra.com/Aterrapport/Lista" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.204 Safari/534.16" />
+    </item>
+    <item name="HTTP_REVERSE_VIA">
+      <value string="VAX-SE099" />
+    </item>
+    <item name="HTTP_X_EXPERIENCE">
+      <value string="Premium" />
+    </item>
+    <item name="HTTP_X_LOGONTYPE">
+      <value string="Public" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="__utmz">
+      <value string="54171946.1300811726.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)" />
+    </item>
+    <item name="s_vi">
+      <value string="[CS]v1|26C467E705162A71-400001A3401D4A32[CE]" />
+    </item>
+    <item name="ASP.NET_SessionId">
+      <value string="anlvq24lenwlkkj0gwmhrxsk" />
+    </item>
+    <item name="Arbetsrapport_Arbetslag">
+      <value string="00000000-0000-0000-0000-000000000000" />
+    </item>
+    <item name="RuttplanArbetslag">
+      <value string="c7667fbc-eb88-419a-a1cf-9eb100080109" />
+    </item>
+    <item name="RuttplanStatus">
+      <value string="-1" />
+    </item>
+    <item name="s_cc">
+      <value string="true" />
+    </item>
+    <item name="__utma">
+      <value string="54171946.1017002013.1300811726.1302430498.1302439695.5" />
+    </item>
+    <item name="__utmc">
+      <value string="54171946" />
+    </item>
+    <item name="s_sq">
+      <value string="sodraprod%3D%2526pid%253DSodra%252520-%252520skogsagare%25252C%252520travaror%25252C%252520pappersmassa%25252C%252520interiortra%252520och%252520skogliga%252520tjanster.%2526pidt%253D1%2526oid%253Dhttp%25253A//www.sodra.com/entreprenor/%2526ot%253DA" />
+    </item>
+    <item name="logondata">
+      <value string="acc=0&amp;lgn=ent-klari" />
+    </item>
+    <item name="Faktura_Arbetslag">
+      <value string="c7667fbc-eb88-419a-a1cf-9eb100080109" />
+    </item>
+  </cookies>
+</error>

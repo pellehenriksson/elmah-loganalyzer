@@ -9,7 +9,12 @@ namespace ElmahLogAnalyzer.IntegrationTests
 		{
 			get { return Path.Combine(Directory.GetCurrentDirectory(), "_TestFiles"); }
 		}
-
+		
+		public string TestArea
+		{
+			get { return Path.Combine(Directory.GetCurrentDirectory(), "_TestArea"); }
+		}
+		
 		public string TestCvsFile
 		{
 			get { return Path.Combine(TestFilesDirectory, "errorlog.csv"); }

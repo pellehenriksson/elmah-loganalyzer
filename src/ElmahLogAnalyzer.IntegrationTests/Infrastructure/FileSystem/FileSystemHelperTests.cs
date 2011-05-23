@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
 using NUnit.Framework;
 
@@ -7,6 +8,18 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.FileSystem
 	[TestFixture]
 	public class FileSystemHelperTests : IntegrationTestBase
 	{
+		[SetUp]
+		public void Setup()
+		{
+			Directory.CreateDirectory(TestArea);
+		}
+
+		[TearDown]
+		public void TearDown()
+		{
+			Directory.Delete(TestArea, true);
+		}
+
 		[Test]
 		public void DirectoryExists_DirectoryDoesExist_ReturnsTrue()
 		{
@@ -99,6 +112,37 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.FileSystem
 
 			// assert
 			Assert.That(result, Is.False);
+		}
+
+		[Test]
+		public void CreateDirectory_CreatesDirectory()
+		{
+			// arrange
+			var helper = new FileSystemHelper();
+			var path = Path.Combine(TestArea, "a_new_directory");
+
+			// act
+			helper.CreateDirectory(path);
+
+			// assert
+			Assert.That(Directory.Exists(path), Is.True);
+		}
+
+		[Test]
+		public void CreateTextFile_CreatesTextFileContent()
+		{
+			// arrange
+			var helper = new FileSystemHelper();
+			var file = Path.Combine(TestArea, "a_new_file.txt");
+			const string content = "hello world!";
+
+			// act
+			helper.CreateTextFile(file, content);
+
+			// assert
+			var contentInFile = File.ReadAllText(file);
+
+			Assert.That(contentInFile, Is.EqualTo(content));
 		}
 	}
 }

@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("pelle.henriksson@gmail.com")]
-[assembly: AssemblyProduct("Elmah Offline Viewer")]
+[assembly: AssemblyProduct("Elmah Log Analyzer")]
 [assembly: AssemblyCopyright("Copyright Pelle Henriksson 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

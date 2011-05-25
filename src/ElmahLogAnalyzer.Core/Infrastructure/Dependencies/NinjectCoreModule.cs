@@ -32,7 +32,8 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			Bind<IErrorLogDownloader>().To<ErrorLogDownloader>();
 			Bind<IUrlPing>().To<UrlPing>();
 			Bind<ICsvParser>().To<CsvParser>();
-			Bind<IHttpUserAgentSearchLauncher>().To<UserAgentStringSearchLauncher>();
+			Bind<IHttpUserAgentSearchLauncher>().To<UserAgentStringSearchLauncher>(); // remove this
+			Bind<IHttpUserAgentSearchLauncherFactory>().To<HttpUserAgentSearchLauncherFactory>();
 			Bind<IFileSystemHelper>().To<FileSystemHelper>();
 			Bind<ILog>().ToMethod(GetLogger);
 		}

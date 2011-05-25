@@ -11,6 +11,11 @@ namespace ElmahLogAnalyzer.UnitTests
 			get { return @"c:\logs"; }
 		}
 
+		protected static ReportQuery CreateReportQuery()
+		{
+			return new ReportQuery(ReportTypeEnum.Type, new DateInterval(new DateTime(1975, 5, 14), new DateTime(2011, 4, 8)), -1);
+		}
+
 		protected static ErrorLog CreateFakeErrorLog()
 		{
 			var errorLog = new ErrorLog();
@@ -28,11 +33,6 @@ namespace ElmahLogAnalyzer.UnitTests
 			return errorLog;
 		}
 		
-		protected static ReportQuery CreateReportQuery()
-		{
-			return new ReportQuery(ReportTypeEnum.Type, new DateInterval(new DateTime(1975, 5, 14), new DateTime(2011, 4, 8)));
-		}
-
 		protected static string GetCsvContent()
 		{
 			return @"

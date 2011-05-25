@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Infrastructure.Dependencies;
+using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 using ElmahLogAnalyzer.Core.Presentation;
 using ElmahLogAnalyzer.UI.Views;
 
@@ -14,15 +15,19 @@ namespace ElmahLogAnalyzer.UI.Forms
 	public partial class MainForm : Form
 	{
 		private readonly IErrorLogRepository _repository;
+		private readonly ISettingsManager _settingsManager;
 
 		public MainForm()
 		{
 			InitializeComponent();
-
-			DisplayApplicationVersion();
-
+			
+			_settingsManager = ServiceLocator.Resolve<ISettingsManager>();
 			_repository = ServiceLocator.Resolve<IErrorLogRepository>();
+			
 			_repository.OnInitialized += RepositoryOnInitialized;
+			
+			DisplaySettings();
+			DisplayApplicationVersion();
 
 		    var directory = Environment.GetCommandLineArgs()
                                         .Skip(1)
@@ -73,7 +78,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 			_showSettingsViewButton.Enabled = true;
 			
 			_mainPanel.Controls.Clear();
-			directoryToolStripStatusLabel.Text = string.Empty;
+			_directoryToolStripStatusLabel.Text = string.Empty;
 		}
 
 		private void HandleDownloadingLogs(NetworkConnection connection)
@@ -86,7 +91,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		private void HandleLoadingFromDirectory(string directory)
 		{
 			SetLoadingState();
-			directoryToolStripStatusLabel.Text = string.Format("Loading logs from: {0}", directory);
+			_directoryToolStripStatusLabel.Text = string.Format("Loading logs from: {0}", directory);
 
 			var thread = new Thread(InitializeRepository);
 			thread.Start(directory);
@@ -143,9 +148,14 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		private void DisplayApplicationVersion()
 		{
-			versionStripStatusLabel.Text = string.Format("Build: {0} ({1})", Application.ProductVersion, GetType().Assembly.GetTypeOfBuild());
+			_versionStripStatusLabel.Text = string.Format("Build: {0} ({1})", Application.ProductVersion, GetType().Assembly.GetTypeOfBuild());
 		}
 		
+		private void DisplaySettings()
+		{
+			_settingsStripStatusLabel.Text = _settingsManager.ShouldGetAllLogs ? "Settings: All logs" : string.Format("Settings: {0} latest logs", _settingsManager.GetMaxNumberOfLogs());
+		}
+
 		private void SelectDirectoryButtonClick(object sender, EventArgs e)
 		{
 			_folderBrowserDialog.SelectedPath = _repository.Directory;
@@ -182,6 +192,8 @@ namespace ElmahLogAnalyzer.UI.Forms
 			var presenter = ServiceLocator.Resolve<SettingsPresenter>();
 			var view = presenter.View as Form;
 			view.ShowDialog(this);
+
+			DisplaySettings();
 		}
 
 		private void ShowAboutButtonClick(object sender, EventArgs e)

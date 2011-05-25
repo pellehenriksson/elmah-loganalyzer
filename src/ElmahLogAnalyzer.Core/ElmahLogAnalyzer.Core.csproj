@@ -123,10 +123,8 @@
     <Compile Include="Integrations\HttpUserAgentSearch\HttpUserAgentSearchLauncherBase.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\HttpUserAgentSearchLauncherFactory.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\IHttpUserAgentSearchLauncher.cs" />
-    <Compile Include="Integrations\HttpUserAgentResolving\HttpUserAgentStringClientInformationResolver.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\IHttpUserAgentSearchLauncherFactory.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\UserAgentStringSearchLauncher.cs" />
-    <Compile Include="Integrations\HttpUserAgentResolving\UserAgentStringParameters.cs" />
     <Compile Include="Presentation\ConnectToServerEventArgs.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgs.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgs.cs" />

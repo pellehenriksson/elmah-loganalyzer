@@ -48,7 +48,7 @@ namespace ElmahLogAnalyzer.UI.Views
 			this.tableLayoutPanel1.RowCount = 2;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(854, 609);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(1055, 609);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
 			// _selectionView
@@ -56,7 +56,7 @@ namespace ElmahLogAnalyzer.UI.Views
 			this._selectionView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._selectionView.Location = new System.Drawing.Point(3, 3);
 			this._selectionView.Name = "_selectionView";
-			this._selectionView.Size = new System.Drawing.Size(848, 49);
+			this._selectionView.Size = new System.Drawing.Size(1049, 49);
 			this._selectionView.TabIndex = 0;
 			// 
 			// _chartView
@@ -64,7 +64,7 @@ namespace ElmahLogAnalyzer.UI.Views
 			this._chartView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._chartView.Location = new System.Drawing.Point(3, 58);
 			this._chartView.Name = "_chartView";
-			this._chartView.Size = new System.Drawing.Size(848, 548);
+			this._chartView.Size = new System.Drawing.Size(1049, 548);
 			this._chartView.TabIndex = 1;
 			// 
 			// ReportView
@@ -73,7 +73,7 @@ namespace ElmahLogAnalyzer.UI.Views
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Name = "ReportView";
-			this.Size = new System.Drawing.Size(854, 609);
+			this.Size = new System.Drawing.Size(1055, 609);
 			this.Load += new System.EventHandler(this.ReportViewLoad);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.ResumeLayout(false);

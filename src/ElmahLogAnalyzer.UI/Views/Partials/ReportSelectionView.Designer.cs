@@ -58,7 +58,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// 
 			// _showButton
 			// 
-			this._showButton.Location = new System.Drawing.Point(958, 14);
+			this._showButton.Location = new System.Drawing.Point(990, 14);
 			this._showButton.Name = "_showButton";
 			this._showButton.Size = new System.Drawing.Size(75, 23);
 			this._showButton.TabIndex = 3;
@@ -77,7 +77,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// 
 			this._numberOfResultsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this._numberOfResultsComboBox.FormattingEnabled = true;
-			this._numberOfResultsComboBox.Location = new System.Drawing.Point(822, 16);
+			this._numberOfResultsComboBox.Location = new System.Drawing.Point(854, 16);
 			this._numberOfResultsComboBox.Name = "_numberOfResultsComboBox";
 			this._numberOfResultsComboBox.Size = new System.Drawing.Size(121, 21);
 			this._numberOfResultsComboBox.TabIndex = 4;
@@ -87,9 +87,9 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this.label2.AutoSize = true;
 			this.label2.Location = new System.Drawing.Point(754, 16);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(62, 13);
+			this.label2.Size = new System.Drawing.Size(92, 13);
 			this.label2.TabIndex = 5;
-			this.label2.Text = "# of results:";
+			this.label2.Text = "Number of results:";
 			// 
 			// ReportSelectionView
 			// 
@@ -102,7 +102,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this._reportsComboBox);
 			this.Name = "ReportSelectionView";
-			this.Size = new System.Drawing.Size(1047, 49);
+			this.Size = new System.Drawing.Size(1088, 49);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

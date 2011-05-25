@@ -30,6 +30,7 @@
 		{
 			this._mainStatusStrip = new System.Windows.Forms.StatusStrip();
 			this._directoryToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this._settingsStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._versionStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._mainToolStrip = new System.Windows.Forms.ToolStrip();
 			this._selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
@@ -40,7 +41,6 @@
 			this._showSettingsViewButton = new System.Windows.Forms.ToolStripButton();
 			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
 			this._mainPanel = new System.Windows.Forms.Panel();
-			this._settingsStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._mainStatusStrip.SuspendLayout();
 			this._mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -53,7 +53,7 @@
             this._versionStripStatusLabel});
 			this._mainStatusStrip.Location = new System.Drawing.Point(0, 704);
 			this._mainStatusStrip.Name = "_mainStatusStrip";
-			this._mainStatusStrip.Size = new System.Drawing.Size(1264, 24);
+			this._mainStatusStrip.Size = new System.Drawing.Size(1358, 24);
 			this._mainStatusStrip.TabIndex = 0;
 			this._mainStatusStrip.Text = "statusStrip1";
 			// 
@@ -64,9 +64,18 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this._directoryToolStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this._directoryToolStripStatusLabel.Name = "_directoryToolStripStatusLabel";
-			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(1103, 19);
+			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(1224, 19);
 			this._directoryToolStripStatusLabel.Spring = true;
 			this._directoryToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// _settingsStripStatusLabel
+			// 
+			this._settingsStripStatusLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+			this._settingsStripStatusLabel.Name = "_settingsStripStatusLabel";
+			this._settingsStripStatusLabel.Size = new System.Drawing.Size(61, 19);
+			this._settingsStripStatusLabel.Text = "[Settings]";
 			// 
 			// _versionStripStatusLabel
 			// 
@@ -90,7 +99,7 @@
             this._showSettingsViewButton});
 			this._mainToolStrip.Location = new System.Drawing.Point(0, 0);
 			this._mainToolStrip.Name = "_mainToolStrip";
-			this._mainToolStrip.Size = new System.Drawing.Size(1264, 25);
+			this._mainToolStrip.Size = new System.Drawing.Size(1358, 25);
 			this._mainToolStrip.TabIndex = 1;
 			this._mainToolStrip.Text = "toolStrip1";
 			// 
@@ -163,23 +172,14 @@
 			this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._mainPanel.Location = new System.Drawing.Point(0, 25);
 			this._mainPanel.Name = "_mainPanel";
-			this._mainPanel.Size = new System.Drawing.Size(1264, 679);
+			this._mainPanel.Size = new System.Drawing.Size(1358, 679);
 			this._mainPanel.TabIndex = 2;
-			// 
-			// _settingsStripStatusLabel
-			// 
-			this._settingsStripStatusLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-			this._settingsStripStatusLabel.Name = "_settingsStripStatusLabel";
-			this._settingsStripStatusLabel.Size = new System.Drawing.Size(61, 19);
-			this._settingsStripStatusLabel.Text = "[Settings]";
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1264, 728);
+			this.ClientSize = new System.Drawing.Size(1358, 728);
 			this.Controls.Add(this._mainPanel);
 			this.Controls.Add(this._mainToolStrip);
 			this.Controls.Add(this._mainStatusStrip);

@@ -11,14 +11,24 @@ namespace ElmahLogAnalyzer.UI.Forms
 			CancelButton = _closeButton;
 		}
 		
-		private void UpdateLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		private static void UpdateLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			Process.Start("http://code.google.com/p/elmahofflineviewer/");
 		}
 
-		private void ThanksLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		private static void SilkLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			Process.Start("http://www.famfamfam.com/lab/icons/silk/");
+		}
+
+		private static void NinjecLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Process.Start("http://ninject.org/");
+		}
+
+		private static void NLogLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Process.Start("http://nlog-project.org/");
 		}
 	}
 }

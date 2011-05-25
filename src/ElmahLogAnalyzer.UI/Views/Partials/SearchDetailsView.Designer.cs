@@ -46,7 +46,6 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this._clientTabPage = new System.Windows.Forms.TabPage();
-			this._httpUserAgentStringButton = new System.Windows.Forms.Button();
 			this._descriptionLabel = new System.Windows.Forms.Label();
 			this._ipAddressLabel = new System.Windows.Forms.TextBox();
 			this._platformLabel = new System.Windows.Forms.TextBox();
@@ -66,6 +65,9 @@
 			this._querystringListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
 			this._serverVariablesTabPage = new System.Windows.Forms.TabPage();
 			this._serverVariablesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
+			this._clientDetailsOnlineGroupBox = new System.Windows.Forms.GroupBox();
+			this._httpUserAgentStringButton = new System.Windows.Forms.Button();
+			this._botsVsBrowsersButton = new System.Windows.Forms.Button();
 			this._detailsTabControl.SuspendLayout();
 			this._errorTabPage.SuspendLayout();
 			this._errorTabControl.SuspendLayout();
@@ -77,6 +79,7 @@
 			this._cookiesTabPage.SuspendLayout();
 			this._queryStringTabPage.SuspendLayout();
 			this._serverVariablesTabPage.SuspendLayout();
+			this._clientDetailsOnlineGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// _detailsTabControl
@@ -290,7 +293,7 @@
 			// _clientTabPage
 			// 
 			this._clientTabPage.BackColor = System.Drawing.Color.White;
-			this._clientTabPage.Controls.Add(this._httpUserAgentStringButton);
+			this._clientTabPage.Controls.Add(this._clientDetailsOnlineGroupBox);
 			this._clientTabPage.Controls.Add(this._descriptionLabel);
 			this._clientTabPage.Controls.Add(this._ipAddressLabel);
 			this._clientTabPage.Controls.Add(this._platformLabel);
@@ -307,16 +310,6 @@
 			this._clientTabPage.Size = new System.Drawing.Size(672, 405);
 			this._clientTabPage.TabIndex = 2;
 			this._clientTabPage.Text = "Client Information";
-			// 
-			// _httpUserAgentStringButton
-			// 
-			this._httpUserAgentStringButton.Location = new System.Drawing.Point(19, 220);
-			this._httpUserAgentStringButton.Name = "_httpUserAgentStringButton";
-			this._httpUserAgentStringButton.Size = new System.Drawing.Size(392, 23);
-			this._httpUserAgentStringButton.TabIndex = 21;
-			this._httpUserAgentStringButton.Text = "Find more client information details online (http://www.useragentstring.com)";
-			this._httpUserAgentStringButton.UseVisualStyleBackColor = true;
-			this._httpUserAgentStringButton.Click += new System.EventHandler(this.HttpUserAgentStringButtonClick);
 			// 
 			// _descriptionLabel
 			// 
@@ -513,6 +506,37 @@
 			this._serverVariablesListView.Size = new System.Drawing.Size(666, 399);
 			this._serverVariablesListView.TabIndex = 0;
 			// 
+			// _clientDetailsOnlineGroupBox
+			// 
+			this._clientDetailsOnlineGroupBox.Controls.Add(this._botsVsBrowsersButton);
+			this._clientDetailsOnlineGroupBox.Controls.Add(this._httpUserAgentStringButton);
+			this._clientDetailsOnlineGroupBox.Location = new System.Drawing.Point(22, 167);
+			this._clientDetailsOnlineGroupBox.Name = "_clientDetailsOnlineGroupBox";
+			this._clientDetailsOnlineGroupBox.Size = new System.Drawing.Size(276, 224);
+			this._clientDetailsOnlineGroupBox.TabIndex = 22;
+			this._clientDetailsOnlineGroupBox.TabStop = false;
+			this._clientDetailsOnlineGroupBox.Text = "Find more client information online";
+			// 
+			// _httpUserAgentStringButton
+			// 
+			this._httpUserAgentStringButton.Location = new System.Drawing.Point(17, 43);
+			this._httpUserAgentStringButton.Name = "_httpUserAgentStringButton";
+			this._httpUserAgentStringButton.Size = new System.Drawing.Size(239, 23);
+			this._httpUserAgentStringButton.TabIndex = 22;
+			this._httpUserAgentStringButton.Text = "http://www.useragentstring.com";
+			this._httpUserAgentStringButton.UseVisualStyleBackColor = true;
+			this._httpUserAgentStringButton.Click += new System.EventHandler(this.HttpUserAgentStringButtonClick);
+			// 
+			// _botsVsBrowsersButton
+			// 
+			this._botsVsBrowsersButton.Location = new System.Drawing.Point(17, 88);
+			this._botsVsBrowsersButton.Name = "_botsVsBrowsersButton";
+			this._botsVsBrowsersButton.Size = new System.Drawing.Size(239, 23);
+			this._botsVsBrowsersButton.TabIndex = 23;
+			this._botsVsBrowsersButton.Text = "http://www.botsvsbrowsers.com";
+			this._botsVsBrowsersButton.UseVisualStyleBackColor = true;
+			this._botsVsBrowsersButton.Click += new System.EventHandler(this.BotsVsBrowsersButtonClick);
+			// 
 			// SearchDetailsView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -535,6 +559,7 @@
 			this._cookiesTabPage.ResumeLayout(false);
 			this._queryStringTabPage.ResumeLayout(false);
 			this._serverVariablesTabPage.ResumeLayout(false);
+			this._clientDetailsOnlineGroupBox.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -578,6 +603,8 @@
 		private Controls.NameValuePairListView _querystringListView;
 		private Controls.NameValuePairListView _serverVariablesListView;
 		private System.Windows.Forms.Label _descriptionLabel;
+		private System.Windows.Forms.GroupBox _clientDetailsOnlineGroupBox;
 		private System.Windows.Forms.Button _httpUserAgentStringButton;
+		private System.Windows.Forms.Button _botsVsBrowsersButton;
 	}
 }

@@ -13,6 +13,8 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 		void LoadReportTypes(IEnumerable<ReportTypeListItem> types);
 
+		void LoadNumberOfResultsOptions(IEnumerable<NameValuePair> options);
+
 		void SetDateInterval(DateInterval interval);
 
 		void DisplayReport(Report report);

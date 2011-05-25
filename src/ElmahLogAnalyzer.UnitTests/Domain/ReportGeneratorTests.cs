@@ -15,7 +15,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypeEnum.Type, CreateInterval());
+			var query = new ReportQuery(ReportTypeEnum.Type, CreateInterval(), -1);
 
 			// act
 			var result = generator.Create(query);
@@ -25,11 +25,25 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		}
 
 		[Test]
+		public void Create_ReportTypeIsTypeNumerOfResultsIsTwo_GeneratesReport()
+		{
+			// arrange
+			var generator = CreateGenerator();
+			var query = new ReportQuery(ReportTypeEnum.Type, CreateInterval(), 2);
+
+			// act
+			var result = generator.Create(query);
+
+			// assert
+			Assert.That(result.Items.Count, Is.EqualTo(2));
+		}
+		
+		[Test]
 		public void Create_ReportTypeIsSource_GeneratesReport()
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypeEnum.Source, CreateInterval());
+			var query = new ReportQuery(ReportTypeEnum.Source, CreateInterval(), -1);
 
 			// act
 			var result = generator.Create(query);
@@ -39,11 +53,81 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		}
 
 		[Test]
+		public void Create_ReportTypeIsSourceNumberOfResultsIsThree_GeneratesReport()
+		{
+			// arrange
+			var generator = CreateGenerator();
+			var query = new ReportQuery(ReportTypeEnum.Source, CreateInterval(), 3);
+
+			// act
+			var result = generator.Create(query);
+
+			// assert
+			Assert.That(result.Items.Count, Is.EqualTo(3));
+		}
+
+		[Test]
 		public void Create_ReportTypeIsUser_GeneratesReport()
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypeEnum.User, CreateInterval());
+			var query = new ReportQuery(ReportTypeEnum.User, CreateInterval(), -1);
+
+			// act
+			var result = generator.Create(query);
+
+			// assert
+			Assert.That(result.Items.Count, Is.EqualTo(4));
+		}
+
+		[Test]
+		public void Create_ReportTypeIsUserNumberOfResultsIsTwo_GeneratesReport()
+		{
+			// arrange
+			var generator = CreateGenerator();
+			var query = new ReportQuery(ReportTypeEnum.User, CreateInterval(), 2);
+
+			// act
+			var result = generator.Create(query);
+
+			// assert
+			Assert.That(result.Items.Count, Is.EqualTo(2));
+		}
+		
+		[Test]
+		public void Create_ReportTypeIsUrl_GeneratesReport()
+		{
+			// arrange
+			var generator = CreateGenerator();
+			var query = new ReportQuery(ReportTypeEnum.Url, CreateInterval(), -1);
+
+			// act
+			var result = generator.Create(query);
+
+			// assert
+			Assert.That(result.Items.Count, Is.EqualTo(3));
+		}
+
+		[Test]
+		public void Create_ReportTypeIsUrlNumberOfResultsIsOne_GeneratesReport()
+		{
+			// arrange
+			var generator = CreateGenerator();
+			var query = new ReportQuery(ReportTypeEnum.Url, CreateInterval(), 1);
+
+			// act
+			var result = generator.Create(query);
+
+			// assert
+			Assert.That(result.Items.Count, Is.EqualTo(1));
+		}
+		
+		[Test]
+		public void Create_ReportTypeIsDay_GeneratesReport()
+		{
+			// arrange
+			var generator = CreateGenerator();
+			var query = new ReportQuery(ReportTypeEnum.Day, CreateInterval(), -1);
 
 			// act
 			var result = generator.Create(query);
@@ -52,34 +136,6 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			Assert.That(result.Items.Count, Is.EqualTo(4));
 		}
 		
-		[Test]
-		public void Create_ReportTypeIsUrl_GeneratesReport()
-		{
-			// arrange
-			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypeEnum.Url, CreateInterval());
-
-			// act
-			var result = generator.Create(query);
-
-			// assert
-			Assert.That(result.Items.Count, Is.EqualTo(3));
-		}
-
-		[Test]
-		public void Create_ReportTypeIsDay_GeneratesReport()
-		{
-			// arrange
-			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypeEnum.Day, CreateInterval());
-
-			// act
-			var result = generator.Create(query);
-
-			// assert
-			Assert.That(result.Items.Count, Is.EqualTo(4));
-		}
-
 		[Test]
 		public void RepositoryOnInitialized_RaisesOnDataSourceInitializedEvent()
 		{
@@ -93,6 +149,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			                                     	{
 			                                     		eventWasRaised = true;
 			                                     	};
+
 			repository.Raise(x => x.OnInitialized += null, new RepositoryInitializedEventArgs(string.Empty, 0));
 
 			// assert

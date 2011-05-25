@@ -33,6 +33,18 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_reportsComboBox.SelectedIndex = 0;
 		}
 
+		public void LoadNumberOfResultsOptions(IEnumerable<NameValuePair> options)
+		{
+			_numberOfResultsComboBox.Items.Clear();
+
+			foreach (var item in options)
+			{
+				_numberOfResultsComboBox.Items.Add(item);
+			}
+
+			_numberOfResultsComboBox.SelectedIndex = 0;
+		}
+
 		private void ShowButtonClick(object sender, EventArgs e)
 		{
 			if (OnReportSelected == null)
@@ -47,7 +59,8 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		private ReportQuery BuildQuery()
 		{
 			var reportType = (ReportTypeListItem)_reportsComboBox.SelectedItem;
-			return new ReportQuery(reportType.ReportType, _dateIntervalPicker.GetInterval());
+			var numberOfResults = Convert.ToInt32(((NameValuePair)_numberOfResultsComboBox.SelectedItem).Value);
+			return new ReportQuery(reportType.ReportType, _dateIntervalPicker.GetInterval(), numberOfResults);
 		}
 	}
 }

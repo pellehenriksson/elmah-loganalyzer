@@ -36,7 +36,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_browserLabel.Text = ErrorLog.ClientInformation.Browser;
 			_ipAddressLabel.Text = ErrorLog.LocalIpAddress;
 			_descriptionLabel.Text = ErrorLog.ClientInformation.Description;
-			_httpUserAgentStringButton.Visible = true;
+			_clientDetailsOnlineGroupBox.Visible = true;
 
 			_formsListView.LoadValues(ErrorLog.FormValues);
 			_cookiesListView.LoadValues(ErrorLog.Cookies);
@@ -73,7 +73,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_browserLabel.Text = string.Empty;
 			_ipAddressLabel.Text = string.Empty;
 			_descriptionLabel.Text = string.Empty;
-			_httpUserAgentStringButton.Visible = false;
+			_clientDetailsOnlineGroupBox.Visible = false;
 
 			_formsListView.ClearValues();
 			_cookiesListView.ClearValues();
@@ -83,12 +83,22 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_browser.DocumentText = string.Empty;
 		}
 
-		private void HttpUserAgentStringButtonClick(object sender, EventArgs e)
+		private void RaiseOnSearchHttpUserAgentInformationClicked(string searchLauncher)
 		{
 			if (OnSearchHttpUserAgentInformationClicked != null)
 			{
-				OnSearchHttpUserAgentInformationClicked(this, new SearchHttpUserAgentInformationEventArgs(ErrorLog.ClientInformation.HttpUserAgentString));
+				OnSearchHttpUserAgentInformationClicked(this, new SearchHttpUserAgentInformationEventArgs(ErrorLog.ClientInformation.HttpUserAgentString, searchLauncher));
 			}
+		}
+		
+		private void BotsVsBrowsersButtonClick(object sender, EventArgs e)
+		{
+			RaiseOnSearchHttpUserAgentInformationClicked("botsvsbrowsers");
+		}
+		
+		private void HttpUserAgentStringButtonClick(object sender, EventArgs e)
+		{
+			RaiseOnSearchHttpUserAgentInformationClicked(string.Empty);
 		}
 	}
 }

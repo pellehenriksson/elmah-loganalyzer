@@ -14,14 +14,14 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 	{
 		private Mock<ISearchView> _view;
 		private Mock<IErrorLogRepository> _repository;
-		private Mock<IHttpUserAgentSearchLauncher> _searchLauncher;
+		private Mock<IHttpUserAgentSearchLauncherFactory> _searchLauncherFactory;
 
 		[SetUp]
 		public void Setup()
 		{
 			_view = new Mock<ISearchView>();
 			_repository = new Mock<IErrorLogRepository>();
-			_searchLauncher = new Mock<IHttpUserAgentSearchLauncher>();
+			_searchLauncherFactory = new Mock<IHttpUserAgentSearchLauncherFactory>();
 		}
 		
 		[Test]
@@ -228,16 +228,20 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			var presenter = BuildPresenter();
 			const string httpUserAgent = "dsBot-Google-Mobile (Android; +http://www.google.com/adsbot.html) AppleWebKit";
 
+			var launcher = new Mock<IHttpUserAgentSearchLauncher>();
+			_searchLauncherFactory.Setup(x => x.Create(It.IsAny<string>())).Returns(launcher.Object);
+
 			// act
-			_view.Raise(x => x.OnSearchHttpUserAgentInformation += null, new SearchHttpUserAgentInformationEventArgs(httpUserAgent));
+			_view.Raise(x => x.OnSearchHttpUserAgentInformation += null, new SearchHttpUserAgentInformationEventArgs(httpUserAgent, string.Empty));
 
 			// assert
-			_searchLauncher.Verify(x => x.Launch(httpUserAgent), Times.Once());
+			_searchLauncherFactory.Verify(x => x.Create(It.IsAny<string>()), Times.Once());
+			launcher.Verify(x => x.Launch(httpUserAgent), Times.Once());
 		}
-		
+
 		private SearchPresenter BuildPresenter()
 		{
-			return new SearchPresenter(_view.Object, _repository.Object, _searchLauncher.Object);
+			return new SearchPresenter(_view.Object, _repository.Object, _searchLauncherFactory.Object);
 		}
 	}
 }

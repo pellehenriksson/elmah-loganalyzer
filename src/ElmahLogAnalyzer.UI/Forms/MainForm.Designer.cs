@@ -29,8 +29,8 @@
 		private void InitializeComponent()
 		{
 			this._mainStatusStrip = new System.Windows.Forms.StatusStrip();
-			this.directoryToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-			this.versionStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this._directoryToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this._versionStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._mainToolStrip = new System.Windows.Forms.ToolStrip();
 			this._selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
 			this._selectServerButton = new System.Windows.Forms.ToolStripButton();
@@ -40,6 +40,7 @@
 			this._showSettingsViewButton = new System.Windows.Forms.ToolStripButton();
 			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
 			this._mainPanel = new System.Windows.Forms.Panel();
+			this._settingsStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._mainStatusStrip.SuspendLayout();
 			this._mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -47,35 +48,36 @@
 			// _mainStatusStrip
 			// 
 			this._mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.directoryToolStripStatusLabel,
-            this.versionStripStatusLabel});
+            this._directoryToolStripStatusLabel,
+            this._settingsStripStatusLabel,
+            this._versionStripStatusLabel});
 			this._mainStatusStrip.Location = new System.Drawing.Point(0, 704);
 			this._mainStatusStrip.Name = "_mainStatusStrip";
 			this._mainStatusStrip.Size = new System.Drawing.Size(1264, 24);
 			this._mainStatusStrip.TabIndex = 0;
 			this._mainStatusStrip.Text = "statusStrip1";
 			// 
-			// directoryToolStripStatusLabel
+			// _directoryToolStripStatusLabel
 			// 
-			this.directoryToolStripStatusLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+			this._directoryToolStripStatusLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-			this.directoryToolStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.directoryToolStripStatusLabel.Name = "directoryToolStripStatusLabel";
-			this.directoryToolStripStatusLabel.Size = new System.Drawing.Size(1191, 19);
-			this.directoryToolStripStatusLabel.Spring = true;
-			this.directoryToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this._directoryToolStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this._directoryToolStripStatusLabel.Name = "_directoryToolStripStatusLabel";
+			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(1103, 19);
+			this._directoryToolStripStatusLabel.Spring = true;
+			this._directoryToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// versionStripStatusLabel
+			// _versionStripStatusLabel
 			// 
-			this.versionStripStatusLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+			this._versionStripStatusLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-			this.versionStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.versionStripStatusLabel.Name = "versionStripStatusLabel";
-			this.versionStripStatusLabel.Size = new System.Drawing.Size(58, 19);
-			this.versionStripStatusLabel.Text = "[Version]";
-			this.versionStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this._versionStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this._versionStripStatusLabel.Name = "_versionStripStatusLabel";
+			this._versionStripStatusLabel.Size = new System.Drawing.Size(58, 19);
+			this._versionStripStatusLabel.Text = "[Version]";
+			this._versionStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// _mainToolStrip
 			// 
@@ -164,6 +166,15 @@
 			this._mainPanel.Size = new System.Drawing.Size(1264, 679);
 			this._mainPanel.TabIndex = 2;
 			// 
+			// _settingsStripStatusLabel
+			// 
+			this._settingsStripStatusLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+			this._settingsStripStatusLabel.Name = "_settingsStripStatusLabel";
+			this._settingsStripStatusLabel.Size = new System.Drawing.Size(61, 19);
+			this._settingsStripStatusLabel.Text = "[Settings]";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,21 +198,22 @@
 
 		private System.Windows.Forms.StatusStrip _mainStatusStrip;
 		private System.Windows.Forms.ToolStrip _mainToolStrip;
-		private System.Windows.Forms.ToolStripStatusLabel directoryToolStripStatusLabel;
+		private System.Windows.Forms.ToolStripStatusLabel _directoryToolStripStatusLabel;
 		private System.Windows.Forms.ToolStripButton _selectDirectoryButton;
 		private System.Windows.Forms.FolderBrowserDialog _folderBrowserDialog;
-		private System.Windows.Forms.ToolStripStatusLabel versionStripStatusLabel;
+		private System.Windows.Forms.ToolStripStatusLabel _versionStripStatusLabel;
 		private System.Windows.Forms.Panel _mainPanel;
 		private System.Windows.Forms.ToolStripButton _showSearchViewButton;
 		private System.Windows.Forms.ToolStripButton _showReportViewButton;
 
 		private void RepositoryOnInitialized(object sender, Core.Domain.RepositoryInitializedEventArgs e)
 		{
-			directoryToolStripStatusLabel.Text = string.Format("Directory : {0} Logs found: {1}", e.Directory, e.TotalNumberOfLogs);
+			_directoryToolStripStatusLabel.Text = string.Format("Directory : {0} Logs found: {1}", e.Directory, e.TotalNumberOfLogs);
 		}
 
 		private System.Windows.Forms.ToolStripButton _showSettingsViewButton;
 		private System.Windows.Forms.ToolStripButton _showAboutButton;
 		private System.Windows.Forms.ToolStripButton _selectServerButton;
+		private System.Windows.Forms.ToolStripStatusLabel _settingsStripStatusLabel;
 	}
 }

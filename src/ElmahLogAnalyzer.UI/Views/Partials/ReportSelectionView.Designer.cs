@@ -33,7 +33,9 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this._reportsComboBox = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this._showButton = new System.Windows.Forms.Button();
-			this._dateIntervalPicker = new DateIntervalPicker();
+			this._dateIntervalPicker = new ElmahLogAnalyzer.UI.Controls.DateIntervalPicker();
+			this._numberOfResultsComboBox = new System.Windows.Forms.ComboBox();
+			this.label2 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// _reportsComboBox
@@ -56,7 +58,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// 
 			// _showButton
 			// 
-			this._showButton.Location = new System.Drawing.Point(746, 16);
+			this._showButton.Location = new System.Drawing.Point(958, 14);
 			this._showButton.Name = "_showButton";
 			this._showButton.Size = new System.Drawing.Size(75, 23);
 			this._showButton.TabIndex = 3;
@@ -71,16 +73,36 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this._dateIntervalPicker.Size = new System.Drawing.Size(291, 66);
 			this._dateIntervalPicker.TabIndex = 0;
 			// 
+			// _numberOfResultsComboBox
+			// 
+			this._numberOfResultsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._numberOfResultsComboBox.FormattingEnabled = true;
+			this._numberOfResultsComboBox.Location = new System.Drawing.Point(822, 16);
+			this._numberOfResultsComboBox.Name = "_numberOfResultsComboBox";
+			this._numberOfResultsComboBox.Size = new System.Drawing.Size(121, 21);
+			this._numberOfResultsComboBox.TabIndex = 4;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(754, 16);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(62, 13);
+			this.label2.TabIndex = 5;
+			this.label2.Text = "# of results:";
+			// 
 			// ReportSelectionView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this._numberOfResultsComboBox);
 			this.Controls.Add(this._dateIntervalPicker);
 			this.Controls.Add(this._showButton);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this._reportsComboBox);
 			this.Name = "ReportSelectionView";
-			this.Size = new System.Drawing.Size(828, 49);
+			this.Size = new System.Drawing.Size(1047, 49);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -92,5 +114,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button _showButton;
 		private DateIntervalPicker _dateIntervalPicker;
+		private System.Windows.Forms.ComboBox _numberOfResultsComboBox;
+		private System.Windows.Forms.Label label2;
 	}
 }

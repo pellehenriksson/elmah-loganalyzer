@@ -1,7 +1,6 @@
 ﻿using System;
 using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Domain;
-using ElmahLogAnalyzer.Core.Integrations;
 using ElmahLogAnalyzer.Core.Integrations.HttpUserAgentSearch;
 
 namespace ElmahLogAnalyzer.Core.Presentation
@@ -9,13 +8,13 @@ namespace ElmahLogAnalyzer.Core.Presentation
 	public class SearchPresenter
 	{
 		private readonly IErrorLogRepository _repository;
-		private readonly IHttpUserAgentSearchLauncher _httpUserAgentSearchLauncher;
+		private readonly IHttpUserAgentSearchLauncherFactory _httpUserAgentSearchLauncherFactory;
 
-		public SearchPresenter(ISearchView view, IErrorLogRepository errorLogRepository, IHttpUserAgentSearchLauncher httpUserAgentSearchLauncher)
+		public SearchPresenter(ISearchView view, IErrorLogRepository errorLogRepository, IHttpUserAgentSearchLauncherFactory httpUserAgentSearchLauncherFactory)
 		{
 			View = view;
 			_repository = errorLogRepository;
-			_httpUserAgentSearchLauncher = httpUserAgentSearchLauncher;
+			_httpUserAgentSearchLauncherFactory = httpUserAgentSearchLauncherFactory;
 
 			RegisterEvents();
 		}
@@ -80,7 +79,8 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 		private void ViewOnSearchHttpUserAgentInformation(object sender, SearchHttpUserAgentInformationEventArgs e)
 		{
-			_httpUserAgentSearchLauncher.Launch(e.HttpUserAgentString);	
+			var searchLauncher = _httpUserAgentSearchLauncherFactory.Create(e.SearchLauncher);
+			searchLauncher.Launch(e.HttpUserAgentString);	
 		}
 	}
 }

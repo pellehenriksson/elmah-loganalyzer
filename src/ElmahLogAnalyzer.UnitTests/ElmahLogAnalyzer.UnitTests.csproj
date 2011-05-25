@@ -77,8 +77,8 @@
     <Compile Include="Integrations\ErrorSearch\BingErrorSearchLauncherTests.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\BotsVsBrowsersSearchLauncherTests.cs" />
     <Compile Include="Integrations\ErrorSearch\GoogleErrorSearchLauncherTests.cs" />
+    <Compile Include="Integrations\HttpUserAgentSearch\HttpUserAgentSearchLauncherFactoryTests.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\UserAgentStringSearchLauncherTests.cs" />
-    <Compile Include="Integrations\HttpUserAgentResolving\UserAgentStringClientInformationResolverTests.cs" />
     <Compile Include="Presentation\ConnectToServerEventArgsTests.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgsTests.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgsTests.cs" />

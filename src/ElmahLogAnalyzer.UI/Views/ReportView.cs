@@ -32,6 +32,18 @@ namespace ElmahLogAnalyzer.UI.Views
 			}
 		}
 
+		public void LoadNumberOfResultsOptions(IEnumerable<NameValuePair> options)
+		{
+			if (InvokeRequired)
+			{
+				this.InvokeEx(x => x._selectionView.LoadNumberOfResultsOptions(options));
+			}
+			else
+			{
+				_selectionView.LoadNumberOfResultsOptions(options);
+			}
+		}
+
 		public void SetDateInterval(DateInterval interval)
 		{
 			if (InvokeRequired)

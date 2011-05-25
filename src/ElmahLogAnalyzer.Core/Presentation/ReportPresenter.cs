@@ -32,6 +32,19 @@ namespace ElmahLogAnalyzer.Core.Presentation
 			return list;
 		}
 
+		private static IEnumerable<NameValuePair> BuildNumerOfResultsOptionsList()
+		{
+			var list = new List<NameValuePair>();
+
+			list.Add(new NameValuePair("ALL", "-1"));
+			list.Add(new NameValuePair("TOP 500", "500"));
+			list.Add(new NameValuePair("TOP 100", "100"));
+			list.Add(new NameValuePair("TOP 50", "50"));
+			list.Add(new NameValuePair("TOP 10", "10"));
+			
+			return list;
+		}
+
 		private void RegisterEvents()
 		{
 			View.OnLoaded += ViewOnLoaded;
@@ -42,7 +55,8 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		private void Initialize()
 		{
 			View.LoadReportTypes(BuildReportTypesList());
-			
+			View.LoadNumberOfResultsOptions(BuildNumerOfResultsOptionsList());
+
 			var interval = DateInterval.Create(DateIntervalSpanEnum.Week, DateTime.Today);
 			View.SetDateInterval(interval);
 		}

@@ -26,37 +26,37 @@ namespace ElmahLogAnalyzer.Core.Domain
 			switch (query.ReportType)
 			{
 				case ReportTypeEnum.Type:
-					CreateByTypesReport(report, errors);
+					CreateByTypesReport(report, errors, query.NumberOfResults);
 					break;
 				case ReportTypeEnum.Source:
-					CreateBySourceReport(report, errors);
+					CreateBySourceReport(report, errors, query.NumberOfResults);
 					break;
 				case ReportTypeEnum.User:
-					CreateByUsersReport(report, errors);
+					CreateByUsersReport(report, errors, query.NumberOfResults);
 					break;
 				case ReportTypeEnum.Url:
-					CreateByUrlReport(report, errors);
+					CreateByUrlReport(report, errors, query.NumberOfResults);
 					break;
 				case ReportTypeEnum.Day:
-					CreateByDayReport(report, errors);
+					CreateByDayReport(report, errors, query.NumberOfResults);
 					break;
 			}
 			
 			return report;
 		}
-
-		private static void CreateByTypesReport(Report report, IEnumerable<ErrorLog> errors)
+		
+		private static void CreateByTypesReport(Report report, IEnumerable<ErrorLog> errors, int numberOfResults)
 		{
 			var query = from e in errors
 			        orderby e.Type
 			        group e by e.Type
 			        into g
 			        select new ReportItem(g.Key, g.Count());
-			
-			report.AddRange(query.ToList());
+
+			report.AddRange(GetNumberOfResults(query, numberOfResults));
 		}
 
-		private static void CreateBySourceReport(Report report, IEnumerable<ErrorLog> errors)
+		private static void CreateBySourceReport(Report report, IEnumerable<ErrorLog> errors, int numberOfResults)
 		{
 			var query = from e in errors
 					orderby e.Source
@@ -64,10 +64,10 @@ namespace ElmahLogAnalyzer.Core.Domain
 					into g
 					select new ReportItem(g.Key, g.Count());
 
-			report.AddRange(query.ToList());
+			report.AddRange(GetNumberOfResults(query, numberOfResults));
 		}
 
-		private static void CreateByUsersReport(Report report, IEnumerable<ErrorLog> errors)
+		private static void CreateByUsersReport(Report report, IEnumerable<ErrorLog> errors, int numberOfResults)
 		{
 			var query = from e in errors
 					orderby e.User
@@ -75,10 +75,10 @@ namespace ElmahLogAnalyzer.Core.Domain
 					into g
 					select new ReportItem(g.Key, g.Count());
 
-			report.AddRange(query.ToList());
+			report.AddRange(GetNumberOfResults(query, numberOfResults));
 		}
 
-		private static void CreateByUrlReport(Report report, IEnumerable<ErrorLog> errors)
+		private static void CreateByUrlReport(Report report, IEnumerable<ErrorLog> errors, int numberOfResults)
 		{
 			var query = from e in errors
 					orderby e.CleanUrl
@@ -86,10 +86,10 @@ namespace ElmahLogAnalyzer.Core.Domain
 					into g
 					select new ReportItem(g.Key, g.Count());
 
-			report.AddRange(query.ToList());
+			report.AddRange(GetNumberOfResults(query, numberOfResults));
 		}
 
-		private static void CreateByDayReport(Report report, IEnumerable<ErrorLog> errors)
+		private static void CreateByDayReport(Report report, IEnumerable<ErrorLog> errors, int numberOfResults)
 		{
 			var query = from e in errors
 					orderby e.Time.Date
@@ -97,7 +97,13 @@ namespace ElmahLogAnalyzer.Core.Domain
 					into g
 					select new ReportItem(g.Key.ToShortDateString(), g.Count());
 
-			report.AddRange(query.ToList());
+			report.AddRange(GetNumberOfResults(query, numberOfResults));
+		}
+
+		private static IEnumerable<ReportItem> GetNumberOfResults(IEnumerable<ReportItem> items, int numberOfResults)
+		{
+			var result = numberOfResults == -1 ? items.ToList() : items.OrderByDescending(x => x.Count).ToList().Take(numberOfResults);
+			return result;
 		}
 
 		private void RepositoryOnInitialized(object sender, RepositoryInitializedEventArgs e)

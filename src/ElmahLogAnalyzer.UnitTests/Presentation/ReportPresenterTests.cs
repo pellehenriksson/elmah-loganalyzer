@@ -57,6 +57,21 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		}
 
 		[Test]
+		public void ViewOnLoaded_LoadNumberOfResulsOptions()
+		{
+			// arrange
+			var view = new Mock<IReportView>();
+			var generator = new Mock<IReportGenerator>();
+			var presenter = new ReportPresenter(view.Object, generator.Object);
+
+			// act
+			view.Raise(x => x.OnLoaded += null, new EventArgs());
+
+			// assert
+			view.Verify(x => x.LoadNumberOfResultsOptions(It.IsAny<List<NameValuePair>>()), Times.Once());
+		}
+
+		[Test]
 		public void ViewOnReportSelected_DisplaysReport()
 		{
 			// arrange

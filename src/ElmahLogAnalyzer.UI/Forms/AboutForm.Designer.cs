@@ -73,10 +73,10 @@
 			this._updateLinkLabel.AutoSize = true;
 			this._updateLinkLabel.Location = new System.Drawing.Point(151, 65);
 			this._updateLinkLabel.Name = "_updateLinkLabel";
-			this._updateLinkLabel.Size = new System.Drawing.Size(228, 13);
+			this._updateLinkLabel.Size = new System.Drawing.Size(220, 13);
 			this._updateLinkLabel.TabIndex = 3;
 			this._updateLinkLabel.TabStop = true;
-			this._updateLinkLabel.Text = "http://code.google.com/p/elmahofflineviewer/";
+			this._updateLinkLabel.Text = "http://code.google.com/p/elmah-loganalyzer";
 			this._updateLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(UpdateLinkLabelLinkClicked);
 			// 
 			// _silkLabel
@@ -93,10 +93,10 @@
 			this._silkLinkLabel.AutoSize = true;
 			this._silkLinkLabel.Location = new System.Drawing.Point(120, 110);
 			this._silkLinkLabel.Name = "_silkLinkLabel";
-			this._silkLinkLabel.Size = new System.Drawing.Size(213, 13);
+			this._silkLinkLabel.Size = new System.Drawing.Size(208, 13);
 			this._silkLinkLabel.TabIndex = 5;
 			this._silkLinkLabel.TabStop = true;
-			this._silkLinkLabel.Text = "http://www.famfamfam.com/lab/icons/silk/";
+			this._silkLinkLabel.Text = "http://www.famfamfam.com/lab/icons/silk";
 			this._silkLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(SilkLinkLabelLinkClicked);
 			// 
 			// _ninjectLabel
@@ -122,10 +122,10 @@
 			this.ninjecLinkLabel.AutoSize = true;
 			this.ninjecLinkLabel.Location = new System.Drawing.Point(120, 136);
 			this.ninjecLinkLabel.Name = "ninjecLinkLabel";
-			this.ninjecLinkLabel.Size = new System.Drawing.Size(92, 13);
+			this.ninjecLinkLabel.Size = new System.Drawing.Size(87, 13);
 			this.ninjecLinkLabel.TabIndex = 8;
 			this.ninjecLinkLabel.TabStop = true;
-			this.ninjecLinkLabel.Text = "http://ninject.org/";
+			this.ninjecLinkLabel.Text = "http://ninject.org";
 			this.ninjecLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(NinjecLinkLabelLinkClicked);
 			// 
 			// nLogLinkLabel
@@ -133,10 +133,10 @@
 			this.nLogLinkLabel.AutoSize = true;
 			this.nLogLinkLabel.Location = new System.Drawing.Point(120, 168);
 			this.nLogLinkLabel.Name = "nLogLinkLabel";
-			this.nLogLinkLabel.Size = new System.Drawing.Size(116, 13);
+			this.nLogLinkLabel.Size = new System.Drawing.Size(111, 13);
 			this.nLogLinkLabel.TabIndex = 9;
 			this.nLogLinkLabel.TabStop = true;
-			this.nLogLinkLabel.Text = "http://nlog-project.org/";
+			this.nLogLinkLabel.Text = "http://nlog-project.org";
 			this.nLogLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(NLogLinkLabelLinkClicked);
 			// 
 			// AboutForm

@@ -13,22 +13,22 @@ namespace ElmahLogAnalyzer.UI.Forms
 		
 		private static void UpdateLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			Process.Start("http://code.google.com/p/elmahofflineviewer/");
+			Process.Start("http://code.google.com/p/elmah-loganalyzer");
 		}
 
 		private static void SilkLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			Process.Start("http://www.famfamfam.com/lab/icons/silk/");
+			Process.Start("http://www.famfamfam.com/lab/icons/silk");
 		}
 
 		private static void NinjecLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			Process.Start("http://ninject.org/");
+			Process.Start("http://ninject.org");
 		}
 
 		private static void NLogLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			Process.Start("http://nlog-project.org/");
+			Process.Start("http://nlog-project.org");
 		}
 	}
 }

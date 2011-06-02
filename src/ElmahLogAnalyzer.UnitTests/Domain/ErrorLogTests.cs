@@ -156,6 +156,19 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		}
 
 		[Test]
+		public void AddServerVariable_NameIsOnIgnoreList_ShouldNotAdd()
+		{
+			// arrange
+			var error = new ErrorLog();
+
+			// act
+			error.AddServerVariable("ALL_HTTP", "some values");
+			
+			// assert
+			Assert.That(error.ServerVariables.Count, Is.EqualTo(0));
+		}
+
+		[Test]
 		public void AddCookie_Adds()
 		{
 			// arrange

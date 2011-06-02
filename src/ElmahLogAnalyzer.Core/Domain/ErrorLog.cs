@@ -7,6 +7,8 @@ namespace ElmahLogAnalyzer.Core.Domain
 {
 	public class ErrorLog
 	{
+		private static readonly List<string> IgnoreList = new List<string> { "ALL_HTTP", "ALL_RAW" };
+
 		public ErrorLog()
 		{
 			ServerVariables = new List<NameValuePair>();
@@ -29,6 +31,8 @@ namespace ElmahLogAnalyzer.Core.Domain
 		public string Details { get; set; }
 		
 		public DateTime Time { get; set; }
+
+		public string StatusCode { get; set; }
 		
 		public string User { get; private set; }
 
@@ -62,11 +66,16 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 		public void AddServerVariable(string name, string value)
 		{
+			if (!ShouldBeIncluded(name))
+			{
+				return;
+			}
+
 			if (name == HttpServerVariables.LogonUser)
 			{
 				User = value.ToLowerInvariant();
 			}
-
+			
 			if (name == HttpServerVariables.Url)
 			{
 				Url = value.ToLowerInvariant();
@@ -99,6 +108,11 @@ namespace ElmahLogAnalyzer.Core.Domain
 		public void AddCookie(string name, string value)
 		{
 			Cookies.Add(new NameValuePair(name, value));
+		}
+
+		private bool ShouldBeIncluded(string name)
+		{
+			return !IgnoreList.Contains(name);
 		}
 	}
 }

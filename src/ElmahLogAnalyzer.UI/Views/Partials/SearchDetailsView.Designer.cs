@@ -30,6 +30,8 @@
 		{
 			this._detailsTabControl = new System.Windows.Forms.TabControl();
 			this._errorTabPage = new System.Windows.Forms.TabPage();
+			this._httpStatusCodeLabel = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this._sourceLabel = new System.Windows.Forms.TextBox();
 			this._typeLabel = new System.Windows.Forms.TextBox();
 			this._urlLabel = new System.Windows.Forms.TextBox();
@@ -46,6 +48,9 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this._clientTabPage = new System.Windows.Forms.TabPage();
+			this._clientDetailsOnlineGroupBox = new System.Windows.Forms.GroupBox();
+			this._botsVsBrowsersButton = new System.Windows.Forms.Button();
+			this._httpUserAgentStringButton = new System.Windows.Forms.Button();
 			this._descriptionLabel = new System.Windows.Forms.Label();
 			this._ipAddressLabel = new System.Windows.Forms.TextBox();
 			this._platformLabel = new System.Windows.Forms.TextBox();
@@ -65,9 +70,6 @@
 			this._querystringListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
 			this._serverVariablesTabPage = new System.Windows.Forms.TabPage();
 			this._serverVariablesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
-			this._clientDetailsOnlineGroupBox = new System.Windows.Forms.GroupBox();
-			this._httpUserAgentStringButton = new System.Windows.Forms.Button();
-			this._botsVsBrowsersButton = new System.Windows.Forms.Button();
 			this._detailsTabControl.SuspendLayout();
 			this._errorTabPage.SuspendLayout();
 			this._errorTabControl.SuspendLayout();
@@ -75,11 +77,11 @@
 			this._detailsTabPage.SuspendLayout();
 			this._yellowScreenOfDeathTabPage.SuspendLayout();
 			this._clientTabPage.SuspendLayout();
+			this._clientDetailsOnlineGroupBox.SuspendLayout();
 			this._formsTabPage.SuspendLayout();
 			this._cookiesTabPage.SuspendLayout();
 			this._queryStringTabPage.SuspendLayout();
 			this._serverVariablesTabPage.SuspendLayout();
-			this._clientDetailsOnlineGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// _detailsTabControl
@@ -94,12 +96,14 @@
 			this._detailsTabControl.Location = new System.Drawing.Point(0, 0);
 			this._detailsTabControl.Name = "_detailsTabControl";
 			this._detailsTabControl.SelectedIndex = 0;
-			this._detailsTabControl.Size = new System.Drawing.Size(680, 431);
+			this._detailsTabControl.Size = new System.Drawing.Size(680, 527);
 			this._detailsTabControl.TabIndex = 0;
 			// 
 			// _errorTabPage
 			// 
 			this._errorTabPage.BackColor = System.Drawing.Color.White;
+			this._errorTabPage.Controls.Add(this._httpStatusCodeLabel);
+			this._errorTabPage.Controls.Add(this.label1);
 			this._errorTabPage.Controls.Add(this._sourceLabel);
 			this._errorTabPage.Controls.Add(this._typeLabel);
 			this._errorTabPage.Controls.Add(this._urlLabel);
@@ -112,16 +116,36 @@
 			this._errorTabPage.Location = new System.Drawing.Point(4, 22);
 			this._errorTabPage.Name = "_errorTabPage";
 			this._errorTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this._errorTabPage.Size = new System.Drawing.Size(672, 405);
+			this._errorTabPage.Size = new System.Drawing.Size(672, 501);
 			this._errorTabPage.TabIndex = 0;
 			this._errorTabPage.Text = "Error";
+			// 
+			// _httpStatusCodeLabel
+			// 
+			this._httpStatusCodeLabel.AutoSize = true;
+			this._httpStatusCodeLabel.Font = new System.Drawing.Font("Consolas", 8.25F);
+			this._httpStatusCodeLabel.Location = new System.Drawing.Point(101, 62);
+			this._httpStatusCodeLabel.Name = "_httpStatusCodeLabel";
+			this._httpStatusCodeLabel.Size = new System.Drawing.Size(43, 13);
+			this._httpStatusCodeLabel.TabIndex = 16;
+			this._httpStatusCodeLabel.Text = "[Code]";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Consolas", 8.25F);
+			this.label1.Location = new System.Drawing.Point(16, 62);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(79, 13);
+			this.label1.TabIndex = 15;
+			this.label1.Text = "Status code:";
 			// 
 			// _sourceLabel
 			// 
 			this._sourceLabel.BackColor = System.Drawing.Color.White;
 			this._sourceLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this._sourceLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._sourceLabel.Location = new System.Drawing.Point(79, 85);
+			this._sourceLabel.Location = new System.Drawing.Point(104, 111);
 			this._sourceLabel.Name = "_sourceLabel";
 			this._sourceLabel.ReadOnly = true;
 			this._sourceLabel.Size = new System.Drawing.Size(512, 13);
@@ -134,7 +158,7 @@
 			this._typeLabel.BackColor = System.Drawing.Color.White;
 			this._typeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this._typeLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._typeLabel.Location = new System.Drawing.Point(79, 61);
+			this._typeLabel.Location = new System.Drawing.Point(104, 87);
 			this._typeLabel.Name = "_typeLabel";
 			this._typeLabel.ReadOnly = true;
 			this._typeLabel.Size = new System.Drawing.Size(512, 13);
@@ -147,7 +171,7 @@
 			this._urlLabel.BackColor = System.Drawing.Color.White;
 			this._urlLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this._urlLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._urlLabel.Location = new System.Drawing.Point(79, 37);
+			this._urlLabel.Location = new System.Drawing.Point(104, 37);
 			this._urlLabel.Name = "_urlLabel";
 			this._urlLabel.ReadOnly = true;
 			this._urlLabel.Size = new System.Drawing.Size(512, 13);
@@ -160,7 +184,7 @@
 			this._timeLabel.BackColor = System.Drawing.Color.White;
 			this._timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this._timeLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._timeLabel.Location = new System.Drawing.Point(79, 15);
+			this._timeLabel.Location = new System.Drawing.Point(104, 15);
 			this._timeLabel.Name = "_timeLabel";
 			this._timeLabel.ReadOnly = true;
 			this._timeLabel.Size = new System.Drawing.Size(298, 13);
@@ -186,10 +210,10 @@
 			this._errorTabControl.Controls.Add(this._messageTabPage);
 			this._errorTabControl.Controls.Add(this._detailsTabPage);
 			this._errorTabControl.Controls.Add(this._yellowScreenOfDeathTabPage);
-			this._errorTabControl.Location = new System.Drawing.Point(6, 113);
+			this._errorTabControl.Location = new System.Drawing.Point(6, 139);
 			this._errorTabControl.Name = "_errorTabControl";
 			this._errorTabControl.SelectedIndex = 0;
-			this._errorTabControl.Size = new System.Drawing.Size(660, 286);
+			this._errorTabControl.Size = new System.Drawing.Size(660, 356);
 			this._errorTabControl.TabIndex = 8;
 			// 
 			// _messageTabPage
@@ -198,7 +222,7 @@
 			this._messageTabPage.Location = new System.Drawing.Point(4, 22);
 			this._messageTabPage.Name = "_messageTabPage";
 			this._messageTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this._messageTabPage.Size = new System.Drawing.Size(652, 260);
+			this._messageTabPage.Size = new System.Drawing.Size(652, 330);
 			this._messageTabPage.TabIndex = 0;
 			this._messageTabPage.Text = "Message";
 			this._messageTabPage.UseVisualStyleBackColor = true;
@@ -213,7 +237,7 @@
 			this._messageTextBox.Name = "_messageTextBox";
 			this._messageTextBox.ReadOnly = true;
 			this._messageTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this._messageTextBox.Size = new System.Drawing.Size(646, 254);
+			this._messageTextBox.Size = new System.Drawing.Size(646, 324);
 			this._messageTextBox.TabIndex = 0;
 			// 
 			// _detailsTabPage
@@ -222,7 +246,7 @@
 			this._detailsTabPage.Location = new System.Drawing.Point(4, 22);
 			this._detailsTabPage.Name = "_detailsTabPage";
 			this._detailsTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this._detailsTabPage.Size = new System.Drawing.Size(652, 260);
+			this._detailsTabPage.Size = new System.Drawing.Size(652, 330);
 			this._detailsTabPage.TabIndex = 1;
 			this._detailsTabPage.Text = "Details";
 			this._detailsTabPage.UseVisualStyleBackColor = true;
@@ -237,7 +261,7 @@
 			this._detailsTextBox.Name = "_detailsTextBox";
 			this._detailsTextBox.ReadOnly = true;
 			this._detailsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this._detailsTextBox.Size = new System.Drawing.Size(646, 254);
+			this._detailsTextBox.Size = new System.Drawing.Size(646, 324);
 			this._detailsTextBox.TabIndex = 0;
 			// 
 			// _yellowScreenOfDeathTabPage
@@ -246,7 +270,7 @@
 			this._yellowScreenOfDeathTabPage.Location = new System.Drawing.Point(4, 22);
 			this._yellowScreenOfDeathTabPage.Name = "_yellowScreenOfDeathTabPage";
 			this._yellowScreenOfDeathTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this._yellowScreenOfDeathTabPage.Size = new System.Drawing.Size(652, 260);
+			this._yellowScreenOfDeathTabPage.Size = new System.Drawing.Size(652, 330);
 			this._yellowScreenOfDeathTabPage.TabIndex = 2;
 			this._yellowScreenOfDeathTabPage.Text = "Yellow Screen Of Death";
 			this._yellowScreenOfDeathTabPage.UseVisualStyleBackColor = true;
@@ -257,14 +281,14 @@
 			this._browser.Location = new System.Drawing.Point(3, 3);
 			this._browser.MinimumSize = new System.Drawing.Size(20, 20);
 			this._browser.Name = "_browser";
-			this._browser.Size = new System.Drawing.Size(646, 254);
+			this._browser.Size = new System.Drawing.Size(646, 324);
 			this._browser.TabIndex = 0;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(16, 85);
+			this.label2.Location = new System.Drawing.Point(16, 111);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(49, 13);
 			this.label2.TabIndex = 6;
@@ -274,7 +298,7 @@
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(16, 61);
+			this.label5.Location = new System.Drawing.Point(16, 87);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(37, 13);
 			this.label5.TabIndex = 4;
@@ -307,9 +331,40 @@
 			this._clientTabPage.Controls.Add(this.label8);
 			this._clientTabPage.Location = new System.Drawing.Point(4, 22);
 			this._clientTabPage.Name = "_clientTabPage";
-			this._clientTabPage.Size = new System.Drawing.Size(672, 405);
+			this._clientTabPage.Size = new System.Drawing.Size(672, 501);
 			this._clientTabPage.TabIndex = 2;
 			this._clientTabPage.Text = "Client Information";
+			// 
+			// _clientDetailsOnlineGroupBox
+			// 
+			this._clientDetailsOnlineGroupBox.Controls.Add(this._botsVsBrowsersButton);
+			this._clientDetailsOnlineGroupBox.Controls.Add(this._httpUserAgentStringButton);
+			this._clientDetailsOnlineGroupBox.Location = new System.Drawing.Point(22, 167);
+			this._clientDetailsOnlineGroupBox.Name = "_clientDetailsOnlineGroupBox";
+			this._clientDetailsOnlineGroupBox.Size = new System.Drawing.Size(276, 224);
+			this._clientDetailsOnlineGroupBox.TabIndex = 22;
+			this._clientDetailsOnlineGroupBox.TabStop = false;
+			this._clientDetailsOnlineGroupBox.Text = "Find more client information online";
+			// 
+			// _botsVsBrowsersButton
+			// 
+			this._botsVsBrowsersButton.Location = new System.Drawing.Point(17, 88);
+			this._botsVsBrowsersButton.Name = "_botsVsBrowsersButton";
+			this._botsVsBrowsersButton.Size = new System.Drawing.Size(239, 23);
+			this._botsVsBrowsersButton.TabIndex = 23;
+			this._botsVsBrowsersButton.Text = "http://www.botsvsbrowsers.com";
+			this._botsVsBrowsersButton.UseVisualStyleBackColor = true;
+			this._botsVsBrowsersButton.Click += new System.EventHandler(this.BotsVsBrowsersButtonClick);
+			// 
+			// _httpUserAgentStringButton
+			// 
+			this._httpUserAgentStringButton.Location = new System.Drawing.Point(17, 43);
+			this._httpUserAgentStringButton.Name = "_httpUserAgentStringButton";
+			this._httpUserAgentStringButton.Size = new System.Drawing.Size(239, 23);
+			this._httpUserAgentStringButton.TabIndex = 22;
+			this._httpUserAgentStringButton.Text = "http://www.useragentstring.com";
+			this._httpUserAgentStringButton.UseVisualStyleBackColor = true;
+			this._httpUserAgentStringButton.Click += new System.EventHandler(this.HttpUserAgentStringButtonClick);
 			// 
 			// _descriptionLabel
 			// 
@@ -438,7 +493,7 @@
 			this._formsTabPage.Controls.Add(this._formsListView);
 			this._formsTabPage.Location = new System.Drawing.Point(4, 22);
 			this._formsTabPage.Name = "_formsTabPage";
-			this._formsTabPage.Size = new System.Drawing.Size(672, 405);
+			this._formsTabPage.Size = new System.Drawing.Size(672, 501);
 			this._formsTabPage.TabIndex = 4;
 			this._formsTabPage.Text = "Forms";
 			this._formsTabPage.UseVisualStyleBackColor = true;
@@ -456,7 +511,7 @@
 			this._cookiesTabPage.Controls.Add(this._cookiesListView);
 			this._cookiesTabPage.Location = new System.Drawing.Point(4, 22);
 			this._cookiesTabPage.Name = "_cookiesTabPage";
-			this._cookiesTabPage.Size = new System.Drawing.Size(672, 405);
+			this._cookiesTabPage.Size = new System.Drawing.Size(672, 501);
 			this._cookiesTabPage.TabIndex = 3;
 			this._cookiesTabPage.Text = "Cookies";
 			this._cookiesTabPage.UseVisualStyleBackColor = true;
@@ -474,7 +529,7 @@
 			this._queryStringTabPage.Controls.Add(this._querystringListView);
 			this._queryStringTabPage.Location = new System.Drawing.Point(4, 22);
 			this._queryStringTabPage.Name = "_queryStringTabPage";
-			this._queryStringTabPage.Size = new System.Drawing.Size(672, 405);
+			this._queryStringTabPage.Size = new System.Drawing.Size(672, 501);
 			this._queryStringTabPage.TabIndex = 5;
 			this._queryStringTabPage.Text = "Querystring";
 			this._queryStringTabPage.UseVisualStyleBackColor = true;
@@ -493,7 +548,7 @@
 			this._serverVariablesTabPage.Location = new System.Drawing.Point(4, 22);
 			this._serverVariablesTabPage.Name = "_serverVariablesTabPage";
 			this._serverVariablesTabPage.Padding = new System.Windows.Forms.Padding(3);
-			this._serverVariablesTabPage.Size = new System.Drawing.Size(672, 405);
+			this._serverVariablesTabPage.Size = new System.Drawing.Size(672, 501);
 			this._serverVariablesTabPage.TabIndex = 1;
 			this._serverVariablesTabPage.Text = "Server Variables";
 			this._serverVariablesTabPage.UseVisualStyleBackColor = true;
@@ -506,44 +561,13 @@
 			this._serverVariablesListView.Size = new System.Drawing.Size(666, 399);
 			this._serverVariablesListView.TabIndex = 0;
 			// 
-			// _clientDetailsOnlineGroupBox
-			// 
-			this._clientDetailsOnlineGroupBox.Controls.Add(this._botsVsBrowsersButton);
-			this._clientDetailsOnlineGroupBox.Controls.Add(this._httpUserAgentStringButton);
-			this._clientDetailsOnlineGroupBox.Location = new System.Drawing.Point(22, 167);
-			this._clientDetailsOnlineGroupBox.Name = "_clientDetailsOnlineGroupBox";
-			this._clientDetailsOnlineGroupBox.Size = new System.Drawing.Size(276, 224);
-			this._clientDetailsOnlineGroupBox.TabIndex = 22;
-			this._clientDetailsOnlineGroupBox.TabStop = false;
-			this._clientDetailsOnlineGroupBox.Text = "Find more client information online";
-			// 
-			// _httpUserAgentStringButton
-			// 
-			this._httpUserAgentStringButton.Location = new System.Drawing.Point(17, 43);
-			this._httpUserAgentStringButton.Name = "_httpUserAgentStringButton";
-			this._httpUserAgentStringButton.Size = new System.Drawing.Size(239, 23);
-			this._httpUserAgentStringButton.TabIndex = 22;
-			this._httpUserAgentStringButton.Text = "http://www.useragentstring.com";
-			this._httpUserAgentStringButton.UseVisualStyleBackColor = true;
-			this._httpUserAgentStringButton.Click += new System.EventHandler(this.HttpUserAgentStringButtonClick);
-			// 
-			// _botsVsBrowsersButton
-			// 
-			this._botsVsBrowsersButton.Location = new System.Drawing.Point(17, 88);
-			this._botsVsBrowsersButton.Name = "_botsVsBrowsersButton";
-			this._botsVsBrowsersButton.Size = new System.Drawing.Size(239, 23);
-			this._botsVsBrowsersButton.TabIndex = 23;
-			this._botsVsBrowsersButton.Text = "http://www.botsvsbrowsers.com";
-			this._botsVsBrowsersButton.UseVisualStyleBackColor = true;
-			this._botsVsBrowsersButton.Click += new System.EventHandler(this.BotsVsBrowsersButtonClick);
-			// 
 			// SearchDetailsView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this._detailsTabControl);
 			this.Name = "SearchDetailsView";
-			this.Size = new System.Drawing.Size(680, 431);
+			this.Size = new System.Drawing.Size(680, 527);
 			this._detailsTabControl.ResumeLayout(false);
 			this._errorTabPage.ResumeLayout(false);
 			this._errorTabPage.PerformLayout();
@@ -555,11 +579,11 @@
 			this._yellowScreenOfDeathTabPage.ResumeLayout(false);
 			this._clientTabPage.ResumeLayout(false);
 			this._clientTabPage.PerformLayout();
+			this._clientDetailsOnlineGroupBox.ResumeLayout(false);
 			this._formsTabPage.ResumeLayout(false);
 			this._cookiesTabPage.ResumeLayout(false);
 			this._queryStringTabPage.ResumeLayout(false);
 			this._serverVariablesTabPage.ResumeLayout(false);
-			this._clientDetailsOnlineGroupBox.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -606,5 +630,7 @@
 		private System.Windows.Forms.GroupBox _clientDetailsOnlineGroupBox;
 		private System.Windows.Forms.Button _httpUserAgentStringButton;
 		private System.Windows.Forms.Button _botsVsBrowsersButton;
+		private System.Windows.Forms.Label _httpStatusCodeLabel;
+		private System.Windows.Forms.Label label1;
 	}
 }

@@ -56,6 +56,21 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			// assert
 			Assert.That(result.ServerVariables.Count, Is.EqualTo(0));
 		}
+
+		[Test]
+		public void Parse_FileHasStatusCode_LooksUpCodeAndSetsStatusCodeInformation()
+		{
+			// arrange
+			var parser = new ErrorLogFileParser(new FakeLog());
+
+			// act
+			var result = parser.Parse(GetValidFileContent());
+
+			// assert
+			Assert.That(result.StatusCode, Is.EqualTo("404"));
+			Assert.That(result.StatusCodeInformation, Is.Not.Null);
+			Assert.That(result.StatusCodeInformation.Code, Is.EqualTo("404"));
+		}
 		
 		private static string GetValidFileWithNoServerVaiables()
 		{

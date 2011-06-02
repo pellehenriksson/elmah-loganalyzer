@@ -59,6 +59,16 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		}
 
 		[Test]
+		public void Ctor_HasStatusCodeInformation()
+		{
+			// arrange
+			var error = new ErrorLog();
+
+			// assert
+			Assert.That(error.StatusCodeInformation, Is.Not.Null);
+		}
+
+		[Test]
 		public void SetClientInformation_SetsInformation()
 		{
 			// arrange
@@ -80,6 +90,34 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 
 			// act
 			var result = Assert.Throws<ArgumentNullException>(() => error.SetClientInformation(null));
+
+			// assert
+			Assert.That(result, Is.Not.Null);
+			Assert.That(result.ParamName, Is.EqualTo("information"));
+		}
+
+		[Test]
+		public void SetStatusCodeInformation_SetsInformation()
+		{
+			// arrange
+			var error = new ErrorLog();
+			var info = new HttpStatusCodeInformation();
+
+			// act
+			error.SetStatusCodeInformation(info);
+
+			// assert
+			Assert.That(error.StatusCodeInformation, Is.EqualTo(info));
+		}
+
+		[Test]
+		public void SetStatusCodeInformation_InformationIsNull_Throws()
+		{
+			// arrange
+			var error = new ErrorLog();
+
+			// act
+			var result = Assert.Throws<ArgumentNullException>(() => error.SetStatusCodeInformation(null));
 
 			// assert
 			Assert.That(result, Is.Not.Null);

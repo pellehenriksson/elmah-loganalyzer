@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Xml;
+using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Infrastructure.Logging;
 
 namespace ElmahLogAnalyzer.Core.Domain
@@ -52,9 +53,15 @@ namespace ElmahLogAnalyzer.Core.Domain
 			_errorLog.Details = GetAttributeValue("detail");
 
 			var time = GetAttributeValue("time");
-
 			_errorLog.Time = Convert.ToDateTime(time);
+
 			_errorLog.StatusCode = GetAttributeValue("statusCode");
+
+			if (_errorLog.StatusCode.HasValue())
+			{
+				var statusCodeInformation = HttpStatusCodeInformationLookUp.GetInformation(_errorLog.StatusCode);
+				_errorLog.SetStatusCodeInformation(statusCodeInformation);
+			}
 		}
 
 		private void ParseServerVariables()

@@ -58,6 +58,8 @@
     <Compile Include="Domain\ClientInformationResolverTests.cs" />
     <Compile Include="Domain\CsvParserTests.cs" />
     <Compile Include="Domain\DownloadDirectoryResolverTests.cs" />
+    <Compile Include="Domain\HttpStatusCodeInformationTests.cs" />
+    <Compile Include="Domain\HttpStatusCodeInformationLookUpTests.cs" />
     <Compile Include="Domain\NetworkConnectionTests.cs" />
     <Compile Include="Domain\ElmahUrlHelperTests.cs" />
     <Compile Include="Domain\ErrorLogDownloaderTests.cs" />

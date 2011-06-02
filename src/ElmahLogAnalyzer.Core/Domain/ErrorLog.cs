@@ -16,6 +16,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 			FormValues = new List<NameValuePair>();
 			QuerystringValues = new List<NameValuePair>();
 			ClientInformation = new ClientInformation();
+			StatusCodeInformation = new HttpStatusCodeInformation();
 		}
 
 		public string ErrorId { get; set; }
@@ -54,6 +55,8 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 		public ClientInformation ClientInformation { get; private set; }
 
+		public HttpStatusCodeInformation StatusCodeInformation { get; private set; }
+
 		public void SetClientInformation(ClientInformation information)
 		{
 			if (information == null)
@@ -62,6 +65,16 @@ namespace ElmahLogAnalyzer.Core.Domain
 			}
 
 			ClientInformation = information;
+		}
+
+		public void SetStatusCodeInformation(HttpStatusCodeInformation information)
+		{
+			if (information == null)
+			{
+				throw new ArgumentNullException("information");
+			}
+
+			StatusCodeInformation = information;
 		}
 
 		public void AddServerVariable(string name, string value)
@@ -110,7 +123,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 			Cookies.Add(new NameValuePair(name, value));
 		}
 
-		private bool ShouldBeIncluded(string name)
+		private static bool ShouldBeIncluded(string name)
 		{
 			return !IgnoreList.Contains(name);
 		}

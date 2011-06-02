@@ -50,10 +50,11 @@ namespace ElmahLogAnalyzer.Core.Domain
 			_errorLog.Message = GetAttributeValue("message");
 			_errorLog.Source = GetAttributeValue("source");
 			_errorLog.Details = GetAttributeValue("detail");
-			
+
 			var time = GetAttributeValue("time");
 
 			_errorLog.Time = Convert.ToDateTime(time);
+			_errorLog.StatusCode = GetAttributeValue("statusCode");
 		}
 
 		private void ParseServerVariables()

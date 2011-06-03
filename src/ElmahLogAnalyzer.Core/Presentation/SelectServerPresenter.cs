@@ -48,10 +48,9 @@ namespace ElmahLogAnalyzer.Core.Presentation
 				
 				var serverResponded = _urlPing.Ping(connection);
 
-				if (!serverResponded)
+				if (!serverResponded.Item1)
 				{
-					// should include more information about the failure
-					View.DisplayErrorMessage("Failed to connect to server");
+					View.DisplayErrorMessage(serverResponded.Item2);
 					return;
 				}
 

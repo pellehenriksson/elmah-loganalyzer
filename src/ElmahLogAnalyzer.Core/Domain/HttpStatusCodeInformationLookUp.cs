@@ -5,6 +5,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 {	
 	/// <summary>
 	/// http://support.microsoft.com/kb/943891/
+	/// http://msdn.microsoft.com/en-us/library/system.net.httpstatuscode.aspx
 	/// </summary>
 	public static class HttpStatusCodeInformationLookUp
 	{

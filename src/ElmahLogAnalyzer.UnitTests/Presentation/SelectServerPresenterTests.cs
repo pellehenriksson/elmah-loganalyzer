@@ -44,7 +44,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			var view = new Mock<ISelectServerView>();
 			var ping = new Mock<IUrlPing>();
 
-			ping.Setup(x => x.Ping(It.IsAny<NetworkConnection>())).Returns(false);
+			ping.Setup(x => x.Ping(It.IsAny<NetworkConnection>())).Returns(new Tuple<bool, string>(false, "some error"));
 
 			var presenter = new SelectServerPresenter(view.Object, ping.Object);
 
@@ -53,7 +53,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 
 			// assert
 			view.Verify(x => x.ClearErrorMessage(), Times.Once());
-			view.Verify(x => x.DisplayErrorMessage("Failed to connect to server"), Times.Once());
+			view.Verify(x => x.DisplayErrorMessage("some error"), Times.Once());
 		}
 
 		[Test]
@@ -63,7 +63,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			var view = new Mock<ISelectServerView>();
 			var ping = new Mock<IUrlPing>();
 
-			ping.Setup(x => x.Ping(It.IsAny<NetworkConnection>())).Returns(true);
+			ping.Setup(x => x.Ping(It.IsAny<NetworkConnection>())).Returns(new Tuple<bool, string>(true, string.Empty));
 
 			var presenter = new SelectServerPresenter(view.Object, ping.Object);
 

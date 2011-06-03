@@ -18,7 +18,8 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 		public static HttpStatusCodeInformation GetInformation(string code)
 		{
-			return Codes.FirstOrDefault(x => x.Code == code);
+			var result = Codes.FirstOrDefault(x => x.Code == code);
+			return result ?? new HttpStatusCodeInformation();
 		}
 
 		private static void Initialize()

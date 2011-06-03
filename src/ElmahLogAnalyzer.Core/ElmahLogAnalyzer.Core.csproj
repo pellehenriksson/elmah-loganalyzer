@@ -57,6 +57,7 @@
     <Compile Include="Common\DateTimeExtensions.cs" />
     <Compile Include="Common\DictionaryBuilder.cs" />
     <Compile Include="Common\EnumExtensions.cs" />
+    <Compile Include="Common\NameValuePairListExtensions.cs" />
     <Compile Include="Common\StringExtensions.cs" />
     <Compile Include="Common\UniqueStringList.cs" />
     <Compile Include="Common\UrlCleaner.cs" />

@@ -27,7 +27,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_urlLabel.Text = ErrorLog.Url;
 			_typeLabel.Text = ErrorLog.Type;
 			_sourceLabel.Text = ErrorLog.Source;
-			_httpStatusCodeLabel.Text = ErrorLog.StatusCodeInformation.DisplayName;
+			_httpStatusCodeTextBox.Text = ErrorLog.StatusCodeInformation.DisplayName;
 			
 			_messageTextBox.Text = ErrorLog.Message;
 			_detailsTextBox.Text = ErrorLog.Details;
@@ -45,6 +45,11 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_querystringListView.LoadValues(ErrorLog.QuerystringValues);
 			_serverVariablesListView.LoadValues(ErrorLog.ServerVariables);
 
+			_hostTextBox.Text = ErrorLog.ServerInformation.Host;
+			_nameTextBox.Text = ErrorLog.ServerInformation.Name;
+			_portTextBox.Text = ErrorLog.ServerInformation.Port;
+			_softwareTextBox.Text = ErrorLog.ServerInformation.Software;
+			
 			_browser.DocumentText = new YellowScreenOfDeathBuilder(ErrorLog).GetHtml();
 		}
 
@@ -66,7 +71,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_userLabel.Text = string.Empty;
 			_typeLabel.Text = string.Empty;
 			_sourceLabel.Text = string.Empty;
-			_httpStatusCodeLabel.Text = string.Empty;
+			_httpStatusCodeTextBox.Text = string.Empty;
 			
 			_messageTextBox.Text = string.Empty;
 			_detailsTextBox.Text = string.Empty;
@@ -83,6 +88,11 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_cookiesListView.ClearValues();
 			_querystringListView.ClearValues();
 			_serverVariablesListView.ClearValues();
+
+			_hostTextBox.Text = string.Empty;
+			_nameTextBox.Text = string.Empty;
+			_portTextBox.Text = string.Empty;
+			_softwareTextBox.Text = string.Empty;
 
 			_browser.DocumentText = string.Empty;
 		}

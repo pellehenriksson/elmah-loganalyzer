@@ -57,6 +57,8 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 		public HttpStatusCodeInformation StatusCodeInformation { get; private set; }
 
+		public ServerInformation ServerInformation { get; private set; }
+
 		public void SetClientInformation(ClientInformation information)
 		{
 			if (information == null)
@@ -75,6 +77,16 @@ namespace ElmahLogAnalyzer.Core.Domain
 			}
 
 			StatusCodeInformation = information;
+		}
+
+		public void SetServerInformation(ServerInformation information)
+		{
+			if (information == null)
+			{
+				throw new ArgumentNullException("information");
+			}
+
+			ServerInformation = information;
 		}
 
 		public void AddServerVariable(string name, string value)

@@ -51,6 +51,7 @@
     <Compile Include="Common\DictionaryBuilderTests.cs" />
     <Compile Include="Common\EnumExtensionsTests.cs" />
     <Compile Include="Common\ListExtensionsTests.cs" />
+    <Compile Include="Common\NameValuePairListExtensionsTests.cs" />
     <Compile Include="Common\StringExtensionsTests.cs" />
     <Compile Include="Common\UniqueStringListTests.cs" />
     <Compile Include="Common\UrlCleanerTests.cs" />

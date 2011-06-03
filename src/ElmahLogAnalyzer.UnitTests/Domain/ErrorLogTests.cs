@@ -123,7 +123,35 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			Assert.That(result, Is.Not.Null);
 			Assert.That(result.ParamName, Is.EqualTo("information"));
 		}
-		
+
+		[Test]
+		public void SetServerInformation_SetsInformation()
+		{
+			// arrange
+			var error = new ErrorLog();
+			var info = new ServerInformation();
+
+			// act
+			error.SetServerInformation(info);
+
+			// assert
+			Assert.That(error.ServerInformation, Is.EqualTo(info));
+		}
+
+		[Test]
+		public void SetServerInformation_InformationIsNull_Throws()
+		{
+			// arrange
+			var error = new ErrorLog();
+
+			// act
+			var result = Assert.Throws<ArgumentNullException>(() => error.SetServerInformation(null));
+
+			// assert
+			Assert.That(result, Is.Not.Null);
+			Assert.That(result.ParamName, Is.EqualTo("information"));
+		}
+
 		[Test]
 		public void AddServerVariable_AddsVariable()
 		{

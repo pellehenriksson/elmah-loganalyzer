@@ -30,6 +30,7 @@
 		{
 			this._detailsTabControl = new System.Windows.Forms.TabControl();
 			this._errorTabPage = new System.Windows.Forms.TabPage();
+			this._httpStatusCodeTextBox = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this._sourceLabel = new System.Windows.Forms.TextBox();
 			this._typeLabel = new System.Windows.Forms.TextBox();
@@ -60,6 +61,7 @@
 			this._httpUserAgentStringButton = new System.Windows.Forms.Button();
 			this._descriptionLabel = new System.Windows.Forms.Label();
 			this._ipAddressLabel = new System.Windows.Forms.TextBox();
+			this._platformLabel = new System.Windows.Forms.TextBox();
 			this._operatingSystemLabel = new System.Windows.Forms.TextBox();
 			this._browserLabel = new System.Windows.Forms.TextBox();
 			this._userLabel = new System.Windows.Forms.TextBox();
@@ -77,8 +79,6 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
-			this._platformLabel = new System.Windows.Forms.TextBox();
-			this._httpStatusCodeTextBox = new System.Windows.Forms.TextBox();
 			this._detailsTabControl.SuspendLayout();
 			this._errorTabPage.SuspendLayout();
 			this._errorTabControl.SuspendLayout();
@@ -130,6 +130,19 @@
 			this._errorTabPage.Size = new System.Drawing.Size(672, 501);
 			this._errorTabPage.TabIndex = 0;
 			this._errorTabPage.Text = "Error";
+			// 
+			// _httpStatusCodeTextBox
+			// 
+			this._httpStatusCodeTextBox.BackColor = System.Drawing.Color.White;
+			this._httpStatusCodeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._httpStatusCodeTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._httpStatusCodeTextBox.Location = new System.Drawing.Point(104, 62);
+			this._httpStatusCodeTextBox.Name = "_httpStatusCodeTextBox";
+			this._httpStatusCodeTextBox.ReadOnly = true;
+			this._httpStatusCodeTextBox.Size = new System.Drawing.Size(512, 13);
+			this._httpStatusCodeTextBox.TabIndex = 5;
+			this._httpStatusCodeTextBox.TabStop = false;
+			this._httpStatusCodeTextBox.Text = "[Status Code]";
 			// 
 			// label1
 			// 
@@ -460,6 +473,19 @@
 			this._ipAddressLabel.TabStop = false;
 			this._ipAddressLabel.Text = "[IP]";
 			// 
+			// _platformLabel
+			// 
+			this._platformLabel.BackColor = System.Drawing.Color.White;
+			this._platformLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._platformLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._platformLabel.Location = new System.Drawing.Point(137, 86);
+			this._platformLabel.Name = "_platformLabel";
+			this._platformLabel.ReadOnly = true;
+			this._platformLabel.Size = new System.Drawing.Size(452, 13);
+			this._platformLabel.TabIndex = 7;
+			this._platformLabel.TabStop = false;
+			this._platformLabel.Text = "[Platform]";
+			// 
 			// _operatingSystemLabel
 			// 
 			this._operatingSystemLabel.BackColor = System.Drawing.Color.White;
@@ -571,7 +597,7 @@
 			this._softwareTextBox.BackColor = System.Drawing.Color.White;
 			this._softwareTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this._softwareTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._softwareTextBox.Location = new System.Drawing.Point(135, 84);
+			this._softwareTextBox.Location = new System.Drawing.Point(137, 86);
 			this._softwareTextBox.Name = "_softwareTextBox";
 			this._softwareTextBox.ReadOnly = true;
 			this._softwareTextBox.Size = new System.Drawing.Size(452, 13);
@@ -584,7 +610,7 @@
 			this._portTextBox.BackColor = System.Drawing.Color.White;
 			this._portTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this._portTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._portTextBox.Location = new System.Drawing.Point(135, 58);
+			this._portTextBox.Location = new System.Drawing.Point(137, 60);
 			this._portTextBox.Name = "_portTextBox";
 			this._portTextBox.ReadOnly = true;
 			this._portTextBox.Size = new System.Drawing.Size(452, 13);
@@ -597,7 +623,7 @@
 			this._nameTextBox.BackColor = System.Drawing.Color.White;
 			this._nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this._nameTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._nameTextBox.Location = new System.Drawing.Point(135, 36);
+			this._nameTextBox.Location = new System.Drawing.Point(137, 38);
 			this._nameTextBox.Name = "_nameTextBox";
 			this._nameTextBox.ReadOnly = true;
 			this._nameTextBox.Size = new System.Drawing.Size(452, 13);
@@ -610,7 +636,7 @@
 			this._hostTextBox.BackColor = System.Drawing.Color.White;
 			this._hostTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this._hostTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._hostTextBox.Location = new System.Drawing.Point(135, 13);
+			this._hostTextBox.Location = new System.Drawing.Point(137, 15);
 			this._hostTextBox.Name = "_hostTextBox";
 			this._hostTextBox.ReadOnly = true;
 			this._hostTextBox.Size = new System.Drawing.Size(452, 13);
@@ -622,7 +648,7 @@
 			// 
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.Location = new System.Drawing.Point(14, 13);
+			this.label7.Location = new System.Drawing.Point(16, 15);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(37, 13);
 			this.label7.TabIndex = 0;
@@ -632,7 +658,7 @@
 			// 
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label11.Location = new System.Drawing.Point(14, 36);
+			this.label11.Location = new System.Drawing.Point(16, 38);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(37, 13);
 			this.label11.TabIndex = 2;
@@ -642,7 +668,7 @@
 			// 
 			this.label13.AutoSize = true;
 			this.label13.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label13.Location = new System.Drawing.Point(14, 58);
+			this.label13.Location = new System.Drawing.Point(16, 60);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(37, 13);
 			this.label13.TabIndex = 4;
@@ -652,37 +678,11 @@
 			// 
 			this.label14.AutoSize = true;
 			this.label14.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label14.Location = new System.Drawing.Point(14, 84);
+			this.label14.Location = new System.Drawing.Point(16, 86);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(61, 13);
 			this.label14.TabIndex = 6;
 			this.label14.Text = "Software:";
-			// 
-			// _platformLabel
-			// 
-			this._platformLabel.BackColor = System.Drawing.Color.White;
-			this._platformLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this._platformLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._platformLabel.Location = new System.Drawing.Point(137, 86);
-			this._platformLabel.Name = "_platformLabel";
-			this._platformLabel.ReadOnly = true;
-			this._platformLabel.Size = new System.Drawing.Size(452, 13);
-			this._platformLabel.TabIndex = 7;
-			this._platformLabel.TabStop = false;
-			this._platformLabel.Text = "[Platform]";
-			// 
-			// _httpStatusCodeTextBox
-			// 
-			this._httpStatusCodeTextBox.BackColor = System.Drawing.Color.White;
-			this._httpStatusCodeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this._httpStatusCodeTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._httpStatusCodeTextBox.Location = new System.Drawing.Point(104, 62);
-			this._httpStatusCodeTextBox.Name = "_httpStatusCodeTextBox";
-			this._httpStatusCodeTextBox.ReadOnly = true;
-			this._httpStatusCodeTextBox.Size = new System.Drawing.Size(512, 13);
-			this._httpStatusCodeTextBox.TabIndex = 5;
-			this._httpStatusCodeTextBox.TabStop = false;
-			this._httpStatusCodeTextBox.Text = "[Status Code]";
 			// 
 			// SearchDetailsView
 			// 

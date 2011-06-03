@@ -71,6 +71,22 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			Assert.That(result.StatusCodeInformation, Is.Not.Null);
 			Assert.That(result.StatusCodeInformation.Code, Is.EqualTo("404"));
 		}
+
+		[Test]
+		public void Parse_SetsServerInformation()
+		{
+			// arrange
+			var parser = new ErrorLogFileParser(new FakeLog());
+
+			// act
+			var result = parser.Parse(GetValidFileContent());
+
+			// assert
+			Assert.That(result.ServerInformation.Host, Is.EqualTo("ALVA"));
+			Assert.That(result.ServerInformation.Name, Is.EqualTo("localhost"));
+			Assert.That(result.ServerInformation.Port, Is.EqualTo("53197"));
+			Assert.That(result.ServerInformation.Software, Is.EqualTo(string.Empty));
+		}
 		
 		private static string GetValidFileWithNoServerVaiables()
 		{

@@ -34,6 +34,9 @@ namespace ElmahLogAnalyzer.Core.Domain
 				ParseQuerystringValues();
 				ParseCookies();
 
+				SetStatusCodeInformation();
+				SetServerInformation();
+
 				return _errorLog;
 			}
 			catch (Exception ex)
@@ -56,12 +59,24 @@ namespace ElmahLogAnalyzer.Core.Domain
 			_errorLog.Time = Convert.ToDateTime(time);
 
 			_errorLog.StatusCode = GetAttributeValue("statusCode");
+		}
 
-			if (_errorLog.StatusCode.HasValue())
-			{
-				var statusCodeInformation = HttpStatusCodeInformationLookUp.GetInformation(_errorLog.StatusCode);
-				_errorLog.SetStatusCodeInformation(statusCodeInformation);
-			}
+		private void SetStatusCodeInformation()
+		{
+			var statusCodeInformation = HttpStatusCodeInformationLookUp.GetInformation(_errorLog.StatusCode);
+			_errorLog.SetStatusCodeInformation(statusCodeInformation);
+		}
+
+		private void SetServerInformation()
+		{
+			var serverInformation = new ServerInformation();
+			
+			serverInformation.Host = _errorLog.Host;
+			serverInformation.Name = _errorLog.ServerVariables.GetValueFromFirstMatch("SERVER_NAME");
+			serverInformation.Port = _errorLog.ServerVariables.GetValueFromFirstMatch("SERVER_PORT");
+			serverInformation.Software = _errorLog.ServerVariables.GetValueFromFirstMatch("SERVER_SOFTWARE");
+
+			_errorLog.SetServerInformation(serverInformation);
 		}
 
 		private void ParseServerVariables()

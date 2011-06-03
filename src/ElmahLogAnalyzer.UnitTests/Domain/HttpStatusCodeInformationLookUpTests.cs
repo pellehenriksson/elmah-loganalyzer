@@ -18,13 +18,25 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		}
 
 		[Test]
-		public void GetInformation_CodeNotFound_ReturnsNull()
+		public void GetInformation_CodeNotFound_ReturnsEmpty()
 		{
 			// act
 			var result = HttpStatusCodeInformationLookUp.GetInformation("000");
 
 			// assert
-			Assert.That(result, Is.Null);
+			Assert.That(result.Code, Is.EqualTo(string.Empty));
+			Assert.That(result.Description, Is.EqualTo(string.Empty));
+		}
+
+		[Test]
+		public void GetInformation_CodeIsNull_ReturnsEmpty()
+		{
+			// act
+			var result = HttpStatusCodeInformationLookUp.GetInformation(null);
+
+			// assert
+			Assert.That(result.Code, Is.EqualTo(string.Empty));
+			Assert.That(result.Description, Is.EqualTo(string.Empty));
 		}
 	}
 }

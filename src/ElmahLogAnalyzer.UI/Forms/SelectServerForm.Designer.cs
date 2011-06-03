@@ -100,7 +100,7 @@
 			this._errorGroupBox.Size = new System.Drawing.Size(400, 66);
 			this._errorGroupBox.TabIndex = 9;
 			this._errorGroupBox.TabStop = false;
-			this._errorGroupBox.Text = "Error";
+			this._errorGroupBox.Text = "Connection failed";
 			// 
 			// _errorMessageLabel
 			// 

@@ -13,6 +13,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		public SearchPresenter(ISearchView view, IErrorLogRepository errorLogRepository, IHttpUserAgentSearchLauncherFactory httpUserAgentSearchLauncherFactory)
 		{
 			View = view;
+
 			_repository = errorLogRepository;
 			_httpUserAgentSearchLauncherFactory = httpUserAgentSearchLauncherFactory;
 
@@ -27,6 +28,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 			View.OnFilterApplied += ViewOnFilterApplied;
 			View.OnErrorLogSelected += ViewOnErrorLogSelected;
 			View.OnSearchHttpUserAgentInformation += ViewOnSearchHttpUserAgentInformation;
+
 			_repository.OnInitialized += RepositoryOnInitialized;
 		}
 		

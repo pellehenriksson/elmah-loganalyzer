@@ -40,6 +40,7 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
+    <Compile Include="DomainObjectBuilder.cs" />
     <Compile Include="Fakes\FakeClientInformationResolver.cs" />
     <Compile Include="Fakes\FakeDataSourceFactory.cs" />
     <Compile Include="Fakes\FakeUrlNavigationLauncher.cs" />

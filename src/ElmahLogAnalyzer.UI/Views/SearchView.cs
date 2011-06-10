@@ -25,7 +25,7 @@ namespace ElmahLogAnalyzer.UI.Views
 		public event EventHandler<ErrorLogSelectedEventArgs> OnErrorLogSelected;
 
 		public event EventHandler<SearchHttpUserAgentInformationEventArgs> OnSearchHttpUserAgentInformation;
-
+		
 		public void SetDateInterval(DateInterval interval)
 		{
 			_FilterView.SetDateInterval(interval);

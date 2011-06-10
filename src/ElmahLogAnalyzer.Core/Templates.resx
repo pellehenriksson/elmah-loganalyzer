@@ -187,6 +187,7 @@
 	&lt;/style&gt;
 &lt;/head&gt;
 &lt;body bgcolor="white"&gt;
+
 	&lt;h1&gt;
 		Server Error in '@APPLICATION@' Application.&lt;/h1&gt;
 	&lt;hr width="100%" size="1" color="silver" /&gt;

@@ -48,13 +48,9 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this._formsTabPage = new System.Windows.Forms.TabPage();
-			this._formsListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
 			this._cookiesTabPage = new System.Windows.Forms.TabPage();
-			this._cookiesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
 			this._queryStringTabPage = new System.Windows.Forms.TabPage();
-			this._querystringListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
 			this._serverVariablesTabPage = new System.Windows.Forms.TabPage();
-			this._serverVariablesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
 			this._clientTabPage = new System.Windows.Forms.TabPage();
 			this._clientDetailsOnlineGroupBox = new System.Windows.Forms.GroupBox();
 			this._botsVsBrowsersButton = new System.Windows.Forms.Button();
@@ -79,6 +75,10 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
+			this._formsListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
+			this._cookiesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
+			this._querystringListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
+			this._serverVariablesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
 			this._detailsTabControl.SuspendLayout();
 			this._errorTabPage.SuspendLayout();
 			this._errorTabControl.SuspendLayout();
@@ -338,14 +338,6 @@
 			this._formsTabPage.Text = "Forms";
 			this._formsTabPage.UseVisualStyleBackColor = true;
 			// 
-			// _formsListView
-			// 
-			this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._formsListView.Location = new System.Drawing.Point(0, 0);
-			this._formsListView.Name = "_formsListView";
-			this._formsListView.Size = new System.Drawing.Size(672, 501);
-			this._formsListView.TabIndex = 0;
-			// 
 			// _cookiesTabPage
 			// 
 			this._cookiesTabPage.Controls.Add(this._cookiesListView);
@@ -355,14 +347,6 @@
 			this._cookiesTabPage.TabIndex = 3;
 			this._cookiesTabPage.Text = "Cookies";
 			this._cookiesTabPage.UseVisualStyleBackColor = true;
-			// 
-			// _cookiesListView
-			// 
-			this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._cookiesListView.Location = new System.Drawing.Point(0, 0);
-			this._cookiesListView.Name = "_cookiesListView";
-			this._cookiesListView.Size = new System.Drawing.Size(672, 501);
-			this._cookiesListView.TabIndex = 0;
 			// 
 			// _queryStringTabPage
 			// 
@@ -374,14 +358,6 @@
 			this._queryStringTabPage.Text = "Querystring";
 			this._queryStringTabPage.UseVisualStyleBackColor = true;
 			// 
-			// _querystringListView
-			// 
-			this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._querystringListView.Location = new System.Drawing.Point(0, 0);
-			this._querystringListView.Name = "_querystringListView";
-			this._querystringListView.Size = new System.Drawing.Size(672, 501);
-			this._querystringListView.TabIndex = 0;
-			// 
 			// _serverVariablesTabPage
 			// 
 			this._serverVariablesTabPage.Controls.Add(this._serverVariablesListView);
@@ -392,14 +368,6 @@
 			this._serverVariablesTabPage.TabIndex = 1;
 			this._serverVariablesTabPage.Text = "Server Variables";
 			this._serverVariablesTabPage.UseVisualStyleBackColor = true;
-			// 
-			// _serverVariablesListView
-			// 
-			this._serverVariablesListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._serverVariablesListView.Location = new System.Drawing.Point(3, 3);
-			this._serverVariablesListView.Name = "_serverVariablesListView";
-			this._serverVariablesListView.Size = new System.Drawing.Size(666, 495);
-			this._serverVariablesListView.TabIndex = 0;
 			// 
 			// _clientTabPage
 			// 
@@ -683,6 +651,38 @@
 			this.label14.Size = new System.Drawing.Size(61, 13);
 			this.label14.TabIndex = 6;
 			this.label14.Text = "Software:";
+			// 
+			// _formsListView
+			// 
+			this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._formsListView.Location = new System.Drawing.Point(0, 0);
+			this._formsListView.Name = "_formsListView";
+			this._formsListView.Size = new System.Drawing.Size(672, 501);
+			this._formsListView.TabIndex = 0;
+			// 
+			// _cookiesListView
+			// 
+			this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._cookiesListView.Location = new System.Drawing.Point(0, 0);
+			this._cookiesListView.Name = "_cookiesListView";
+			this._cookiesListView.Size = new System.Drawing.Size(672, 501);
+			this._cookiesListView.TabIndex = 0;
+			// 
+			// _querystringListView
+			// 
+			this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._querystringListView.Location = new System.Drawing.Point(0, 0);
+			this._querystringListView.Name = "_querystringListView";
+			this._querystringListView.Size = new System.Drawing.Size(672, 501);
+			this._querystringListView.TabIndex = 0;
+			// 
+			// _serverVariablesListView
+			// 
+			this._serverVariablesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._serverVariablesListView.Location = new System.Drawing.Point(3, 3);
+			this._serverVariablesListView.Name = "_serverVariablesListView";
+			this._serverVariablesListView.Size = new System.Drawing.Size(666, 495);
+			this._serverVariablesListView.TabIndex = 0;
 			// 
 			// SearchDetailsView
 			// 

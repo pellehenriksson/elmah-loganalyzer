@@ -1,4 +1,5 @@
 ﻿using ElmahLogAnalyzer.Core.Domain;
+using ElmahLogAnalyzer.TestHelpers;
 using NUnit.Framework;
 
 namespace ElmahLogAnalyzer.UnitTests.Domain
@@ -10,7 +11,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		public void Ctor_SetsErrorLog()
 		{
 			// arrange
-			var errorlog = CreateFakeErrorLog();
+			var errorlog = DomainObjectBuilder.CreateFakeErrorLog();
 			var builder = new YellowScreenOfDeathBuilder(errorlog);
 			
 			// assert
@@ -21,7 +22,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		public void GetHtml_BuildHtmlContent()
 		{
 			// arrange
-			var errorlog = CreateFakeErrorLog();
+			var errorlog = DomainObjectBuilder.CreateFakeErrorLog();
 			var builder = new YellowScreenOfDeathBuilder(errorlog);
 
 			// act

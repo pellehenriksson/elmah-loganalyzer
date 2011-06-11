@@ -8,7 +8,7 @@
 		<OutputCompileDirectory>$(OutputDirectory)compile\</OutputCompileDirectory>
 		<OutputReportsDirectory>$(OutputDirectory)reports\</OutputReportsDirectory>
 		<OutputAppDirectory>$(OutputDirectory)app\</OutputAppDirectory>
-		<NUnitExe>$(MSBuildProjectDirectory)\packages\NUnit.2.5.9.10348\Tools\nunit-console.exe</NUnitExe>
+		<NUnitExe>$(MSBuildProjectDirectory)\packages\NUnit.2.5.9.10348\Tools\nunit-console-x86.exe</NUnitExe>
 	</PropertyGroup>
 
 	<Import Project="$(MSBuildProjectDirectory)\tools\msbuild\MSBuild.Community.Tasks.Targets"/>
@@ -54,7 +54,7 @@
 	</Target>
 	
 	<Target Name="Build" DependsOnTargets="Clean">
-		<MSBuild Targets="ReBuild" Projects="$(SourceDirectory)ElmahLogAnalyzer.sln" Properties="Configuration=$(Configuration);OutDir=$(OutputCompileDirectory);" />
+		<MSBuild Targets="ReBuild" Projects="$(SourceDirectory)ElmahLogAnalyzer.sln" Properties="Configuration=$(Configuration);OutDir=$(OutputCompileDirectory);Platform=x86" />
 	</Target>
 
 	<Target Name="ResetAssemblyVersion">

@@ -270,13 +270,13 @@
     <None Include="Resources\about.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\server.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ElmahLogAnalyzer.Core\ElmahLogAnalyzer.Core.csproj">
       <Project>{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}</Project>
       <Name>ElmahLogAnalyzer.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\server.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(ProgramFiles)\MSBuild\Microsoft\StyleCop\v4.4\Microsoft.StyleCop.targets" />

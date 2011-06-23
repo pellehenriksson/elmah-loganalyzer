@@ -28,6 +28,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 			list.Add(new ReportTypeListItem(ReportTypeEnum.Source));
 			list.Add(new ReportTypeListItem(ReportTypeEnum.Day));
 			list.Add(new ReportTypeListItem(ReportTypeEnum.User));
+			list.Add(new ReportTypeListItem(ReportTypeEnum.Browser));
 
 			return list;
 		}

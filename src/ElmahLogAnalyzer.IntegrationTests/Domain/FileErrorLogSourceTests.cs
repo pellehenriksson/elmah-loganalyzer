@@ -29,7 +29,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain
 			var settings = new FakeSettingsManager();
 			settings.SetMaxNumberOfLogs(10);
 
-			var source = new FileErrorLogSource(new FileSystemHelper(), new ErrorLogFileParser(new FakeLog()), settings, new FakeLog());
+			var source = new FileErrorLogSource(new FileSystemHelper(), new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver()), settings, new FakeLog());
 
 			// act
 			var result = source.GetLogs(TestFilesDirectory);
@@ -54,7 +54,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain
 
 		private static FileErrorLogSource CreateSource()
 		{
-			return new FileErrorLogSource(new FileSystemHelper(), new ErrorLogFileParser(new FakeLog()), new FakeSettingsManager(), new FakeLog());
+			return new FileErrorLogSource(new FileSystemHelper(), new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver()), new FakeSettingsManager(), new FakeLog());
 		}
 	}
 }

@@ -204,7 +204,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		
 		private static IErrorLogRepository CreateRepository()
 		{
-			var repository = new ErrorLogRepository(new FakeDataSource(), new FakeClientInformationResolver());
+			var repository = new ErrorLogRepository(new FakeDataSource());
 			repository.Initialize(string.Empty);
 			return repository;
 		}

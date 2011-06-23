@@ -40,6 +40,9 @@ namespace ElmahLogAnalyzer.Core.Domain
 				case ReportTypeEnum.Day:
 					CreateByDayReport(report, errors, query.NumberOfResults);
 					break;
+				case ReportTypeEnum.Browser:
+					CreateByBrowserReport(report, errors, query.NumberOfResults);
+					break;
 			}
 			
 			return report;
@@ -96,6 +99,17 @@ namespace ElmahLogAnalyzer.Core.Domain
 					group e by e.Time.Date
 					into g
 					select new ReportItem(g.Key.ToShortDateString(), g.Count());
+
+			report.AddRange(GetNumberOfResults(query, numberOfResults));
+		}
+
+		private static void CreateByBrowserReport(Report report, IEnumerable<ErrorLog> errors, int numberOfResults)
+		{
+			var query = from e in errors
+			            orderby e.ClientInformation.Browser
+			            group e by e.ClientInformation.Browser
+			            into g
+						select new ReportItem(g.Key, g.Count());
 
 			report.AddRange(GetNumberOfResults(query, numberOfResults));
 		}

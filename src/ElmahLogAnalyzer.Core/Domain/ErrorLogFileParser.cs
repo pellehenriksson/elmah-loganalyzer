@@ -8,14 +8,16 @@ namespace ElmahLogAnalyzer.Core.Domain
 	public class ErrorLogFileParser : IErrorLogFileParser
 	{
 		private readonly ILog _log;
+		private readonly IClientInformationResolver _clientInformationResolve;
 
 		private XmlDocument _document;
 		private XmlElement _documentRoot;
 		private ErrorLog _errorLog;
 
-		public ErrorLogFileParser(ILog log)
+		public ErrorLogFileParser(ILog log, IClientInformationResolver clientInformationResolver)
 		{
 			_log = log;
+			_clientInformationResolve = clientInformationResolver;
 		}
 		
 		public ErrorLog Parse(string content)
@@ -36,6 +38,8 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 				SetStatusCodeInformation();
 				SetServerInformation();
+				SetServerInformation();
+				SetClientInformation();
 
 				return _errorLog;
 			}
@@ -77,6 +81,13 @@ namespace ElmahLogAnalyzer.Core.Domain
 			serverInformation.Software = _errorLog.ServerVariables.GetValueFromFirstMatch("SERVER_SOFTWARE");
 
 			_errorLog.SetServerInformation(serverInformation);
+		}
+
+		private void SetClientInformation()
+		{
+			var httpUserAgent = _errorLog.HttpUserAgent;
+			var clientInformation = _clientInformationResolve.Resolve(httpUserAgent);
+			_errorLog.SetClientInformation(clientInformation);
 		}
 
 		private void ParseServerVariables()

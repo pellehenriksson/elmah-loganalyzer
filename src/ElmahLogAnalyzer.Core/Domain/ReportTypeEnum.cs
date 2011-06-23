@@ -13,6 +13,8 @@ namespace ElmahLogAnalyzer.Core.Domain
 		[Description("Number of errors per url")]
 		Url,
 		[Description("Number of errors per day")]
-		Day
+		Day,
+		[Description("Number of errors per browser")]
+		Browser
 	}
 }

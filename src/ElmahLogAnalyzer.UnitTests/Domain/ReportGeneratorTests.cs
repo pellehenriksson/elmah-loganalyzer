@@ -135,6 +135,20 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			// assert
 			Assert.That(result.Items.Count, Is.EqualTo(4));
 		}
+
+		[Test]
+		public void Create_ReportTypeIsBrowser_GeneratesReport()
+		{
+			// arrange
+			var generator = CreateGenerator();
+			var query = new ReportQuery(ReportTypeEnum.Browser, CreateInterval(), -1);
+
+			// act
+			var result = generator.Create(query);
+
+			// assert
+			Assert.That(result.Items.Count, Is.EqualTo(3));
+		}
 		
 		[Test]
 		public void RepositoryOnInitialized_RaisesOnDataSourceInitializedEvent()
@@ -158,7 +172,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		
 		private static IReportGenerator CreateGenerator()
 		{
-			var repository = new ErrorLogRepository(new FakeDataSource(), new FakeClientInformationResolver());
+			var repository = new ErrorLogRepository(new FakeDataSource());
 			repository.Initialize(string.Empty);
 
 			return new ReportGenerator(repository);

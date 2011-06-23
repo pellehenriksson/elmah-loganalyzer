@@ -11,7 +11,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		public void Parse_ReturnsErrorLogWithFileContent()
 		{
 			// arrange
-			var parser = new ErrorLogFileParser(new FakeLog());
+			var parser = new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver());
 
 			// act
 			var result = parser.Parse(GetValidFileContent());
@@ -35,7 +35,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		public void Parse_FileIsNotInCorrectFormat_ReturnsNull()
 		{
 			// arrange
-			var parser = new ErrorLogFileParser(new FakeLog());
+			var parser = new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver());
 
 			// act
 			var result = parser.Parse(GetInvalidFileContent());
@@ -48,7 +48,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		public void Parse_FileIsMissingServervariables()
 		{
 			// arrange
-			var parser = new ErrorLogFileParser(new FakeLog());
+			var parser = new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver());
 
 			// act
 			var result = parser.Parse(GetValidFileWithNoServerVaiables());
@@ -61,7 +61,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		public void Parse_FileHasStatusCode_LooksUpCodeAndSetsStatusCodeInformation()
 		{
 			// arrange
-			var parser = new ErrorLogFileParser(new FakeLog());
+			var parser = new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver());
 
 			// act
 			var result = parser.Parse(GetValidFileContent());
@@ -76,7 +76,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		public void Parse_SetsServerInformation()
 		{
 			// arrange
-			var parser = new ErrorLogFileParser(new FakeLog());
+			var parser = new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver());
 
 			// act
 			var result = parser.Parse(GetValidFileContent());
@@ -86,6 +86,19 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			Assert.That(result.ServerInformation.Name, Is.EqualTo("localhost"));
 			Assert.That(result.ServerInformation.Port, Is.EqualTo("53197"));
 			Assert.That(result.ServerInformation.Software, Is.EqualTo(string.Empty));
+		}
+
+		[Test]
+		public void Parse_SetsClientInformation()
+		{
+			// arrange
+			var parser = new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver());
+
+			// act
+			var result = parser.Parse(GetValidFileContent());
+
+			// assert
+			Assert.That(result.ClientInformation, Is.Not.Null);
 		}
 		
 		private static string GetValidFileWithNoServerVaiables()

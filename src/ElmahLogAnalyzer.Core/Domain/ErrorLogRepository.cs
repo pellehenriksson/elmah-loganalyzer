@@ -8,7 +8,6 @@ namespace ElmahLogAnalyzer.Core.Domain
 	public class ErrorLogRepository : IErrorLogRepository
 	{
 		private readonly IErrorLogSource _datasource;
-		private readonly IClientInformationResolver _clientInformationResolver;
 		private readonly List<ErrorLog> _errorLogs = new List<ErrorLog>();
 		
 		private readonly UniqueStringList _types = new UniqueStringList();
@@ -16,10 +15,9 @@ namespace ElmahLogAnalyzer.Core.Domain
 		private readonly UniqueStringList _sources = new UniqueStringList();
 		private readonly UniqueStringList _urls = new UniqueStringList();
 
-		public ErrorLogRepository(IErrorLogSource datasource, IClientInformationResolver clientInformationResolver)
+		public ErrorLogRepository(IErrorLogSource datasource)
 		{
 			_datasource = datasource;
-			_clientInformationResolver = clientInformationResolver;
 		}
 
 		public event EventHandler<RepositoryInitializedEventArgs> OnInitialized;
@@ -39,9 +37,6 @@ namespace ElmahLogAnalyzer.Core.Domain
 				_users.Add(error.User);
 				_sources.Add(error.Source);
 				_urls.Add(error.CleanUrl);
-
-				var clientInformation = _clientInformationResolver.Resolve(error.HttpUserAgent);
-				error.SetClientInformation(clientInformation);
 			}
 			
 			if (OnInitialized != null)

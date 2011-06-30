@@ -15,5 +15,7 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.FileSystem
 		void CreateDirectory(string downloadDirectory);
 
 		void CreateTextFile(string path, string content);
+
+		void DeleteFile(string file);
 	}
 }

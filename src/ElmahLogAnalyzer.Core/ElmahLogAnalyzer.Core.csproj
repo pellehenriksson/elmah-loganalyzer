@@ -76,6 +76,7 @@
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -96,6 +97,8 @@
     <Compile Include="Common\UrlCleaner.cs" />
     <Compile Include="Constants\Browsers.cs" />
     <Compile Include="Constants\Platforms.cs" />
+    <Compile Include="Domain\Export\DatabaseExporter.cs" />
+    <Compile Include="Infrastructure\Dapper\SqlMapper.cs" />
     <Compile Include="Domain\CsvParser.cs" />
     <Compile Include="Domain\DownloadDirectoryResolver.cs" />
     <Compile Include="Domain\HttpStatusCodeInformation.cs" />
@@ -165,6 +168,8 @@
     <Compile Include="Presentation\ConnectToServerEventArgs.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgs.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgs.cs" />
+    <Compile Include="Presentation\ExportPresenter.cs" />
+    <Compile Include="Presentation\IExportView.cs" />
     <Compile Include="Presentation\ISearchView.cs" />
     <Compile Include="Presentation\IReportView.cs" />
     <Compile Include="Presentation\ISelectServerView.cs" />
@@ -193,11 +198,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="Infrastructure\Settings\UserSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>UserSettings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

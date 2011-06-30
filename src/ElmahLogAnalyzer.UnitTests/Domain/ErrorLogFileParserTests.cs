@@ -1,4 +1,5 @@
-﻿using ElmahLogAnalyzer.Core.Domain;
+﻿using System;
+using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.TestHelpers.Fakes;
 using NUnit.Framework;
 
@@ -17,7 +18,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			var result = parser.Parse(GetValidFileContent());
 
 			// assert
-			Assert.That(result.ErrorId, Is.EqualTo("dce7f8f3-ac74-4ad9-9435-a344be794c7e"));
+			Assert.That(result.ErrorId, Is.EqualTo(new Guid("dce7f8f3-ac74-4ad9-9435-a344be794c7e")));
 			Assert.That(result.Host, Is.EqualTo("ALVA"));
 			Assert.That(result.User, Is.EqualTo(@"alva\per"));
 			Assert.That(result.Url, Is.EqualTo("/"));
@@ -56,7 +57,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			// assert
 			Assert.That(result.ServerVariables.Count, Is.EqualTo(0));
 		}
-
+		
 		[Test]
 		public void Parse_FileHasStatusCode_LooksUpCodeAndSetsStatusCodeInformation()
 		{

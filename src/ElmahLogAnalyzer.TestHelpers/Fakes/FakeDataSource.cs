@@ -30,7 +30,7 @@ namespace ElmahLogAnalyzer.TestHelpers.Fakes
 		{
 			var errorLog = new ErrorLog();
 			
-			errorLog.ErrorId = Guid.NewGuid().ToString();
+			errorLog.ErrorId = Guid.NewGuid();
 			errorLog.Type = type;
 			errorLog.Message = message;
 			errorLog.Source = source;

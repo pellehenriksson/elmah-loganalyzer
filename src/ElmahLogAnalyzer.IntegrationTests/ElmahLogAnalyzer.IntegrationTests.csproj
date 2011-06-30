@@ -76,6 +76,7 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
+    <Compile Include="Domain\Export\DatabaseExporterTests.cs" />
     <Compile Include="Domain\FileErrorLogSourceTests.cs" />
     <Compile Include="Infrastructure\Cache\CacheHelperTests.cs" />
     <Compile Include="Infrastructure\FileSystem\FileSystemHelperTests.cs" />
@@ -163,7 +164,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="_TestFiles\errorlog_1.2.csv" />
   </ItemGroup>
   <ItemGroup />

@@ -61,6 +61,82 @@ namespace ElmahLogAnalyzer.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CREATE TABLE [CookieValues](
+        ///	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+        ///	[Name][nvarchar](4000) NULL,
+        ///	[Value] [nvarchar](4000) NULL,
+        ///	[ErrorLogId] [uniqueidentifier] NOT NULL
+        ///).
+        /// </summary>
+        internal static string SqlCeDatabaseSchemaCookieValuesTable {
+            get {
+                return ResourceManager.GetString("SqlCeDatabaseSchemaCookieValuesTable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CREATE TABLE [ErrorLogs](
+        ///	[ErrorId] [uniqueidentifier]  PRIMARY KEY NOT NULL,
+        ///	[Host] [nvarchar](4000) NULL,
+        ///	[Type] [nvarchar](4000) NULL,
+        ///	[Message] [nvarchar](4000) NULL,
+        ///	[Source] [nvarchar](4000) NULL,
+        ///	[Details] [ntext] NULL,
+        ///	[Time] [datetime] NULL,
+        ///	[StatusCode] [nvarchar](50) NULL,
+        ///	[User] [nvarchar](256) NULL,
+        ///	[Url] [nvarchar](4000) NULL)
+        ///.
+        /// </summary>
+        internal static string SqlCeDatabaseSchemaErrorLogsTable {
+            get {
+                return ResourceManager.GetString("SqlCeDatabaseSchemaErrorLogsTable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CREATE TABLE [FormValues](
+        ///	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+        ///	[Name][nvarchar](4000) NULL,
+        ///	[Value] [nvarchar](4000) NULL,
+        ///	[ErrorLogId] [uniqueidentifier] NOT NULL
+        ///).
+        /// </summary>
+        internal static string SqlCeDatabaseSchemaFormValuesTable {
+            get {
+                return ResourceManager.GetString("SqlCeDatabaseSchemaFormValuesTable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CREATE TABLE [QuerystringValues](
+        ///	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+        ///	[Name][nvarchar](4000) NULL,
+        ///	[Value] [nvarchar](4000) NULL,
+        ///	[ErrorLogId] [uniqueidentifier] NOT NULL
+        ///).
+        /// </summary>
+        internal static string SqlCeDatabaseSchemaQuerystringValuesTable {
+            get {
+                return ResourceManager.GetString("SqlCeDatabaseSchemaQuerystringValuesTable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CREATE TABLE [ServerVariables](
+        ///	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+        ///	[Name][nvarchar](4000) NULL,
+        ///	[Value] [nvarchar](4000) NULL,
+        ///	[ErrorLogId] [uniqueidentifier] NOT NULL
+        ///).
+        /// </summary>
+        internal static string SqlCeDatabaseSchemaServerVariablesTable {
+            get {
+                return ResourceManager.GetString("SqlCeDatabaseSchemaServerVariablesTable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
         ///&lt;html&gt;
         ///&lt;head&gt;

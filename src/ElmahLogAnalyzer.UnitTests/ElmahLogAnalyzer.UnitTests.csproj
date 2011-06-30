@@ -118,6 +118,7 @@
     <Compile Include="Presentation\ConnectToServerEventArgsTests.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgsTests.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgsTests.cs" />
+    <Compile Include="Presentation\ExportPresenterTests.cs" />
     <Compile Include="Presentation\ReportPresenterTests.cs" />
     <Compile Include="Presentation\ReportSelectionEventArgsTests.cs" />
     <Compile Include="Presentation\ReportTypeListItemTests.cs" />

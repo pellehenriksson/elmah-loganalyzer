@@ -1,33 +1,51 @@
 ﻿using System;
 using System.IO;
+using ElmahLogAnalyzer.Core.Domain;
+using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
+using ElmahLogAnalyzer.Core.Infrastructure.Settings;
+using ElmahLogAnalyzer.TestHelpers.Fakes;
 
 namespace ElmahLogAnalyzer.IntegrationTests
 {
 	public abstract class IntegrationTestBase
 	{
-		public string TestFilesDirectory
+		protected string TestFilesDirectory
 		{
 			get { return Path.Combine(Directory.GetCurrentDirectory(), "_TestFiles"); }
 		}
-		
-		public string TestArea
+
+		protected string TestArea
 		{
 			get { return Path.Combine(Directory.GetCurrentDirectory(), "_TestArea"); }
 		}
-		
-		public string TestCvsFile
+
+		protected string TestCvsFile
 		{
 			get { return Path.Combine(TestFilesDirectory, "errorlog.csv"); }
 		}
 
-		public string ExistingUrl
+		protected string ExistingUrl
 		{
 			get { return "http://www.google.com"; }
 		}
 
-		public string NonExistantUrl
+		protected string NonExistantUrl
 		{
 			get { return "http://www.bluttanblä.com"; }
+		}
+
+		protected ErrorLogRepository CreateRepository()
+		{
+			var fileSystemHelper = new FileSystemHelper();
+			var log = new FakeLog();
+			var settings = new FakeSettingsManager();
+			settings.SetMaxNumberOfLogs(-1);
+
+			var parser = new ErrorLogFileParser(log, new ClientInformationResolver());
+			var datasource = new FileErrorLogSource(fileSystemHelper, parser, settings, log);
+
+			var repository = new ErrorLogRepository(datasource);
+			return repository;
 		}
 	}
 }

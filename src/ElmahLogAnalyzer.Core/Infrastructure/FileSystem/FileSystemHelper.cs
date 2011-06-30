@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
 
 namespace ElmahLogAnalyzer.Core.Infrastructure.FileSystem
@@ -41,6 +42,11 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.FileSystem
 			{
 				writer.Write(content);
 			}
+		}
+
+		public void DeleteFile(string file)
+		{
+			File.Delete(file);
 		}
 	}
 }

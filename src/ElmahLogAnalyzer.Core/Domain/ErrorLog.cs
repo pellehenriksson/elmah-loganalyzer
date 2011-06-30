@@ -19,7 +19,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 			StatusCodeInformation = new HttpStatusCodeInformation();
 		}
 
-		public string ErrorId { get; set; }
+		public Guid ErrorId { get; set; }
 
 		public string Host { get; set; }
 		

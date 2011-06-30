@@ -52,7 +52,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 		private void ParseAttributes()
 		{
-			_errorLog.ErrorId = GetAttributeValue("errorId");
+			_errorLog.ErrorId = Guid.Parse(GetAttributeValue("errorId"));
 			_errorLog.Host = GetAttributeValue("host");
 			_errorLog.Type = GetAttributeValue("type");
 			_errorLog.Message = GetAttributeValue("message");
@@ -112,17 +112,37 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 		private void ParseSegment(Action<string, string> method, string segmentPath)
 		{
-			var formvalues = _documentRoot.SelectNodes(segmentPath);
-			if (formvalues == null || formvalues.Count == 0)
+			var segment = _documentRoot.SelectNodes(segmentPath);
+			if (segment == null || segment.Count == 0)
 			{
 				return;
 			}
-
-			foreach (XmlNode node in formvalues)
+			
+			foreach (XmlNode node in segment)
 			{
-				var name = node.Attributes["name"].InnerText;
-				var value = node.ChildNodes[0].Attributes["string"].InnerText;
+				if (node.Attributes == null)
+				{
+					return;
+				}
 
+				if (node.Attributes["name"] == null)
+				{
+					return;
+				}
+
+				var name = node.Attributes["name"].Value;
+				var value = string.Empty;
+				
+				if (node.HasChildNodes)
+				{
+					var valueNode = node.FirstChild;
+					
+					if (valueNode.Attributes["string"] != null)
+					{
+						value = valueNode.Attributes["string"].InnerText;
+					}
+				}
+				
 				method.Invoke(name, value);
 			}
 		}

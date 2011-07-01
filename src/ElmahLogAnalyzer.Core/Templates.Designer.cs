@@ -61,6 +61,17 @@ namespace ElmahLogAnalyzer.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ALTER TABLE [CookieValues]
+        ///ADD CONSTRAINT [FK_CookieValue_ErrorLog]
+        ///FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId).
+        /// </summary>
+        internal static string SqlCeDatabaseSchemaCookieValuesForeignKeys {
+            get {
+                return ResourceManager.GetString("SqlCeDatabaseSchemaCookieValuesForeignKeys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CREATE TABLE [CookieValues](
         ///	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
         ///	[Name][nvarchar](4000) NULL,
@@ -95,6 +106,18 @@ namespace ElmahLogAnalyzer.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ALTER TABLE [FormValues]
+        ///ADD CONSTRAINT [FK_FormValue_ErrorLog]
+        ///FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId);
+        ///.
+        /// </summary>
+        internal static string SqlCeDatabaseSchemaFormValuesForeignKeys {
+            get {
+                return ResourceManager.GetString("SqlCeDatabaseSchemaFormValuesForeignKeys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CREATE TABLE [FormValues](
         ///	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
         ///	[Name][nvarchar](4000) NULL,
@@ -109,6 +132,17 @@ namespace ElmahLogAnalyzer.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ALTER TABLE [QuerystringValues]
+        ///ADD CONSTRAINT [FK_QuerystringValue_ErrorLog]
+        ///FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId).
+        /// </summary>
+        internal static string SqlCeDatabaseSchemaQuerystringValuesForeignKeys {
+            get {
+                return ResourceManager.GetString("SqlCeDatabaseSchemaQuerystringValuesForeignKeys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CREATE TABLE [QuerystringValues](
         ///	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
         ///	[Name][nvarchar](4000) NULL,
@@ -119,6 +153,17 @@ namespace ElmahLogAnalyzer.Core {
         internal static string SqlCeDatabaseSchemaQuerystringValuesTable {
             get {
                 return ResourceManager.GetString("SqlCeDatabaseSchemaQuerystringValuesTable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ALTER TABLE [ServerVariables]
+        ///ADD CONSTRAINT [FK_ServerVariable_ErrorLog]
+        ///FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId).
+        /// </summary>
+        internal static string SqlCeDatabaseSchemaServerVariablesForeignKeys {
+            get {
+                return ResourceManager.GetString("SqlCeDatabaseSchemaServerVariablesForeignKeys", resourceCulture);
             }
         }
         

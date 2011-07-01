@@ -117,6 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="SqlCeDatabaseSchemaCookieValuesForeignKeys" xml:space="preserve">
+    <value>ALTER TABLE [CookieValues]
+ADD CONSTRAINT [FK_CookieValue_ErrorLog]
+FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId)</value>
+  </data>
   <data name="SqlCeDatabaseSchemaCookieValuesTable" xml:space="preserve">
     <value>CREATE TABLE [CookieValues](
 	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -139,6 +144,12 @@
 	[Url] [nvarchar](4000) NULL)
 </value>
   </data>
+  <data name="SqlCeDatabaseSchemaFormValuesForeignKeys" xml:space="preserve">
+    <value>ALTER TABLE [FormValues]
+ADD CONSTRAINT [FK_FormValue_ErrorLog]
+FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId);
+</value>
+  </data>
   <data name="SqlCeDatabaseSchemaFormValuesTable" xml:space="preserve">
     <value>CREATE TABLE [FormValues](
 	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -147,6 +158,11 @@
 	[ErrorLogId] [uniqueidentifier] NOT NULL
 )</value>
   </data>
+  <data name="SqlCeDatabaseSchemaQuerystringValuesForeignKeys" xml:space="preserve">
+    <value>ALTER TABLE [QuerystringValues]
+ADD CONSTRAINT [FK_QuerystringValue_ErrorLog]
+FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId)</value>
+  </data>
   <data name="SqlCeDatabaseSchemaQuerystringValuesTable" xml:space="preserve">
     <value>CREATE TABLE [QuerystringValues](
 	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -154,6 +170,11 @@
 	[Value] [nvarchar](4000) NULL,
 	[ErrorLogId] [uniqueidentifier] NOT NULL
 )</value>
+  </data>
+  <data name="SqlCeDatabaseSchemaServerVariablesForeignKeys" xml:space="preserve">
+    <value>ALTER TABLE [ServerVariables]
+ADD CONSTRAINT [FK_ServerVariable_ErrorLog]
+FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId)</value>
   </data>
   <data name="SqlCeDatabaseSchemaServerVariablesTable" xml:space="preserve">
     <value>CREATE TABLE [ServerVariables](

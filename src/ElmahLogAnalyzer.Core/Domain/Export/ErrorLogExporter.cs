@@ -96,6 +96,10 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 				connection.Execute(Templates.SqlCeDatabaseSchemaCookieValuesTable);
 				connection.Execute(Templates.SqlCeDatabaseSchemaFormValuesTable);
 				connection.Execute(Templates.SqlCeDatabaseSchemaQuerystringValuesTable);
+				connection.Execute(Templates.SqlCeDatabaseSchemaFormValuesForeignKeys);
+				connection.Execute(Templates.SqlCeDatabaseSchemaCookieValuesForeignKeys);
+				connection.Execute(Templates.SqlCeDatabaseSchemaQuerystringValuesForeignKeys);
+				connection.Execute(Templates.SqlCeDatabaseSchemaServerVariablesForeignKeys);
 			}
 		}
 	}

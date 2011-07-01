@@ -53,6 +53,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 			_showReportViewButton.Enabled = false;
 			_selectDirectoryButton.Enabled = false;
 			_selectServerButton.Enabled = false;
+			_exportButton.Enabled = false;
 			_showSettingsViewButton.Enabled = false;
 
 			LoadView(new LoadingView());
@@ -62,6 +63,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		{
 			_showSearchViewButton.Enabled = true;
 			_showReportViewButton.Enabled = true;
+			_exportButton.Enabled = true;
 			_selectDirectoryButton.Enabled = true;
 			_selectServerButton.Enabled = true;
 			_showSettingsViewButton.Enabled = true;
@@ -73,6 +75,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		{
 			_showSearchViewButton.Enabled = false;
 			_showReportViewButton.Enabled = false;
+			_exportButton.Enabled = false;
 			_selectDirectoryButton.Enabled = true;
 			_selectServerButton.Enabled = true;
 			_showSettingsViewButton.Enabled = true;
@@ -213,6 +216,13 @@ namespace ElmahLogAnalyzer.UI.Forms
 				var connection = presenter.Connnection;
 				HandleDownloadingLogs(connection);
 			}
+		}
+
+		private void ExportButtonClick(object sender, EventArgs e)
+		{
+			var presenter = ServiceLocator.Resolve<ExportPresenter>();
+			var view = presenter.View as Form;
+			var dialogResult = view.ShowDialog(this);
 		}
 	}
 }

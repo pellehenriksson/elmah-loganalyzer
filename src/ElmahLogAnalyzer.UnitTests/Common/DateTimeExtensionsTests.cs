@@ -96,5 +96,18 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 			Assert.That(result, Is.Not.Null);
 			Assert.That(result.ParamName, Is.EqualTo("interval"));
 		}
+
+		[Test][Ignore("todo: pad numeric values less than 10")]
+		public void ToTruncatedString_RemovesAllSpecialCharachters()
+		{
+			// arrange
+			var date = new DateTime(2011, 6, 30, 16, 19, 20);
+
+			// act
+			var result = date.ToTruncatedString();
+
+			// assert
+			Assert.That(result, Is.EqualTo("20110630_1619"));
+		}
 	}
 }

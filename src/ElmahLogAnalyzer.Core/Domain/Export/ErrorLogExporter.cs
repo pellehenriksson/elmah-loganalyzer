@@ -1,52 +1,28 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlServerCe;
 using Dapper;
 using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
 
 namespace ElmahLogAnalyzer.Core.Domain.Export
 {
-	public class DatabaseExporter
+	public class ErrorLogExporter : IErrorLogExporter
 	{
 		private readonly IErrorLogRepository _repository;
 		private readonly IFileSystemHelper _fileSystemHelper;
 
-		public DatabaseExporter(IErrorLogRepository repository, IFileSystemHelper fileSystemHelper)
+		public ErrorLogExporter(IErrorLogRepository repository, IFileSystemHelper fileSystemHelper)
 		{
 			_repository = repository;
 			_fileSystemHelper = fileSystemHelper;
 		}
 
 		public string ConnectionString { get; private set; }
-
-		public void CreateStorage(string databaseName)
-		{
-			var databaseFile = string.Format("{0}.sdf", databaseName);
-
-			if (_fileSystemHelper.FileExists(databaseFile))
-			{
-				_fileSystemHelper.DeleteFile(databaseFile);
-			}
-
-			ConnectionString = string.Format("Data Source = {0};", databaseFile);
-
-			using (var engine = new SqlCeEngine(ConnectionString))
-			{
-				engine.CreateDatabase();
-			}
-
-			using (IDbConnection connection = new SqlCeConnection(ConnectionString))
-			{
-				connection.Open();
-				connection.Execute(Templates.SqlCeDatabaseSchemaErrorLogsTable);
-				connection.Execute(Templates.SqlCeDatabaseSchemaServerVariablesTable);
-				connection.Execute(Templates.SqlCeDatabaseSchemaCookieValuesTable);
-				connection.Execute(Templates.SqlCeDatabaseSchemaFormValuesTable);
-				connection.Execute(Templates.SqlCeDatabaseSchemaQuerystringValuesTable);
-			}
-		}
-
+		
 		public int Export()
 		{
+			CreateStorage();
+
 			var logsInsertedCounter = 0;
 
 			using (IDbConnection connection = new SqlCeConnection(ConnectionString))
@@ -94,6 +70,33 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 			}
 
 			return logsInsertedCounter;
+		}
+
+		private void CreateStorage()
+		{
+			const string databaseFile = "ElmahLogAnalyzer_Dump.sdf";
+
+			if (_fileSystemHelper.FileExists(databaseFile))
+			{
+				_fileSystemHelper.DeleteFile(databaseFile);
+			}
+
+			ConnectionString = string.Format("Data Source = {0};", databaseFile);
+
+			using (var engine = new SqlCeEngine(ConnectionString))
+			{
+				engine.CreateDatabase();
+			}
+
+			using (IDbConnection connection = new SqlCeConnection(ConnectionString))
+			{
+				connection.Open();
+				connection.Execute(Templates.SqlCeDatabaseSchemaErrorLogsTable);
+				connection.Execute(Templates.SqlCeDatabaseSchemaServerVariablesTable);
+				connection.Execute(Templates.SqlCeDatabaseSchemaCookieValuesTable);
+				connection.Execute(Templates.SqlCeDatabaseSchemaFormValuesTable);
+				connection.Execute(Templates.SqlCeDatabaseSchemaQuerystringValuesTable);
+			}
 		}
 	}
 }

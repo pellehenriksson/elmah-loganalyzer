@@ -1,4 +1,5 @@
 ﻿using ElmahLogAnalyzer.Core.Domain;
+using ElmahLogAnalyzer.Core.Domain.Export;
 using ElmahLogAnalyzer.Core.Infrastructure.Cache;
 using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
 using ElmahLogAnalyzer.Core.Infrastructure.Logging;
@@ -21,10 +22,12 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			Bind<IErrorLogSource>().To<FileErrorLogSource>();
 			Bind<IErrorLogFileParser>().To<ErrorLogFileParser>();
 			Bind<IReportGenerator>().To<ReportGenerator>();
+			Bind<IErrorLogExporter>().To<ErrorLogExporter>();
 			Bind<SearchPresenter>().To<SearchPresenter>();
 			Bind<ReportPresenter>().To<ReportPresenter>();
 			Bind<SettingsPresenter>().To<SettingsPresenter>();
 			Bind<SelectServerPresenter>().To<SelectServerPresenter>();
+			Bind<ExportPresenter>().To<ExportPresenter>();
 			Bind<ICacheHelper>().To<CacheHelper>();
 			Bind<IWebRequestHelper>().To<WebRequestHelper>();
 			Bind<IClientInformationResolver>().To<ClientInformationResolver>();

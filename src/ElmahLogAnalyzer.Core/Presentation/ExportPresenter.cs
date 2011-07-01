@@ -1,11 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using ElmahLogAnalyzer.Core.Domain.Export;
 
 namespace ElmahLogAnalyzer.Core.Presentation
 {
 	public class ExportPresenter
 	{
+		private readonly IErrorLogExporter _exporter;
+
+		public ExportPresenter(IExportView view, IErrorLogExporter exporter)
+		{
+			View = view;
+			_exporter = exporter;
+		
+			RegisterEvents();
+		}
+
+		public IExportView View { get; private set; }
+		
+		private void RegisterEvents()
+		{
+			View.OnExport += View_OnExport;
+		}
+
+		private void View_OnExport(object sender, System.EventArgs e)
+		{
+			View.SetLoadingState();
+			
+			_exporter.Export();
+			
+			View.CloseView();
+		}
 	}
 }

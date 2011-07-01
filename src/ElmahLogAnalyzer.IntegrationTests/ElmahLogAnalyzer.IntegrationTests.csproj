@@ -76,7 +76,7 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
-    <Compile Include="Domain\Export\DatabaseExporterTests.cs" />
+    <Compile Include="Domain\Export\ErrorLogExporterTests.cs" />
     <Compile Include="Domain\FileErrorLogSourceTests.cs" />
     <Compile Include="Infrastructure\Cache\CacheHelperTests.cs" />
     <Compile Include="Infrastructure\FileSystem\FileSystemHelperTests.cs" />

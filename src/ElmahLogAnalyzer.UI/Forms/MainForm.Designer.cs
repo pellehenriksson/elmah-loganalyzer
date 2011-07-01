@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this._mainStatusStrip = new System.Windows.Forms.StatusStrip();
 			this._directoryToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._settingsStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -39,6 +40,7 @@
 			this._showReportViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showAboutButton = new System.Windows.Forms.ToolStripButton();
 			this._showSettingsViewButton = new System.Windows.Forms.ToolStripButton();
+			this._exportButton = new System.Windows.Forms.ToolStripButton();
 			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
 			this._mainPanel = new System.Windows.Forms.Panel();
 			this._mainStatusStrip.SuspendLayout();
@@ -96,7 +98,8 @@
             this._showSearchViewButton,
             this._showReportViewButton,
             this._showAboutButton,
-            this._showSettingsViewButton});
+            this._showSettingsViewButton,
+            this._exportButton});
 			this._mainToolStrip.Location = new System.Drawing.Point(0, 0);
 			this._mainToolStrip.Name = "_mainToolStrip";
 			this._mainToolStrip.Size = new System.Drawing.Size(1358, 25);
@@ -162,6 +165,15 @@
 			this._showSettingsViewButton.ToolTipText = "Change settings";
 			this._showSettingsViewButton.Click += new System.EventHandler(this.ShowSettingsViewButtonClick);
 			// 
+			// _exportButton
+			// 
+			this._exportButton.Image = ((System.Drawing.Image)(resources.GetObject("_exportButton.Image")));
+			this._exportButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._exportButton.Name = "_exportButton";
+			this._exportButton.Size = new System.Drawing.Size(60, 22);
+			this._exportButton.Text = "Export";
+			this._exportButton.Click += new System.EventHandler(this.ExportButtonClick);
+			// 
 			// _folderBrowserDialog
 			// 
 			this._folderBrowserDialog.Description = "Select a folder with ELMAH log files";
@@ -215,5 +227,6 @@
 		private System.Windows.Forms.ToolStripButton _showAboutButton;
 		private System.Windows.Forms.ToolStripButton _selectServerButton;
 		private System.Windows.Forms.ToolStripStatusLabel _settingsStripStatusLabel;
+		private System.Windows.Forms.ToolStripButton _exportButton;
 	}
 }

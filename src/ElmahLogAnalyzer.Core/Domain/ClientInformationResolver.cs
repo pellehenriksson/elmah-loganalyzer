@@ -37,6 +37,9 @@ namespace ElmahLogAnalyzer.Core.Domain
 			var rightParenthesisIndex = _httpUserAgent.IndexOf(')');
 
             var hasParenthesizedSegment = leftParenthesisIndex >= 0 && rightParenthesisIndex > leftParenthesisIndex;
+			
+			// move index to first position after the left parethesis
+			leftParenthesisIndex++;
 
             var parenthesisSegmentLength = rightParenthesisIndex - leftParenthesisIndex;
             _parenthesisSegment = hasParenthesizedSegment 

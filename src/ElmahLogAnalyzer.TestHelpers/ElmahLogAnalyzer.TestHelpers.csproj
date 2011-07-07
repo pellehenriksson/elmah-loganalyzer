@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="DomainObjectBuilder.cs" />
     <Compile Include="Fakes\FakeClientInformationResolver.cs" />
+    <Compile Include="Fakes\FakeConsoleLog.cs" />
     <Compile Include="Fakes\FakeDataSourceFactory.cs" />
     <Compile Include="Fakes\FakeUrlNavigationLauncher.cs" />
     <Compile Include="Fakes\FakeSettingsManager.cs" />

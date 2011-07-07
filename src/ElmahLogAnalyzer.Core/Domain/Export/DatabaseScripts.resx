@@ -117,113 +117,100 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="YellowScreenOfDeath" xml:space="preserve">
-    <value>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
-&lt;html&gt;
-&lt;head&gt;
-	&lt;title&gt;@MESSAGE@&lt;/title&gt;
-	&lt;style type="text/css"&gt;
-		body
-		{
-			font-family: "Verdana";
-			font-weight: normal;
-			font-size: .7em;
-			color: black;
-		}
-		p
-		{
-			font-family: "Verdana";
-			font-weight: normal;
-			color: black;
-			margin-top: -5px;
-		}
-		b
-		{
-			font-family: "Verdana";
-			font-weight: bold;
-			color: black;
-			margin-top: -5px;
-		}
-		h1
-		{
-			font-family: "Verdana";
-			font-weight: normal;
-			font-size: 18pt;
-			color: red;
-		}
-		h2
-		{
-			font-family: "Verdana";
-			font-weight: normal;
-			font-size: 14pt;
-			color: maroon;
-		}
-		pre
-		{
-			font-family: "Lucida Console";
-			font-size: .9em;
-		}
-		.marker
-		{
-			font-weight: bold;
-			color: black;
-			text-decoration: none;
-		}
-		.version
-		{
-			color: gray;
-		}
-		.error
-		{
-			margin-bottom: 10px;
-		}
-		.expandable
-		{
-			text-decoration: underline;
-			font-weight: bold;
-			color: navy;
-			cursor: hand;
-		}
-	&lt;/style&gt;
-&lt;/head&gt;
-&lt;body bgcolor="white"&gt;
-
-	&lt;h1&gt;
-		Server Error in '@APPLICATION@' Application.&lt;/h1&gt;
-	&lt;hr width="100%" size="1" color="silver" /&gt;
-	&lt;h2&gt;
-		&lt;i&gt;@MESSAGE@&lt;/i&gt;
-	&lt;/h2&gt;
-	&lt;b&gt;Description:&lt;/b&gt;An unhandled exception occurred during the execution of the current
-	web request. Please review the stack trace for more information about the error
-	and where it originated in the code.
-	&lt;br /&gt;
-	&lt;br /&gt;
-	&lt;b&gt;Exception Details: &lt;/b&gt;@TYPE@: @MESSAGE@
-	&lt;br /&gt;
-	&lt;br /&gt;
-	&lt;b&gt;Source Error:&lt;/b&gt;
-	&lt;br /&gt;
-	&lt;br /&gt;
-	&lt;table width="100%" bgcolor="#ffffcc"&gt;
-		&lt;tr&gt;
-			&lt;td&gt;
-				&lt;code&gt;@SOURCE@&lt;/code&gt;
-			&lt;/td&gt;
-		&lt;/tr&gt;
-	&lt;/table&gt;
-	&lt;br /&gt;
-	&lt;b&gt;Stack trace:&lt;/b&gt;
-	&lt;br /&gt;
-	&lt;br /&gt;
-	&lt;table width="100%" bgcolor="#ffffcc"&gt;
-		&lt;tr&gt;
-			&lt;td&gt;
-				&lt;code&gt;@STACK_TRACE@&lt;/code&gt;
-			&lt;/td&gt;
-		&lt;/tr&gt;
-	&lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;</value>
+  <data name="SqlCeDatabaseSchemaClientInformationForeignKeys" xml:space="preserve">
+    <value>ALTER TABLE [ClientInformation]
+ADD CONSTRAINT [FK_ClientInformation_ErrorLog]
+FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId)</value>
+  </data>
+  <data name="SqlCeDatabaseSchemaClientInformationTable" xml:space="preserve">
+    <value>CREATE TABLE [ClientInformation](
+	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[Browser][nvarchar](256) NULL,
+	[OperatingSystem] [nvarchar](256) NULL,
+	[Platform] [nvarchar](256) NULL,
+	[Description] [nvarchar](256) NULL,
+	[ErrorLogId] [uniqueidentifier] NOT NULL
+)</value>
+  </data>
+  <data name="SqlCeDatabaseSchemaCookieValuesForeignKeys" xml:space="preserve">
+    <value>ALTER TABLE [CookieValues]
+ADD CONSTRAINT [FK_CookieValue_ErrorLog]
+FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId)</value>
+  </data>
+  <data name="SqlCeDatabaseSchemaCookieValuesTable" xml:space="preserve">
+    <value>CREATE TABLE [CookieValues](
+	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[Name][nvarchar](4000) NULL,
+	[Value] [nvarchar](4000) NULL,
+	[ErrorLogId] [uniqueidentifier] NOT NULL
+)</value>
+  </data>
+  <data name="SqlCeDatabaseSchemaErrorLogsTable" xml:space="preserve">
+    <value>CREATE TABLE [ErrorLogs](
+	[ErrorId] [uniqueidentifier]  PRIMARY KEY NOT NULL,
+	[Host] [nvarchar](4000) NULL,
+	[Type] [nvarchar](4000) NULL,
+	[Message] [nvarchar](4000) NULL,
+	[Source] [nvarchar](4000) NULL,
+	[Details] [ntext] NULL,
+	[Time] [datetime] NULL,
+	[StatusCode] [nvarchar](50) NULL,
+	[User] [nvarchar](256) NULL,
+	[Url] [nvarchar](4000) NULL)
+</value>
+  </data>
+  <data name="SqlCeDatabaseSchemaFormValuesForeignKeys" xml:space="preserve">
+    <value>ALTER TABLE [FormValues]
+ADD CONSTRAINT [FK_FormValue_ErrorLog]
+FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId);
+</value>
+  </data>
+  <data name="SqlCeDatabaseSchemaFormValuesTable" xml:space="preserve">
+    <value>CREATE TABLE [FormValues](
+	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[Name][nvarchar](4000) NULL,
+	[Value] [nvarchar](4000) NULL,
+	[ErrorLogId] [uniqueidentifier] NOT NULL
+)</value>
+  </data>
+  <data name="SqlCeDatabaseSchemaQuerystringValuesForeignKeys" xml:space="preserve">
+    <value>ALTER TABLE [QuerystringValues]
+ADD CONSTRAINT [FK_QuerystringValue_ErrorLog]
+FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId)</value>
+  </data>
+  <data name="SqlCeDatabaseSchemaQuerystringValuesTable" xml:space="preserve">
+    <value>CREATE TABLE [QuerystringValues](
+	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[Name][nvarchar](4000) NULL,
+	[Value] [nvarchar](4000) NULL,
+	[ErrorLogId] [uniqueidentifier] NOT NULL
+)</value>
+  </data>
+  <data name="SqlCeDatabaseSchemaServerInformationForeignKeys" xml:space="preserve">
+    <value>ALTER TABLE [ServerInformation]
+ADD CONSTRAINT [FK_ServerInformation_ErrorLog]
+FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId)</value>
+  </data>
+  <data name="SqlCeDatabaseSchemaServerInformationTable" xml:space="preserve">
+    <value>CREATE TABLE [ServerInformation](
+	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[Host][nvarchar](256) NULL,
+	[Name] [nvarchar](500) NULL,
+	[Port] [nvarchar](256) NULL,
+	[Software] [nvarchar](256) NULL,
+	[ErrorLogId] [uniqueidentifier] NOT NULL)</value>
+  </data>
+  <data name="SqlCeDatabaseSchemaServerVariablesForeignKeys" xml:space="preserve">
+    <value>ALTER TABLE [ServerVariables]
+ADD CONSTRAINT [FK_ServerVariable_ErrorLog]
+FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId)</value>
+  </data>
+  <data name="SqlCeDatabaseSchemaServerVariablesTable" xml:space="preserve">
+    <value>CREATE TABLE [ServerVariables](
+	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[Name][nvarchar](4000) NULL,
+	[Value] [nvarchar](4000) NULL,
+	[ErrorLogId] [uniqueidentifier] NOT NULL
+)</value>
   </data>
 </root>

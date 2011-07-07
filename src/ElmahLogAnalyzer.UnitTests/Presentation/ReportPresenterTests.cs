@@ -57,7 +57,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		}
 
 		[Test]
-		public void ViewOnLoaded_LoadNumberOfResulsOptions()
+		public void ViewOnLoaded_LoadNumberOfResultsOptions()
 		{
 			// arrange
 			var view = new Mock<IReportView>();

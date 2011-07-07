@@ -1,5 +1,6 @@
 ﻿using ElmahLogAnalyzer.Core.Domain.Export;
 using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
+using ElmahLogAnalyzer.TestHelpers.Fakes;
 using NUnit.Framework;
 
 namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
@@ -13,7 +14,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 			// arrange
 			var repository = CreateRepository();
 			var fileSystemHelper = new FileSystemHelper();
-			var exporter = new ErrorLogExporter(repository, fileSystemHelper);
+			var exporter = new ErrorLogExporter(repository, fileSystemHelper, new FakeConsoleLog());
 
 			repository.Initialize(TestFilesDirectory);
 
@@ -30,7 +31,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 			// arrange
 			var repository = CreateRepository();
 			var fileSystemHelper = new FileSystemHelper();
-			var exporter = new ErrorLogExporter(repository, fileSystemHelper);
+			var exporter = new ErrorLogExporter(repository, fileSystemHelper, new FakeConsoleLog());
 
 			repository.Initialize(@"c:\temp\elmah");
 

@@ -36,14 +36,16 @@
 			this._silkLinkLabel = new System.Windows.Forms.LinkLabel();
 			this._ninjectLabel = new System.Windows.Forms.Label();
 			this._nLogLabel = new System.Windows.Forms.Label();
-			this.ninjecLinkLabel = new System.Windows.Forms.LinkLabel();
-			this.nLogLinkLabel = new System.Windows.Forms.LinkLabel();
+			this._ninjecLinkLabel = new System.Windows.Forms.LinkLabel();
+			this._nLogLinkLabel = new System.Windows.Forms.LinkLabel();
+			this._dapperLabel = new System.Windows.Forms.Label();
+			this._dapperLinkLabel = new System.Windows.Forms.LinkLabel();
 			this.SuspendLayout();
 			// 
 			// _closeButton
 			// 
 			this._closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this._closeButton.Location = new System.Drawing.Point(365, 196);
+			this._closeButton.Location = new System.Drawing.Point(365, 223);
 			this._closeButton.Name = "_closeButton";
 			this._closeButton.Size = new System.Drawing.Size(75, 23);
 			this._closeButton.TabIndex = 0;
@@ -77,7 +79,7 @@
 			this._updateLinkLabel.TabIndex = 3;
 			this._updateLinkLabel.TabStop = true;
 			this._updateLinkLabel.Text = "http://code.google.com/p/elmah-loganalyzer";
-			this._updateLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(UpdateLinkLabelLinkClicked);
+			this._updateLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UpdateLinkLabelLinkClicked);
 			// 
 			// _silkLabel
 			// 
@@ -97,7 +99,7 @@
 			this._silkLinkLabel.TabIndex = 5;
 			this._silkLinkLabel.TabStop = true;
 			this._silkLinkLabel.Text = "http://www.famfamfam.com/lab/icons/silk";
-			this._silkLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(SilkLinkLabelLinkClicked);
+			this._silkLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SilkLinkLabelLinkClicked);
 			// 
 			// _ninjectLabel
 			// 
@@ -117,35 +119,57 @@
 			this._nLogLabel.TabIndex = 7;
 			this._nLogLabel.Text = "NLog";
 			// 
-			// ninjecLinkLabel
+			// _ninjecLinkLabel
 			// 
-			this.ninjecLinkLabel.AutoSize = true;
-			this.ninjecLinkLabel.Location = new System.Drawing.Point(120, 136);
-			this.ninjecLinkLabel.Name = "ninjecLinkLabel";
-			this.ninjecLinkLabel.Size = new System.Drawing.Size(87, 13);
-			this.ninjecLinkLabel.TabIndex = 8;
-			this.ninjecLinkLabel.TabStop = true;
-			this.ninjecLinkLabel.Text = "http://ninject.org";
-			this.ninjecLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(NinjecLinkLabelLinkClicked);
+			this._ninjecLinkLabel.AutoSize = true;
+			this._ninjecLinkLabel.Location = new System.Drawing.Point(120, 136);
+			this._ninjecLinkLabel.Name = "_ninjecLinkLabel";
+			this._ninjecLinkLabel.Size = new System.Drawing.Size(87, 13);
+			this._ninjecLinkLabel.TabIndex = 8;
+			this._ninjecLinkLabel.TabStop = true;
+			this._ninjecLinkLabel.Text = "http://ninject.org";
+			this._ninjecLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.NinjecLinkLabelLinkClicked);
 			// 
-			// nLogLinkLabel
+			// _nLogLinkLabel
 			// 
-			this.nLogLinkLabel.AutoSize = true;
-			this.nLogLinkLabel.Location = new System.Drawing.Point(120, 168);
-			this.nLogLinkLabel.Name = "nLogLinkLabel";
-			this.nLogLinkLabel.Size = new System.Drawing.Size(111, 13);
-			this.nLogLinkLabel.TabIndex = 9;
-			this.nLogLinkLabel.TabStop = true;
-			this.nLogLinkLabel.Text = "http://nlog-project.org";
-			this.nLogLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(NLogLinkLabelLinkClicked);
+			this._nLogLinkLabel.AutoSize = true;
+			this._nLogLinkLabel.Location = new System.Drawing.Point(120, 168);
+			this._nLogLinkLabel.Name = "_nLogLinkLabel";
+			this._nLogLinkLabel.Size = new System.Drawing.Size(111, 13);
+			this._nLogLinkLabel.TabIndex = 9;
+			this._nLogLinkLabel.TabStop = true;
+			this._nLogLinkLabel.Text = "http://nlog-project.org";
+			this._nLogLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.NLogLinkLabelLinkClicked);
+			// 
+			// _dapperLabel
+			// 
+			this._dapperLabel.AutoSize = true;
+			this._dapperLabel.Location = new System.Drawing.Point(18, 196);
+			this._dapperLabel.Name = "_dapperLabel";
+			this._dapperLabel.Size = new System.Drawing.Size(76, 13);
+			this._dapperLabel.TabIndex = 10;
+			this._dapperLabel.Text = "dapper-dot-net";
+			// 
+			// _dapperLinkLabel
+			// 
+			this._dapperLinkLabel.AutoSize = true;
+			this._dapperLinkLabel.Location = new System.Drawing.Point(120, 196);
+			this._dapperLinkLabel.Name = "_dapperLinkLabel";
+			this._dapperLinkLabel.Size = new System.Drawing.Size(210, 13);
+			this._dapperLinkLabel.TabIndex = 11;
+			this._dapperLinkLabel.TabStop = true;
+			this._dapperLinkLabel.Text = "http://code.google.com/p/dapper-dot-net/";
+			this._dapperLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.DapperLinkLabelLinkClicked);
 			// 
 			// AboutForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(452, 231);
-			this.Controls.Add(this.nLogLinkLabel);
-			this.Controls.Add(this.ninjecLinkLabel);
+			this.ClientSize = new System.Drawing.Size(452, 258);
+			this.Controls.Add(this._dapperLinkLabel);
+			this.Controls.Add(this._dapperLabel);
+			this.Controls.Add(this._nLogLinkLabel);
+			this.Controls.Add(this._ninjecLinkLabel);
 			this.Controls.Add(this._nLogLabel);
 			this.Controls.Add(this._ninjectLabel);
 			this.Controls.Add(this._silkLinkLabel);
@@ -176,7 +200,9 @@
 		private System.Windows.Forms.LinkLabel _silkLinkLabel;
 		private System.Windows.Forms.Label _ninjectLabel;
 		private System.Windows.Forms.Label _nLogLabel;
-		private System.Windows.Forms.LinkLabel ninjecLinkLabel;
-		private System.Windows.Forms.LinkLabel nLogLinkLabel;
+		private System.Windows.Forms.LinkLabel _ninjecLinkLabel;
+		private System.Windows.Forms.LinkLabel _nLogLinkLabel;
+		private System.Windows.Forms.Label _dapperLabel;
+		private System.Windows.Forms.LinkLabel _dapperLinkLabel;
 	}
 }

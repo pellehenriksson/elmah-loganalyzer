@@ -13,12 +13,14 @@ namespace ElmahLogAnalyzer.UI.Forms
 			AcceptButton = _exportButton;
 			CancelButton = _cancelButton;
 			SetInfoText();
+			_loadingPictureBox.Visible = false;
 		}
 
 		public event EventHandler OnExport;
 
 		public void SetLoadingState()
 		{
+			_loadingPictureBox.Visible = true;
 			_exportButton.Enabled = false;
 			_cancelButton.Enabled = false;
 		}

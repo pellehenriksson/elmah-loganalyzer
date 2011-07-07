@@ -7,7 +7,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		event EventHandler OnExport;
 
 		void SetLoadingState();
-
+		
 		void CloseView();
 	}
 }

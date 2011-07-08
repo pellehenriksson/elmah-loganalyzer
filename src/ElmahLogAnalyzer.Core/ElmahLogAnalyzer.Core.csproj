@@ -162,10 +162,7 @@
     <Compile Include="Infrastructure\Web\UrlNavigationLauncher.cs" />
     <Compile Include="Infrastructure\Web\UrlPing.cs" />
     <Compile Include="Infrastructure\Web\WebRequestHelper.cs" />
-    <Compile Include="Integrations\ErrorSearch\BingErrorSearchLauncher.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\BotsVsBrowsersSearchLauncher.cs" />
-    <Compile Include="Integrations\ErrorSearch\ErrorSearchLauncherBase.cs" />
-    <Compile Include="Integrations\ErrorSearch\GoogleErrorSearchLauncher.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\HttpUserAgentSearchLauncherBase.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\HttpUserAgentSearchLauncherFactory.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\IHttpUserAgentSearchLauncher.cs" />

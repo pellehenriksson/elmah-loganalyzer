@@ -18,7 +18,7 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 			_databaseCreator = databaseCreator;
 		}
 
-		public event EventHandler<ErrorLogExporterCompleteEventArgs> OnCompleted;
+		public event EventHandler OnCompleted;
 
 		public event EventHandler<ErrorLogExporterErrorEventArgs> OnError;
 
@@ -61,7 +61,7 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 
 				if (OnCompleted != null)
 				{
-					OnCompleted(this, new ErrorLogExporterCompleteEventArgs());
+					OnCompleted(this, new EventArgs());
 				}
 			}
 			catch (Exception ex)

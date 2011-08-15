@@ -13,7 +13,6 @@ namespace ElmahLogAnalyzer.UI.Forms
 			AcceptButton = _exportButton;
 			CancelButton = _cancelButton;
 			SetInfoText();
-			_loadingPictureBox.Visible = false;
 			_progressLabel.Text = string.Empty;
 		}
 
@@ -23,24 +22,28 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		public void SetLoadingState()
 		{
-			_loadingPictureBox.Visible = true;
 			_exportButton.Enabled = false;
 			_cancelButton.Enabled = false;
 		}
 
 		public void DisplayProgress(string progress)
 		{
-			_progressLabel.Text = progress;
+			_progressLabel.InvokeEx(x => x.Text = progress);
 		}
 
 		public void DisplayError(Exception ex)
 		{
-			throw new NotImplementedException();
+			this.InvokeEx(x => x.DisplayErrorDialog(ex));
 		}
-
+		
 		public void CloseView()
 		{
 			DialogResult = DialogResult.OK;
+		}
+
+		private void DisplayErrorDialog(Exception ex)
+		{
+			MessageBox.Show(this, ex.ToString(), @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
 
 		private void SetInfoText()
@@ -60,7 +63,10 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		private void CancelButtonClick(object sender, EventArgs e)
 		{
-			Close();
+			if (OnCancel != null)
+			{
+				OnCancel(this, new EventArgs());
+			}
 		}
 	}
 }

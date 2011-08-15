@@ -97,7 +97,6 @@
     <Compile Include="Common\UrlCleaner.cs" />
     <Compile Include="Constants\Browsers.cs" />
     <Compile Include="Constants\Platforms.cs" />
-    <Compile Include="Domain\Export\ErrorLogExporterCompleteEventArgs.cs" />
     <Compile Include="Domain\Export\ErrorLogExporterErrorEventArgs.cs" />
     <Compile Include="Domain\Export\ErrorLogExporter.cs" />
     <Compile Include="Domain\Export\ErrorLogExporterProgressEventArgs.cs" />

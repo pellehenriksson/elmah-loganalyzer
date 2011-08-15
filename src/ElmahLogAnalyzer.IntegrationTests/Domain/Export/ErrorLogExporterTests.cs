@@ -32,6 +32,31 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 		}
 
 		[Test]
+		public void Export_ProgessChanged_RaisesProgressChangedEventArgs()
+		{
+			// arrange
+			var repository = CreateRepository(maxNumberOfLogs: 1);
+			var fileSystemHelper = new FileSystemHelper();
+			var databaseCreator = new SqlCeDatabaseCreator(fileSystemHelper, new FakeLog());
+			var exporter = new ErrorLogExporter(repository, databaseCreator);
+
+			repository.Initialize(TestFilesDirectory);
+
+			// act
+			var eventWasRaised = false;
+			exporter.OnProgressChanged += delegate(object sender, ErrorLogExporterProgressEventArgs args)
+			                              	{
+			                              		eventWasRaised = true;
+												Assert.That(args.Progress, Is.EqualTo("Exporting error log 1 of 1"));
+			                              	};
+
+			exporter.Export();
+
+			// assert
+			Assert.That(eventWasRaised, Is.True);
+		}
+
+		[Test]
 		public void Export_ErrorOccurred_RaisesErrorEventArgs()
 		{
 			// arrange

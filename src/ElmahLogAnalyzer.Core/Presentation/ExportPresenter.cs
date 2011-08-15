@@ -1,4 +1,5 @@
-﻿using ElmahLogAnalyzer.Core.Domain.Export;
+﻿using System.Threading.Tasks;
+using ElmahLogAnalyzer.Core.Domain.Export;
 
 namespace ElmahLogAnalyzer.Core.Presentation
 {
@@ -19,13 +20,25 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		private void RegisterEvents()
 		{
 			_exporter.OnCompleted += delegate { View.CloseView(); };
+			_exporter.OnProgressChanged += (sender, args) => View.DisplayProgress(args.Progress);
+			_exporter.OnError += (sender, args) => View.DisplayError(args.Error);
+
 			View.OnExport += View_OnExport;
+			View.OnCancel += View_OnCancel;
+		}
+
+		private void View_OnCancel(object sender, System.EventArgs e)
+		{
+			_exporter.Cancel();
+			View.CloseView();
 		}
 
 		private void View_OnExport(object sender, System.EventArgs e)
 		{
 			View.SetLoadingState();
-			_exporter.Export();
+
+			var task = new Task(_exporter.Export);
+			task.Start();
 		}
 	}
 }

@@ -4,7 +4,7 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 {
 	public interface IErrorLogExporter
 	{
-		event EventHandler<ErrorLogExporterCompleteEventArgs> OnCompleted;
+		event EventHandler OnCompleted;
 
 		event EventHandler<ErrorLogExporterErrorEventArgs> OnError;
 

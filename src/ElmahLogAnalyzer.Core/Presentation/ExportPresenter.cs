@@ -10,7 +10,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		{
 			View = view;
 			_exporter = exporter;
-		
+
 			RegisterEvents();
 		}
 
@@ -18,16 +18,14 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		
 		private void RegisterEvents()
 		{
+			_exporter.OnCompleted += delegate { View.CloseView(); };
 			View.OnExport += View_OnExport;
 		}
 
 		private void View_OnExport(object sender, System.EventArgs e)
 		{
 			View.SetLoadingState();
-			
 			_exporter.Export();
-			
-			View.CloseView();
 		}
 	}
 }

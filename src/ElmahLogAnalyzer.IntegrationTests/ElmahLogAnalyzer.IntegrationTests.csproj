@@ -64,6 +64,9 @@
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\packages\NUnit.2.5.9.10348\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -77,6 +80,7 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="Domain\Export\ErrorLogExporterTests.cs" />
+    <Compile Include="Domain\Export\SqlCeDatabaseCreatorTests.cs" />
     <Compile Include="Domain\FileErrorLogSourceTests.cs" />
     <Compile Include="Infrastructure\Cache\CacheHelperTests.cs" />
     <Compile Include="Infrastructure\FileSystem\FileSystemHelperTests.cs" />

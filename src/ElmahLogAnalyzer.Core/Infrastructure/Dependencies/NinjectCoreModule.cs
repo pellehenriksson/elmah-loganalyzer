@@ -37,6 +37,7 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			Bind<ICsvParser>().To<CsvParser>();
 			Bind<IHttpUserAgentSearchLauncherFactory>().To<HttpUserAgentSearchLauncherFactory>();
 			Bind<IFileSystemHelper>().To<FileSystemHelper>();
+			Bind<IDatabaseCreator>().To<SqlCeDatabaseCreator>();
 			Bind<ILog>().ToMethod(GetLogger);
 		}
 

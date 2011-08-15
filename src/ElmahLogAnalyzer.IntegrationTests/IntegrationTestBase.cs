@@ -34,12 +34,12 @@ namespace ElmahLogAnalyzer.IntegrationTests
 			get { return "http://www.bluttanblä.com"; }
 		}
 
-		protected ErrorLogRepository CreateRepository()
+		protected ErrorLogRepository CreateRepository(int maxNumberOfLogs = -1)
 		{
 			var fileSystemHelper = new FileSystemHelper();
 			var log = new FakeLog();
 			var settings = new FakeSettingsManager();
-			settings.SetMaxNumberOfLogs(-1);
+			settings.SetMaxNumberOfLogs(maxNumberOfLogs);
 
 			var parser = new ErrorLogFileParser(log, new ClientInformationResolver());
 			var datasource = new FileErrorLogSource(fileSystemHelper, parser, settings, log);

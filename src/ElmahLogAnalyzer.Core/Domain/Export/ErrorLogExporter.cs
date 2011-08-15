@@ -1,52 +1,87 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlServerCe;
 using Dapper;
-using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
-using ElmahLogAnalyzer.Core.Infrastructure.Logging;
 
 namespace ElmahLogAnalyzer.Core.Domain.Export
 {
 	public class ErrorLogExporter : IErrorLogExporter
 	{
 		private readonly IErrorLogRepository _repository;
-		private readonly IFileSystemHelper _fileSystemHelper;
-		private readonly ILog _log;
+		private readonly IDatabaseCreator _databaseCreator;
 
-		public ErrorLogExporter(IErrorLogRepository repository, IFileSystemHelper fileSystemHelper, ILog log)
+		private const string ProgressMessage = "Exporting error log {0} of {1}";
+
+		public ErrorLogExporter(IErrorLogRepository repository, IDatabaseCreator databaseCreator)
 		{
 			_repository = repository;
-			_fileSystemHelper = fileSystemHelper;
-			_log = log;
+			_databaseCreator = databaseCreator;
 		}
 
-		public string ConnectionString { get; private set; }
-		
-		public int Export()
+		public event EventHandler<ErrorLogExporterCompleteEventArgs> OnCompleted;
+
+		public event EventHandler<ErrorLogExporterErrorEventArgs> OnError;
+
+		public event EventHandler<ErrorLogExporterProgressEventArgs> OnProgressChanged;
+
+		public void Export()
 		{
-			CreateStorage();
-
-			var logsInsertedCounter = 0;
-
-			using (IDbConnection connection = new SqlCeConnection(ConnectionString))
+			try
 			{
-				connection.Open();
-				foreach (var errorlog in _repository.GetAll())
-				{
-					logsInsertedCounter += PersistErrorLog(connection, errorlog);
+				_databaseCreator.Create("ElmahLogAnalyzer_Dump.sdf");
+				var connectionString = string.Format("Data Source = {0};", "ElmahLogAnalyzer_Dump.sdf");
 
-					PersistServerVariables(connection, errorlog);
-					PersistFormValues(connection, errorlog);
-					PersistCookieValues(connection, errorlog);
-					PersistQuerystringValues(connection, errorlog);
-					PersistClientInformation(connection, errorlog);
-					PersistServerInformation(connection, errorlog);
+				using (IDbConnection connection = new SqlCeConnection(connectionString))
+				{
+					connection.Open();
+
+					var errorlogs = _repository.GetAll();
+					var totalNumberOfLogs = errorlogs.Count;
+					var counter = 1;
+
+					foreach (var errorlog in errorlogs)
+					{
+						PersistErrorLog(connection, errorlog);
+						PersistServerVariables(connection, errorlog);
+						PersistFormValues(connection, errorlog);
+						PersistCookieValues(connection, errorlog);
+						PersistQuerystringValues(connection, errorlog);
+						PersistClientInformation(connection, errorlog);
+						PersistServerInformation(connection, errorlog);
+
+						if (OnProgressChanged != null)
+						{
+							var progressMessage = string.Format(ProgressMessage, counter, totalNumberOfLogs);
+							OnProgressChanged(this, new ErrorLogExporterProgressEventArgs(progressMessage));
+						}
+						
+						counter++;
+					}
+				}
+
+				if (OnCompleted != null)
+				{
+					OnCompleted(this, new ErrorLogExporterCompleteEventArgs());
 				}
 			}
-
-			return logsInsertedCounter;
+			catch (Exception ex)
+			{
+				if (OnError != null)
+				{
+					OnError(this, new ErrorLogExporterErrorEventArgs(ex));
+				}
+				else
+				{
+					throw;
+				}
+			}
 		}
 
-		private static int PersistErrorLog(IDbConnection connection, ErrorLog errorlog)
+		public void Cancel()
+		{
+		}
+		
+		private static void PersistErrorLog(IDbConnection connection, ErrorLog errorlog)
 		{
 			const string sql = @"INSERT INTO ErrorLogs (ErrorId, Host, Type, Message, Source, Details, Time, StatusCode, [User], Url) 
 						VALUES (@errorId, @host, @type, @message, @source, @details, @time, @statusCode, @user, @url);";
@@ -63,7 +98,7 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 			parameters.Add("@user", errorlog.User);
 			parameters.Add("@url", errorlog.Url);
 
-			return connection.Execute(sql, parameters);
+			connection.Execute(sql, parameters);
 		}
 		
 		private static void PersistServerVariables(IDbConnection connection, ErrorLog errorlog)
@@ -122,74 +157,6 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 			connection.Execute(
 				"INSERT INTO ClientInformation (Browser, OperatingSystem, Platform, Description, ErrorLogId) VALUES (@browser, @operatingSystem, @platform, @description, @errorLogId)",
 				new { clientInfo.Browser, clientInfo.OperatingSystem, clientInfo.Platform, clientInfo.Description, errorLogId = errorlog.ErrorId });
-		}
-
-		private void CreateStorage()
-		{
-			const string databaseFile = "ElmahLogAnalyzer_Dump.sdf";
-			
-			_log.Debug(string.Format("Creating database: {0}", databaseFile));
-
-			if (_fileSystemHelper.FileExists(databaseFile))
-			{
-				_log.Debug("Deleting current database");
-				_fileSystemHelper.DeleteFile(databaseFile);
-			}
-
-			ConnectionString = string.Format("Data Source = {0};", databaseFile);
-
-			using (var engine = new SqlCeEngine(ConnectionString))
-			{
-				_log.Debug(string.Format("Creating new database with connectionstring: {0}", ConnectionString));
-				
-				engine.CreateDatabase();
-
-				_log.Debug("Database was created");
-			}
-
-			using (IDbConnection connection = new SqlCeConnection(ConnectionString))
-			{
-				connection.Open();
-
-				connection.Execute(DatabaseScripts.SqlCeDatabaseSchemaErrorLogsTable);
-				_log.Debug(string.Format("Created table: {0}", "ErrorLogs"));
-
-				connection.Execute(DatabaseScripts.SqlCeDatabaseSchemaServerVariablesTable);
-				_log.Debug(string.Format("Created table: {0}", "ServerVariables"));
-
-				connection.Execute(DatabaseScripts.SqlCeDatabaseSchemaCookieValuesTable);
-				_log.Debug(string.Format("Created table: {0}", "CookieValues"));
-				
-				connection.Execute(DatabaseScripts.SqlCeDatabaseSchemaFormValuesTable);
-				_log.Debug(string.Format("Created table: {0}", "FormValues"));
-				
-				connection.Execute(DatabaseScripts.SqlCeDatabaseSchemaQuerystringValuesTable);
-				_log.Debug(string.Format("Created table: {0}", "QuerystringValues"));
-				
-				connection.Execute(DatabaseScripts.SqlCeDatabaseSchemaClientInformationTable);
-				_log.Debug(string.Format("Created table: {0}", "ClientInformation"));
-				
-				connection.Execute(DatabaseScripts.SqlCeDatabaseSchemaServerInformationTable);
-				_log.Debug(string.Format("Created table: {0}", "ServerInformation"));
-
-				connection.Execute(DatabaseScripts.SqlCeDatabaseSchemaServerVariablesForeignKeys);
-				_log.Debug(string.Format("Created foreign keys for: {0}", "ServerVariables"));
-
-				connection.Execute(DatabaseScripts.SqlCeDatabaseSchemaFormValuesForeignKeys);
-				_log.Debug(string.Format("Created foreign keys for: {0}", "FormValues"));
-
-				connection.Execute(DatabaseScripts.SqlCeDatabaseSchemaCookieValuesForeignKeys);
-				_log.Debug(string.Format("Created foreign keys for: {0}", "CookieValues"));
-
-				connection.Execute(DatabaseScripts.SqlCeDatabaseSchemaQuerystringValuesForeignKeys);
-				_log.Debug(string.Format("Created foreign keys for: {0}", "QuerystringValues"));
-				
-				connection.Execute(DatabaseScripts.SqlCeDatabaseSchemaClientInformationForeignKeys);
-				_log.Debug(string.Format("Created foreign keys for: {0}", "ClientInformation"));
-
-				connection.Execute(DatabaseScripts.SqlCeDatabaseSchemaServerInformationForeignKeys);
-				_log.Debug(string.Format("Created foreign keys for: {0}", "ServerInformation"));
-			}
 		}
 	}
 }

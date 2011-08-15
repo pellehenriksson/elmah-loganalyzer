@@ -1,6 +1,8 @@
-﻿using ElmahLogAnalyzer.Core.Domain.Export;
+﻿using System;
+using ElmahLogAnalyzer.Core.Domain.Export;
 using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
 using ElmahLogAnalyzer.TestHelpers.Fakes;
+using Moq;
 using NUnit.Framework;
 
 namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
@@ -9,37 +11,52 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 	public class ErrorLogExporterTests : IntegrationTestBase
 	{
 		[Test]
-		public void Export_InsertsErrorLogs()
+		public void Export_Completed_RaisesCompletedEventArgs()
 		{
 			// arrange
-			var repository = CreateRepository();
+			var repository = CreateRepository(maxNumberOfLogs: 1);
 			var fileSystemHelper = new FileSystemHelper();
-			var exporter = new ErrorLogExporter(repository, fileSystemHelper, new FakeConsoleLog());
+			var databaseCreator = new SqlCeDatabaseCreator(fileSystemHelper, new FakeLog());
+			var exporter = new ErrorLogExporter(repository, databaseCreator);
 
 			repository.Initialize(TestFilesDirectory);
 
 			// act
-			var logsImported = exporter.Export();
+			var eventWasRaised = false;
+			exporter.OnCompleted += delegate { eventWasRaised = true; };
+
+			exporter.Export();
 
 			// assert
-			Assert.That(logsImported, Is.EqualTo(20));
+			Assert.That(eventWasRaised, Is.True);
 		}
 
-		[Test][Ignore]
-		public void Export_InsertsManyErrorLogs()
+		[Test]
+		public void Export_ErrorOccurred_RaisesErrorEventArgs()
 		{
 			// arrange
-			var repository = CreateRepository();
-			var fileSystemHelper = new FileSystemHelper();
-			var exporter = new ErrorLogExporter(repository, fileSystemHelper, new FakeConsoleLog());
+			var repository = CreateRepository(maxNumberOfLogs: 1);
+			var fileSystemHelper = new Mock<IFileSystemHelper>();
+			var databaseCreator = new SqlCeDatabaseCreator(fileSystemHelper.Object, new FakeLog());
+			var exporter = new ErrorLogExporter(repository, databaseCreator);
 
-			repository.Initialize(@"c:\temp\elmah");
+			repository.Initialize(TestFilesDirectory);
+
+			var error = new InvalidOperationException();
+			fileSystemHelper.Setup(x => x.FileExists(It.IsAny<string>())).Throws(error);
 
 			// act
-			var logsImported = exporter.Export();
+			var eventWasRaised = false;
+			exporter.OnError += delegate(object sender, ErrorLogExporterErrorEventArgs args)
+			                    	{
+			                    		eventWasRaised = true;
+										Assert.That(args.Error, Is.EqualTo(error));
+			                    	};
+
+			exporter.Export();
 
 			// assert
-			Assert.That(logsImported, Is.EqualTo(13099));
+			Assert.That(eventWasRaised, Is.True);
 		}
 	}
 }

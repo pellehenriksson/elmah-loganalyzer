@@ -22,12 +22,12 @@ namespace ElmahLogAnalyzer.Core.Common
 		public static string ToTruncatedString(this DateTime date)
 		{
 			var year = date.Year;
-			var month = date.Month;
-			var day = date.Day;
-			var hour = date.Hour;
-			var minute = date.Minute;
+			var month = date.Month.ToString();
+			var day = date.Day.ToString();
+			var hour = date.Hour.ToString();
+			var minute = date.Minute.ToString();
 
-			return string.Format("{0}{1}{2}_{3}{4}", year, month, day, hour, minute);
+			return string.Format("{0}{1}{2}_{3}{4}", year, month.PadLeft(2, '0'), day.PadLeft(2, '0'), hour.PadLeft(2, '0'), minute).PadLeft(2, '0');
 		}
 	}
 }

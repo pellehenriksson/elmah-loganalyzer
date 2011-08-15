@@ -62,8 +62,8 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			var presenter = new ExportPresenter(view.Object, exporter.Object);
 
 			// act
-			view.Raise(x => x.OnExport += null, new EventArgs());
-
+			exporter.Raise(x => x.OnCompleted += null, new ErrorLogExporterCompleteEventArgs());
+			
 			// assert
 			view.Verify(x => x.CloseView(), Times.Once());
 		}

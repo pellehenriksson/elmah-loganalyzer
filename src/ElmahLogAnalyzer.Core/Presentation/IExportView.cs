@@ -6,8 +6,14 @@ namespace ElmahLogAnalyzer.Core.Presentation
 	{
 		event EventHandler OnExport;
 
+		event EventHandler OnCancel;
+
 		void SetLoadingState();
-		
+
+		void DisplayProgress(string progress);
+
+		void DisplayError(Exception ex);
+
 		void CloseView();
 	}
 }

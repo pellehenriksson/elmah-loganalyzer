@@ -32,6 +32,7 @@
 			this._exportButton = new System.Windows.Forms.Button();
 			this._infoLabel = new System.Windows.Forms.Label();
 			this._loadingPictureBox = new System.Windows.Forms.PictureBox();
+			this._progressLabel = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this._loadingPictureBox)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -74,11 +75,21 @@
 			this._loadingPictureBox.TabIndex = 7;
 			this._loadingPictureBox.TabStop = false;
 			// 
+			// _progressLabel
+			// 
+			this._progressLabel.AutoSize = true;
+			this._progressLabel.Location = new System.Drawing.Point(12, 142);
+			this._progressLabel.Name = "_progressLabel";
+			this._progressLabel.Size = new System.Drawing.Size(54, 13);
+			this._progressLabel.TabIndex = 8;
+			this._progressLabel.Text = "[Progress]";
+			// 
 			// ExportForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(553, 259);
+			this.Controls.Add(this._progressLabel);
 			this.Controls.Add(this._loadingPictureBox);
 			this.Controls.Add(this._infoLabel);
 			this.Controls.Add(this._cancelButton);
@@ -91,6 +102,7 @@
 			this.Text = "Export";
 			((System.ComponentModel.ISupportInitialize)(this._loadingPictureBox)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -100,5 +112,6 @@
 		private System.Windows.Forms.Button _exportButton;
 		private System.Windows.Forms.Label _infoLabel;
 		private System.Windows.Forms.PictureBox _loadingPictureBox;
+		private System.Windows.Forms.Label _progressLabel;
 	}
 }

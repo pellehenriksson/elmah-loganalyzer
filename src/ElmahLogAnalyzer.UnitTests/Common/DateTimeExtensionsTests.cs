@@ -97,7 +97,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 			Assert.That(result.ParamName, Is.EqualTo("interval"));
 		}
 
-		[Test][Ignore("todo: pad numeric values less than 10")]
+		[Test]
 		public void ToTruncatedString_RemovesAllSpecialCharachters()
 		{
 			// arrange

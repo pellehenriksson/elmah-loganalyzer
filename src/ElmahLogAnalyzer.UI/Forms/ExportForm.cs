@@ -14,15 +14,28 @@ namespace ElmahLogAnalyzer.UI.Forms
 			CancelButton = _cancelButton;
 			SetInfoText();
 			_loadingPictureBox.Visible = false;
+			_progressLabel.Text = string.Empty;
 		}
 
 		public event EventHandler OnExport;
+
+		public event EventHandler OnCancel;
 
 		public void SetLoadingState()
 		{
 			_loadingPictureBox.Visible = true;
 			_exportButton.Enabled = false;
 			_cancelButton.Enabled = false;
+		}
+
+		public void DisplayProgress(string progress)
+		{
+			_progressLabel.Text = progress;
+		}
+
+		public void DisplayError(Exception ex)
+		{
+			throw new NotImplementedException();
 		}
 
 		public void CloseView()

@@ -23,7 +23,6 @@ namespace ElmahLogAnalyzer.UI.Forms
 		public void SetLoadingState()
 		{
 			_exportButton.Enabled = false;
-			_cancelButton.Enabled = false;
 		}
 
 		public void DisplayProgress(string progress)
@@ -62,6 +61,14 @@ namespace ElmahLogAnalyzer.UI.Forms
 		}
 
 		private void CancelButtonClick(object sender, EventArgs e)
+		{
+			if (OnCancel != null)
+			{
+				OnCancel(this, new EventArgs());
+			}
+		}
+
+		private void OnFormClosing(object sender, FormClosingEventArgs e)
 		{
 			if (OnCancel != null)
 			{

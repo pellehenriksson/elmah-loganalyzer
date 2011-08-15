@@ -9,13 +9,16 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 	{
 		private readonly IErrorLogRepository _repository;
 		private readonly IDatabaseCreator _databaseCreator;
-
+		
 		private const string ProgressMessage = "Exporting error log {0} of {1}";
+
+		private bool _cancel;
 
 		public ErrorLogExporter(IErrorLogRepository repository, IDatabaseCreator databaseCreator)
 		{
 			_repository = repository;
 			_databaseCreator = databaseCreator;
+			_cancel = false;
 		}
 
 		public event EventHandler OnCompleted;
@@ -41,6 +44,11 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 
 					foreach (var errorlog in errorlogs)
 					{
+						if (_cancel)
+						{
+							break;
+						}
+
 						PersistErrorLog(connection, errorlog);
 						PersistServerVariables(connection, errorlog);
 						PersistFormValues(connection, errorlog);
@@ -79,6 +87,7 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 
 		public void Cancel()
 		{
+			_cancel = true;
 		}
 		
 		private static void PersistErrorLog(IDbConnection connection, ErrorLog errorlog)

@@ -1,6 +1,7 @@
 ﻿using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Domain.Export;
 using ElmahLogAnalyzer.Core.Infrastructure.Cache;
+using ElmahLogAnalyzer.Core.Infrastructure.Configuration;
 using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
 using ElmahLogAnalyzer.Core.Infrastructure.Logging;
 using ElmahLogAnalyzer.Core.Infrastructure.Settings;
@@ -26,7 +27,7 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			Bind<SearchPresenter>().To<SearchPresenter>();
 			Bind<ReportPresenter>().To<ReportPresenter>();
 			Bind<SettingsPresenter>().To<SettingsPresenter>();
-			Bind<SelectServerPresenter>().To<SelectServerPresenter>();
+			Bind<ConnectToWebServerPresenter>().To<ConnectToWebServerPresenter>();
 			Bind<ExportPresenter>().To<ExportPresenter>();
 			Bind<ICacheHelper>().To<CacheHelper>();
 			Bind<IWebRequestHelper>().To<WebRequestHelper>();
@@ -37,6 +38,7 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			Bind<ICsvParser>().To<CsvParser>();
 			Bind<IHttpUserAgentSearchLauncherFactory>().To<HttpUserAgentSearchLauncherFactory>();
 			Bind<IFileSystemHelper>().To<FileSystemHelper>();
+			Bind<IWebServerConnectionsHelper>().To<WebServerConnectionsHelper>();
 			Bind<IDatabaseCreator>().To<SqlCeDatabaseCreator>();
 			Bind<ILog>().ToMethod(GetLogger);
 		}

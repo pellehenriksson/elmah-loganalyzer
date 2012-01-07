@@ -207,7 +207,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		private void SelectServerButtonClick(object sender, EventArgs e)
 		{
-			var presenter = ServiceLocator.Resolve<SelectServerPresenter>();
+			var presenter = ServiceLocator.Resolve<ConnectToWebServerPresenter>();
 			var view = presenter.View as Form;
 			var dialogResult = view.ShowDialog(this);
 

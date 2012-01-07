@@ -71,6 +71,7 @@
       <HintPath>..\..\packages\NUnit.2.5.9.10348\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +82,7 @@
     <Compile Include="Domain\Export\SqlCeDatabaseCreatorTests.cs" />
     <Compile Include="Domain\FileErrorLogSourceTests.cs" />
     <Compile Include="Infrastructure\Cache\CacheHelperTests.cs" />
+    <Compile Include="Infrastructure\Configuration\WebServerConnectionsHelperTests.cs" />
     <Compile Include="Infrastructure\FileSystem\FileSystemHelperTests.cs" />
     <Compile Include="Infrastructure\Web\UrlPingTests.cs" />
     <Compile Include="Infrastructure\Web\WebRequestHelperTests.cs" />
@@ -166,6 +168,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="_TestFiles\errorlog_1.2.csv" />
   </ItemGroup>
   <ItemGroup />

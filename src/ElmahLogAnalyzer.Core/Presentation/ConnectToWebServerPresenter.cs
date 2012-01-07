@@ -1,29 +1,48 @@
 ﻿using System;
 using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Domain;
+using ElmahLogAnalyzer.Core.Infrastructure.Configuration;
 using ElmahLogAnalyzer.Core.Infrastructure.Web;
 
 namespace ElmahLogAnalyzer.Core.Presentation
 {
-	public class SelectServerPresenter
+	public class ConnectToWebServerPresenter
 	{
 		private readonly IUrlPing _urlPing;
+		private readonly IWebServerConnectionsHelper _webServerConnectionsHelper;
 
-		public SelectServerPresenter(ISelectServerView view, IUrlPing urlPing)
+		public ConnectToWebServerPresenter(IConnectToWebServerView view, IUrlPing urlPing, IWebServerConnectionsHelper webServerConnectionsHelper)
 		{
 			View = view;
 			_urlPing = urlPing;
+			_webServerConnectionsHelper = webServerConnectionsHelper;
 
 			RegisterEvents();
+
+			View.LoadConnectionUrls(_webServerConnectionsHelper.GetUrls());
 		}
 
-		public ISelectServerView View { get; private set; }
+		public IConnectToWebServerView View { get; private set; }
 
 		public NetworkConnection Connnection { get; private set; }
 
 		private void RegisterEvents()
 		{
 			View.OnConnectToServer += View_OnConnectToServer;
+			View.OnConnectionSelected += ViewOnConnectionOnConnectionSelected;
+		}
+
+		private void ViewOnConnectionOnConnectionSelected(object sender, ConnectionSelectedEventArgs args)
+		{
+			var configuration = _webServerConnectionsHelper.FindConnection(args.Url);
+			if (configuration != null)
+			{
+				View.DisplayConnection(configuration.Username, configuration.Password, configuration.Domain);
+			}
+			else
+			{
+				View.DisplayConnection(string.Empty, string.Empty, string.Empty);
+			}
 		}
 
 		private void View_OnConnectToServer(object sender, ConnectToServerEventArgs e)

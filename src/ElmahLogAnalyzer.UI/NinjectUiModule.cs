@@ -12,7 +12,7 @@ namespace ElmahLogAnalyzer.UI
 			Bind<ISearchView>().To<SearchView>().InSingletonScope();
 			Bind<IReportView>().To<ReportView>().InSingletonScope();
 			Bind<ISettingsView>().To<SettingsForm>();
-			Bind<ISelectServerView>().To<SelectServerForm>();
+			Bind<IConnectToWebServerView>().To<ConnectToWebServerForm>();
 			Bind<IExportView>().To<ExportForm>();
 		}
 	}

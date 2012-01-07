@@ -1,6 +1,6 @@
 ﻿namespace ElmahLogAnalyzer.UI.Forms
 {
-	partial class SelectServerForm
+	partial class ConnectToWebServerForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -31,7 +31,6 @@
 			this._cancelButton = new System.Windows.Forms.Button();
 			this._connectButton = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
-			this._urlTextBox = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this._errorGroupBox = new System.Windows.Forms.GroupBox();
 			this._errorMessageLabel = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
 			this._domainTextBox = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
+			this._urlComboBox = new System.Windows.Forms.ComboBox();
 			this._errorGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -75,13 +75,6 @@
 			this.label1.Size = new System.Drawing.Size(55, 13);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Server url:";
-			// 
-			// _urlTextBox
-			// 
-			this._urlTextBox.Location = new System.Drawing.Point(89, 18);
-			this._urlTextBox.Name = "_urlTextBox";
-			this._urlTextBox.Size = new System.Drawing.Size(400, 20);
-			this._urlTextBox.TabIndex = 1;
 			// 
 			// label2
 			// 
@@ -167,11 +160,20 @@
 			this.label6.TabIndex = 12;
 			this.label6.Text = "Not required unless you need to supply Windows credentials to the server.";
 			// 
-			// SelectServerForm
+			// _urlComboBox
+			// 
+			this._urlComboBox.FormattingEnabled = true;
+			this._urlComboBox.Location = new System.Drawing.Point(89, 18);
+			this._urlComboBox.Name = "_urlComboBox";
+			this._urlComboBox.Size = new System.Drawing.Size(397, 21);
+			this._urlComboBox.TabIndex = 1;
+			// 
+			// ConnectToWebServerForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(501, 261);
+			this.Controls.Add(this._urlComboBox);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this._domainTextBox);
@@ -181,17 +183,16 @@
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this._errorGroupBox);
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this._urlTextBox);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this._cancelButton);
 			this.Controls.Add(this._connectButton);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
-			this.Name = "SelectServerForm";
+			this.Name = "ConnectToWebServerForm";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Select server";
+			this.Text = "Connect to web server";
 			this._errorGroupBox.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -203,7 +204,6 @@
 		private System.Windows.Forms.Button _cancelButton;
 		private System.Windows.Forms.Button _connectButton;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox _urlTextBox;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.GroupBox _errorGroupBox;
 		private System.Windows.Forms.Label _errorMessageLabel;
@@ -214,5 +214,6 @@
 		private System.Windows.Forms.TextBox _domainTextBox;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.ComboBox _urlComboBox;
 	}
 }

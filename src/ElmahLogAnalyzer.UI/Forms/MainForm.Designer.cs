@@ -120,8 +120,8 @@
 			this._selectServerButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.server;
 			this._selectServerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._selectServerButton.Name = "_selectServerButton";
-			this._selectServerButton.Size = new System.Drawing.Size(92, 22);
-			this._selectServerButton.Text = "Select server";
+			this._selectServerButton.Size = new System.Drawing.Size(145, 22);
+			this._selectServerButton.Text = "Connect to web server";
 			this._selectServerButton.Click += new System.EventHandler(this.SelectServerButtonClick);
 			// 
 			// _showSearchViewButton

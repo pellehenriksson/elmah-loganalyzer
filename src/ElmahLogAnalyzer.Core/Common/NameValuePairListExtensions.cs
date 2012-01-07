@@ -7,7 +7,7 @@ namespace ElmahLogAnalyzer.Core.Common
 	{
 		public static string GetValueFromFirstMatch(this List<NameValuePair> list, string name)
 		{
-			var match = list.Where(x => x.Name.ToLowerInvariant() == name.ToLowerInvariant()).FirstOrDefault();
+			var match = list.FirstOrDefault(x => x.Name.ToLowerInvariant() == name.ToLowerInvariant());
 			return match != null ? match.Value : string.Empty;
 		} 
 	}

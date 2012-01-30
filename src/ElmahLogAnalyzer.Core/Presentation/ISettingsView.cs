@@ -10,6 +10,8 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 		event EventHandler OnSave;
 
+		string DefaultExportLogsDirectory { get; set; }
+
 		int MaxNumberOfLogs { get; }
 
 		void LoadMaxNumberOfLogOptions(IEnumerable<NameValuePair> options, string selectedOption);

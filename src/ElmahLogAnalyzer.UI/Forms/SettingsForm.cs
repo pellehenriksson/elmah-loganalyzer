@@ -29,6 +29,12 @@ namespace ElmahLogAnalyzer.UI.Forms
 			}
 		}
 
+		public string DefaultExportLogsDirectory
+		{
+			get { return _defaultExportLogsDirectoryTextBox.Text; }
+			set { _defaultExportLogsDirectoryTextBox.Text = value; }
+		}
+
 		public void LoadMaxNumberOfLogOptions(IEnumerable<NameValuePair> options, string selectedOption)
 		{
 			_numberOfLogsToLoadComboBox.Items.Clear();
@@ -64,6 +70,14 @@ namespace ElmahLogAnalyzer.UI.Forms
 		private void CancelButtonClick(object sender, EventArgs e)
 		{
 			Close();
+		}
+
+		private void SelectDefaultExportLogsDirectoryButtonClick(object sender, EventArgs e)
+		{
+			if (_folderBrowserDialog.ShowDialog(this) == DialogResult.OK)
+			{
+				_defaultExportLogsDirectoryTextBox.Text = _folderBrowserDialog.SelectedPath;
+			}
 		}
 	}
 }

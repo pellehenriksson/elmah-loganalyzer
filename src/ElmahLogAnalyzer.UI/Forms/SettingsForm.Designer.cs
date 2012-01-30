@@ -41,7 +41,7 @@
 			// _saveButton
 			// 
 			this._saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this._saveButton.Location = new System.Drawing.Point(326, 145);
+			this._saveButton.Location = new System.Drawing.Point(328, 145);
 			this._saveButton.Name = "_saveButton";
 			this._saveButton.Size = new System.Drawing.Size(75, 23);
 			this._saveButton.TabIndex = 2;
@@ -70,7 +70,7 @@
 			// _cancelButton
 			// 
 			this._cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this._cancelButton.Location = new System.Drawing.Point(407, 145);
+			this._cancelButton.Location = new System.Drawing.Point(409, 145);
 			this._cancelButton.Name = "_cancelButton";
 			this._cancelButton.Size = new System.Drawing.Size(75, 23);
 			this._cancelButton.TabIndex = 3;
@@ -108,7 +108,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(494, 180);
+			this.ClientSize = new System.Drawing.Size(496, 180);
 			this.Controls.Add(this._selectDefaultExportLogsDirectoryButton);
 			this.Controls.Add(this._defaultExportLogsDirectoryTextBox);
 			this.Controls.Add(this._defaultExportLogsDirectoryLabel);

@@ -9,7 +9,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 	[TestFixture]
 	public class SqlCeDatabaseCreatorTests : IntegrationTestBase
 	{
-		private const string DatabaseFilename = "Test.sdf";
+		private readonly string _databaseFilename = Path.Combine(Directory.GetCurrentDirectory(), "Test.sdf");
 
 		[Test]
 		public void Create_CreatesDatabaseFile()
@@ -18,10 +18,10 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 			var creator = CreateCreator();
 
 			// act
-			creator.Create(DatabaseFilename);
+			creator.Create(_databaseFilename);
 
 			// assert
-			Assert.That(File.Exists(DatabaseFilename));
+			Assert.That(File.Exists(_databaseFilename));
 		}
 
 		[Test]
@@ -30,20 +30,20 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 			// arrange
 			var creator = CreateCreator();
 
-			using (var s = File.CreateText(DatabaseFilename))
+			using (var s = File.CreateText(_databaseFilename))
 			{
 				s.WriteLine("dummy");
 			}
 
-			var dummyFileSize = new FileInfo(DatabaseFilename).Length;
+			var dummyFileSize = new FileInfo(_databaseFilename).Length;
 
 			// act
-			creator.Create(DatabaseFilename);
+			creator.Create(_databaseFilename);
 
 			// assert
-			Assert.That(File.Exists(DatabaseFilename));
+			Assert.That(File.Exists(_databaseFilename));
 
-			var databaseFileSize = new FileInfo(DatabaseFilename).Length;
+			var databaseFileSize = new FileInfo(_databaseFilename).Length;
 			Assert.That(databaseFileSize, Is.GreaterThan(dummyFileSize));
 		}
 

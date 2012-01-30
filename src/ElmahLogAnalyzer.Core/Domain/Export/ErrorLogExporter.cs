@@ -27,12 +27,12 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 
 		public event EventHandler<ErrorLogExporterProgressEventArgs> OnProgressChanged;
 
-		public void Export()
+		public void Export(string databaseFilename)
 		{
 			try
 			{
-				_databaseCreator.Create("ElmahLogAnalyzer_Dump.sdf");
-				var connectionString = string.Format("Data Source = {0};", "ElmahLogAnalyzer_Dump.sdf");
+				_databaseCreator.Create(databaseFilename);
+				var connectionString = string.Format("Data Source = {0};", databaseFilename);
 
 				using (IDbConnection connection = new SqlCeConnection(connectionString))
 				{

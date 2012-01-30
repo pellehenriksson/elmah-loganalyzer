@@ -52,6 +52,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		{
 			// arrange
 			var presenter = BuildPresenter();
+			_view.Setup(x => x.ExportToDirectory).Returns(@"c:\logs");
 
 			// act
 			_view.Raise(x => x.OnExport += null, new EventArgs());
@@ -70,7 +71,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			_view.Raise(x => x.OnExport += null, new EventArgs());
 
 			// assert
-			_exporter.Verify(x => x.Export(), Times.Once());
+			_exporter.Verify(x => x.Export(null), Times.Once());
 		}
 
 		[Test]

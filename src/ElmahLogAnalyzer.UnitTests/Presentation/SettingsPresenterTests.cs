@@ -19,6 +19,9 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		{
 			_view = new Mock<ISettingsView>();
 			_userSettingsManager = new Mock<ISettingsManager>();
+
+			_userSettingsManager.Setup(x => x.GetMaxNumberOfLogs()).Returns(500);
+			_userSettingsManager.Setup(x => x.GetDefaultExportLogsDirectory()).Returns(@"c:\exportedlogs");
 		}
 
 		[Test]
@@ -37,13 +40,24 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			// arrange
 			var presenter = new SettingsPresenter(_view.Object, _userSettingsManager.Object);
 			
-			_userSettingsManager.Setup(x => x.GetMaxNumberOfLogs()).Returns(500);
-
 			// act
 			_view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
 			_view.Verify(x => x.LoadMaxNumberOfLogOptions(It.IsAny<List<NameValuePair>>(), "500"), Times.Once());
+		}
+
+		[Test]
+		public void ViewOnLoaded_DisplaysDefaultExportLogsDirectory()
+		{
+			// arrange
+			var presenter = new SettingsPresenter(_view.Object, _userSettingsManager.Object);
+
+			// act
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
+
+			// assert
+			_view.VerifySet(x => x.DefaultExportLogsDirectory = @"c:\exportedlogs", Times.Once());
 		}
 
 		[Test]
@@ -58,7 +72,22 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			_view.Raise(x => x.OnSave += null, new EventArgs());
 
 			// assert
-			_userSettingsManager.Verify(x => x.SetMaxNumberOfLogs(200));
+			_userSettingsManager.Verify(x => x.SetMaxNumberOfLogs(200), Times.Once());
+		}
+		
+		[Test]
+		public void ViewOnSave_SavesDefaultExportLogsDirectory()
+		{
+			// arrange
+			var presenter = new SettingsPresenter(_view.Object, _userSettingsManager.Object);
+
+			_view.Setup(x => x.DefaultExportLogsDirectory).Returns(@"c:\exportedlogs");
+
+			// act
+			_view.Raise(x => x.OnSave += null, new EventArgs());
+
+			// assert
+			_userSettingsManager.Verify(x => x.SetDefaultExportLogsDirectory(@"c:\exportedlogs"), Times.Once());
 		}
 	}
 }

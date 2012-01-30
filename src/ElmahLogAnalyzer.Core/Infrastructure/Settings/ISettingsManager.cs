@@ -8,6 +8,10 @@
 
 		void SetMaxNumberOfLogs(int maxNumberOfLogs);
 
+		string GetDefaultExportLogsDirectory();
+
+		void SetDefaultExportLogsDirectory(string directory);
+
 		void Save();
 	}
 }

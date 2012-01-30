@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ElmahLogAnalyzer.Core.Infrastructure.Settings
+﻿namespace ElmahLogAnalyzer.Core.Infrastructure.Settings
 {
 	public class SettingsManager : ISettingsManager
 	{
@@ -17,6 +15,16 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Settings
 		public void SetMaxNumberOfLogs(int maxNumberOfLogs)
 		{
 			UserSettings.Default.MaxNumberOfLogs = maxNumberOfLogs;
+		}
+
+		public string GetDefaultExportLogsDirectory()
+		{
+			return UserSettings.Default.ExportLogsDirectory;
+		}
+
+		public void SetDefaultExportLogsDirectory(string directory)
+		{
+			UserSettings.Default.ExportLogsDirectory = directory;
 		}
 
 		public void Save()

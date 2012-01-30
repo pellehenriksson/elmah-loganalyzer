@@ -39,11 +39,13 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		private void Initialize()
 		{
 			View.LoadMaxNumberOfLogOptions(MaxNumberOfLogOptions, _settingsManager.GetMaxNumberOfLogs().ToString());
+			View.DefaultExportLogsDirectory = _settingsManager.GetDefaultExportLogsDirectory();
 		}
 
 		private void ViewOnSave(object sender, EventArgs e)
 		{
 			_settingsManager.SetMaxNumberOfLogs(View.MaxNumberOfLogs);
+			_settingsManager.SetDefaultExportLogsDirectory(View.DefaultExportLogsDirectory);
 			_settingsManager.Save();
 		}
 

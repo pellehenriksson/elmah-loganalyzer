@@ -8,15 +8,17 @@ namespace ElmahLogAnalyzer.Core.Presentation
 	public class SettingsPresenter
 	{
 		private static readonly List<NameValuePair> MaxNumberOfLogOptions = new List<NameValuePair>
-		                                                                    	{
-		                                                                    		new NameValuePair("All logs", "-1"), 
-																					new NameValuePair("50 latest", "50"), 
-																					new NameValuePair("100 latest", "100"), 
-																					new NameValuePair("200 latest", "200"), 
-																					new NameValuePair("300 latest", "300"), 
-																					new NameValuePair("400 latest", "400"), 
-																					new NameValuePair("500 latest", "500")
-		                                                                    	};
+		{
+			new NameValuePair("All logs", "-1"), 
+			new NameValuePair("50 latest", "50"), 
+			new NameValuePair("100 latest", "100"), 
+			new NameValuePair("200 latest", "200"), 
+			new NameValuePair("300 latest", "300"), 
+			new NameValuePair("400 latest", "400"), 
+			new NameValuePair("500 latest", "500"),
+			new NameValuePair("750 latest", "750"),
+			new NameValuePair("1000 latest", "1000")
+		};
 
 		private readonly ISettingsManager _settingsManager;
 
@@ -39,13 +41,17 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		private void Initialize()
 		{
 			View.LoadMaxNumberOfLogOptions(MaxNumberOfLogOptions, _settingsManager.GetMaxNumberOfLogs().ToString());
-			View.DefaultExportLogsDirectory = _settingsManager.GetDefaultExportLogsDirectory();
+			View.DefaultLogsDirectory = _settingsManager.GetDefaultLogsDirectory();
+			View.LoadLogsFromDefaultDirectoryAtStartup = _settingsManager.GetLoadLogsFromDefaultDirectoryAtStartup();
+			View.DefaultExportDirectory = _settingsManager.GetDefaultExportDirectory();
 		}
 
 		private void ViewOnSave(object sender, EventArgs e)
 		{
 			_settingsManager.SetMaxNumberOfLogs(View.MaxNumberOfLogs);
-			_settingsManager.SetDefaultExportLogsDirectory(View.DefaultExportLogsDirectory);
+			_settingsManager.SetDefaultLogsDirectory(View.DefaultLogsDirectory);
+			_settingsManager.SetLoadLogsFromDefaultDirectoryAtStartup(View.LoadLogsFromDefaultDirectoryAtStartup);
+			_settingsManager.SetDefaultExportDirectory(View.DefaultExportDirectory);
 			_settingsManager.Save();
 		}
 

@@ -21,7 +21,9 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			_userSettingsManager = new Mock<ISettingsManager>();
 
 			_userSettingsManager.Setup(x => x.GetMaxNumberOfLogs()).Returns(500);
-			_userSettingsManager.Setup(x => x.GetDefaultExportLogsDirectory()).Returns(@"c:\exportedlogs");
+			_userSettingsManager.Setup(x => x.GetDefaultExportDirectory()).Returns(@"c:\exportedlogs");
+			_userSettingsManager.Setup(x => x.GetDefaultLogsDirectory()).Returns(@"c:\mylogs");
+			_userSettingsManager.Setup(x => x.GetLoadLogsFromDefaultDirectoryAtStartup()).Returns(true);
 		}
 
 		[Test]
@@ -48,7 +50,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		}
 
 		[Test]
-		public void ViewOnLoaded_DisplaysDefaultExportLogsDirectory()
+		public void ViewOnLoaded_DisplaysDefaultExportDirectory()
 		{
 			// arrange
 			var presenter = new SettingsPresenter(_view.Object, _userSettingsManager.Object);
@@ -57,7 +59,33 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			_view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
-			_view.VerifySet(x => x.DefaultExportLogsDirectory = @"c:\exportedlogs", Times.Once());
+			_view.VerifySet(x => x.DefaultExportDirectory = @"c:\exportedlogs", Times.Once());
+		}
+
+		[Test]
+		public void ViewOnLoaded_DisplaysLoadLogsFromDefaultDirectoryAtStartup()
+		{
+			// arrange
+			var presenter = new SettingsPresenter(_view.Object, _userSettingsManager.Object);
+
+			// act
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
+
+			// assert
+			_view.VerifySet(x => x.LoadLogsFromDefaultDirectoryAtStartup = true, Times.Once());
+		}
+		
+		[Test]
+		public void ViewOnLoaded_DisplaysDefaultLogsDirectory()
+		{
+			// arrange
+			var presenter = new SettingsPresenter(_view.Object, _userSettingsManager.Object);
+
+			// act
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
+
+			// assert
+			_view.VerifySet(x => x.DefaultLogsDirectory = @"c:\mylogs", Times.Once());
 		}
 
 		[Test]
@@ -76,18 +104,48 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		}
 		
 		[Test]
-		public void ViewOnSave_SavesDefaultExportLogsDirectory()
+		public void ViewOnSave_SavesDefaultExportDirectory()
 		{
 			// arrange
 			var presenter = new SettingsPresenter(_view.Object, _userSettingsManager.Object);
 
-			_view.Setup(x => x.DefaultExportLogsDirectory).Returns(@"c:\exportedlogs");
+			_view.Setup(x => x.DefaultExportDirectory).Returns(@"c:\exportedlogs");
 
 			// act
 			_view.Raise(x => x.OnSave += null, new EventArgs());
 
 			// assert
-			_userSettingsManager.Verify(x => x.SetDefaultExportLogsDirectory(@"c:\exportedlogs"), Times.Once());
+			_userSettingsManager.Verify(x => x.SetDefaultExportDirectory(@"c:\exportedlogs"), Times.Once());
+		}
+
+		[Test]
+		public void ViewOnSave_SavesDefaultLogsDirectory()
+		{
+			// arrange
+			var presenter = new SettingsPresenter(_view.Object, _userSettingsManager.Object);
+
+			_view.Setup(x => x.DefaultLogsDirectory).Returns(@"c:\mylogs");
+
+			// act
+			_view.Raise(x => x.OnSave += null, new EventArgs());
+
+			// assert
+			_userSettingsManager.Verify(x => x.SetDefaultLogsDirectory(@"c:\mylogs"), Times.Once());
+		}
+
+		[Test]
+		public void ViewOnSave_SavesLoadLogsFromDefaultDirectoryAtStartup()
+		{
+			// arrange
+			var presenter = new SettingsPresenter(_view.Object, _userSettingsManager.Object);
+
+			_view.Setup(x => x.LoadLogsFromDefaultDirectoryAtStartup).Returns(true);
+
+			// act
+			_view.Raise(x => x.OnSave += null, new EventArgs());
+
+			// assert
+			_userSettingsManager.Verify(x => x.SetLoadLogsFromDefaultDirectoryAtStartup(true), Times.Once());
 		}
 	}
 }

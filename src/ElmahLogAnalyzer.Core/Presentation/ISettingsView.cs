@@ -10,7 +10,11 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 		event EventHandler OnSave;
 
-		string DefaultExportLogsDirectory { get; set; }
+		string DefaultLogsDirectory { get; set; }
+
+		bool LoadLogsFromDefaultDirectoryAtStartup { get; set; }
+
+		string DefaultExportDirectory { get; set; }
 
 		int MaxNumberOfLogs { get; }
 

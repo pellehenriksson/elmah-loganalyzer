@@ -17,14 +17,34 @@
 			UserSettings.Default.MaxNumberOfLogs = maxNumberOfLogs;
 		}
 
-		public string GetDefaultExportLogsDirectory()
+		public string GetDefaultLogsDirectory()
 		{
-			return UserSettings.Default.ExportLogsDirectory;
+			return UserSettings.Default.DefaultLogsDirectory;
 		}
 
-		public void SetDefaultExportLogsDirectory(string directory)
+		public void SetDefaultLogsDirectory(string directory)
 		{
-			UserSettings.Default.ExportLogsDirectory = directory;
+			UserSettings.Default.DefaultLogsDirectory = directory;
+		}
+
+		public bool GetLoadLogsFromDefaultDirectoryAtStartup()
+		{
+			return UserSettings.Default.LoadLogsFromDefaultDirectoryAtStartup;
+		}
+
+		public void SetLoadLogsFromDefaultDirectoryAtStartup(bool shouldLoad)
+		{
+			UserSettings.Default.LoadLogsFromDefaultDirectoryAtStartup = true;
+		}
+
+		public string GetDefaultExportDirectory()
+		{
+			return UserSettings.Default.DefaultExportDirectory;
+		}
+
+		public void SetDefaultExportDirectory(string directory)
+		{
+			UserSettings.Default.DefaultExportDirectory = directory;
 		}
 
 		public void Save()

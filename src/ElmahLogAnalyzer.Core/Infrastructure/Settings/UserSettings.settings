@@ -5,8 +5,14 @@
     <Setting Name="MaxNumberOfLogs" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">200</Value>
     </Setting>
-    <Setting Name="ExportLogsDirectory" Type="System.String" Scope="User">
+    <Setting Name="DefaultExportDirectory" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DefaultLogsDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LoadLogsFromDefaultDirectoryAtStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

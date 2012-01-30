@@ -8,9 +8,17 @@
 
 		void SetMaxNumberOfLogs(int maxNumberOfLogs);
 
-		string GetDefaultExportLogsDirectory();
+		string GetDefaultLogsDirectory();
 
-		void SetDefaultExportLogsDirectory(string directory);
+		void SetDefaultLogsDirectory(string directory);
+
+		bool GetLoadLogsFromDefaultDirectoryAtStartup();
+
+		void SetLoadLogsFromDefaultDirectoryAtStartup(bool shouldLoad);
+
+		string GetDefaultExportDirectory();
+
+		void SetDefaultExportDirectory(string directory);
 
 		void Save();
 	}

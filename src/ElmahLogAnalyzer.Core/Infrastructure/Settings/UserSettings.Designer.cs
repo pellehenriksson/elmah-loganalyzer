@@ -38,12 +38,36 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Settings {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ExportLogsDirectory {
+        public string DefaultExportDirectory {
             get {
-                return ((string)(this["ExportLogsDirectory"]));
+                return ((string)(this["DefaultExportDirectory"]));
             }
             set {
-                this["ExportLogsDirectory"] = value;
+                this["DefaultExportDirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DefaultLogsDirectory {
+            get {
+                return ((string)(this["DefaultLogsDirectory"]));
+            }
+            set {
+                this["DefaultLogsDirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LoadLogsFromDefaultDirectoryAtStartup {
+            get {
+                return ((bool)(this["LoadLogsFromDefaultDirectoryAtStartup"]));
+            }
+            set {
+                this["LoadLogsFromDefaultDirectoryAtStartup"] = value;
             }
         }
     }

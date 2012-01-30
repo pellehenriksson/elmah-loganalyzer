@@ -6,7 +6,9 @@ namespace ElmahLogAnalyzer.TestHelpers.Fakes
 	public class FakeSettingsManager : ISettingsManager
 	{
 		private int _maxNumberOfLogs;
-		private string _defaultLogsExportDirectory;
+		private string _defaultExportDirectory;
+		private string _defaultLogsDirectory;
+		private bool _loadLogsFromDefaultDirectoryAtStartup;
 
 		public FakeSettingsManager()
 		{
@@ -28,14 +30,34 @@ namespace ElmahLogAnalyzer.TestHelpers.Fakes
 			_maxNumberOfLogs = maxNumberOfLogs;
 		}
 
-		public string GetDefaultExportLogsDirectory()
+		public string GetDefaultLogsDirectory()
 		{
-			return _defaultLogsExportDirectory;
+			return _defaultLogsDirectory;
 		}
 
-		public void SetDefaultExportLogsDirectory(string directory)
+		public void SetDefaultLogsDirectory(string directory)
 		{
-			_defaultLogsExportDirectory = directory;
+			_defaultLogsDirectory = directory;
+		}
+
+		public bool GetLoadLogsFromDefaultDirectoryAtStartup()
+		{
+			return _loadLogsFromDefaultDirectoryAtStartup;
+		}
+
+		public void SetLoadLogsFromDefaultDirectoryAtStartup(bool shouldLoad)
+		{
+			_loadLogsFromDefaultDirectoryAtStartup = shouldLoad;
+		}
+
+		public string GetDefaultExportDirectory()
+		{
+			return _defaultExportDirectory;
+		}
+
+		public void SetDefaultExportDirectory(string directory)
+		{
+			_defaultExportDirectory = directory;
 		}
 
 		public void Save()

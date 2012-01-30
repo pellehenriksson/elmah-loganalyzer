@@ -29,10 +29,22 @@ namespace ElmahLogAnalyzer.UI.Forms
 			}
 		}
 
-		public string DefaultExportLogsDirectory
+		public string DefaultLogsDirectory
 		{
-			get { return _defaultExportLogsDirectoryTextBox.Text; }
-			set { _defaultExportLogsDirectoryTextBox.Text = value; }
+			get { return _defaultLogsDirectoryTextBox.Text; }
+			set { _defaultLogsDirectoryTextBox.Text = value; }
+		}
+
+		public bool LoadLogsFromDefaultDirectoryAtStartup
+		{
+			get { return _loadLogsFromDefaultDirectoryAtStartupCheckBox.Checked; }
+			set { _loadLogsFromDefaultDirectoryAtStartupCheckBox.Checked = value; }
+		}
+
+		public string DefaultExportDirectory
+		{
+			get { return _defaultExportDirectoryTextBox.Text; }
+			set { _defaultExportDirectoryTextBox.Text = value; }
 		}
 
 		public void LoadMaxNumberOfLogOptions(IEnumerable<NameValuePair> options, string selectedOption)
@@ -71,12 +83,20 @@ namespace ElmahLogAnalyzer.UI.Forms
 		{
 			Close();
 		}
-
-		private void SelectDefaultExportLogsDirectoryButtonClick(object sender, EventArgs e)
+		
+		private void SelectDefaultLogsDirectoryButtonClick(object sender, EventArgs e)
 		{
 			if (_folderBrowserDialog.ShowDialog(this) == DialogResult.OK)
 			{
-				_defaultExportLogsDirectoryTextBox.Text = _folderBrowserDialog.SelectedPath;
+				_defaultLogsDirectoryTextBox.Text = _folderBrowserDialog.SelectedPath;
+			}
+		}
+
+		private void SelectDefaultExportDirectoryButtonClick(object sender, EventArgs e)
+		{
+			if (_folderBrowserDialog.ShowDialog(this) == DialogResult.OK)
+			{
+				_defaultExportDirectoryTextBox.Text = _folderBrowserDialog.SelectedPath;
 			}
 		}
 	}

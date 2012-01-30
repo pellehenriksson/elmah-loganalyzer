@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -35,9 +34,9 @@ namespace ElmahLogAnalyzer.UI.Forms
 
             if (!directory.HasValue())
             {
-                directory = ConfigurationManager.AppSettings["LogsDirectory"];
+            	directory = _settingsManager.GetDefaultLogsDirectory();
 
-                if (!directory.HasValue())
+                if (!directory.HasValue() || !_settingsManager.GetLoadLogsFromDefaultDirectoryAtStartup())
                 {
                     SetErrorLoadingState();
                     return;

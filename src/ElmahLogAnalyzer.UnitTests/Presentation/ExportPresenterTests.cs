@@ -21,7 +21,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			_exporter = new Mock<IErrorLogExporter>();
 			_settings = new Mock<ISettingsManager>();
 
-			_settings.Setup(x => x.GetDefaultExportLogsDirectory()).Returns(@"c:\logs");
+			_settings.Setup(x => x.GetDefaultExportDirectory()).Returns(@"c:\logs");
 		}
 
 		[Test]

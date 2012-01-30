@@ -34,7 +34,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 		private void ViewOnOnLoaded(object sender, EventArgs eventArgs)
 		{
-			View.ExportToDirectory = _settingsManager.GetDefaultExportLogsDirectory();
+			View.ExportToDirectory = _settingsManager.GetDefaultExportDirectory();
 		}
 
 		private void View_OnCancel(object sender, EventArgs e)

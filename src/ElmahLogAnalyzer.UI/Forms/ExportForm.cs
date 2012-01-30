@@ -16,9 +16,17 @@ namespace ElmahLogAnalyzer.UI.Forms
 			_progressLabel.Text = string.Empty;
 		}
 
+		public event EventHandler OnLoaded;
+
 		public event EventHandler OnExport;
 
 		public event EventHandler OnCancel;
+
+		public string ExportToDirectory
+		{
+			get { return _exportToDirectoryTextBox.Text; }
+			set { _exportToDirectoryTextBox.Text = value; }
+		}
 
 		public void SetLoadingState()
 		{
@@ -48,10 +56,10 @@ namespace ElmahLogAnalyzer.UI.Forms
 		private void SetInfoText()
 		{
 			_infoLabel.Text = @"This will export all logs currently loaded into a SQL Server CE 4.0 database. 
-								The database will be named ElmahLogAnalyzer_Dump.sdf and created in the application directory.
+								The database will be named ElmahLogAnalyzer_Dump.sdf.
 								You can use a tool like LINQPad to query the database.";
 		}
-
+		
 		private void ExportButtonClick(object sender, EventArgs e)
 		{
 			if (OnExport != null)
@@ -68,11 +76,27 @@ namespace ElmahLogAnalyzer.UI.Forms
 			}
 		}
 
+		private void ExportFormLoad(object sender, EventArgs e)
+		{
+			if (OnLoaded != null)
+			{
+				OnLoaded(this, new EventArgs());
+			}
+		}
+
 		private void OnFormClosing(object sender, FormClosingEventArgs e)
 		{
 			if (OnCancel != null)
 			{
 				OnCancel(this, new EventArgs());
+			}
+		}
+
+		private void SelectExportToDirectoryButtonClick(object sender, EventArgs e)
+		{
+			if (_folderBrowserDialog.ShowDialog(this) == DialogResult.OK)
+			{
+				_exportToDirectoryTextBox.Text = _folderBrowserDialog.SelectedPath;
 			}
 		}
 	}

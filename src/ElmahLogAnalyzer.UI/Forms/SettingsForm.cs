@@ -12,6 +12,8 @@ namespace ElmahLogAnalyzer.UI.Forms
 		{
 			InitializeComponent();
 
+			_defaultLogsDirectoryTextBox.Enabled = false;
+			_defaultExportDirectoryTextBox.Enabled = false;		
 			AcceptButton = _saveButton;
 			CancelButton = _cancelButton;
 		}

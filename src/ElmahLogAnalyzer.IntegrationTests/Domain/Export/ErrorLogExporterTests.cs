@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using ElmahLogAnalyzer.Core.Domain.Export;
 using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
 using ElmahLogAnalyzer.TestHelpers.Fakes;
@@ -10,6 +11,8 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 	[TestFixture]
 	public class ErrorLogExporterTests : IntegrationTestBase
 	{
+		private readonly string _databaseFilename = Path.Combine(Directory.GetCurrentDirectory(), "Test.sdf");
+
 		[Test]
 		public void Export_Completed_RaisesCompletedEventArgs()
 		{
@@ -25,7 +28,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 			var eventWasRaised = false;
 			exporter.OnCompleted += delegate { eventWasRaised = true; };
 
-			exporter.Export();
+			exporter.Export(_databaseFilename);
 
 			// assert
 			Assert.That(eventWasRaised, Is.True);
@@ -50,7 +53,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 												Assert.That(args.Progress, Is.EqualTo("Exporting error log 1 of 1"));
 			                              	};
 
-			exporter.Export();
+			exporter.Export(_databaseFilename);
 
 			// assert
 			Assert.That(eventWasRaised, Is.True);
@@ -78,7 +81,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 										Assert.That(args.Error, Is.EqualTo(error));
 			                    	};
 
-			exporter.Export();
+			exporter.Export(_databaseFilename);
 
 			// assert
 			Assert.That(eventWasRaised, Is.True);

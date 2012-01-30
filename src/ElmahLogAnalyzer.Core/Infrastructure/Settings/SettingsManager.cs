@@ -34,7 +34,7 @@
 
 		public void SetLoadLogsFromDefaultDirectoryAtStartup(bool shouldLoad)
 		{
-			UserSettings.Default.LoadLogsFromDefaultDirectoryAtStartup = true;
+			UserSettings.Default.LoadLogsFromDefaultDirectoryAtStartup = shouldLoad;
 		}
 
 		public string GetDefaultExportDirectory()

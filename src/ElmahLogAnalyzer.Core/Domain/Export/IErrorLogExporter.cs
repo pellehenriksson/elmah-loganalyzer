@@ -10,7 +10,7 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 
 		event EventHandler<ErrorLogExporterProgressEventArgs> OnProgressChanged;
 
-		void Export();
+		void Export(string databaseFilename);
 
 		void Cancel();
 	}

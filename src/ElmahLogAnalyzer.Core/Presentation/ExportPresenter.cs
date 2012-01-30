@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using ElmahLogAnalyzer.Core.Domain.Export;
 using ElmahLogAnalyzer.Core.Infrastructure.Settings;
@@ -47,7 +48,8 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		{
 			View.SetLoadingState();
 
-			var task = new Task(_exporter.Export);
+			var db = Path.Combine(View.ExportToDirectory, "ElmahLogAnalyzer_Dump.sdf");
+			var task = new Task(() => _exporter.Export(db));
 			task.Start();
 		}
 	}

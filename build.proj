@@ -8,7 +8,7 @@
 		<OutputCompileDirectory>$(OutputDirectory)compile\</OutputCompileDirectory>
 		<OutputReportsDirectory>$(OutputDirectory)reports\</OutputReportsDirectory>
 		<OutputAppDirectory>$(OutputDirectory)app\</OutputAppDirectory>
-		<NUnitExe>$(MSBuildProjectDirectory)\src\packages\NUnit.2.5.10.11092\Tools\nunit-console.exe</NUnitExe>
+		<NUnitExe>$(MSBuildProjectDirectory)\src\packages\NUnit.2.5.10.11092\tools\nunit-console.exe</NUnitExe>
 	</PropertyGroup>
 
 	<Import Project="$(MSBuildProjectDirectory)\tools\msbuild\MSBuild.Community.Tasks.Targets"/>
@@ -65,8 +65,8 @@
 	</Target>
 			
 	<Target Name="Test">
-		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)ElmahLogAnalyzer.UnitTests.dll /xml=$(OutputReportsDirectory)unittests_report.xml"  />
-		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)ElmahLogAnalyzer.IntegrationTests.dll /xml=$(OutputReportsDirectory)integrationtests_report.xml"  />
+    <Exec Command="$(NUnitExe) $(OutputCompileDirectory)ElmahLogAnalyzer.UnitTests.dll" /> <!--</Exec>/xml=$(OutputReportsDirectory)unittests_report.xml" />-->
+		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)ElmahLogAnalyzer.IntegrationTests.dll /xml=$(OutputReportsDirectory)integrationtests_report.xml" />
 	</Target>
 	
 	<Target Name="BundleApp">
@@ -75,7 +75,7 @@
 
 	<Target Name="ZipApp">
 		<Zip 
-			Files="@(AppFiles);@(ElmahExporterFiles)"
+			Files="@(AppFiles)"
 			WorkingDirectory="$(OutputCompileDirectory)"
 			ZipFileName="$(OutputDirectory)ElmahLogAnalyzer-$(Configuration)-$(Year).$(Month).$(Day).$(Hour)$(Minute).zip"/>
 	</Target>

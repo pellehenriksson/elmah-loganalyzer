@@ -62,5 +62,19 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			// assert
 			Assert.That(result, Is.EqualTo("http://www.test.com/elmah.axd"));
 		}
+
+		[Test]
+		public void ResolveElmahRootUrl_UsingCustomHandlerName_ReturnsTheCustomHandlderNameInUrl()
+		{
+			// arrange
+			var helper = new ElmahUrlHelper();
+			const string url = "http://www.test.com/bugs.axd";
+
+			// act
+			var result = helper.ResolveElmahRootUrl(url);
+
+			// assert
+			Assert.That(result, Is.EqualTo("http://www.test.com/bugs.axd"));
+		}
 	}
 }

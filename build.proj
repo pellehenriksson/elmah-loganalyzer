@@ -19,6 +19,7 @@
 		<AppFiles Include="$(OutputCompileDirectory)ElmahLogAnalyzer.UI.exe.config" />
 		<AppFiles Include="$(OutputCompileDirectory)Ninject.dll" />
 		<AppFiles Include="$(OutputCompileDirectory)NLog.dll" />
+		<AppFiles Include="$(OutputCompileDirectory)Dapper.dll" />
 	</ItemGroup>
 	
 	<Target Name="Clean">
@@ -65,7 +66,7 @@
 	</Target>
 			
 	<Target Name="Test">
-    <Exec Command="$(NUnitExe) $(OutputCompileDirectory)ElmahLogAnalyzer.UnitTests.dll" /> <!--</Exec>/xml=$(OutputReportsDirectory)unittests_report.xml" />-->
+    <Exec Command="$(NUnitExe) $(OutputCompileDirectory)ElmahLogAnalyzer.UnitTests.dll /xml=$(OutputReportsDirectory)unittests_report.xml" />
 		<Exec Command="$(NUnitExe) $(OutputCompileDirectory)ElmahLogAnalyzer.IntegrationTests.dll /xml=$(OutputReportsDirectory)integrationtests_report.xml" />
 	</Target>
 	

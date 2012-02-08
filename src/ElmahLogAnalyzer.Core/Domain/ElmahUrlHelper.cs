@@ -12,7 +12,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 		public string ResolveElmahRootUrl(string serverUrl)
 		{
-			if (!serverUrl.Contains("elmah.axd"))
+			if (!serverUrl.EndsWith(".axd", StringComparison.InvariantCultureIgnoreCase))
 			{
 				var newUrl = serverUrl.EndsWith("/") ? serverUrl + "elmah.axd" : serverUrl + "/elmah.axd";
 				return newUrl;

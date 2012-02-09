@@ -13,7 +13,7 @@ namespace ElmahLogAnalyzer.UI.Views
 		{
 			InitializeComponent();
 
-			_FilterView.OnFilterApplied += SearchFilterViewOnSearchFilterApplied;
+			_filterView.OnFilterApplied += SearchFilterViewOnSearchFilterApplied;
 			_resultView.OnErrorLogSelected += SearchResultTreeViewOnErrorLogSelected;
 			_detailsView.OnSearchHttpUserAgentInformationClicked += DetailsViewOnSearchHttpUserAgentInformationClicked;
 		}
@@ -28,51 +28,51 @@ namespace ElmahLogAnalyzer.UI.Views
 		
 		public void SetDateInterval(DateInterval interval)
 		{
-			_FilterView.SetDateInterval(interval);
+			_filterView.SetDateInterval(interval);
 		}
 
 		public void LoadTypes(IEnumerable<string> types)
 		{
 			if (InvokeRequired)
 			{
-				this.InvokeEx(x => x._FilterView.LoadTypes(types));
+				this.InvokeEx(x => x._filterView.LoadTypes(types));
 				return;
 			}
 
-			_FilterView.LoadTypes(types);
+			_filterView.LoadTypes(types);
 		}
 
 		public void LoadSources(IEnumerable<string> sources)
 		{
 			if (InvokeRequired)
 			{
-				this.InvokeEx(x => x._FilterView.LoadSources(sources));
+				this.InvokeEx(x => x._filterView.LoadSources(sources));
 				return;
 			}
 
-			_FilterView.LoadSources(sources);
+			_filterView.LoadSources(sources);
 		}
 
 		public void LoadUsers(IEnumerable<string> users)
 		{
 			if (InvokeRequired)
 			{
-				this.InvokeEx(x => x._FilterView.LoadUsers(users));
+				this.InvokeEx(x => x._filterView.LoadUsers(users));
 				return;
 			}
 
-			_FilterView.LoadUsers(users);
+			_filterView.LoadUsers(users);
 		}
 
 		public void LoadUrls(IEnumerable<string> urls)
 		{
 			if (InvokeRequired)
 			{
-				this.InvokeEx(x => x._FilterView.LoadUrls(urls));
+				this.InvokeEx(x => x._filterView.LoadUrls(urls));
 				return;
 			}
 
-			_FilterView.LoadUrls(urls);
+			_filterView.LoadUrls(urls);
 		}
 
 		public void DisplaySearchResult(IList<ErrorLog> errorLogs)

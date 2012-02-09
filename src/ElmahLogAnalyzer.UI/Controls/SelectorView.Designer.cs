@@ -50,10 +50,11 @@
 			// 
 			// _allButton
 			// 
+			this._allButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this._allButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._allButton.Location = new System.Drawing.Point(3, 160);
 			this._allButton.Name = "_allButton";
-			this._allButton.Size = new System.Drawing.Size(46, 20);
+			this._allButton.Size = new System.Drawing.Size(46, 25);
 			this._allButton.TabIndex = 2;
 			this._allButton.Text = "All";
 			this._allButton.UseVisualStyleBackColor = true;
@@ -61,10 +62,11 @@
 			// 
 			// _noneButton
 			// 
+			this._noneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this._noneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._noneButton.Location = new System.Drawing.Point(55, 160);
 			this._noneButton.Name = "_noneButton";
-			this._noneButton.Size = new System.Drawing.Size(45, 20);
+			this._noneButton.Size = new System.Drawing.Size(45, 25);
 			this._noneButton.TabIndex = 3;
 			this._noneButton.Text = "None";
 			this._noneButton.UseVisualStyleBackColor = true;
@@ -98,13 +100,13 @@
 			this._itemsListContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyToolStripMenuItem});
 			this._itemsListContextMenu.Name = "_itemsListContextMenu";
-			this._itemsListContextMenu.Size = new System.Drawing.Size(134, 26);
+			this._itemsListContextMenu.Size = new System.Drawing.Size(129, 26);
 			this._itemsListContextMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ItemsListContextMenuItemClicked);
 			// 
 			// copyToolStripMenuItem
 			// 
 			this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-			this.copyToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+			this.copyToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
 			this.copyToolStripMenuItem.Text = "Copy value";
 			// 
 			// SelectorView
@@ -116,7 +118,7 @@
 			this.Controls.Add(this._allButton);
 			this.Controls.Add(this._modeComboBox);
 			this.Name = "SelectorView";
-			this.Size = new System.Drawing.Size(234, 182);
+			this.Size = new System.Drawing.Size(234, 187);
 			this._itemsListContextMenu.ResumeLayout(false);
 			this.ResumeLayout(false);
 

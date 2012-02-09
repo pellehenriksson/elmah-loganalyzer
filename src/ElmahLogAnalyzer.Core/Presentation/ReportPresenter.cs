@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Domain;
+using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 
 namespace ElmahLogAnalyzer.Core.Presentation
 {
 	public class ReportPresenter
 	{
 		private readonly IReportGenerator _generator;
+		private readonly ISettingsManager _settingsManager;
 
-		public ReportPresenter(IReportView view, IReportGenerator generator)
+		public ReportPresenter(IReportView view, IReportGenerator generator, ISettingsManager settingsManager)
 		{
 			View = view;
 			_generator = generator;
+			_settingsManager = settingsManager;
 
 			RegisterEvents();
 		}
@@ -58,7 +61,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 			View.LoadReportTypes(BuildReportTypesList());
 			View.LoadNumberOfResultsOptions(BuildNumerOfResultsOptionsList());
 
-			var interval = DateInterval.Create(DateIntervalSpanEnum.Week, DateTime.Today);
+			var interval = DateInterval.Create(_settingsManager.GetDefaultDateInterval(), DateTime.Today);
 			View.SetDateInterval(interval);
 		}
 

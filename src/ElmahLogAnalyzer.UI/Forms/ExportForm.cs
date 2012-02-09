@@ -9,11 +9,11 @@ namespace ElmahLogAnalyzer.UI.Forms
 		public ExportForm()
 		{
 			InitializeComponent();
-
-			_exportToDirectoryTextBox.Enabled = false;
+			
 			AcceptButton = _exportButton;
 			CancelButton = _cancelButton;
 			SetInfoText();
+			_exportToDirectoryTextBox.Enabled = false;
 			_progressLabel.Text = string.Empty;
 		}
 

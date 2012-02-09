@@ -10,6 +10,8 @@ namespace ElmahLogAnalyzer.UI.Forms
 		public ConnectToWebServerForm()
 		{
 			InitializeComponent();
+			CancelButton = _cancelButton;
+			AcceptButton = _connectButton;
 			_errorGroupBox.Visible = false;
 			_urlComboBox.SelectedIndexChanged += OnUrlComboBoxOnSelectedIndexChanged;
 		}

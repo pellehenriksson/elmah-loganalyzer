@@ -160,7 +160,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		private void SelectDirectoryButtonClick(object sender, EventArgs e)
 		{
-			_folderBrowserDialog.SelectedPath = _repository.Directory;
+			_folderBrowserDialog.SelectedPath = _repository.Directory ?? _settingsManager.GetDefaultLogsDirectory();
 
 			var result = _folderBrowserDialog.ShowDialog(this);
 

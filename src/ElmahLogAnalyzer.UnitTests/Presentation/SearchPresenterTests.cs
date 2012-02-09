@@ -39,7 +39,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		}
 
 		[Test]
-		public void ViewOnLoaded_SetsDefaultTimeIntervalWithValueFromSe()
+		public void ViewOnLoaded_SetsDefaultTimeIntervalWithValueFromSettings()
 		{
 			// arrange
 			var presenter = BuildPresenter();

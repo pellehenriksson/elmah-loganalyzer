@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Domain;
+using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 using ElmahLogAnalyzer.Core.Presentation;
 using Moq;
 using NUnit.Framework;
@@ -11,100 +12,104 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 	[TestFixture]
 	public class ReportPresenterTests : UnitTestBase
 	{
-		[Test]
-		public void Ctor_SetsView()
-		{
-			// arrange
-			var view = new Mock<IReportView>();
-			var generator = new Mock<IReportGenerator>();
+		private Mock<IReportView> _view;
+		private Mock<IReportGenerator> _generator;
+		private Mock<ISettingsManager> _settings;
 
-			// act
-			var presenter = new ReportPresenter(view.Object, generator.Object);
-			
-			// assert
-			Assert.That(presenter.View, Is.EqualTo(view.Object));
+		[SetUp]
+		public void Setup()
+		{
+			_view = new Mock<IReportView>();
+			_generator = new Mock<IReportGenerator>();
+			_settings = new Mock<ISettingsManager>();
+
+			_settings.Setup(x => x.GetDefaultDateInterval()).Returns(DateIntervalSpanEnum.Month);
 		}
 
 		[Test]
-		public void ViewOnLoaded_SetsDefaultTimeInterval()
+		public void Ctor_SetsView()
+		{
+			// act
+			var presenter = BuildPresenter();
+			
+			// assert
+			Assert.That(presenter.View, Is.EqualTo(_view.Object));
+		}
+
+		[Test]
+		public void ViewOnLoaded_SetsDefaultTimeIntervalWithValueFromSettings()
 		{
 			// arrange
-			var view = new Mock<IReportView>();
-			var generator = new Mock<IReportGenerator>();
-			var presenter = new ReportPresenter(view.Object, generator.Object);
-			var expectedInterval = new DateInterval(DateTime.Today.AddDays(-7), DateTime.Today);
+			var presenter = BuildPresenter();
+			var expectedInterval = new DateInterval(DateTime.Today.AddMonths(-1), DateTime.Today);
 
 			// act
-			view.Raise(x => x.OnLoaded += null, new EventArgs());
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
-			view.Verify(x => x.SetDateInterval(It.Is<DateInterval>(y => y.Equals(expectedInterval))), Times.Once());
+			_view.Verify(x => x.SetDateInterval(It.Is<DateInterval>(y => y.Equals(expectedInterval))), Times.Once());
 		}
 		
 		[Test]
 		public void ViewOnLoaded_LoadReportTypes()
 		{
 			// arrange
-			var view = new Mock<IReportView>();
-			var generator = new Mock<IReportGenerator>();
-			var presenter = new ReportPresenter(view.Object, generator.Object);
+			var presenter = BuildPresenter();
 
 			// act
-			view.Raise(x => x.OnLoaded += null, new EventArgs());
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
-			view.Verify(x => x.LoadReportTypes(It.IsAny<List<ReportTypeListItem>>()), Times.Once());
+			_view.Verify(x => x.LoadReportTypes(It.IsAny<List<ReportTypeListItem>>()), Times.Once());
 		}
 
 		[Test]
 		public void ViewOnLoaded_LoadNumberOfResultsOptions()
 		{
 			// arrange
-			var view = new Mock<IReportView>();
-			var generator = new Mock<IReportGenerator>();
-			var presenter = new ReportPresenter(view.Object, generator.Object);
+			var presenter = BuildPresenter();
 
 			// act
-			view.Raise(x => x.OnLoaded += null, new EventArgs());
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
 
 			// assert
-			view.Verify(x => x.LoadNumberOfResultsOptions(It.IsAny<List<NameValuePair>>()), Times.Once());
+			_view.Verify(x => x.LoadNumberOfResultsOptions(It.IsAny<List<NameValuePair>>()), Times.Once());
 		}
 
 		[Test]
 		public void ViewOnReportSelected_DisplaysReport()
 		{
 			// arrange
-			var view = new Mock<IReportView>();
-			var generator = new Mock<IReportGenerator>();
-
-			var presenter = new ReportPresenter(view.Object, generator.Object);
+			var presenter = BuildPresenter();
 			var reporyQuery = CreateReportQuery();
 			var args = new ReportSelectionEventArgs(reporyQuery);
 
 			var report = new Report(reporyQuery);
-			generator.Setup(x => x.Create(reporyQuery)).Returns(report);
+			_generator.Setup(x => x.Create(reporyQuery)).Returns(report);
 
 			// act
-			view.Raise(x => x.OnReportSelected += null, args);
+			_view.Raise(x => x.OnReportSelected += null, args);
 
 			// assert
-			view.Verify(x => x.DisplayReport(report), Times.Once());
+			_view.Verify(x => x.DisplayReport(report), Times.Once());
 		}
 
 		[Test]
 		public void GeneratorOnDataSourceInitialized_ClearsView()
 		{
 			// arrange
-			var view = new Mock<IReportView>();
-			var generator = new Mock<IReportGenerator>();
-			var presenter = new ReportPresenter(view.Object, generator.Object);
+			var presenter = BuildPresenter();
 
 			// act
-			generator.Raise(x => x.OnDataSourceInitialized += null, new EventArgs());
+			_generator.Raise(x => x.OnDataSourceInitialized += null, new EventArgs());
 
 			// assert
-			view.Verify(x => x.Clear(), Times.Once());
+			_view.Verify(x => x.Clear(), Times.Once());
+		}
+
+		private ReportPresenter BuildPresenter()
+		{
+			return new ReportPresenter(_view.Object, _generator.Object, _settings.Object);
 		}
 	}
 }

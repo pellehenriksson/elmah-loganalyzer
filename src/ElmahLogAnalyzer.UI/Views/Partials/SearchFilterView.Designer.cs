@@ -70,6 +70,8 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// 
 			// _usersSelector
 			// 
+			this._usersSelector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this._usersSelector.Caption = "Users";
 			this._usersSelector.Location = new System.Drawing.Point(739, 5);
 			this._usersSelector.Name = "_usersSelector";
@@ -78,6 +80,8 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// 
 			// _urlsSelector
 			// 
+			this._urlsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this._urlsSelector.Caption = "Urls";
 			this._urlsSelector.Location = new System.Drawing.Point(498, 5);
 			this._urlsSelector.Name = "_urlsSelector";
@@ -86,6 +90,8 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// 
 			// _sourcesSelector
 			// 
+			this._sourcesSelector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this._sourcesSelector.Caption = "Sources";
 			this._sourcesSelector.Location = new System.Drawing.Point(254, 5);
 			this._sourcesSelector.Name = "_sourcesSelector";
@@ -94,6 +100,8 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// 
 			// _typesSelector
 			// 
+			this._typesSelector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this._typesSelector.Caption = "Types";
 			this._typesSelector.Location = new System.Drawing.Point(3, 5);
 			this._typesSelector.Name = "_typesSelector";

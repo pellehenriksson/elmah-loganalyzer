@@ -10,7 +10,7 @@ namespace ElmahLogAnalyzer.UI.Controls
 		{
 			InitializeComponent();
 		}
-
+		
 		public void LoadValues(IEnumerable<NameValuePair> values)
 		{
 			_itemsListView.Items.Clear();

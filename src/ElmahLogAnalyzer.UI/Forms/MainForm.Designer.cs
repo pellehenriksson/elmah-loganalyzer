@@ -53,9 +53,9 @@
             this._directoryToolStripStatusLabel,
             this._settingsStripStatusLabel,
             this._versionStripStatusLabel});
-			this._mainStatusStrip.Location = new System.Drawing.Point(0, 704);
+			this._mainStatusStrip.Location = new System.Drawing.Point(0, 706);
 			this._mainStatusStrip.Name = "_mainStatusStrip";
-			this._mainStatusStrip.Size = new System.Drawing.Size(1358, 24);
+			this._mainStatusStrip.Size = new System.Drawing.Size(1358, 22);
 			this._mainStatusStrip.TabIndex = 0;
 			this._mainStatusStrip.Text = "statusStrip1";
 			// 
@@ -66,7 +66,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this._directoryToolStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this._directoryToolStripStatusLabel.Name = "_directoryToolStripStatusLabel";
-			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(1224, 19);
+			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(1231, 17);
 			this._directoryToolStripStatusLabel.Spring = true;
 			this._directoryToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -76,7 +76,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this._settingsStripStatusLabel.Name = "_settingsStripStatusLabel";
-			this._settingsStripStatusLabel.Size = new System.Drawing.Size(61, 19);
+			this._settingsStripStatusLabel.Size = new System.Drawing.Size(58, 17);
 			this._settingsStripStatusLabel.Text = "[Settings]";
 			// 
 			// _versionStripStatusLabel
@@ -86,7 +86,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this._versionStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this._versionStripStatusLabel.Name = "_versionStripStatusLabel";
-			this._versionStripStatusLabel.Size = new System.Drawing.Size(58, 19);
+			this._versionStripStatusLabel.Size = new System.Drawing.Size(54, 17);
 			this._versionStripStatusLabel.Text = "[Version]";
 			this._versionStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
@@ -104,15 +104,14 @@
 			this._mainToolStrip.Name = "_mainToolStrip";
 			this._mainToolStrip.Size = new System.Drawing.Size(1358, 25);
 			this._mainToolStrip.TabIndex = 1;
-			this._mainToolStrip.Text = "toolStrip1";
 			// 
 			// _selectDirectoryButton
 			// 
 			this._selectDirectoryButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.select_directory;
 			this._selectDirectoryButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._selectDirectoryButton.Name = "_selectDirectoryButton";
-			this._selectDirectoryButton.Size = new System.Drawing.Size(108, 22);
-			this._selectDirectoryButton.Text = "Select directory";
+			this._selectDirectoryButton.Size = new System.Drawing.Size(102, 22);
+			this._selectDirectoryButton.Text = "Select &directory";
 			this._selectDirectoryButton.Click += new System.EventHandler(this.SelectDirectoryButtonClick);
 			// 
 			// _selectServerButton
@@ -120,8 +119,8 @@
 			this._selectServerButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.server;
 			this._selectServerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._selectServerButton.Name = "_selectServerButton";
-			this._selectServerButton.Size = new System.Drawing.Size(145, 22);
-			this._selectServerButton.Text = "Connect to web server";
+			this._selectServerButton.Size = new System.Drawing.Size(137, 22);
+			this._selectServerButton.Text = "Connect to &web server";
 			this._selectServerButton.Click += new System.EventHandler(this.SelectServerButtonClick);
 			// 
 			// _showSearchViewButton
@@ -129,8 +128,8 @@
 			this._showSearchViewButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.search;
 			this._showSearchViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._showSearchViewButton.Name = "_showSearchViewButton";
-			this._showSearchViewButton.Size = new System.Drawing.Size(62, 22);
-			this._showSearchViewButton.Text = "Search";
+			this._showSearchViewButton.Size = new System.Drawing.Size(60, 22);
+			this._showSearchViewButton.Text = "&Search";
 			this._showSearchViewButton.ToolTipText = "Search logs";
 			this._showSearchViewButton.Click += new System.EventHandler(this.ShowSearchViewButtonClick);
 			// 
@@ -139,8 +138,8 @@
 			this._showReportViewButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.report;
 			this._showReportViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._showReportViewButton.Name = "_showReportViewButton";
-			this._showReportViewButton.Size = new System.Drawing.Size(67, 22);
-			this._showReportViewButton.Text = "Reports";
+			this._showReportViewButton.Size = new System.Drawing.Size(65, 22);
+			this._showReportViewButton.Text = "&Reports";
 			this._showReportViewButton.ToolTipText = "View reports";
 			this._showReportViewButton.Click += new System.EventHandler(this.ShowReportViewButtonClick);
 			// 
@@ -150,7 +149,7 @@
 			this._showAboutButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.about;
 			this._showAboutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._showAboutButton.Name = "_showAboutButton";
-			this._showAboutButton.Size = new System.Drawing.Size(60, 22);
+			this._showAboutButton.Size = new System.Drawing.Size(56, 22);
 			this._showAboutButton.Text = "About";
 			this._showAboutButton.Click += new System.EventHandler(this.ShowAboutButtonClick);
 			// 
@@ -160,8 +159,8 @@
 			this._showSettingsViewButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.settings;
 			this._showSettingsViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._showSettingsViewButton.Name = "_showSettingsViewButton";
-			this._showSettingsViewButton.Size = new System.Drawing.Size(69, 22);
-			this._showSettingsViewButton.Text = "Settings";
+			this._showSettingsViewButton.Size = new System.Drawing.Size(66, 22);
+			this._showSettingsViewButton.Text = "S&ettings";
 			this._showSettingsViewButton.ToolTipText = "Change settings";
 			this._showSettingsViewButton.Click += new System.EventHandler(this.ShowSettingsViewButtonClick);
 			// 
@@ -170,8 +169,8 @@
 			this._exportButton.Image = ((System.Drawing.Image)(resources.GetObject("_exportButton.Image")));
 			this._exportButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._exportButton.Name = "_exportButton";
-			this._exportButton.Size = new System.Drawing.Size(60, 22);
-			this._exportButton.Text = "Export";
+			this._exportButton.Size = new System.Drawing.Size(59, 22);
+			this._exportButton.Text = "E&xport";
 			this._exportButton.Click += new System.EventHandler(this.ExportButtonClick);
 			// 
 			// _folderBrowserDialog
@@ -184,7 +183,7 @@
 			this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._mainPanel.Location = new System.Drawing.Point(0, 25);
 			this._mainPanel.Name = "_mainPanel";
-			this._mainPanel.Size = new System.Drawing.Size(1358, 679);
+			this._mainPanel.Size = new System.Drawing.Size(1358, 681);
 			this._mainPanel.TabIndex = 2;
 			// 
 			// MainForm

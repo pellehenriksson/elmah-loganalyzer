@@ -24,7 +24,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		private static readonly List<NameValuePair> DefaultDateIntervalOptions = new List<NameValuePair>
 		{
 			new NameValuePair("Start a week back in time", ((int)DateIntervalSpanEnum.Week).ToString(CultureInfo.InvariantCulture)),
-			new NameValuePair("Start s month back in time", ((int)DateIntervalSpanEnum.Month).ToString(CultureInfo.InvariantCulture)),
+			new NameValuePair("Start a month back in time", ((int)DateIntervalSpanEnum.Month).ToString(CultureInfo.InvariantCulture)),
 			new NameValuePair("Start a year back in time", ((int)DateIntervalSpanEnum.Year).ToString(CultureInfo.InvariantCulture)),
 		};
 

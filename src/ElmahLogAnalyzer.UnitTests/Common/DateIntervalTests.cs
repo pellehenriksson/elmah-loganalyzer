@@ -120,5 +120,19 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 			Assert.That(result.StartDate, Is.EqualTo(new DateTime(2011, 4, 17)));
 			Assert.That(result.EndDate, Is.EqualTo(today));
 		}
+
+		[Test]
+		public void Create_Year_StartDateIsOneYearBackEndDateIsCurrentDate()
+		{
+			// arrange
+			var today = new DateTime(2011, 5, 17);
+
+			// act
+			var result = DateInterval.Create(DateIntervalSpanEnum.Year, today);
+
+			// assert
+			Assert.That(result.StartDate, Is.EqualTo(new DateTime(2010, 5, 17)));
+			Assert.That(result.EndDate, Is.EqualTo(today));
+		}
 	}
 }

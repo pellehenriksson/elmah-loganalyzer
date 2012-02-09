@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 
@@ -18,6 +19,13 @@ namespace ElmahLogAnalyzer.Core.Presentation
 			new NameValuePair("500 latest", "500"),
 			new NameValuePair("750 latest", "750"),
 			new NameValuePair("1000 latest", "1000")
+		};
+
+		private static readonly List<NameValuePair> DefaultDateIntervalOptions = new List<NameValuePair>
+		{
+			new NameValuePair("Start a week back in time", ((int)DateIntervalSpanEnum.Week).ToString(CultureInfo.InvariantCulture)),
+			new NameValuePair("Start s month back in time", ((int)DateIntervalSpanEnum.Month).ToString(CultureInfo.InvariantCulture)),
+			new NameValuePair("Start a year back in time", ((int)DateIntervalSpanEnum.Year).ToString(CultureInfo.InvariantCulture)),
 		};
 
 		private readonly ISettingsManager _settingsManager;
@@ -40,7 +48,8 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 		private void Initialize()
 		{
-			View.LoadMaxNumberOfLogOptions(MaxNumberOfLogOptions, _settingsManager.GetMaxNumberOfLogs().ToString());
+			View.LoadDefaultDateIntervalOptions(DefaultDateIntervalOptions, _settingsManager.GetDefaultDateInterval());
+			View.LoadMaxNumberOfLogOptions(MaxNumberOfLogOptions, _settingsManager.GetMaxNumberOfLogs().ToString(CultureInfo.InvariantCulture));
 			View.DefaultLogsDirectory = _settingsManager.GetDefaultLogsDirectory();
 			View.LoadLogsFromDefaultDirectoryAtStartup = _settingsManager.GetLoadLogsFromDefaultDirectoryAtStartup();
 			View.DefaultExportDirectory = _settingsManager.GetDefaultExportDirectory();
@@ -48,6 +57,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 		private void ViewOnSave(object sender, EventArgs e)
 		{
+			_settingsManager.SetDefaultDateInterval(View.DefaultDateInterval);
 			_settingsManager.SetMaxNumberOfLogs(View.MaxNumberOfLogs);
 			_settingsManager.SetDefaultLogsDirectory(View.DefaultLogsDirectory);
 			_settingsManager.SetLoadLogsFromDefaultDirectoryAtStartup(View.LoadLogsFromDefaultDirectoryAtStartup);

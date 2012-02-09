@@ -22,6 +22,8 @@ namespace ElmahLogAnalyzer.Core.Common
 					return new DateInterval(today.AddDays(-7), today);
 				case DateIntervalSpanEnum.Month:
 					return new DateInterval(today.AddMonths(-1), today);
+				case DateIntervalSpanEnum.Year:
+					return new DateInterval(today.AddYears(-1), today);
 			}
 
 			return null;

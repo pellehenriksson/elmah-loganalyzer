@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Domain;
+using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 using ElmahLogAnalyzer.Core.Integrations.HttpUserAgentSearch;
 using ElmahLogAnalyzer.Core.Presentation;
 using Moq;
@@ -15,6 +16,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		private Mock<ISearchView> _view;
 		private Mock<IErrorLogRepository> _repository;
 		private Mock<IHttpUserAgentSearchLauncherFactory> _searchLauncherFactory;
+		private Mock<ISettingsManager> _settingsManager;
 
 		[SetUp]
 		public void Setup()
@@ -22,6 +24,8 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			_view = new Mock<ISearchView>();
 			_repository = new Mock<IErrorLogRepository>();
 			_searchLauncherFactory = new Mock<IHttpUserAgentSearchLauncherFactory>();
+			_settingsManager = new Mock<ISettingsManager>();
+			_settingsManager.Setup(x => x.GetDefaultDateInterval()).Returns(DateIntervalSpanEnum.Month);
 		}
 		
 		[Test]
@@ -35,11 +39,11 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		}
 
 		[Test]
-		public void ViewOnLoaded_SetsDefaultTimeInterval()
+		public void ViewOnLoaded_SetsDefaultTimeIntervalWithValueFromSe()
 		{
 			// arrange
 			var presenter = BuildPresenter();
-			var expectedInterval = new DateInterval(DateTime.Today.AddDays(-7), DateTime.Today);
+			var expectedInterval = new DateInterval(DateTime.Today.AddMonths(-1), DateTime.Today);
 
 			// act
 			_view.Raise(x => x.OnLoaded += null, new EventArgs());
@@ -241,7 +245,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 
 		private SearchPresenter BuildPresenter()
 		{
-			return new SearchPresenter(_view.Object, _repository.Object, _searchLauncherFactory.Object);
+			return new SearchPresenter(_view.Object, _repository.Object, _searchLauncherFactory.Object, _settingsManager.Object);
 		}
 	}
 }

@@ -18,6 +18,10 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 		int MaxNumberOfLogs { get; }
 
+		DateIntervalSpanEnum DefaultDateInterval { get; }
+
 		void LoadMaxNumberOfLogOptions(IEnumerable<NameValuePair> options, string selectedOption);
+
+		void LoadDefaultDateIntervalOptions(IEnumerable<NameValuePair> options, DateIntervalSpanEnum selectedOption);
 	}
 }

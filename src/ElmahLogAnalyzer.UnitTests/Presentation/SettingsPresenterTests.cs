@@ -21,6 +21,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			_userSettingsManager = new Mock<ISettingsManager>();
 
 			_userSettingsManager.Setup(x => x.GetMaxNumberOfLogs()).Returns(500);
+			_userSettingsManager.Setup(x => x.GetDefaultDateInterval()).Returns(DateIntervalSpanEnum.Month);
 			_userSettingsManager.Setup(x => x.GetDefaultExportDirectory()).Returns(@"c:\exportedlogs");
 			_userSettingsManager.Setup(x => x.GetDefaultLogsDirectory()).Returns(@"c:\mylogs");
 			_userSettingsManager.Setup(x => x.GetLoadLogsFromDefaultDirectoryAtStartup()).Returns(true);
@@ -49,6 +50,19 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			_view.Verify(x => x.LoadMaxNumberOfLogOptions(It.IsAny<List<NameValuePair>>(), "500"), Times.Once());
 		}
 
+		[Test]
+		public void ViewOnLoaded_DisplaysDefaultDateIntervalOptionsAndUsersSelectedValue()
+		{
+			// arrange
+			var presenter = new SettingsPresenter(_view.Object, _userSettingsManager.Object);
+
+			// act
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
+
+			// assert
+			_view.Verify(x => x.LoadDefaultDateIntervalOptions(It.IsAny<IEnumerable<NameValuePair>>(), DateIntervalSpanEnum.Month), Times.Once());
+		}
+		
 		[Test]
 		public void ViewOnLoaded_DisplaysDefaultExportDirectory()
 		{
@@ -101,6 +115,21 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 
 			// assert
 			_userSettingsManager.Verify(x => x.SetMaxNumberOfLogs(200), Times.Once());
+		}
+
+		[Test]
+		public void ViewOnSave_DefaultDateIntervalOption()
+		{
+			// arrange
+			var presenter = new SettingsPresenter(_view.Object, _userSettingsManager.Object);
+
+			_view.Setup(x => x.DefaultDateInterval).Returns(DateIntervalSpanEnum.Year);
+
+			// act
+			_view.Raise(x => x.OnSave += null, new EventArgs());
+
+			// assert
+			_userSettingsManager.Verify(x => x.SetDefaultDateInterval(DateIntervalSpanEnum.Year), Times.Once());
 		}
 		
 		[Test]

@@ -70,5 +70,17 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Settings {
                 this["LoadLogsFromDefaultDirectoryAtStartup"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int DefaultDateInterval {
+            get {
+                return ((int)(this["DefaultDateInterval"]));
+            }
+            set {
+                this["DefaultDateInterval"] = value;
+            }
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace ElmahLogAnalyzer.Core.Infrastructure.Settings
+﻿using ElmahLogAnalyzer.Core.Common;
+
+namespace ElmahLogAnalyzer.Core.Infrastructure.Settings
 {
 	public class SettingsManager : ISettingsManager
 	{
@@ -45,6 +47,16 @@
 		public void SetDefaultExportDirectory(string directory)
 		{
 			UserSettings.Default.DefaultExportDirectory = directory;
+		}
+
+		public DateIntervalSpanEnum GetDefaultDateInterval()
+		{
+			return (DateIntervalSpanEnum)UserSettings.Default.DefaultDateInterval;
+		}
+
+		public void SetDefaultDateInterval(DateIntervalSpanEnum interval)
+		{
+			UserSettings.Default.DefaultDateInterval = (int)interval;
 		}
 
 		public void Save()

@@ -36,6 +36,8 @@
 			this._defaultExportDirectoryTextBox = new System.Windows.Forms.TextBox();
 			this._defaultExportDirectoryLabel = new System.Windows.Forms.Label();
 			this._startupGroupBox = new System.Windows.Forms.GroupBox();
+			this._defaultDateIntervalFilterComboBox = new System.Windows.Forms.ComboBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this._loadLogsFromDefaultDirectoryAtStartupCheckBox = new System.Windows.Forms.CheckBox();
 			this._selectDefaultLogsDirectoryButton = new System.Windows.Forms.Button();
 			this._defaultLogsDirectoryTextBox = new System.Windows.Forms.TextBox();
@@ -49,10 +51,10 @@
 			// _saveButton
 			// 
 			this._saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this._saveButton.Location = new System.Drawing.Point(348, 227);
+			this._saveButton.Location = new System.Drawing.Point(348, 270);
 			this._saveButton.Name = "_saveButton";
 			this._saveButton.Size = new System.Drawing.Size(75, 23);
-			this._saveButton.TabIndex = 2;
+			this._saveButton.TabIndex = 0;
 			this._saveButton.Text = "Save";
 			this._saveButton.UseVisualStyleBackColor = true;
 			this._saveButton.Click += new System.EventHandler(this.SaveButtonClick);
@@ -60,10 +62,10 @@
 			// _cancelButton
 			// 
 			this._cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this._cancelButton.Location = new System.Drawing.Point(429, 227);
+			this._cancelButton.Location = new System.Drawing.Point(429, 270);
 			this._cancelButton.Name = "_cancelButton";
 			this._cancelButton.Size = new System.Drawing.Size(75, 23);
-			this._cancelButton.TabIndex = 3;
+			this._cancelButton.TabIndex = 1;
 			this._cancelButton.Text = "Cancel";
 			this._cancelButton.UseVisualStyleBackColor = true;
 			this._cancelButton.Click += new System.EventHandler(this.CancelButtonClick);
@@ -73,7 +75,7 @@
 			this._exportGroupBox.Controls.Add(this._selectDefaultExportDirectoryButton);
 			this._exportGroupBox.Controls.Add(this._defaultExportDirectoryTextBox);
 			this._exportGroupBox.Controls.Add(this._defaultExportDirectoryLabel);
-			this._exportGroupBox.Location = new System.Drawing.Point(13, 140);
+			this._exportGroupBox.Location = new System.Drawing.Point(10, 181);
 			this._exportGroupBox.Name = "_exportGroupBox";
 			this._exportGroupBox.Size = new System.Drawing.Size(491, 75);
 			this._exportGroupBox.TabIndex = 1;
@@ -92,9 +94,9 @@
 			// 
 			// _defaultExportDirectoryTextBox
 			// 
-			this._defaultExportDirectoryTextBox.Location = new System.Drawing.Point(131, 26);
+			this._defaultExportDirectoryTextBox.Location = new System.Drawing.Point(152, 26);
 			this._defaultExportDirectoryTextBox.Name = "_defaultExportDirectoryTextBox";
-			this._defaultExportDirectoryTextBox.Size = new System.Drawing.Size(303, 20);
+			this._defaultExportDirectoryTextBox.Size = new System.Drawing.Size(282, 20);
 			this._defaultExportDirectoryTextBox.TabIndex = 1;
 			// 
 			// _defaultExportDirectoryLabel
@@ -108,6 +110,8 @@
 			// 
 			// _startupGroupBox
 			// 
+			this._startupGroupBox.Controls.Add(this._defaultDateIntervalFilterComboBox);
+			this._startupGroupBox.Controls.Add(this.label1);
 			this._startupGroupBox.Controls.Add(this._loadLogsFromDefaultDirectoryAtStartupCheckBox);
 			this._startupGroupBox.Controls.Add(this._selectDefaultLogsDirectoryButton);
 			this._startupGroupBox.Controls.Add(this._defaultLogsDirectoryTextBox);
@@ -116,70 +120,88 @@
 			this._startupGroupBox.Controls.Add(this._maxNumberOfLogsLabel);
 			this._startupGroupBox.Location = new System.Drawing.Point(12, 12);
 			this._startupGroupBox.Name = "_startupGroupBox";
-			this._startupGroupBox.Size = new System.Drawing.Size(489, 111);
+			this._startupGroupBox.Size = new System.Drawing.Size(489, 163);
 			this._startupGroupBox.TabIndex = 0;
 			this._startupGroupBox.TabStop = false;
 			this._startupGroupBox.Text = "Startup";
 			// 
+			// _defaultDateIntervalFilterComboBox
+			// 
+			this._defaultDateIntervalFilterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._defaultDateIntervalFilterComboBox.FormattingEnabled = true;
+			this._defaultDateIntervalFilterComboBox.Location = new System.Drawing.Point(150, 29);
+			this._defaultDateIntervalFilterComboBox.Name = "_defaultDateIntervalFilterComboBox";
+			this._defaultDateIntervalFilterComboBox.Size = new System.Drawing.Size(282, 21);
+			this._defaultDateIntervalFilterComboBox.TabIndex = 1;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(7, 29);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(138, 13);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "Search filter default interval:";
+			// 
 			// _loadLogsFromDefaultDirectoryAtStartupCheckBox
 			// 
 			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.AutoSize = true;
-			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.Location = new System.Drawing.Point(132, 79);
+			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.Location = new System.Drawing.Point(150, 130);
 			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.Name = "_loadLogsFromDefaultDirectoryAtStartupCheckBox";
 			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.Size = new System.Drawing.Size(183, 17);
-			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.TabIndex = 5;
+			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.TabIndex = 7;
 			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.Text = "Load logs automatically at startup";
 			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.UseVisualStyleBackColor = true;
 			// 
 			// _selectDefaultLogsDirectoryButton
 			// 
-			this._selectDefaultLogsDirectoryButton.Location = new System.Drawing.Point(441, 52);
+			this._selectDefaultLogsDirectoryButton.Location = new System.Drawing.Point(441, 104);
 			this._selectDefaultLogsDirectoryButton.Name = "_selectDefaultLogsDirectoryButton";
 			this._selectDefaultLogsDirectoryButton.Size = new System.Drawing.Size(38, 23);
-			this._selectDefaultLogsDirectoryButton.TabIndex = 4;
+			this._selectDefaultLogsDirectoryButton.TabIndex = 6;
 			this._selectDefaultLogsDirectoryButton.Text = "...";
 			this._selectDefaultLogsDirectoryButton.UseVisualStyleBackColor = true;
 			this._selectDefaultLogsDirectoryButton.Click += new System.EventHandler(this.SelectDefaultLogsDirectoryButtonClick);
 			// 
 			// _defaultLogsDirectoryTextBox
 			// 
-			this._defaultLogsDirectoryTextBox.Location = new System.Drawing.Point(132, 52);
+			this._defaultLogsDirectoryTextBox.Location = new System.Drawing.Point(150, 104);
 			this._defaultLogsDirectoryTextBox.Name = "_defaultLogsDirectoryTextBox";
-			this._defaultLogsDirectoryTextBox.Size = new System.Drawing.Size(303, 20);
-			this._defaultLogsDirectoryTextBox.TabIndex = 3;
+			this._defaultLogsDirectoryTextBox.Size = new System.Drawing.Size(285, 20);
+			this._defaultLogsDirectoryTextBox.TabIndex = 5;
 			// 
 			// _defaultLogsDirectoryLabel
 			// 
 			this._defaultLogsDirectoryLabel.AutoSize = true;
-			this._defaultLogsDirectoryLabel.Location = new System.Drawing.Point(7, 52);
+			this._defaultLogsDirectoryLabel.Location = new System.Drawing.Point(7, 104);
 			this._defaultLogsDirectoryLabel.Name = "_defaultLogsDirectoryLabel";
 			this._defaultLogsDirectoryLabel.Size = new System.Drawing.Size(109, 13);
-			this._defaultLogsDirectoryLabel.TabIndex = 2;
+			this._defaultLogsDirectoryLabel.TabIndex = 4;
 			this._defaultLogsDirectoryLabel.Text = "Default logs directory:";
 			// 
 			// _numberOfLogsToLoadComboBox
 			// 
 			this._numberOfLogsToLoadComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this._numberOfLogsToLoadComboBox.FormattingEnabled = true;
-			this._numberOfLogsToLoadComboBox.Location = new System.Drawing.Point(150, 19);
+			this._numberOfLogsToLoadComboBox.Location = new System.Drawing.Point(150, 66);
 			this._numberOfLogsToLoadComboBox.Name = "_numberOfLogsToLoadComboBox";
 			this._numberOfLogsToLoadComboBox.Size = new System.Drawing.Size(113, 21);
-			this._numberOfLogsToLoadComboBox.TabIndex = 1;
+			this._numberOfLogsToLoadComboBox.TabIndex = 3;
 			// 
 			// _maxNumberOfLogsLabel
 			// 
 			this._maxNumberOfLogsLabel.AutoSize = true;
-			this._maxNumberOfLogsLabel.Location = new System.Drawing.Point(7, 22);
+			this._maxNumberOfLogsLabel.Location = new System.Drawing.Point(6, 69);
 			this._maxNumberOfLogsLabel.Name = "_maxNumberOfLogsLabel";
 			this._maxNumberOfLogsLabel.Size = new System.Drawing.Size(137, 13);
-			this._maxNumberOfLogsLabel.TabIndex = 0;
+			this._maxNumberOfLogsLabel.TabIndex = 2;
 			this._maxNumberOfLogsLabel.Text = "Max number of logs to load:";
 			// 
 			// SettingsForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(516, 262);
+			this.ClientSize = new System.Drawing.Size(516, 305);
 			this.Controls.Add(this._startupGroupBox);
 			this.Controls.Add(this._exportGroupBox);
 			this.Controls.Add(this._cancelButton);
@@ -216,5 +238,7 @@
 		private System.Windows.Forms.TextBox _defaultLogsDirectoryTextBox;
 		private System.Windows.Forms.Button _selectDefaultLogsDirectoryButton;
 		private System.Windows.Forms.CheckBox _loadLogsFromDefaultDirectoryAtStartupCheckBox;
+		private System.Windows.Forms.ComboBox _defaultDateIntervalFilterComboBox;
+		private System.Windows.Forms.Label label1;
 	}
 }

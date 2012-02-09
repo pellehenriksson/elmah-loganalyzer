@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
 using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Presentation;
@@ -28,6 +29,15 @@ namespace ElmahLogAnalyzer.UI.Forms
 			{
 				var option = (NameValuePair)_numberOfLogsToLoadComboBox.SelectedItem;
 				return Convert.ToInt32(option.Value);
+			}
+		}
+
+		public DateIntervalSpanEnum DefaultDateInterval
+		{
+			get
+			{
+				var option = (NameValuePair)_defaultDateIntervalFilterComboBox.SelectedItem;
+				return (DateIntervalSpanEnum)Convert.ToInt32(option.Value);
 			}
 		}
 
@@ -62,7 +72,21 @@ namespace ElmahLogAnalyzer.UI.Forms
 				}
 			}
 		}
-		
+
+		public void LoadDefaultDateIntervalOptions(IEnumerable<NameValuePair> options, DateIntervalSpanEnum selectedOption)
+		{
+			_defaultDateIntervalFilterComboBox.Items.Clear();
+
+			foreach (var option in options)
+			{
+				var index = _defaultDateIntervalFilterComboBox.Items.Add(option);
+				if (option.Value == ((int)selectedOption).ToString(CultureInfo.InvariantCulture))
+				{
+					_defaultDateIntervalFilterComboBox.SelectedIndex = index;
+				}
+			}
+		}
+
 		private void SettingsFormLoad(object sender, EventArgs e)
 		{
 			if (OnLoaded != null)

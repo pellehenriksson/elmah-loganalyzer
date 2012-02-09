@@ -1,6 +1,7 @@
 ﻿using System;
 using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Domain;
+using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 using ElmahLogAnalyzer.Core.Integrations.HttpUserAgentSearch;
 
 namespace ElmahLogAnalyzer.Core.Presentation
@@ -9,13 +10,15 @@ namespace ElmahLogAnalyzer.Core.Presentation
 	{
 		private readonly IErrorLogRepository _repository;
 		private readonly IHttpUserAgentSearchLauncherFactory _httpUserAgentSearchLauncherFactory;
+		private readonly ISettingsManager _settingsManager;
 
-		public SearchPresenter(ISearchView view, IErrorLogRepository errorLogRepository, IHttpUserAgentSearchLauncherFactory httpUserAgentSearchLauncherFactory)
+		public SearchPresenter(ISearchView view, IErrorLogRepository errorLogRepository, IHttpUserAgentSearchLauncherFactory httpUserAgentSearchLauncherFactory, ISettingsManager settingsManager)
 		{
 			View = view;
 
 			_repository = errorLogRepository;
 			_httpUserAgentSearchLauncherFactory = httpUserAgentSearchLauncherFactory;
+			_settingsManager = settingsManager;
 
 			RegisterEvents();
 		}
@@ -48,7 +51,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 		private void InitializeDateInterval()
 		{
-			var interval = DateInterval.Create(DateIntervalSpanEnum.Week, DateTime.Today);
+			var interval = DateInterval.Create(_settingsManager.GetDefaultDateInterval(), DateTime.Today);
 			View.SetDateInterval(interval);
 		}
 		

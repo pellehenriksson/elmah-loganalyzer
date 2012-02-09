@@ -1,4 +1,5 @@
 ﻿using System;
+using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 
 namespace ElmahLogAnalyzer.TestHelpers.Fakes
@@ -6,6 +7,7 @@ namespace ElmahLogAnalyzer.TestHelpers.Fakes
 	public class FakeSettingsManager : ISettingsManager
 	{
 		private int _maxNumberOfLogs;
+		private DateIntervalSpanEnum _defaultDateInterval;
 		private string _defaultExportDirectory;
 		private string _defaultLogsDirectory;
 		private bool _loadLogsFromDefaultDirectoryAtStartup;
@@ -58,6 +60,16 @@ namespace ElmahLogAnalyzer.TestHelpers.Fakes
 		public void SetDefaultExportDirectory(string directory)
 		{
 			_defaultExportDirectory = directory;
+		}
+
+		public DateIntervalSpanEnum GetDefaultDateInterval()
+		{
+			return _defaultDateInterval;
+		}
+
+		public void SetDefaultDateInterval(DateIntervalSpanEnum interval)
+		{
+			_defaultDateInterval = interval;
 		}
 
 		public void Save()

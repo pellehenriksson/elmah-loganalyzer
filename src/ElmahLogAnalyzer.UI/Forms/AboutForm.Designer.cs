@@ -45,7 +45,8 @@
 			// _closeButton
 			// 
 			this._closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this._closeButton.Location = new System.Drawing.Point(365, 223);
+			this._closeButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._closeButton.Location = new System.Drawing.Point(301, 227);
 			this._closeButton.Name = "_closeButton";
 			this._closeButton.Size = new System.Drawing.Size(75, 23);
 			this._closeButton.TabIndex = 0;
@@ -54,6 +55,8 @@
 			// 
 			// _infoLabel
 			// 
+			this._infoLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._infoLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._infoLabel.Location = new System.Drawing.Point(12, 9);
 			this._infoLabel.Name = "_infoLabel";
 			this._infoLabel.Size = new System.Drawing.Size(428, 38);
@@ -64,18 +67,21 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
+			this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(12, 65);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(133, 13);
+			this.label1.Size = new System.Drawing.Size(140, 13);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Get the latest version from:";
 			// 
 			// _updateLinkLabel
 			// 
 			this._updateLinkLabel.AutoSize = true;
+			this._updateLinkLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._updateLinkLabel.Location = new System.Drawing.Point(151, 65);
 			this._updateLinkLabel.Name = "_updateLinkLabel";
-			this._updateLinkLabel.Size = new System.Drawing.Size(220, 13);
+			this._updateLinkLabel.Size = new System.Drawing.Size(222, 13);
 			this._updateLinkLabel.TabIndex = 3;
 			this._updateLinkLabel.TabStop = true;
 			this._updateLinkLabel.Text = "http://code.google.com/p/elmah-loganalyzer";
@@ -84,16 +90,19 @@
 			// _silkLabel
 			// 
 			this._silkLabel.AutoSize = true;
+			this._silkLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._silkLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._silkLabel.Location = new System.Drawing.Point(12, 110);
 			this._silkLabel.Name = "_silkLabel";
-			this._silkLabel.Size = new System.Drawing.Size(82, 13);
+			this._silkLabel.Size = new System.Drawing.Size(81, 13);
 			this._silkLabel.TabIndex = 4;
 			this._silkLabel.Text = "Silk icon set 1.3";
 			// 
 			// _silkLinkLabel
 			// 
 			this._silkLinkLabel.AutoSize = true;
-			this._silkLinkLabel.Location = new System.Drawing.Point(120, 110);
+			this._silkLinkLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._silkLinkLabel.Location = new System.Drawing.Point(151, 110);
 			this._silkLinkLabel.Name = "_silkLinkLabel";
 			this._silkLinkLabel.Size = new System.Drawing.Size(208, 13);
 			this._silkLinkLabel.TabIndex = 5;
@@ -104,6 +113,8 @@
 			// _ninjectLabel
 			// 
 			this._ninjectLabel.AutoSize = true;
+			this._ninjectLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._ninjectLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._ninjectLabel.Location = new System.Drawing.Point(54, 136);
 			this._ninjectLabel.Name = "_ninjectLabel";
 			this._ninjectLabel.Size = new System.Drawing.Size(40, 13);
@@ -113,18 +124,21 @@
 			// _nLogLabel
 			// 
 			this._nLogLabel.AutoSize = true;
+			this._nLogLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._nLogLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._nLogLabel.Location = new System.Drawing.Point(61, 168);
 			this._nLogLabel.Name = "_nLogLabel";
-			this._nLogLabel.Size = new System.Drawing.Size(33, 13);
+			this._nLogLabel.Size = new System.Drawing.Size(31, 13);
 			this._nLogLabel.TabIndex = 7;
 			this._nLogLabel.Text = "NLog";
 			// 
 			// _ninjecLinkLabel
 			// 
 			this._ninjecLinkLabel.AutoSize = true;
-			this._ninjecLinkLabel.Location = new System.Drawing.Point(120, 136);
+			this._ninjecLinkLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._ninjecLinkLabel.Location = new System.Drawing.Point(151, 136);
 			this._ninjecLinkLabel.Name = "_ninjecLinkLabel";
-			this._ninjecLinkLabel.Size = new System.Drawing.Size(87, 13);
+			this._ninjecLinkLabel.Size = new System.Drawing.Size(91, 13);
 			this._ninjecLinkLabel.TabIndex = 8;
 			this._ninjecLinkLabel.TabStop = true;
 			this._ninjecLinkLabel.Text = "http://ninject.org";
@@ -133,9 +147,10 @@
 			// _nLogLinkLabel
 			// 
 			this._nLogLinkLabel.AutoSize = true;
-			this._nLogLinkLabel.Location = new System.Drawing.Point(120, 168);
+			this._nLogLinkLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._nLogLinkLabel.Location = new System.Drawing.Point(151, 168);
 			this._nLogLinkLabel.Name = "_nLogLinkLabel";
-			this._nLogLinkLabel.Size = new System.Drawing.Size(111, 13);
+			this._nLogLinkLabel.Size = new System.Drawing.Size(117, 13);
 			this._nLogLinkLabel.TabIndex = 9;
 			this._nLogLinkLabel.TabStop = true;
 			this._nLogLinkLabel.Text = "http://nlog-project.org";
@@ -144,18 +159,21 @@
 			// _dapperLabel
 			// 
 			this._dapperLabel.AutoSize = true;
+			this._dapperLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._dapperLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._dapperLabel.Location = new System.Drawing.Point(18, 196);
 			this._dapperLabel.Name = "_dapperLabel";
-			this._dapperLabel.Size = new System.Drawing.Size(76, 13);
+			this._dapperLabel.Size = new System.Drawing.Size(81, 13);
 			this._dapperLabel.TabIndex = 10;
 			this._dapperLabel.Text = "dapper-dot-net";
 			// 
 			// _dapperLinkLabel
 			// 
 			this._dapperLinkLabel.AutoSize = true;
-			this._dapperLinkLabel.Location = new System.Drawing.Point(120, 196);
+			this._dapperLinkLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._dapperLinkLabel.Location = new System.Drawing.Point(151, 196);
 			this._dapperLinkLabel.Name = "_dapperLinkLabel";
-			this._dapperLinkLabel.Size = new System.Drawing.Size(210, 13);
+			this._dapperLinkLabel.Size = new System.Drawing.Size(213, 13);
 			this._dapperLinkLabel.TabIndex = 11;
 			this._dapperLinkLabel.TabStop = true;
 			this._dapperLinkLabel.Text = "http://code.google.com/p/dapper-dot-net/";
@@ -165,7 +183,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(452, 258);
+			this.ClientSize = new System.Drawing.Size(388, 262);
 			this.Controls.Add(this._dapperLinkLabel);
 			this.Controls.Add(this._dapperLabel);
 			this.Controls.Add(this._nLogLinkLabel);
@@ -178,6 +196,7 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this._infoLabel);
 			this.Controls.Add(this._closeButton);
+			this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;

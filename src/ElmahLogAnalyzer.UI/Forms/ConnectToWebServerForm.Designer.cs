@@ -48,6 +48,7 @@
 			// _cancelButton
 			// 
 			this._cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this._cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._cancelButton.Location = new System.Drawing.Point(414, 226);
 			this._cancelButton.Name = "_cancelButton";
 			this._cancelButton.Size = new System.Drawing.Size(75, 23);
@@ -59,6 +60,7 @@
 			// _connectButton
 			// 
 			this._connectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this._connectButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._connectButton.Location = new System.Drawing.Point(333, 226);
 			this._connectButton.Name = "_connectButton";
 			this._connectButton.Size = new System.Drawing.Size(75, 23);
@@ -70,24 +72,27 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
+			this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.label1.Location = new System.Drawing.Point(12, 18);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(55, 13);
+			this.label1.Size = new System.Drawing.Size(58, 13);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Server url:";
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
+			this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.label2.Location = new System.Drawing.Point(86, 41);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(218, 13);
+			this.label2.Size = new System.Drawing.Size(223, 13);
 			this.label2.TabIndex = 2;
 			this.label2.Text = "Example: http://www.myapp.com/elmah.axd";
 			// 
 			// _errorGroupBox
 			// 
 			this._errorGroupBox.Controls.Add(this._errorMessageLabel);
+			this._errorGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._errorGroupBox.Location = new System.Drawing.Point(89, 153);
 			this._errorGroupBox.Name = "_errorGroupBox";
 			this._errorGroupBox.Size = new System.Drawing.Size(400, 66);
@@ -98,17 +103,19 @@
 			// _errorMessageLabel
 			// 
 			this._errorMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._errorMessageLabel.Location = new System.Drawing.Point(3, 16);
+			this._errorMessageLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._errorMessageLabel.Location = new System.Drawing.Point(3, 17);
 			this._errorMessageLabel.Name = "_errorMessageLabel";
-			this._errorMessageLabel.Size = new System.Drawing.Size(394, 47);
+			this._errorMessageLabel.Size = new System.Drawing.Size(394, 46);
 			this._errorMessageLabel.TabIndex = 0;
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
+			this.label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.label3.Location = new System.Drawing.Point(15, 75);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(61, 13);
+			this.label3.Size = new System.Drawing.Size(62, 13);
 			this.label3.TabIndex = 3;
 			this.label3.Text = "User name:";
 			// 
@@ -116,7 +123,7 @@
 			// 
 			this._userNameTextBox.Location = new System.Drawing.Point(89, 75);
 			this._userNameTextBox.Name = "_userNameTextBox";
-			this._userNameTextBox.Size = new System.Drawing.Size(259, 20);
+			this._userNameTextBox.Size = new System.Drawing.Size(259, 21);
 			this._userNameTextBox.TabIndex = 4;
 			// 
 			// _passwordTextBox
@@ -124,15 +131,16 @@
 			this._passwordTextBox.Location = new System.Drawing.Point(89, 101);
 			this._passwordTextBox.Name = "_passwordTextBox";
 			this._passwordTextBox.PasswordChar = '*';
-			this._passwordTextBox.Size = new System.Drawing.Size(259, 20);
+			this._passwordTextBox.Size = new System.Drawing.Size(259, 21);
 			this._passwordTextBox.TabIndex = 6;
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
+			this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.label4.Location = new System.Drawing.Point(15, 104);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(56, 13);
+			this.label4.Size = new System.Drawing.Size(57, 13);
 			this.label4.TabIndex = 5;
 			this.label4.Text = "Password:";
 			// 
@@ -140,12 +148,13 @@
 			// 
 			this._domainTextBox.Location = new System.Drawing.Point(89, 127);
 			this._domainTextBox.Name = "_domainTextBox";
-			this._domainTextBox.Size = new System.Drawing.Size(259, 20);
+			this._domainTextBox.Size = new System.Drawing.Size(259, 21);
 			this._domainTextBox.TabIndex = 8;
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
+			this.label5.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.label5.Location = new System.Drawing.Point(15, 130);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(46, 13);
@@ -154,6 +163,7 @@
 			// 
 			// label6
 			// 
+			this.label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.label6.Location = new System.Drawing.Point(358, 88);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(131, 46);
@@ -186,6 +196,7 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this._cancelButton);
 			this.Controls.Add(this._connectButton);
+			this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;

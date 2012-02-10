@@ -51,10 +51,11 @@
 			// _saveButton
 			// 
 			this._saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this._saveButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._saveButton.Location = new System.Drawing.Point(348, 270);
 			this._saveButton.Name = "_saveButton";
 			this._saveButton.Size = new System.Drawing.Size(75, 23);
-			this._saveButton.TabIndex = 0;
+			this._saveButton.TabIndex = 2;
 			this._saveButton.Text = "Save";
 			this._saveButton.UseVisualStyleBackColor = true;
 			this._saveButton.Click += new System.EventHandler(this.SaveButtonClick);
@@ -62,10 +63,11 @@
 			// _cancelButton
 			// 
 			this._cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this._cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._cancelButton.Location = new System.Drawing.Point(429, 270);
 			this._cancelButton.Name = "_cancelButton";
 			this._cancelButton.Size = new System.Drawing.Size(75, 23);
-			this._cancelButton.TabIndex = 1;
+			this._cancelButton.TabIndex = 3;
 			this._cancelButton.Text = "Cancel";
 			this._cancelButton.UseVisualStyleBackColor = true;
 			this._cancelButton.Click += new System.EventHandler(this.CancelButtonClick);
@@ -75,6 +77,8 @@
 			this._exportGroupBox.Controls.Add(this._selectDefaultExportDirectoryButton);
 			this._exportGroupBox.Controls.Add(this._defaultExportDirectoryTextBox);
 			this._exportGroupBox.Controls.Add(this._defaultExportDirectoryLabel);
+			this._exportGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._exportGroupBox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._exportGroupBox.Location = new System.Drawing.Point(10, 181);
 			this._exportGroupBox.Name = "_exportGroupBox";
 			this._exportGroupBox.Size = new System.Drawing.Size(491, 75);
@@ -84,6 +88,7 @@
 			// 
 			// _selectDefaultExportDirectoryButton
 			// 
+			this._selectDefaultExportDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._selectDefaultExportDirectoryButton.Location = new System.Drawing.Point(440, 26);
 			this._selectDefaultExportDirectoryButton.Name = "_selectDefaultExportDirectoryButton";
 			this._selectDefaultExportDirectoryButton.Size = new System.Drawing.Size(38, 23);
@@ -96,15 +101,16 @@
 			// 
 			this._defaultExportDirectoryTextBox.Location = new System.Drawing.Point(152, 26);
 			this._defaultExportDirectoryTextBox.Name = "_defaultExportDirectoryTextBox";
-			this._defaultExportDirectoryTextBox.Size = new System.Drawing.Size(282, 20);
+			this._defaultExportDirectoryTextBox.Size = new System.Drawing.Size(282, 21);
 			this._defaultExportDirectoryTextBox.TabIndex = 1;
 			// 
 			// _defaultExportDirectoryLabel
 			// 
 			this._defaultExportDirectoryLabel.AutoSize = true;
+			this._defaultExportDirectoryLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._defaultExportDirectoryLabel.Location = new System.Drawing.Point(6, 26);
 			this._defaultExportDirectoryLabel.Name = "_defaultExportDirectoryLabel";
-			this._defaultExportDirectoryLabel.Size = new System.Drawing.Size(119, 13);
+			this._defaultExportDirectoryLabel.Size = new System.Drawing.Size(127, 13);
 			this._defaultExportDirectoryLabel.TabIndex = 0;
 			this._defaultExportDirectoryLabel.Text = "Default export directory:";
 			// 
@@ -118,6 +124,8 @@
 			this._startupGroupBox.Controls.Add(this._defaultLogsDirectoryLabel);
 			this._startupGroupBox.Controls.Add(this._numberOfLogsToLoadComboBox);
 			this._startupGroupBox.Controls.Add(this._maxNumberOfLogsLabel);
+			this._startupGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._startupGroupBox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._startupGroupBox.Location = new System.Drawing.Point(12, 12);
 			this._startupGroupBox.Name = "_startupGroupBox";
 			this._startupGroupBox.Size = new System.Drawing.Size(489, 163);
@@ -128,6 +136,7 @@
 			// _defaultDateIntervalFilterComboBox
 			// 
 			this._defaultDateIntervalFilterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._defaultDateIntervalFilterComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._defaultDateIntervalFilterComboBox.FormattingEnabled = true;
 			this._defaultDateIntervalFilterComboBox.Location = new System.Drawing.Point(150, 29);
 			this._defaultDateIntervalFilterComboBox.Name = "_defaultDateIntervalFilterComboBox";
@@ -137,24 +146,27 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
+			this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.label1.Location = new System.Drawing.Point(7, 29);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(138, 13);
+			this.label1.Size = new System.Drawing.Size(145, 13);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Search filter default interval:";
 			// 
 			// _loadLogsFromDefaultDirectoryAtStartupCheckBox
 			// 
 			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.AutoSize = true;
+			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.Location = new System.Drawing.Point(150, 130);
 			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.Name = "_loadLogsFromDefaultDirectoryAtStartupCheckBox";
-			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.Size = new System.Drawing.Size(183, 17);
+			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.Size = new System.Drawing.Size(194, 18);
 			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.TabIndex = 7;
 			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.Text = "Load logs automatically at startup";
 			this._loadLogsFromDefaultDirectoryAtStartupCheckBox.UseVisualStyleBackColor = true;
 			// 
 			// _selectDefaultLogsDirectoryButton
 			// 
+			this._selectDefaultLogsDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._selectDefaultLogsDirectoryButton.Location = new System.Drawing.Point(441, 104);
 			this._selectDefaultLogsDirectoryButton.Name = "_selectDefaultLogsDirectoryButton";
 			this._selectDefaultLogsDirectoryButton.Size = new System.Drawing.Size(38, 23);
@@ -167,21 +179,23 @@
 			// 
 			this._defaultLogsDirectoryTextBox.Location = new System.Drawing.Point(150, 104);
 			this._defaultLogsDirectoryTextBox.Name = "_defaultLogsDirectoryTextBox";
-			this._defaultLogsDirectoryTextBox.Size = new System.Drawing.Size(285, 20);
+			this._defaultLogsDirectoryTextBox.Size = new System.Drawing.Size(285, 21);
 			this._defaultLogsDirectoryTextBox.TabIndex = 5;
 			// 
 			// _defaultLogsDirectoryLabel
 			// 
 			this._defaultLogsDirectoryLabel.AutoSize = true;
+			this._defaultLogsDirectoryLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._defaultLogsDirectoryLabel.Location = new System.Drawing.Point(7, 104);
 			this._defaultLogsDirectoryLabel.Name = "_defaultLogsDirectoryLabel";
-			this._defaultLogsDirectoryLabel.Size = new System.Drawing.Size(109, 13);
+			this._defaultLogsDirectoryLabel.Size = new System.Drawing.Size(114, 13);
 			this._defaultLogsDirectoryLabel.TabIndex = 4;
 			this._defaultLogsDirectoryLabel.Text = "Default logs directory:";
 			// 
 			// _numberOfLogsToLoadComboBox
 			// 
 			this._numberOfLogsToLoadComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._numberOfLogsToLoadComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._numberOfLogsToLoadComboBox.FormattingEnabled = true;
 			this._numberOfLogsToLoadComboBox.Location = new System.Drawing.Point(150, 66);
 			this._numberOfLogsToLoadComboBox.Name = "_numberOfLogsToLoadComboBox";
@@ -191,9 +205,10 @@
 			// _maxNumberOfLogsLabel
 			// 
 			this._maxNumberOfLogsLabel.AutoSize = true;
+			this._maxNumberOfLogsLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._maxNumberOfLogsLabel.Location = new System.Drawing.Point(6, 69);
 			this._maxNumberOfLogsLabel.Name = "_maxNumberOfLogsLabel";
-			this._maxNumberOfLogsLabel.Size = new System.Drawing.Size(137, 13);
+			this._maxNumberOfLogsLabel.Size = new System.Drawing.Size(141, 13);
 			this._maxNumberOfLogsLabel.TabIndex = 2;
 			this._maxNumberOfLogsLabel.Text = "Max number of logs to load:";
 			// 
@@ -206,6 +221,7 @@
 			this.Controls.Add(this._exportGroupBox);
 			this.Controls.Add(this._cancelButton);
 			this.Controls.Add(this._saveButton);
+			this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;

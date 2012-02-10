@@ -42,6 +42,7 @@
 			// _modeComboBox
 			// 
 			this._modeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._modeComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._modeComboBox.FormattingEnabled = true;
 			this._modeComboBox.Location = new System.Drawing.Point(3, 3);
 			this._modeComboBox.Name = "_modeComboBox";
@@ -51,7 +52,8 @@
 			// _allButton
 			// 
 			this._allButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this._allButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._allButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._allButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._allButton.Location = new System.Drawing.Point(3, 160);
 			this._allButton.Name = "_allButton";
 			this._allButton.Size = new System.Drawing.Size(46, 25);
@@ -63,7 +65,8 @@
 			// _noneButton
 			// 
 			this._noneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this._noneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._noneButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._noneButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._noneButton.Location = new System.Drawing.Point(55, 160);
 			this._noneButton.Name = "_noneButton";
 			this._noneButton.Size = new System.Drawing.Size(45, 25);
@@ -117,6 +120,7 @@
 			this.Controls.Add(this._noneButton);
 			this.Controls.Add(this._allButton);
 			this.Controls.Add(this._modeComboBox);
+			this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Name = "SelectorView";
 			this.Size = new System.Drawing.Size(234, 187);
 			this._itemsListContextMenu.ResumeLayout(false);

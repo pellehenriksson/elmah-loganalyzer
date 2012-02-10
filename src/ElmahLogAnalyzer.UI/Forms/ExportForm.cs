@@ -56,9 +56,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		private void SetInfoText()
 		{
-			_infoLabel.Text = @"This will export all logs currently loaded, into a SQL Server CE 4.0 database. 
-								The database will be named ElmahLogAnalyzer_Dump.sdf and places in the directory below.
-								You can use a tool like LINQPad to query the database.";
+			_infoLabel.Text = @"This will export all logs currently loaded, into a SQL Server CE 4.0 database. The database will be named ElmahLogAnalyzer_Dump.sdf and places in the directory below. You can use a tool like LINQPad to query the database.";
 		}
 		
 		private void ExportButtonClick(object sender, EventArgs e)

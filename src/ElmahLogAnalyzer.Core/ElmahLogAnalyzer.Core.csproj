@@ -111,6 +111,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Domain\Export\SqlCeDatabaseCreator.cs" />
+    <Compile Include="Domain\SqlServerErrorLogSource.cs" />
     <Compile Include="Infrastructure\Configuration\IWebServerConnectionsHelper.cs" />
     <Compile Include="Infrastructure\Configuration\WebServerConnectionElement.cs" />
     <Compile Include="Infrastructure\Configuration\WebServerConnectionElementCollection.cs" />

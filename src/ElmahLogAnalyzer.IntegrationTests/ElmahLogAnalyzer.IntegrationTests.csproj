@@ -83,6 +83,7 @@
     <Compile Include="Domain\Export\ErrorLogExporterTests.cs" />
     <Compile Include="Domain\Export\SqlCeDatabaseCreatorTests.cs" />
     <Compile Include="Domain\FileErrorLogSourceTests.cs" />
+    <Compile Include="Domain\SqlServerErrorLogSourceTests.cs" />
     <Compile Include="Infrastructure\Cache\CacheHelperTests.cs" />
     <Compile Include="Infrastructure\Configuration\WebServerConnectionsHelperTests.cs" />
     <Compile Include="Infrastructure\FileSystem\FileSystemHelperTests.cs" />

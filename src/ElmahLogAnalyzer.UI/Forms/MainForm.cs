@@ -19,13 +19,17 @@ namespace ElmahLogAnalyzer.UI.Forms
 		public MainForm()
 		{
 			InitializeComponent();
+
+			_showExportButton.Click += (sender, args) => OnRequestExportDialog(this, EventArgs.Empty);
+			_showSettingsViewButton.Click += (sender, args) => OnRequestSettingsDialog(this, EventArgs.Empty);
+			_showAboutButton.Click += (sender, args) => OnRequestAboutDialog(this, EventArgs.Empty);
 			
 			_settingsManager = ServiceLocator.Resolve<ISettingsManager>();
 			_repository = ServiceLocator.Resolve<IErrorLogRepository>();
 			
 			_repository.OnInitialized += RepositoryOnInitialized;
 			
-			DisplaySettings();
+			ShowDisplaySettings();
 			DisplayApplicationVersion();
 
 		    var directory = Environment.GetCommandLineArgs()
@@ -45,14 +49,38 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		    HandleLoadingFromDirectory(directory);
 		}
-	
+
+		public event EventHandler OnRequestExportDialog;
+
+		public event EventHandler OnRequestSettingsDialog;
+
+		public event EventHandler OnRequestAboutDialog;
+
+		public void ShowView(UserControl view)
+		{
+			_mainPanel.Controls.Clear();
+			_mainPanel.Controls.Add(view);
+			view.Dock = DockStyle.Fill;
+		}
+
+		public DialogResult ShowDialog(Form dialog)
+		{
+			dialog.ShowDialog(this);
+			return dialog.DialogResult;
+		}
+
+		public void ShowDisplaySettings()
+		{
+			_settingsStripStatusLabel.Text = _settingsManager.ShouldGetAllLogs ? "Settings: All logs" : string.Format("Settings: {0} latest logs", _settingsManager.GetMaxNumberOfLogs());
+		}
+
 		private void SetLoadingState()
 		{
 			_showSearchViewButton.Enabled = false;
 			_showReportViewButton.Enabled = false;
 			_selectDirectoryButton.Enabled = false;
 			_selectServerButton.Enabled = false;
-			_exportButton.Enabled = false;
+			_showExportButton.Enabled = false;
 			_showSettingsViewButton.Enabled = false;
 
 			LoadView(new LoadingView());
@@ -62,7 +90,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		{
 			_showSearchViewButton.Enabled = true;
 			_showReportViewButton.Enabled = true;
-			_exportButton.Enabled = true;
+			_showExportButton.Enabled = true;
 			_selectDirectoryButton.Enabled = true;
 			_selectServerButton.Enabled = true;
 			_showSettingsViewButton.Enabled = true;
@@ -74,7 +102,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		{
 			_showSearchViewButton.Enabled = false;
 			_showReportViewButton.Enabled = false;
-			_exportButton.Enabled = false;
+			_showExportButton.Enabled = false;
 			_selectDirectoryButton.Enabled = true;
 			_selectServerButton.Enabled = true;
 			_showSettingsViewButton.Enabled = true;
@@ -153,11 +181,6 @@ namespace ElmahLogAnalyzer.UI.Forms
 			_versionStripStatusLabel.Text = string.Format("Build: {0} ({1})", Application.ProductVersion, GetType().Assembly.GetTypeOfBuild());
 		}
 		
-		private void DisplaySettings()
-		{
-			_settingsStripStatusLabel.Text = _settingsManager.ShouldGetAllLogs ? "Settings: All logs" : string.Format("Settings: {0} latest logs", _settingsManager.GetMaxNumberOfLogs());
-		}
-
 		private void SelectDirectoryButtonClick(object sender, EventArgs e)
 		{
 			_folderBrowserDialog.SelectedPath = _repository.Directory ?? _settingsManager.GetDefaultLogsDirectory();
@@ -188,22 +211,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 			var presenter = ServiceLocator.Resolve<ReportPresenter>();
 			LoadView(presenter.View as Control);
 		}
-
-		private void ShowSettingsViewButtonClick(object sender, EventArgs e)
-		{
-			var presenter = ServiceLocator.Resolve<SettingsPresenter>();
-			var view = presenter.View as Form;
-			view.ShowDialog(this);
-
-			DisplaySettings();
-		}
-
-		private void ShowAboutButtonClick(object sender, EventArgs e)
-		{
-			var view = new AboutForm();
-			view.ShowDialog(this);
-		}
-
+		
 		private void SelectServerButtonClick(object sender, EventArgs e)
 		{
 			var presenter = ServiceLocator.Resolve<ConnectToWebServerPresenter>();
@@ -215,13 +223,6 @@ namespace ElmahLogAnalyzer.UI.Forms
 				var connection = presenter.Connnection;
 				HandleDownloadingLogs(connection);
 			}
-		}
-
-		private void ExportButtonClick(object sender, EventArgs e)
-		{
-			var presenter = ServiceLocator.Resolve<ExportPresenter>();
-			var view = presenter.View as Form;
-			var dialogResult = view.ShowDialog(this);
 		}
 	}
 }

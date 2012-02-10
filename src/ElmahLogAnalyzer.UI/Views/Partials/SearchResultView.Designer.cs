@@ -75,8 +75,8 @@
 			// _numberOfResultsLabel
 			// 
 			this._numberOfResultsLabel.AutoSize = true;
-			this._numberOfResultsLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this._numberOfResultsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._numberOfResultsLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._numberOfResultsLabel.Location = new System.Drawing.Point(3, 294);
 			this._numberOfResultsLabel.Name = "_numberOfResultsLabel";
 			this._numberOfResultsLabel.Size = new System.Drawing.Size(211, 20);

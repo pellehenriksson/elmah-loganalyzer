@@ -57,36 +57,26 @@
 			this._mainStatusStrip.Name = "_mainStatusStrip";
 			this._mainStatusStrip.Size = new System.Drawing.Size(1358, 22);
 			this._mainStatusStrip.TabIndex = 0;
-			this._mainStatusStrip.Text = "statusStrip1";
 			// 
 			// _directoryToolStripStatusLabel
 			// 
-			this._directoryToolStripStatusLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this._directoryToolStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this._directoryToolStripStatusLabel.Name = "_directoryToolStripStatusLabel";
-			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(1231, 17);
+			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(1200, 17);
 			this._directoryToolStripStatusLabel.Spring = true;
 			this._directoryToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// _settingsStripStatusLabel
 			// 
-			this._settingsStripStatusLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this._settingsStripStatusLabel.Name = "_settingsStripStatusLabel";
-			this._settingsStripStatusLabel.Size = new System.Drawing.Size(58, 17);
+			this._settingsStripStatusLabel.Size = new System.Drawing.Size(54, 17);
 			this._settingsStripStatusLabel.Text = "[Settings]";
 			// 
 			// _versionStripStatusLabel
 			// 
-			this._versionStripStatusLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this._versionStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this._versionStripStatusLabel.Name = "_versionStripStatusLabel";
-			this._versionStripStatusLabel.Size = new System.Drawing.Size(54, 17);
+			this._versionStripStatusLabel.Size = new System.Drawing.Size(50, 17);
 			this._versionStripStatusLabel.Text = "[Version]";
 			this._versionStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
@@ -166,7 +156,7 @@
 			// 
 			this._showExportButton.Image = ((System.Drawing.Image)(resources.GetObject("_showExportButton.Image")));
 			this._showExportButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._showExportButton.Name = "_exportButton";
+			this._showExportButton.Name = "_showExportButton";
 			this._showExportButton.Size = new System.Drawing.Size(59, 22);
 			this._showExportButton.Text = "E&xport";
 			// 

@@ -1,8 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
-using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 using ElmahLogAnalyzer.TestHelpers.Fakes;
 
 namespace ElmahLogAnalyzer.IntegrationTests

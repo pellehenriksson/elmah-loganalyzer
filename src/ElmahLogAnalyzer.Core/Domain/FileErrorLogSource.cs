@@ -23,9 +23,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 			_settingsManager = settingsManager;
 			_log = log;
 		}
-
-		public string Path { get; private set; }
-
+		
 		public List<ErrorLog> GetLogs(string directory)
 		{
 			if (!_fileSystemHelper.DirectoryExists(directory))

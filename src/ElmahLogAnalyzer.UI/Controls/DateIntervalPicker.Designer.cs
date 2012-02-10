@@ -37,6 +37,7 @@
 			// _toLabel
 			// 
 			this._toLabel.AutoSize = true;
+			this._toLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._toLabel.Location = new System.Drawing.Point(158, 12);
 			this._toLabel.Name = "_toLabel";
 			this._toLabel.Size = new System.Drawing.Size(23, 13);
@@ -46,9 +47,10 @@
 			// _fromLabel
 			// 
 			this._fromLabel.AutoSize = true;
+			this._fromLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._fromLabel.Location = new System.Drawing.Point(7, 11);
 			this._fromLabel.Name = "_fromLabel";
-			this._fromLabel.Size = new System.Drawing.Size(33, 13);
+			this._fromLabel.Size = new System.Drawing.Size(35, 13);
 			this._fromLabel.TabIndex = 0;
 			this._fromLabel.Text = "From:";
 			// 
@@ -57,7 +59,7 @@
 			this._endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this._endDateTimePicker.Location = new System.Drawing.Point(187, 12);
 			this._endDateTimePicker.Name = "_endDateTimePicker";
-			this._endDateTimePicker.Size = new System.Drawing.Size(105, 20);
+			this._endDateTimePicker.Size = new System.Drawing.Size(105, 21);
 			this._endDateTimePicker.TabIndex = 3;
 			// 
 			// _startDateTimePicker
@@ -65,10 +67,10 @@
 			this._startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this._startDateTimePicker.Location = new System.Drawing.Point(46, 11);
 			this._startDateTimePicker.Name = "_startDateTimePicker";
-			this._startDateTimePicker.Size = new System.Drawing.Size(105, 20);
+			this._startDateTimePicker.Size = new System.Drawing.Size(105, 21);
 			this._startDateTimePicker.TabIndex = 1;
 			// 
-			// DateIntervalView
+			// DateIntervalPicker
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -76,7 +78,8 @@
 			this.Controls.Add(this._fromLabel);
 			this.Controls.Add(this._endDateTimePicker);
 			this.Controls.Add(this._startDateTimePicker);
-			this.Name = "DateIntervalView";
+			this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Name = "DateIntervalPicker";
 			this.Size = new System.Drawing.Size(300, 37);
 			this.ResumeLayout(false);
 			this.PerformLayout();

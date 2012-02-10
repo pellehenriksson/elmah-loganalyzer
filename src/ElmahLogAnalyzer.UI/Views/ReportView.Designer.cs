@@ -54,6 +54,7 @@ namespace ElmahLogAnalyzer.UI.Views
 			// _selectionView
 			// 
 			this._selectionView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._selectionView.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._selectionView.Location = new System.Drawing.Point(3, 3);
 			this._selectionView.Name = "_selectionView";
 			this._selectionView.Size = new System.Drawing.Size(1049, 49);
@@ -62,6 +63,7 @@ namespace ElmahLogAnalyzer.UI.Views
 			// _chartView
 			// 
 			this._chartView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._chartView.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._chartView.Location = new System.Drawing.Point(3, 58);
 			this._chartView.Name = "_chartView";
 			this._chartView.Size = new System.Drawing.Size(1049, 548);

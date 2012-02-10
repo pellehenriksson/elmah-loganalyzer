@@ -41,6 +41,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// _reportsComboBox
 			// 
 			this._reportsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._reportsComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._reportsComboBox.FormattingEnabled = true;
 			this._reportsComboBox.Location = new System.Drawing.Point(357, 16);
 			this._reportsComboBox.Name = "_reportsComboBox";
@@ -50,14 +51,16 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// label1
 			// 
 			this.label1.AutoSize = true;
+			this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.label1.Location = new System.Drawing.Point(309, 16);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(42, 13);
+			this.label1.Size = new System.Drawing.Size(44, 13);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Report:";
 			// 
 			// _showButton
 			// 
+			this._showButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._showButton.Location = new System.Drawing.Point(990, 14);
 			this._showButton.Name = "_showButton";
 			this._showButton.Size = new System.Drawing.Size(75, 23);
@@ -76,6 +79,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// _numberOfResultsComboBox
 			// 
 			this._numberOfResultsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._numberOfResultsComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._numberOfResultsComboBox.FormattingEnabled = true;
 			this._numberOfResultsComboBox.Location = new System.Drawing.Point(854, 16);
 			this._numberOfResultsComboBox.Name = "_numberOfResultsComboBox";
@@ -85,9 +89,10 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// label2
 			// 
 			this.label2.AutoSize = true;
+			this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.label2.Location = new System.Drawing.Point(754, 16);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(92, 13);
+			this.label2.Size = new System.Drawing.Size(96, 13);
 			this.label2.TabIndex = 5;
 			this.label2.Text = "Number of results:";
 			// 
@@ -101,6 +106,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this.Controls.Add(this._showButton);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this._reportsComboBox);
+			this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Name = "ReportSelectionView";
 			this.Size = new System.Drawing.Size(1088, 49);
 			this.ResumeLayout(false);

@@ -194,6 +194,7 @@
 			this.Controls.Add(this._mainPanel);
 			this.Controls.Add(this._mainToolStrip);
 			this.Controls.Add(this._mainStatusStrip);
+			this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Name = "MainForm";
 			this.Text = "ELMAH Log Analyzer";
 			this._mainStatusStrip.ResumeLayout(false);

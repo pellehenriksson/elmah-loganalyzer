@@ -40,7 +40,7 @@
 			this._showReportViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showAboutButton = new System.Windows.Forms.ToolStripButton();
 			this._showSettingsViewButton = new System.Windows.Forms.ToolStripButton();
-			this._exportButton = new System.Windows.Forms.ToolStripButton();
+			this._showExportButton = new System.Windows.Forms.ToolStripButton();
 			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
 			this._mainPanel = new System.Windows.Forms.Panel();
 			this._mainStatusStrip.SuspendLayout();
@@ -99,7 +99,7 @@
             this._showReportViewButton,
             this._showAboutButton,
             this._showSettingsViewButton,
-            this._exportButton});
+            this._showExportButton});
 			this._mainToolStrip.Location = new System.Drawing.Point(0, 0);
 			this._mainToolStrip.Name = "_mainToolStrip";
 			this._mainToolStrip.Size = new System.Drawing.Size(1358, 25);
@@ -151,7 +151,6 @@
 			this._showAboutButton.Name = "_showAboutButton";
 			this._showAboutButton.Size = new System.Drawing.Size(56, 22);
 			this._showAboutButton.Text = "About";
-			this._showAboutButton.Click += new System.EventHandler(this.ShowAboutButtonClick);
 			// 
 			// _showSettingsViewButton
 			// 
@@ -162,16 +161,14 @@
 			this._showSettingsViewButton.Size = new System.Drawing.Size(66, 22);
 			this._showSettingsViewButton.Text = "S&ettings";
 			this._showSettingsViewButton.ToolTipText = "Change settings";
-			this._showSettingsViewButton.Click += new System.EventHandler(this.ShowSettingsViewButtonClick);
 			// 
-			// _exportButton
+			// _showExportButton
 			// 
-			this._exportButton.Image = ((System.Drawing.Image)(resources.GetObject("_exportButton.Image")));
-			this._exportButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._exportButton.Name = "_exportButton";
-			this._exportButton.Size = new System.Drawing.Size(59, 22);
-			this._exportButton.Text = "E&xport";
-			this._exportButton.Click += new System.EventHandler(this.ExportButtonClick);
+			this._showExportButton.Image = ((System.Drawing.Image)(resources.GetObject("_showExportButton.Image")));
+			this._showExportButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._showExportButton.Name = "_exportButton";
+			this._showExportButton.Size = new System.Drawing.Size(59, 22);
+			this._showExportButton.Text = "E&xport";
 			// 
 			// _folderBrowserDialog
 			// 
@@ -227,6 +224,6 @@
 		private System.Windows.Forms.ToolStripButton _showAboutButton;
 		private System.Windows.Forms.ToolStripButton _selectServerButton;
 		private System.Windows.Forms.ToolStripStatusLabel _settingsStripStatusLabel;
-		private System.Windows.Forms.ToolStripButton _exportButton;
+		private System.Windows.Forms.ToolStripButton _showExportButton;
 	}
 }

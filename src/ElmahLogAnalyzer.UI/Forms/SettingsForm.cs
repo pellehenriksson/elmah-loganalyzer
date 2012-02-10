@@ -102,11 +102,13 @@ namespace ElmahLogAnalyzer.UI.Forms
 				OnSave(this, new EventArgs());
 			}
 
+			DialogResult = DialogResult.OK;
 			Close();
 		}
 
 		private void CancelButtonClick(object sender, EventArgs e)
 		{
+			DialogResult = DialogResult.Cancel;
 			Close();
 		}
 		

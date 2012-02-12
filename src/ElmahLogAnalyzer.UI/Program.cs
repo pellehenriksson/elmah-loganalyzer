@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Infrastructure.Dependencies;
 using ElmahLogAnalyzer.Core.Presentation;
 using ElmahLogAnalyzer.UI.Forms;
@@ -15,6 +16,26 @@ namespace ElmahLogAnalyzer.UI
 			Application.SetCompatibleTextRenderingDefault(false);
 
 			var main = ServiceLocator.Resolve<MainForm>();
+
+			main.OnRequestConnectToDatabaseDialog += (sender, args) =>
+			{
+				var presenter = ServiceLocator.Resolve<ConnectToDatabasePresenter>();
+				var view = presenter.View as Form;
+				var result = main.ShowDialog(view);
+
+				if (result == DialogResult.OK)
+				{
+					var settings = (IConnectToDatabase)view;
+					var connectionstring = ConnectionStringBuilder.Build(settings);
+					
+					// build connection string
+					// resolve correct IDataSource
+
+					// show some kind of loading screen
+					// load view
+					// handle exceptions
+				}
+			};
 
 			main.OnRequestExportDialog += (sender, args) =>
 			{

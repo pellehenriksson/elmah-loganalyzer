@@ -30,17 +30,17 @@
 		{
 			this._cancelButton = new System.Windows.Forms.Button();
 			this._connectButton = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
+			this._serverLabel = new System.Windows.Forms.Label();
+			this._serverSampleLabel = new System.Windows.Forms.Label();
 			this._errorGroupBox = new System.Windows.Forms.GroupBox();
 			this._errorMessageLabel = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
+			this._usernameLabel = new System.Windows.Forms.Label();
 			this._userNameTextBox = new System.Windows.Forms.TextBox();
 			this._passwordTextBox = new System.Windows.Forms.TextBox();
-			this.label4 = new System.Windows.Forms.Label();
+			this._passwordLabel = new System.Windows.Forms.Label();
 			this._domainTextBox = new System.Windows.Forms.TextBox();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
+			this._domainLabel = new System.Windows.Forms.Label();
+			this._credentialsInfoLabel = new System.Windows.Forms.Label();
 			this._urlComboBox = new System.Windows.Forms.ComboBox();
 			this._errorGroupBox.SuspendLayout();
 			this.SuspendLayout();
@@ -69,25 +69,25 @@
 			this._connectButton.UseVisualStyleBackColor = true;
 			this._connectButton.Click += new System.EventHandler(this.ConnectButtonClick);
 			// 
-			// label1
+			// _serverLabel
 			// 
-			this.label1.AutoSize = true;
-			this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this.label1.Location = new System.Drawing.Point(12, 18);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(58, 13);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Server url:";
+			this._serverLabel.AutoSize = true;
+			this._serverLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._serverLabel.Location = new System.Drawing.Point(12, 18);
+			this._serverLabel.Name = "_serverLabel";
+			this._serverLabel.Size = new System.Drawing.Size(58, 13);
+			this._serverLabel.TabIndex = 0;
+			this._serverLabel.Text = "Server url:";
 			// 
-			// label2
+			// _serverSampleLabel
 			// 
-			this.label2.AutoSize = true;
-			this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this.label2.Location = new System.Drawing.Point(86, 41);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(223, 13);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "Example: http://www.myapp.com/elmah.axd";
+			this._serverSampleLabel.AutoSize = true;
+			this._serverSampleLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._serverSampleLabel.Location = new System.Drawing.Point(92, 42);
+			this._serverSampleLabel.Name = "_serverSampleLabel";
+			this._serverSampleLabel.Size = new System.Drawing.Size(223, 13);
+			this._serverSampleLabel.TabIndex = 2;
+			this._serverSampleLabel.Text = "Example: http://www.myapp.com/elmah.axd";
 			// 
 			// _errorGroupBox
 			// 
@@ -109,15 +109,15 @@
 			this._errorMessageLabel.Size = new System.Drawing.Size(394, 46);
 			this._errorMessageLabel.TabIndex = 0;
 			// 
-			// label3
+			// _usernameLabel
 			// 
-			this.label3.AutoSize = true;
-			this.label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this.label3.Location = new System.Drawing.Point(15, 75);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(62, 13);
-			this.label3.TabIndex = 3;
-			this.label3.Text = "User name:";
+			this._usernameLabel.AutoSize = true;
+			this._usernameLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._usernameLabel.Location = new System.Drawing.Point(15, 75);
+			this._usernameLabel.Name = "_usernameLabel";
+			this._usernameLabel.Size = new System.Drawing.Size(62, 13);
+			this._usernameLabel.TabIndex = 3;
+			this._usernameLabel.Text = "User name:";
 			// 
 			// _userNameTextBox
 			// 
@@ -134,15 +134,15 @@
 			this._passwordTextBox.Size = new System.Drawing.Size(259, 21);
 			this._passwordTextBox.TabIndex = 6;
 			// 
-			// label4
+			// _passwordLabel
 			// 
-			this.label4.AutoSize = true;
-			this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this.label4.Location = new System.Drawing.Point(15, 104);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(57, 13);
-			this.label4.TabIndex = 5;
-			this.label4.Text = "Password:";
+			this._passwordLabel.AutoSize = true;
+			this._passwordLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._passwordLabel.Location = new System.Drawing.Point(15, 104);
+			this._passwordLabel.Name = "_passwordLabel";
+			this._passwordLabel.Size = new System.Drawing.Size(57, 13);
+			this._passwordLabel.TabIndex = 5;
+			this._passwordLabel.Text = "Password:";
 			// 
 			// _domainTextBox
 			// 
@@ -151,24 +151,24 @@
 			this._domainTextBox.Size = new System.Drawing.Size(259, 21);
 			this._domainTextBox.TabIndex = 8;
 			// 
-			// label5
+			// _domainLabel
 			// 
-			this.label5.AutoSize = true;
-			this.label5.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this.label5.Location = new System.Drawing.Point(15, 130);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(46, 13);
-			this.label5.TabIndex = 7;
-			this.label5.Text = "Domain:";
+			this._domainLabel.AutoSize = true;
+			this._domainLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._domainLabel.Location = new System.Drawing.Point(15, 130);
+			this._domainLabel.Name = "_domainLabel";
+			this._domainLabel.Size = new System.Drawing.Size(46, 13);
+			this._domainLabel.TabIndex = 7;
+			this._domainLabel.Text = "Domain:";
 			// 
-			// label6
+			// _credentialsInfoLabel
 			// 
-			this.label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this.label6.Location = new System.Drawing.Point(358, 88);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(131, 46);
-			this.label6.TabIndex = 12;
-			this.label6.Text = "Not required unless you need to supply Windows credentials to the server.";
+			this._credentialsInfoLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._credentialsInfoLabel.Location = new System.Drawing.Point(358, 88);
+			this._credentialsInfoLabel.Name = "_credentialsInfoLabel";
+			this._credentialsInfoLabel.Size = new System.Drawing.Size(131, 46);
+			this._credentialsInfoLabel.TabIndex = 12;
+			this._credentialsInfoLabel.Text = "Not required unless you need to supply Windows credentials to the server.";
 			// 
 			// _urlComboBox
 			// 
@@ -184,16 +184,16 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(501, 261);
 			this.Controls.Add(this._urlComboBox);
-			this.Controls.Add(this.label6);
-			this.Controls.Add(this.label5);
+			this.Controls.Add(this._credentialsInfoLabel);
+			this.Controls.Add(this._domainLabel);
 			this.Controls.Add(this._domainTextBox);
-			this.Controls.Add(this.label4);
+			this.Controls.Add(this._passwordLabel);
 			this.Controls.Add(this._passwordTextBox);
 			this.Controls.Add(this._userNameTextBox);
-			this.Controls.Add(this.label3);
+			this.Controls.Add(this._usernameLabel);
 			this.Controls.Add(this._errorGroupBox);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this._serverSampleLabel);
+			this.Controls.Add(this._serverLabel);
 			this.Controls.Add(this._cancelButton);
 			this.Controls.Add(this._connectButton);
 			this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,7 +203,7 @@
 			this.Name = "ConnectToWebServerForm";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Connect to web server";
+			this.Text = "Connect to a web server";
 			this._errorGroupBox.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -214,17 +214,17 @@
 
 		private System.Windows.Forms.Button _cancelButton;
 		private System.Windows.Forms.Button _connectButton;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label _serverLabel;
+		private System.Windows.Forms.Label _serverSampleLabel;
 		private System.Windows.Forms.GroupBox _errorGroupBox;
 		private System.Windows.Forms.Label _errorMessageLabel;
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label _usernameLabel;
 		private System.Windows.Forms.TextBox _userNameTextBox;
 		private System.Windows.Forms.TextBox _passwordTextBox;
-		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label _passwordLabel;
 		private System.Windows.Forms.TextBox _domainTextBox;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label _domainLabel;
+		private System.Windows.Forms.Label _credentialsInfoLabel;
 		private System.Windows.Forms.ComboBox _urlComboBox;
 	}
 }

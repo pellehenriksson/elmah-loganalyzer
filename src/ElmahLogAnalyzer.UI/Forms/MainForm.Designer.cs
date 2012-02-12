@@ -36,6 +36,7 @@
 			this._mainToolStrip = new System.Windows.Forms.ToolStrip();
 			this._selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
 			this._selectServerButton = new System.Windows.Forms.ToolStripButton();
+			this._selectDatabaseButton = new System.Windows.Forms.ToolStripButton();
 			this._showSearchViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showReportViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showAboutButton = new System.Windows.Forms.ToolStripButton();
@@ -62,7 +63,7 @@
 			// 
 			this._directoryToolStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this._directoryToolStripStatusLabel.Name = "_directoryToolStripStatusLabel";
-			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(1200, 17);
+			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(1239, 17);
 			this._directoryToolStripStatusLabel.Spring = true;
 			this._directoryToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -85,6 +86,7 @@
 			this._mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._selectDirectoryButton,
             this._selectServerButton,
+            this._selectDatabaseButton,
             this._showSearchViewButton,
             this._showReportViewButton,
             this._showAboutButton,
@@ -109,9 +111,17 @@
 			this._selectServerButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.server;
 			this._selectServerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._selectServerButton.Name = "_selectServerButton";
-			this._selectServerButton.Size = new System.Drawing.Size(137, 22);
-			this._selectServerButton.Text = "Connect to &web server";
+			this._selectServerButton.Size = new System.Drawing.Size(146, 22);
+			this._selectServerButton.Text = "Connect to a &web server";
 			this._selectServerButton.Click += new System.EventHandler(this.SelectServerButtonClick);
+			// 
+			// _selectDatabaseButton
+			// 
+			this._selectDatabaseButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.database;
+			this._selectDatabaseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._selectDatabaseButton.Name = "_selectDatabaseButton";
+			this._selectDatabaseButton.Size = new System.Drawing.Size(137, 22);
+			this._selectDatabaseButton.Text = "Connect to a data&base";
 			// 
 			// _showSearchViewButton
 			// 
@@ -205,7 +215,7 @@
 		private System.Windows.Forms.ToolStripButton _showSearchViewButton;
 		private System.Windows.Forms.ToolStripButton _showReportViewButton;
 
-		private void RepositoryOnInitialized(object sender, Core.Domain.RepositoryInitializedEventArgs e)
+		private void ErrorLogRepositoryOnInitialized(object sender, Core.Domain.RepositoryInitializedEventArgs e)
 		{
 			_directoryToolStripStatusLabel.Text = string.Format("Directory : {0} Logs found: {1}", e.Directory, e.TotalNumberOfLogs);
 		}
@@ -215,5 +225,6 @@
 		private System.Windows.Forms.ToolStripButton _selectServerButton;
 		private System.Windows.Forms.ToolStripStatusLabel _settingsStripStatusLabel;
 		private System.Windows.Forms.ToolStripButton _showExportButton;
+		private System.Windows.Forms.ToolStripButton _selectDatabaseButton;
 	}
 }

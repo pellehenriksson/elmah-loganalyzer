@@ -13,21 +13,22 @@ namespace ElmahLogAnalyzer.UI.Forms
 {
 	public partial class MainForm : Form
 	{
-		private readonly IErrorLogRepository _repository;
+		private readonly IErrorLogRepository _errorLogRepository;
 		private readonly ISettingsManager _settingsManager;
 
-		public MainForm()
+		public MainForm(IErrorLogRepository errorLogErrorLogRepository, ISettingsManager settingsManager)
 		{
 			InitializeComponent();
 
+			_selectDatabaseButton.Click += (sender, args) => OnRequestConnectToDatabaseDialog(this, EventArgs.Empty);
 			_showExportButton.Click += (sender, args) => OnRequestExportDialog(this, EventArgs.Empty);
 			_showSettingsViewButton.Click += (sender, args) => OnRequestSettingsDialog(this, EventArgs.Empty);
 			_showAboutButton.Click += (sender, args) => OnRequestAboutDialog(this, EventArgs.Empty);
+
+			_errorLogRepository = errorLogErrorLogRepository;
+			_settingsManager = settingsManager;
 			
-			_settingsManager = ServiceLocator.Resolve<ISettingsManager>();
-			_repository = ServiceLocator.Resolve<IErrorLogRepository>();
-			
-			_repository.OnInitialized += RepositoryOnInitialized;
+			_errorLogRepository.OnInitialized += ErrorLogRepositoryOnInitialized;
 			
 			ShowDisplaySettings();
 			DisplayApplicationVersion();
@@ -49,6 +50,8 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		    HandleLoadingFromDirectory(directory);
 		}
+
+		public event EventHandler OnRequestConnectToDatabaseDialog;
 
 		public event EventHandler OnRequestExportDialog;
 
@@ -131,7 +134,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		{
 			try
 			{
-				_repository.Initialize(directory as string);
+				_errorLogRepository.Initialize(directory as string);
 
 				if (InvokeRequired)
 				{
@@ -183,7 +186,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		
 		private void SelectDirectoryButtonClick(object sender, EventArgs e)
 		{
-			_folderBrowserDialog.SelectedPath = _repository.Directory ?? _settingsManager.GetDefaultLogsDirectory();
+			_folderBrowserDialog.SelectedPath = _errorLogRepository.Directory ?? _settingsManager.GetDefaultLogsDirectory();
 
 			var result = _folderBrowserDialog.ShowDialog(this);
 

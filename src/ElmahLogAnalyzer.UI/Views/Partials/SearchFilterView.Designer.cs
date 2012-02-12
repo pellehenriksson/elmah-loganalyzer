@@ -42,6 +42,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// 
 			// _searchButton
 			// 
+			this._searchButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._searchButton.Location = new System.Drawing.Point(1192, 158);
 			this._searchButton.Name = "_searchButton";
 			this._searchButton.Size = new System.Drawing.Size(75, 23);
@@ -52,6 +53,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// 
 			// _textTextbox
 			// 
+			this._textTextbox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._textTextbox.Location = new System.Drawing.Point(984, 61);
 			this._textTextbox.Multiline = true;
 			this._textTextbox.Name = "_textTextbox";
@@ -62,9 +64,10 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// label2
 			// 
 			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.Location = new System.Drawing.Point(981, 45);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(157, 13);
+			this.label2.Size = new System.Drawing.Size(159, 13);
 			this.label2.TabIndex = 9;
 			this.label2.Text = "Error message/Details contains:";
 			// 
@@ -73,6 +76,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this._usersSelector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
 			this._usersSelector.Caption = "Users";
+			this._usersSelector.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._usersSelector.Location = new System.Drawing.Point(739, 5);
 			this._usersSelector.Name = "_usersSelector";
 			this._usersSelector.Size = new System.Drawing.Size(236, 182);
@@ -83,6 +87,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this._urlsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
 			this._urlsSelector.Caption = "Urls";
+			this._urlsSelector.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._urlsSelector.Location = new System.Drawing.Point(498, 5);
 			this._urlsSelector.Name = "_urlsSelector";
 			this._urlsSelector.Size = new System.Drawing.Size(238, 182);
@@ -93,6 +98,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this._sourcesSelector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
 			this._sourcesSelector.Caption = "Sources";
+			this._sourcesSelector.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._sourcesSelector.Location = new System.Drawing.Point(254, 5);
 			this._sourcesSelector.Name = "_sourcesSelector";
 			this._sourcesSelector.Size = new System.Drawing.Size(238, 182);
@@ -103,6 +109,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this._typesSelector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
 			this._typesSelector.Caption = "Types";
+			this._typesSelector.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._typesSelector.Location = new System.Drawing.Point(3, 5);
 			this._typesSelector.Name = "_typesSelector";
 			this._typesSelector.Size = new System.Drawing.Size(245, 182);
@@ -110,9 +117,10 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			// 
 			// _dateIntervalPicker
 			// 
+			this._dateIntervalPicker.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._dateIntervalPicker.Location = new System.Drawing.Point(974, 0);
 			this._dateIntervalPicker.Name = "_dateIntervalPicker";
-			this._dateIntervalPicker.Size = new System.Drawing.Size(302, 29);
+			this._dateIntervalPicker.Size = new System.Drawing.Size(302, 42);
 			this._dateIntervalPicker.TabIndex = 8;
 			// 
 			// SearchFilterView

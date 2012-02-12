@@ -28,6 +28,7 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			Bind<ReportPresenter>().To<ReportPresenter>();
 			Bind<SettingsPresenter>().To<SettingsPresenter>();
 			Bind<ConnectToWebServerPresenter>().To<ConnectToWebServerPresenter>();
+			Bind<ConnectToDatabasePresenter>().To<ConnectToDatabasePresenter>();
 			Bind<ExportPresenter>().To<ExportPresenter>();
 			Bind<ICacheHelper>().To<CacheHelper>();
 			Bind<IWebRequestHelper>().To<WebRequestHelper>();

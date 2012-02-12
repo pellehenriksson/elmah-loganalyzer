@@ -86,7 +86,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 			_showExportButton.Enabled = false;
 			_showSettingsViewButton.Enabled = false;
 
-			LoadView(new LoadingView());
+			ShowView(new LoadingView());
 		}
 
 		private void SetReadyForWorkState()
@@ -160,13 +160,6 @@ namespace ElmahLogAnalyzer.UI.Forms
 			}
 		}
 
-		private void LoadView(Control view)
-		{
-			_mainPanel.Controls.Clear();
-			_mainPanel.Controls.Add(view);
-			view.Dock = DockStyle.Fill;
-		}
-		
 		private void DisplayError(object ex)
 		{
 			var error = ex as Exception;
@@ -201,7 +194,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		private void LoadSearchView()
 		{
 			var presenter = ServiceLocator.Resolve<SearchPresenter>();
-			LoadView(presenter.View as Control);
+			ShowView(presenter.View as UserControl);
 		}
 
 		private void ShowSearchViewButtonClick(object sender, EventArgs e)
@@ -212,7 +205,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		private void ShowReportViewButtonClick(object sender, EventArgs e)
 		{
 			var presenter = ServiceLocator.Resolve<ReportPresenter>();
-			LoadView(presenter.View as Control);
+			ShowView(presenter.View as UserControl);
 		}
 		
 		private void SelectServerButtonClick(object sender, EventArgs e)

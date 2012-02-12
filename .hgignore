@@ -34,3 +34,4 @@ _build
 _localbuild
 _password.*
 _ideas.txt
+*ncrunchsolution*

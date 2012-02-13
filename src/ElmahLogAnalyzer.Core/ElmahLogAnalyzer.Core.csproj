@@ -157,6 +157,7 @@
     <Compile Include="Domain\WindowsOperatingSystemNameResolver.cs" />
     <Compile Include="Domain\YellowScreenOfDeathBuilder.cs" />
     <Compile Include="Infrastructure\Cache\ICacheHelper.cs" />
+    <Compile Include="Infrastructure\Dependencies\DataSourceScopeController.cs" />
     <Compile Include="Infrastructure\Dependencies\ServiceLocator.cs" />
     <Compile Include="Infrastructure\FileSystem\FileSystemHelper.cs" />
     <Compile Include="Infrastructure\FileSystem\IFileSystemHelper.cs" />

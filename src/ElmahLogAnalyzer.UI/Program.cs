@@ -20,7 +20,7 @@ namespace ElmahLogAnalyzer.UI
 		public static void Main()
 		{
 			//// todo: handle loading logs at startup
-			//// todo: handle if exe started with argument
+			//// todo: handle if exe started with arguments
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
@@ -118,11 +118,15 @@ namespace ElmahLogAnalyzer.UI
 			_container.SetLoadingState();
 
 			DataSourceScopeController.SetNewSource(source, connection);
+			
+			//// need to know the download directory before resolving 
+			//// and before downloading
+			DownloadLogs(networkConnection);
+
+			var downloadLogsTask = new Task(() => { return; });
 
 			var repository = ServiceLocator.Resolve<IErrorLogRepository>();
 			var viewPresenter = ServiceLocator.Resolve<SearchPresenter>();
-
-			var downloadLogsTask = new Task(() => DownloadLogs(networkConnection));
 
 			var initRepositoryTask = downloadLogsTask.ContinueWith(previousTask =>
 			{
@@ -146,7 +150,7 @@ namespace ElmahLogAnalyzer.UI
 				}
 
 				_container.InvokeEx(m => m.SetReadyForWorkState());
-				_container.InvokeEx(m => m.DisplayStatus("Connection: " + connection));
+				_container.InvokeEx(m => m.DisplayStatus("Connection: " + DataSourceScopeController.Connection));
 				_container.InvokeEx(m => m.ShowView(viewPresenter.View as UserControl));
 			});
 			

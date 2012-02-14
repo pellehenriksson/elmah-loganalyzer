@@ -25,6 +25,11 @@ namespace ElmahLogAnalyzer.Core.Common
 					return result;
 				}
 
+				case ErrorLogSourcesEnum.SqlServerCompact:
+					{
+						return string.Format("Data Source={0};Persist Security Info=False;", connect.File);
+					}
+
 				default:
 					throw new InvalidOperationException(string.Format("Database type: {0} is not supported", connect.Source));
 			}

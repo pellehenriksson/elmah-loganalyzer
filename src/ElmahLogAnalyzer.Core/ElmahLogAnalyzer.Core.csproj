@@ -114,6 +114,7 @@
     </Compile>
     <Compile Include="Domain\Export\SqlCeDatabaseCreator.cs" />
     <Compile Include="Domain\INewErrorLogRepository.cs" />
+    <Compile Include="Domain\SqlServerCompactErrorLogSource.cs" />
     <Compile Include="Domain\SqlServerErrorLogSource.cs" />
     <Compile Include="Infrastructure\Configuration\IWebServerConnectionsHelper.cs" />
     <Compile Include="Infrastructure\Configuration\WebServerConnectionElement.cs" />

@@ -10,7 +10,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 	public class ConnectionStringBuilderTests
 	{
 		[Test]
-		public void Build_DatabaseTypeIsSqlServerWithIntegratedSecurity()
+		public void Build_ErrorLogSourcesIsSqlServerWithIntegratedSecurity()
 		{
 			// arrange
 			var connect = new Mock<IConnectToDatabase>();
@@ -27,7 +27,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 		}
 
 		[Test]
-		public void Build_DatabaseTypeIsSqlServerWithUsernameAndPassword()
+		public void Build_ErrorLogSourcesIsSqlServerWithUsernameAndPassword()
 		{
 			// arrange
 			var connect = new Mock<IConnectToDatabase>();
@@ -43,6 +43,21 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 
 			// assert
 			Assert.That(result, Is.EqualTo("Data Source=myServerAddress;Initial Catalog=myDataBase;User Id=myUsername;Password=myPassword;"));
+		}
+
+		[Test]
+		public void Build_ErrorLogSourcesIsSqlServerCompact()
+		{
+			// arrange
+			var connect = new Mock<IConnectToDatabase>();
+			connect.Setup(x => x.Source).Returns(ErrorLogSourcesEnum.SqlServer);
+			connect.Setup(x => x.File).Returns(@"c:\temp\elmah.sdf");
+
+			// act
+			var result = ConnectionStringBuilder.Build(connect.Object);
+
+			// assert
+			Assert.That(result, Is.EqualTo(@"Data Source=c:\temp\elmah.sdf;Persist Security Info=False;"));
 		}
 	}
 }

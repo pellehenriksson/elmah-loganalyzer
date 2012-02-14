@@ -16,6 +16,8 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 	public interface IConnectToDatabaseConnectionInformationView
 	{
+		string File { get; set; }
+
 		string Server { get; set; }
 
 		string Port { get; set; }

@@ -105,6 +105,8 @@ namespace ElmahLogAnalyzer.UI
 			_connectToDirectoryButton.Enabled = false;
 			_connectToWebServerButton.Enabled = false;
 
+			_directoryToolStripStatusLabel.Text = string.Empty;
+
 			ShowView(_loadingView);
 		}
 		

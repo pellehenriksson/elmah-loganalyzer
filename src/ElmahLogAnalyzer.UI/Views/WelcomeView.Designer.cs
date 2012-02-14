@@ -40,7 +40,7 @@
 			this._welcomeLabel.Name = "_welcomeLabel";
 			this._welcomeLabel.Size = new System.Drawing.Size(557, 51);
 			this._welcomeLabel.TabIndex = 0;
-			this._welcomeLabel.Text = "Connect to a error log source and start analyzing";
+			this._welcomeLabel.Text = "Connect to an error log source and start analyzing";
 			this._welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// WelcomeView

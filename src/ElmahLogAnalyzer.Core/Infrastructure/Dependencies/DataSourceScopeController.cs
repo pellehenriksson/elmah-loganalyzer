@@ -1,5 +1,4 @@
-﻿using System;
-using ElmahLogAnalyzer.Core.Common;
+﻿using ElmahLogAnalyzer.Core.Domain;
 
 namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 {
@@ -7,7 +6,7 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 	{
 		private static object _keepAlive = new object();
 
-		public static string Source { get; private set; }
+		public static ErrorLogSourcesEnum Source { get; private set; }
 		
 		public static string Connection { get; private set; }
 
@@ -16,13 +15,8 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			get { return _keepAlive; }
 		}
 
-		public static void SetNewSource(string source, string connection)
+		public static void SetNewSource(ErrorLogSourcesEnum source, string connection)
 		{
-			if (!source.HasValue())
-			{
-				throw new InvalidOperationException("The source is undefined");
-			}
-
 			Source = source;
 			Connection = connection;
 

@@ -22,7 +22,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 			var databaseCreator = new SqlCeDatabaseCreator(fileSystemHelper, new FakeLog());
 			var exporter = new ErrorLogExporter(repository, databaseCreator);
 
-			repository.Initialize(TestFilesDirectory);
+			repository.Initialize();
 
 			// act
 			var eventWasRaised = false;
@@ -43,7 +43,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 			var databaseCreator = new SqlCeDatabaseCreator(fileSystemHelper, new FakeLog());
 			var exporter = new ErrorLogExporter(repository, databaseCreator);
 
-			repository.Initialize(TestFilesDirectory);
+			repository.Initialize();
 
 			// act
 			var eventWasRaised = false;
@@ -68,7 +68,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain.Export
 			var databaseCreator = new SqlCeDatabaseCreator(fileSystemHelper.Object, new FakeLog());
 			var exporter = new ErrorLogExporter(repository, databaseCreator);
 
-			repository.Initialize(TestFilesDirectory);
+			repository.Initialize();
 
 			var error = new InvalidOperationException();
 			fileSystemHelper.Setup(x => x.FileExists(It.IsAny<string>())).Throws(error);

@@ -16,23 +16,26 @@ namespace ElmahLogAnalyzer.Core.Domain
 		private readonly ISettingsManager _settingsManager;
 		private readonly ILog _log;
 
-		public FileErrorLogSource(IFileSystemHelper fileSystemHelper, IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
+		public FileErrorLogSource(string connection, IFileSystemHelper fileSystemHelper, IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
 		{
+			Connection = connection;
 			_fileSystemHelper = fileSystemHelper;
 			_parser = parser;
 			_settingsManager = settingsManager;
 			_log = log;
 		}
+
+		public string Connection { get; private set; }
 		
-		public List<ErrorLog> GetLogs(string directory)
+		public List<ErrorLog> GetLogs()
 		{
-			if (!_fileSystemHelper.DirectoryExists(directory))
+			if (!_fileSystemHelper.DirectoryExists(Connection))
 			{
-				_log.Error(string.Format("Directory: {0} does not exist", directory));
-				throw new ApplicationException(string.Format("The directory: {0} was not found", directory));
+				_log.Error(string.Format("Connection: {0} does not exist", Connection));
+				throw new ApplicationException(string.Format("The directory: {0} was not found", Connection));
 			}
 
-			var files = GetErrorLogFilesFromDirectory(directory);
+			var files = GetErrorLogFilesFromDirectory(Connection);
 			return ParseFiles(files);
 		}
 

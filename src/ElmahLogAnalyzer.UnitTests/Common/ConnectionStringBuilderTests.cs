@@ -1,5 +1,5 @@
 ﻿using ElmahLogAnalyzer.Core.Common;
-using ElmahLogAnalyzer.Core.Constants;
+using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Presentation;
 using Moq;
 using NUnit.Framework;
@@ -14,7 +14,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 		{
 			// arrange
 			var connect = new Mock<IConnectToDatabase>();
-			connect.Setup(x => x.DatabaseType).Returns(Databases.SqlServer);
+			connect.Setup(x => x.Source).Returns(ErrorLogSourcesEnum.SqlServer);
 			connect.Setup(x => x.Server).Returns("myServerAddress");
 			connect.Setup(x => x.Database).Returns("myDataBase");
 			connect.Setup(x => x.UseIntegratedSecurity).Returns(true);
@@ -31,7 +31,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 		{
 			// arrange
 			var connect = new Mock<IConnectToDatabase>();
-			connect.Setup(x => x.DatabaseType).Returns(Databases.SqlServer);
+			connect.Setup(x => x.Source).Returns(ErrorLogSourcesEnum.SqlServer);
 			connect.Setup(x => x.Server).Returns("myServerAddress");
 			connect.Setup(x => x.Database).Returns("myDataBase");
 			connect.Setup(x => x.Username).Returns("myUsername");

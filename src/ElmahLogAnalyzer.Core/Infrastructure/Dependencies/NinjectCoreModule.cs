@@ -18,9 +18,19 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 	{
 		public override void Load()
 		{
-			Bind<IErrorLogRepository>().To<ErrorLogRepository>().InSingletonScope();
-			//// Bind<IErrorLogSource>().To<SqlServerErrorLogSource>();
-			Bind<IErrorLogSource>().To<FileErrorLogSource>();
+			Bind<IErrorLogRepository>().To<ErrorLogRepository>()
+				.InScope(context => DataSourceScopeController.KeepAlive);
+
+			Bind<IErrorLogSource>().To<SqlServerErrorLogSource>()
+				.When(context => DataSourceScopeController.Source == ErrorLogSourcesEnum.SqlServer)
+				.InScope(context => DataSourceScopeController.KeepAlive)
+				.WithConstructorArgument("connection", (context => DataSourceScopeController.Connection));
+
+			Bind<IErrorLogSource>().To<FileErrorLogSource>()
+				.When(context => DataSourceScopeController.Source == ErrorLogSourcesEnum.Files)
+				.InScope(context => DataSourceScopeController.KeepAlive)
+				.WithConstructorArgument("connection", (context => DataSourceScopeController.Connection));
+
 			Bind<IErrorLogFileParser>().To<ErrorLogFileParser>();
 			Bind<IReportGenerator>().To<ReportGenerator>();
 			Bind<IErrorLogExporter>().To<ErrorLogExporter>();

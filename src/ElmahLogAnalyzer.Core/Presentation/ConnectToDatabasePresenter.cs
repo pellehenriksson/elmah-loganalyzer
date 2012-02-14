@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using ElmahLogAnalyzer.Core.Common;
-using ElmahLogAnalyzer.Core.Constants;
+using ElmahLogAnalyzer.Core.Domain;
 
 namespace ElmahLogAnalyzer.Core.Presentation
 {
@@ -8,8 +8,8 @@ namespace ElmahLogAnalyzer.Core.Presentation
 	{
 		private static readonly List<NameValuePair> DatabaseTypes = new List<NameValuePair>
 		{
-		    new NameValuePair(Databases.SqlServer, Databases.SqlServer),
-		    new NameValuePair(Databases.SqlCe, Databases.SqlCe)
+		    new NameValuePair(ErrorLogSourcesEnum.SqlServer.ToString(), ErrorLogSourcesEnum.SqlServer.GetDescription()),
+		    new NameValuePair(ErrorLogSourcesEnum.SqlCe.ToString(), ErrorLogSourcesEnum.SqlCe.GetDescription())
 		};
 
 		public ConnectToDatabasePresenter(IConnectToDatabaseView view)

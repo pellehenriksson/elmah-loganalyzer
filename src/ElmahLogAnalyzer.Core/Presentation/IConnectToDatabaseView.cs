@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using ElmahLogAnalyzer.Core.Common;
+using ElmahLogAnalyzer.Core.Domain;
 
 namespace ElmahLogAnalyzer.Core.Presentation
 {
@@ -10,7 +11,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 	public interface IConnectToDatabase : IConnectToDatabaseConnectionInformationView
 	{
-		string DatabaseType { get; set; }
+		ErrorLogSourcesEnum Source { get; set; }
 	}
 
 	public interface IConnectToDatabaseConnectionInformationView

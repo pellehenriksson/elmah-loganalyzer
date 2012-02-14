@@ -7,9 +7,9 @@ namespace ElmahLogAnalyzer.Core.Domain
 	{
 		event EventHandler<RepositoryInitializedEventArgs> OnInitialized; 
 
-		string Directory { get; }
+		string Connection { get; }
 		
-		void Initialize(string directory);
+		void Initialize();
 		
 		List<ErrorLog> GetAll();
 		

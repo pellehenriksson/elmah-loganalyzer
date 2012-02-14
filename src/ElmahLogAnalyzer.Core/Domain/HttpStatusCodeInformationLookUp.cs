@@ -76,7 +76,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 			Codes.Add(new HttpStatusCodeInformation("403.11", "Forbidden: Password has been changed"));
 			Codes.Add(new HttpStatusCodeInformation("403.12", "Mapper denied access"));
 			Codes.Add(new HttpStatusCodeInformation("403.13", "Client certificate revoked"));
-			Codes.Add(new HttpStatusCodeInformation("403.14", "Directory listing denied"));
+			Codes.Add(new HttpStatusCodeInformation("403.14", "Connection listing denied"));
 			Codes.Add(new HttpStatusCodeInformation("403.15", "Forbidden: Client access licenses have exceeded limits on the Web server"));
 			Codes.Add(new HttpStatusCodeInformation("403.16", "Client certificate is untrusted or invalid"));
 			Codes.Add(new HttpStatusCodeInformation("403.17", "Client certificate has expired or is not yet valid"));

@@ -173,7 +173,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		private static IReportGenerator CreateGenerator()
 		{
 			var repository = new ErrorLogRepository(new FakeDataSource());
-			repository.Initialize(string.Empty);
+			repository.Initialize();
 
 			return new ReportGenerator(repository);
 		}

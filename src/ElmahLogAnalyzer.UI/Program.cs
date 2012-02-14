@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ElmahLogAnalyzer.Core.Common;
+using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Infrastructure.Dependencies;
+using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 using ElmahLogAnalyzer.Core.Presentation;
 using ElmahLogAnalyzer.UI.Forms;
 
@@ -9,57 +12,157 @@ namespace ElmahLogAnalyzer.UI
 {
 	public static class Program
 	{
+		private static ISettingsManager _settingsManager;
+		private static MainForm _container;
+
 		[STAThread]
 		public static void Main()
 		{
+			//// todo: handle loading logs at startup
+			//// todo: handle if exe started with argument
+
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
-			var main = ServiceLocator.Resolve<MainForm>();
+			_settingsManager = ServiceLocator.Resolve<ISettingsManager>();
 
-			main.OnRequestConnectToDatabaseDialog += (sender, args) =>
+			_container = ServiceLocator.Resolve<MainForm>();
+
+			_container.SetInitialState();
+			_container.DisplaySettings(_settingsManager);
+
+			_container.OnRequestConnectToDirectoryDialog += (sender, args) =>
+			{
+				var dialog = new FolderBrowserDialog
+				{
+				    Description = "Select a folder with ELMAH log files",
+				    SelectedPath = _settingsManager.GetDefaultLogsDirectory()
+				};
+
+				var result = dialog.ShowDialog(_container);
+				
+				if (result == DialogResult.OK)
+				{
+					InitializeNewErrorLogSource(ErrorLogSourcesEnum.Files, dialog.SelectedPath, null);
+				}
+			};
+
+			_container.OnRequestConnectToWebServerDialog += (sender, args) =>
+			{
+				var presenter = ServiceLocator.Resolve<ConnectToWebServerPresenter>();
+				var view = presenter.View as Form;
+				var result = _container.ShowDialog(view);
+
+				if (result == DialogResult.OK)
+				{
+					InitializeNewErrorLogSource(ErrorLogSourcesEnum.Files, string.Empty, presenter.Connnection);
+				}
+			};
+
+			_container.OnRequestConnectToDatabaseDialog += (sender, args) =>
 			{
 				var presenter = ServiceLocator.Resolve<ConnectToDatabasePresenter>();
 				var view = presenter.View as Form;
-				var result = main.ShowDialog(view);
+				var result = _container.ShowDialog(view);
 
 				if (result == DialogResult.OK)
 				{
 					var settings = (IConnectToDatabase)view;
 					var connectionstring = ConnectionStringBuilder.Build(settings);
-					
-					// build connection string
-					// resolve correct IDataSource
 
-					// show some kind of loading screen
-					// load view
-					// handle exceptions
+					InitializeNewErrorLogSource(settings.Source, connectionstring, null);
 				}
 			};
 
-			main.OnRequestExportDialog += (sender, args) =>
+			_container.OnRequestSearchView += (sender, args) =>
+			{
+				var presenter = ServiceLocator.Resolve<SearchPresenter>();
+				_container.ShowView(presenter.View as UserControl);
+			};
+
+			_container.OnRequestReportView += (sender, args) =>
+			{
+				var presenter = ServiceLocator.Resolve<ReportPresenter>();
+				_container.ShowView(presenter.View as UserControl);
+			};
+
+			_container.OnRequestExportDialog += (sender, args) =>
 			{
 			    var presenter = ServiceLocator.Resolve<ExportPresenter>();
-				main.ShowDialog(presenter.View as Form);
+				_container.ShowDialog(presenter.View as Form);
 			};
 
-			main.OnRequestSettingsDialog += (sender, args) =>
+			_container.OnRequestSettingsDialog += (sender, args) =>
 			{
 			    var presenter = ServiceLocator.Resolve<SettingsPresenter>();
-				var result = main.ShowDialog(presenter.View as Form);
+				var result = _container.ShowDialog(presenter.View as Form);
+				
 				if (result == DialogResult.OK)
 				{
-					main.ShowDisplaySettings();
+					_container.DisplaySettings(_settingsManager);
 				}
 			};
 
-			main.OnRequestAboutDialog += (sender, args) =>
+			_container.OnRequestAboutDialog += (sender, args) =>
 			{
 				var about = ServiceLocator.Resolve<AboutForm>();
-				main.ShowDialog(about);
+				_container.ShowDialog(about);
 			};
 
-			Application.Run(main);
+			Application.Run(_container);
+		}
+		
+		private static void InitializeNewErrorLogSource(ErrorLogSourcesEnum source, string connection, NetworkConnection networkConnection)
+		{
+			_container.SetLoadingState();
+
+			DataSourceScopeController.SetNewSource(source, connection);
+
+			var repository = ServiceLocator.Resolve<IErrorLogRepository>();
+			var viewPresenter = ServiceLocator.Resolve<SearchPresenter>();
+
+			var downloadLogsTask = new Task(() => DownloadLogs(networkConnection));
+
+			var initRepositoryTask = downloadLogsTask.ContinueWith(previousTask =>
+			{
+				if (previousTask.Exception != null)
+				{
+					_container.InvokeEx(m => m.ShowError(previousTask.Exception));
+					_container.InvokeEx(m => m.SetInitialState());
+					return;
+				}
+
+				repository.Initialize();
+			});
+
+			var updateUiTask = initRepositoryTask.ContinueWith(previousTask =>
+			{
+				if (previousTask.Exception != null)
+				{
+					_container.InvokeEx(m => m.ShowError(previousTask.Exception));
+					_container.InvokeEx(m => m.SetInitialState());
+					return;
+				}
+
+				_container.InvokeEx(m => m.SetReadyForWorkState());
+				_container.InvokeEx(m => m.DisplayStatus("Connection: " + connection));
+				_container.InvokeEx(m => m.ShowView(viewPresenter.View as UserControl));
+			});
+			
+			downloadLogsTask.Start();
+		}
+		
+		private static void DownloadLogs(NetworkConnection networkConnection)
+		{
+			if (networkConnection == null)
+			{
+				return;
+			}
+			
+			var downloader = ServiceLocator.Resolve<ErrorLogDownloader>();
+			downloader.Download(networkConnection);
+
+			DataSourceScopeController.SetNewSource(ErrorLogSourcesEnum.Files, downloader.DownloadDirectory);
 		}
 	}
 }

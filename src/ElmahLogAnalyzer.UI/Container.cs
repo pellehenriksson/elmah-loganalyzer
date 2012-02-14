@@ -4,7 +4,7 @@ using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 using ElmahLogAnalyzer.UI.Views;
 
-namespace ElmahLogAnalyzer.UI.Forms
+namespace ElmahLogAnalyzer.UI
 {
 	public partial class Container : Form
 	{

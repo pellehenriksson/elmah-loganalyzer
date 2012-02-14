@@ -157,10 +157,10 @@
     <Compile Include="Views\Partials\SearchFilterView.Designer.cs">
       <DependentUpon>SearchFilterView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Container.cs">
+    <Compile Include="Container.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Container.Designer.cs">
+    <Compile Include="Container.Designer.cs">
       <DependentUpon>Container.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -246,7 +246,7 @@
     <EmbeddedResource Include="Views\Partials\SearchFilterView.resx">
       <DependentUpon>SearchFilterView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Container.resx">
+    <EmbeddedResource Include="Container.resx">
       <DependentUpon>Container.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

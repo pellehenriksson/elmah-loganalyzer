@@ -9,14 +9,14 @@ namespace ElmahLogAnalyzer.UI
 	{
 		public override void Load()
 		{
-			Bind<ISearchView>().To<SearchView>().InSingletonScope();
-			Bind<IReportView>().To<ReportView>().InSingletonScope();
+			Bind<ISearchView>().To<SearchView>();
+			Bind<IReportView>().To<ReportView>();
 			Bind<ISettingsView>().To<SettingsForm>();
 			Bind<IConnectToWebServerView>().To<ConnectToWebServerForm>();
 			Bind<IConnectToDatabaseView>().To<ConnectToDatabaseForm>();
 			Bind<IExportView>().To<ExportForm>();
-			Bind<AboutForm>().To<AboutForm>();
-			Bind<MainForm>().To<MainForm>();
+			Bind<AboutForm>().ToSelf();
+			Bind<MainForm>().ToSelf();
 		}
 	}
 }

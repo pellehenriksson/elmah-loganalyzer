@@ -121,6 +121,12 @@
     <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ErrorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ErrorView.Designer.cs">
+      <DependentUpon>ErrorView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoadingView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,6 +201,12 @@
     <Compile Include="Views\ReportView.Designer.cs">
       <DependentUpon>ReportView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\WelcomeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\WelcomeView.Designer.cs">
+      <DependentUpon>WelcomeView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ErrorView.resx">
+      <DependentUpon>ErrorView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoadingView.resx">
       <DependentUpon>LoadingView.cs</DependentUpon>
@@ -258,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ReportView.resx">
       <DependentUpon>ReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WelcomeView.resx">
+      <DependentUpon>WelcomeView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>

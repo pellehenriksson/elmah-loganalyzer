@@ -70,11 +70,13 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		public void SetInitialState()
 		{
+			_connectToDirectoryButton.Enabled = true;
+			_connectToWebServerButton.Enabled = true;
+			_connectToWebServerButton.Enabled = true;
+
 			_showSearchViewButton.Enabled = false;
 			_showReportViewButton.Enabled = false;
 			_showExportButton.Enabled = false;
-			_connectToDirectoryButton.Enabled = true;
-			_connectToWebServerButton.Enabled = true;
 			_showSettingsViewButton.Enabled = true;
 
 			_mainPanel.Controls.Clear();
@@ -83,23 +85,28 @@ namespace ElmahLogAnalyzer.UI.Forms
 		
 		public void SetLoadingState()
 		{
+			_connectToDirectoryButton.Enabled = false;
+			_connectToWebServerButton.Enabled = false;
+			_connectToWebServerButton.Enabled = false;
+
 			_showSearchViewButton.Enabled = false;
 			_showReportViewButton.Enabled = false;
 			_connectToDirectoryButton.Enabled = false;
 			_connectToWebServerButton.Enabled = false;
-			_showExportButton.Enabled = false;
-			_showSettingsViewButton.Enabled = false;
+
 
 			ShowView(new LoadingView());
 		}
 		
 		public void SetReadyForWorkState()
 		{
+			_connectToDirectoryButton.Enabled = true;
+			_connectToWebServerButton.Enabled = true;
+			_connectToWebServerButton.Enabled = true;
+
 			_showSearchViewButton.Enabled = true;
 			_showReportViewButton.Enabled = true;
 			_showExportButton.Enabled = true;
-			_connectToDirectoryButton.Enabled = true;
-			_connectToWebServerButton.Enabled = true;
 			_showSettingsViewButton.Enabled = true;
 		}
 		

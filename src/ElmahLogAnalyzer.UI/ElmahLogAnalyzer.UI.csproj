@@ -139,6 +139,12 @@
     <Compile Include="Controls\DateIntervalPicker.Designer.cs">
       <DependentUpon>DateIntervalPicker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Partials\ConnectToSqlServerCompactView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Partials\ConnectToSqlServerCompactView.Designer.cs">
+      <DependentUpon>ConnectToSqlServerCompactView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Partials\ConnectToSqlServerView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DateIntervalPicker.resx">
       <DependentUpon>DateIntervalPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Partials\ConnectToSqlServerCompactView.resx">
+      <DependentUpon>ConnectToSqlServerCompactView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Partials\ConnectToSqlServerView.resx">
       <DependentUpon>ConnectToSqlServerView.cs</DependentUpon>

@@ -20,17 +20,15 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		public ErrorLogSourcesEnum Source
 		{
-			get 
-			{
-				var selected = _databaseTypesComboBox.Items[_databaseTypesComboBox.SelectedIndex].ToString();
-				var en = (ErrorLogSourcesEnum)Enum.Parse(typeof(ErrorLogSourcesEnum), selected);
-				return en;
-			}
+			get { return GetCurrentSelectedErrorLogSource(); }
 
-			set
-			{
-				throw new NotImplementedException("todo");
-			}
+			set { throw new NotImplementedException("todo"); }
+		}
+		
+		public string File
+		{
+			get { return ConnectionInformation.File; }
+			set { throw new NotImplementedException(); }
 		}
 
 		public string Server
@@ -87,15 +85,26 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		private void DatabaseTypesComboBoxSelectedIndexChanged(object sender, EventArgs e)
 		{
-			var selected = _databaseTypesComboBox.Items[_databaseTypesComboBox.SelectedIndex].ToString();
-			var en = (ErrorLogSourcesEnum)Enum.Parse(typeof(ErrorLogSourcesEnum), selected);
+			var source = GetCurrentSelectedErrorLogSource();
 
 			_viewPanel.Controls.Clear();
 
-			if (en == ErrorLogSourcesEnum.SqlServer)
+			if (source == ErrorLogSourcesEnum.SqlServer)
 			{
 				_viewPanel.Controls.Add(new ConnectToSqlServerView());
 			}
+
+			if (source == ErrorLogSourcesEnum.SqlServerCompact)
+			{
+				_viewPanel.Controls.Add(new ConnectToSqlServerCompactView());
+			}
+		}
+
+		private ErrorLogSourcesEnum GetCurrentSelectedErrorLogSource()
+		{
+			var item = _databaseTypesComboBox.Items[_databaseTypesComboBox.SelectedIndex] as NameValuePair;
+			var source = (ErrorLogSourcesEnum)Enum.Parse(typeof(ErrorLogSourcesEnum), item.Value);
+			return source;
 		}
 		
 		private void ConnectButtonClick(object sender, EventArgs e)

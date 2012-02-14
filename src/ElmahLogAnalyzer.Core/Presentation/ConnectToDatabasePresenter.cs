@@ -8,8 +8,8 @@ namespace ElmahLogAnalyzer.Core.Presentation
 	{
 		private static readonly List<NameValuePair> DatabaseTypes = new List<NameValuePair>
 		{
-		    new NameValuePair(ErrorLogSourcesEnum.SqlServer.ToString(), ErrorLogSourcesEnum.SqlServer.GetDescription()),
-		    new NameValuePair(ErrorLogSourcesEnum.SqlCe.ToString(), ErrorLogSourcesEnum.SqlCe.GetDescription())
+		    new NameValuePair(ErrorLogSourcesEnum.SqlServer.GetDescription(), ErrorLogSourcesEnum.SqlServer.ToString()),
+		    new NameValuePair(ErrorLogSourcesEnum.SqlServerCompact.GetDescription(), ErrorLogSourcesEnum.SqlServerCompact.ToString())
 		};
 
 		public ConnectToDatabasePresenter(IConnectToDatabaseView view)

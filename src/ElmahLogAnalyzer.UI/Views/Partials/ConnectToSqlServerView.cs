@@ -9,7 +9,13 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		{
 			InitializeComponent();
 		}
-		
+
+		public string File
+		{
+			get { throw new System.NotImplementedException(); }
+			set { throw new System.NotImplementedException(); }
+		}
+
 		public string Server
 		{
 			get { return _serverTextBox.Text; }

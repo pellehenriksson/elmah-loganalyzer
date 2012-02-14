@@ -14,7 +14,7 @@ namespace ElmahLogAnalyzer.UI
 	public static class Program
 	{
 		private static ISettingsManager _settingsManager;
-		private static MainForm _container;
+		private static Container _container;
 
 		[STAThread]
 		public static void Main()
@@ -27,7 +27,7 @@ namespace ElmahLogAnalyzer.UI
 
 			_settingsManager = ServiceLocator.Resolve<ISettingsManager>();
 
-			_container = ServiceLocator.Resolve<MainForm>();
+			_container = ServiceLocator.Resolve<Container>();
 
 			_container.SetWelcomeState();
 			_container.DisplaySettings(_settingsManager);

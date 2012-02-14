@@ -1,6 +1,6 @@
 ﻿namespace ElmahLogAnalyzer.UI.Forms
 {
-	partial class MainForm
+	partial class Container
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Container));
 			this._mainStatusStrip = new System.Windows.Forms.StatusStrip();
 			this._directoryToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._settingsStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();

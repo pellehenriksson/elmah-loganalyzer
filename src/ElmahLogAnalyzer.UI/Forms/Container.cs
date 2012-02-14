@@ -6,15 +6,17 @@ using ElmahLogAnalyzer.UI.Views;
 
 namespace ElmahLogAnalyzer.UI.Forms
 {
-	public partial class MainForm : Form
+	public partial class Container : Form
 	{
+		private readonly WelcomeView _welcomeView;
 		private readonly LoadingView _loadingView;
 
-		public MainForm()
+		public Container()
 		{
 			InitializeComponent();
 			DisplayApplicationVersion();
 
+			_welcomeView = new WelcomeView();
 			_loadingView = new LoadingView();
 
 			_connectToDirectoryButton.Click += (sender, args) => OnRequestConnectToDirectoryDialog(this, EventArgs.Empty);
@@ -75,7 +77,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		public void SetWelcomeState()
 		{
 			SetInitialState();
-			ShowView(new WelcomeView());
+			ShowView(_welcomeView);
 		}
 
 		public void SetInitialState()

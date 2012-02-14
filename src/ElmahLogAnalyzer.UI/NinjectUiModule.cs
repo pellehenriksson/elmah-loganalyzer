@@ -15,9 +15,10 @@ namespace ElmahLogAnalyzer.UI
 			Bind<IConnectToWebServerView>().To<ConnectToWebServerForm>();
 			Bind<IConnectToDatabaseView>().To<ConnectToDatabaseForm>();
 			Bind<IExportView>().To<ExportForm>();
+			Bind<WelcomeView>().ToSelf();
 			Bind<LoadingView>().ToSelf();
 			Bind<AboutForm>().ToSelf();
-			Bind<MainForm>().ToSelf();
+			Bind<Container>().ToSelf();
 		}
 	}
 }

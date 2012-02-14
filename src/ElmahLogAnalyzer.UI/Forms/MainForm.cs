@@ -8,10 +8,14 @@ namespace ElmahLogAnalyzer.UI.Forms
 {
 	public partial class MainForm : Form
 	{
+		private readonly LoadingView _loadingView;
+
 		public MainForm()
 		{
 			InitializeComponent();
 			DisplayApplicationVersion();
+
+			_loadingView = new LoadingView();
 
 			_connectToDirectoryButton.Click += (sender, args) => OnRequestConnectToDirectoryDialog(this, EventArgs.Empty);
 			_connectToDatabaseButton.Click += (sender, args) => OnRequestConnectToDatabaseDialog(this, EventArgs.Empty);
@@ -93,8 +97,8 @@ namespace ElmahLogAnalyzer.UI.Forms
 			_showReportViewButton.Enabled = false;
 			_connectToDirectoryButton.Enabled = false;
 			_connectToWebServerButton.Enabled = false;
-			
-			ShowView(new LoadingView());
+
+			ShowView(_loadingView);
 		}
 		
 		public void SetReadyForWorkState()

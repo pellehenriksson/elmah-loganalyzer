@@ -93,8 +93,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 			_showReportViewButton.Enabled = false;
 			_connectToDirectoryButton.Enabled = false;
 			_connectToWebServerButton.Enabled = false;
-
-
+			
 			ShowView(new LoadingView());
 		}
 		

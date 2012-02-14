@@ -34,12 +34,6 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			Bind<IErrorLogFileParser>().To<ErrorLogFileParser>();
 			Bind<IReportGenerator>().To<ReportGenerator>();
 			Bind<IErrorLogExporter>().To<ErrorLogExporter>();
-			Bind<SearchPresenter>().To<SearchPresenter>();
-			Bind<ReportPresenter>().To<ReportPresenter>();
-			Bind<SettingsPresenter>().To<SettingsPresenter>();
-			Bind<ConnectToWebServerPresenter>().To<ConnectToWebServerPresenter>();
-			Bind<ConnectToDatabasePresenter>().To<ConnectToDatabasePresenter>();
-			Bind<ExportPresenter>().To<ExportPresenter>();
 			Bind<ISettingsManager>().To<SettingsManager>();
 			Bind<ICacheHelper>().To<CacheHelper>();
 			Bind<IWebRequestHelper>().To<WebRequestHelper>();
@@ -52,6 +46,12 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			Bind<IFileSystemHelper>().To<FileSystemHelper>();
 			Bind<IWebServerConnectionsHelper>().To<WebServerConnectionsHelper>();
 			Bind<IDatabaseCreator>().To<SqlCeDatabaseCreator>();
+			Bind<SearchPresenter>().ToSelf();
+			Bind<ReportPresenter>().ToSelf();
+			Bind<SettingsPresenter>().ToSelf();
+			Bind<ConnectToWebServerPresenter>().ToSelf();
+			Bind<ConnectToDatabasePresenter>().ToSelf();
+			Bind<ExportPresenter>().ToSelf();
 			Bind<ILog>().ToMethod(GetLogger);
 		}
 

@@ -12,7 +12,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain
 		public void Fetch_Logs_From_Database()
 		{
 			var source = CreateSource();
-			var result = source.GetLogs(string.Empty /* not needed */);
+			var result = source.GetLogs();
 
 			foreach (var r in result)
 			{
@@ -28,7 +28,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain
 			var source = CreateSource();
 			var repository = new ErrorLogRepository(source);
 
-			repository.Initialize(string.Empty /* not needed */);
+			repository.Initialize();
 
 			var result = repository.GetAll();
 			

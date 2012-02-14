@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using ElmahLogAnalyzer.Core.Common;
-using ElmahLogAnalyzer.Core.Constants;
+using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Presentation;
 using ElmahLogAnalyzer.UI.Views.Partials;
 
@@ -18,10 +18,19 @@ namespace ElmahLogAnalyzer.UI.Forms
 			AcceptButton = _connectButton;
 		}
 
-		public string DatabaseType
+		public ErrorLogSourcesEnum Source
 		{
-			get { return _databaseTypesComboBox.Items[_databaseTypesComboBox.SelectedIndex].ToString(); }
-			set { throw new NotImplementedException("todo"); }
+			get 
+			{
+				var selected = _databaseTypesComboBox.Items[_databaseTypesComboBox.SelectedIndex].ToString();
+				var en = (ErrorLogSourcesEnum)Enum.Parse(typeof(ErrorLogSourcesEnum), selected);
+				return en;
+			}
+
+			set
+			{
+				throw new NotImplementedException("todo");
+			}
 		}
 
 		public string Server
@@ -79,10 +88,11 @@ namespace ElmahLogAnalyzer.UI.Forms
 		private void DatabaseTypesComboBoxSelectedIndexChanged(object sender, EventArgs e)
 		{
 			var selected = _databaseTypesComboBox.Items[_databaseTypesComboBox.SelectedIndex].ToString();
+			var en = (ErrorLogSourcesEnum)Enum.Parse(typeof(ErrorLogSourcesEnum), selected);
 
 			_viewPanel.Controls.Clear();
 
-			if (selected == Databases.SqlServer)
+			if (en == ErrorLogSourcesEnum.SqlServer)
 			{
 				_viewPanel.Controls.Add(new ConnectToSqlServerView());
 			}

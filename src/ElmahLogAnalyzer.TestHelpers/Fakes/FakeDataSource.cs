@@ -18,24 +18,21 @@ namespace ElmahLogAnalyzer.TestHelpers.Fakes
 			AddToLogs("System.SomeOtherException", string.Empty, "Some.Namespace.Domain", new DateTime(2011, 1, 4), "rulle", "some/other/path", new ClientInformation { Browser = "Safari" });
 			AddToLogs("System.Exception", string.Empty, "Some.NamespaceOther.Domain", new DateTime(2011, 1, 4), null, null, new ClientInformation { Browser = "Safari" });
 		}
+		
+		public string Connection
+		{
+			get { return "Fake data source connection"; }
+		}
 
-		public string Path { get; set; }
-
-		public List<ErrorLog> GetLogs(string directory)
+		public List<ErrorLog> GetLogs()
 		{
 			return _logs;
 		}
 		
 		private void AddToLogs(string type, string message, string source, DateTime time, string user, string url, ClientInformation clientInformation)
 		{
-			var errorLog = new ErrorLog();
+			var errorLog = new ErrorLog { ErrorId = Guid.NewGuid(), Type = type, Message = message, Source = source, Time = time };
 			
-			errorLog.ErrorId = Guid.NewGuid();
-			errorLog.Type = type;
-			errorLog.Message = message;
-			errorLog.Source = source;
-			errorLog.Time = time;
-
 			if (user.HasValue())
 			{
 				errorLog.AddServerVariable(HttpServerVariables.LogonUser, user);

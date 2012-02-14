@@ -22,14 +22,16 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 		public event EventHandler<RepositoryInitializedEventArgs> OnInitialized;
 
-		public string Directory { get; private set; }
+		public string Connection
+		{
+			get { return _datasource.Connection; }
+		}
 
-		public void Initialize(string directory)
+		public void Initialize()
 		{
 			ClearRepository();
-			Directory = directory;
 			
-			_errorLogs.AddRange(_datasource.GetLogs(directory));
+			_errorLogs.AddRange(_datasource.GetLogs());
 
 			foreach (var error in _errorLogs)
 			{
@@ -41,7 +43,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 			
 			if (OnInitialized != null)
 			{
-				OnInitialized(this, new RepositoryInitializedEventArgs(Directory, _errorLogs.Count));
+				OnInitialized(this, new RepositoryInitializedEventArgs(Connection, _errorLogs.Count));
 			}
 		}
 		

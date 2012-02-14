@@ -40,7 +40,7 @@ namespace ElmahLogAnalyzer.IntegrationTests
 			settings.SetMaxNumberOfLogs(maxNumberOfLogs);
 
 			var parser = new ErrorLogFileParser(log, new ClientInformationResolver());
-			var datasource = new FileErrorLogSource(fileSystemHelper, parser, settings, log);
+			var datasource = new FileErrorLogSource(TestFilesDirectory, fileSystemHelper, parser, settings, log);
 
 			var repository = new ErrorLogRepository(datasource);
 			return repository;

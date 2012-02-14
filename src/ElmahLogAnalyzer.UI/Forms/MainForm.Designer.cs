@@ -34,15 +34,14 @@
 			this._settingsStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._versionStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._mainToolStrip = new System.Windows.Forms.ToolStrip();
-			this._selectDirectoryButton = new System.Windows.Forms.ToolStripButton();
-			this._selectServerButton = new System.Windows.Forms.ToolStripButton();
-			this._selectDatabaseButton = new System.Windows.Forms.ToolStripButton();
+			this._connectToDirectoryButton = new System.Windows.Forms.ToolStripButton();
+			this._connectToWebServerButton = new System.Windows.Forms.ToolStripButton();
+			this._connectToDatabaseButton = new System.Windows.Forms.ToolStripButton();
 			this._showSearchViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showReportViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showAboutButton = new System.Windows.Forms.ToolStripButton();
 			this._showSettingsViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showExportButton = new System.Windows.Forms.ToolStripButton();
-			this._folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
 			this._mainPanel = new System.Windows.Forms.Panel();
 			this._mainStatusStrip.SuspendLayout();
 			this._mainToolStrip.SuspendLayout();
@@ -84,9 +83,9 @@
 			// _mainToolStrip
 			// 
 			this._mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._selectDirectoryButton,
-            this._selectServerButton,
-            this._selectDatabaseButton,
+            this._connectToDirectoryButton,
+            this._connectToWebServerButton,
+            this._connectToDatabaseButton,
             this._showSearchViewButton,
             this._showReportViewButton,
             this._showAboutButton,
@@ -97,31 +96,29 @@
 			this._mainToolStrip.Size = new System.Drawing.Size(1358, 25);
 			this._mainToolStrip.TabIndex = 1;
 			// 
-			// _selectDirectoryButton
+			// _connectToDirectoryButton
 			// 
-			this._selectDirectoryButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.select_directory;
-			this._selectDirectoryButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._selectDirectoryButton.Name = "_selectDirectoryButton";
-			this._selectDirectoryButton.Size = new System.Drawing.Size(102, 22);
-			this._selectDirectoryButton.Text = "Select &directory";
-			this._selectDirectoryButton.Click += new System.EventHandler(this.SelectDirectoryButtonClick);
+			this._connectToDirectoryButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.select_directory;
+			this._connectToDirectoryButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._connectToDirectoryButton.Name = "_selectDirectoryButton";
+			this._connectToDirectoryButton.Size = new System.Drawing.Size(102, 22);
+			this._connectToDirectoryButton.Text = "Select &directory";
 			// 
-			// _selectServerButton
+			// _connectToWebServerButton
 			// 
-			this._selectServerButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.server;
-			this._selectServerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._selectServerButton.Name = "_selectServerButton";
-			this._selectServerButton.Size = new System.Drawing.Size(146, 22);
-			this._selectServerButton.Text = "Connect to a &web server";
-			this._selectServerButton.Click += new System.EventHandler(this.SelectServerButtonClick);
+			this._connectToWebServerButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.server;
+			this._connectToWebServerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._connectToWebServerButton.Name = "_selectServerButton";
+			this._connectToWebServerButton.Size = new System.Drawing.Size(146, 22);
+			this._connectToWebServerButton.Text = "Connect to a &web server";
 			// 
-			// _selectDatabaseButton
+			// _connectToDatabaseButton
 			// 
-			this._selectDatabaseButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.database;
-			this._selectDatabaseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._selectDatabaseButton.Name = "_selectDatabaseButton";
-			this._selectDatabaseButton.Size = new System.Drawing.Size(137, 22);
-			this._selectDatabaseButton.Text = "Connect to a data&base";
+			this._connectToDatabaseButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.database;
+			this._connectToDatabaseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._connectToDatabaseButton.Name = "_selectDatabaseButton";
+			this._connectToDatabaseButton.Size = new System.Drawing.Size(137, 22);
+			this._connectToDatabaseButton.Text = "Connect to a data&base";
 			// 
 			// _showSearchViewButton
 			// 
@@ -131,7 +128,6 @@
 			this._showSearchViewButton.Size = new System.Drawing.Size(60, 22);
 			this._showSearchViewButton.Text = "&Search";
 			this._showSearchViewButton.ToolTipText = "Search logs";
-			this._showSearchViewButton.Click += new System.EventHandler(this.ShowSearchViewButtonClick);
 			// 
 			// _showReportViewButton
 			// 
@@ -141,7 +137,6 @@
 			this._showReportViewButton.Size = new System.Drawing.Size(65, 22);
 			this._showReportViewButton.Text = "&Reports";
 			this._showReportViewButton.ToolTipText = "View reports";
-			this._showReportViewButton.Click += new System.EventHandler(this.ShowReportViewButtonClick);
 			// 
 			// _showAboutButton
 			// 
@@ -169,11 +164,6 @@
 			this._showExportButton.Name = "_showExportButton";
 			this._showExportButton.Size = new System.Drawing.Size(59, 22);
 			this._showExportButton.Text = "E&xport";
-			// 
-			// _folderBrowserDialog
-			// 
-			this._folderBrowserDialog.Description = "Select a folder with ELMAH log files";
-			this._folderBrowserDialog.ShowNewFolderButton = false;
 			// 
 			// _mainPanel
 			// 
@@ -208,8 +198,7 @@
 		private System.Windows.Forms.StatusStrip _mainStatusStrip;
 		private System.Windows.Forms.ToolStrip _mainToolStrip;
 		private System.Windows.Forms.ToolStripStatusLabel _directoryToolStripStatusLabel;
-		private System.Windows.Forms.ToolStripButton _selectDirectoryButton;
-		private System.Windows.Forms.FolderBrowserDialog _folderBrowserDialog;
+		private System.Windows.Forms.ToolStripButton _connectToDirectoryButton;
 		private System.Windows.Forms.ToolStripStatusLabel _versionStripStatusLabel;
 		private System.Windows.Forms.Panel _mainPanel;
 		private System.Windows.Forms.ToolStripButton _showSearchViewButton;
@@ -217,14 +206,14 @@
 
 		private void ErrorLogRepositoryOnInitialized(object sender, Core.Domain.RepositoryInitializedEventArgs e)
 		{
-			_directoryToolStripStatusLabel.Text = string.Format("Directory : {0} Logs found: {1}", e.Directory, e.TotalNumberOfLogs);
+			_directoryToolStripStatusLabel.Text = string.Format("Connection : {0} Logs found: {1}", e.Directory, e.TotalNumberOfLogs);
 		}
 
 		private System.Windows.Forms.ToolStripButton _showSettingsViewButton;
 		private System.Windows.Forms.ToolStripButton _showAboutButton;
-		private System.Windows.Forms.ToolStripButton _selectServerButton;
+		private System.Windows.Forms.ToolStripButton _connectToWebServerButton;
 		private System.Windows.Forms.ToolStripStatusLabel _settingsStripStatusLabel;
 		private System.Windows.Forms.ToolStripButton _showExportButton;
-		private System.Windows.Forms.ToolStripButton _selectDatabaseButton;
+		private System.Windows.Forms.ToolStripButton _connectToDatabaseButton;
 	}
 }

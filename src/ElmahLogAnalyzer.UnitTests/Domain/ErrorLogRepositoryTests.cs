@@ -11,17 +11,15 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 	public class ErrorLogRepositoryTests : UnitTestBase
 	{
 		[Test]
-		public void Initialize_SetsDirectory()
+		public void Ctor_SetConnectionFromCurrentErrorLogSource()
 		{
 			// arrange
-			var repository = CreateRepository();
-			repository.Initialize(FakeLogsDirectory);
 
 			// act
-			var result = repository.Directory;
+			var repository = CreateRepository();
 
 			// assert
-			Assert.That(result, Is.EqualTo(FakeLogsDirectory));
+			Assert.That(repository.Connection, Is.EqualTo("Fake data source connection"));
 		}
 
 		[Test]
@@ -31,7 +29,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			var repository = CreateRepository();
 
 			// act
-			repository.Initialize(FakeLogsDirectory);
+			repository.Initialize();
 			
 			// assert
 			Assert.That(repository.GetAll().Count, Is.EqualTo(5));
@@ -44,7 +42,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			var repository = CreateRepository();
 
 			// act
-			repository.Initialize(FakeLogsDirectory);
+			repository.Initialize();
 
 			// assert
 			Assert.That(repository.GetTypes().Count, Is.EqualTo(3));
@@ -57,7 +55,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			var repository = CreateRepository();
 
 			// act
-			repository.Initialize(FakeLogsDirectory);
+			repository.Initialize();
 
 			// assert
 			Assert.That(repository.GetUsers().Count, Is.EqualTo(3));
@@ -70,7 +68,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			var repository = CreateRepository();
 
 			// act
-			repository.Initialize(FakeLogsDirectory);
+			repository.Initialize();
 
 			// assert
 			Assert.That(repository.GetSources().Count, Is.EqualTo(4));
@@ -83,7 +81,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			var repository = CreateRepository();
 
 			// act
-			repository.Initialize(FakeLogsDirectory);
+			repository.Initialize();
 
 			// assert
 			Assert.That(repository.GetUrls().Count, Is.EqualTo(2));
@@ -99,7 +97,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			repository.OnInitialized += delegate { eventWasRaised = true; };
 
 			// act
-			repository.Initialize(FakeLogsDirectory);
+			repository.Initialize();
 
 			// assert
 			Assert.That(eventWasRaised, Is.True);
@@ -115,10 +113,10 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			repository.OnInitialized += delegate(object sender, RepositoryInitializedEventArgs args) { directory = args.Directory; };
 
 			// act
-			repository.Initialize(FakeLogsDirectory);
+			repository.Initialize();
 
 			// assert
-			Assert.That(directory, Is.EqualTo(repository.Directory));
+			Assert.That(directory, Is.EqualTo(repository.Connection));
 		}
 
 		[Test]
@@ -205,7 +203,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		private static IErrorLogRepository CreateRepository()
 		{
 			var repository = new ErrorLogRepository(new FakeDataSource());
-			repository.Initialize(string.Empty);
+			repository.Initialize();
 			return repository;
 		}
 

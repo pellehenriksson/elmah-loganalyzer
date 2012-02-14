@@ -1,57 +1,38 @@
 ﻿using System;
-using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 using ElmahLogAnalyzer.Core.Common;
-using ElmahLogAnalyzer.Core.Domain;
-using ElmahLogAnalyzer.Core.Infrastructure.Dependencies;
 using ElmahLogAnalyzer.Core.Infrastructure.Settings;
-using ElmahLogAnalyzer.Core.Presentation;
 using ElmahLogAnalyzer.UI.Views;
 
 namespace ElmahLogAnalyzer.UI.Forms
 {
 	public partial class MainForm : Form
 	{
-		private readonly IErrorLogRepository _errorLogRepository;
-		private readonly ISettingsManager _settingsManager;
-
-		public MainForm(IErrorLogRepository errorLogErrorLogRepository, ISettingsManager settingsManager)
+		public MainForm()
 		{
 			InitializeComponent();
+			DisplayApplicationVersion();
 
-			_selectDatabaseButton.Click += (sender, args) => OnRequestConnectToDatabaseDialog(this, EventArgs.Empty);
+			_connectToDirectoryButton.Click += (sender, args) => OnRequestConnectToDirectoryDialog(this, EventArgs.Empty);
+			_connectToDatabaseButton.Click += (sender, args) => OnRequestConnectToDatabaseDialog(this, EventArgs.Empty);
+			_connectToWebServerButton.Click += (sender, args) => OnRequestConnectToWebServerDialog(this, EventArgs.Empty);
+			
+			_showSearchViewButton.Click += (sender, args) => OnRequestSearchView(this, EventArgs.Empty);
+			_showReportViewButton.Click += (sender, args) => OnRequestReportView(this, EventArgs.Empty);
 			_showExportButton.Click += (sender, args) => OnRequestExportDialog(this, EventArgs.Empty);
 			_showSettingsViewButton.Click += (sender, args) => OnRequestSettingsDialog(this, EventArgs.Empty);
 			_showAboutButton.Click += (sender, args) => OnRequestAboutDialog(this, EventArgs.Empty);
-
-			_errorLogRepository = errorLogErrorLogRepository;
-			_settingsManager = settingsManager;
-			
-			_errorLogRepository.OnInitialized += ErrorLogRepositoryOnInitialized;
-			
-			ShowDisplaySettings();
-			DisplayApplicationVersion();
-
-		    var directory = Environment.GetCommandLineArgs()
-                                        .Skip(1)
-                                        .FirstOrDefault(arg => arg.HasValue());
-
-            if (!directory.HasValue())
-            {
-            	directory = _settingsManager.GetDefaultLogsDirectory();
-
-                if (!directory.HasValue() || !_settingsManager.GetLoadLogsFromDefaultDirectoryAtStartup())
-                {
-                    SetErrorLoadingState();
-                    return;
-                }
-            }
-
-		    HandleLoadingFromDirectory(directory);
 		}
 
+		public event EventHandler OnRequestConnectToDirectoryDialog;
+
+		public event EventHandler OnRequestConnectToWebServerDialog;
+
 		public event EventHandler OnRequestConnectToDatabaseDialog;
+
+		public event EventHandler OnRequestSearchView;
+
+		public event EventHandler OnRequestReportView;
 
 		public event EventHandler OnRequestExportDialog;
 
@@ -71,154 +52,60 @@ namespace ElmahLogAnalyzer.UI.Forms
 			dialog.ShowDialog(this);
 			return dialog.DialogResult;
 		}
-
-		public void ShowDisplaySettings()
+		
+		public void ShowError(Exception ex)
 		{
-			_settingsStripStatusLabel.Text = _settingsManager.ShouldGetAllLogs ? "Settings: All logs" : string.Format("Settings: {0} latest logs", _settingsManager.GetMaxNumberOfLogs());
+			MessageBox.Show(this, ex.Message, @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
 
-		private void SetLoadingState()
+		public void DisplaySettings(ISettingsManager settings)
+		{
+			_settingsStripStatusLabel.Text = settings.ShouldGetAllLogs ? "Settings: All logs" : string.Format("Settings: {0} latest logs", settings.GetMaxNumberOfLogs());
+		}
+
+		public void DisplayStatus(string message)
+		{
+			_directoryToolStripStatusLabel.Text = message;
+		}
+
+		public void SetInitialState()
 		{
 			_showSearchViewButton.Enabled = false;
 			_showReportViewButton.Enabled = false;
-			_selectDirectoryButton.Enabled = false;
-			_selectServerButton.Enabled = false;
+			_showExportButton.Enabled = false;
+			_connectToDirectoryButton.Enabled = true;
+			_connectToWebServerButton.Enabled = true;
+			_showSettingsViewButton.Enabled = true;
+
+			_mainPanel.Controls.Clear();
+			_directoryToolStripStatusLabel.Text = string.Empty;
+		}
+		
+		public void SetLoadingState()
+		{
+			_showSearchViewButton.Enabled = false;
+			_showReportViewButton.Enabled = false;
+			_connectToDirectoryButton.Enabled = false;
+			_connectToWebServerButton.Enabled = false;
 			_showExportButton.Enabled = false;
 			_showSettingsViewButton.Enabled = false;
 
 			ShowView(new LoadingView());
 		}
-
-		private void SetReadyForWorkState()
+		
+		public void SetReadyForWorkState()
 		{
 			_showSearchViewButton.Enabled = true;
 			_showReportViewButton.Enabled = true;
 			_showExportButton.Enabled = true;
-			_selectDirectoryButton.Enabled = true;
-			_selectServerButton.Enabled = true;
+			_connectToDirectoryButton.Enabled = true;
+			_connectToWebServerButton.Enabled = true;
 			_showSettingsViewButton.Enabled = true;
-			
-			LoadSearchView();
 		}
 		
-		private void SetErrorLoadingState()
-		{
-			_showSearchViewButton.Enabled = false;
-			_showReportViewButton.Enabled = false;
-			_showExportButton.Enabled = false;
-			_selectDirectoryButton.Enabled = true;
-			_selectServerButton.Enabled = true;
-			_showSettingsViewButton.Enabled = true;
-			
-			_mainPanel.Controls.Clear();
-			_directoryToolStripStatusLabel.Text = string.Empty;
-		}
-
-		private void HandleDownloadingLogs(NetworkConnection connection)
-		{
-			var downloader = ServiceLocator.Resolve<IErrorLogDownloader>();
-			downloader.Download(connection);
-			HandleLoadingFromDirectory(downloader.DownloadDirectory);
-		}
-		
-		private void HandleLoadingFromDirectory(string directory)
-		{
-			SetLoadingState();
-			_directoryToolStripStatusLabel.Text = string.Format("Loading logs from: {0}", directory);
-
-			var thread = new Thread(InitializeRepository);
-			thread.Start(directory);
-		}
-
-		private void InitializeRepository(object directory)
-		{
-			try
-			{
-				_errorLogRepository.Initialize(directory as string);
-
-				if (InvokeRequired)
-				{
-					this.InvokeEx(x => x.SetReadyForWorkState());
-				}
-				else
-				{
-					SetReadyForWorkState();
-				}
-			}
-			catch (Exception ex)
-			{
-				if (InvokeRequired)
-				{
-					this.InvokeEx(x => x.DisplayError(ex));
-					this.InvokeEx(x => x.SetErrorLoadingState());
-				}
-				else
-				{
-					DisplayError(ex);
-					SetErrorLoadingState();
-				}
-			}
-		}
-
-		private void DisplayError(object ex)
-		{
-			var error = ex as Exception;
-			
-			if (error == null)
-			{
-				return;
-			}
-
-			MessageBox.Show(this, error.Message, @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-		}
-
 		private void DisplayApplicationVersion()
 		{
 			_versionStripStatusLabel.Text = string.Format("Build: {0} ({1})", Application.ProductVersion, GetType().Assembly.GetTypeOfBuild());
-		}
-		
-		private void SelectDirectoryButtonClick(object sender, EventArgs e)
-		{
-			_folderBrowserDialog.SelectedPath = _errorLogRepository.Directory ?? _settingsManager.GetDefaultLogsDirectory();
-
-			var result = _folderBrowserDialog.ShowDialog(this);
-
-			if (result != DialogResult.OK)
-			{
-				return;
-			}
-
-			HandleLoadingFromDirectory(_folderBrowserDialog.SelectedPath);
-		}
-
-		private void LoadSearchView()
-		{
-			var presenter = ServiceLocator.Resolve<SearchPresenter>();
-			ShowView(presenter.View as UserControl);
-		}
-
-		private void ShowSearchViewButtonClick(object sender, EventArgs e)
-		{
-			LoadSearchView();
-		}
-		
-		private void ShowReportViewButtonClick(object sender, EventArgs e)
-		{
-			var presenter = ServiceLocator.Resolve<ReportPresenter>();
-			ShowView(presenter.View as UserControl);
-		}
-		
-		private void SelectServerButtonClick(object sender, EventArgs e)
-		{
-			var presenter = ServiceLocator.Resolve<ConnectToWebServerPresenter>();
-			var view = presenter.View as Form;
-			var dialogResult = view.ShowDialog(this);
-
-			if (dialogResult == DialogResult.OK)
-			{
-				var connection = presenter.Connnection;
-				HandleDownloadingLogs(connection);
-			}
 		}
 	}
 }

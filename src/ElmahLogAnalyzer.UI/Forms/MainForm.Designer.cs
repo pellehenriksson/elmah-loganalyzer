@@ -100,15 +100,15 @@
 			// 
 			this._connectToDirectoryButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.select_directory;
 			this._connectToDirectoryButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._connectToDirectoryButton.Name = "_selectDirectoryButton";
-			this._connectToDirectoryButton.Size = new System.Drawing.Size(102, 22);
-			this._connectToDirectoryButton.Text = "Select &directory";
+			this._connectToDirectoryButton.Name = "_connectToDirectoryButton";
+			this._connectToDirectoryButton.Size = new System.Drawing.Size(135, 22);
+			this._connectToDirectoryButton.Text = "Connect to a &directory";
 			// 
 			// _connectToWebServerButton
 			// 
 			this._connectToWebServerButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.server;
 			this._connectToWebServerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._connectToWebServerButton.Name = "_selectServerButton";
+			this._connectToWebServerButton.Name = "_connectToWebServerButton";
 			this._connectToWebServerButton.Size = new System.Drawing.Size(146, 22);
 			this._connectToWebServerButton.Text = "Connect to a &web server";
 			// 
@@ -116,7 +116,7 @@
 			// 
 			this._connectToDatabaseButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.database;
 			this._connectToDatabaseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._connectToDatabaseButton.Name = "_selectDatabaseButton";
+			this._connectToDatabaseButton.Name = "_connectToDatabaseButton";
 			this._connectToDatabaseButton.Size = new System.Drawing.Size(137, 22);
 			this._connectToDatabaseButton.Text = "Connect to a data&base";
 			// 

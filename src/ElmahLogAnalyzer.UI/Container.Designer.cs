@@ -1,4 +1,4 @@
-﻿namespace ElmahLogAnalyzer.UI.Forms
+﻿namespace ElmahLogAnalyzer.UI
 {
 	partial class Container
 	{

@@ -7,6 +7,7 @@ using ElmahLogAnalyzer.Core.Infrastructure.Dependencies;
 using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 using ElmahLogAnalyzer.Core.Presentation;
 using ElmahLogAnalyzer.UI.Forms;
+using ElmahLogAnalyzer.UI.Views;
 
 namespace ElmahLogAnalyzer.UI
 {
@@ -28,7 +29,7 @@ namespace ElmahLogAnalyzer.UI
 
 			_container = ServiceLocator.Resolve<MainForm>();
 
-			_container.SetInitialState();
+			_container.SetWelcomeState();
 			_container.DisplaySettings(_settingsManager);
 
 			_container.OnRequestConnectToDirectoryDialog += (sender, args) =>
@@ -127,7 +128,7 @@ namespace ElmahLogAnalyzer.UI
 			{
 				if (previousTask.Exception != null)
 				{
-					_container.InvokeEx(m => m.ShowError(previousTask.Exception));
+					_container.InvokeEx(m => m.ShowView(new ErrorView(previousTask.Exception)));
 					_container.InvokeEx(m => m.SetInitialState());
 					return;
 				}
@@ -139,7 +140,7 @@ namespace ElmahLogAnalyzer.UI
 			{
 				if (previousTask.Exception != null)
 				{
-					_container.InvokeEx(m => m.ShowError(previousTask.Exception));
+					_container.InvokeEx(m => m.ShowView(new ErrorView(previousTask.Exception)));
 					_container.InvokeEx(m => m.SetInitialState());
 					return;
 				}

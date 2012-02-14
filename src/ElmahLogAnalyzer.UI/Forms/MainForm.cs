@@ -72,18 +72,23 @@ namespace ElmahLogAnalyzer.UI.Forms
 			_directoryToolStripStatusLabel.Text = message;
 		}
 
+		public void SetWelcomeState()
+		{
+			SetInitialState();
+			ShowView(new WelcomeView());
+		}
+
 		public void SetInitialState()
 		{
 			_connectToDirectoryButton.Enabled = true;
 			_connectToWebServerButton.Enabled = true;
-			_connectToWebServerButton.Enabled = true;
+			_connectToDatabaseButton.Enabled = true;
 
 			_showSearchViewButton.Enabled = false;
 			_showReportViewButton.Enabled = false;
 			_showExportButton.Enabled = false;
 			_showSettingsViewButton.Enabled = true;
 
-			_mainPanel.Controls.Clear();
 			_directoryToolStripStatusLabel.Text = string.Empty;
 		}
 		
@@ -91,7 +96,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		{
 			_connectToDirectoryButton.Enabled = false;
 			_connectToWebServerButton.Enabled = false;
-			_connectToWebServerButton.Enabled = false;
+			_connectToDatabaseButton.Enabled = false;
 
 			_showSearchViewButton.Enabled = false;
 			_showReportViewButton.Enabled = false;
@@ -105,7 +110,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		{
 			_connectToDirectoryButton.Enabled = true;
 			_connectToWebServerButton.Enabled = true;
-			_connectToWebServerButton.Enabled = true;
+			_connectToDatabaseButton.Enabled = true;
 
 			_showSearchViewButton.Enabled = true;
 			_showReportViewButton.Enabled = true;

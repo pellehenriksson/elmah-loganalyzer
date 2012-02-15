@@ -35,3 +35,4 @@ _localbuild
 _password.*
 _ideas.txt
 *ncrunchsolution*
+*dotCover

@@ -50,7 +50,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 		{
 			// arrange
 			var connect = new Mock<IConnectToDatabase>();
-			connect.Setup(x => x.Source).Returns(ErrorLogSourcesEnum.SqlServer);
+			connect.Setup(x => x.Source).Returns(ErrorLogSourcesEnum.SqlServerCompact);
 			connect.Setup(x => x.File).Returns(@"c:\temp\elmah.sdf");
 
 			// act

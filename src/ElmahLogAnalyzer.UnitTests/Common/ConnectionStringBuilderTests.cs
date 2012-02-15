@@ -1,4 +1,5 @@
-﻿using ElmahLogAnalyzer.Core.Common;
+﻿using System;
+using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Presentation;
 using Moq;
@@ -10,7 +11,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 	public class ConnectionStringBuilderTests
 	{
 		[Test]
-		public void Build_ErrorLogSourcesIsSqlServerWithIntegratedSecurity()
+		public void Build_ErrorLogSourceIsSqlServerWithIntegratedSecurity()
 		{
 			// arrange
 			var connect = new Mock<IConnectToDatabase>();
@@ -27,7 +28,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 		}
 
 		[Test]
-		public void Build_ErrorLogSourcesIsSqlServerWithUsernameAndPassword()
+		public void Build_ErrorLogSourceIsSqlServerWithUsernameAndPassword()
 		{
 			// arrange
 			var connect = new Mock<IConnectToDatabase>();
@@ -46,7 +47,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 		}
 
 		[Test]
-		public void Build_ErrorLogSourcesIsSqlServerCompact()
+		public void Build_ErrorLogSourceIsSqlServerCompact()
 		{
 			// arrange
 			var connect = new Mock<IConnectToDatabase>();
@@ -58,6 +59,21 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 
 			// assert
 			Assert.That(result, Is.EqualTo(@"Data Source=c:\temp\elmah.sdf;Persist Security Info=False;"));
+		}
+
+		[Test]
+		public void Build_ErrorLogSourceIsFiles_Throws()
+		{
+			// arrange
+			var connect = new Mock<IConnectToDatabase>();
+			connect.Setup(x => x.Source).Returns(ErrorLogSourcesEnum.Files);
+
+			// act
+			var result = Assert.Throws<InvalidOperationException>(() => ConnectionStringBuilder.Build(connect.Object));
+
+			// assert
+			Assert.That(result, Is.Not.Null);
+			Assert.That(result.Message, Is.EqualTo("Error log source Files is not supported"));
 		}
 	}
 }

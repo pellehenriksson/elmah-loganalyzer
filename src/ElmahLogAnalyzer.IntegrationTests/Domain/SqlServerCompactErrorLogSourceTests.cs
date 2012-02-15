@@ -4,8 +4,8 @@ using NUnit.Framework;
 
 namespace ElmahLogAnalyzer.IntegrationTests.Domain
 {
-	[TestFixture]////[Ignore]
-	public class SqlServerErrorLogSourceTests 
+	[TestFixture]
+	public class SqlServerCompactErrorLogSourceTests : IntegrationTestBase
 	{
 		[Test]
 		public void GetLogs_SettingsSetToReturnAllLogs_GetsErrorLogsFromDatabase()
@@ -13,7 +13,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain
 			var source = CreateSource(-1);
 			var result = source.GetLogs();
 
-			Assert.That(result.Count, Is.EqualTo(9));
+			Assert.That(result.Count, Is.EqualTo(7));
 		}
 
 		[Test]
@@ -25,12 +25,13 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain
 			Assert.That(result.Count, Is.EqualTo(1));
 		}
 
-		private static SqlServerErrorLogSource CreateSource(int numberOfLogs)
+		private SqlServerCompactErrorLogSource CreateSource(int numberOfLogs)
 		{
 			var settings = new FakeSettingsManager();
 			settings.SetMaxNumberOfLogs(numberOfLogs);
 
-			return new SqlServerErrorLogSource(@"data source=.\SQLEXPRESS;Initial Catalog=ElmahLogAnalyzer;Integrated Security=SSPI", new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver()), settings, new FakeLog());
+			var connectionstring = string.Format("data source={0};", TestSqlServerCompactDatabase);
+			return new SqlServerCompactErrorLogSource(connectionstring, new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver()), settings, new FakeLog());
 		}
 	}
 }

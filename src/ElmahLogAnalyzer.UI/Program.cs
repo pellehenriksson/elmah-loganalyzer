@@ -120,6 +120,7 @@ namespace ElmahLogAnalyzer.UI
 			
 			//// need to know the download directory before resolving 
 			//// and before downloading
+			//// set the nw-connection in the constructor !!
 			DownloadLogs(networkConnection);
 
 			var downloadLogsTask = new Task(() => { return; });

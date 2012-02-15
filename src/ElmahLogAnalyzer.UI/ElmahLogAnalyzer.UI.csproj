@@ -121,6 +121,12 @@
     <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AnalyzeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\AnalyzeView.Designer.cs">
+      <DependentUpon>AnalyzeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ErrorView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AnalyzeView.resx">
+      <DependentUpon>AnalyzeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ErrorView.resx">
       <DependentUpon>ErrorView.cs</DependentUpon>

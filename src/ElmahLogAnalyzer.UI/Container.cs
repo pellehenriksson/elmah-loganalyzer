@@ -19,10 +19,11 @@ namespace ElmahLogAnalyzer.UI
 			_welcomeView = new WelcomeView();
 			_loadingView = new LoadingView();
 
-			_connectToDirectoryButton.Click += (sender, args) => OnRequestConnectToDirectoryDialog(this, EventArgs.Empty);
-			_connectToDatabaseButton.Click += (sender, args) => OnRequestConnectToDatabaseDialog(this, EventArgs.Empty);
-			_connectToWebServerButton.Click += (sender, args) => OnRequestConnectToWebServerDialog(this, EventArgs.Empty);
-			
+			_connectToDirectoryMenuItem.Click += (sender, args) => OnRequestConnectToDirectoryDialog(this, EventArgs.Empty);
+			_connectToDatabaseMenuItem.Click += (sender, args) => OnRequestConnectToDatabaseDialog(this, EventArgs.Empty);
+			_connectToWebServerMenuItem.Click += (sender, args) => OnRequestConnectToWebServerDialog(this, EventArgs.Empty);
+			_closeMenuItem.Click += (sender, args) => SetWelcomeState();
+
 			_showSearchViewButton.Click += (sender, args) => OnRequestSearchView(this, EventArgs.Empty);
 			_showReportViewButton.Click += (sender, args) => OnRequestReportView(this, EventArgs.Empty);
 			_showExportButton.Click += (sender, args) => OnRequestExportDialog(this, EventArgs.Empty);
@@ -82,9 +83,10 @@ namespace ElmahLogAnalyzer.UI
 
 		public void SetInitialState()
 		{
-			_connectToDirectoryButton.Enabled = true;
-			_connectToWebServerButton.Enabled = true;
-			_connectToDatabaseButton.Enabled = true;
+			_connectToDirectoryMenuItem.Enabled = true;
+			_connectToWebServerMenuItem.Enabled = true;
+			_connectToDatabaseMenuItem.Enabled = true;
+			_closeMenuItem.Enabled = false;
 
 			_showSearchViewButton.Enabled = false;
 			_showReportViewButton.Enabled = false;
@@ -96,14 +98,13 @@ namespace ElmahLogAnalyzer.UI
 		
 		public void SetLoadingState()
 		{
-			_connectToDirectoryButton.Enabled = false;
-			_connectToWebServerButton.Enabled = false;
-			_connectToDatabaseButton.Enabled = false;
+			_connectToDirectoryMenuItem.Enabled = false;
+			_connectToWebServerMenuItem.Enabled = false;
+			_connectToDatabaseMenuItem.Enabled = false;
 
 			_showSearchViewButton.Enabled = false;
 			_showReportViewButton.Enabled = false;
-			_connectToDirectoryButton.Enabled = false;
-			_connectToWebServerButton.Enabled = false;
+			_showExportButton.Enabled = false;
 
 			_directoryToolStripStatusLabel.Text = string.Empty;
 
@@ -112,9 +113,10 @@ namespace ElmahLogAnalyzer.UI
 		
 		public void SetReadyForWorkState()
 		{
-			_connectToDirectoryButton.Enabled = true;
-			_connectToWebServerButton.Enabled = true;
-			_connectToDatabaseButton.Enabled = true;
+			_connectToDirectoryMenuItem.Enabled = true;
+			_connectToWebServerMenuItem.Enabled = true;
+			_connectToDatabaseMenuItem.Enabled = true;
+			_closeMenuItem.Enabled = true;
 
 			_showSearchViewButton.Enabled = true;
 			_showReportViewButton.Enabled = true;

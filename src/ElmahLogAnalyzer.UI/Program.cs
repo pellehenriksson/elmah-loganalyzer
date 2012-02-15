@@ -62,8 +62,7 @@ namespace ElmahLogAnalyzer.UI
 
 			_container.OnRequestConnectToDatabaseDialog += (sender, args) =>
 			{
-				var presenter = ServiceLocator.Resolve<ConnectToDatabasePresenter>();
-				var view = presenter.View as Form;
+				var view = ServiceLocator.Resolve<ConnectToDatabaseForm>();
 				var result = _container.ShowDialog(view);
 
 				if (result == DialogResult.OK)

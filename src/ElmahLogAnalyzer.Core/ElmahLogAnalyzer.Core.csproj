@@ -185,7 +185,6 @@
     <Compile Include="Integrations\HttpUserAgentSearch\IHttpUserAgentSearchLauncher.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\IHttpUserAgentSearchLauncherFactory.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\UserAgentStringSearchLauncher.cs" />
-    <Compile Include="Presentation\ConnectToDatabasePresenter.cs" />
     <Compile Include="Presentation\ConnectToServerEventArgs.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgs.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgs.cs" />

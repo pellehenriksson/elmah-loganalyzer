@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Domain;
@@ -8,7 +7,7 @@ using ElmahLogAnalyzer.UI.Views.Partials;
 
 namespace ElmahLogAnalyzer.UI.Forms
 {
-	public partial class ConnectToDatabaseForm : Form, IConnectToDatabaseView
+	public partial class ConnectToDatabaseForm : Form, IConnectToDatabase
 	{
 		public ConnectToDatabaseForm()
 		{
@@ -16,55 +15,48 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 			CancelButton = _cancelButton;
 			AcceptButton = _connectButton;
+
+			InitializeViews();
 		}
 
 		public ErrorLogSourcesEnum Source
 		{
 			get { return GetCurrentSelectedErrorLogSource(); }
-
-			set { throw new NotImplementedException("todo"); }
 		}
 		
 		public string File
 		{
 			get { return ConnectionInformation.File; }
-			set { throw new NotImplementedException(); }
 		}
 
 		public string Server
 		{
 			get { return ConnectionInformation.Server; }
-			set { ConnectionInformation.Server = value; }
 		}
 
 		public string Port
 		{
-			get { throw new NotImplementedException(); }
-			set { throw new NotImplementedException(); }
+			get { return ConnectionInformation.Port; }
 		}
 
 		public string Database
 		{
 			get { return ConnectionInformation.Database; }
-			set { ConnectionInformation.Database = value;  }
 		}
 
 		public string Username
 		{
 			get { return ConnectionInformation.Username; }
-			set { ConnectionInformation.Username = value; }
 		}
 
 		public string Password
 		{
 			get { return ConnectionInformation.Password; }
-			set { ConnectionInformation.Password = value; }
 		}
 
 		public bool UseIntegratedSecurity
 		{
 			get { return ConnectionInformation.UseIntegratedSecurity; }
-			set { ConnectionInformation.UseIntegratedSecurity = value; }
 		}
 
 		private IConnectToDatabaseConnectionInformationView ConnectionInformation
@@ -72,17 +64,16 @@ namespace ElmahLogAnalyzer.UI.Forms
 			get { return (IConnectToDatabaseConnectionInformationView)_viewPanel.Controls[0]; }
 		}
 
-		public void LoadDatabaseOptions(List<NameValuePair> options)
+		private void InitializeViews()
 		{
 			_databaseTypesComboBox.Items.Clear();
-			foreach (var option in options)
-			{
-				_databaseTypesComboBox.Items.Add(option);
-			}
+
+			_databaseTypesComboBox.Items.Add(new ViewSelection(ErrorLogSourcesEnum.SqlServer, new ConnectToSqlServerView()));
+			_databaseTypesComboBox.Items.Add(new ViewSelection(ErrorLogSourcesEnum.SqlServerCompact, new ConnectToSqlServerCompactView()));
 
 			_databaseTypesComboBox.SelectedIndex = 0;
 		}
-
+		
 		private void DatabaseTypesComboBoxSelectedIndexChanged(object sender, EventArgs e)
 		{
 			var source = GetCurrentSelectedErrorLogSource();
@@ -102,9 +93,8 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		private ErrorLogSourcesEnum GetCurrentSelectedErrorLogSource()
 		{
-			var item = _databaseTypesComboBox.Items[_databaseTypesComboBox.SelectedIndex] as NameValuePair;
-			var source = (ErrorLogSourcesEnum)Enum.Parse(typeof(ErrorLogSourcesEnum), item.Value);
-			return source;
+			var item = _databaseTypesComboBox.Items[_databaseTypesComboBox.SelectedIndex] as ViewSelection;
+			return item.ErrorLogSource;
 		}
 		
 		private void ConnectButtonClick(object sender, EventArgs e)
@@ -117,6 +107,24 @@ namespace ElmahLogAnalyzer.UI.Forms
 		{
 			DialogResult = DialogResult.Cancel;
 			Close();
+		}
+
+		public class ViewSelection
+		{
+			public ViewSelection(ErrorLogSourcesEnum errorLogSource, IConnectToDatabaseConnectionInformationView view)
+			{
+				ErrorLogSource = errorLogSource;
+				View = view;
+			}
+
+			public ErrorLogSourcesEnum ErrorLogSource { get; private set; }
+			
+			public IConnectToDatabaseConnectionInformationView View { get; private set; }
+
+			public override string ToString()
+			{
+				return ErrorLogSource.GetDescription();
+			}
 		}
 	}
 }

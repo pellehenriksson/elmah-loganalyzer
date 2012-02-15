@@ -1,33 +1,26 @@
-﻿using System.Collections.Generic;
-using ElmahLogAnalyzer.Core.Common;
-using ElmahLogAnalyzer.Core.Domain;
+﻿using ElmahLogAnalyzer.Core.Domain;
 
 namespace ElmahLogAnalyzer.Core.Presentation
 {
-	public interface IConnectToDatabaseView : IConnectToDatabase
-	{
-		void LoadDatabaseOptions(List<NameValuePair> options);
-	}
-
 	public interface IConnectToDatabase : IConnectToDatabaseConnectionInformationView
 	{
-		ErrorLogSourcesEnum Source { get; set; }
+		ErrorLogSourcesEnum Source { get; }
 	}
 
 	public interface IConnectToDatabaseConnectionInformationView
 	{
-		string File { get; set; }
+		string File { get; }
 
-		string Server { get; set; }
+		string Server { get; }
 
-		string Port { get; set; }
+		string Port { get; }
 
-		string Database { get; set; }
+		string Database { get; }
 
-		string Username { get; set; }
+		string Username { get; }
 
-		string Password { get; set; }
+		string Password { get; }
 
-		bool UseIntegratedSecurity { get; set; }
+		bool UseIntegratedSecurity { get; }
 	}
 }

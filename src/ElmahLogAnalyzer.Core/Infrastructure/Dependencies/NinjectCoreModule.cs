@@ -55,7 +55,6 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			Bind<ReportPresenter>().ToSelf();
 			Bind<SettingsPresenter>().ToSelf();
 			Bind<ConnectToWebServerPresenter>().ToSelf();
-			Bind<ConnectToDatabasePresenter>().ToSelf();
 			Bind<ExportPresenter>().ToSelf();
 			Bind<ILog>().ToMethod(GetLogger);
 		}

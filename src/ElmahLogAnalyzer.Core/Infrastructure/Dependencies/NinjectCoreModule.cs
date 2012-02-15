@@ -1,6 +1,5 @@
 ﻿using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Domain.Export;
-using ElmahLogAnalyzer.Core.Infrastructure.Cache;
 using ElmahLogAnalyzer.Core.Infrastructure.Configuration;
 using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
 using ElmahLogAnalyzer.Core.Infrastructure.Logging;
@@ -40,7 +39,6 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			Bind<IReportGenerator>().To<ReportGenerator>();
 			Bind<IErrorLogExporter>().To<ErrorLogExporter>();
 			Bind<ISettingsManager>().To<SettingsManager>();
-			Bind<ICacheHelper>().To<CacheHelper>();
 			Bind<IWebRequestHelper>().To<WebRequestHelper>();
 			Bind<IClientInformationResolver>().To<ClientInformationResolver>();
 			Bind<IUrlNavigationLauncher>().To<UrlNavigationLauncher>();

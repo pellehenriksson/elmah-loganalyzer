@@ -157,7 +157,6 @@
     <Compile Include="Domain\ServerInformation.cs" />
     <Compile Include="Domain\WindowsOperatingSystemNameResolver.cs" />
     <Compile Include="Domain\YellowScreenOfDeathBuilder.cs" />
-    <Compile Include="Infrastructure\Cache\ICacheHelper.cs" />
     <Compile Include="Infrastructure\Dependencies\DataSourceScopeController.cs" />
     <Compile Include="Infrastructure\Dependencies\ServiceLocator.cs" />
     <Compile Include="Infrastructure\FileSystem\FileSystemHelper.cs" />
@@ -167,7 +166,6 @@
     <Compile Include="Infrastructure\Web\IUrlNavigationLauncher.cs" />
     <Compile Include="Infrastructure\Web\IUrlPing.cs" />
     <Compile Include="Infrastructure\Web\IWebRequestHelper.cs" />
-    <Compile Include="Infrastructure\Cache\CacheHelper.cs" />
     <Compile Include="Infrastructure\Logging\Log.cs" />
     <Compile Include="Infrastructure\Dependencies\NinjectCoreModule.cs" />
     <Compile Include="Infrastructure\Settings\UserSettings.Designer.cs">

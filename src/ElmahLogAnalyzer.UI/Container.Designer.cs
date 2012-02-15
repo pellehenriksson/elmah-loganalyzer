@@ -34,15 +34,18 @@
 			this._settingsStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._versionStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this._mainToolStrip = new System.Windows.Forms.ToolStrip();
-			this._connectToDirectoryButton = new System.Windows.Forms.ToolStripButton();
-			this._connectToWebServerButton = new System.Windows.Forms.ToolStripButton();
-			this._connectToDatabaseButton = new System.Windows.Forms.ToolStripButton();
+			this._mainPanel = new System.Windows.Forms.Panel();
+			this._connectDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
+			this._connectToDirectoryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this._connectToWebServerMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this._connectToDatabaseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+			this._closeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this._showSearchViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showReportViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showAboutButton = new System.Windows.Forms.ToolStripButton();
 			this._showSettingsViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showExportButton = new System.Windows.Forms.ToolStripButton();
-			this._mainPanel = new System.Windows.Forms.Panel();
 			this._mainStatusStrip.SuspendLayout();
 			this._mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -83,9 +86,7 @@
 			// _mainToolStrip
 			// 
 			this._mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._connectToDirectoryButton,
-            this._connectToWebServerButton,
-            this._connectToDatabaseButton,
+            this._connectDropDownButton,
             this._showSearchViewButton,
             this._showReportViewButton,
             this._showAboutButton,
@@ -96,29 +97,60 @@
 			this._mainToolStrip.Size = new System.Drawing.Size(1358, 25);
 			this._mainToolStrip.TabIndex = 1;
 			// 
-			// _connectToDirectoryButton
+			// _mainPanel
 			// 
-			this._connectToDirectoryButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.select_directory;
-			this._connectToDirectoryButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._connectToDirectoryButton.Name = "_connectToDirectoryButton";
-			this._connectToDirectoryButton.Size = new System.Drawing.Size(135, 22);
-			this._connectToDirectoryButton.Text = "Connect to a &directory";
+			this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._mainPanel.Location = new System.Drawing.Point(0, 25);
+			this._mainPanel.Name = "_mainPanel";
+			this._mainPanel.Size = new System.Drawing.Size(1358, 681);
+			this._mainPanel.TabIndex = 2;
 			// 
-			// _connectToWebServerButton
+			// _connectDropDownButton
 			// 
-			this._connectToWebServerButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.server;
-			this._connectToWebServerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._connectToWebServerButton.Name = "_connectToWebServerButton";
-			this._connectToWebServerButton.Size = new System.Drawing.Size(146, 22);
-			this._connectToWebServerButton.Text = "Connect to a &web server";
+			this._connectDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._connectToDirectoryMenuItem,
+            this._connectToWebServerMenuItem,
+            this._connectToDatabaseMenuItem,
+            this.toolStripMenuItem1,
+            this._closeMenuItem});
+			this._connectDropDownButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.connect1;
+			this._connectDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._connectDropDownButton.Name = "_connectDropDownButton";
+			this._connectDropDownButton.Size = new System.Drawing.Size(76, 22);
+			this._connectDropDownButton.Text = "&Connect";
 			// 
-			// _connectToDatabaseButton
+			// _connectToDirectoryMenuItem
 			// 
-			this._connectToDatabaseButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.database;
-			this._connectToDatabaseButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._connectToDatabaseButton.Name = "_connectToDatabaseButton";
-			this._connectToDatabaseButton.Size = new System.Drawing.Size(137, 22);
-			this._connectToDatabaseButton.Text = "Connect to a data&base";
+			this._connectToDirectoryMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.select_directory;
+			this._connectToDirectoryMenuItem.Name = "_connectToDirectoryMenuItem";
+			this._connectToDirectoryMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._connectToDirectoryMenuItem.Text = "&Directory";
+			// 
+			// _connectToWebServerMenuItem
+			// 
+			this._connectToWebServerMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.server;
+			this._connectToWebServerMenuItem.Name = "_connectToWebServerMenuItem";
+			this._connectToWebServerMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._connectToWebServerMenuItem.Text = "&Web server";
+			// 
+			// _connectToDatabaseMenuItem
+			// 
+			this._connectToDatabaseMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.database;
+			this._connectToDatabaseMenuItem.Name = "_connectToDatabaseMenuItem";
+			this._connectToDatabaseMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._connectToDatabaseMenuItem.Text = "Data&base";
+			// 
+			// toolStripMenuItem1
+			// 
+			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+			// 
+			// _closeMenuItem
+			// 
+			this._closeMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.close;
+			this._closeMenuItem.Name = "_closeMenuItem";
+			this._closeMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._closeMenuItem.Text = "Close";
 			// 
 			// _showSearchViewButton
 			// 
@@ -145,7 +177,7 @@
 			this._showAboutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._showAboutButton.Name = "_showAboutButton";
 			this._showAboutButton.Size = new System.Drawing.Size(56, 22);
-			this._showAboutButton.Text = "About";
+			this._showAboutButton.Text = "&About";
 			// 
 			// _showSettingsViewButton
 			// 
@@ -165,15 +197,7 @@
 			this._showExportButton.Size = new System.Drawing.Size(59, 22);
 			this._showExportButton.Text = "E&xport";
 			// 
-			// _mainPanel
-			// 
-			this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._mainPanel.Location = new System.Drawing.Point(0, 25);
-			this._mainPanel.Name = "_mainPanel";
-			this._mainPanel.Size = new System.Drawing.Size(1358, 681);
-			this._mainPanel.TabIndex = 2;
-			// 
-			// MainForm
+			// Container
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,7 +206,7 @@
 			this.Controls.Add(this._mainToolStrip);
 			this.Controls.Add(this._mainStatusStrip);
 			this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Name = "MainForm";
+			this.Name = "Container";
 			this.Text = "ELMAH Log Analyzer";
 			this._mainStatusStrip.ResumeLayout(false);
 			this._mainStatusStrip.PerformLayout();
@@ -198,7 +222,6 @@
 		private System.Windows.Forms.StatusStrip _mainStatusStrip;
 		private System.Windows.Forms.ToolStrip _mainToolStrip;
 		private System.Windows.Forms.ToolStripStatusLabel _directoryToolStripStatusLabel;
-		private System.Windows.Forms.ToolStripButton _connectToDirectoryButton;
 		private System.Windows.Forms.ToolStripStatusLabel _versionStripStatusLabel;
 		private System.Windows.Forms.Panel _mainPanel;
 		private System.Windows.Forms.ToolStripButton _showSearchViewButton;
@@ -211,9 +234,13 @@
 
 		private System.Windows.Forms.ToolStripButton _showSettingsViewButton;
 		private System.Windows.Forms.ToolStripButton _showAboutButton;
-		private System.Windows.Forms.ToolStripButton _connectToWebServerButton;
 		private System.Windows.Forms.ToolStripStatusLabel _settingsStripStatusLabel;
 		private System.Windows.Forms.ToolStripButton _showExportButton;
-		private System.Windows.Forms.ToolStripButton _connectToDatabaseButton;
+		private System.Windows.Forms.ToolStripDropDownButton _connectDropDownButton;
+		private System.Windows.Forms.ToolStripMenuItem _connectToDirectoryMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem _connectToWebServerMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem _connectToDatabaseMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem _closeMenuItem;
 	}
 }

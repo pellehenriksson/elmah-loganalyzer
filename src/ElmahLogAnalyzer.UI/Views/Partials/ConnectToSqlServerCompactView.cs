@@ -1,59 +1,70 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using ElmahLogAnalyzer.Core.Presentation;
 
 namespace ElmahLogAnalyzer.UI.Views.Partials
 {
 	public partial class ConnectToSqlServerCompactView : UserControl, IConnectToDatabaseConnectionInformationView
 	{
+		private readonly ErrorProvider _errorProvider = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
+
 		public ConnectToSqlServerCompactView()
 		{
 			InitializeComponent();
+		
 			_fileTextBox.Enabled = false;
+			_fileTextBox.TextChanged += (sender, args) => OnInputValidated(this, new OnValidatingEventArgs(AllRequiredFieldsHaveValues()));
 		}
+
+		public event EventHandler<OnValidatingEventArgs> OnInputValidated;
 
 		public string File
 		{
 			get { return _fileTextBox.Text; }
-			set { throw new System.NotImplementedException(); }
 		}
 
 		public string Server
 		{
-			get { throw new System.NotImplementedException(); }
-			set { throw new System.NotImplementedException(); }
+			get { throw new NotImplementedException(); }
 		}
 
 		public string Port
 		{
-			get { throw new System.NotImplementedException(); }
-			set { throw new System.NotImplementedException(); }
+			get { throw new NotImplementedException(); }
 		}
 
 		public string Database
 		{
-			get { throw new System.NotImplementedException(); }
-			set { throw new System.NotImplementedException(); }
+			get { throw new NotImplementedException(); }
 		}
 
 		public string Username
 		{
-			get { throw new System.NotImplementedException(); }
-			set { throw new System.NotImplementedException(); }
+			get { throw new NotImplementedException(); }
 		}
 
 		public string Password
 		{
-			get { throw new System.NotImplementedException(); }
-			set { throw new System.NotImplementedException(); }
+			get { throw new NotImplementedException(); }
 		}
 
 		public bool UseIntegratedSecurity
 		{
-			get { throw new System.NotImplementedException(); }
-			set { throw new System.NotImplementedException(); }
+			get { throw new NotImplementedException(); }
 		}
 
-		private void BrowseButtonClick(object sender, System.EventArgs e)
+		public void ForceInputValidation()
+		{
+			OnInputValidated(this, new OnValidatingEventArgs(AllRequiredFieldsHaveValues()));
+		}
+
+		private bool AllRequiredFieldsHaveValues()
+		{
+			_errorProvider.SetError(_fileTextBox, string.IsNullOrWhiteSpace(File) ? "Please select a file" : string.Empty);
+			return !string.IsNullOrWhiteSpace(File);
+		}
+
+		private void BrowseButtonClick(object sender, EventArgs e)
 		{
 			var dialog = new OpenFileDialog { Filter = "Microsoft SQL Server Compact files (*.sdf)|*.sdf|All files (*.*)|*.*" };
 

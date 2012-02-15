@@ -1,19 +1,27 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using ElmahLogAnalyzer.Core.Presentation;
 
 namespace ElmahLogAnalyzer.UI.Views.Partials
 {
 	public partial class ConnectToSqlServerView : UserControl, IConnectToDatabaseConnectionInformationView
 	{
+		private readonly ErrorProvider _errorProvider = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
+		
 		public ConnectToSqlServerView()
 		{
 			InitializeComponent();
+
+			_serverTextBox.TextChanged += (sender, args) => OnInputValidated(this, new OnValidatingEventArgs(AllRequiredFieldsHaveValues()));
+			_databaseTextBox.TextChanged += (sender, args) => OnInputValidated(this, new OnValidatingEventArgs(AllRequiredFieldsHaveValues()));
+			_usernameTextBox.TextChanged += (sender, args) => OnInputValidated(this, new OnValidatingEventArgs(AllRequiredFieldsHaveValues()));
 		}
+
+		public event EventHandler<OnValidatingEventArgs> OnInputValidated;
 
 		public string File
 		{
-			get { throw new System.NotImplementedException(); }
-			set { throw new System.NotImplementedException(); }
+			get { throw new NotImplementedException(); }
 		}
 
 		public string Server
@@ -24,35 +32,64 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 
 		public string Port
 		{
-			get { throw new System.NotImplementedException(); }
-			set { throw new System.NotImplementedException(); }
+			get { throw new NotImplementedException(); }
 		}
 
 		public string Database
 		{
 			get { return _databaseTextBox.Text; }
-			set { _databaseTextBox.Text = value; }
 		}
 
 		public string Username
 		{
 			get { return _usernameTextBox.Text; }
-			set { _usernameTextBox.Text = value; }
 		}
 
 		public string Password
 		{
 			get { return _passwordTextBox.Text; }
-			set { _passwordTextBox.Text = value; }
 		}
 
 		public bool UseIntegratedSecurity
 		{
 			get { return _useIntegratedSecurityCheckBox.Checked; }
-			set { _useIntegratedSecurityCheckBox.Checked = value; }
 		}
 
-		private void UseIntegratedSecurityCheckBoxCheckedChanged(object sender, System.EventArgs e)
+		public void ForceInputValidation()
+		{
+			OnInputValidated(this, new OnValidatingEventArgs(AllRequiredFieldsHaveValues()));
+		}
+
+		private bool AllRequiredFieldsHaveValues()
+		{
+			_errorProvider.SetError(_serverTextBox, string.IsNullOrWhiteSpace(Server) ? "Please provide a server name" : string.Empty);
+			_errorProvider.SetError(_databaseTextBox, string.IsNullOrWhiteSpace(Database) ? "Please provide a database name" : string.Empty);
+
+			if (!UseIntegratedSecurity)
+			{
+				_errorProvider.SetError(_usernameTextBox, string.IsNullOrWhiteSpace(Username) ? "Please provide a user name" : string.Empty);
+			}
+			else
+			{
+				_errorProvider.SetError(_usernameTextBox, string.Empty);
+			}
+
+			var isValid = !string.IsNullOrWhiteSpace(Server) && !string.IsNullOrWhiteSpace(Database);
+
+			if (!isValid)
+			{
+				return false;
+			}
+
+			if (!UseIntegratedSecurity && string.IsNullOrWhiteSpace(Username))
+			{
+				return false;
+			}
+
+			return true;
+		}
+
+		private void UseIntegratedSecurityCheckBoxCheckedChanged(object sender, EventArgs e)
 		{
 			var isChecked = _useIntegratedSecurityCheckBox.Checked;
 
@@ -64,6 +101,8 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 
 			_usernameTextBox.Enabled = !isChecked;
 			_passwordTextBox.Enabled = !isChecked;
+
+			ForceInputValidation();
 		}
 	}
 }

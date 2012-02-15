@@ -7,9 +7,9 @@ using ElmahLogAnalyzer.UI.Views.Partials;
 
 namespace ElmahLogAnalyzer.UI.Forms
 {
-	public partial class ConnectToDatabaseForm : Form, IConnectToDatabase
+	public partial class ConnectToDatabaseViewForm : Form, IConnectToDatabaseView
 	{
-		public ConnectToDatabaseForm()
+		public ConnectToDatabaseViewForm()
 		{
 			InitializeComponent();
 
@@ -76,24 +76,28 @@ namespace ElmahLogAnalyzer.UI.Forms
 		
 		private void DatabaseTypesComboBoxSelectedIndexChanged(object sender, EventArgs e)
 		{
-			var source = GetCurrentSelectedErrorLogSource();
+			if (_viewPanel.Controls.Count > 0)
+			{
+				var current = (IConnectToDatabaseConnectionInformationView)_viewPanel.Controls[0];
+				current.OnInputValidated += null;
+			}
 
 			_viewPanel.Controls.Clear();
 
-			if (source == ErrorLogSourcesEnum.SqlServer)
-			{
-				_viewPanel.Controls.Add(new ConnectToSqlServerView());
-			}
+			var item = (ViewSelection)_databaseTypesComboBox.SelectedItem;
 
-			if (source == ErrorLogSourcesEnum.SqlServerCompact)
-			{
-				_viewPanel.Controls.Add(new ConnectToSqlServerCompactView());
-			}
+			item.View.OnInputValidated += (o, args) => _connectButton.Enabled = args.IsValid;
+			item.View.ForceInputValidation();
+
+			var uc = (UserControl)item.View;
+			uc.Dock = DockStyle.Fill;
+
+			_viewPanel.Controls.Add(uc);
 		}
 
 		private ErrorLogSourcesEnum GetCurrentSelectedErrorLogSource()
 		{
-			var item = _databaseTypesComboBox.Items[_databaseTypesComboBox.SelectedIndex] as ViewSelection;
+			var item = (ViewSelection)_databaseTypesComboBox.Items[_databaseTypesComboBox.SelectedIndex];
 			return item.ErrorLogSource;
 		}
 		

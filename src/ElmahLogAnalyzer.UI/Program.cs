@@ -62,12 +62,12 @@ namespace ElmahLogAnalyzer.UI
 
 			_container.OnRequestConnectToDatabaseDialog += (sender, args) =>
 			{
-				var view = ServiceLocator.Resolve<ConnectToDatabaseForm>();
+				var view = ServiceLocator.Resolve<ConnectToDatabaseViewForm>();
 				var result = _container.ShowDialog(view);
 
 				if (result == DialogResult.OK)
 				{
-					var settings = (IConnectToDatabase)view;
+					var settings = (IConnectToDatabaseView)view;
 					var connectionstring = ConnectionStringBuilder.Build(settings);
 
 					InitializeNewErrorLogSource(settings.Source, connectionstring, null);

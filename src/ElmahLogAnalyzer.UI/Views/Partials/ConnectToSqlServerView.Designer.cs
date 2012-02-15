@@ -138,7 +138,7 @@
 			this.Controls.Add(this._serverTextBox);
 			this.Controls.Add(this._serverLabel);
 			this.Name = "ConnectToSqlServerView";
-			this.Size = new System.Drawing.Size(394, 144);
+			this.Size = new System.Drawing.Size(442, 144);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

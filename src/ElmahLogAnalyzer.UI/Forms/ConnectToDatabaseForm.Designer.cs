@@ -1,6 +1,6 @@
 ﻿namespace ElmahLogAnalyzer.UI.Forms
 {
-	partial class ConnectToDatabaseForm
+	partial class ConnectToDatabaseViewForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -39,7 +39,7 @@
 			// 
 			this._cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this._cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this._cancelButton.Location = new System.Drawing.Point(339, 247);
+			this._cancelButton.Location = new System.Drawing.Point(385, 247);
 			this._cancelButton.Name = "_cancelButton";
 			this._cancelButton.Size = new System.Drawing.Size(75, 23);
 			this._cancelButton.TabIndex = 10;
@@ -51,7 +51,7 @@
 			// 
 			this._connectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this._connectButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this._connectButton.Location = new System.Drawing.Point(258, 247);
+			this._connectButton.Location = new System.Drawing.Point(304, 247);
 			this._connectButton.Name = "_connectButton";
 			this._connectButton.Size = new System.Drawing.Size(75, 23);
 			this._connectButton.TabIndex = 9;
@@ -65,7 +65,7 @@
 			this._databaseTypesComboBox.FormattingEnabled = true;
 			this._databaseTypesComboBox.Location = new System.Drawing.Point(106, 12);
 			this._databaseTypesComboBox.Name = "_databaseTypesComboBox";
-			this._databaseTypesComboBox.Size = new System.Drawing.Size(307, 21);
+			this._databaseTypesComboBox.Size = new System.Drawing.Size(354, 21);
 			this._databaseTypesComboBox.TabIndex = 11;
 			this._databaseTypesComboBox.SelectedIndexChanged += new System.EventHandler(this.DatabaseTypesComboBoxSelectedIndexChanged);
 			// 
@@ -73,7 +73,7 @@
 			// 
 			this._viewPanel.Location = new System.Drawing.Point(12, 65);
 			this._viewPanel.Name = "_viewPanel";
-			this._viewPanel.Size = new System.Drawing.Size(401, 172);
+			this._viewPanel.Size = new System.Drawing.Size(448, 172);
 			this._viewPanel.TabIndex = 12;
 			// 
 			// _selectDatabaseTypeLabel
@@ -86,11 +86,11 @@
 			this._selectDatabaseTypeLabel.TabIndex = 13;
 			this._selectDatabaseTypeLabel.Text = "Select database:";
 			// 
-			// ConnectToDatabaseForm
+			// ConnectToDatabaseViewForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(426, 282);
+			this.ClientSize = new System.Drawing.Size(472, 282);
 			this.Controls.Add(this._selectDatabaseTypeLabel);
 			this.Controls.Add(this._viewPanel);
 			this.Controls.Add(this._databaseTypesComboBox);
@@ -100,7 +100,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
-			this.Name = "ConnectToDatabaseForm";
+			this.Name = "ConnectToDatabaseViewForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Connect to a database";
 			this.ResumeLayout(false);

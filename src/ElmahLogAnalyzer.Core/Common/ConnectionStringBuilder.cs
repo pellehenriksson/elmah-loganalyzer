@@ -6,7 +6,7 @@ namespace ElmahLogAnalyzer.Core.Common
 {
 	public static class ConnectionStringBuilder
 	{
-		public static string Build(IConnectToDatabase connect)
+		public static string Build(IConnectToDatabaseView connect)
 		{
 			switch (connect.Source)
 			{

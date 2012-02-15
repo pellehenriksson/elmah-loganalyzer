@@ -1,13 +1,21 @@
-﻿using ElmahLogAnalyzer.Core.Domain;
+﻿using System;
+using ElmahLogAnalyzer.Core.Domain;
 
 namespace ElmahLogAnalyzer.Core.Presentation
 {
-	public interface IConnectToDatabase : IConnectToDatabaseConnectionInformationView
+	public interface IConnectToDatabaseView : IConnectToDatabaseConnectionInfo
 	{
 		ErrorLogSourcesEnum Source { get; }
 	}
 
-	public interface IConnectToDatabaseConnectionInformationView
+	public interface IConnectToDatabaseConnectionInformationView : IConnectToDatabaseConnectionInfo
+	{
+		event EventHandler<OnValidatingEventArgs> OnInputValidated;
+
+		void ForceInputValidation();
+	}
+
+	public interface IConnectToDatabaseConnectionInfo
 	{
 		string File { get; }
 
@@ -22,5 +30,15 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		string Password { get; }
 
 		bool UseIntegratedSecurity { get; }
+	}
+
+	public class OnValidatingEventArgs : EventArgs
+	{
+		public OnValidatingEventArgs(bool isValid)
+		{
+			IsValid = isValid;
+		}
+
+		public bool IsValid { get; private set; }
 	}
 }

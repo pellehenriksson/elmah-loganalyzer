@@ -7,6 +7,11 @@ namespace ElmahLogAnalyzer.IntegrationTests
 {
 	public abstract class IntegrationTestBase
 	{
+		protected string TestSqlServerCompactDatabase
+		{
+			get { return Path.Combine(TestFilesDirectory, "elmah.sdf"); }
+		}
+
 		protected string TestFilesDirectory
 		{
 			get { return Path.Combine(Directory.GetCurrentDirectory(), "_TestFiles"); }

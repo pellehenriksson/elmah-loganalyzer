@@ -31,7 +31,7 @@ namespace ElmahLogAnalyzer.Core.Common
 					}
 
 				default:
-					throw new InvalidOperationException(string.Format("Database type: {0} is not supported", connect.Source));
+					throw new InvalidOperationException(string.Format("Error log source {0} is not supported", connect.Source));
 			}
 		}
 	}

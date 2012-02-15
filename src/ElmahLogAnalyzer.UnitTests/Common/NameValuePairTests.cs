@@ -16,5 +16,18 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 			Assert.That(pair.Name, Is.EqualTo("name"));
 			Assert.That(pair.Value, Is.EqualTo("value"));
 		}
+
+		[Test]
+		public void ToString_ReturnsName()
+		{
+			// arrange
+			var pair = new NameValuePair("name", "value");
+
+			// act
+			var result = pair.ToString();
+
+			// assert
+			Assert.That(result, Is.EqualTo("name"));
+		}
 	}
 }

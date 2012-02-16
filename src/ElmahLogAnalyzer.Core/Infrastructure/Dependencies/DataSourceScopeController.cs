@@ -6,7 +6,7 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 	{
 		private static object _keepAlive = new object();
 
-		public static ErrorLogSourcesEnum Source { get; private set; }
+		public static ErrorLogSources Source { get; private set; }
 		
 		public static string Connection { get; private set; }
 
@@ -15,7 +15,7 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			get { return _keepAlive; }
 		}
 
-		public static void SetNewSource(ErrorLogSourcesEnum source, string connection)
+		public static void SetNewSource(ErrorLogSources source, string connection)
 		{
 			Source = source;
 			Connection = connection;

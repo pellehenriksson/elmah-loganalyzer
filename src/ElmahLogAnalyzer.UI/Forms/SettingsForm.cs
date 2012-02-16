@@ -32,12 +32,12 @@ namespace ElmahLogAnalyzer.UI.Forms
 			}
 		}
 
-		public DateIntervalSpanEnum DefaultDateInterval
+		public DateIntervalSpans DefaultDateInterval
 		{
 			get
 			{
 				var option = (NameValuePair)_defaultDateIntervalFilterComboBox.SelectedItem;
-				return (DateIntervalSpanEnum)Convert.ToInt32(option.Value);
+				return (DateIntervalSpans)Convert.ToInt32(option.Value);
 			}
 		}
 
@@ -73,7 +73,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 			}
 		}
 
-		public void LoadDefaultDateIntervalOptions(IEnumerable<NameValuePair> options, DateIntervalSpanEnum selectedOption)
+		public void LoadDefaultDateIntervalOptions(IEnumerable<NameValuePair> options, DateIntervalSpans selectedOption)
 		{
 			_defaultDateIntervalFilterComboBox.Items.Clear();
 

@@ -21,17 +21,17 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 				.InScope(context => DataSourceScopeController.KeepAlive);
 
 			Bind<IErrorLogSource>().To<SqlServerErrorLogSource>()
-				.When(context => DataSourceScopeController.Source == ErrorLogSourcesEnum.SqlServer)
+				.When(context => DataSourceScopeController.Source == ErrorLogSources.SqlServer)
 				.InScope(context => DataSourceScopeController.KeepAlive)
 				.WithConstructorArgument("connection", (context => DataSourceScopeController.Connection));
 
 			Bind<IErrorLogSource>().To<SqlServerCompactErrorLogSource>()
-				.When(context => DataSourceScopeController.Source == ErrorLogSourcesEnum.SqlServerCompact)
+				.When(context => DataSourceScopeController.Source == ErrorLogSources.SqlServerCompact)
 				.InScope(context => DataSourceScopeController.KeepAlive)
 				.WithConstructorArgument("connection", (context => DataSourceScopeController.Connection));
 
 			Bind<IErrorLogSource>().To<FileErrorLogSource>()
-				.When(context => DataSourceScopeController.Source == ErrorLogSourcesEnum.Files)
+				.When(context => DataSourceScopeController.Source == ErrorLogSources.Files)
 				.InScope(context => DataSourceScopeController.KeepAlive)
 				.WithConstructorArgument("connection", (context => DataSourceScopeController.Connection));
 

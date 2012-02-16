@@ -22,9 +22,9 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Settings
 
 		void SetDefaultExportDirectory(string directory);
 
-		DateIntervalSpanEnum GetDefaultDateInterval();
+		DateIntervalSpans GetDefaultDateInterval();
 
-		void SetDefaultDateInterval(DateIntervalSpanEnum interval);
+		void SetDefaultDateInterval(DateIntervalSpans interval);
 		
 		void Save();
 	}

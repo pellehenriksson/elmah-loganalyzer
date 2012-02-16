@@ -25,7 +25,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			_repository = new Mock<IErrorLogRepository>();
 			_searchLauncherFactory = new Mock<IHttpUserAgentSearchLauncherFactory>();
 			_settingsManager = new Mock<ISettingsManager>();
-			_settingsManager.Setup(x => x.GetDefaultDateInterval()).Returns(DateIntervalSpanEnum.Month);
+			_settingsManager.Setup(x => x.GetDefaultDateInterval()).Returns(DateIntervalSpans.Month);
 		}
 		
 		[Test]

@@ -23,7 +23,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			_generator = new Mock<IReportGenerator>();
 			_settings = new Mock<ISettingsManager>();
 
-			_settings.Setup(x => x.GetDefaultDateInterval()).Returns(DateIntervalSpanEnum.Month);
+			_settings.Setup(x => x.GetDefaultDateInterval()).Returns(DateIntervalSpans.Month);
 		}
 
 		[Test]

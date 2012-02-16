@@ -2,7 +2,7 @@
 
 namespace ElmahLogAnalyzer.Core.Common
 {
-	public enum DateIntervalSpanEnum
+	public enum DateIntervalSpans
 	{
 		[Description("Week")]
 		Week = 1,

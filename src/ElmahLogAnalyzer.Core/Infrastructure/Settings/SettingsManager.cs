@@ -49,12 +49,12 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Settings
 			UserSettings.Default.DefaultExportDirectory = directory;
 		}
 
-		public DateIntervalSpanEnum GetDefaultDateInterval()
+		public DateIntervalSpans GetDefaultDateInterval()
 		{
-			return (DateIntervalSpanEnum)UserSettings.Default.DefaultDateInterval;
+			return (DateIntervalSpans)UserSettings.Default.DefaultDateInterval;
 		}
 
-		public void SetDefaultDateInterval(DateIntervalSpanEnum interval)
+		public void SetDefaultDateInterval(DateIntervalSpans interval)
 		{
 			UserSettings.Default.DefaultDateInterval = (int)interval;
 		}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using ElmahLogAnalyzer.Core.Common;
+using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 using ElmahLogAnalyzer.UI.Views;
 
@@ -37,17 +38,7 @@ namespace ElmahLogAnalyzer.UI
 		{
 			MessageBox.Show(this, ex.Message, @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
-
-		public void DisplaySettings(ISettingsManager settings)
-		{
-			_settingsStripStatusLabel.Text = settings.ShouldGetAllLogs ? "Settings: All logs" : string.Format("Settings: {0} latest logs", settings.GetMaxNumberOfLogs());
-		}
-
-		public void DisplayStatus(string message)
-		{
-			_directoryToolStripStatusLabel.Text = message;
-		}
-
+		
 		public void SetWelcomeState()
 		{
 			SetInitialState();
@@ -97,6 +88,21 @@ namespace ElmahLogAnalyzer.UI
 			_showSettingsViewButton.Enabled = true;
 		}
 
+		public void DisplaySettings(ISettingsManager settings)
+		{
+			_settingsStripStatusLabel.Text = settings.ShouldGetAllLogs ? "Settings: All logs" : string.Format("Settings: {0} latest logs", settings.GetMaxNumberOfLogs());
+		}
+
+		public void DisplayConnectionInformation(ErrorLogSources source, string connection)
+		{
+			_directoryToolStripStatusLabel.Text = ConnectionInformationHelper.GetInformation(source, connection);
+		}
+		
+		private void DisplayApplicationVersion()
+		{
+			_versionStripStatusLabel.Text = string.Format("Build: {0} ({1})", Application.ProductVersion, GetType().Assembly.GetTypeOfBuild());
+		}
+
 		private void RegisterEvents()
 		{
 			_connectToDirectoryMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.ConnectToDirectory);
@@ -119,11 +125,6 @@ namespace ElmahLogAnalyzer.UI
 			}
 
 			OnApplicationCommand(this, new ApplicationCommandEventArgs(command));
-		}
-
-		private void DisplayApplicationVersion()
-		{
-			_versionStripStatusLabel.Text = string.Format("Build: {0} ({1})", Application.ProductVersion, GetType().Assembly.GetTypeOfBuild());
 		}
 	}
 }

@@ -26,12 +26,12 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		{
 			var list = new List<ReportTypeListItem>();
 
-			list.Add(new ReportTypeListItem(ReportTypeEnum.Url));
-			list.Add(new ReportTypeListItem(ReportTypeEnum.Type));
-			list.Add(new ReportTypeListItem(ReportTypeEnum.Source));
-			list.Add(new ReportTypeListItem(ReportTypeEnum.Day));
-			list.Add(new ReportTypeListItem(ReportTypeEnum.User));
-			list.Add(new ReportTypeListItem(ReportTypeEnum.Browser));
+			list.Add(new ReportTypeListItem(ReportTypes.Url));
+			list.Add(new ReportTypeListItem(ReportTypes.Type));
+			list.Add(new ReportTypeListItem(ReportTypes.Source));
+			list.Add(new ReportTypeListItem(ReportTypes.Day));
+			list.Add(new ReportTypeListItem(ReportTypes.User));
+			list.Add(new ReportTypeListItem(ReportTypes.Browser));
 
 			return list;
 		}

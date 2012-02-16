@@ -10,7 +10,7 @@ namespace ElmahLogAnalyzer.Core.Common
 		{
 			switch (connect.Source)
 			{
-				case ErrorLogSourcesEnum.SqlServer:
+				case ErrorLogSources.SqlServer:
 				{
 					var result = string.Format("Data Source={0};Initial Catalog={1};", connect.Server, connect.Database);
 					if (connect.UseIntegratedSecurity)
@@ -25,7 +25,7 @@ namespace ElmahLogAnalyzer.Core.Common
 					return result;
 				}
 
-				case ErrorLogSourcesEnum.SqlServerCompact:
+				case ErrorLogSources.SqlServerCompact:
 					{
 						return string.Format("Data Source={0};Persist Security Info=False;", connect.File);
 					}

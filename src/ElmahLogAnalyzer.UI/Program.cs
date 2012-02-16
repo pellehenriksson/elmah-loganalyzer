@@ -51,7 +51,7 @@ namespace ElmahLogAnalyzer.UI
 				}
 			}
 
-			InitializeNewErrorLogSource(ErrorLogSourcesEnum.Files, directory, null);
+			InitializeNewErrorLogSource(ErrorLogSources.Files, directory, null);
 		}
 
 		private static void RegisterApplicationCommands()
@@ -127,7 +127,7 @@ namespace ElmahLogAnalyzer.UI
 
 			if (result == DialogResult.OK)
 			{
-				InitializeNewErrorLogSource(ErrorLogSourcesEnum.Files, dialog.SelectedPath, null);
+				InitializeNewErrorLogSource(ErrorLogSources.Files, dialog.SelectedPath, null);
 			}
 		}
 
@@ -139,7 +139,7 @@ namespace ElmahLogAnalyzer.UI
 
 			if (result == DialogResult.OK)
 			{
-				InitializeNewErrorLogSource(ErrorLogSourcesEnum.Files, string.Empty, presenter.Connnection);
+				InitializeNewErrorLogSource(ErrorLogSources.Files, string.Empty, presenter.Connnection);
 			}
 		}
 		
@@ -168,7 +168,7 @@ namespace ElmahLogAnalyzer.UI
 			}
 		}
 
-		private static void InitializeNewErrorLogSource(ErrorLogSourcesEnum source, string connection, NetworkConnection networkConnection)
+		private static void InitializeNewErrorLogSource(ErrorLogSources source, string connection, NetworkConnection networkConnection)
 		{
 			_container.SetLoadingState();
 
@@ -206,7 +206,7 @@ namespace ElmahLogAnalyzer.UI
 				}
 
 				_container.InvokeEx(m => m.SetReadyForWorkState());
-				_container.InvokeEx(m => m.DisplayStatus("Connection: " + DataSourceScopeController.Connection));
+				_container.InvokeEx(m => m.DisplayConnectionInformation(DataSourceScopeController.Source, DataSourceScopeController.Connection));
 				_container.InvokeEx(m => m.DisplayView(viewPresenter.View as UserControl));
 			});
 			
@@ -223,7 +223,7 @@ namespace ElmahLogAnalyzer.UI
 			var downloader = ServiceLocator.Resolve<ErrorLogDownloader>();
 			downloader.Download(networkConnection);
 
-			DataSourceScopeController.SetNewSource(ErrorLogSourcesEnum.Files, downloader.DownloadDirectory);
+			DataSourceScopeController.SetNewSource(ErrorLogSources.Files, downloader.DownloadDirectory);
 		}
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace ElmahLogAnalyzer.Core.Domain
 {
-	public enum ReportTypeEnum
+	public enum ReportTypes
 	{
 		[Description("Number of errors per type")]
 		Type,

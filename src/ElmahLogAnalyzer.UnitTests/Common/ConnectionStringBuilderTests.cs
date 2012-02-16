@@ -15,7 +15,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 		{
 			// arrange
 			var connect = new Mock<IConnectToDatabaseView>();
-			connect.Setup(x => x.Source).Returns(ErrorLogSourcesEnum.SqlServer);
+			connect.Setup(x => x.Source).Returns(ErrorLogSources.SqlServer);
 			connect.Setup(x => x.Server).Returns("myServerAddress");
 			connect.Setup(x => x.Database).Returns("myDataBase");
 			connect.Setup(x => x.UseIntegratedSecurity).Returns(true);
@@ -32,7 +32,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 		{
 			// arrange
 			var connect = new Mock<IConnectToDatabaseView>();
-			connect.Setup(x => x.Source).Returns(ErrorLogSourcesEnum.SqlServer);
+			connect.Setup(x => x.Source).Returns(ErrorLogSources.SqlServer);
 			connect.Setup(x => x.Server).Returns("myServerAddress");
 			connect.Setup(x => x.Database).Returns("myDataBase");
 			connect.Setup(x => x.Username).Returns("myUsername");
@@ -51,7 +51,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 		{
 			// arrange
 			var connect = new Mock<IConnectToDatabaseView>();
-			connect.Setup(x => x.Source).Returns(ErrorLogSourcesEnum.SqlServerCompact);
+			connect.Setup(x => x.Source).Returns(ErrorLogSources.SqlServerCompact);
 			connect.Setup(x => x.File).Returns(@"c:\temp\elmah.sdf");
 
 			// act
@@ -66,7 +66,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 		{
 			// arrange
 			var connect = new Mock<IConnectToDatabaseView>();
-			connect.Setup(x => x.Source).Returns(ErrorLogSourcesEnum.Files);
+			connect.Setup(x => x.Source).Returns(ErrorLogSources.Files);
 
 			// act
 			var result = Assert.Throws<InvalidOperationException>(() => ConnectionStringBuilder.Build(connect.Object));

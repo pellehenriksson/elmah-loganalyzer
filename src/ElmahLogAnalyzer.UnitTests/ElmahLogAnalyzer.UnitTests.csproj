@@ -80,6 +80,7 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
+    <Compile Include="Common\ConnectionInformationHelperTests.cs" />
     <Compile Include="Common\ConnectionStringBuilderTests.cs" />
     <Compile Include="Common\DateIntervalTests.cs" />
     <Compile Include="Common\DateTimeExtensionsTests.cs" />

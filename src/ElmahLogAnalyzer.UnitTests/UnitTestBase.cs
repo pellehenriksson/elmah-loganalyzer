@@ -14,7 +14,7 @@ namespace ElmahLogAnalyzer.UnitTests
 
 		protected static ReportQuery CreateReportQuery()
 		{
-			return new ReportQuery(ReportTypeEnum.Type, new DateInterval(new DateTime(1975, 5, 14), new DateTime(2011, 4, 8)), -1);
+			return new ReportQuery(ReportTypes.Type, new DateInterval(new DateTime(1975, 5, 14), new DateTime(2011, 4, 8)), -1);
 		}
 		
 		protected static string GetCsvContent()

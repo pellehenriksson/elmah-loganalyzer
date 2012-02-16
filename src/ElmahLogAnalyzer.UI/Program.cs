@@ -174,14 +174,17 @@ namespace ElmahLogAnalyzer.UI
 			_container.SetLoadingState();
 
 			DataSourceScopeController.SetNewSource(source, connection);
-			
-			//// need to know the download directory before resolving 
-			//// and before downloading
-			//// set the nw-connection in the constructor !!
-			DownloadLogs(networkConnection);
 
-			var downloadLogsTask = new Task(() => { return; });
+			var downloadLogsTask  = new Task(() => { return; });
 
+			if (networkConnection != null)
+			{
+				var downloader = ServiceLocator.ResolveWithConstructorArguments<ErrorLogDownloader>(new IParameter[] { new ConstructorArgument("connection", networkConnection) });
+				DataSourceScopeController.SetNewSource(ErrorLogSources.Files, downloader.DownloadDirectory);
+
+				downloadLogsTask = new Task(downloader.Download);
+			}
+ 
 			var repository = ServiceLocator.Resolve<IErrorLogRepository>();
 			var viewPresenter = ServiceLocator.Resolve<SearchPresenter>();
 
@@ -212,19 +215,6 @@ namespace ElmahLogAnalyzer.UI
 			});
 			
 			downloadLogsTask.Start();
-		}
-		
-		private static void DownloadLogs(NetworkConnection networkConnection)
-		{
-			if (networkConnection == null)
-			{
-				return;
-			}
-
-			var downloader = ServiceLocator.ResolveWithConstructorArguments<ErrorLogDownloader>(new IParameter[] { new ConstructorArgument("connection", networkConnection) });
-			downloader.Download();
-
-			DataSourceScopeController.SetNewSource(ErrorLogSources.Files, downloader.DownloadDirectory);
 		}
 	}
 }

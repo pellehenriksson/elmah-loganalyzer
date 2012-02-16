@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ElmahLogAnalyzer.Core.Common;
@@ -30,7 +31,27 @@ namespace ElmahLogAnalyzer.UI
 
 			RegisterApplicationCommands();
 			
+			Startup();
 			Application.Run(_container);
+		}
+
+		private static void Startup()
+		{
+			var directory = Environment.GetCommandLineArgs()
+					.Skip(1)
+					.FirstOrDefault(arg => arg.HasValue());
+
+			if (!directory.HasValue())
+			{
+				directory = _settingsManager.GetDefaultLogsDirectory();
+
+				if (!directory.HasValue() || !_settingsManager.GetLoadLogsFromDefaultDirectoryAtStartup())
+				{
+					return;
+				}
+			}
+
+			InitializeNewErrorLogSource(ErrorLogSourcesEnum.Files, directory, null);
 		}
 
 		private static void RegisterApplicationCommands()
@@ -93,7 +114,7 @@ namespace ElmahLogAnalyzer.UI
 			    }
 			};
 		}
-
+		
 		private static void ConnectToDirectory()
 		{
 			var dialog = new FolderBrowserDialog

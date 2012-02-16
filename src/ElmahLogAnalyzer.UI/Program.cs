@@ -9,6 +9,7 @@ using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 using ElmahLogAnalyzer.Core.Presentation;
 using ElmahLogAnalyzer.UI.Forms;
 using ElmahLogAnalyzer.UI.Views;
+using Ninject.Parameters;
 
 namespace ElmahLogAnalyzer.UI
 {
@@ -219,9 +220,9 @@ namespace ElmahLogAnalyzer.UI
 			{
 				return;
 			}
-			
-			var downloader = ServiceLocator.Resolve<ErrorLogDownloader>();
-			downloader.Download(networkConnection);
+
+			var downloader = ServiceLocator.ResolveWithConstructorArguments<ErrorLogDownloader>(new IParameter[] { new ConstructorArgument("connection", networkConnection) });
+			downloader.Download();
 
 			DataSourceScopeController.SetNewSource(ErrorLogSources.Files, downloader.DownloadDirectory);
 		}

@@ -17,12 +17,16 @@ namespace ElmahLogAnalyzer.Core.Domain
 		private readonly ICsvParser _csvParser;
 		private readonly ISettingsManager _settingsManager;
 		
-		public ErrorLogDownloader(IWebRequestHelper webRequst, IFileSystemHelper fileSystemHelper, ICsvParser csvParser, ISettingsManager settingsManager)
+		public ErrorLogDownloader(NetworkConnection connection, IWebRequestHelper webRequst, IFileSystemHelper fileSystemHelper, ICsvParser csvParser, ISettingsManager settingsManager)
 		{
+			Connection = connection;
+
 			_webRequst = webRequst;
 			_fileSystemsHelper = fileSystemHelper;
 			_csvParser = csvParser;
 			_settingsManager = settingsManager;
+
+			ResolveDownloadDirectory();
 		}
 
 		public NetworkConnection Connection { get; private set; }
@@ -31,11 +35,8 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 		public IEnumerable<KeyValuePair<Uri, DateTime>> CsvContent { get; private set; }
 
-		public void Download(NetworkConnection connection)
+		public void Download()
 		{
-			Connection = connection;
-
-			ResolveDownloadDirectory();
 			CreateDownloadDirectory();
 			ResolveLogsAvailableForDownload();
 

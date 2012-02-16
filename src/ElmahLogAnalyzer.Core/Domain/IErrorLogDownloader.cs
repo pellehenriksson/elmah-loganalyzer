@@ -4,6 +4,6 @@ namespace ElmahLogAnalyzer.Core.Domain
 	{
 		string DownloadDirectory { get; }
 
-		void Download(NetworkConnection connection);
+		void Download();
 	}
 }

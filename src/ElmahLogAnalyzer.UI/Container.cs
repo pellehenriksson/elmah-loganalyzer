@@ -18,7 +18,7 @@ namespace ElmahLogAnalyzer.UI
 			DisplayApplicationVersion();
 		}
 
-		public event EventHandler<ApplicationCommandEventArgs> OnApplicationCommand; 
+		public event EventHandler<ApplicationCommandEventArgs> OnApplicationCommand;
 		
 		public void DisplayView(UserControl view)
 		{

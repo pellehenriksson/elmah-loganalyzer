@@ -1,5 +1,6 @@
 ﻿using System;
 using Ninject;
+using Ninject.Parameters;
 
 namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 {
@@ -15,6 +16,11 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 		public static T Resolve<T>()
 		{
 			return Kernel.Get<T>();
+		}
+
+		public static T ResolveWithConstructorArguments<T>(params IParameter[] parameters)
+		{
+			return Kernel.Get<T>(parameters);
 		}
 	}
 }

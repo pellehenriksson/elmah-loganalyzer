@@ -31,14 +31,14 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		public void Download_DowloadDirectoryDoesNotExist_ShouldCreateDownloadDirectoryNamedSameAsUrlHost()
 		{
 			// arrange
-			var downloader = CreateDownloader();
 			var connection = new NetworkConnection("http://www.test.com/elmah.axd");
-
-			SetUpDefaultPath();
 			_fileSystemHelper.Setup(x => x.DirectoryExists("c:\\test\\www.test.com")).Returns(false);
+			SetUpDefaultPath();
 
+			var downloader = CreateDownloader(connection);
+		
 			// act
-			downloader.Download(connection);
+			downloader.Download();
 
 			// assert
 			_fileSystemHelper.Verify(x => x.CreateDirectory("c:\\test\\www.test.com_80"), Times.Once());
@@ -48,14 +48,14 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		public void Download_DowloadDirectoryDoesExist_ShouldNotCreateDownloadDirectoryNamedSameAsUrlHost()
 		{
 			// arrange
-			var downloader = CreateDownloader();
 			var connection = new NetworkConnection("http://www.test.com/elmah.axd");
-
 			SetUpDefaultPath();
 			_fileSystemHelper.Setup(x => x.DirectoryExists("c:\\test\\www.test.com")).Returns(true);
 
+			var downloader = CreateDownloader(connection);
+	
 			// act
-			downloader.Download(connection);
+			downloader.Download();
 
 			// assert
 			_fileSystemHelper.Verify(x => x.CreateDirectory("c:\\test\\www.test.com"), Times.Never());
@@ -81,9 +81,9 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			// assert
 		}
 		
-		private IErrorLogDownloader CreateDownloader()
+		private IErrorLogDownloader CreateDownloader(NetworkConnection connection)
 		{
-			return new ErrorLogDownloader(_webRequestHelper.Object, _fileSystemHelper.Object, _csvParser.Object, _settingsManager);
+			return new ErrorLogDownloader(connection, _webRequestHelper.Object, _fileSystemHelper.Object, _csvParser.Object, _settingsManager);
 		}
 
 		private void SetUpDefaultPath()

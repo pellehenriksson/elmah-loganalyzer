@@ -12,9 +12,10 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain
 		[Test][Ignore]
 		public void Download()
 		{
-			var downloader = new ErrorLogDownloader(new WebRequestHelper(), new FileSystemHelper(), new CsvParser(), new FakeSettingsManager());
 			const string url = "http://localhost:49899/elmah.axd/download";
-			downloader.Download(new NetworkConnection(url));
+
+			var downloader = new ErrorLogDownloader(new NetworkConnection(url), new WebRequestHelper(), new FileSystemHelper(), new CsvParser(), new FakeSettingsManager());
+			downloader.Download();
 		}
 	}
 }

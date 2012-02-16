@@ -39,14 +39,17 @@
 			this._connectToWebServerMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this._connectToDatabaseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-			this._closeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this._disconnectMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this._showSearchViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showReportViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showAboutButton = new System.Windows.Forms.ToolStripButton();
 			this._showSettingsViewButton = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this._showExportButton = new System.Windows.Forms.ToolStripButton();
 			this._mainPanel = new System.Windows.Forms.Panel();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+			this._exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this._mainStatusStrip.SuspendLayout();
 			this._mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -66,7 +69,7 @@
 			// 
 			this._directoryToolStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this._directoryToolStripStatusLabel.Name = "_directoryToolStripStatusLabel";
-			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(1239, 17);
+			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(1162, 17);
 			this._directoryToolStripStatusLabel.Spring = true;
 			this._directoryToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -93,6 +96,7 @@
             this._showReportViewButton,
             this._showAboutButton,
             this._showSettingsViewButton,
+            this.toolStripSeparator2,
             this._showExportButton});
 			this._mainToolStrip.Location = new System.Drawing.Point(0, 0);
 			this._mainToolStrip.Name = "_mainToolStrip";
@@ -106,7 +110,9 @@
             this._connectToWebServerMenuItem,
             this._connectToDatabaseMenuItem,
             this.toolStripMenuItem1,
-            this._closeMenuItem});
+            this._disconnectMenuItem,
+            this.toolStripMenuItem2,
+            this._exitMenuItem});
 			this._connectDropDownButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.connect1;
 			this._connectDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._connectDropDownButton.Name = "_connectDropDownButton";
@@ -117,34 +123,39 @@
 			// 
 			this._connectToDirectoryMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.select_directory;
 			this._connectToDirectoryMenuItem.Name = "_connectToDirectoryMenuItem";
-			this._connectToDirectoryMenuItem.Size = new System.Drawing.Size(130, 22);
+			this._connectToDirectoryMenuItem.Size = new System.Drawing.Size(152, 22);
 			this._connectToDirectoryMenuItem.Text = "&Directory";
 			// 
 			// _connectToWebServerMenuItem
 			// 
 			this._connectToWebServerMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.server;
 			this._connectToWebServerMenuItem.Name = "_connectToWebServerMenuItem";
-			this._connectToWebServerMenuItem.Size = new System.Drawing.Size(130, 22);
+			this._connectToWebServerMenuItem.Size = new System.Drawing.Size(152, 22);
 			this._connectToWebServerMenuItem.Text = "&Web server";
 			// 
 			// _connectToDatabaseMenuItem
 			// 
 			this._connectToDatabaseMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.database;
 			this._connectToDatabaseMenuItem.Name = "_connectToDatabaseMenuItem";
-			this._connectToDatabaseMenuItem.Size = new System.Drawing.Size(130, 22);
+			this._connectToDatabaseMenuItem.Size = new System.Drawing.Size(152, 22);
 			this._connectToDatabaseMenuItem.Text = "Data&base";
 			// 
 			// toolStripMenuItem1
 			// 
 			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(127, 6);
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
 			// 
-			// _closeMenuItem
+			// _disconnectMenuItem
 			// 
-			this._closeMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.close;
-			this._closeMenuItem.Name = "_closeMenuItem";
-			this._closeMenuItem.Size = new System.Drawing.Size(130, 22);
-			this._closeMenuItem.Text = "Close";
+			this._disconnectMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.connect;
+			this._disconnectMenuItem.Name = "_disconnectMenuItem";
+			this._disconnectMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._disconnectMenuItem.Text = "Disconnect";
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
 			// 
 			// _showSearchViewButton
 			// 
@@ -183,6 +194,11 @@
 			this._showSettingsViewButton.Text = "S&ettings";
 			this._showSettingsViewButton.ToolTipText = "Change settings";
 			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+			// 
 			// _showExportButton
 			// 
 			this._showExportButton.Image = ((System.Drawing.Image)(resources.GetObject("_showExportButton.Image")));
@@ -199,10 +215,17 @@
 			this._mainPanel.Size = new System.Drawing.Size(1281, 681);
 			this._mainPanel.TabIndex = 2;
 			// 
-			// toolStripSeparator1
+			// toolStripMenuItem2
 			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+			this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
+			// 
+			// _exitMenuItem
+			// 
+			this._exitMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.close;
+			this._exitMenuItem.Name = "_exitMenuItem";
+			this._exitMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._exitMenuItem.Text = "Exit";
 			// 
 			// Container
 			// 
@@ -248,7 +271,10 @@
 		private System.Windows.Forms.ToolStripMenuItem _connectToWebServerMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem _connectToDatabaseMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-		private System.Windows.Forms.ToolStripMenuItem _closeMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem _disconnectMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+		private System.Windows.Forms.ToolStripMenuItem _exitMenuItem;
 	}
 }

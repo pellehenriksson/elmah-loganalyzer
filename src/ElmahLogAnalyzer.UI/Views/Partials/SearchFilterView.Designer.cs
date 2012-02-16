@@ -30,7 +30,6 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this._searchButton = new System.Windows.Forms.Button();
 			this._textTextbox = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this._usersSelector = new ElmahLogAnalyzer.UI.Controls.SelectorView();
@@ -38,18 +37,8 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this._sourcesSelector = new ElmahLogAnalyzer.UI.Controls.SelectorView();
 			this._typesSelector = new ElmahLogAnalyzer.UI.Controls.SelectorView();
 			this._dateIntervalPicker = new ElmahLogAnalyzer.UI.Controls.DateIntervalPicker();
+			this._searchButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
-			// 
-			// _searchButton
-			// 
-			this._searchButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._searchButton.Location = new System.Drawing.Point(1192, 158);
-			this._searchButton.Name = "_searchButton";
-			this._searchButton.Size = new System.Drawing.Size(75, 23);
-			this._searchButton.TabIndex = 11;
-			this._searchButton.Text = "Search";
-			this._searchButton.UseVisualStyleBackColor = true;
-			this._searchButton.Click += new System.EventHandler(this.SearchButtonClick);
 			// 
 			// _textTextbox
 			// 
@@ -122,6 +111,19 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this._dateIntervalPicker.Name = "_dateIntervalPicker";
 			this._dateIntervalPicker.Size = new System.Drawing.Size(302, 42);
 			this._dateIntervalPicker.TabIndex = 8;
+			// 
+			// _searchButton
+			// 
+			this._searchButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._searchButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.find;
+			this._searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this._searchButton.Location = new System.Drawing.Point(1190, 158);
+			this._searchButton.Name = "_searchButton";
+			this._searchButton.Size = new System.Drawing.Size(77, 23);
+			this._searchButton.TabIndex = 11;
+			this._searchButton.Text = "Search";
+			this._searchButton.UseVisualStyleBackColor = true;
+			this._searchButton.Click += new System.EventHandler(this.SearchButtonClick);
 			// 
 			// SearchFilterView
 			// 

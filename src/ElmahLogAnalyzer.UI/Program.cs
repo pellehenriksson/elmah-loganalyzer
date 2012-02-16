@@ -109,6 +109,8 @@ namespace ElmahLogAnalyzer.UI
 				_container.ShowDialog(about);
 			};
 
+			_container.OnRequestExit += (sender, args) => Application.Exit();
+
 			Application.Run(_container);
 		}
 		

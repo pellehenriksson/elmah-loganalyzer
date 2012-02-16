@@ -22,7 +22,8 @@ namespace ElmahLogAnalyzer.UI
 			_connectToDirectoryMenuItem.Click += (sender, args) => OnRequestConnectToDirectoryDialog(this, EventArgs.Empty);
 			_connectToDatabaseMenuItem.Click += (sender, args) => OnRequestConnectToDatabaseDialog(this, EventArgs.Empty);
 			_connectToWebServerMenuItem.Click += (sender, args) => OnRequestConnectToWebServerDialog(this, EventArgs.Empty);
-			_closeMenuItem.Click += (sender, args) => SetWelcomeState();
+			_disconnectMenuItem.Click += (sender, args) => SetWelcomeState();
+			_exitMenuItem.Click += (sender, args) => OnRequestExit(this, EventArgs.Empty);
 
 			_showSearchViewButton.Click += (sender, args) => OnRequestSearchView(this, EventArgs.Empty);
 			_showReportViewButton.Click += (sender, args) => OnRequestReportView(this, EventArgs.Empty);
@@ -46,6 +47,8 @@ namespace ElmahLogAnalyzer.UI
 		public event EventHandler OnRequestSettingsDialog;
 
 		public event EventHandler OnRequestAboutDialog;
+
+		public event EventHandler OnRequestExit;
 
 		public void ShowView(UserControl view)
 		{
@@ -86,7 +89,7 @@ namespace ElmahLogAnalyzer.UI
 			_connectToDirectoryMenuItem.Enabled = true;
 			_connectToWebServerMenuItem.Enabled = true;
 			_connectToDatabaseMenuItem.Enabled = true;
-			_closeMenuItem.Enabled = false;
+			_disconnectMenuItem.Enabled = false;
 
 			_showSearchViewButton.Enabled = false;
 			_showReportViewButton.Enabled = false;
@@ -116,7 +119,7 @@ namespace ElmahLogAnalyzer.UI
 			_connectToDirectoryMenuItem.Enabled = true;
 			_connectToWebServerMenuItem.Enabled = true;
 			_connectToDatabaseMenuItem.Enabled = true;
-			_closeMenuItem.Enabled = true;
+			_disconnectMenuItem.Enabled = true;
 
 			_showSearchViewButton.Enabled = true;
 			_showReportViewButton.Enabled = true;

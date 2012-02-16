@@ -38,7 +38,7 @@
 			this._fileTextBox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._fileTextBox.Location = new System.Drawing.Point(35, 3);
 			this._fileTextBox.Name = "_fileTextBox";
-			this._fileTextBox.Size = new System.Drawing.Size(383, 21);
+			this._fileTextBox.Size = new System.Drawing.Size(355, 21);
 			this._fileTextBox.TabIndex = 12;
 			// 
 			// _serverLabel
@@ -55,7 +55,7 @@
 			// _browseButton
 			// 
 			this._browseButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this._browseButton.Location = new System.Drawing.Point(423, 1);
+			this._browseButton.Location = new System.Drawing.Point(396, 1);
 			this._browseButton.Name = "_browseButton";
 			this._browseButton.Size = new System.Drawing.Size(38, 23);
 			this._browseButton.TabIndex = 13;
@@ -72,7 +72,7 @@
 			this.Controls.Add(this._serverLabel);
 			this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Name = "ConnectToSqlServerCompactView";
-			this.Size = new System.Drawing.Size(466, 67);
+			this.Size = new System.Drawing.Size(438, 67);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

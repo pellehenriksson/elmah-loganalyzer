@@ -6,8 +6,6 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 {
 	public partial class ConnectToSqlServerCompactView : UserControl, IConnectToDatabaseConnectionInformationView
 	{
-		private readonly ErrorProvider _errorProvider = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
-
 		public ConnectToSqlServerCompactView()
 		{
 			InitializeComponent();
@@ -60,7 +58,6 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 
 		private bool AllRequiredFieldsHaveValues()
 		{
-			_errorProvider.SetError(_fileTextBox, string.IsNullOrWhiteSpace(File) ? "Please select a file" : string.Empty);
 			return !string.IsNullOrWhiteSpace(File);
 		}
 

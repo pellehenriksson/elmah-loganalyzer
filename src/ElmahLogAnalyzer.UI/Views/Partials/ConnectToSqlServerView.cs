@@ -6,11 +6,29 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 {
 	public partial class ConnectToSqlServerView : UserControl, IConnectToDatabaseConnectionInformationView
 	{
-		private readonly ErrorProvider _errorProvider = new ErrorProvider { BlinkStyle = ErrorBlinkStyle.NeverBlink };
-		
 		public ConnectToSqlServerView()
 		{
 			InitializeComponent();
+
+			_useIntegratedSecurityCheckBox.Checked = true;
+			_usernameTextBox.Enabled = false;
+			_passwordTextBox.Enabled = false;
+
+			_useIntegratedSecurityCheckBox.CheckedChanged += (sender, args) =>
+			{
+				var isChecked = _useIntegratedSecurityCheckBox.Checked;
+
+				if (isChecked)
+				{
+					_usernameTextBox.Text = string.Empty;
+					_passwordTextBox.Text = string.Empty;
+				}
+
+				_usernameTextBox.Enabled = !isChecked;
+				_passwordTextBox.Enabled = !isChecked;
+
+				ForceInputValidation();
+			};
 
 			_serverTextBox.TextChanged += (sender, args) => OnInputValidated(this, new OnValidatingEventArgs(AllRequiredFieldsHaveValues()));
 			_databaseTextBox.TextChanged += (sender, args) => OnInputValidated(this, new OnValidatingEventArgs(AllRequiredFieldsHaveValues()));
@@ -62,18 +80,6 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 
 		private bool AllRequiredFieldsHaveValues()
 		{
-			_errorProvider.SetError(_serverTextBox, string.IsNullOrWhiteSpace(Server) ? "Please provide a server name" : string.Empty);
-			_errorProvider.SetError(_databaseTextBox, string.IsNullOrWhiteSpace(Database) ? "Please provide a database name" : string.Empty);
-
-			if (!UseIntegratedSecurity)
-			{
-				_errorProvider.SetError(_usernameTextBox, string.IsNullOrWhiteSpace(Username) ? "Please provide a user name" : string.Empty);
-			}
-			else
-			{
-				_errorProvider.SetError(_usernameTextBox, string.Empty);
-			}
-
 			var isValid = !string.IsNullOrWhiteSpace(Server) && !string.IsNullOrWhiteSpace(Database);
 
 			if (!isValid)
@@ -89,6 +95,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			return true;
 		}
 
+		/*
 		private void UseIntegratedSecurityCheckBoxCheckedChanged(object sender, EventArgs e)
 		{
 			var isChecked = _useIntegratedSecurityCheckBox.Checked;
@@ -104,5 +111,6 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 
 			ForceInputValidation();
 		}
+		 */
 	}
 }

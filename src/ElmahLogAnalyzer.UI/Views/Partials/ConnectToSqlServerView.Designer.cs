@@ -49,7 +49,6 @@
 			this._useIntegratedSecurityCheckBox.TabIndex = 13;
 			this._useIntegratedSecurityCheckBox.Text = "Use integrated security";
 			this._useIntegratedSecurityCheckBox.UseVisualStyleBackColor = true;
-			this._useIntegratedSecurityCheckBox.CheckedChanged += new System.EventHandler(this.UseIntegratedSecurityCheckBoxCheckedChanged);
 			// 
 			// _passwordLabel
 			// 

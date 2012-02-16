@@ -81,16 +81,23 @@ namespace ElmahLogAnalyzer.UI.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap connect1 {
+        internal static System.Drawing.Bitmap database {
             get {
-                object obj = ResourceManager.GetObject("connect1", resourceCulture);
+                object obj = ResourceManager.GetObject("database", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap database {
+        internal static System.Drawing.Bitmap disconnect {
             get {
-                object obj = ResourceManager.GetObject("database", resourceCulture);
+                object obj = ResourceManager.GetObject("disconnect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap errorlog_folder {
+            get {
+                object obj = ResourceManager.GetObject("errorlog_folder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -109,6 +116,13 @@ namespace ElmahLogAnalyzer.UI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap refresh {
+            get {
+                object obj = ResourceManager.GetObject("refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap report {
             get {
                 object obj = ResourceManager.GetObject("report", resourceCulture);
@@ -119,13 +133,6 @@ namespace ElmahLogAnalyzer.UI.Properties {
         internal static System.Drawing.Bitmap search {
             get {
                 object obj = ResourceManager.GetObject("search", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap select_directory {
-            get {
-                object obj = ResourceManager.GetObject("select_directory", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

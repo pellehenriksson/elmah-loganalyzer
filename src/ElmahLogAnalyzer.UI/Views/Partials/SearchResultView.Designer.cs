@@ -54,8 +54,7 @@
 			this._treeImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_treeImageList.ImageStream")));
 			this._treeImageList.TransparentColor = System.Drawing.Color.Transparent;
 			this._treeImageList.Images.SetKeyName(0, "folder.png");
-			this._treeImageList.Images.SetKeyName(1, "bug.png");
-			this._treeImageList.Images.SetKeyName(2, "lightbulb.png");
+			this._treeImageList.Images.SetKeyName(1, "errorlog.png");
 			// 
 			// tableLayoutPanel1
 			// 

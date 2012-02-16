@@ -40,6 +40,8 @@
 			this._connectToDatabaseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
 			this._disconnectMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+			this._exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this._showSearchViewButton = new System.Windows.Forms.ToolStripButton();
 			this._showReportViewButton = new System.Windows.Forms.ToolStripButton();
@@ -48,8 +50,6 @@
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this._showExportButton = new System.Windows.Forms.ToolStripButton();
 			this._mainPanel = new System.Windows.Forms.Panel();
-			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-			this._exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this._mainStatusStrip.SuspendLayout();
 			this._mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -113,7 +113,7 @@
             this._disconnectMenuItem,
             this.toolStripMenuItem2,
             this._exitMenuItem});
-			this._connectDropDownButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.connect1;
+			this._connectDropDownButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.connect;
 			this._connectDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._connectDropDownButton.Name = "_connectDropDownButton";
 			this._connectDropDownButton.Size = new System.Drawing.Size(76, 22);
@@ -121,7 +121,7 @@
 			// 
 			// _connectToDirectoryMenuItem
 			// 
-			this._connectToDirectoryMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.select_directory;
+			this._connectToDirectoryMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.errorlog_folder;
 			this._connectToDirectoryMenuItem.Name = "_connectToDirectoryMenuItem";
 			this._connectToDirectoryMenuItem.Size = new System.Drawing.Size(152, 22);
 			this._connectToDirectoryMenuItem.Text = "&Directory";
@@ -147,10 +147,22 @@
 			// 
 			// _disconnectMenuItem
 			// 
-			this._disconnectMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.connect;
+			this._disconnectMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.disconnect;
 			this._disconnectMenuItem.Name = "_disconnectMenuItem";
 			this._disconnectMenuItem.Size = new System.Drawing.Size(152, 22);
 			this._disconnectMenuItem.Text = "Disconnect";
+			// 
+			// toolStripMenuItem2
+			// 
+			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+			this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
+			// 
+			// _exitMenuItem
+			// 
+			this._exitMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.close;
+			this._exitMenuItem.Name = "_exitMenuItem";
+			this._exitMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._exitMenuItem.Text = "Exit";
 			// 
 			// toolStripSeparator1
 			// 
@@ -214,18 +226,6 @@
 			this._mainPanel.Name = "_mainPanel";
 			this._mainPanel.Size = new System.Drawing.Size(1281, 681);
 			this._mainPanel.TabIndex = 2;
-			// 
-			// toolStripMenuItem2
-			// 
-			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-			this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
-			// 
-			// _exitMenuItem
-			// 
-			this._exitMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.close;
-			this._exitMenuItem.Name = "_exitMenuItem";
-			this._exitMenuItem.Size = new System.Drawing.Size(152, 22);
-			this._exitMenuItem.Text = "Exit";
 			// 
 			// Container
 			// 

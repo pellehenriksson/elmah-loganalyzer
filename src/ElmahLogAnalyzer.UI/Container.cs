@@ -8,62 +8,32 @@ namespace ElmahLogAnalyzer.UI
 {
 	public partial class Container : Form
 	{
-		private readonly WelcomeView _welcomeView;
-		private readonly LoadingView _loadingView;
+		private readonly WelcomeView _welcomeView = new WelcomeView();
+		private readonly LoadingView _loadingView = new LoadingView();
 
 		public Container()
 		{
 			InitializeComponent();
+			RegisterEvents();
 			DisplayApplicationVersion();
-
-			_welcomeView = new WelcomeView();
-			_loadingView = new LoadingView();
-
-			_connectToDirectoryMenuItem.Click += (sender, args) => OnRequestConnectToDirectoryDialog(this, EventArgs.Empty);
-			_connectToDatabaseMenuItem.Click += (sender, args) => OnRequestConnectToDatabaseDialog(this, EventArgs.Empty);
-			_connectToWebServerMenuItem.Click += (sender, args) => OnRequestConnectToWebServerDialog(this, EventArgs.Empty);
-			_disconnectMenuItem.Click += (sender, args) => SetWelcomeState();
-			_exitMenuItem.Click += (sender, args) => OnRequestExit(this, EventArgs.Empty);
-
-			_showSearchViewButton.Click += (sender, args) => OnRequestSearchView(this, EventArgs.Empty);
-			_showReportViewButton.Click += (sender, args) => OnRequestReportView(this, EventArgs.Empty);
-			_showExportButton.Click += (sender, args) => OnRequestExportDialog(this, EventArgs.Empty);
-			_showSettingsViewButton.Click += (sender, args) => OnRequestSettingsDialog(this, EventArgs.Empty);
-			_showAboutButton.Click += (sender, args) => OnRequestAboutDialog(this, EventArgs.Empty);
 		}
 
-		public event EventHandler OnRequestConnectToDirectoryDialog;
-
-		public event EventHandler OnRequestConnectToWebServerDialog;
-
-		public event EventHandler OnRequestConnectToDatabaseDialog;
-
-		public event EventHandler OnRequestSearchView;
-
-		public event EventHandler OnRequestReportView;
-
-		public event EventHandler OnRequestExportDialog;
-
-		public event EventHandler OnRequestSettingsDialog;
-
-		public event EventHandler OnRequestAboutDialog;
-
-		public event EventHandler OnRequestExit;
-
-		public void ShowView(UserControl view)
+		public event EventHandler<ApplicationCommandEventArgs> OnApplicationCommand; 
+		
+		public void DisplayView(UserControl view)
 		{
 			_mainPanel.Controls.Clear();
 			_mainPanel.Controls.Add(view);
 			view.Dock = DockStyle.Fill;
 		}
 
-		public DialogResult ShowDialog(Form dialog)
+		public DialogResult DisplayDialog(Form dialog)
 		{
 			dialog.ShowDialog(this);
 			return dialog.DialogResult;
 		}
 		
-		public void ShowError(Exception ex)
+		public void DisplayError(Exception ex)
 		{
 			MessageBox.Show(this, ex.Message, @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
@@ -81,7 +51,7 @@ namespace ElmahLogAnalyzer.UI
 		public void SetWelcomeState()
 		{
 			SetInitialState();
-			ShowView(_welcomeView);
+			DisplayView(_welcomeView);
 		}
 
 		public void SetInitialState()
@@ -111,7 +81,7 @@ namespace ElmahLogAnalyzer.UI
 
 			_directoryToolStripStatusLabel.Text = string.Empty;
 
-			ShowView(_loadingView);
+			DisplayView(_loadingView);
 		}
 		
 		public void SetReadyForWorkState()
@@ -126,7 +96,31 @@ namespace ElmahLogAnalyzer.UI
 			_showExportButton.Enabled = true;
 			_showSettingsViewButton.Enabled = true;
 		}
-		
+
+		private void RegisterEvents()
+		{
+			_connectToDirectoryMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.ConnectToDirectory);
+			_connectToWebServerMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.ConnectToWebServer);
+			_connectToDatabaseMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.ConnectToDatabase);
+			_disconnectMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.Disconnect);
+			_exitMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.Exit);
+			_showSearchViewButton.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.DisplaySearchView);
+			_showReportViewButton.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.DisplayReportsView);
+			_showExportButton.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.DislayExportDialog);
+			_showSettingsViewButton.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.DisplaySettingsDialog);
+			_showAboutButton.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.DisplayAboutDialog);
+		}
+
+		private void RaiseApplicationCommand(ApplicationCommands command)
+		{
+			if (OnApplicationCommand == null)
+			{
+				return;
+			}
+
+			OnApplicationCommand(this, new ApplicationCommandEventArgs(command));
+		}
+
 		private void DisplayApplicationVersion()
 		{
 			_versionStripStatusLabel.Text = string.Format("Build: {0} ({1})", Application.ProductVersion, GetType().Assembly.GetTypeOfBuild());

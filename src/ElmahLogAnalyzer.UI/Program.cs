@@ -15,105 +15,138 @@ namespace ElmahLogAnalyzer.UI
 	{
 		private static ISettingsManager _settingsManager;
 		private static Container _container;
-
+		
 		[STAThread]
 		public static void Main()
 		{
-			//// todo: handle loading logs at startup
-			//// todo: handle if exe started with arguments
-
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
 			_settingsManager = ServiceLocator.Resolve<ISettingsManager>();
-
+			
 			_container = ServiceLocator.Resolve<Container>();
-
 			_container.SetWelcomeState();
 			_container.DisplaySettings(_settingsManager);
 
-			_container.OnRequestConnectToDirectoryDialog += (sender, args) =>
-			{
-				var dialog = new FolderBrowserDialog
-				{
-				    Description = "Select a folder with ELMAH log files",
-				    SelectedPath = _settingsManager.GetDefaultLogsDirectory()
-				};
-
-				var result = dialog.ShowDialog(_container);
-				
-				if (result == DialogResult.OK)
-				{
-					InitializeNewErrorLogSource(ErrorLogSourcesEnum.Files, dialog.SelectedPath, null);
-				}
-			};
-
-			_container.OnRequestConnectToWebServerDialog += (sender, args) =>
-			{
-				var presenter = ServiceLocator.Resolve<ConnectToWebServerPresenter>();
-				var view = presenter.View as Form;
-				var result = _container.ShowDialog(view);
-
-				if (result == DialogResult.OK)
-				{
-					InitializeNewErrorLogSource(ErrorLogSourcesEnum.Files, string.Empty, presenter.Connnection);
-				}
-			};
-
-			_container.OnRequestConnectToDatabaseDialog += (sender, args) =>
-			{
-				var view = ServiceLocator.Resolve<ConnectToDatabaseViewForm>();
-				var result = _container.ShowDialog(view);
-
-				if (result == DialogResult.OK)
-				{
-					var settings = (IConnectToDatabaseView)view;
-					var connectionstring = ConnectionStringBuilder.Build(settings);
-
-					InitializeNewErrorLogSource(settings.Source, connectionstring, null);
-				}
-			};
-
-			_container.OnRequestSearchView += (sender, args) =>
-			{
-				var presenter = ServiceLocator.Resolve<SearchPresenter>();
-				_container.ShowView(presenter.View as UserControl);
-			};
-
-			_container.OnRequestReportView += (sender, args) =>
-			{
-				var presenter = ServiceLocator.Resolve<ReportPresenter>();
-				_container.ShowView(presenter.View as UserControl);
-			};
-
-			_container.OnRequestExportDialog += (sender, args) =>
-			{
-			    var presenter = ServiceLocator.Resolve<ExportPresenter>();
-				_container.ShowDialog(presenter.View as Form);
-			};
-
-			_container.OnRequestSettingsDialog += (sender, args) =>
-			{
-			    var presenter = ServiceLocator.Resolve<SettingsPresenter>();
-				var result = _container.ShowDialog(presenter.View as Form);
-				
-				if (result == DialogResult.OK)
-				{
-					_container.DisplaySettings(_settingsManager);
-				}
-			};
-
-			_container.OnRequestAboutDialog += (sender, args) =>
-			{
-				var about = ServiceLocator.Resolve<AboutForm>();
-				_container.ShowDialog(about);
-			};
-
-			_container.OnRequestExit += (sender, args) => Application.Exit();
-
+			RegisterApplicationCommands();
+			
 			Application.Run(_container);
 		}
+
+		private static void RegisterApplicationCommands()
+		{
+			_container.OnApplicationCommand += (sender, args) =>
+			{
+			    switch (args.Command)
+			    {
+			        case ApplicationCommands.ConnectToDirectory:
+			            ConnectToDirectory();
+			            break;
+
+			        case ApplicationCommands.ConnectToWebServer:
+			            ConnectToWebServer();
+			            break;
+
+			        case ApplicationCommands.ConnectToDatabase:
+			            ConnectToDatabase();
+			            break;
+
+			        case ApplicationCommands.Disconnect:
+			            _container.SetWelcomeState();
+			            break;
+
+			        case ApplicationCommands.DisplaySearchView:
+			            {
+			                var presenter = ServiceLocator.Resolve<SearchPresenter>();
+			                _container.DisplayView(presenter.View as UserControl);
+			                break;
+			            }
+
+			        case ApplicationCommands.DisplayReportsView:
+			            {
+			                var presenter = ServiceLocator.Resolve<ReportPresenter>();
+			                _container.DisplayView(presenter.View as UserControl);
+			                break;
+			            }
+
+			        case ApplicationCommands.DislayExportDialog:
+			            {
+			                var presenter = ServiceLocator.Resolve<ExportPresenter>();
+			                _container.DisplayDialog(presenter.View as Form);
+			                break;
+			            }
+
+			        case ApplicationCommands.DisplaySettingsDialog:
+			            DisplaySettings();
+			            break;
+
+			        case ApplicationCommands.DisplayAboutDialog:
+			            {
+			                var about = ServiceLocator.Resolve<AboutForm>();
+			                _container.DisplayDialog(about);
+			                break;
+			            }
+
+			        case ApplicationCommands.Exit:
+			            Application.Exit();
+			            break;
+			    }
+			};
+		}
+
+		private static void ConnectToDirectory()
+		{
+			var dialog = new FolderBrowserDialog
+			{
+				Description = "Select a folder with ELMAH log files",
+				SelectedPath = _settingsManager.GetDefaultLogsDirectory()
+			};
+
+			var result = dialog.ShowDialog(_container);
+
+			if (result == DialogResult.OK)
+			{
+				InitializeNewErrorLogSource(ErrorLogSourcesEnum.Files, dialog.SelectedPath, null);
+			}
+		}
+
+		private static void ConnectToWebServer()
+		{
+			var presenter = ServiceLocator.Resolve<ConnectToWebServerPresenter>();
+			var view = presenter.View as Form;
+			var result = _container.DisplayDialog(view);
+
+			if (result == DialogResult.OK)
+			{
+				InitializeNewErrorLogSource(ErrorLogSourcesEnum.Files, string.Empty, presenter.Connnection);
+			}
+		}
 		
+		private static void ConnectToDatabase()
+		{
+			var view = ServiceLocator.Resolve<ConnectToDatabaseViewForm>();
+			var result = _container.DisplayDialog(view);
+
+			if (result == DialogResult.OK)
+			{
+				var settings = (IConnectToDatabaseView)view;
+				var connectionstring = ConnectionStringBuilder.Build(settings);
+
+				InitializeNewErrorLogSource(settings.Source, connectionstring, null);
+			}
+		}
+
+		private static void DisplaySettings()
+		{
+			var presenter = ServiceLocator.Resolve<SettingsPresenter>();
+			var result = _container.DisplayDialog(presenter.View as Form);
+
+			if (result == DialogResult.OK)
+			{
+				_container.DisplaySettings(_settingsManager);
+			}
+		}
+
 		private static void InitializeNewErrorLogSource(ErrorLogSourcesEnum source, string connection, NetworkConnection networkConnection)
 		{
 			_container.SetLoadingState();
@@ -134,7 +167,7 @@ namespace ElmahLogAnalyzer.UI
 			{
 				if (previousTask.Exception != null)
 				{
-					_container.InvokeEx(m => m.ShowView(new ErrorView(previousTask.Exception)));
+					_container.InvokeEx(m => m.DisplayView(new ErrorView(previousTask.Exception)));
 					_container.InvokeEx(m => m.SetInitialState());
 					return;
 				}
@@ -146,14 +179,14 @@ namespace ElmahLogAnalyzer.UI
 			{
 				if (previousTask.Exception != null)
 				{
-					_container.InvokeEx(m => m.ShowView(new ErrorView(previousTask.Exception)));
+					_container.InvokeEx(m => m.DisplayView(new ErrorView(previousTask.Exception)));
 					_container.InvokeEx(m => m.SetInitialState());
 					return;
 				}
 
 				_container.InvokeEx(m => m.SetReadyForWorkState());
 				_container.InvokeEx(m => m.DisplayStatus("Connection: " + DataSourceScopeController.Connection));
-				_container.InvokeEx(m => m.ShowView(viewPresenter.View as UserControl));
+				_container.InvokeEx(m => m.DisplayView(viewPresenter.View as UserControl));
 			});
 			
 			downloadLogsTask.Start();

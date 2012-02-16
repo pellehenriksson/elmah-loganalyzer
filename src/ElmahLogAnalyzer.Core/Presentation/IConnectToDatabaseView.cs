@@ -5,7 +5,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 {
 	public interface IConnectToDatabaseView : IConnectToDatabaseConnectionInfo
 	{
-		ErrorLogSourcesEnum Source { get; }
+		ErrorLogSources Source { get; }
 	}
 
 	public interface IConnectToDatabaseConnectionInformationView : IConnectToDatabaseConnectionInfo

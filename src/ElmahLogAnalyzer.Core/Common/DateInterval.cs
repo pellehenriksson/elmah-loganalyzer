@@ -14,15 +14,15 @@ namespace ElmahLogAnalyzer.Core.Common
 
 		public DateTime EndDate { get; private set; }
 
-		public static DateInterval Create(DateIntervalSpanEnum span, DateTime today)
+		public static DateInterval Create(DateIntervalSpans span, DateTime today)
 		{
 			switch (span)
 			{
-				case DateIntervalSpanEnum.Week:
+				case DateIntervalSpans.Week:
 					return new DateInterval(today.AddDays(-7), today);
-				case DateIntervalSpanEnum.Month:
+				case DateIntervalSpans.Month:
 					return new DateInterval(today.AddMonths(-1), today);
-				case DateIntervalSpanEnum.Year:
+				case DateIntervalSpans.Year:
 					return new DateInterval(today.AddYears(-1), today);
 			}
 

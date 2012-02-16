@@ -19,7 +19,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 			InitializeViews();
 		}
 
-		public ErrorLogSourcesEnum Source
+		public ErrorLogSources Source
 		{
 			get { return GetCurrentSelectedErrorLogSource(); }
 		}
@@ -68,8 +68,8 @@ namespace ElmahLogAnalyzer.UI.Forms
 		{
 			_databaseTypesComboBox.Items.Clear();
 
-			_databaseTypesComboBox.Items.Add(new ViewSelection(ErrorLogSourcesEnum.SqlServer, new ConnectToSqlServerView()));
-			_databaseTypesComboBox.Items.Add(new ViewSelection(ErrorLogSourcesEnum.SqlServerCompact, new ConnectToSqlServerCompactView()));
+			_databaseTypesComboBox.Items.Add(new ViewSelection(ErrorLogSources.SqlServer, new ConnectToSqlServerView()));
+			_databaseTypesComboBox.Items.Add(new ViewSelection(ErrorLogSources.SqlServerCompact, new ConnectToSqlServerCompactView()));
 
 			_databaseTypesComboBox.SelectedIndex = 0;
 		}
@@ -95,7 +95,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 			_viewPanel.Controls.Add(uc);
 		}
 
-		private ErrorLogSourcesEnum GetCurrentSelectedErrorLogSource()
+		private ErrorLogSources GetCurrentSelectedErrorLogSource()
 		{
 			var item = (ViewSelection)_databaseTypesComboBox.Items[_databaseTypesComboBox.SelectedIndex];
 			return item.ErrorLogSource;
@@ -115,13 +115,13 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		public class ViewSelection
 		{
-			public ViewSelection(ErrorLogSourcesEnum errorLogSource, IConnectToDatabaseConnectionInformationView view)
+			public ViewSelection(ErrorLogSources errorLogSource, IConnectToDatabaseConnectionInformationView view)
 			{
 				ErrorLogSource = errorLogSource;
 				View = view;
 			}
 
-			public ErrorLogSourcesEnum ErrorLogSource { get; private set; }
+			public ErrorLogSources ErrorLogSource { get; private set; }
 			
 			public IConnectToDatabaseConnectionInformationView View { get; private set; }
 

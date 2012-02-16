@@ -5,13 +5,13 @@ namespace ElmahLogAnalyzer.Core.Presentation
 {
 	public class ReportTypeListItem
 	{
-		public ReportTypeListItem(ReportTypeEnum reportType)
+		public ReportTypeListItem(ReportTypes reportType)
 		{
 			ReportType = reportType;
 			Displayname = reportType.GetDescription();
 		}
 
-		public ReportTypeEnum ReportType { get; private set; }
+		public ReportTypes ReportType { get; private set; }
 		
 		public string Displayname { get; private set; }
 

@@ -12,18 +12,18 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		public void Ctor_SetsTypeAndDisplayname()
 		{
 			// act
-			var item = new ReportTypeListItem(ReportTypeEnum.Url);
+			var item = new ReportTypeListItem(ReportTypes.Url);
 
 			// assert
-			Assert.That(item.ReportType, Is.EqualTo(ReportTypeEnum.Url));
-			Assert.That(item.Displayname, Is.EqualTo(ReportTypeEnum.Url.GetDescription()));
+			Assert.That(item.ReportType, Is.EqualTo(ReportTypes.Url));
+			Assert.That(item.Displayname, Is.EqualTo(ReportTypes.Url.GetDescription()));
 		}
 
 		[Test]
 		public void ToString_IsDisplayname()
 		{
 			// arrange
-			var item = new ReportTypeListItem(ReportTypeEnum.Url);
+			var item = new ReportTypeListItem(ReportTypes.Url);
 
 			// act
 			var result = item.ToString();

@@ -25,22 +25,22 @@ namespace ElmahLogAnalyzer.Core.Domain
 			
 			switch (query.ReportType)
 			{
-				case ReportTypeEnum.Type:
+				case ReportTypes.Type:
 					CreateByTypesReport(report, errors, query.NumberOfResults);
 					break;
-				case ReportTypeEnum.Source:
+				case ReportTypes.Source:
 					CreateBySourceReport(report, errors, query.NumberOfResults);
 					break;
-				case ReportTypeEnum.User:
+				case ReportTypes.User:
 					CreateByUsersReport(report, errors, query.NumberOfResults);
 					break;
-				case ReportTypeEnum.Url:
+				case ReportTypes.Url:
 					CreateByUrlReport(report, errors, query.NumberOfResults);
 					break;
-				case ReportTypeEnum.Day:
+				case ReportTypes.Day:
 					CreateByDayReport(report, errors, query.NumberOfResults);
 					break;
-				case ReportTypeEnum.Browser:
+				case ReportTypes.Browser:
 					CreateByBrowserReport(report, errors, query.NumberOfResults);
 					break;
 			}

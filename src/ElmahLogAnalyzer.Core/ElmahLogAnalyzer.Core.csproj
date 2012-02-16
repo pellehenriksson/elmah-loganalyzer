@@ -88,10 +88,11 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="Common\AssemblyExtensions.cs" />
+    <Compile Include="Common\ConnectionInformationHelper.cs" />
     <Compile Include="Common\ConnectionStringBuilder.cs" />
     <Compile Include="Common\ListExtensions.cs" />
     <Compile Include="Common\DateInterval.cs" />
-    <Compile Include="Common\DateIntervalSpanEnum.cs" />
+    <Compile Include="Common\DateIntervalSpans.cs" />
     <Compile Include="Common\DateTimeExtensions.cs" />
     <Compile Include="Common\DictionaryBuilder.cs" />
     <Compile Include="Common\EnumExtensions.cs" />
@@ -101,7 +102,7 @@
     <Compile Include="Common\UrlCleaner.cs" />
     <Compile Include="Constants\Browsers.cs" />
     <Compile Include="Constants\Platforms.cs" />
-    <Compile Include="Domain\ErrorLogSourcesEnum.cs" />
+    <Compile Include="Domain\ErrorLogSources.cs" />
     <Compile Include="Domain\Export\ErrorLogExporterErrorEventArgs.cs" />
     <Compile Include="Domain\Export\ErrorLogExporter.cs" />
     <Compile Include="Domain\Export\ErrorLogExporterProgressEventArgs.cs" />
@@ -145,7 +146,7 @@
     <Compile Include="Domain\IErrorLogSource.cs" />
     <Compile Include="Domain\IReportGenerator.cs" />
     <Compile Include="Domain\Report.cs" />
-    <Compile Include="Domain\ReportTypeEnum.cs" />
+    <Compile Include="Domain\ReportTypes.cs" />
     <Compile Include="Domain\ReportGenerator.cs" />
     <Compile Include="Domain\ReportQuery.cs" />
     <Compile Include="Domain\RepositoryInitializedEventArgs.cs" />

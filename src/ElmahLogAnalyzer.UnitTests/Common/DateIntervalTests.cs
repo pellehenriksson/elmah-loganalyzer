@@ -100,7 +100,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 			var today = new DateTime(2011, 5, 17);
 
 			// act
-			var result = DateInterval.Create(DateIntervalSpanEnum.Week, today);
+			var result = DateInterval.Create(DateIntervalSpans.Week, today);
 
 			// assert
 			Assert.That(result.StartDate, Is.EqualTo(new DateTime(2011, 5, 10)));
@@ -114,7 +114,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 			var today = new DateTime(2011, 5, 17);
 
 			// act
-			var result = DateInterval.Create(DateIntervalSpanEnum.Month, today);
+			var result = DateInterval.Create(DateIntervalSpans.Month, today);
 
 			// assert
 			Assert.That(result.StartDate, Is.EqualTo(new DateTime(2011, 4, 17)));
@@ -128,7 +128,7 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 			var today = new DateTime(2011, 5, 17);
 
 			// act
-			var result = DateInterval.Create(DateIntervalSpanEnum.Year, today);
+			var result = DateInterval.Create(DateIntervalSpans.Year, today);
 
 			// assert
 			Assert.That(result.StartDate, Is.EqualTo(new DateTime(2010, 5, 17)));

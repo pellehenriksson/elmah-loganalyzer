@@ -3,33 +3,16 @@ using ElmahLogAnalyzer.Core.Domain;
 
 namespace ElmahLogAnalyzer.Core.Presentation
 {
-	public interface IConnectToDatabaseView : IConnectToDatabaseConnectionInfo
+	public interface IConnectToDatabaseView : IConnectToDatabaseConnectionInformation
 	{
 		ErrorLogSources Source { get; }
 	}
 
-	public interface IConnectToDatabaseConnectionInformationView : IConnectToDatabaseConnectionInfo
+	public interface IConnectToDatabaseConnectionInformationView : IConnectToDatabaseConnectionInformation
 	{
 		event EventHandler<OnValidatingEventArgs> OnInputValidated;
 
 		void ForceInputValidation();
-	}
-
-	public interface IConnectToDatabaseConnectionInfo
-	{
-		string File { get; }
-
-		string Server { get; }
-
-		string Port { get; }
-
-		string Database { get; }
-
-		string Username { get; }
-
-		string Password { get; }
-
-		bool UseIntegratedSecurity { get; }
 	}
 
 	public class OnValidatingEventArgs : EventArgs

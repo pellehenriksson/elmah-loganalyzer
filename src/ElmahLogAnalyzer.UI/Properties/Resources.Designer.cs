@@ -67,6 +67,13 @@ namespace ElmahLogAnalyzer.UI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap access {
+            get {
+                object obj = ResourceManager.GetObject("access", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
@@ -147,6 +154,13 @@ namespace ElmahLogAnalyzer.UI.Properties {
         internal static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap sqlserver {
+            get {
+                object obj = ResourceManager.GetObject("sqlserver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

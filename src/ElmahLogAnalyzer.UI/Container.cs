@@ -107,7 +107,9 @@ namespace ElmahLogAnalyzer.UI
 		{
 			_connectToDirectoryMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.ConnectToDirectory);
 			_connectToWebServerMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.ConnectToWebServer);
-			_connectToDatabaseMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.ConnectToDatabase);
+			_connectToSqlServerMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.ConnectToSqlServerDatabase);
+			_connectToSqlServerCompactMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.ConnectToSqlServerCompactDatabase);
+			_connectToAccessMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.ConnectToAccessDatabase);
 			_disconnectMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.Disconnect);
 			_exitMenuItem.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.Exit);
 			_showSearchViewButton.Click += (sender, args) => RaiseApplicationCommand(ApplicationCommands.DisplaySearchView);

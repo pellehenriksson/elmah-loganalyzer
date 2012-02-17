@@ -98,6 +98,12 @@
     <Compile Include="Controls\NameValuePairListView.Designer.cs">
       <DependentUpon>NameValuePairListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ConnectToSqlServerCompactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConnectToSqlServerCompactForm.Designer.cs">
+      <DependentUpon>ConnectToSqlServerCompactForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ConnectToSqlServerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\NameValuePairListView.resx">
       <DependentUpon>NameValuePairListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConnectToSqlServerCompactForm.resx">
+      <DependentUpon>ConnectToSqlServerCompactForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ConnectToSqlServerForm.resx">
       <DependentUpon>ConnectToSqlServerForm.cs</DependentUpon>

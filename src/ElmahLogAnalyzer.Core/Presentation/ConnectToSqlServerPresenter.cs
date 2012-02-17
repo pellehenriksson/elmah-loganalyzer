@@ -20,10 +20,6 @@
 					return;
 				}
 
-				View.ClearErrorMessage();
-				//// test the connection
-				//// verify result
-				//// if ok => procees else display error message
 				View.CloseView();
 			};
 		}

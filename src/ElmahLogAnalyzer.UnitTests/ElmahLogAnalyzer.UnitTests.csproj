@@ -81,7 +81,7 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="Common\ConnectionInformationHelperTests.cs" />
-    <Compile Include="Common\ConnectionStringBuilderTests.cs" />
+    <Compile Include="Common\ConnectionStringHelperTests.cs" />
     <Compile Include="Common\DateIntervalTests.cs" />
     <Compile Include="Common\DateTimeExtensionsTests.cs" />
     <Compile Include="Common\DictionaryBuilderTests.cs" />
@@ -120,6 +120,7 @@
     <Compile Include="Integrations\HttpUserAgentSearch\HttpUserAgentSearchLauncherFactoryTests.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\UserAgentStringSearchLauncherTests.cs" />
     <Compile Include="Presentation\ConnectToServerEventArgsTests.cs" />
+    <Compile Include="Presentation\ConnectToSqlServerCompactPresenterTests.cs" />
     <Compile Include="Presentation\ConnectToSqlServerPresenterTest.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgsTests.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgsTests.cs" />

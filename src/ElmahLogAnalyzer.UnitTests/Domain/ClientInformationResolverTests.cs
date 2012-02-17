@@ -223,7 +223,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		{
 			// arrange
 			var resolver = new ClientInformationResolver();
-			const string httpUserAgent = "Mozilla/5.0 (Linux; U; Android 2.2.2; cs-cz; LG-P990 Build/FRG83G) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1";
+			const string httpUserAgent = "Mozilla/5.0 (Linux; U; Android 2.2.2; cs-cz; LG-P990 Extract/FRG83G) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1";
 
 			// act
 			var result = resolver.Resolve(httpUserAgent);

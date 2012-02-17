@@ -73,6 +73,10 @@ namespace ElmahLogAnalyzer.UI
 					    ConnectToSqlServerDatabase();
 					    break;
 
+					case ApplicationCommands.ConnectToSqlServerCompactDatabase:
+			    		ConnectToSqlServerCompactDatabase();
+			    		break;
+						
 			        case ApplicationCommands.Disconnect:
 			            _container.SetWelcomeState();
 			            break;
@@ -153,7 +157,22 @@ namespace ElmahLogAnalyzer.UI
 			if (result == DialogResult.OK)
 			{
 				var information = (IConnectToDatabaseConnectionInformation)view;
-				var connectionstring = ConnectionStringBuilder.Build(information);
+				var connectionstring = ConnectionStringHelper.Extract(information);
+
+				InitializeNewErrorLogSource(information.Source, connectionstring, null);
+			}
+		}
+
+		private static void ConnectToSqlServerCompactDatabase()
+		{
+			var presenter = ServiceLocator.Resolve<ConnectToSqlServerCompactPresenter>();
+			var view = presenter.View as Form;
+			var result = _container.DisplayDialog(view);
+
+			if (result == DialogResult.OK)
+			{
+				var information = (IConnectToDatabaseConnectionInformation)view;
+				var connectionstring = ConnectionStringHelper.Extract(information);
 
 				InitializeNewErrorLogSource(information.Source, connectionstring, null);
 			}

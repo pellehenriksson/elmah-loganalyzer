@@ -69,9 +69,9 @@ namespace ElmahLogAnalyzer.UI
 			            ConnectToWebServer();
 			            break;
 
-			        case ApplicationCommands.ConnectToDatabase:
-			            ConnectToDatabase();
-			            break;
+					case ApplicationCommands.ConnectToSqlServerDatabase:
+					    ConnectToSqlServerDatabase();
+					    break;
 
 			        case ApplicationCommands.Disconnect:
 			            _container.SetWelcomeState();
@@ -143,18 +143,19 @@ namespace ElmahLogAnalyzer.UI
 				InitializeNewErrorLogSource(ErrorLogSources.Files, string.Empty, presenter.Connnection);
 			}
 		}
-		
-		private static void ConnectToDatabase()
+
+		private static void ConnectToSqlServerDatabase()
 		{
-			var view = ServiceLocator.Resolve<ConnectToDatabaseViewForm>();
+			var presenter = ServiceLocator.Resolve<ConnectToSqlServerPresenter>();
+			var view = presenter.View as Form;
 			var result = _container.DisplayDialog(view);
 
 			if (result == DialogResult.OK)
 			{
-				var settings = (IConnectToDatabaseView)view;
-				var connectionstring = ConnectionStringBuilder.Build(settings);
+				var information = (IConnectToDatabaseConnectionInformation)view;
+				var connectionstring = ConnectionStringBuilder.Build(information);
 
-				InitializeNewErrorLogSource(settings.Source, connectionstring, null);
+				InitializeNewErrorLogSource(information.Source, connectionstring, null);
 			}
 		}
 

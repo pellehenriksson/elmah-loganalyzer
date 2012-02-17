@@ -185,10 +185,13 @@
     <Compile Include="Integrations\HttpUserAgentSearch\IHttpUserAgentSearchLauncherFactory.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\UserAgentStringSearchLauncher.cs" />
     <Compile Include="Presentation\ConnectToServerEventArgs.cs" />
+    <Compile Include="Presentation\ConnectToSqlServerPresenter.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgs.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgs.cs" />
     <Compile Include="Presentation\ExportPresenter.cs" />
+    <Compile Include="Presentation\IConnectToDatabaseConnectionInformation.cs" />
     <Compile Include="Presentation\IConnectToDatabaseView.cs" />
+    <Compile Include="Presentation\IConnectToSqlServerView.cs" />
     <Compile Include="Presentation\IExportView.cs" />
     <Compile Include="Presentation\ISearchView.cs" />
     <Compile Include="Presentation\IReportView.cs" />

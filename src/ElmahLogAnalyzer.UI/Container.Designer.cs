@@ -38,6 +38,9 @@
 			this._connectToDirectoryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this._connectToWebServerMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this._connectToDatabaseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this._connectToSqlServerMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this._connectToSqlServerCompactMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this._connectToAccessMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
 			this._disconnectMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -135,10 +138,35 @@
 			// 
 			// _connectToDatabaseMenuItem
 			// 
+			this._connectToDatabaseMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._connectToSqlServerMenuItem,
+            this._connectToSqlServerCompactMenuItem,
+            this._connectToAccessMenuItem});
 			this._connectToDatabaseMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.database;
 			this._connectToDatabaseMenuItem.Name = "_connectToDatabaseMenuItem";
 			this._connectToDatabaseMenuItem.Size = new System.Drawing.Size(152, 22);
 			this._connectToDatabaseMenuItem.Text = "Data&base";
+			// 
+			// _connectToSqlServerMenuItem
+			// 
+			this._connectToSqlServerMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.sqlserver;
+			this._connectToSqlServerMenuItem.Name = "_connectToSqlServerMenuItem";
+			this._connectToSqlServerMenuItem.Size = new System.Drawing.Size(239, 22);
+			this._connectToSqlServerMenuItem.Text = "Microsoft SQL Server";
+			// 
+			// _connectToSqlServerCompactMenuItem
+			// 
+			this._connectToSqlServerCompactMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.sqlserver;
+			this._connectToSqlServerCompactMenuItem.Name = "_connectToSqlServerCompactMenuItem";
+			this._connectToSqlServerCompactMenuItem.Size = new System.Drawing.Size(239, 22);
+			this._connectToSqlServerCompactMenuItem.Text = "Microsoft SQL Server Compact 4.0";
+			// 
+			// _connectToAccessMenuItem
+			// 
+			this._connectToAccessMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.access;
+			this._connectToAccessMenuItem.Name = "_connectToAccessMenuItem";
+			this._connectToAccessMenuItem.Size = new System.Drawing.Size(239, 22);
+			this._connectToAccessMenuItem.Text = "Microsoft Access";
 			// 
 			// toolStripMenuItem1
 			// 
@@ -276,5 +304,8 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
 		private System.Windows.Forms.ToolStripMenuItem _exitMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem _connectToSqlServerMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem _connectToSqlServerCompactMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem _connectToAccessMenuItem;
 	}
 }

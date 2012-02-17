@@ -120,6 +120,7 @@
     <Compile Include="Integrations\HttpUserAgentSearch\HttpUserAgentSearchLauncherFactoryTests.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\UserAgentStringSearchLauncherTests.cs" />
     <Compile Include="Presentation\ConnectToServerEventArgsTests.cs" />
+    <Compile Include="Presentation\ConnectToSqlServerPresenterTest.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgsTests.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgsTests.cs" />
     <Compile Include="Presentation\ExportPresenterTests.cs" />

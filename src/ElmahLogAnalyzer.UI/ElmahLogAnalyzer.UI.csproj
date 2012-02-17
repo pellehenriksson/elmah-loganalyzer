@@ -98,11 +98,11 @@
     <Compile Include="Controls\NameValuePairListView.Designer.cs">
       <DependentUpon>NameValuePairListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ConnectToDatabaseForm.cs">
+    <Compile Include="Forms\ConnectToSqlServerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ConnectToDatabaseForm.Designer.cs">
-      <DependentUpon>ConnectToDatabaseForm.cs</DependentUpon>
+    <Compile Include="Forms\ConnectToSqlServerForm.Designer.cs">
+      <DependentUpon>ConnectToSqlServerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ExportForm.cs">
       <SubType>Form</SubType>
@@ -140,18 +140,6 @@
     </Compile>
     <Compile Include="Controls\DateIntervalPicker.Designer.cs">
       <DependentUpon>DateIntervalPicker.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Partials\ConnectToSqlServerCompactView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Partials\ConnectToSqlServerCompactView.Designer.cs">
-      <DependentUpon>ConnectToSqlServerCompactView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Partials\ConnectToSqlServerView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Partials\ConnectToSqlServerView.Designer.cs">
-      <DependentUpon>ConnectToSqlServerView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Partials\SearchDetailsView.cs">
       <SubType>UserControl</SubType>
@@ -224,8 +212,8 @@
     <EmbeddedResource Include="Controls\NameValuePairListView.resx">
       <DependentUpon>NameValuePairListView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ConnectToDatabaseForm.resx">
-      <DependentUpon>ConnectToDatabaseForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ConnectToSqlServerForm.resx">
+      <DependentUpon>ConnectToSqlServerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExportForm.resx">
       <DependentUpon>ExportForm.cs</DependentUpon>
@@ -244,12 +232,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DateIntervalPicker.resx">
       <DependentUpon>DateIntervalPicker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Partials\ConnectToSqlServerCompactView.resx">
-      <DependentUpon>ConnectToSqlServerCompactView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Partials\ConnectToSqlServerView.resx">
-      <DependentUpon>ConnectToSqlServerView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Partials\SearchDetailsView.resx">
       <DependentUpon>SearchDetailsView.cs</DependentUpon>
@@ -336,8 +318,10 @@
     <None Include="Resources\find.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\access.png" />
     <Content Include="Resources\connect.png" />
     <Content Include="Resources\disconnect.png" />
+    <None Include="Resources\sqlserver.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\errorlog_folder.png" />
   </ItemGroup>

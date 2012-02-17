@@ -5,9 +5,9 @@ using ElmahLogAnalyzer.Core.Presentation;
 
 namespace ElmahLogAnalyzer.UI.Forms
 {
-	public partial class ConnectToSqlServerForm : Form, IConnectToSqlServerView
+	public partial class ConnectToSqlServerCompactForm : Form, IConnectToSqlServerCompactView
 	{
-		public ConnectToSqlServerForm()
+		public ConnectToSqlServerCompactForm()
 		{
 			InitializeComponent();
 			CancelButton = _cancelButton;
@@ -17,34 +17,33 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 			_cancelButton.Click += (sender, args) =>
 			{
-			    DialogResult = DialogResult.Cancel;
-			    Close();
+				DialogResult = DialogResult.Cancel;
+				Close();
 			};
 
-			_useIntegratedSecurityCheckBox.CheckedChanged += (sender, args) =>
+			_browseButton.Click += (sender, args) =>
 			{
-				var isChecked = _useIntegratedSecurityCheckBox.Checked;
+			    var dialog = new OpenFileDialog
+			    {
+					Filter = "Microsoft SQL Server Compact Database|*.sdf",
+			        Multiselect = false,
+			        CheckPathExists = true,
+			    };
 
-				if (isChecked)
-				{
-					_usernameTextBox.Text = string.Empty;
-					_passwordTextBox.Text = string.Empty;
-				}
-
-				_usernameTextBox.Enabled = !isChecked;
-				_passwordTextBox.Enabled = !isChecked;
+			    if (dialog.ShowDialog(this) == DialogResult.OK)
+			    {
+			        Server = dialog.FileName;
+			    }
 			};
-
-			ClearErrorMessage();
 		}
 
 		public event EventHandler OnConnectToDatabase;
 
 		public ErrorLogSources Source
 		{
-			get { return ErrorLogSources.SqlServer; }
+			get { return ErrorLogSources.SqlServerCompact; }
 		}
-		
+
 		public string Server
 		{
 			get { return _serverTextBox.Text; }
@@ -59,26 +58,26 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		public string Database
 		{
-			get { return _databaseTextBox.Text; }
-			set { _databaseTextBox.Text = value; }
+			get { throw new NotImplementedException(); }
+			set { throw new NotImplementedException(); }
 		}
 
 		public string Username
 		{
-			get { return _usernameTextBox.Text; }
-			set { _usernameTextBox.Text = value; }
+			get { throw new NotImplementedException(); }
+			set { throw new NotImplementedException(); }
 		}
 
 		public string Password
 		{
-			get { return _passwordTextBox.Text; }
-			set { _passwordTextBox.Text = value; }
+			get { throw new NotImplementedException(); }
+			set { throw new NotImplementedException(); }
 		}
-		
+
 		public bool UseIntegratedSecurity
 		{
-			get { return _useIntegratedSecurityCheckBox.Checked; }
-			set { _useIntegratedSecurityCheckBox.Checked = value; }
+			get { throw new NotImplementedException(); }
+			set { throw new NotImplementedException(); }
 		}
 
 		public void CloseView()
@@ -86,7 +85,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 			DialogResult = DialogResult.OK;
 			Close();
 		}
-		
+
 		public void DisplayErrorMessage(string message)
 		{
 			_errorMessageLabel.Text = message;

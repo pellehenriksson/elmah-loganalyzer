@@ -89,7 +89,7 @@
     </Compile>
     <Compile Include="Common\AssemblyExtensions.cs" />
     <Compile Include="Common\ConnectionInformationHelper.cs" />
-    <Compile Include="Common\ConnectionStringBuilder.cs" />
+    <Compile Include="Common\ConnectionStringHelper.cs" />
     <Compile Include="Common\ListExtensions.cs" />
     <Compile Include="Common\DateInterval.cs" />
     <Compile Include="Common\DateIntervalSpans.cs" />
@@ -185,12 +185,13 @@
     <Compile Include="Integrations\HttpUserAgentSearch\IHttpUserAgentSearchLauncherFactory.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\UserAgentStringSearchLauncher.cs" />
     <Compile Include="Presentation\ConnectToServerEventArgs.cs" />
+    <Compile Include="Presentation\ConnectToSqlServerCompactPresenter.cs" />
     <Compile Include="Presentation\ConnectToSqlServerPresenter.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgs.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgs.cs" />
     <Compile Include="Presentation\ExportPresenter.cs" />
     <Compile Include="Presentation\IConnectToDatabaseConnectionInformation.cs" />
-    <Compile Include="Presentation\IConnectToDatabaseView.cs" />
+    <Compile Include="Presentation\IConnectToSqlServerCompactView.cs" />
     <Compile Include="Presentation\IConnectToSqlServerView.cs" />
     <Compile Include="Presentation\IExportView.cs" />
     <Compile Include="Presentation\ISearchView.cs" />

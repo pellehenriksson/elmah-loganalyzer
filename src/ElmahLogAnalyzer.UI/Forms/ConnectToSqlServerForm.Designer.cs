@@ -48,7 +48,7 @@
 			// 
 			this._cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this._cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this._cancelButton.Location = new System.Drawing.Point(328, 316);
+			this._cancelButton.Location = new System.Drawing.Point(328, 304);
 			this._cancelButton.Name = "_cancelButton";
 			this._cancelButton.Size = new System.Drawing.Size(75, 23);
 			this._cancelButton.TabIndex = 13;
@@ -59,7 +59,7 @@
 			// 
 			this._connectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this._connectButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this._connectButton.Location = new System.Drawing.Point(247, 316);
+			this._connectButton.Location = new System.Drawing.Point(247, 304);
 			this._connectButton.Name = "_connectButton";
 			this._connectButton.Size = new System.Drawing.Size(75, 23);
 			this._connectButton.TabIndex = 12;
@@ -179,7 +179,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(420, 351);
+			this.ClientSize = new System.Drawing.Size(420, 339);
 			this.Controls.Add(this._errorGroupBox);
 			this.Controls.Add(this._useIntegratedSecurityCheckBox);
 			this.Controls.Add(this._passwordLabel);

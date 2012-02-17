@@ -100,7 +100,7 @@ namespace ElmahLogAnalyzer.UI
 		
 		private void DisplayApplicationVersion()
 		{
-			_versionStripStatusLabel.Text = string.Format("Build: {0} ({1})", Application.ProductVersion, GetType().Assembly.GetTypeOfBuild());
+			_versionStripStatusLabel.Text = string.Format("Extract: {0} ({1})", Application.ProductVersion, GetType().Assembly.GetTypeOfBuild());
 		}
 
 		private void RegisterEvents()

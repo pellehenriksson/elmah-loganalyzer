@@ -5,19 +5,17 @@ namespace ElmahLogAnalyzer.Core.Presentation
 	public interface IConnectToDatabaseConnectionInformation
 	{
 		ErrorLogSources Source { get; }
+		
+		string Server { get; set; }
 
-		string File { get; }
+		string Port { get; set; }
 
-		string Server { get; }
+		string Database { get; set; }
 
-		string Port { get; }
+		string Username { get; set; }
 
-		string Database { get; }
+		string Password { get; set; }
 
-		string Username { get; }
-
-		string Password { get; }
-
-		bool UseIntegratedSecurity { get; }
+		bool UseIntegratedSecurity { get; set; }
 	}
 }

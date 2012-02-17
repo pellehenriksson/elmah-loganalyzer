@@ -13,6 +13,8 @@ namespace ElmahLogAnalyzer.UI.Forms
 			CancelButton = _cancelButton;
 			AcceptButton = _connectButton;
 
+			ClearErrorMessage();
+
 			_connectButton.Click += (sender, args) => OnConnectToDatabase(this, EventArgs.Empty);
 
 			_cancelButton.Click += (sender, args) =>

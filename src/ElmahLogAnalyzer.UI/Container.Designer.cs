@@ -121,6 +121,7 @@
 			this._connectDropDownButton.Name = "_connectDropDownButton";
 			this._connectDropDownButton.Size = new System.Drawing.Size(76, 22);
 			this._connectDropDownButton.Text = "&Connect";
+			this._connectDropDownButton.ToolTipText = "Connect to an error log source";
 			// 
 			// _connectToDirectoryMenuItem
 			// 
@@ -128,6 +129,7 @@
 			this._connectToDirectoryMenuItem.Name = "_connectToDirectoryMenuItem";
 			this._connectToDirectoryMenuItem.Size = new System.Drawing.Size(152, 22);
 			this._connectToDirectoryMenuItem.Text = "&Directory";
+			this._connectToDirectoryMenuItem.ToolTipText = "Connect to a directory with log files";
 			// 
 			// _connectToWebServerMenuItem
 			// 
@@ -135,6 +137,7 @@
 			this._connectToWebServerMenuItem.Name = "_connectToWebServerMenuItem";
 			this._connectToWebServerMenuItem.Size = new System.Drawing.Size(152, 22);
 			this._connectToWebServerMenuItem.Text = "&Web server";
+			this._connectToWebServerMenuItem.ToolTipText = "Connect to a web server";
 			// 
 			// _connectToDatabaseMenuItem
 			// 
@@ -146,6 +149,7 @@
 			this._connectToDatabaseMenuItem.Name = "_connectToDatabaseMenuItem";
 			this._connectToDatabaseMenuItem.Size = new System.Drawing.Size(152, 22);
 			this._connectToDatabaseMenuItem.Text = "Data&base";
+			this._connectToDatabaseMenuItem.ToolTipText = "Connect to a database";
 			// 
 			// _connectToSqlServerMenuItem
 			// 
@@ -153,6 +157,7 @@
 			this._connectToSqlServerMenuItem.Name = "_connectToSqlServerMenuItem";
 			this._connectToSqlServerMenuItem.Size = new System.Drawing.Size(239, 22);
 			this._connectToSqlServerMenuItem.Text = "Microsoft SQL Server";
+			this._connectToSqlServerMenuItem.ToolTipText = "Connect to Microsoft SQL Server";
 			// 
 			// _connectToSqlServerCompactMenuItem
 			// 
@@ -160,6 +165,7 @@
 			this._connectToSqlServerCompactMenuItem.Name = "_connectToSqlServerCompactMenuItem";
 			this._connectToSqlServerCompactMenuItem.Size = new System.Drawing.Size(239, 22);
 			this._connectToSqlServerCompactMenuItem.Text = "Microsoft SQL Server Compact 4.0";
+			this._connectToSqlServerCompactMenuItem.ToolTipText = "Connect to Microsoft SQL Server Compact";
 			// 
 			// _connectToAccessMenuItem
 			// 

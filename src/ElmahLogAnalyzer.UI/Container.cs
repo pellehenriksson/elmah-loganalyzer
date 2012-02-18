@@ -17,6 +17,8 @@ namespace ElmahLogAnalyzer.UI
 			InitializeComponent();
 			RegisterEvents();
 			DisplayApplicationVersion();
+
+			_connectToAccessMenuItem.Enabled = false;
 		}
 
 		public event EventHandler<ApplicationCommandEventArgs> OnApplicationCommand;

@@ -32,33 +32,45 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		{
 			this._textTextbox = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
+			this._searchButton = new System.Windows.Forms.Button();
 			this._usersSelector = new ElmahLogAnalyzer.UI.Controls.SelectorView();
 			this._urlsSelector = new ElmahLogAnalyzer.UI.Controls.SelectorView();
 			this._sourcesSelector = new ElmahLogAnalyzer.UI.Controls.SelectorView();
 			this._typesSelector = new ElmahLogAnalyzer.UI.Controls.SelectorView();
 			this._dateIntervalPicker = new ElmahLogAnalyzer.UI.Controls.DateIntervalPicker();
-			this._searchButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// _textTextbox
 			// 
 			this._textTextbox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._textTextbox.Location = new System.Drawing.Point(984, 61);
-			this._textTextbox.Multiline = true;
+			this._textTextbox.Location = new System.Drawing.Point(476, 10);
 			this._textTextbox.Name = "_textTextbox";
 			this._textTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this._textTextbox.Size = new System.Drawing.Size(283, 91);
-			this._textTextbox.TabIndex = 10;
+			this._textTextbox.Size = new System.Drawing.Size(405, 21);
+			this._textTextbox.TabIndex = 2;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(981, 45);
+			this.label2.Location = new System.Drawing.Point(311, 13);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(159, 13);
-			this.label2.TabIndex = 9;
+			this.label2.TabIndex = 1;
 			this.label2.Text = "Error message/Details contains:";
+			// 
+			// _searchButton
+			// 
+			this._searchButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._searchButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.find;
+			this._searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this._searchButton.Location = new System.Drawing.Point(898, 10);
+			this._searchButton.Name = "_searchButton";
+			this._searchButton.Size = new System.Drawing.Size(77, 23);
+			this._searchButton.TabIndex = 7;
+			this._searchButton.Text = "Search";
+			this._searchButton.UseVisualStyleBackColor = true;
+			this._searchButton.Click += new System.EventHandler(this.SearchButtonClick);
 			// 
 			// _usersSelector
 			// 
@@ -66,10 +78,10 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
             | System.Windows.Forms.AnchorStyles.Left)));
 			this._usersSelector.Caption = "Users";
 			this._usersSelector.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._usersSelector.Location = new System.Drawing.Point(739, 5);
+			this._usersSelector.Location = new System.Drawing.Point(739, 39);
 			this._usersSelector.Name = "_usersSelector";
-			this._usersSelector.Size = new System.Drawing.Size(236, 182);
-			this._usersSelector.TabIndex = 7;
+			this._usersSelector.Size = new System.Drawing.Size(236, 239);
+			this._usersSelector.TabIndex = 6;
 			// 
 			// _urlsSelector
 			// 
@@ -77,9 +89,9 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
             | System.Windows.Forms.AnchorStyles.Left)));
 			this._urlsSelector.Caption = "Urls";
 			this._urlsSelector.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._urlsSelector.Location = new System.Drawing.Point(498, 5);
+			this._urlsSelector.Location = new System.Drawing.Point(498, 39);
 			this._urlsSelector.Name = "_urlsSelector";
-			this._urlsSelector.Size = new System.Drawing.Size(238, 182);
+			this._urlsSelector.Size = new System.Drawing.Size(238, 239);
 			this._urlsSelector.TabIndex = 5;
 			// 
 			// _sourcesSelector
@@ -88,10 +100,10 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
             | System.Windows.Forms.AnchorStyles.Left)));
 			this._sourcesSelector.Caption = "Sources";
 			this._sourcesSelector.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._sourcesSelector.Location = new System.Drawing.Point(254, 5);
+			this._sourcesSelector.Location = new System.Drawing.Point(254, 39);
 			this._sourcesSelector.Name = "_sourcesSelector";
-			this._sourcesSelector.Size = new System.Drawing.Size(238, 182);
-			this._sourcesSelector.TabIndex = 3;
+			this._sourcesSelector.Size = new System.Drawing.Size(238, 239);
+			this._sourcesSelector.TabIndex = 4;
 			// 
 			// _typesSelector
 			// 
@@ -99,31 +111,18 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
             | System.Windows.Forms.AnchorStyles.Left)));
 			this._typesSelector.Caption = "Types";
 			this._typesSelector.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._typesSelector.Location = new System.Drawing.Point(3, 5);
+			this._typesSelector.Location = new System.Drawing.Point(3, 39);
 			this._typesSelector.Name = "_typesSelector";
-			this._typesSelector.Size = new System.Drawing.Size(245, 182);
-			this._typesSelector.TabIndex = 1;
+			this._typesSelector.Size = new System.Drawing.Size(245, 239);
+			this._typesSelector.TabIndex = 3;
 			// 
 			// _dateIntervalPicker
 			// 
 			this._dateIntervalPicker.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._dateIntervalPicker.Location = new System.Drawing.Point(974, 0);
+			this._dateIntervalPicker.Location = new System.Drawing.Point(3, 0);
 			this._dateIntervalPicker.Name = "_dateIntervalPicker";
 			this._dateIntervalPicker.Size = new System.Drawing.Size(302, 42);
-			this._dateIntervalPicker.TabIndex = 8;
-			// 
-			// _searchButton
-			// 
-			this._searchButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._searchButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.find;
-			this._searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this._searchButton.Location = new System.Drawing.Point(1190, 158);
-			this._searchButton.Name = "_searchButton";
-			this._searchButton.Size = new System.Drawing.Size(77, 23);
-			this._searchButton.TabIndex = 11;
-			this._searchButton.Text = "Search";
-			this._searchButton.UseVisualStyleBackColor = true;
-			this._searchButton.Click += new System.EventHandler(this.SearchButtonClick);
+			this._dateIntervalPicker.TabIndex = 0;
 			// 
 			// SearchFilterView
 			// 
@@ -138,7 +137,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this.Controls.Add(this._textTextbox);
 			this.Controls.Add(this.label2);
 			this.Name = "SearchFilterView";
-			this.Size = new System.Drawing.Size(1277, 193);
+			this.Size = new System.Drawing.Size(981, 284);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

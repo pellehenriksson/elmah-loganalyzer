@@ -12,6 +12,11 @@ namespace ElmahLogAnalyzer.IntegrationTests
 			get { return Path.Combine(TestFilesDirectory, "elmah.sdf"); }
 		}
 
+		protected string TestAccessDatabase
+		{
+			get { return Path.Combine(TestFilesDirectory, "elmah.mdb"); }
+		}
+
 		protected string TestFilesDirectory
 		{
 			get { return Path.Combine(Directory.GetCurrentDirectory(), "_TestFiles"); }

@@ -102,6 +102,7 @@
     <Compile Include="Common\UrlCleaner.cs" />
     <Compile Include="Constants\Browsers.cs" />
     <Compile Include="Constants\Platforms.cs" />
+    <Compile Include="Domain\AccessErrorLogSource.cs" />
     <Compile Include="Domain\ErrorLogSources.cs" />
     <Compile Include="Domain\Export\ErrorLogExporterErrorEventArgs.cs" />
     <Compile Include="Domain\Export\ErrorLogExporter.cs" />
@@ -184,14 +185,16 @@
     <Compile Include="Integrations\HttpUserAgentSearch\IHttpUserAgentSearchLauncher.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\IHttpUserAgentSearchLauncherFactory.cs" />
     <Compile Include="Integrations\HttpUserAgentSearch\UserAgentStringSearchLauncher.cs" />
+    <Compile Include="Presentation\ConnectToAccessPresenter.cs" />
     <Compile Include="Presentation\ConnectToServerEventArgs.cs" />
+    <Compile Include="Presentation\ConnectToDatabaseFilePresenter.cs" />
     <Compile Include="Presentation\ConnectToSqlServerCompactPresenter.cs" />
     <Compile Include="Presentation\ConnectToSqlServerPresenter.cs" />
     <Compile Include="Presentation\ErrorLogSelectedEventArgs.cs" />
     <Compile Include="Presentation\ErrorLogSearchEventArgs.cs" />
     <Compile Include="Presentation\ExportPresenter.cs" />
     <Compile Include="Presentation\IConnectToDatabaseConnectionInformation.cs" />
-    <Compile Include="Presentation\IConnectToSqlServerCompactView.cs" />
+    <Compile Include="Presentation\IConnectToDatabaseFileView.cs" />
     <Compile Include="Presentation\IConnectToSqlServerView.cs" />
     <Compile Include="Presentation\IExportView.cs" />
     <Compile Include="Presentation\ISearchView.cs" />

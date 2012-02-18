@@ -7,15 +7,15 @@ using NUnit.Framework;
 namespace ElmahLogAnalyzer.UnitTests.Presentation
 {
 	[TestFixture]
-	public class ConnectToSqlServerCompactPresenterTests : UnitTestBase
+	public class ConnectToDatabaseFilePresenterTests : UnitTestBase
 	{
-		private Mock<IConnectToSqlServerCompactView> _view;
+		private Mock<IConnectToDatabaseFileView> _view;
 		private Mock<IFileSystemHelper> _fileSystemHelper;
 
 		[SetUp]
 		public void Setup()
 		{
-			_view = new Mock<IConnectToSqlServerCompactView>();
+			_view = new Mock<IConnectToDatabaseFileView>();
 			_fileSystemHelper = new Mock<IFileSystemHelper>();
 		}
 
@@ -23,7 +23,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		public void Ctor_SetsView()
 		{
 			// act
-			var presenter = new ConnectToSqlServerCompactPresenter(_view.Object, _fileSystemHelper.Object);
+			var presenter = new ConnectToDatabaseFilePresenter(_view.Object, _fileSystemHelper.Object);
 
 			// assert
 			Assert.That(presenter.View, Is.EqualTo(_view.Object));
@@ -33,7 +33,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		public void OnConnectToDatabase_NoFile_DisplaysErrorMessage()
 		{
 			// arrange
-			var presenter = new ConnectToSqlServerCompactPresenter(_view.Object, _fileSystemHelper.Object);
+			var presenter = new ConnectToDatabaseFilePresenter(_view.Object, _fileSystemHelper.Object);
 			_view.Setup(x => x.Server).Returns(string.Empty);
 
 			// act
@@ -47,7 +47,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		public void OnConnectToDatabase_FileNotFoundOnDisk_DisplaysErrorMessage()
 		{
 			// arrange
-			var presenter = new ConnectToSqlServerCompactPresenter(_view.Object, _fileSystemHelper.Object);
+			var presenter = new ConnectToDatabaseFilePresenter(_view.Object, _fileSystemHelper.Object);
 			_view.Setup(x => x.Server).Returns(@"c:\elmah.sdf");
 			_fileSystemHelper.Setup(x => x.FileExists(_view.Object.Server)).Returns(false);
 
@@ -62,7 +62,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		public void OnConnectToDatabase_ValidFile_ClosesView()
 		{
 			// arrange
-			var presenter = new ConnectToSqlServerCompactPresenter(_view.Object, _fileSystemHelper.Object);
+			var presenter = new ConnectToDatabaseFilePresenter(_view.Object, _fileSystemHelper.Object);
 			_view.Setup(x => x.Server).Returns(@"c:\elmah.sdf");
 			_fileSystemHelper.Setup(x => x.FileExists(_view.Object.Server)).Returns(true);
 

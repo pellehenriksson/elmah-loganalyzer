@@ -31,7 +31,11 @@ namespace ElmahLogAnalyzer.Core.Domain
 			using (IDbConnection connection = new SqlConnection(Connection))
 			{
 				connection.Open();
-				var query = _settingsManager.GetMaxNumberOfLogs() > -1 ? string.Format("SELECT TOP {0} AllXml FROM [ELMAH_Error] ORDER BY Sequence DESC;", _settingsManager.GetMaxNumberOfLogs()) : "SELECT AllXml FROM [ELMAH_Error] ORDER BY Sequence DESC;";
+
+				var query = _settingsManager.GetMaxNumberOfLogs() > -1 ?
+					string.Format("SELECT TOP {0} [AllXml] FROM [ELMAH_Error] ORDER BY [Sequence] DESC;", _settingsManager.GetMaxNumberOfLogs()) :
+					"SELECT [AllXml] FROM [ELMAH_Error] ORDER BY [Sequence] DESC";
+				
 				logs = connection.Query<string>(query);
 			}
 			

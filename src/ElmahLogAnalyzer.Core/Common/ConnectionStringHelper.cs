@@ -31,6 +31,9 @@ namespace ElmahLogAnalyzer.Core.Common
 					{
 						return string.Format("Data Source={0};Persist Security Info=False;", information.Server);
 					}
+				
+				case ErrorLogSources.Access:
+					return string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};", information.Server);
 
 				default:
 					throw new InvalidOperationException(string.Format("Error log source {0} is not supported", information.Source));

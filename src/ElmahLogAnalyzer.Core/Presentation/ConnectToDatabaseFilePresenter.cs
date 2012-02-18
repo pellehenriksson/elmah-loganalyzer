@@ -2,11 +2,11 @@
 
 namespace ElmahLogAnalyzer.Core.Presentation
 {
-	public class ConnectToSqlServerCompactPresenter
+	public class ConnectToDatabaseFilePresenter
 	{
 		private readonly IFileSystemHelper _fileSystemHelper;
 
-		public ConnectToSqlServerCompactPresenter(IConnectToSqlServerCompactView view, IFileSystemHelper fileSystemHelper)
+		public ConnectToDatabaseFilePresenter(IConnectToDatabaseFileView view, IFileSystemHelper fileSystemHelper)
 		{
 			View = view;
 			_fileSystemHelper = fileSystemHelper;
@@ -14,7 +14,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 			RegisterEvents();
 		}
 
-		public IConnectToSqlServerCompactView View { get; private set; }
+		public IConnectToDatabaseFileView View { get; private set; }
 
 		private void RegisterEvents()
 		{

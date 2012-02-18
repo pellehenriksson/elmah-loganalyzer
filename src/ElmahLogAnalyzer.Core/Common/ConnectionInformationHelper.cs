@@ -15,6 +15,8 @@ namespace ElmahLogAnalyzer.Core.Common
 					return string.Format("Connected to {0}: {1}", source.GetDescription(), SqlServerConnectionInformation(connection));
 				case ErrorLogSources.SqlServerCompact:
 					return string.Format("Connected to {0}: {1}", source.GetDescription(), SplitConnectionString(connection)[0]);
+				case ErrorLogSources.Access:
+					return string.Format("Connected to {0}: {1}", source.GetDescription(), SplitConnectionString(connection)[1]);
 			}
 
 			throw new NotImplementedException();

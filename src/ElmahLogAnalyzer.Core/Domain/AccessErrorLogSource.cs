@@ -1,19 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlServerCe;
+using System.Data.OleDb;
 using Dapper;
 using ElmahLogAnalyzer.Core.Infrastructure.Logging;
 using ElmahLogAnalyzer.Core.Infrastructure.Settings;
 
 namespace ElmahLogAnalyzer.Core.Domain
 {
-	public class SqlServerCompactErrorLogSource : IErrorLogSource
+	public class AccessErrorLogSource : IErrorLogSource
 	{
 		private readonly IErrorLogFileParser _parser;
 		private readonly ISettingsManager _settingsManager;
 		private readonly ILog _log;
 
-		public SqlServerCompactErrorLogSource(string connection, IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
+		public AccessErrorLogSource(string connection, IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
 		{
 			Connection = connection;
 			_settingsManager = settingsManager;
@@ -28,17 +28,17 @@ namespace ElmahLogAnalyzer.Core.Domain
 			var result = new List<ErrorLog>();
 			IEnumerable<string> logs;
 
-			using (IDbConnection connection = new SqlCeConnection(Connection))
+			using (IDbConnection connection = new OleDbConnection(Connection))
 			{
 				connection.Open();
 				
-				var query = _settingsManager.GetMaxNumberOfLogs() > -1 ? 
-					string.Format("SELECT TOP {0} [AllXml] FROM [ELMAH_Error] ORDER BY [Sequence] DESC;", _settingsManager.GetMaxNumberOfLogs()) : 
-					"SELECT [AllXml] FROM [ELMAH_Error] ORDER BY [Sequence] DESC";
+				var query = _settingsManager.GetMaxNumberOfLogs() > -1 ?
+					string.Format("SELECT TOP {0} [AllXml] FROM [ELMAH_Error] ORDER BY [TimeUtc] DESC;", _settingsManager.GetMaxNumberOfLogs()) :
+					"SELECT [AllXml] FROM [ELMAH_Error] ORDER BY [TimeUtc] DESC";
 				
 				logs = connection.Query<string>(query);
 			}
-			
+
 			foreach (var log in logs)
 			{
 				var errorLog = _parser.Parse(log);

@@ -62,6 +62,21 @@ namespace ElmahLogAnalyzer.UnitTests.Common
 		}
 
 		[Test]
+		public void Extract_ErrorLogSourceIsAccess()
+		{
+			// arrange
+			var connect = new Mock<IConnectToDatabaseConnectionInformation>();
+			connect.Setup(x => x.Source).Returns(ErrorLogSources.Access);
+			connect.Setup(x => x.Server).Returns(@"c:\temp\elmah.mdb");
+
+			// act
+			var result = ConnectionStringHelper.Extract(connect.Object);
+
+			// assert
+			Assert.That(result, Is.EqualTo(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=c:\temp\elmah.mdb;"));
+		}
+
+		[Test]
 		public void Extract_ErrorLogSourceIsFiles_Throws()
 		{
 			// arrange

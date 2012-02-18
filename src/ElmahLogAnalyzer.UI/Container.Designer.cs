@@ -65,28 +65,28 @@
             this._versionStripStatusLabel});
 			this._mainStatusStrip.Location = new System.Drawing.Point(0, 706);
 			this._mainStatusStrip.Name = "_mainStatusStrip";
-			this._mainStatusStrip.Size = new System.Drawing.Size(1281, 22);
+			this._mainStatusStrip.Size = new System.Drawing.Size(984, 22);
 			this._mainStatusStrip.TabIndex = 0;
 			// 
 			// _directoryToolStripStatusLabel
 			// 
 			this._directoryToolStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this._directoryToolStripStatusLabel.Name = "_directoryToolStripStatusLabel";
-			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(1162, 17);
+			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(848, 17);
 			this._directoryToolStripStatusLabel.Spring = true;
 			this._directoryToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// _settingsStripStatusLabel
 			// 
 			this._settingsStripStatusLabel.Name = "_settingsStripStatusLabel";
-			this._settingsStripStatusLabel.Size = new System.Drawing.Size(54, 17);
+			this._settingsStripStatusLabel.Size = new System.Drawing.Size(57, 17);
 			this._settingsStripStatusLabel.Text = "[Settings]";
 			// 
 			// _versionStripStatusLabel
 			// 
 			this._versionStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this._versionStripStatusLabel.Name = "_versionStripStatusLabel";
-			this._versionStripStatusLabel.Size = new System.Drawing.Size(50, 17);
+			this._versionStripStatusLabel.Size = new System.Drawing.Size(54, 17);
 			this._versionStripStatusLabel.Text = "[Version]";
 			this._versionStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
@@ -103,7 +103,7 @@
             this._showExportButton});
 			this._mainToolStrip.Location = new System.Drawing.Point(0, 0);
 			this._mainToolStrip.Name = "_mainToolStrip";
-			this._mainToolStrip.Size = new System.Drawing.Size(1281, 25);
+			this._mainToolStrip.Size = new System.Drawing.Size(984, 25);
 			this._mainToolStrip.TabIndex = 1;
 			// 
 			// _connectDropDownButton
@@ -119,7 +119,7 @@
 			this._connectDropDownButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.connect;
 			this._connectDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._connectDropDownButton.Name = "_connectDropDownButton";
-			this._connectDropDownButton.Size = new System.Drawing.Size(76, 22);
+			this._connectDropDownButton.Size = new System.Drawing.Size(81, 22);
 			this._connectDropDownButton.Text = "&Connect";
 			this._connectDropDownButton.ToolTipText = "Connect to an error log source";
 			// 
@@ -127,7 +127,7 @@
 			// 
 			this._connectToDirectoryMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.errorlog_folder;
 			this._connectToDirectoryMenuItem.Name = "_connectToDirectoryMenuItem";
-			this._connectToDirectoryMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._connectToDirectoryMenuItem.Size = new System.Drawing.Size(133, 22);
 			this._connectToDirectoryMenuItem.Text = "&Directory";
 			this._connectToDirectoryMenuItem.ToolTipText = "Connect to a directory with log files";
 			// 
@@ -135,7 +135,7 @@
 			// 
 			this._connectToWebServerMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.server;
 			this._connectToWebServerMenuItem.Name = "_connectToWebServerMenuItem";
-			this._connectToWebServerMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._connectToWebServerMenuItem.Size = new System.Drawing.Size(133, 22);
 			this._connectToWebServerMenuItem.Text = "&Web server";
 			this._connectToWebServerMenuItem.ToolTipText = "Connect to a web server";
 			// 
@@ -147,7 +147,7 @@
             this._connectToAccessMenuItem});
 			this._connectToDatabaseMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.database;
 			this._connectToDatabaseMenuItem.Name = "_connectToDatabaseMenuItem";
-			this._connectToDatabaseMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._connectToDatabaseMenuItem.Size = new System.Drawing.Size(133, 22);
 			this._connectToDatabaseMenuItem.Text = "Data&base";
 			this._connectToDatabaseMenuItem.ToolTipText = "Connect to a database";
 			// 
@@ -155,7 +155,7 @@
 			// 
 			this._connectToSqlServerMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.sqlserver;
 			this._connectToSqlServerMenuItem.Name = "_connectToSqlServerMenuItem";
-			this._connectToSqlServerMenuItem.Size = new System.Drawing.Size(239, 22);
+			this._connectToSqlServerMenuItem.Size = new System.Drawing.Size(254, 22);
 			this._connectToSqlServerMenuItem.Text = "Microsoft SQL Server";
 			this._connectToSqlServerMenuItem.ToolTipText = "Connect to Microsoft SQL Server";
 			// 
@@ -163,7 +163,7 @@
 			// 
 			this._connectToSqlServerCompactMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.sqlserver;
 			this._connectToSqlServerCompactMenuItem.Name = "_connectToSqlServerCompactMenuItem";
-			this._connectToSqlServerCompactMenuItem.Size = new System.Drawing.Size(239, 22);
+			this._connectToSqlServerCompactMenuItem.Size = new System.Drawing.Size(254, 22);
 			this._connectToSqlServerCompactMenuItem.Text = "Microsoft SQL Server Compact 4.0";
 			this._connectToSqlServerCompactMenuItem.ToolTipText = "Connect to Microsoft SQL Server Compact";
 			// 
@@ -171,31 +171,31 @@
 			// 
 			this._connectToAccessMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.access;
 			this._connectToAccessMenuItem.Name = "_connectToAccessMenuItem";
-			this._connectToAccessMenuItem.Size = new System.Drawing.Size(239, 22);
+			this._connectToAccessMenuItem.Size = new System.Drawing.Size(254, 22);
 			this._connectToAccessMenuItem.Text = "Microsoft Access";
 			// 
 			// toolStripMenuItem1
 			// 
 			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(130, 6);
 			// 
 			// _disconnectMenuItem
 			// 
 			this._disconnectMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.disconnect;
 			this._disconnectMenuItem.Name = "_disconnectMenuItem";
-			this._disconnectMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._disconnectMenuItem.Size = new System.Drawing.Size(133, 22);
 			this._disconnectMenuItem.Text = "Disconnect";
 			// 
 			// toolStripMenuItem2
 			// 
 			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-			this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
+			this.toolStripMenuItem2.Size = new System.Drawing.Size(130, 6);
 			// 
 			// _exitMenuItem
 			// 
 			this._exitMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.close;
 			this._exitMenuItem.Name = "_exitMenuItem";
-			this._exitMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._exitMenuItem.Size = new System.Drawing.Size(133, 22);
 			this._exitMenuItem.Text = "Exit";
 			// 
 			// toolStripSeparator1
@@ -208,7 +208,7 @@
 			this._showSearchViewButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.search;
 			this._showSearchViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._showSearchViewButton.Name = "_showSearchViewButton";
-			this._showSearchViewButton.Size = new System.Drawing.Size(60, 22);
+			this._showSearchViewButton.Size = new System.Drawing.Size(62, 22);
 			this._showSearchViewButton.Text = "&Search";
 			this._showSearchViewButton.ToolTipText = "Search logs";
 			// 
@@ -217,7 +217,7 @@
 			this._showReportViewButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.report;
 			this._showReportViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._showReportViewButton.Name = "_showReportViewButton";
-			this._showReportViewButton.Size = new System.Drawing.Size(65, 22);
+			this._showReportViewButton.Size = new System.Drawing.Size(67, 22);
 			this._showReportViewButton.Text = "&Reports";
 			this._showReportViewButton.ToolTipText = "View reports";
 			// 
@@ -227,7 +227,7 @@
 			this._showAboutButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.about;
 			this._showAboutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._showAboutButton.Name = "_showAboutButton";
-			this._showAboutButton.Size = new System.Drawing.Size(56, 22);
+			this._showAboutButton.Size = new System.Drawing.Size(60, 22);
 			this._showAboutButton.Text = "&About";
 			// 
 			// _showSettingsViewButton
@@ -236,7 +236,7 @@
 			this._showSettingsViewButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.settings;
 			this._showSettingsViewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._showSettingsViewButton.Name = "_showSettingsViewButton";
-			this._showSettingsViewButton.Size = new System.Drawing.Size(66, 22);
+			this._showSettingsViewButton.Size = new System.Drawing.Size(69, 22);
 			this._showSettingsViewButton.Text = "S&ettings";
 			this._showSettingsViewButton.ToolTipText = "Change settings";
 			// 
@@ -250,7 +250,7 @@
 			this._showExportButton.Image = ((System.Drawing.Image)(resources.GetObject("_showExportButton.Image")));
 			this._showExportButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this._showExportButton.Name = "_showExportButton";
-			this._showExportButton.Size = new System.Drawing.Size(59, 22);
+			this._showExportButton.Size = new System.Drawing.Size(60, 22);
 			this._showExportButton.Text = "E&xport";
 			// 
 			// _mainPanel
@@ -258,14 +258,14 @@
 			this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._mainPanel.Location = new System.Drawing.Point(0, 25);
 			this._mainPanel.Name = "_mainPanel";
-			this._mainPanel.Size = new System.Drawing.Size(1281, 681);
+			this._mainPanel.Size = new System.Drawing.Size(984, 681);
 			this._mainPanel.TabIndex = 2;
 			// 
 			// Container
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1281, 728);
+			this.ClientSize = new System.Drawing.Size(984, 728);
 			this.Controls.Add(this._mainPanel);
 			this.Controls.Add(this._mainToolStrip);
 			this.Controls.Add(this._mainStatusStrip);

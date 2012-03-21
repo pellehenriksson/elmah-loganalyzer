@@ -80,7 +80,6 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
-    <Compile Include="Domain\AccessErrorLogSourceTests.cs" />
     <Compile Include="Domain\Export\ErrorLogExporterTests.cs" />
     <Compile Include="Domain\Export\SqlCeDatabaseCreatorTests.cs" />
     <Compile Include="Domain\FileErrorLogSourceTests.cs" />

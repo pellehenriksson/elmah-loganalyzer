@@ -6,7 +6,6 @@ namespace ElmahLogAnalyzer.Core.Domain
 	{
 		[Description("XML files")]Files,
 		[Description("Microsoft SQL Server")]SqlServer,
-		[Description("Microsoft SQL Server Compact Edition")]SqlServerCompact,
-		[Description("Microsoft Access")]Access,
+		[Description("Microsoft SQL Server Compact Edition")]SqlServerCompact
 	}
 }

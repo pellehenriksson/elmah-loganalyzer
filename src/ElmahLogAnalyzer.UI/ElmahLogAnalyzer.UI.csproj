@@ -110,12 +110,6 @@
     <Compile Include="Forms\ConnectToSqlServerForm.Designer.cs">
       <DependentUpon>ConnectToSqlServerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ConnectToAccesstForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ConnectToAccesstForm.Designer.cs">
-      <DependentUpon>ConnectToAccesstForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ExportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,9 +224,6 @@
     <EmbeddedResource Include="Forms\ConnectToSqlServerForm.resx">
       <DependentUpon>ConnectToSqlServerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ConnectToAccesstForm.resx">
-      <DependentUpon>ConnectToAccesstForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExportForm.resx">
       <DependentUpon>ExportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -336,7 +327,6 @@
     <None Include="Resources\find.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\access.png" />
     <Content Include="Resources\connect.png" />
     <Content Include="Resources\disconnect.png" />
     <None Include="Resources\sqlserver.png" />

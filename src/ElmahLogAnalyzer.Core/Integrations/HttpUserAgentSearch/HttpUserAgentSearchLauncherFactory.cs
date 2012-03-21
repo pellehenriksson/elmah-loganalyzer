@@ -10,7 +10,7 @@ namespace ElmahLogAnalyzer.Core.Integrations.HttpUserAgentSearch
 			{
 				return ServiceLocator.Resolve<BotsVsBrowsersSearchLauncher>();
 			}
-
+			
 			return ServiceLocator.Resolve<UserAgentStringSearchLauncher>();
 		}
 	}

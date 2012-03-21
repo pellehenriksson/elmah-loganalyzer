@@ -76,10 +76,6 @@ namespace ElmahLogAnalyzer.UI
 					case ApplicationCommands.ConnectToSqlServerCompactDatabase:
 			    		ConnectToSqlServerCompactDatabase();
 			    		break;
-
-					case ApplicationCommands.ConnectToAccessDatabase:
-						ConnectToAccessDatabase();
-						break;
 						
 			        case ApplicationCommands.Disconnect:
 			            _container.SetWelcomeState();
@@ -181,22 +177,7 @@ namespace ElmahLogAnalyzer.UI
 				InitializeNewErrorLogSource(information.Source, connectionstring, null);
 			}
 		}
-
-		private static void ConnectToAccessDatabase()
-		{
-			var presenter = ServiceLocator.Resolve<ConnectToAccessPresenter>();
-			var view = presenter.View as Form;
-			var result = _container.DisplayDialog(view);
-
-			if (result == DialogResult.OK)
-			{
-				var information = (IConnectToDatabaseConnectionInformation)view;
-				var connectionstring = ConnectionStringHelper.Extract(information);
-
-				InitializeNewErrorLogSource(information.Source, connectionstring, null);
-			}
-		}
-
+		
 		private static void DisplaySettings()
 		{
 			var presenter = ServiceLocator.Resolve<SettingsPresenter>();

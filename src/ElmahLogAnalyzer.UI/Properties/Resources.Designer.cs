@@ -67,13 +67,6 @@ namespace ElmahLogAnalyzer.UI.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap access {
-            get {
-                object obj = ResourceManager.GetObject("access", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);

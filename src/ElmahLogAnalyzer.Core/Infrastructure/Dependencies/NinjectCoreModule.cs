@@ -30,11 +30,6 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 				.InScope(context => DataSourceScopeController.KeepAlive)
 				.WithConstructorArgument("connection", (context => DataSourceScopeController.Connection));
 
-			Bind<IErrorLogSource>().To<AccessErrorLogSource>()
-				.When(context => DataSourceScopeController.Source == ErrorLogSources.Access)
-				.InScope(context => DataSourceScopeController.KeepAlive)
-				.WithConstructorArgument("connection", (context => DataSourceScopeController.Connection));
-
 			Bind<IErrorLogSource>().To<FileErrorLogSource>()
 				.When(context => DataSourceScopeController.Source == ErrorLogSources.Files)
 				.InScope(context => DataSourceScopeController.KeepAlive)

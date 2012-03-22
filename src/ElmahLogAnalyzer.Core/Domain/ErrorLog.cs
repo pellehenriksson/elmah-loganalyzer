@@ -137,6 +137,11 @@ namespace ElmahLogAnalyzer.Core.Domain
 			Cookies.Add(new NameValuePair(name, value));
 		}
 
+		public override string ToString()
+		{
+			return string.Format("{0}\n{1}\n{2}\n{3}", Time, Source, Type, Message);
+		}
+
 		private static bool ShouldBeIncluded(string name)
 		{
 			return !IgnoreList.Contains(name);

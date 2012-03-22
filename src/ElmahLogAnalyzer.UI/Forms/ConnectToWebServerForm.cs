@@ -63,7 +63,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		{
 			if (OnConnectionSelected != null)
 			{
-				OnConnectionSelected(this, new ConnectionSelectedEventArgs((string)_urlComboBox.Text));
+				OnConnectionSelected(this, new ConnectionSelectedEventArgs(_urlComboBox.Text));
 			}
 		}
 

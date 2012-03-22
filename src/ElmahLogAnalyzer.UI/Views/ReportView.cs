@@ -20,6 +20,18 @@ namespace ElmahLogAnalyzer.UI.Views
 
 		public event EventHandler<ReportSelectionEventArgs> OnReportSelected;
 
+		public void LoadApplications(IEnumerable<string> applications)
+		{
+			if (InvokeRequired)
+			{
+				this.InvokeEx(x => x._selectionView.LoadApplications(applications));
+			}
+			else
+			{
+				_selectionView.LoadApplications(applications);
+			}
+		}
+
 		public void LoadReportTypes(IEnumerable<ReportTypeListItem> types)
 		{
 			if (InvokeRequired)

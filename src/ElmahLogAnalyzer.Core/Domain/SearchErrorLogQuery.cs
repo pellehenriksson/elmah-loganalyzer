@@ -12,6 +12,8 @@ namespace ElmahLogAnalyzer.Core.Domain
 			Urls  = new SearchErrorLogQueryParameter();
 		}
 
+		public string Application { get; set; }
+
 		public SearchErrorLogQueryParameter Types { get; set; }
 
 		public SearchErrorLogQueryParameter Sources { get; set; }
@@ -26,7 +28,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 		public static SearchErrorLogQuery Create(ReportQuery reportQuery)
 		{
-			var query = new SearchErrorLogQuery { Interval = reportQuery.Interval };
+			var query = new SearchErrorLogQuery { Application = reportQuery.Application, Interval = reportQuery.Interval };
 			return query;
 		}
 	}

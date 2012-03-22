@@ -14,6 +14,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 	{
 		private Mock<IReportView> _view;
 		private Mock<IReportGenerator> _generator;
+		private Mock<IErrorLogRepository> _repository;
 		private Mock<ISettingsManager> _settings;
 
 		[SetUp]
@@ -21,6 +22,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		{
 			_view = new Mock<IReportView>();
 			_generator = new Mock<IReportGenerator>();
+			_repository = new Mock<IErrorLogRepository>();
 			_settings = new Mock<ISettingsManager>();
 
 			_settings.Setup(x => x.GetDefaultDateInterval()).Returns(DateIntervalSpans.Month);
@@ -48,6 +50,20 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 
 			// assert
 			_view.Verify(x => x.SetDateInterval(It.Is<DateInterval>(y => y.Equals(expectedInterval))), Times.Once());
+		}
+
+		[Test]
+		public void ViewOnLoaded_LoadApplications()
+		{
+			// arrange
+			_repository.Setup(x => x.GetApplications()).Returns(new List<string>());
+			var presenter = BuildPresenter();
+
+			// act
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
+
+			// assert
+			_view.Verify(x => x.LoadApplications(It.IsAny<List<string>>()), Times.Once());
 		}
 		
 		[Test]
@@ -109,7 +125,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 
 		private ReportPresenter BuildPresenter()
 		{
-			return new ReportPresenter(_view.Object, _generator.Object, _settings.Object);
+			return new ReportPresenter(_view.Object, _repository.Object, _generator.Object, _settings.Object);
 		}
 	}
 }

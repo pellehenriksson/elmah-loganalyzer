@@ -11,13 +11,14 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 	public class ReportQueryTests : UnitTestBase
 	{
     	[Test]
-    	public void Ctor_SetsReportTypeDateIntervalAndNumberOfResults()
+    	public void Ctor_SetsApplicationReportTypeDateIntervalAndNumberOfResults()
     	{
 			// act
     		var interval = new DateInterval(new DateTime(1975, 5, 14), new DateTime(2011, 4, 8));
-			var query = new ReportQuery(ReportTypes.Type, interval, -1);
+			var query = new ReportQuery("application", ReportTypes.Type, interval, -1);
 			
     		// assert
+			Assert.That(query.Application, Is.EqualTo("application"));
 			Assert.That(query.ReportType, Is.EqualTo(ReportTypes.Type));
     		Assert.That(query.Interval, Is.EqualTo(interval));
 			Assert.That(query.NumberOfResults, Is.EqualTo(-1));
@@ -27,7 +28,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		public void ToString_ReportDescriptionStartAndEndTime()
 		{
 			// arrange
-			var query = new ReportQuery(ReportTypes.Type, new DateInterval(new DateTime(1975, 5, 14), new DateTime(2011, 4, 8)), -1);
+			var query = new ReportQuery("application", ReportTypes.Type, new DateInterval(new DateTime(1975, 5, 14), new DateTime(2011, 4, 8)), -1);
 
 			// act
             var formatInfo = (DateTimeFormatInfo)DateTimeFormatInfo.InvariantInfo.Clone();

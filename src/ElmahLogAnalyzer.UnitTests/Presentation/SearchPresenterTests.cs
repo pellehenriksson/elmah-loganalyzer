@@ -53,6 +53,22 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 		}
 
 		[Test]
+		public void ViewOnLoaded_ShouldLoadApplicationsInView()
+		{
+			// arrange
+			var presenter = BuildPresenter();
+
+			var applications = new List<string>();
+			_repository.Setup(x => x.GetApplications()).Returns(applications);
+
+			// act
+			_view.Raise(x => x.OnLoaded += null, new EventArgs());
+
+			// assert
+			_view.Verify(x => x.LoadApplications(applications), Times.Once());
+		}
+
+		[Test]
 		public void ViewOnLoaded_ShouldLoadTypesInView()
 		{
 			// arrange

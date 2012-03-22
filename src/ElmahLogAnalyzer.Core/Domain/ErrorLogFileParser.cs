@@ -31,6 +31,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 				_errorLog = new ErrorLog();
 
 			    ParseId();
+				ParseApplication();
 				ParseAttributes();
 				ParseServerVariables();
 				ParseFormValues();
@@ -58,6 +59,11 @@ namespace ElmahLogAnalyzer.Core.Domain
             errorId = Guid.TryParse(GetAttributeValue("errorId"), out errorId) ? Guid.Parse(GetAttributeValue("errorId")) : Guid.Empty;
             _errorLog.ErrorId = errorId;
         }
+
+		private void ParseApplication()
+		{
+			_errorLog.Application = GetAttributeValue("application") ?? string.Empty;
+		}
 
 		private void ParseAttributes()
 		{

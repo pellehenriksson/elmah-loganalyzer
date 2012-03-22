@@ -11,6 +11,8 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 		event EventHandler<ReportSelectionEventArgs> OnReportSelected;
 
+		void LoadApplications(IEnumerable<string> applications);
+
 		void LoadReportTypes(IEnumerable<ReportTypeListItem> types);
 
 		void LoadNumberOfResultsOptions(IEnumerable<NameValuePair> options);

@@ -15,7 +15,13 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		}
 
 		public event EventHandler<ErrorLogSearchEventArgs> OnFilterApplied;
-		
+
+		public void LoadApplications(IEnumerable<string> applications)
+		{
+			_applicationsComboBox.DataSource = applications;
+			_applicationsComboBox.SelectedIndex = 0;
+		}
+
 		public void LoadTypes(IEnumerable<string> types)
 		{
 			_typesSelector.LoadValues(types);
@@ -45,6 +51,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		{
 			return new SearchErrorLogQuery
 			       	{
+						Application = _applicationsComboBox.SelectedItem.ToString(),
 			       		Types = new SearchErrorLogQueryParameter(_typesSelector.GetMode(), _typesSelector.GetValues()),
 						Sources = new SearchErrorLogQueryParameter(_sourcesSelector.GetMode(), _sourcesSelector.GetValues()),
 						Users = new SearchErrorLogQueryParameter(_usersSelector.GetMode(), _usersSelector.GetValues()),

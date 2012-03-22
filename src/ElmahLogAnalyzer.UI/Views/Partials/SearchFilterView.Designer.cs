@@ -38,25 +38,27 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this._sourcesSelector = new ElmahLogAnalyzer.UI.Controls.SelectorView();
 			this._typesSelector = new ElmahLogAnalyzer.UI.Controls.SelectorView();
 			this._dateIntervalPicker = new ElmahLogAnalyzer.UI.Controls.DateIntervalPicker();
+			this.label1 = new System.Windows.Forms.Label();
+			this._applicationsComboBox = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// _textTextbox
 			// 
 			this._textTextbox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._textTextbox.Location = new System.Drawing.Point(476, 10);
+			this._textTextbox.Location = new System.Drawing.Point(476, 48);
 			this._textTextbox.Name = "_textTextbox";
 			this._textTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this._textTextbox.Size = new System.Drawing.Size(405, 21);
-			this._textTextbox.TabIndex = 2;
+			this._textTextbox.TabIndex = 4;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(311, 13);
+			this.label2.Location = new System.Drawing.Point(311, 50);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(159, 13);
-			this.label2.TabIndex = 1;
+			this.label2.TabIndex = 3;
 			this.label2.Text = "Error message/Details contains:";
 			// 
 			// _searchButton
@@ -64,10 +66,10 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this._searchButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._searchButton.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.find;
 			this._searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this._searchButton.Location = new System.Drawing.Point(898, 10);
+			this._searchButton.Location = new System.Drawing.Point(898, 47);
 			this._searchButton.Name = "_searchButton";
 			this._searchButton.Size = new System.Drawing.Size(77, 23);
-			this._searchButton.TabIndex = 7;
+			this._searchButton.TabIndex = 5;
 			this._searchButton.Text = "Search";
 			this._searchButton.UseVisualStyleBackColor = true;
 			this._searchButton.Click += new System.EventHandler(this.SearchButtonClick);
@@ -78,10 +80,10 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
             | System.Windows.Forms.AnchorStyles.Left)));
 			this._usersSelector.Caption = "Users";
 			this._usersSelector.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._usersSelector.Location = new System.Drawing.Point(739, 39);
+			this._usersSelector.Location = new System.Drawing.Point(739, 76);
 			this._usersSelector.Name = "_usersSelector";
-			this._usersSelector.Size = new System.Drawing.Size(236, 239);
-			this._usersSelector.TabIndex = 6;
+			this._usersSelector.Size = new System.Drawing.Size(236, 254);
+			this._usersSelector.TabIndex = 9;
 			// 
 			// _urlsSelector
 			// 
@@ -89,10 +91,10 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
             | System.Windows.Forms.AnchorStyles.Left)));
 			this._urlsSelector.Caption = "Urls";
 			this._urlsSelector.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._urlsSelector.Location = new System.Drawing.Point(498, 39);
+			this._urlsSelector.Location = new System.Drawing.Point(498, 76);
 			this._urlsSelector.Name = "_urlsSelector";
-			this._urlsSelector.Size = new System.Drawing.Size(238, 239);
-			this._urlsSelector.TabIndex = 5;
+			this._urlsSelector.Size = new System.Drawing.Size(238, 254);
+			this._urlsSelector.TabIndex = 8;
 			// 
 			// _sourcesSelector
 			// 
@@ -100,10 +102,10 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
             | System.Windows.Forms.AnchorStyles.Left)));
 			this._sourcesSelector.Caption = "Sources";
 			this._sourcesSelector.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._sourcesSelector.Location = new System.Drawing.Point(254, 39);
+			this._sourcesSelector.Location = new System.Drawing.Point(254, 76);
 			this._sourcesSelector.Name = "_sourcesSelector";
-			this._sourcesSelector.Size = new System.Drawing.Size(238, 239);
-			this._sourcesSelector.TabIndex = 4;
+			this._sourcesSelector.Size = new System.Drawing.Size(238, 254);
+			this._sourcesSelector.TabIndex = 7;
 			// 
 			// _typesSelector
 			// 
@@ -111,23 +113,47 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
             | System.Windows.Forms.AnchorStyles.Left)));
 			this._typesSelector.Caption = "Types";
 			this._typesSelector.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._typesSelector.Location = new System.Drawing.Point(3, 39);
+			this._typesSelector.Location = new System.Drawing.Point(3, 76);
 			this._typesSelector.Name = "_typesSelector";
-			this._typesSelector.Size = new System.Drawing.Size(245, 239);
-			this._typesSelector.TabIndex = 3;
+			this._typesSelector.Size = new System.Drawing.Size(245, 254);
+			this._typesSelector.TabIndex = 6;
 			// 
 			// _dateIntervalPicker
 			// 
 			this._dateIntervalPicker.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._dateIntervalPicker.Location = new System.Drawing.Point(3, 0);
+			this._dateIntervalPicker.Location = new System.Drawing.Point(3, 36);
 			this._dateIntervalPicker.Name = "_dateIntervalPicker";
 			this._dateIntervalPicker.Size = new System.Drawing.Size(302, 42);
-			this._dateIntervalPicker.TabIndex = 0;
+			this._dateIntervalPicker.TabIndex = 2;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(12, 10);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(63, 13);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "Application:";
+			// 
+			// _applicationsComboBox
+			// 
+			this._applicationsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._applicationsComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._applicationsComboBox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._applicationsComboBox.FormattingEnabled = true;
+			this._applicationsComboBox.Location = new System.Drawing.Point(78, 10);
+			this._applicationsComboBox.Name = "_applicationsComboBox";
+			this._applicationsComboBox.Size = new System.Drawing.Size(217, 21);
+			this._applicationsComboBox.TabIndex = 1;
 			// 
 			// SearchFilterView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this._applicationsComboBox);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this._usersSelector);
 			this.Controls.Add(this._urlsSelector);
 			this.Controls.Add(this._sourcesSelector);
@@ -137,7 +163,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			this.Controls.Add(this._textTextbox);
 			this.Controls.Add(this.label2);
 			this.Name = "SearchFilterView";
-			this.Size = new System.Drawing.Size(981, 284);
+			this.Size = new System.Drawing.Size(984, 333);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -153,6 +179,8 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		private SelectorView _sourcesSelector;
 		private SelectorView _urlsSelector;
 		private SelectorView _usersSelector;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.ComboBox _applicationsComboBox;
 
 
 

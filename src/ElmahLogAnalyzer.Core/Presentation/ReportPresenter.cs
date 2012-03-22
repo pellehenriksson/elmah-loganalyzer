@@ -9,11 +9,13 @@ namespace ElmahLogAnalyzer.Core.Presentation
 	public class ReportPresenter
 	{
 		private readonly IReportGenerator _generator;
+		private readonly IErrorLogRepository _repository;
 		private readonly ISettingsManager _settingsManager;
 
-		public ReportPresenter(IReportView view, IReportGenerator generator, ISettingsManager settingsManager)
+		public ReportPresenter(IReportView view, IErrorLogRepository repository, IReportGenerator generator, ISettingsManager settingsManager)
 		{
 			View = view;
+			_repository = repository;
 			_generator = generator;
 			_settingsManager = settingsManager;
 
@@ -58,6 +60,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		
 		private void Initialize()
 		{
+			View.LoadApplications(_repository.GetApplications());
 			View.LoadReportTypes(BuildReportTypesList());
 			View.LoadNumberOfResultsOptions(BuildNumerOfResultsOptionsList());
 

@@ -17,6 +17,8 @@ namespace ElmahLogAnalyzer.Core.Presentation
 		
 		void SetDateInterval(DateInterval interval);
 
+		void LoadApplications(IEnumerable<string> applications);
+
 		void LoadTypes(IEnumerable<string> types);
 
 		void LoadSources(IEnumerable<string> sources);

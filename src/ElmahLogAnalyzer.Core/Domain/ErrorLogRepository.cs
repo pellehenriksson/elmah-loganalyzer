@@ -10,6 +10,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 		private readonly IErrorLogSource _datasource;
 		private readonly List<ErrorLog> _errorLogs = new List<ErrorLog>();
 		
+		private readonly UniqueStringList _applications = new UniqueStringList(true);
 		private readonly UniqueStringList _types = new UniqueStringList();
 		private readonly UniqueStringList _users = new UniqueStringList(true);
 		private readonly UniqueStringList _sources = new UniqueStringList();
@@ -35,6 +36,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 			foreach (var error in _errorLogs)
 			{
+				_applications.Add(error.Application);
 				_types.Add(error.Type);
 				_users.Add(error.User);
 				_sources.Add(error.Source);
@@ -50,6 +52,11 @@ namespace ElmahLogAnalyzer.Core.Domain
 		public List<ErrorLog> GetAll()
 		{
 			return _errorLogs.OrderByDescending(x => x.Time).ToList();
+		}
+
+		public List<string> GetApplications()
+		{
+			return _applications.List;
 		}
 
 		public List<string> GetTypes()
@@ -77,6 +84,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 			var query = from e in _errorLogs
 			        where 
 						e.Time.Date.IsBetween(filter.Interval) &&
+						e.Application == filter.Application &&
 						filter.Types.Items.InvertedContains(e.Type, filter.Types.IncludeItems) &&
 						filter.Sources.Items.InvertedContains(e.Source, filter.Sources.IncludeItems) &&
 						filter.Urls.Items.InvertedContains(e.CleanUrl, filter.Urls.IncludeItems) &&

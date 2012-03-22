@@ -31,7 +31,7 @@ namespace ElmahLogAnalyzer.TestHelpers.Fakes
 		
 		private void AddToLogs(string type, string message, string source, DateTime time, string user, string url, ClientInformation clientInformation)
 		{
-			var errorLog = new ErrorLog { ErrorId = Guid.NewGuid(), Type = type, Message = message, Source = source, Time = time };
+			var errorLog = new ErrorLog { ErrorId = Guid.NewGuid(), Application = "/", Type = type, Message = message, Source = source, Time = time };
 			
 			if (user.HasValue())
 			{

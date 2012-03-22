@@ -62,16 +62,16 @@
             this._directoryToolStripStatusLabel,
             this._settingsStripStatusLabel,
             this._versionStripStatusLabel});
-			this._mainStatusStrip.Location = new System.Drawing.Point(0, 706);
+			this._mainStatusStrip.Location = new System.Drawing.Point(0, 773);
 			this._mainStatusStrip.Name = "_mainStatusStrip";
-			this._mainStatusStrip.Size = new System.Drawing.Size(984, 22);
+			this._mainStatusStrip.Size = new System.Drawing.Size(983, 22);
 			this._mainStatusStrip.TabIndex = 0;
 			// 
 			// _directoryToolStripStatusLabel
 			// 
 			this._directoryToolStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this._directoryToolStripStatusLabel.Name = "_directoryToolStripStatusLabel";
-			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(865, 17);
+			this._directoryToolStripStatusLabel.Size = new System.Drawing.Size(864, 17);
 			this._directoryToolStripStatusLabel.Spring = true;
 			this._directoryToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -102,7 +102,7 @@
             this._showExportButton});
 			this._mainToolStrip.Location = new System.Drawing.Point(0, 0);
 			this._mainToolStrip.Name = "_mainToolStrip";
-			this._mainToolStrip.Size = new System.Drawing.Size(984, 25);
+			this._mainToolStrip.Size = new System.Drawing.Size(983, 25);
 			this._mainToolStrip.TabIndex = 1;
 			// 
 			// _connectDropDownButton
@@ -126,7 +126,7 @@
 			// 
 			this._connectToDirectoryMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.errorlog_folder;
 			this._connectToDirectoryMenuItem.Name = "_connectToDirectoryMenuItem";
-			this._connectToDirectoryMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._connectToDirectoryMenuItem.Size = new System.Drawing.Size(130, 22);
 			this._connectToDirectoryMenuItem.Text = "&Directory";
 			this._connectToDirectoryMenuItem.ToolTipText = "Connect to a directory with log files";
 			// 
@@ -134,7 +134,7 @@
 			// 
 			this._connectToWebServerMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.server;
 			this._connectToWebServerMenuItem.Name = "_connectToWebServerMenuItem";
-			this._connectToWebServerMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._connectToWebServerMenuItem.Size = new System.Drawing.Size(130, 22);
 			this._connectToWebServerMenuItem.Text = "&Web server";
 			this._connectToWebServerMenuItem.ToolTipText = "Connect to a web server";
 			// 
@@ -145,7 +145,7 @@
             this._connectToSqlServerCompactMenuItem});
 			this._connectToDatabaseMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.database;
 			this._connectToDatabaseMenuItem.Name = "_connectToDatabaseMenuItem";
-			this._connectToDatabaseMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._connectToDatabaseMenuItem.Size = new System.Drawing.Size(130, 22);
 			this._connectToDatabaseMenuItem.Text = "Data&base";
 			this._connectToDatabaseMenuItem.ToolTipText = "Connect to a database";
 			// 
@@ -168,25 +168,25 @@
 			// toolStripMenuItem1
 			// 
 			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(127, 6);
 			// 
 			// _disconnectMenuItem
 			// 
 			this._disconnectMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.disconnect;
 			this._disconnectMenuItem.Name = "_disconnectMenuItem";
-			this._disconnectMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._disconnectMenuItem.Size = new System.Drawing.Size(130, 22);
 			this._disconnectMenuItem.Text = "Disconnect";
 			// 
 			// toolStripMenuItem2
 			// 
 			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-			this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
+			this.toolStripMenuItem2.Size = new System.Drawing.Size(127, 6);
 			// 
 			// _exitMenuItem
 			// 
 			this._exitMenuItem.Image = global::ElmahLogAnalyzer.UI.Properties.Resources.close;
 			this._exitMenuItem.Name = "_exitMenuItem";
-			this._exitMenuItem.Size = new System.Drawing.Size(152, 22);
+			this._exitMenuItem.Size = new System.Drawing.Size(130, 22);
 			this._exitMenuItem.Text = "Exit";
 			// 
 			// toolStripSeparator1
@@ -249,14 +249,14 @@
 			this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._mainPanel.Location = new System.Drawing.Point(0, 25);
 			this._mainPanel.Name = "_mainPanel";
-			this._mainPanel.Size = new System.Drawing.Size(984, 681);
+			this._mainPanel.Size = new System.Drawing.Size(983, 748);
 			this._mainPanel.TabIndex = 2;
 			// 
 			// Container
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(984, 728);
+			this.ClientSize = new System.Drawing.Size(983, 795);
 			this.Controls.Add(this._mainPanel);
 			this.Controls.Add(this._mainToolStrip);
 			this.Controls.Add(this._mainStatusStrip);

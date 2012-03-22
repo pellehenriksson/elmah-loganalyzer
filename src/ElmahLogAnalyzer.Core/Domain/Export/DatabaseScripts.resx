@@ -148,7 +148,8 @@ FOREIGN KEY (ErrorLogId) REFERENCES ErrorLogs(ErrorId)</value>
   <data name="SqlCeDatabaseSchemaErrorLogsTable" xml:space="preserve">
     <value>CREATE TABLE [ErrorLogs](
 	[ErrorId] [uniqueidentifier]  PRIMARY KEY NOT NULL,
-	[Host] [nvarchar](4000) NULL,
+	[Application][nvarchar](4000) NULL,
+	[Host] [nvarchar](4000) NULL, 
 	[Type] [nvarchar](4000) NULL,
 	[Message] [nvarchar](4000) NULL,
 	[Source] [nvarchar](4000) NULL,

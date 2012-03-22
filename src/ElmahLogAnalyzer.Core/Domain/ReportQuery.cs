@@ -6,12 +6,15 @@ namespace ElmahLogAnalyzer.Core.Domain
 
     public class ReportQuery
 	{
-		public ReportQuery(ReportTypes reportType, DateInterval interval, int numberOfResults)
+		public ReportQuery(string application, ReportTypes reportType, DateInterval interval, int numberOfResults)
 		{
+			Application = application;
 			ReportType = reportType;
 			Interval = interval;
 			NumberOfResults = numberOfResults;
 		}
+
+    	public string Application { get; private set; }
 
 		public ReportTypes ReportType { get; private set; }
 

@@ -92,11 +92,12 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 		
 		private static void PersistErrorLog(IDbConnection connection, ErrorLog errorlog)
 		{
-			const string sql = @"INSERT INTO ErrorLogs (ErrorId, Host, Type, Message, Source, Details, Time, StatusCode, [User], Url) 
-						VALUES (@errorId, @host, @type, @message, @source, @details, @time, @statusCode, @user, @url);";
+			const string sql = @"INSERT INTO ErrorLogs (ErrorId, Application, Host, Type, Message, Source, Details, Time, StatusCode, [User], Url) 
+						VALUES (@errorId, @application, @host, @type, @message, @source, @details, @time, @statusCode, @user, @url);";
 					
 			var parameters = new DynamicParameters();
 			parameters.Add("@errorId", errorlog.ErrorId.ToString());
+			parameters.Add("@application", errorlog.Application);
 			parameters.Add("@host", errorlog.Host);
 			parameters.Add("@type", errorlog.Type);
 			parameters.Add("@message", errorlog.Message);

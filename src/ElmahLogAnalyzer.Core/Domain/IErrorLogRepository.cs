@@ -14,7 +14,9 @@ namespace ElmahLogAnalyzer.Core.Domain
 		List<ErrorLog> GetAll();
 		
 		IList<ErrorLog> GetWithFilter(SearchErrorLogQuery filter);
-		
+
+		List<string> GetApplications();
+
 		List<string> GetTypes();
 		
 		List<string> GetSources();

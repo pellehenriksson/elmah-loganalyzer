@@ -15,7 +15,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypes.Type, CreateInterval(), -1);
+			var query = new ReportQuery("/", ReportTypes.Type, CreateInterval(), -1);
 
 			// act
 			var result = generator.Create(query);
@@ -29,7 +29,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypes.Type, CreateInterval(), 2);
+			var query = new ReportQuery("/", ReportTypes.Type, CreateInterval(), 2);
 
 			// act
 			var result = generator.Create(query);
@@ -43,7 +43,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypes.Source, CreateInterval(), -1);
+			var query = new ReportQuery("/", ReportTypes.Source, CreateInterval(), -1);
 
 			// act
 			var result = generator.Create(query);
@@ -57,7 +57,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypes.Source, CreateInterval(), 3);
+			var query = new ReportQuery("/", ReportTypes.Source, CreateInterval(), 3);
 
 			// act
 			var result = generator.Create(query);
@@ -71,7 +71,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypes.User, CreateInterval(), -1);
+			var query = new ReportQuery("/", ReportTypes.User, CreateInterval(), -1);
 
 			// act
 			var result = generator.Create(query);
@@ -85,7 +85,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypes.User, CreateInterval(), 2);
+			var query = new ReportQuery("/", ReportTypes.User, CreateInterval(), 2);
 
 			// act
 			var result = generator.Create(query);
@@ -99,7 +99,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypes.Url, CreateInterval(), -1);
+			var query = new ReportQuery("/", ReportTypes.Url, CreateInterval(), -1);
 
 			// act
 			var result = generator.Create(query);
@@ -113,7 +113,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypes.Url, CreateInterval(), 1);
+			var query = new ReportQuery("/", ReportTypes.Url, CreateInterval(), 1);
 
 			// act
 			var result = generator.Create(query);
@@ -127,7 +127,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypes.Day, CreateInterval(), -1);
+			var query = new ReportQuery("/", ReportTypes.Day, CreateInterval(), -1);
 
 			// act
 			var result = generator.Create(query);
@@ -141,7 +141,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		{
 			// arrange
 			var generator = CreateGenerator();
-			var query = new ReportQuery(ReportTypes.Browser, CreateInterval(), -1);
+			var query = new ReportQuery("/", ReportTypes.Browser, CreateInterval(), -1);
 
 			// act
 			var result = generator.Create(query);

@@ -60,8 +60,8 @@ namespace ElmahLogAnalyzer.UI.Views
 			// _horizontalSplitContainer.Panel2
 			// 
 			this._horizontalSplitContainer.Panel2.Controls.Add(this._verticalSplitContainer);
-			this._horizontalSplitContainer.Size = new System.Drawing.Size(1279, 607);
-			this._horizontalSplitContainer.SplitterDistance = 211;
+			this._horizontalSplitContainer.Size = new System.Drawing.Size(991, 782);
+			this._horizontalSplitContainer.SplitterDistance = 309;
 			this._horizontalSplitContainer.TabIndex = 0;
 			// 
 			// _filterView
@@ -69,7 +69,7 @@ namespace ElmahLogAnalyzer.UI.Views
 			this._filterView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._filterView.Location = new System.Drawing.Point(0, 0);
 			this._filterView.Name = "_filterView";
-			this._filterView.Size = new System.Drawing.Size(1279, 211);
+			this._filterView.Size = new System.Drawing.Size(991, 309);
 			this._filterView.TabIndex = 0;
 			// 
 			// _verticalSplitContainer
@@ -85,8 +85,8 @@ namespace ElmahLogAnalyzer.UI.Views
 			// _verticalSplitContainer.Panel2
 			// 
 			this._verticalSplitContainer.Panel2.Controls.Add(this._detailsView);
-			this._verticalSplitContainer.Size = new System.Drawing.Size(1279, 392);
-			this._verticalSplitContainer.SplitterDistance = 271;
+			this._verticalSplitContainer.Size = new System.Drawing.Size(991, 469);
+			this._verticalSplitContainer.SplitterDistance = 209;
 			this._verticalSplitContainer.TabIndex = 0;
 			// 
 			// _resultView
@@ -94,7 +94,7 @@ namespace ElmahLogAnalyzer.UI.Views
 			this._resultView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._resultView.Location = new System.Drawing.Point(0, 0);
 			this._resultView.Name = "_resultView";
-			this._resultView.Size = new System.Drawing.Size(271, 392);
+			this._resultView.Size = new System.Drawing.Size(209, 469);
 			this._resultView.TabIndex = 0;
 			// 
 			// _detailsView
@@ -102,7 +102,7 @@ namespace ElmahLogAnalyzer.UI.Views
 			this._detailsView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._detailsView.Location = new System.Drawing.Point(0, 0);
 			this._detailsView.Name = "_detailsView";
-			this._detailsView.Size = new System.Drawing.Size(1004, 392);
+			this._detailsView.Size = new System.Drawing.Size(778, 469);
 			this._detailsView.TabIndex = 0;
 			// 
 			// SearchView
@@ -111,7 +111,7 @@ namespace ElmahLogAnalyzer.UI.Views
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this._horizontalSplitContainer);
 			this.Name = "SearchView";
-			this.Size = new System.Drawing.Size(1279, 607);
+			this.Size = new System.Drawing.Size(991, 782);
 			this.Load += new System.EventHandler(this.SearchViewLoad);
 			this._horizontalSplitContainer.Panel1.ResumeLayout(false);
 			this._horizontalSplitContainer.Panel2.ResumeLayout(false);

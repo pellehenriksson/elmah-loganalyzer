@@ -56,6 +56,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			var result = SearchErrorLogQuery.Create(reportQuery);
 
 			// assert
+			Assert.That(reportQuery.Application, Is.EqualTo(result.Application));
 			Assert.That(result.Interval, Is.EqualTo(reportQuery.Interval));
 		}
 	}

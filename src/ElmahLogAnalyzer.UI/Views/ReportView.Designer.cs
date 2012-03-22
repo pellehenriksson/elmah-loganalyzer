@@ -46,7 +46,7 @@ namespace ElmahLogAnalyzer.UI.Views
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 2;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 88F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(1055, 609);
 			this.tableLayoutPanel1.TabIndex = 0;
@@ -57,16 +57,16 @@ namespace ElmahLogAnalyzer.UI.Views
 			this._selectionView.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._selectionView.Location = new System.Drawing.Point(3, 3);
 			this._selectionView.Name = "_selectionView";
-			this._selectionView.Size = new System.Drawing.Size(1049, 49);
+			this._selectionView.Size = new System.Drawing.Size(1049, 82);
 			this._selectionView.TabIndex = 0;
 			// 
 			// _chartView
 			// 
 			this._chartView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._chartView.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._chartView.Location = new System.Drawing.Point(3, 58);
+			this._chartView.Location = new System.Drawing.Point(3, 91);
 			this._chartView.Name = "_chartView";
-			this._chartView.Size = new System.Drawing.Size(1049, 548);
+			this._chartView.Size = new System.Drawing.Size(1049, 515);
 			this._chartView.TabIndex = 1;
 			// 
 			// ReportView

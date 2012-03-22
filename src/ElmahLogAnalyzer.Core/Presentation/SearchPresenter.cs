@@ -43,6 +43,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 		private void InitializeFilterValues()
 		{
+			View.LoadApplications(_repository.GetApplications());
 			View.LoadTypes(_repository.GetTypes());
 			View.LoadSources(_repository.GetSources());
 			View.LoadUsers(_repository.GetUsers());

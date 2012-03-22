@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ElmahLogAnalyzer.Core.Common;
 using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.TestHelpers.Fakes;
@@ -33,6 +34,19 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			
 			// assert
 			Assert.That(repository.GetAll().Count, Is.EqualTo(5));
+		}
+
+		[Test]
+		public void Initialize_LoadApplicationsIntoMemory()
+		{
+			// arrange
+			var repository = CreateRepository();
+
+			// act
+			repository.Initialize();
+
+			// assert
+			Assert.That(repository.GetApplications().Count, Is.EqualTo(1));
 		}
 
 		[Test]
@@ -129,6 +143,16 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		}
 
 		[Test]
+		public void GetWithFilter_StartAndEndTimeAndApplication()
+		{
+			var query = CreateQueryThatIncluedEverything();
+			query.Interval = CreateIntervalThatIncludesEvertyhing();
+			query.Application = "/";
+
+			GetWithFilterTest(query, 4);
+		}
+
+		[Test]
 		public void GetWithFilter_StartAndEndTimeAndType()
 		{
 			var query = CreateQueryThatIncluedEverything();
@@ -212,6 +236,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			var repository = CreateRepository();
 			var query = new SearchErrorLogQuery();
 
+			query.Application = repository.GetApplications().First();
 			query.Types = new SearchErrorLogQueryParameter(true, repository.GetTypes());
 			query.Sources = new SearchErrorLogQueryParameter(true, repository.GetSources());
 			query.Urls = new SearchErrorLogQueryParameter(true, repository.GetUrls());

@@ -21,6 +21,12 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_dateIntervalPicker.SetInterval(interval);
 		}
 
+		public void LoadApplications(IEnumerable<string> applications)
+		{
+			_applicationsComboBox.DataSource = applications;
+			_applicationsComboBox.SelectedIndex = 0;
+		}
+
 		public void LoadTypes(IEnumerable<ReportTypeListItem> types)
 		{
 			_reportsComboBox.Items.Clear();
@@ -60,7 +66,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		{
 			var reportType = (ReportTypeListItem)_reportsComboBox.SelectedItem;
 			var numberOfResults = Convert.ToInt32(((NameValuePair)_numberOfResultsComboBox.SelectedItem).Value);
-			return new ReportQuery(reportType.ReportType, _dateIntervalPicker.GetInterval(), numberOfResults);
+			return new ReportQuery(_applicationsComboBox.SelectedItem.ToString(), reportType.ReportType, _dateIntervalPicker.GetInterval(), numberOfResults);
 		}
 	}
 }

@@ -31,6 +31,17 @@ namespace ElmahLogAnalyzer.UI.Views
 			_filterView.SetDateInterval(interval);
 		}
 
+		public void LoadApplications(IEnumerable<string> applications)
+		{
+			if (InvokeRequired)
+			{
+				this.InvokeEx(x => x._filterView.LoadApplications(applications));
+				return;
+			}
+
+			_filterView.LoadApplications(applications);
+		}
+
 		public void LoadTypes(IEnumerable<string> types)
 		{
 			if (InvokeRequired)

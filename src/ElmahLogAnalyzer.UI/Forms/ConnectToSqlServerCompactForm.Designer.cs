@@ -75,9 +75,9 @@
 			this._serverLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._serverLabel.Location = new System.Drawing.Point(15, 51);
 			this._serverLabel.Name = "_serverLabel";
-			this._serverLabel.Size = new System.Drawing.Size(43, 13);
+			this._serverLabel.Size = new System.Drawing.Size(27, 13);
 			this._serverLabel.TabIndex = 20;
-			this._serverLabel.Text = "Server:";
+			this._serverLabel.Text = "File:";
 			// 
 			// _browseButton
 			// 

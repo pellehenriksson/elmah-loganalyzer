@@ -34,6 +34,7 @@
 			this._treeImageList = new System.Windows.Forms.ImageList(this.components);
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this._numberOfResultsLabel = new System.Windows.Forms.Label();
+			this._toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -48,6 +49,7 @@
 			this._resultTreeView.Size = new System.Drawing.Size(211, 288);
 			this._resultTreeView.TabIndex = 1;
 			this._resultTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.ResultTreeViewAfterSelect);
+			this._resultTreeView.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ResultTreeViewMouseMove);
 			// 
 			// _treeImageList
 			// 
@@ -100,5 +102,6 @@
 		private System.Windows.Forms.ImageList _treeImageList;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Label _numberOfResultsLabel;
+		private System.Windows.Forms.ToolTip _toolTip;
 	}
 }

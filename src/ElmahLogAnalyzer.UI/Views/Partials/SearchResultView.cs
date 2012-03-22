@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
 using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Presentation;
@@ -98,6 +99,30 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		private void Clear()
 		{
 			_resultTreeView.Nodes.Clear();
+		}
+
+		private void ResultTreeViewMouseMove(object sender, MouseEventArgs e)
+		{
+			var node = _resultTreeView.GetNodeAt(e.X, e.Y);
+			
+			if (node != null)
+			{
+				if (node.Tag != null)
+				{
+					if (node.Tag.ToString() != _toolTip.GetToolTip(_resultTreeView))
+					{
+						_toolTip.SetToolTip(_resultTreeView, node.Tag.ToString());
+					}
+				}
+				else
+				{
+					_toolTip.SetToolTip(_resultTreeView, string.Empty);
+				}
+			}
+			else
+			{
+				_toolTip.SetToolTip(_resultTreeView, string.Empty);
+			}
 		}
 	}
 }

@@ -11,6 +11,9 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 		public ErrorLog()
 		{
+			Url = "UNKNOWN";
+			CleanUrl = Url;
+			User = "UNKNOWN";
 			ServerVariables = new List<NameValuePair>();
 			Cookies = new List<NameValuePair>();
 			FormValues = new List<NameValuePair>();
@@ -98,12 +101,12 @@ namespace ElmahLogAnalyzer.Core.Domain
 				return;
 			}
 
-			if (name == HttpServerVariables.LogonUser)
+			if (name == HttpServerVariables.LogonUser && value.HasValue())
 			{
 				User = value.ToLowerInvariant();
 			}
 			
-			if (name == HttpServerVariables.Url)
+			if (name == HttpServerVariables.Url && value.HasValue())
 			{
 				Url = value.ToLowerInvariant();
 				CleanUrl = UrlCleaner.Clean(Url);

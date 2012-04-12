@@ -9,6 +9,36 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 	public class ErrorLogTests : UnitTestBase
 	{
 		[Test]
+		public void Ctor_HasDefaultUrlValueUnknown()
+		{
+			// act
+			var error = new ErrorLog();
+
+			// assert
+			Assert.That(error.User, Is.EqualTo("UNKNOWN"));
+		}
+
+		[Test]
+		public void Ctor_HasDefaultCleanUrlValueUnknown()
+		{
+			// act
+			var error = new ErrorLog();
+
+			// assert
+			Assert.That(error.CleanUrl, Is.EqualTo("UNKNOWN"));
+		}
+
+		[Test]
+		public void Ctor_HasDefaultUserValueUnknown()
+		{
+			// act
+			var error = new ErrorLog();
+
+			// assert
+			Assert.That(error.User, Is.EqualTo("UNKNOWN"));
+		}
+
+		[Test]
 		public void Ctor_HasEmptyServerVariablesList()
 		{
 			// act
@@ -181,6 +211,19 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			// assert
 			Assert.That(error.User, Is.EqualTo(@"domain\user"));
 		}
+
+		[Test]
+		public void AddServerVariable_NameIsLogon_User_ValueIsEmpty_ShouldUseTheDefaultUserValue()
+		{
+			// arrange
+			var error = new ErrorLog();
+
+			// act
+			error.AddServerVariable(HttpServerVariables.LogonUser, string.Empty);
+
+			// assert
+			Assert.That(error.User, Is.EqualTo("UNKNOWN"));
+		}
 		
 		[Test]
 		public void AddServerVariable_NameIsURL_SetAsUrlInLowerCase()
@@ -193,6 +236,32 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 
 			// assert
 			Assert.That(error.Url, Is.EqualTo(@"/some/kind/of/monster"));
+		}
+
+		[Test]
+		public void AddServerVariable_NameIsURL_ValueIsEmpty_ShouldUseTheDefaultUrlValue()
+		{
+			// arrange
+			var error = new ErrorLog();
+
+			// act
+			error.AddServerVariable(HttpServerVariables.Url, string.Empty);
+
+			// assert
+			Assert.That(error.Url, Is.EqualTo("UNKNOWN"));
+		}
+
+		[Test]
+		public void AddServerVariable_NameIsURL_ValueIsEmpty_ShouldUseTheDefaultUrlValueForCleanUrl()
+		{
+			// arrange
+			var error = new ErrorLog();
+
+			// act
+			error.AddServerVariable(HttpServerVariables.Url, string.Empty);
+
+			// assert
+			Assert.That(error.CleanUrl, Is.EqualTo("UNKNOWN"));
 		}
 
 		[Test]

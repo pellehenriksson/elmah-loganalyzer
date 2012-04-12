@@ -72,7 +72,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			repository.Initialize();
 
 			// assert
-			Assert.That(repository.GetUsers().Count, Is.EqualTo(3));
+			Assert.That(repository.GetUsers().Count, Is.EqualTo(4));
 		}
 
 		[Test]
@@ -98,7 +98,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			repository.Initialize();
 
 			// assert
-			Assert.That(repository.GetUrls().Count, Is.EqualTo(2));
+			Assert.That(repository.GetUrls().Count, Is.EqualTo(3));
 		}
 
 		[Test]
@@ -149,7 +149,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			query.Interval = CreateIntervalThatIncludesEvertyhing();
 			query.Application = "/";
 
-			GetWithFilterTest(query, 4);
+			GetWithFilterTest(query, 5);
 		}
 
 		[Test]

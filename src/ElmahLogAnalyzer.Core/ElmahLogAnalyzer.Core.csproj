@@ -117,6 +117,11 @@
     <Compile Include="Domain\INewErrorLogRepository.cs" />
     <Compile Include="Domain\SqlServerCompactErrorLogSource.cs" />
     <Compile Include="Domain\SqlServerErrorLogSource.cs" />
+    <Compile Include="Infrastructure\Configuration\DatabaseConnectionElement.cs" />
+    <Compile Include="Infrastructure\Configuration\DatabaseConnectionElementCollection.cs" />
+    <Compile Include="Infrastructure\Configuration\DatabaseConnectionsHelper.cs" />
+    <Compile Include="Infrastructure\Configuration\DatabaseConnectionsSection.cs" />
+    <Compile Include="Infrastructure\Configuration\IDatabaseConnectionsHelper.cs" />
     <Compile Include="Infrastructure\Configuration\IWebServerConnectionsHelper.cs" />
     <Compile Include="Infrastructure\Configuration\WebServerConnectionElement.cs" />
     <Compile Include="Infrastructure\Configuration\WebServerConnectionElementCollection.cs" />

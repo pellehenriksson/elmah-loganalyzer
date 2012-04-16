@@ -48,18 +48,13 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this._formsTabPage = new System.Windows.Forms.TabPage();
-			this._formsListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
 			this._cookiesTabPage = new System.Windows.Forms.TabPage();
-			this._cookiesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
 			this._queryStringTabPage = new System.Windows.Forms.TabPage();
-			this._querystringListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
 			this._serverVariablesTabPage = new System.Windows.Forms.TabPage();
-			this._serverVariablesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
 			this._clientTabPage = new System.Windows.Forms.TabPage();
 			this._clientDetailsOnlineGroupBox = new System.Windows.Forms.GroupBox();
 			this._botsVsBrowsersButton = new System.Windows.Forms.Button();
 			this._httpUserAgentStringButton = new System.Windows.Forms.Button();
-			this._descriptionLabel = new System.Windows.Forms.Label();
 			this._ipAddressLabel = new System.Windows.Forms.TextBox();
 			this._platformLabel = new System.Windows.Forms.TextBox();
 			this._operatingSystemLabel = new System.Windows.Forms.TextBox();
@@ -79,6 +74,12 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
+			this._useragentLabel = new System.Windows.Forms.TextBox();
+			this.label15 = new System.Windows.Forms.Label();
+			this._formsListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
+			this._cookiesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
+			this._querystringListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
+			this._serverVariablesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
 			this._detailsTabControl.SuspendLayout();
 			this._errorTabPage.SuspendLayout();
 			this._errorTabControl.SuspendLayout();
@@ -344,14 +345,6 @@
 			this._formsTabPage.Text = "Form values";
 			this._formsTabPage.UseVisualStyleBackColor = true;
 			// 
-			// _formsListView
-			// 
-			this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._formsListView.Location = new System.Drawing.Point(0, 0);
-			this._formsListView.Name = "_formsListView";
-			this._formsListView.Size = new System.Drawing.Size(672, 501);
-			this._formsListView.TabIndex = 0;
-			// 
 			// _cookiesTabPage
 			// 
 			this._cookiesTabPage.Controls.Add(this._cookiesListView);
@@ -362,14 +355,6 @@
 			this._cookiesTabPage.Text = "Cookies";
 			this._cookiesTabPage.UseVisualStyleBackColor = true;
 			// 
-			// _cookiesListView
-			// 
-			this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._cookiesListView.Location = new System.Drawing.Point(0, 0);
-			this._cookiesListView.Name = "_cookiesListView";
-			this._cookiesListView.Size = new System.Drawing.Size(672, 501);
-			this._cookiesListView.TabIndex = 0;
-			// 
 			// _queryStringTabPage
 			// 
 			this._queryStringTabPage.Controls.Add(this._querystringListView);
@@ -379,14 +364,6 @@
 			this._queryStringTabPage.TabIndex = 5;
 			this._queryStringTabPage.Text = "Querystring";
 			this._queryStringTabPage.UseVisualStyleBackColor = true;
-			// 
-			// _querystringListView
-			// 
-			this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._querystringListView.Location = new System.Drawing.Point(0, 0);
-			this._querystringListView.Name = "_querystringListView";
-			this._querystringListView.Size = new System.Drawing.Size(672, 501);
-			this._querystringListView.TabIndex = 0;
 			// 
 			// _serverVariablesTabPage
 			// 
@@ -399,19 +376,12 @@
 			this._serverVariablesTabPage.Text = "Server Variables";
 			this._serverVariablesTabPage.UseVisualStyleBackColor = true;
 			// 
-			// _serverVariablesListView
-			// 
-			this._serverVariablesListView.Dock = System.Windows.Forms.DockStyle.Fill;
-			this._serverVariablesListView.Location = new System.Drawing.Point(3, 3);
-			this._serverVariablesListView.Name = "_serverVariablesListView";
-			this._serverVariablesListView.Size = new System.Drawing.Size(666, 495);
-			this._serverVariablesListView.TabIndex = 0;
-			// 
 			// _clientTabPage
 			// 
 			this._clientTabPage.BackColor = System.Drawing.SystemColors.Control;
+			this._clientTabPage.Controls.Add(this._useragentLabel);
+			this._clientTabPage.Controls.Add(this.label15);
 			this._clientTabPage.Controls.Add(this._clientDetailsOnlineGroupBox);
-			this._clientTabPage.Controls.Add(this._descriptionLabel);
 			this._clientTabPage.Controls.Add(this._ipAddressLabel);
 			this._clientTabPage.Controls.Add(this._platformLabel);
 			this._clientTabPage.Controls.Add(this._operatingSystemLabel);
@@ -433,10 +403,10 @@
 			this._clientDetailsOnlineGroupBox.Controls.Add(this._botsVsBrowsersButton);
 			this._clientDetailsOnlineGroupBox.Controls.Add(this._httpUserAgentStringButton);
 			this._clientDetailsOnlineGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this._clientDetailsOnlineGroupBox.Location = new System.Drawing.Point(22, 167);
+			this._clientDetailsOnlineGroupBox.Location = new System.Drawing.Point(18, 207);
 			this._clientDetailsOnlineGroupBox.Name = "_clientDetailsOnlineGroupBox";
-			this._clientDetailsOnlineGroupBox.Size = new System.Drawing.Size(276, 224);
-			this._clientDetailsOnlineGroupBox.TabIndex = 11;
+			this._clientDetailsOnlineGroupBox.Size = new System.Drawing.Size(276, 170);
+			this._clientDetailsOnlineGroupBox.TabIndex = 12;
 			this._clientDetailsOnlineGroupBox.TabStop = false;
 			this._clientDetailsOnlineGroupBox.Text = "Find more client information online";
 			// 
@@ -461,13 +431,6 @@
 			this._httpUserAgentStringButton.Text = "http://www.useragentstring.com";
 			this._httpUserAgentStringButton.UseVisualStyleBackColor = true;
 			this._httpUserAgentStringButton.Click += new System.EventHandler(this.HttpUserAgentStringButtonClick);
-			// 
-			// _descriptionLabel
-			// 
-			this._descriptionLabel.Location = new System.Drawing.Point(19, 146);
-			this._descriptionLabel.Name = "_descriptionLabel";
-			this._descriptionLabel.Size = new System.Drawing.Size(632, 61);
-			this._descriptionLabel.TabIndex = 10;
 			// 
 			// _ipAddressLabel
 			// 
@@ -702,6 +665,63 @@
 			this.label14.TabIndex = 6;
 			this.label14.Text = "Software:";
 			// 
+			// _useragentLabel
+			// 
+			this._useragentLabel.BackColor = System.Drawing.Color.White;
+			this._useragentLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this._useragentLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this._useragentLabel.Location = new System.Drawing.Point(137, 143);
+			this._useragentLabel.Multiline = true;
+			this._useragentLabel.Name = "_useragentLabel";
+			this._useragentLabel.ReadOnly = true;
+			this._useragentLabel.Size = new System.Drawing.Size(520, 41);
+			this._useragentLabel.TabIndex = 11;
+			this._useragentLabel.TabStop = false;
+			this._useragentLabel.Text = "[USER_AGENT_STRING]";
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this.label15.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label15.Location = new System.Drawing.Point(16, 143);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(115, 13);
+			this.label15.TabIndex = 10;
+			this.label15.Text = "USER_AGENT_STRING:";
+			// 
+			// _formsListView
+			// 
+			this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._formsListView.Location = new System.Drawing.Point(0, 0);
+			this._formsListView.Name = "_formsListView";
+			this._formsListView.Size = new System.Drawing.Size(672, 501);
+			this._formsListView.TabIndex = 0;
+			// 
+			// _cookiesListView
+			// 
+			this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._cookiesListView.Location = new System.Drawing.Point(0, 0);
+			this._cookiesListView.Name = "_cookiesListView";
+			this._cookiesListView.Size = new System.Drawing.Size(672, 501);
+			this._cookiesListView.TabIndex = 0;
+			// 
+			// _querystringListView
+			// 
+			this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._querystringListView.Location = new System.Drawing.Point(0, 0);
+			this._querystringListView.Name = "_querystringListView";
+			this._querystringListView.Size = new System.Drawing.Size(672, 501);
+			this._querystringListView.TabIndex = 0;
+			// 
+			// _serverVariablesListView
+			// 
+			this._serverVariablesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+			this._serverVariablesListView.Location = new System.Drawing.Point(3, 3);
+			this._serverVariablesListView.Name = "_serverVariablesListView";
+			this._serverVariablesListView.Size = new System.Drawing.Size(666, 495);
+			this._serverVariablesListView.TabIndex = 0;
+			// 
 			// SearchDetailsView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -768,7 +788,6 @@
 		private Controls.NameValuePairListView _cookiesListView;
 		private Controls.NameValuePairListView _querystringListView;
 		private Controls.NameValuePairListView _serverVariablesListView;
-		private System.Windows.Forms.Label _descriptionLabel;
 		private System.Windows.Forms.GroupBox _clientDetailsOnlineGroupBox;
 		private System.Windows.Forms.Button _httpUserAgentStringButton;
 		private System.Windows.Forms.Button _botsVsBrowsersButton;
@@ -784,5 +803,7 @@
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.TextBox _platformLabel;
 		private System.Windows.Forms.TextBox _httpStatusCodeTextBox;
+		private System.Windows.Forms.TextBox _useragentLabel;
+		private System.Windows.Forms.Label label15;
 	}
 }

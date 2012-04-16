@@ -48,6 +48,7 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			Bind<IHttpUserAgentSearchLauncherFactory>().To<HttpUserAgentSearchLauncherFactory>();
 			Bind<IFileSystemHelper>().To<FileSystemHelper>();
 			Bind<IWebServerConnectionsHelper>().To<WebServerConnectionsHelper>();
+			Bind<IDatabaseConnectionsHelper>().To<DatabaseConnectionsHelper>();
 			Bind<IDatabaseCreator>().To<SqlCeDatabaseCreator>();
 			Bind<SearchPresenter>().ToSelf();
 			Bind<ReportPresenter>().ToSelf();
@@ -55,7 +56,6 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Dependencies
 			Bind<ConnectToWebServerPresenter>().ToSelf();
 			Bind<ConnectToSqlServerPresenter>().ToSelf();
 			Bind<ConnectToSqlServerCompactPresenter>().ToSelf();
-			Bind<ConnectToAccessPresenter>().ToSelf();
 			Bind<ExportPresenter>().ToSelf();
 			Bind<ILog>().ToMethod(GetLogger);
 		}

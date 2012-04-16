@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Presentation;
@@ -14,6 +15,14 @@ namespace ElmahLogAnalyzer.UI.Forms
 			AcceptButton = _connectButton;
 
 			ClearErrorMessage();
+
+			_connectionComboBox.SelectedIndexChanged += (sender, args) =>
+			{
+			    if (OnConnectionSelected != null)
+			    {
+					OnConnectionSelected(this, new ConnectionSelectedEventArgs(_connectionComboBox.Text));
+			    }
+			};
 
 			_connectButton.Click += (sender, args) => OnConnectToDatabase(this, EventArgs.Empty);
 
@@ -40,6 +49,8 @@ namespace ElmahLogAnalyzer.UI.Forms
 		}
 
 		public event EventHandler OnConnectToDatabase;
+
+		public event EventHandler<ConnectionSelectedEventArgs> OnConnectionSelected;
 
 		public ErrorLogSources Source
 		{
@@ -86,6 +97,12 @@ namespace ElmahLogAnalyzer.UI.Forms
 		{
 			DialogResult = DialogResult.OK;
 			Close();
+		}
+
+		public void LoadConnections(List<string> connections)
+		{
+			_connectionComboBox.Items.Clear();
+			_connectionComboBox.DataSource = connections;
 		}
 
 		public void DisplayErrorMessage(string message)

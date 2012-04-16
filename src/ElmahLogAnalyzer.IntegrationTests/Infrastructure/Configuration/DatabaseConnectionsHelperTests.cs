@@ -70,7 +70,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 			// assert
 			var setting = result[0];
 
-			Assert.That(setting.Type, Is.EqualTo("sql"));
+			Assert.That(setting.Type, Is.EqualTo("SqlServer"));
 			Assert.That(setting.Name, Is.EqualTo("Development"));
 			Assert.That(setting.Server, Is.EqualTo(@".\sqlexpress"));
 			Assert.That(setting.Database, Is.EqualTo("dev_db"));
@@ -79,7 +79,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 
 			setting = result[1];
 
-			Assert.That(setting.Type, Is.EqualTo("sql"));
+			Assert.That(setting.Type, Is.EqualTo("SqlServer"));
 			Assert.That(setting.Name, Is.EqualTo("Production"));
 			Assert.That(setting.Server, Is.EqualTo("SomeServer"));
 			Assert.That(setting.Database, Is.EqualTo("prod_db"));
@@ -88,7 +88,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 
 			setting = result[2];
 
-			Assert.That(setting.Type, Is.EqualTo("sqlcompact"));
+			Assert.That(setting.Type, Is.EqualTo("SqlServerCompact"));
 			Assert.That(setting.Name, Is.EqualTo("SomeCompactDb"));
 			Assert.That(setting.File, Is.EqualTo(@"c:\somefile.sdf"));
 		}

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ElmahLogAnalyzer.Core.Presentation
 {
@@ -6,18 +7,14 @@ namespace ElmahLogAnalyzer.Core.Presentation
 	{
 		event EventHandler OnConnectToDatabase;
 
+		event EventHandler<ConnectionSelectedEventArgs> OnConnectionSelected;
+
+		void LoadConnections(List<string> connections);
+
 		void DisplayErrorMessage(string message);
 
 		void ClearErrorMessage();
 
 		void CloseView();
-	}
-
-	public interface IConnectToSqlServerCompactView : IConnectToDatabaseFileView
-	{
-	}
-
-	public interface IConnectToAccessView : IConnectToDatabaseFileView
-	{
 	}
 }

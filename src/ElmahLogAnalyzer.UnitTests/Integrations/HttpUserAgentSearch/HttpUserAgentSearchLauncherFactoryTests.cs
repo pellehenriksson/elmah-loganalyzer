@@ -6,7 +6,7 @@ namespace ElmahLogAnalyzer.UnitTests.Integrations.HttpUserAgentSearch
 	[TestFixture]
 	public class HttpUserAgentSearchLauncherFactoryTests : UnitTestBase
 	{
-		[Test][Ignore("The invoked member is not supported in a dynamic assembly.")]
+		[Test]
 		public void Create_SourceIsBotsVsBrowsers_LauncherIsBotsVsBrowsersSearchLauncher()
 		{
 			// arrange
@@ -19,7 +19,7 @@ namespace ElmahLogAnalyzer.UnitTests.Integrations.HttpUserAgentSearch
 			Assert.That(result, Is.InstanceOf<BotsVsBrowsersSearchLauncher>());
 		}
 
-		[Test][Ignore("The invoked member is not supported in a dynamic assembly.")]
+		[Test]
 		public void Create_SourceIsEmpty_LauncherIsUserAgentStringSearchLauncher()
 		{
 			// arrange

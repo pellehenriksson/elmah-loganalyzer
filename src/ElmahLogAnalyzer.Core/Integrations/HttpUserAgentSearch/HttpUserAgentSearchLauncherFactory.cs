@@ -1,4 +1,4 @@
-﻿using ElmahLogAnalyzer.Core.Infrastructure.Dependencies;
+﻿using ElmahLogAnalyzer.Core.Infrastructure.Web;
 
 namespace ElmahLogAnalyzer.Core.Integrations.HttpUserAgentSearch
 {
@@ -8,10 +8,10 @@ namespace ElmahLogAnalyzer.Core.Integrations.HttpUserAgentSearch
 		{
 			if (searchLauncher == "botsvsbrowsers")
 			{
-				return ServiceLocator.Resolve<BotsVsBrowsersSearchLauncher>();
+				return new BotsVsBrowsersSearchLauncher(new UrlNavigationLauncher());
 			}
-			
-			return ServiceLocator.Resolve<UserAgentStringSearchLauncher>();
+
+			return new UserAgentStringSearchLauncher(new UrlNavigationLauncher());
 		}
 	}
 }

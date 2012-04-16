@@ -37,7 +37,8 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_operatingSystemLabel.Text = ErrorLog.ClientInformation.OperatingSystem;
 			_browserLabel.Text = ErrorLog.ClientInformation.Browser;
 			_ipAddressLabel.Text = ErrorLog.LocalIpAddress;
-			_descriptionLabel.Text = ErrorLog.ClientInformation.Description;
+			_useragentLabel.Text = ErrorLog.ClientInformation.HttpUserAgentString;
+
 			_clientDetailsOnlineGroupBox.Visible = true;
 
 			_formsListView.LoadValues(ErrorLog.FormValues);
@@ -81,7 +82,8 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_operatingSystemLabel.Text = string.Empty;
 			_browserLabel.Text = string.Empty;
 			_ipAddressLabel.Text = string.Empty;
-			_descriptionLabel.Text = string.Empty;
+			_useragentLabel.Text = string.Empty;
+
 			_clientDetailsOnlineGroupBox.Visible = false;
 
 			_formsListView.ClearValues();

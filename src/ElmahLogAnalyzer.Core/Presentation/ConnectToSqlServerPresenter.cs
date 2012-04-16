@@ -1,17 +1,35 @@
-﻿namespace ElmahLogAnalyzer.Core.Presentation
+﻿using ElmahLogAnalyzer.Core.Domain;
+using ElmahLogAnalyzer.Core.Infrastructure.Configuration;
+
+namespace ElmahLogAnalyzer.Core.Presentation
 {
 	public class ConnectToSqlServerPresenter
 	{
-		public ConnectToSqlServerPresenter(IConnectToSqlServerView view)
+		private readonly IDatabaseConnectionsHelper _databaseConnectionsHelper;
+
+		public ConnectToSqlServerPresenter(IConnectToSqlServerView view, IDatabaseConnectionsHelper databaseConnectionsHelper)
 		{
 			View = view;
+			_databaseConnectionsHelper = databaseConnectionsHelper;
+
 			RegisterEvents();
+
+			View.LoadConnections(_databaseConnectionsHelper.GetNames(ErrorLogSources.SqlServer.ToString()));
 		}
 
 		public IConnectToSqlServerView View { get; private set; }
 			
 		private void RegisterEvents()
 		{
+			View.OnConnectionSelected += (sender, args) =>
+			{
+				var connection = _databaseConnectionsHelper.FindConnection(args.Url);
+				View.Server = connection.Server;
+				View.Database = connection.Database;
+				View.Username = connection.Username;
+				View.Password = connection.Password;
+			};
+
 			View.OnConnectToDatabase += (sender, args) =>
 			{
 				if (!AllRequiredFieldsHaveValues())

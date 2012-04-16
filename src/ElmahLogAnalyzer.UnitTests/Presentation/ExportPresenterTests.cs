@@ -61,7 +61,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			_view.Verify(x => x.SetLoadingState(), Times.Once());
 		}
 		
-		[Test][Ignore("The test sometimes fails, probably a thearding issue with Task")]
+		[Test][Ignore("The test sometimes fails, probably a threading issue with Task<T>")]
 		public void OnExport_Exports()
 		{
 			// arrange

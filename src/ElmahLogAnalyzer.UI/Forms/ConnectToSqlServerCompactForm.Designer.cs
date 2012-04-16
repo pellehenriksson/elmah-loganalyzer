@@ -75,7 +75,7 @@
 			this._serverLabel.AutoSize = true;
 			this._serverLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._serverLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._serverLabel.Location = new System.Drawing.Point(15, 51);
+			this._serverLabel.Location = new System.Drawing.Point(12, 54);
 			this._serverLabel.Name = "_serverLabel";
 			this._serverLabel.Size = new System.Drawing.Size(27, 13);
 			this._serverLabel.TabIndex = 2;
@@ -113,7 +113,8 @@
 			// _connectionLabel
 			// 
 			this._connectionLabel.AutoSize = true;
-			this._connectionLabel.Location = new System.Drawing.Point(13, 13);
+			this._connectionLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._connectionLabel.Location = new System.Drawing.Point(11, 12);
 			this._connectionLabel.Name = "_connectionLabel";
 			this._connectionLabel.Size = new System.Drawing.Size(65, 13);
 			this._connectionLabel.TabIndex = 0;
@@ -122,6 +123,7 @@
 			// _connectionComboBox
 			// 
 			this._connectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._connectionComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this._connectionComboBox.FormattingEnabled = true;
 			this._connectionComboBox.Location = new System.Drawing.Point(82, 12);
 			this._connectionComboBox.Name = "_connectionComboBox";

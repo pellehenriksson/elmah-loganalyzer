@@ -41,6 +41,8 @@
 			this._serverLabel = new System.Windows.Forms.Label();
 			this._errorGroupBox = new System.Windows.Forms.GroupBox();
 			this._errorMessageLabel = new System.Windows.Forms.Label();
+			this._connectionLabel = new System.Windows.Forms.Label();
+			this._connectionComboBox = new System.Windows.Forms.ComboBox();
 			this._errorGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -74,7 +76,7 @@
 			this._useIntegratedSecurityCheckBox.Location = new System.Drawing.Point(91, 115);
 			this._useIntegratedSecurityCheckBox.Name = "_useIntegratedSecurityCheckBox";
 			this._useIntegratedSecurityCheckBox.Size = new System.Drawing.Size(144, 18);
-			this._useIntegratedSecurityCheckBox.TabIndex = 22;
+			this._useIntegratedSecurityCheckBox.TabIndex = 6;
 			this._useIntegratedSecurityCheckBox.Text = "Use integrated security";
 			this._useIntegratedSecurityCheckBox.UseVisualStyleBackColor = true;
 			// 
@@ -86,7 +88,7 @@
 			this._passwordLabel.Location = new System.Drawing.Point(15, 165);
 			this._passwordLabel.Name = "_passwordLabel";
 			this._passwordLabel.Size = new System.Drawing.Size(57, 13);
-			this._passwordLabel.TabIndex = 25;
+			this._passwordLabel.TabIndex = 9;
 			this._passwordLabel.Text = "Password:";
 			// 
 			// _usernameLabel
@@ -97,7 +99,7 @@
 			this._usernameLabel.Location = new System.Drawing.Point(15, 138);
 			this._usernameLabel.Name = "_usernameLabel";
 			this._usernameLabel.Size = new System.Drawing.Size(62, 13);
-			this._usernameLabel.TabIndex = 23;
+			this._usernameLabel.TabIndex = 7;
 			this._usernameLabel.Text = "User name:";
 			// 
 			// _databaseLabel
@@ -108,7 +110,7 @@
 			this._databaseLabel.Location = new System.Drawing.Point(15, 78);
 			this._databaseLabel.Name = "_databaseLabel";
 			this._databaseLabel.Size = new System.Drawing.Size(57, 13);
-			this._databaseLabel.TabIndex = 20;
+			this._databaseLabel.TabIndex = 4;
 			this._databaseLabel.Text = "Database:";
 			// 
 			// _passwordTextBox
@@ -118,7 +120,7 @@
 			this._passwordTextBox.Name = "_passwordTextBox";
 			this._passwordTextBox.PasswordChar = '*';
 			this._passwordTextBox.Size = new System.Drawing.Size(196, 21);
-			this._passwordTextBox.TabIndex = 26;
+			this._passwordTextBox.TabIndex = 10;
 			// 
 			// _usernameTextBox
 			// 
@@ -126,7 +128,7 @@
 			this._usernameTextBox.Location = new System.Drawing.Point(91, 138);
 			this._usernameTextBox.Name = "_usernameTextBox";
 			this._usernameTextBox.Size = new System.Drawing.Size(196, 21);
-			this._usernameTextBox.TabIndex = 24;
+			this._usernameTextBox.TabIndex = 8;
 			// 
 			// _databaseTextBox
 			// 
@@ -134,7 +136,7 @@
 			this._databaseTextBox.Location = new System.Drawing.Point(91, 78);
 			this._databaseTextBox.Name = "_databaseTextBox";
 			this._databaseTextBox.Size = new System.Drawing.Size(315, 21);
-			this._databaseTextBox.TabIndex = 21;
+			this._databaseTextBox.TabIndex = 5;
 			// 
 			// _serverTextBox
 			// 
@@ -142,7 +144,7 @@
 			this._serverTextBox.Location = new System.Drawing.Point(91, 51);
 			this._serverTextBox.Name = "_serverTextBox";
 			this._serverTextBox.Size = new System.Drawing.Size(315, 21);
-			this._serverTextBox.TabIndex = 19;
+			this._serverTextBox.TabIndex = 3;
 			// 
 			// _serverLabel
 			// 
@@ -152,7 +154,7 @@
 			this._serverLabel.Location = new System.Drawing.Point(15, 51);
 			this._serverLabel.Name = "_serverLabel";
 			this._serverLabel.Size = new System.Drawing.Size(43, 13);
-			this._serverLabel.TabIndex = 18;
+			this._serverLabel.TabIndex = 2;
 			this._serverLabel.Text = "Server:";
 			// 
 			// _errorGroupBox
@@ -162,7 +164,7 @@
 			this._errorGroupBox.Location = new System.Drawing.Point(91, 192);
 			this._errorGroupBox.Name = "_errorGroupBox";
 			this._errorGroupBox.Size = new System.Drawing.Size(315, 100);
-			this._errorGroupBox.TabIndex = 27;
+			this._errorGroupBox.TabIndex = 11;
 			this._errorGroupBox.TabStop = false;
 			this._errorGroupBox.Text = "Connection failed";
 			// 
@@ -175,11 +177,33 @@
 			this._errorMessageLabel.Size = new System.Drawing.Size(309, 80);
 			this._errorMessageLabel.TabIndex = 0;
 			// 
+			// _connectionLabel
+			// 
+			this._connectionLabel.AutoSize = true;
+			this._connectionLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._connectionLabel.Location = new System.Drawing.Point(13, 13);
+			this._connectionLabel.Name = "_connectionLabel";
+			this._connectionLabel.Size = new System.Drawing.Size(65, 13);
+			this._connectionLabel.TabIndex = 0;
+			this._connectionLabel.Text = "Connection:";
+			// 
+			// _connectionComboBox
+			// 
+			this._connectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this._connectionComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this._connectionComboBox.FormattingEnabled = true;
+			this._connectionComboBox.Location = new System.Drawing.Point(91, 13);
+			this._connectionComboBox.Name = "_connectionComboBox";
+			this._connectionComboBox.Size = new System.Drawing.Size(312, 21);
+			this._connectionComboBox.TabIndex = 1;
+			// 
 			// ConnectToSqlServerForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(420, 339);
+			this.Controls.Add(this._connectionComboBox);
+			this.Controls.Add(this._connectionLabel);
 			this.Controls.Add(this._errorGroupBox);
 			this.Controls.Add(this._useIntegratedSecurityCheckBox);
 			this.Controls.Add(this._passwordLabel);
@@ -221,5 +245,7 @@
 		private System.Windows.Forms.Label _serverLabel;
 		private System.Windows.Forms.GroupBox _errorGroupBox;
 		private System.Windows.Forms.Label _errorMessageLabel;
+		private System.Windows.Forms.Label _connectionLabel;
+		private System.Windows.Forms.ComboBox _connectionComboBox;
 	}
 }

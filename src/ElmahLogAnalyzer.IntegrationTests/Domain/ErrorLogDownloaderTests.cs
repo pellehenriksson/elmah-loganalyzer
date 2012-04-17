@@ -12,7 +12,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain
 	[TestFixture]
 	public class ErrorLogDownloaderTests : IntegrationTestBase
 	{
-		[Test]
+		[Test][Ignore]
 		public void DownloadLogsToLocalDirectory()
 		{
 			// arrange

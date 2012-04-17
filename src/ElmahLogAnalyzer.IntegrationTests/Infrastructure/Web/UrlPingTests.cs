@@ -9,7 +9,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Web
 	[TestFixture]
 	public class UrlPingTests : IntegrationTestBase
 	{
-		[Test]
+		[Test][Ignore]
 		public void Ping_ServerRespondedWithOk_ReturnsTrue()
 		{
 			using (var server = new TestWebServer())

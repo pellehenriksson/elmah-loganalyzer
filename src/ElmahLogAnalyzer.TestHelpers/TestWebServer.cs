@@ -24,8 +24,8 @@ namespace ElmahLogAnalyzer.TestHelpers
 		private static string GetWebProjectPath()
 		{
 			var webproject = "ElmahWeb";
-
 			var currentDir = Directory.GetCurrentDirectory();
+			
 			var temp = new DirectoryInfo(currentDir);
 
 			while (ContainsDirectory(temp, webproject) == false)

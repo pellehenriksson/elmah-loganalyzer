@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElmahLogAnalyzer.TestHelper
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElmahLogAnalyzer.UnitTests", "ElmahLogAnalyzer.UnitTests\ElmahLogAnalyzer.UnitTests.csproj", "{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElmahWeb", "ElmahWeb\ElmahWeb.csproj", "{FA010592-4CB9-4139-AF2D-EA2FD8B15592}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,16 @@ Global
 		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Release|x86.ActiveCfg = Release|x86
 		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F}.Release|x86.Build.0 = Release|x86
+		{FA010592-4CB9-4139-AF2D-EA2FD8B15592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA010592-4CB9-4139-AF2D-EA2FD8B15592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA010592-4CB9-4139-AF2D-EA2FD8B15592}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FA010592-4CB9-4139-AF2D-EA2FD8B15592}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FA010592-4CB9-4139-AF2D-EA2FD8B15592}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FA010592-4CB9-4139-AF2D-EA2FD8B15592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA010592-4CB9-4139-AF2D-EA2FD8B15592}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA010592-4CB9-4139-AF2D-EA2FD8B15592}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FA010592-4CB9-4139-AF2D-EA2FD8B15592}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FA010592-4CB9-4139-AF2D-EA2FD8B15592}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,5 +113,6 @@ Global
 		{31B1036D-1402-484A-B0D0-DC77FEAF5FDE} = {AF47CE1D-DD9A-44BD-A0C1-0479287FC043}
 		{85191ED2-783E-4599-A0FB-0CB66276A933} = {AF47CE1D-DD9A-44BD-A0C1-0479287FC043}
 		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F} = {AF47CE1D-DD9A-44BD-A0C1-0479287FC043}
+		{FA010592-4CB9-4139-AF2D-EA2FD8B15592} = {AF47CE1D-DD9A-44BD-A0C1-0479287FC043}
 	EndGlobalSection
 EndGlobal

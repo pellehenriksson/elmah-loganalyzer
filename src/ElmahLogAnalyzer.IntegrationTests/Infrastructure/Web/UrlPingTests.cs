@@ -1,5 +1,6 @@
 ﻿using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Infrastructure.Web;
+using ElmahLogAnalyzer.TestHelpers;
 using ElmahLogAnalyzer.TestHelpers.Fakes;
 using NUnit.Framework;
 
@@ -8,17 +9,20 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Web
 	[TestFixture]
 	public class UrlPingTests : IntegrationTestBase
 	{
-		[Test][Ignore("set up local elmah")]
+		[Test]
 		public void Ping_ServerRespondedWithOk_ReturnsTrue()
 		{
-			// arrange
-			var helper = new UrlPing(new FakeLog());
+			using (var server = new TestWebServer())
+			{
+				// arrange
+				var helper = new UrlPing(new FakeLog());
 
-			// act
-			var result = helper.Ping(new NetworkConnection(ExistingUrl));
+				// act
+				var result = helper.Ping(new NetworkConnection(TestWebServer.Url));
 
-			// assert
-			Assert.That(result.Item1, Is.True);
+				// assert
+				Assert.That(result.Item1, Is.True);
+			}
 		}
 
 		[Test]

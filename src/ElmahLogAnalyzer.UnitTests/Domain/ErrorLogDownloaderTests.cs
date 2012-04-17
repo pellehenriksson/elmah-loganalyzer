@@ -60,26 +60,6 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			// assert
 			_fileSystemHelper.Verify(x => x.CreateDirectory("c:\\test\\www.test.com"), Times.Never());
 		}
-
-		[Test][Ignore]
-		public void Download_ErrorLogIsNotDownloaded_ShouldDownloadErrorLog()
-		{
-			// arrange
-
-			// act
-
-			// assert
-		}
-
-		[Test][Ignore]
-		public void Download_ErrorLogAlreadyDownloaded_ShouldNotDownloadErrorLog()
-		{
-			// arrange
-
-			// act
-
-			// assert
-		}
 		
 		private IErrorLogDownloader CreateDownloader(NetworkConnection connection)
 		{

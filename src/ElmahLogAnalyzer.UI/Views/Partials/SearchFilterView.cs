@@ -19,7 +19,11 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		public void LoadApplications(IEnumerable<string> applications)
 		{
 			_applicationsComboBox.DataSource = applications;
-			_applicationsComboBox.SelectedIndex = 0;
+			
+			if (_applicationsComboBox.Items.Count > 0)
+			{
+				_applicationsComboBox.SelectedIndex = 0;
+			}
 		}
 
 		public void LoadTypes(IEnumerable<string> types)
@@ -50,15 +54,15 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		private SearchErrorLogQuery BuildQuery()
 		{
 			return new SearchErrorLogQuery
-			       	{
-						Application = _applicationsComboBox.SelectedItem.ToString(),
-			       		Types = new SearchErrorLogQueryParameter(_typesSelector.GetMode(), _typesSelector.GetValues()),
-						Sources = new SearchErrorLogQueryParameter(_sourcesSelector.GetMode(), _sourcesSelector.GetValues()),
-						Users = new SearchErrorLogQueryParameter(_usersSelector.GetMode(), _usersSelector.GetValues()),
-						Urls = new SearchErrorLogQueryParameter(_urlsSelector.GetMode(), _urlsSelector.GetValues()),
-			       		Text = _textTextbox.Text,
-						Interval = _dateIntervalPicker.GetInterval()
-			       	};
+			{
+				Application = _applicationsComboBox.SelectedItem.ToString(),
+			    Types = new SearchErrorLogQueryParameter(_typesSelector.GetMode(), _typesSelector.GetValues()),
+				Sources = new SearchErrorLogQueryParameter(_sourcesSelector.GetMode(), _sourcesSelector.GetValues()),
+				Users = new SearchErrorLogQueryParameter(_usersSelector.GetMode(), _usersSelector.GetValues()),
+				Urls = new SearchErrorLogQueryParameter(_urlsSelector.GetMode(), _urlsSelector.GetValues()),
+			    Text = _textTextbox.Text,
+				Interval = _dateIntervalPicker.GetInterval()
+			};
 		}
 		
 		private void SearchButtonClick(object sender, EventArgs e)

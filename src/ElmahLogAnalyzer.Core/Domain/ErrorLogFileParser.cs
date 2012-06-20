@@ -40,7 +40,6 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 				SetStatusCodeInformation();
 				SetServerInformation();
-				SetServerInformation();
 				SetClientInformation();
 
 				return _errorLog;

@@ -3,8 +3,8 @@
 	public static class HttpServerVariables
 	{
 		public const string LogonUser = "LOGON_USER";
-
-		public const string LocalAddress = "LOCAL_ADDR";
+		
+		public const string RemoteAddress = "REMOTE_ADDR";
 
 		public const string Url = "URL";
 

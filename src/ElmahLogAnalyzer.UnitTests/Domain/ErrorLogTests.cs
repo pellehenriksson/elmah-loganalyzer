@@ -278,16 +278,16 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 		}
 
 		[Test]
-		public void AddServerVariable_NameIsLocalAddress_SetAsLocalIpAddress()
+		public void AddServerVariable_NameIsRemoteAddress_SetAsClientIpAddress()
 		{
 			// arrange
 			var error = new ErrorLog();
 
 			// act
-			error.AddServerVariable(HttpServerVariables.LocalAddress, "127.0.0.1");
+			error.AddServerVariable(HttpServerVariables.RemoteAddress, "127.0.0.1");
 
 			// assert
-			Assert.That(error.LocalIpAddress, Is.EqualTo("127.0.0.1"));
+			Assert.That(error.ClientIpAddress, Is.EqualTo("127.0.0.1"));
 		}
 
 		[Test]

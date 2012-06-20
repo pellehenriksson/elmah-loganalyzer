@@ -36,7 +36,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_platformLabel.Text = ErrorLog.ClientInformation.Platform;
 			_operatingSystemLabel.Text = ErrorLog.ClientInformation.OperatingSystem;
 			_browserLabel.Text = ErrorLog.ClientInformation.Browser;
-			_ipAddressLabel.Text = ErrorLog.LocalIpAddress;
+			_ipAddressLabel.Text = ErrorLog.ClientIpAddress;
 			_useragentLabel.Text = ErrorLog.ClientInformation.HttpUserAgentString;
 
 			_clientDetailsOnlineGroupBox.Visible = true;

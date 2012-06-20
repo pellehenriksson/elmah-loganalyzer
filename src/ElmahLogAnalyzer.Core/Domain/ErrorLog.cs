@@ -48,7 +48,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 		public string HttpUserAgent { get; private set; }
 
-		public string LocalIpAddress { get; private set; }
+		public string ClientIpAddress { get; private set; }
 
 		public List<NameValuePair> ServerVariables { get; private set; }
 
@@ -116,10 +116,10 @@ namespace ElmahLogAnalyzer.Core.Domain
 			{
 				HttpUserAgent = value;
 			}
-
-			if (name == HttpServerVariables.LocalAddress)
+			
+			if (name == HttpServerVariables.RemoteAddress)
 			{
-				LocalIpAddress = value;
+				ClientIpAddress = value;
 			}
 
 			ServerVariables.Add(new NameValuePair(name, value));

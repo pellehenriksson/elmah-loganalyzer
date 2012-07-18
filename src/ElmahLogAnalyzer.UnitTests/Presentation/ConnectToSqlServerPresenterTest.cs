@@ -50,6 +50,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			// assert
 			_view.VerifySet(x => x.Server = @".\sqlexpress", Times.Once());
 			_view.VerifySet(x => x.Database = "dev_db", Times.Once());
+			_view.VerifySet(x => x.Schema = "custom", Times.Once());
 			_view.VerifySet(x => x.Username = "user", Times.Once());
 			_view.VerifySet(x => x.Password = "password", Times.Once());
 		}

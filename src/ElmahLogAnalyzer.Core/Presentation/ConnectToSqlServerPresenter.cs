@@ -26,6 +26,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 				var connection = _databaseConnectionsHelper.FindConnection(args.Url);
 				View.Server = connection.Server;
 				View.Database = connection.Database;
+				View.Schema = connection.Schema;
 				View.Username = connection.Username;
 				View.Password = connection.Password;
 			};

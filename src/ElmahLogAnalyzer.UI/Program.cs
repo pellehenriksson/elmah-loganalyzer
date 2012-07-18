@@ -52,7 +52,7 @@ namespace ElmahLogAnalyzer.UI
 				}
 			}
 
-			InitializeNewErrorLogSource(ErrorLogSources.Files, directory, null);
+			InitializeNewErrorLogSource(ErrorLogSources.Files, directory, null, null);
 		}
 
 		private static void RegisterApplicationCommands()
@@ -132,7 +132,7 @@ namespace ElmahLogAnalyzer.UI
 
 			if (result == DialogResult.OK)
 			{
-				InitializeNewErrorLogSource(ErrorLogSources.Files, dialog.SelectedPath, null);
+				InitializeNewErrorLogSource(ErrorLogSources.Files, dialog.SelectedPath, null, null);
 			}
 		}
 
@@ -144,7 +144,7 @@ namespace ElmahLogAnalyzer.UI
 
 			if (result == DialogResult.OK)
 			{
-				InitializeNewErrorLogSource(ErrorLogSources.Files, string.Empty, presenter.Connnection);
+				InitializeNewErrorLogSource(ErrorLogSources.Files, string.Empty, null, presenter.Connnection);
 			}
 		}
 
@@ -159,7 +159,7 @@ namespace ElmahLogAnalyzer.UI
 				var information = (IConnectToDatabaseConnectionInformation)view;
 				var connectionstring = ConnectionStringHelper.Extract(information);
 
-				InitializeNewErrorLogSource(information.Source, connectionstring, null);
+				InitializeNewErrorLogSource(information.Source, connectionstring, information.Schema, null);
 			}
 		}
 
@@ -174,7 +174,7 @@ namespace ElmahLogAnalyzer.UI
 				var information = (IConnectToDatabaseConnectionInformation)view;
 				var connectionstring = ConnectionStringHelper.Extract(information);
 
-				InitializeNewErrorLogSource(information.Source, connectionstring, null);
+				InitializeNewErrorLogSource(information.Source, connectionstring, null, null);
 			}
 		}
 		
@@ -189,18 +189,18 @@ namespace ElmahLogAnalyzer.UI
 			}
 		}
 
-		private static void InitializeNewErrorLogSource(ErrorLogSources source, string connection, NetworkConnection networkConnection)
+		private static void InitializeNewErrorLogSource(ErrorLogSources source, string connection, string schema, NetworkConnection networkConnection)
 		{
 			_container.SetLoadingState();
 
-			DataSourceScopeController.SetNewSource(source, connection);
+			DataSourceScopeController.SetNewSource(source, connection, schema);
 
 			var downloadLogsTask  = new Task(() => { return; });
 
 			if (networkConnection != null)
 			{
 				var downloader = ServiceLocator.ResolveWithConstructorArguments<ErrorLogDownloader>(new IParameter[] { new ConstructorArgument("connection", networkConnection) });
-				DataSourceScopeController.SetNewSource(ErrorLogSources.Files, downloader.DownloadDirectory);
+				DataSourceScopeController.SetNewSource(ErrorLogSources.Files, downloader.DownloadDirectory, null);
 
 				downloadLogsTask = new Task(downloader.Download);
 			}

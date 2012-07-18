@@ -11,7 +11,7 @@ namespace ElmahLogAnalyzer.UnitTests.Infrastructure.Dependencies
 		public void SetNewSource_SetsSourceAndConnection()
 		{
 			// act
-			DataSourceScopeController.SetNewSource(ErrorLogSources.Files, @"c:\temp");
+			DataSourceScopeController.SetNewSource(ErrorLogSources.Files, @"c:\temp", null);
 
 			// assert
 			Assert.That(ErrorLogSources.Files, Is.EqualTo(DataSourceScopeController.Source));
@@ -25,7 +25,7 @@ namespace ElmahLogAnalyzer.UnitTests.Infrastructure.Dependencies
 			var keepalive1 = DataSourceScopeController.KeepAlive;
 
 			// act
-			DataSourceScopeController.SetNewSource(ErrorLogSources.Files, @"c:\temp");
+			DataSourceScopeController.SetNewSource(ErrorLogSources.Files, @"c:\temp", null);
 
 			// assert
 			Assert.That(keepalive1, Is.Not.SameAs(DataSourceScopeController.KeepAlive));

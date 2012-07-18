@@ -63,6 +63,12 @@ namespace ElmahLogAnalyzer.UI.Forms
 			set { _serverTextBox.Text = value; }
 		}
 
+		public string Schema
+		{
+			get { throw new NotImplementedException(); }
+			set { throw new NotImplementedException(); }
+		}
+
 		public string Port
 		{
 			get { throw new NotImplementedException(); }

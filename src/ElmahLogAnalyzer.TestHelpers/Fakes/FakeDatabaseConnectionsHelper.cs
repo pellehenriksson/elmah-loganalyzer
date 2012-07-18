@@ -15,6 +15,7 @@ namespace ElmahLogAnalyzer.TestHelpers.Fakes
 					Name = "Development",
 					Server = @".\sqlexpress",
 					Database = "dev_db",
+					Schema = "custom",
 					Username = "user",
 					Password = "password"
 				},

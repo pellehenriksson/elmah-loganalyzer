@@ -32,6 +32,13 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Configuration
 			set { this["database"] = value; }
 		}
 
+		[ConfigurationProperty("schema", IsRequired = false)]
+		public string Schema
+		{
+			get { return (string)this["schema"]; }
+			set { this["schema"] = value; }
+		}
+
 		[ConfigurationProperty("username", IsRequired = false)]
 		public string Username
 		{

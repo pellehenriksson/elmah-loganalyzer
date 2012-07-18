@@ -13,15 +13,18 @@ namespace ElmahLogAnalyzer.Core.Domain
 		private readonly ISettingsManager _settingsManager;
 		private readonly ILog _log;
 		
-		public SqlServerErrorLogSource(string connection, IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
+		public SqlServerErrorLogSource(string connection, string schema, IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
 		{
 			Connection = connection;
+			Schema = schema;
 			_settingsManager = settingsManager;
 			_parser = parser;
 			_log = log;
 		}
 
 		public string Connection { get; private set; }
+
+		public string Schema { get; private set; }
 
 		public List<ErrorLog> GetLogs()
 		{
@@ -33,7 +36,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 				connection.Open();
 
 				var query = _settingsManager.GetMaxNumberOfLogs() > -1 ?
-					string.Format("SELECT TOP {0} [AllXml] FROM [ELMAH_Error] ORDER BY [Sequence] DESC;", _settingsManager.GetMaxNumberOfLogs()) :
+					string.Format("SELECT TOP {0} [AllXml] FROM {1} ORDER BY [Sequence] DESC;", _settingsManager.GetMaxNumberOfLogs(), ResolveTableName()) :
 					"SELECT [AllXml] FROM [ELMAH_Error] ORDER BY [Sequence] DESC";
 				
 				logs = connection.Query<string>(query);
@@ -53,6 +56,11 @@ namespace ElmahLogAnalyzer.Core.Domain
 			}
 
 			return result;
+		}
+
+		private string ResolveTableName()
+		{
+			return !string.IsNullOrWhiteSpace(Schema) ? string.Format("[{0}].[ELMAH_Error]", Schema) : "[ELMAH_Error]";
 		}
 	}
 }

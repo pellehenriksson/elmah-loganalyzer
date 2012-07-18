@@ -74,6 +74,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 			Assert.That(setting.Name, Is.EqualTo("Development"));
 			Assert.That(setting.Server, Is.EqualTo(@".\sqlexpress"));
 			Assert.That(setting.Database, Is.EqualTo("dev_db"));
+			Assert.That(setting.Schema, Is.Empty);
 			Assert.That(setting.Username, Is.EqualTo("user"));
 			Assert.That(setting.Password, Is.EqualTo("password"));
 
@@ -83,6 +84,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 			Assert.That(setting.Name, Is.EqualTo("Production"));
 			Assert.That(setting.Server, Is.EqualTo("SomeServer"));
 			Assert.That(setting.Database, Is.EqualTo("prod_db"));
+			Assert.That(setting.Schema, Is.EqualTo("custom"));
 			Assert.That(setting.Username, Is.EqualTo("user"));
 			Assert.That(setting.Password, Is.EqualTo("password"));
 

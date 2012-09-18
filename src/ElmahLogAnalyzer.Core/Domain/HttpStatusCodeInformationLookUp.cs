@@ -82,7 +82,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 			Codes.Add(new HttpStatusCodeInformation("403.19", "Cannot execute CGI applications for the client in this application poo"));
 			Codes.Add(new HttpStatusCodeInformation("403.20", "Forbidden: Passport logon failed"));
 			Codes.Add(new HttpStatusCodeInformation("403.21", "Forbidden: Source access denied"));
-			Codes.Add(new HttpStatusCodeInformation("403.22", "Forbidden: Infinite depth is denie"));
+			Codes.Add(new HttpStatusCodeInformation("403.22", "Forbidden: Infinite depth is denied"));
 			
 			Codes.Add(new HttpStatusCodeInformation("404", "Not Found"));
 			Codes.Add(new HttpStatusCodeInformation("404.0", "Not found"));

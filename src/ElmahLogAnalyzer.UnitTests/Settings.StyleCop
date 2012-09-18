@@ -1,13 +1,13 @@
-<StyleCopSettings Version="4.3">
+<StyleCopSettings Version="105">
   <Parsers>
-    <Parser ParserId="Microsoft.StyleCop.CSharp.CsParser">
+    <Parser ParserId="StyleCop.CSharp.CsParser">
       <ParserSettings>
         <BooleanProperty Name="AnalyzeDesignerFiles">False</BooleanProperty>
       </ParserSettings>
     </Parser>
   </Parsers>
   <Analyzers>
-    <Analyzer AnalyzerId="Microsoft.StyleCop.CSharp.DocumentationRules">
+    <Analyzer AnalyzerId="StyleCop.CSharp.DocumentationRules">
       <Rules>
         <Rule Name="ElementsMustBeDocumented">
           <RuleSettings>
@@ -149,11 +149,6 @@
             <BooleanProperty Name="Enabled">False</BooleanProperty>
           </RuleSettings>
         </Rule>
-        <Rule Name="DocumentationTextMustMeetMinimumCharacterLength">
-          <RuleSettings>
-            <BooleanProperty Name="Enabled">False</BooleanProperty>
-          </RuleSettings>
-        </Rule>
         <Rule Name="ConstructorSummaryDocumentationMustBeginWithStandardText">
           <RuleSettings>
             <BooleanProperty Name="Enabled">False</BooleanProperty>
@@ -212,7 +207,7 @@
       </Rules>
       <AnalyzerSettings />
     </Analyzer>
-    <Analyzer AnalyzerId="Microsoft.StyleCop.CSharp.SpacingRules">
+    <Analyzer AnalyzerId="StyleCop.CSharp.SpacingRules">
       <Rules>
         <Rule Name="TabsMustNotBeUsed">
           <RuleSettings>
@@ -222,7 +217,7 @@
       </Rules>
       <AnalyzerSettings />
     </Analyzer>
-    <Analyzer AnalyzerId="Microsoft.StyleCop.CSharp.OrderingRules">
+    <Analyzer AnalyzerId="StyleCop.CSharp.OrderingRules">
       <Rules>
         <Rule Name="UsingDirectivesMustBePlacedWithinNamespace">
           <RuleSettings>
@@ -232,9 +227,14 @@
       </Rules>
       <AnalyzerSettings />
     </Analyzer>
-    <Analyzer AnalyzerId="Microsoft.StyleCop.CSharp.ReadabilityRules">
+    <Analyzer AnalyzerId="StyleCop.CSharp.ReadabilityRules">
       <Rules>
         <Rule Name="PrefixLocalCallsWithThis">
+          <RuleSettings>
+            <BooleanProperty Name="Enabled">False</BooleanProperty>
+          </RuleSettings>
+        </Rule>
+        <Rule Name="PrefixCallsCorrectly">
           <RuleSettings>
             <BooleanProperty Name="Enabled">False</BooleanProperty>
           </RuleSettings>
@@ -242,7 +242,7 @@
       </Rules>
       <AnalyzerSettings />
     </Analyzer>
-    <Analyzer AnalyzerId="Microsoft.StyleCop.CSharp.NamingRules">
+    <Analyzer AnalyzerId="StyleCop.CSharp.NamingRules">
       <Rules>
         <Rule Name="FieldNamesMustNotBeginWithUnderscore">
           <RuleSettings>

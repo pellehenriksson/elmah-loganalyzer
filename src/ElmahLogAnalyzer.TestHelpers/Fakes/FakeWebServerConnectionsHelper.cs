@@ -18,7 +18,7 @@ namespace ElmahLogAnalyzer.TestHelpers.Fakes
 
 		public WebServerConnectionElement FindConnection(string url)
 		{
-			if (String.IsNullOrWhiteSpace(url))
+			if (string.IsNullOrWhiteSpace(url))
 			{
 				return new WebServerConnectionElement();
 			}

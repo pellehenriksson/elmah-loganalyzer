@@ -7,11 +7,11 @@ namespace ElmahLogAnalyzer.Core.Domain.Export
 {
 	public class ErrorLogExporter : IErrorLogExporter
 	{
+		private const string ProgressMessage = "Exporting error log {0} of {1}";
+
 		private readonly IErrorLogRepository _repository;
 		private readonly IDatabaseCreator _databaseCreator;
 		
-		private const string ProgressMessage = "Exporting error log {0} of {1}";
-
 		private bool _cancel;
 
 		public ErrorLogExporter(IErrorLogRepository repository, IDatabaseCreator databaseCreator)

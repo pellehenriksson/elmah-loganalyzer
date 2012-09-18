@@ -3,9 +3,7 @@ using System.Windows.Forms;
 
 namespace ElmahLogAnalyzer.UI
 {
-	/// <summary>
 	/// http://stackoverflow.com/questions/783925/control-invoke-with-input-parameters
-	/// </summary>
 	public static class ControlExtensions
 	{
 		public static TResult InvokeEx<TControl, TResult>(this TControl control, Func<TControl, TResult> func) where TControl : Control

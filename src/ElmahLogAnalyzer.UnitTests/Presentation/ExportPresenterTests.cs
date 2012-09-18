@@ -10,7 +10,7 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 	[TestFixture]
 	public class ExportPresenterTests : UnitTestBase
 	{
-		private Mock<IExportView>_view;
+		private Mock<IExportView> _view;
 		private Mock<IErrorLogExporter> _exporter;
 		private Mock<ISettingsManager> _settings;
 

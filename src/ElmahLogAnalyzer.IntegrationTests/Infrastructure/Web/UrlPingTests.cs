@@ -1,6 +1,5 @@
 ﻿using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Infrastructure.Web;
-using ElmahLogAnalyzer.TestHelpers;
 using ElmahLogAnalyzer.TestHelpers.Fakes;
 using NUnit.Framework;
 

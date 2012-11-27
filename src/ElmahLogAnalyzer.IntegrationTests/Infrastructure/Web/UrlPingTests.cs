@@ -9,22 +9,6 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Web
 	[TestFixture]
 	public class UrlPingTests : IntegrationTestBase
 	{
-		[Test][Ignore]
-		public void Ping_ServerRespondedWithOk_ReturnsTrue()
-		{
-			using (var server = new TestWebServer())
-			{
-				// arrange
-				var helper = new UrlPing(new FakeLog());
-
-				// act
-				var result = helper.Ping(new NetworkConnection(TestWebServer.Url));
-
-				// assert
-				Assert.That(result.Item1, Is.True);
-			}
-		}
-
 		[Test]
 		public void Ping_ServerDoesNotExist_ReturnsFalse()
 		{

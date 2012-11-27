@@ -89,7 +89,6 @@
     <Compile Include="Fakes\FakeDataSource.cs" />
     <Compile Include="Fakes\FakeLog.cs" />
     <Compile Include="TestEnum.cs" />
-    <Compile Include="TestWebServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ElmahLogAnalyzer.Core\ElmahLogAnalyzer.Core.csproj">
@@ -98,7 +97,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

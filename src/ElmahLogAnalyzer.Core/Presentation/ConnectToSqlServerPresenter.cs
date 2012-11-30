@@ -27,6 +27,7 @@ namespace ElmahLogAnalyzer.Core.Presentation
 				View.Server = connection.Server;
 				View.Database = connection.Database;
 				View.Schema = connection.Schema;
+			    View.Application = connection.Application;
 
                 if (connection.UseIntegratedSecurity)
                 {

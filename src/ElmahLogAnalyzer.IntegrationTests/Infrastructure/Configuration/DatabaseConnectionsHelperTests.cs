@@ -16,7 +16,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 			var result = helper.GetConnections();
 
 			// assert
-			Assert.That(result.Count, Is.EqualTo(4));
+			Assert.That(result.Count, Is.EqualTo(5));
 		}
 
 		[Test]
@@ -29,7 +29,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 			var result = helper.GetNames("SqlServer");
 
 			// assert
-			Assert.That(result.Count, Is.EqualTo(3));
+			Assert.That(result.Count, Is.EqualTo(4));
 		}
 
 		[Test]
@@ -42,7 +42,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 			var result = helper.GetNames("sqlserver");
 
 			// assert
-			Assert.That(result.Count, Is.EqualTo(3));
+			Assert.That(result.Count, Is.EqualTo(4));
 		}
 
 		[Test]
@@ -93,6 +93,13 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 			Assert.That(setting.Type, Is.EqualTo("SqlServerCompact"));
 			Assert.That(setting.Name, Is.EqualTo("SomeCompactDb"));
 			Assert.That(setting.File, Is.EqualTo(@"c:\somefile.sdf"));
+
+            setting = result[4];
+
+            Assert.That(setting.Type, Is.EqualTo("SqlServer"));
+            Assert.That(setting.Name, Is.EqualTo("SelectApplication"));
+            Assert.That(setting.Database, Is.EqualTo("elmah"));
+            Assert.That(setting.Application, Is.EqualTo("some-website"));
 		}
 
 		[Test]

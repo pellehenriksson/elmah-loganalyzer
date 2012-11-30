@@ -10,6 +10,8 @@ namespace ElmahLogAnalyzer.Core.Presentation
 
 		string Schema { get; set; }
 
+        string Application { get; set; }
+
 		string Port { get; set; }
 
 		string Database { get; set; }

@@ -13,10 +13,11 @@ namespace ElmahLogAnalyzer.Core.Domain
 		private readonly ISettingsManager _settingsManager;
 		private readonly ILog _log;
 		
-		public SqlServerErrorLogSource(string connection, string schema, IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
+		public SqlServerErrorLogSource(string connection, string schema, string application, IErrorLogFileParser parser, ISettingsManager settingsManager, ILog log)
 		{
 			Connection = connection;
 			Schema = schema;
+		    Application = application;
 			_settingsManager = settingsManager;
 			_parser = parser;
 			_log = log;
@@ -25,6 +26,8 @@ namespace ElmahLogAnalyzer.Core.Domain
 		public string Connection { get; private set; }
 
 		public string Schema { get; private set; }
+
+	    public string Application { get; set; }
 
 		public List<ErrorLog> GetLogs()
 		{
@@ -35,10 +38,12 @@ namespace ElmahLogAnalyzer.Core.Domain
 			{
 				connection.Open();
 
-				var query = _settingsManager.GetMaxNumberOfLogs() > -1 ?
-					string.Format("SELECT TOP {0} [AllXml] FROM {1} ORDER BY [Sequence] DESC;", _settingsManager.GetMaxNumberOfLogs(), ResolveTableName()) :
-					"SELECT [AllXml] FROM [ELMAH_Error] ORDER BY [Sequence] DESC";
-				
+                //var query = _settingsManager.GetMaxNumberOfLogs() > -1 ?
+                //    string.Format("SELECT TOP {0} [AllXml] FROM {1} ORDER BY [Sequence] DESC;", _settingsManager.GetMaxNumberOfLogs(), ResolveTableName()) :
+                //    "SELECT [AllXml] FROM [ELMAH_Error] ORDER BY [Sequence] DESC";
+
+			    var query = string.Format("SELECT {0} [AllXml] FROM {1} {2} ORDER BY [Sequence] DESC", this.ResolveSelectTopClause(), this.ResolveTableName(), this.ResolveApplicationClause());
+
 				logs = connection.Query<string>(query);
 			}
 			
@@ -57,6 +62,26 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 			return result;
 		}
+
+        private string ResolveSelectTopClause()
+        {
+            if (_settingsManager.GetMaxNumberOfLogs() > -1 )
+            {
+                return string.Format("TOP {0}", _settingsManager.GetMaxNumberOfLogs());
+            }
+
+            return string.Empty;
+        }
+
+        private string ResolveApplicationClause()
+        {
+            if (!string.IsNullOrWhiteSpace(Application))
+            {
+                return string.Format("WHERE Application = '{0}'", Application);
+            }
+
+            return string.Empty;
+        }
 
 		private string ResolveTableName()
 		{

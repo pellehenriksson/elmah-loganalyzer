@@ -69,7 +69,13 @@ namespace ElmahLogAnalyzer.UI.Forms
 			set { throw new NotImplementedException(); }
 		}
 
-		public string Port
+        public string Application
+        {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
+
+	    public string Port
 		{
 			get { throw new NotImplementedException(); }
 			set { throw new NotImplementedException(); }

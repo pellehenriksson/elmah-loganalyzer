@@ -59,5 +59,13 @@ namespace ElmahLogAnalyzer.Core.Infrastructure.Configuration
 			get { return (string)this["file"]; }
 			set { this["file"] = value; }
 		}
+
+	    public bool UseIntegratedSecurity
+	    {
+	        get
+	        {
+	            return string.IsNullOrWhiteSpace(Username) && string.IsNullOrWhiteSpace(Password);
+	        }
+	    }
 	}
 }

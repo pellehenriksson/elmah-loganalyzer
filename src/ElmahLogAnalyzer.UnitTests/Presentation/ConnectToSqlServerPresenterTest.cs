@@ -50,11 +50,29 @@ namespace ElmahLogAnalyzer.UnitTests.Presentation
 			// assert
 			_view.VerifySet(x => x.Server = @".\sqlexpress", Times.Once());
 			_view.VerifySet(x => x.Database = "dev_db", Times.Once());
+            _view.VerifySet(x => x.UseIntegratedSecurity = false, Times.Once());
 			_view.VerifySet(x => x.Schema = "custom", Times.Once());
 			_view.VerifySet(x => x.Username = "user", Times.Once());
 			_view.VerifySet(x => x.Password = "password", Times.Once());
 		}
-		
+
+        [Test]
+        public void OnConnectionSelected_DisplaysSettingsWithIntegratedSecurityFromConnectionInView()
+        {
+            // arrange
+            var presenter = CreatePresenter();
+
+            // act
+            _view.Raise(x => x.OnConnectionSelected += null, new ConnectionSelectedEventArgs("IntegratedSecurity"));
+
+            // assert
+            _view.VerifySet(x => x.Server = @".\sqlexpress", Times.Once());
+            _view.VerifySet(x => x.Database = "dev_db", Times.Once());
+            _view.VerifySet(x => x.UseIntegratedSecurity = true, Times.Once());
+            _view.VerifySet(x => x.Username = "user", Times.Never());
+            _view.VerifySet(x => x.Password = "password", Times.Never());
+        }
+        
 		[Test]
 		public void OnConnectToDatabase_ServerIsMissing_DisplayErrorMessage()
 		{

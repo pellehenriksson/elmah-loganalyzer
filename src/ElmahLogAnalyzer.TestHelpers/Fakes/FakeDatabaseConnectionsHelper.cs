@@ -24,7 +24,14 @@ namespace ElmahLogAnalyzer.TestHelpers.Fakes
 					Type = "SqlServerCompact", 
 					Name = "Development Compact",
 					File = "somefile.sdf"
-				}
+				},
+            new DatabaseConnectionElement
+			{
+				Type = "SqlServer", 
+				Name = "IntegratedSecurity",
+				Server = @".\sqlexpress",
+				Database = "dev_db",
+			}
 		};
 
 		public DatabaseConnectionElementCollection GetConnections()

@@ -16,7 +16,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 			var result = helper.GetConnections();
 
 			// assert
-			Assert.That(result.Count, Is.EqualTo(3));
+			Assert.That(result.Count, Is.EqualTo(4));
 		}
 
 		[Test]
@@ -29,7 +29,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 			var result = helper.GetNames("SqlServer");
 
 			// assert
-			Assert.That(result.Count, Is.EqualTo(2));
+			Assert.That(result.Count, Is.EqualTo(3));
 		}
 
 		[Test]
@@ -42,7 +42,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 			var result = helper.GetNames("sqlserver");
 
 			// assert
-			Assert.That(result.Count, Is.EqualTo(2));
+			Assert.That(result.Count, Is.EqualTo(3));
 		}
 
 		[Test]
@@ -88,7 +88,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 			Assert.That(setting.Username, Is.EqualTo("user"));
 			Assert.That(setting.Password, Is.EqualTo("password"));
 
-			setting = result[2];
+			setting = result[3];
 
 			Assert.That(setting.Type, Is.EqualTo("SqlServerCompact"));
 			Assert.That(setting.Name, Is.EqualTo("SomeCompactDb"));
@@ -121,5 +121,15 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Configuration
 			// assert
 			Assert.That(result, Is.Null);
 		}
+
+	    [Test]
+	    public void UseIntegratedSecurity_NoPasswordAndNoUserId_ReturnsTrue()
+	    {
+            var helper = new DatabaseConnectionsHelper();
+
+            var result = helper.FindConnection("NoCredentials");
+
+	        Assert.That(result.UseIntegratedSecurity, Is.True);
+        }
 	}
 }

@@ -27,8 +27,17 @@ namespace ElmahLogAnalyzer.Core.Presentation
 				View.Server = connection.Server;
 				View.Database = connection.Database;
 				View.Schema = connection.Schema;
-				View.Username = connection.Username;
-				View.Password = connection.Password;
+
+                if (connection.UseIntegratedSecurity)
+                {
+                    View.UseIntegratedSecurity = true;
+                }
+                else
+                {
+                    View.UseIntegratedSecurity = false;
+                    View.Username = connection.Username;
+                    View.Password = connection.Password;
+                }
 			};
 
 			View.OnConnectToDatabase += (sender, args) =>

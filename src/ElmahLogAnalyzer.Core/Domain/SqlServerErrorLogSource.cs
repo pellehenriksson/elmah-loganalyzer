@@ -38,10 +38,6 @@ namespace ElmahLogAnalyzer.Core.Domain
 			{
 				connection.Open();
 
-                //var query = _settingsManager.GetMaxNumberOfLogs() > -1 ?
-                //    string.Format("SELECT TOP {0} [AllXml] FROM {1} ORDER BY [Sequence] DESC;", _settingsManager.GetMaxNumberOfLogs(), ResolveTableName()) :
-                //    "SELECT [AllXml] FROM [ELMAH_Error] ORDER BY [Sequence] DESC";
-
 			    var query = string.Format("SELECT {0} [AllXml] FROM {1} {2} ORDER BY [Sequence] DESC", this.ResolveSelectTopClause(), this.ResolveTableName(), this.ResolveApplicationClause());
 
 				logs = connection.Query<string>(query);

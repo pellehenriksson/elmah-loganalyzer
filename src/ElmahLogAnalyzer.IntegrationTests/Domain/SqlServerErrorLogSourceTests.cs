@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace ElmahLogAnalyzer.IntegrationTests.Domain
 {
-	[TestFixture]
+	[TestFixture, Ignore]
 	public class SqlServerErrorLogSourceTests 
 	{
 		[Test]
@@ -39,7 +39,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain
 			var settings = new FakeSettingsManager();
 			settings.SetMaxNumberOfLogs(numberOfLogs);
 
-			return new SqlServerErrorLogSource(@"data source=.\SQLEXPRESS;Initial Catalog=ElmahLogAnalyzer;Integrated Security=SSPI", null, null, new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver()), settings, new FakeLog());
+			return new SqlServerErrorLogSource(@"data source=.;Initial Catalog=ElmahLogAnalyzer;Integrated Security=SSPI", null, null, new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver()), settings, new FakeLog());
 		}
 
 		private static SqlServerErrorLogSource CreateSourceWithCustomSchema(int numberOfLogs)
@@ -47,7 +47,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain
 			var settings = new FakeSettingsManager();
 			settings.SetMaxNumberOfLogs(numberOfLogs);
 
-			return new SqlServerErrorLogSource(@"data source=.\SQLEXPRESS;Initial Catalog=ElmahLogAnalyzer;Integrated Security=SSPI", "dbo", null, new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver()), settings, new FakeLog());
+            return new SqlServerErrorLogSource(@"data source=.;Initial Catalog=ElmahLogAnalyzer;Integrated Security=SSPI", "dbo", null, new ErrorLogFileParser(new FakeLog(), new ClientInformationResolver()), settings, new FakeLog());
 		}
 	}
 }

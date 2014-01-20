@@ -8,7 +8,7 @@
 		<OutputCompileDirectory>$(OutputDirectory)compile\</OutputCompileDirectory>
 		<OutputReportsDirectory>$(OutputDirectory)reports\</OutputReportsDirectory>
 		<OutputAppDirectory>$(OutputDirectory)app\</OutputAppDirectory>
-		<NUnitExe>$(MSBuildProjectDirectory)\src\packages\NUnit.2.5.10.11092\tools\nunit-console.exe</NUnitExe>
+		<NUnitExe>$(MSBuildProjectDirectory)\tools\NUnit-2.6.3\bin\nunit-console.exe</NUnitExe>
 	</PropertyGroup>
 
 	<Import Project="$(MSBuildProjectDirectory)\tools\msbuild\MSBuild.Community.Tasks.Targets"/>

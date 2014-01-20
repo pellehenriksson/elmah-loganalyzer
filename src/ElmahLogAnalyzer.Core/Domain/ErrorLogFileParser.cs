@@ -37,6 +37,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 				ParseFormValues();
 				ParseQuerystringValues();
 				ParseCookies();
+			    ParseCustomDataValues();
 
 				SetStatusCodeInformation();
 				SetServerInformation();
@@ -117,11 +118,16 @@ namespace ElmahLogAnalyzer.Core.Domain
 		{
 			ParseSegment(_errorLog.AddCookie, "//cookies//item");
 		}
-
+        
 		private void ParseQuerystringValues()
 		{
 			ParseSegment(_errorLog.AddQuerystringValue, "//queryString//item");
 		}
+
+        private void ParseCustomDataValues()
+        {
+            ParseSegment(_errorLog.AddCustomDataValue, "//data//item");
+        }
 
 		private void ParseSegment(Action<string, string> method, string segmentPath)
 		{

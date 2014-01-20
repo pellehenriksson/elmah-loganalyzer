@@ -45,6 +45,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_cookiesListView.LoadValues(ErrorLog.Cookies);
 			_querystringListView.LoadValues(ErrorLog.QuerystringValues);
 			_serverVariablesListView.LoadValues(ErrorLog.ServerVariables);
+            _customDataListView.LoadValues(ErrorLog.CustomDataValues);
 
 			_hostTextBox.Text = ErrorLog.ServerInformation.Host;
 			_nameTextBox.Text = ErrorLog.ServerInformation.Name;
@@ -90,6 +91,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_cookiesListView.ClearValues();
 			_querystringListView.ClearValues();
 			_serverVariablesListView.ClearValues();
+            _customDataListView.ClearValues();
 
 			_hostTextBox.Text = string.Empty;
 			_nameTextBox.Text = string.Empty;

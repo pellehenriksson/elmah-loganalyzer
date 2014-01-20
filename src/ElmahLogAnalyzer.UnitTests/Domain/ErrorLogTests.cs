@@ -98,6 +98,16 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			Assert.That(error.StatusCodeInformation, Is.Not.Null);
 		}
 
+	    [Test]
+	    public void Ctor_HasEmptyCustomDataValuesList()
+	    {
+            // arrange
+	        var error = new ErrorLog();
+
+            // assert
+            Assert.That(error.CustomDataValues.Count, Is.EqualTo(0));
+	    }
+
 		[Test]
 		public void SetClientInformation_SetsInformation()
 		{
@@ -347,5 +357,20 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			Assert.That(error.QuerystringValues[0].Name, Is.EqualTo("name"));
 			Assert.That(error.QuerystringValues[0].Value, Is.EqualTo("value"));
 		}
+
+	    [Test]
+        public void AddCustomDataValue_Adds()
+	    {
+            // arrange
+            var error = new ErrorLog();
+
+            // act
+            error.AddCustomDataValue("name", "value");
+
+            // assert
+            Assert.That(error.CustomDataValues.Count, Is.EqualTo(1));
+            Assert.That(error.CustomDataValues[0].Name, Is.EqualTo("name"));
+            Assert.That(error.CustomDataValues[0].Value, Is.EqualTo("value"));
+	    }
 	}
 }

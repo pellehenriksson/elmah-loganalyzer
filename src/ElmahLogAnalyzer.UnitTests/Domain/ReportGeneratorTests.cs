@@ -49,7 +49,7 @@ namespace ElmahLogAnalyzer.UnitTests.Domain
 			var result = generator.Create(query);
 
 			// assert
-			Assert.That(result.Items.Count, Is.EqualTo(4));
+			Assert.That(result.Items.Count, Is.EqualTo(5));
 		}
 
 		[Test]

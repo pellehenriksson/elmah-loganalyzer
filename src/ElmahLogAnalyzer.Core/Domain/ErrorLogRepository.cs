@@ -13,7 +13,7 @@ namespace ElmahLogAnalyzer.Core.Domain
 		private readonly UniqueStringList _applications = new UniqueStringList(true);
 		private readonly UniqueStringList _types = new UniqueStringList();
 		private readonly UniqueStringList _users = new UniqueStringList(true);
-		private readonly UniqueStringList _sources = new UniqueStringList();
+		private readonly UniqueStringList _sources = new UniqueStringList(true);
 		private readonly UniqueStringList _urls = new UniqueStringList();
 
 		public ErrorLogRepository(IErrorLogSource datasource)

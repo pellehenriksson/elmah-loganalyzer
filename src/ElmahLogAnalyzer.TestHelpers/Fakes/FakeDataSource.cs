@@ -17,7 +17,8 @@ namespace ElmahLogAnalyzer.TestHelpers.Fakes
 			AddToLogs("System.SomeOtherException", string.Empty, "Some.Namespace.Domain", new DateTime(2011, 1, 3), "rulle", "some/other/path", new ClientInformation { Browser = "Chrome" });
 			AddToLogs("System.SomeOtherException", string.Empty, "Some.Namespace.Domain", new DateTime(2011, 1, 4), "rulle", "some/other/path", new ClientInformation { Browser = "Safari" });
 			AddToLogs("System.Exception", string.Empty, "Some.NamespaceOther.Domain", new DateTime(2011, 1, 4), null, null, new ClientInformation { Browser = "Safari" });
-		}
+            AddToLogs("System.Exception", "some error with empty source", string.Empty, new DateTime(2011, 1, 4), null, null, new ClientInformation { Browser = "Safari" });
+        }
 		
 		public string Connection
 		{

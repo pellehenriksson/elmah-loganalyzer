@@ -55,7 +55,7 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		{
 			return new SearchErrorLogQuery
 			{
-				Application = _applicationsComboBox.SelectedItem.ToString(),
+				Application = this.GetSelectedApplication(),
 			    Types = new SearchErrorLogQueryParameter(_typesSelector.GetMode(), _typesSelector.GetValues()),
 				Sources = new SearchErrorLogQueryParameter(_sourcesSelector.GetMode(), _sourcesSelector.GetValues()),
 				Users = new SearchErrorLogQueryParameter(_usersSelector.GetMode(), _usersSelector.GetValues()),
@@ -64,7 +64,17 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 				Interval = _dateIntervalPicker.GetInterval()
 			};
 		}
-		
+
+	    private string GetSelectedApplication()
+	    {
+	        if (_applicationsComboBox.SelectedItem == null)
+	        {
+	            return string.Empty;
+	        }
+
+	        return _applicationsComboBox.SelectedItem.ToString();
+	    }
+
 		private void SearchButtonClick(object sender, EventArgs e)
 		{
 			if (OnFilterApplied == null)

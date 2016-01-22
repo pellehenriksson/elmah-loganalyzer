@@ -8,7 +8,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Web
 	[TestFixture]
 	public class UrlPingTests : IntegrationTestBase
 	{
-		[Test]
+		[Test][Ignore]
 		public void Ping_ServerDoesNotExist_ReturnsFalse()
 		{
 			// arrange

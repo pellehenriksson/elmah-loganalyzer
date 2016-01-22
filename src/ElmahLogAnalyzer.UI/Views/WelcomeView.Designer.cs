@@ -28,30 +28,30 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this._welcomeLabel = new System.Windows.Forms.Label();
-			this.SuspendLayout();
-			// 
-			// _welcomeLabel
-			// 
-			this._welcomeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this._welcomeLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this._welcomeLabel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._welcomeLabel.Location = new System.Drawing.Point(66, 151);
-			this._welcomeLabel.Name = "_welcomeLabel";
-			this._welcomeLabel.Size = new System.Drawing.Size(557, 51);
-			this._welcomeLabel.TabIndex = 0;
-			this._welcomeLabel.Text = "Connect to an error log source and start analyzing";
-			this._welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// WelcomeView
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this._welcomeLabel);
-			this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Name = "WelcomeView";
-			this.Size = new System.Drawing.Size(678, 412);
-			this.ResumeLayout(false);
+            this._welcomeLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // _welcomeLabel
+            // 
+            this._welcomeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._welcomeLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._welcomeLabel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._welcomeLabel.Location = new System.Drawing.Point(66, 151);
+            this._welcomeLabel.Name = "_welcomeLabel";
+            this._welcomeLabel.Size = new System.Drawing.Size(557, 77);
+            this._welcomeLabel.TabIndex = 0;
+            this._welcomeLabel.Text = "Connect to an error log source and start analyzing";
+            this._welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // WelcomeView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this._welcomeLabel);
+            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name = "WelcomeView";
+            this.Size = new System.Drawing.Size(678, 412);
+            this.ResumeLayout(false);
 
 		}
 

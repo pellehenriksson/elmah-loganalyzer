@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Presentation;
+using System.Diagnostics;
 
 namespace ElmahLogAnalyzer.UI.Views.Partials
 {
@@ -25,6 +26,23 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 
 			_timeLabel.Text = ErrorLog.Time.ToString();
 			_urlLabel.Text = ErrorLog.Url;
+
+            /*TODO: Refactor*/
+            _urlLabelLink.Links.Clear();
+            _urlLabelLink.Enabled = false;
+            foreach(var node in ErrorLog.ServerVariables)
+            {
+                if(node.Name == "HTTP_HOST")
+                {
+                    var link= new LinkLabel.Link();
+                    link.LinkData = (ErrorLog.ServerInformation.Port == "443"? "https://" : "http://") +  node.Value + ErrorLog.Url;
+
+                    _urlLabelLink.Links.Add(link);
+                    _urlLabelLink.Enabled = true;
+                }
+            }
+
+
 			_typeLabel.Text = ErrorLog.Type;
 			_sourceLabel.Text = ErrorLog.Source;
 			_httpStatusCodeTextBox.Text = ErrorLog.StatusCodeInformation.DisplayName;
@@ -101,6 +119,13 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 			_browser.DocumentText = string.Empty;
 		}
 
+        private void RaiseOnUrlLabelClicked(string url)
+        {
+            if(!string.IsNullOrEmpty(url))
+            {
+                Process.Start(url);
+            }
+        }
 		private void RaiseOnSearchHttpUserAgentInformationClicked(string searchLauncher)
 		{
 			if (OnSearchHttpUserAgentInformationClicked != null)
@@ -118,5 +143,10 @@ namespace ElmahLogAnalyzer.UI.Views.Partials
 		{
 			RaiseOnSearchHttpUserAgentInformationClicked(string.Empty);
 		}
+
+        private void _urlLabelLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RaiseOnUrlLabelClicked(e.Link.LinkData as string);
+        }
 	}
 }

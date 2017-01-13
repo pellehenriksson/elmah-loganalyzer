@@ -136,6 +136,6 @@ namespace ElmahLogAnalyzer.UI.Views
 			{
 				OnSearchHttpUserAgentInformation(this, e);
 			}
-		}
+        }
 	}
 }

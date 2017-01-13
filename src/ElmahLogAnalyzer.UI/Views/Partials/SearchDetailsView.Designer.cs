@@ -30,13 +30,13 @@
 		{
             this._detailsTabControl = new System.Windows.Forms.TabControl();
             this._errorTabPage = new System.Windows.Forms.TabPage();
+            this._urlLabelLink = new System.Windows.Forms.LinkLabel();
             this._httpStatusCodeTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this._sourceLabel = new System.Windows.Forms.TextBox();
             this._typeLabel = new System.Windows.Forms.TextBox();
             this._urlLabel = new System.Windows.Forms.TextBox();
             this._timeLabel = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this._errorTabControl = new System.Windows.Forms.TabControl();
             this._messageTabPage = new System.Windows.Forms.TabPage();
             this._messageTextBox = new System.Windows.Forms.TextBox();
@@ -48,13 +48,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this._formsTabPage = new System.Windows.Forms.TabPage();
-            this._formsListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
             this._cookiesTabPage = new System.Windows.Forms.TabPage();
-            this._cookiesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
             this._queryStringTabPage = new System.Windows.Forms.TabPage();
-            this._querystringListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
             this._serverVariablesTabPage = new System.Windows.Forms.TabPage();
-            this._serverVariablesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
             this._clientTabPage = new System.Windows.Forms.TabPage();
             this._useragentLabel = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -81,6 +77,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this._customDataTabPage = new System.Windows.Forms.TabPage();
+            this._formsListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
+            this._cookiesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
+            this._querystringListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
+            this._serverVariablesListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
             this._customDataListView = new ElmahLogAnalyzer.UI.Controls.NameValuePairListView();
             this._detailsTabControl.SuspendLayout();
             this._errorTabPage.SuspendLayout();
@@ -119,13 +119,13 @@
             // _errorTabPage
             // 
             this._errorTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this._errorTabPage.Controls.Add(this._urlLabelLink);
             this._errorTabPage.Controls.Add(this._httpStatusCodeTextBox);
             this._errorTabPage.Controls.Add(this.label1);
             this._errorTabPage.Controls.Add(this._sourceLabel);
             this._errorTabPage.Controls.Add(this._typeLabel);
             this._errorTabPage.Controls.Add(this._urlLabel);
             this._errorTabPage.Controls.Add(this._timeLabel);
-            this._errorTabPage.Controls.Add(this.label6);
             this._errorTabPage.Controls.Add(this._errorTabControl);
             this._errorTabPage.Controls.Add(this.label2);
             this._errorTabPage.Controls.Add(this.label5);
@@ -136,6 +136,19 @@
             this._errorTabPage.Size = new System.Drawing.Size(672, 501);
             this._errorTabPage.TabIndex = 0;
             this._errorTabPage.Text = "Error";
+            // 
+            // _urlLabelLink
+            // 
+            this._urlLabelLink.AutoSize = true;
+            this._urlLabelLink.Enabled = false;
+            this._urlLabelLink.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._urlLabelLink.Location = new System.Drawing.Point(14, 37);
+            this._urlLabelLink.Name = "_urlLabelLink";
+            this._urlLabelLink.Size = new System.Drawing.Size(31, 13);
+            this._urlLabelLink.TabIndex = 11;
+            this._urlLabelLink.TabStop = true;
+            this._urlLabelLink.Text = "Url:";
+            this._urlLabelLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this._urlLabelLink_LinkClicked);
             // 
             // _httpStatusCodeTextBox
             // 
@@ -212,17 +225,6 @@
             this._timeLabel.TabIndex = 1;
             this._timeLabel.TabStop = false;
             this._timeLabel.Text = "[Time]";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label6.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 37);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Url:";
             // 
             // _errorTabControl
             // 
@@ -349,14 +351,6 @@
             this._formsTabPage.Text = "Form values";
             this._formsTabPage.UseVisualStyleBackColor = true;
             // 
-            // _formsListView
-            // 
-            this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._formsListView.Location = new System.Drawing.Point(0, 0);
-            this._formsListView.Name = "_formsListView";
-            this._formsListView.Size = new System.Drawing.Size(672, 501);
-            this._formsListView.TabIndex = 0;
-            // 
             // _cookiesTabPage
             // 
             this._cookiesTabPage.Controls.Add(this._cookiesListView);
@@ -366,14 +360,6 @@
             this._cookiesTabPage.TabIndex = 3;
             this._cookiesTabPage.Text = "Cookies";
             this._cookiesTabPage.UseVisualStyleBackColor = true;
-            // 
-            // _cookiesListView
-            // 
-            this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._cookiesListView.Location = new System.Drawing.Point(0, 0);
-            this._cookiesListView.Name = "_cookiesListView";
-            this._cookiesListView.Size = new System.Drawing.Size(672, 501);
-            this._cookiesListView.TabIndex = 0;
             // 
             // _queryStringTabPage
             // 
@@ -385,14 +371,6 @@
             this._queryStringTabPage.Text = "Querystring";
             this._queryStringTabPage.UseVisualStyleBackColor = true;
             // 
-            // _querystringListView
-            // 
-            this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._querystringListView.Location = new System.Drawing.Point(0, 0);
-            this._querystringListView.Name = "_querystringListView";
-            this._querystringListView.Size = new System.Drawing.Size(672, 501);
-            this._querystringListView.TabIndex = 0;
-            // 
             // _serverVariablesTabPage
             // 
             this._serverVariablesTabPage.Controls.Add(this._serverVariablesListView);
@@ -403,14 +381,6 @@
             this._serverVariablesTabPage.TabIndex = 1;
             this._serverVariablesTabPage.Text = "Server Variables";
             this._serverVariablesTabPage.UseVisualStyleBackColor = true;
-            // 
-            // _serverVariablesListView
-            // 
-            this._serverVariablesListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._serverVariablesListView.Location = new System.Drawing.Point(3, 3);
-            this._serverVariablesListView.Name = "_serverVariablesListView";
-            this._serverVariablesListView.Size = new System.Drawing.Size(666, 495);
-            this._serverVariablesListView.TabIndex = 0;
             // 
             // _clientTabPage
             // 
@@ -737,6 +707,38 @@
             this._customDataTabPage.Text = "Custom data";
             this._customDataTabPage.UseVisualStyleBackColor = true;
             // 
+            // _formsListView
+            // 
+            this._formsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._formsListView.Location = new System.Drawing.Point(0, 0);
+            this._formsListView.Name = "_formsListView";
+            this._formsListView.Size = new System.Drawing.Size(672, 501);
+            this._formsListView.TabIndex = 0;
+            // 
+            // _cookiesListView
+            // 
+            this._cookiesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._cookiesListView.Location = new System.Drawing.Point(0, 0);
+            this._cookiesListView.Name = "_cookiesListView";
+            this._cookiesListView.Size = new System.Drawing.Size(672, 501);
+            this._cookiesListView.TabIndex = 0;
+            // 
+            // _querystringListView
+            // 
+            this._querystringListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._querystringListView.Location = new System.Drawing.Point(0, 0);
+            this._querystringListView.Name = "_querystringListView";
+            this._querystringListView.Size = new System.Drawing.Size(672, 501);
+            this._querystringListView.TabIndex = 0;
+            // 
+            // _serverVariablesListView
+            // 
+            this._serverVariablesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._serverVariablesListView.Location = new System.Drawing.Point(3, 3);
+            this._serverVariablesListView.Name = "_serverVariablesListView";
+            this._serverVariablesListView.Size = new System.Drawing.Size(666, 495);
+            this._serverVariablesListView.TabIndex = 0;
+            // 
             // _customDataListView
             // 
             this._customDataListView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -787,8 +789,7 @@
 		private System.Windows.Forms.TabPage _messageTabPage;
 		private System.Windows.Forms.TabPage _detailsTabPage;
 		private System.Windows.Forms.TextBox _messageTextBox;
-		private System.Windows.Forms.TextBox _detailsTextBox;
-		private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox _detailsTextBox;
 		private System.Windows.Forms.TabPage _clientTabPage;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label label10;
@@ -831,5 +832,6 @@
 		private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TabPage _customDataTabPage;
         private Controls.NameValuePairListView _customDataListView;
+        private System.Windows.Forms.LinkLabel _urlLabelLink;
 	}
 }

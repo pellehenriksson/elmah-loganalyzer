@@ -10,231 +10,240 @@ using ElmahLogAnalyzer.Core.Presentation;
 using ElmahLogAnalyzer.UI.Forms;
 using ElmahLogAnalyzer.UI.Views;
 using Ninject.Parameters;
+using Utils.Winforms;
 
 namespace ElmahLogAnalyzer.UI
 {
-	public static class Program
-	{
-		private static ISettingsManager _settingsManager;
-		private static Container _container;
-		
-		[STAThread]
-		public static void Main()
-		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
+    public static class Program
+    {
+        private static ISettingsManager _settingsManager;
+        private static Container _container;
 
-			_settingsManager = ServiceLocator.Resolve<ISettingsManager>();
-			
-			_container = ServiceLocator.Resolve<Container>();
-			_container.SetWelcomeState();
-			_container.DisplaySettings(_settingsManager);
+        [STAThread]
+        public static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-			RegisterApplicationCommands();
-			
-			Startup();
-			Application.Run(_container);
-		}
+            _settingsManager = ServiceLocator.Resolve<ISettingsManager>();
 
-		private static void Startup()
-		{
-			var directory = Environment.GetCommandLineArgs()
-					.Skip(1)
-					.FirstOrDefault(arg => arg.HasValue());
+            _container = ServiceLocator.Resolve<Container>();
+            _container.SetWelcomeState();
+            _container.DisplaySettings(_settingsManager);
 
-			if (!directory.HasValue())
-			{
-				directory = _settingsManager.GetDefaultLogsDirectory();
+            RegisterApplicationCommands();
 
-				if (!directory.HasValue() || !_settingsManager.GetLoadLogsFromDefaultDirectoryAtStartup())
-				{
-					return;
-				}
-			}
+            Startup();
+            Application.Run(_container);
+        }
 
-			InitializeNewErrorLogSource(ErrorLogSources.Files, directory, null, null, null);
-		}
+        private static void Startup()
+        {
+            var directory = Environment.GetCommandLineArgs()
+                    .Skip(1)
+                    .FirstOrDefault(arg => arg.HasValue());
 
-		private static void RegisterApplicationCommands()
-		{
-			_container.OnApplicationCommand += (sender, args) =>
-			{
-			    switch (args.Command)
-			    {
-			        case ApplicationCommands.ConnectToDirectory:
-			            ConnectToDirectory();
-			            break;
+            if (!directory.HasValue())
+            {
+                directory = _settingsManager.GetDefaultLogsDirectory();
 
-			        case ApplicationCommands.ConnectToWebServer:
-			            ConnectToWebServer();
-			            break;
+                if (!directory.HasValue() || !_settingsManager.GetLoadLogsFromDefaultDirectoryAtStartup())
+                {
+                    return;
+                }
+            }
 
-					case ApplicationCommands.ConnectToSqlServerDatabase:
-					    ConnectToSqlServerDatabase();
-					    break;
+            InitializeNewErrorLogSource(ErrorLogSources.Files, directory, null, null, null);
+        }
 
-					case ApplicationCommands.ConnectToSqlServerCompactDatabase:
-			    		ConnectToSqlServerCompactDatabase();
-			    		break;
-						
-			        case ApplicationCommands.Disconnect:
-			            _container.SetWelcomeState();
-			            break;
+        private static void RegisterApplicationCommands()
+        {
+            _container.OnApplicationCommand += (sender, args) =>
+            {
+                switch (args.Command)
+                {
+                    case ApplicationCommands.ConnectToDirectory:
+                        ConnectToDirectory();
+                        break;
 
-			        case ApplicationCommands.DisplaySearchView:
-			            {
-			                var presenter = ServiceLocator.Resolve<SearchPresenter>();
-			                _container.DisplayView(presenter.View as UserControl);
-			                break;
-			            }
+                    case ApplicationCommands.ConnectToWebServer:
+                        ConnectToWebServer();
+                        break;
 
-			        case ApplicationCommands.DisplayReportsView:
-			            {
-			                var presenter = ServiceLocator.Resolve<ReportPresenter>();
-			                _container.DisplayView(presenter.View as UserControl);
-			                break;
-			            }
+                    case ApplicationCommands.ConnectToSqlServerDatabase:
+                        ConnectToSqlServerDatabase();
+                        break;
 
-			        case ApplicationCommands.DislayExportDialog:
-			            {
-			                var presenter = ServiceLocator.Resolve<ExportPresenter>();
-			                _container.DisplayDialog(presenter.View as Form);
-			                break;
-			            }
+                    case ApplicationCommands.ConnectToSqlServerCompactDatabase:
+                        ConnectToSqlServerCompactDatabase();
+                        break;
 
-			        case ApplicationCommands.DisplaySettingsDialog:
-			            DisplaySettings();
-			            break;
+                    case ApplicationCommands.Disconnect:
+                        _container.SetWelcomeState();
+                        break;
 
-			        case ApplicationCommands.DisplayAboutDialog:
-			            {
-			                var about = ServiceLocator.Resolve<AboutForm>();
-			                _container.DisplayDialog(about);
-			                break;
-			            }
+                    case ApplicationCommands.DisplaySearchView:
+                        {
+                            var presenter = ServiceLocator.Resolve<SearchPresenter>();
+                            _container.DisplayView(presenter.View as UserControl);
+                            break;
+                        }
 
-			        case ApplicationCommands.Exit:
-			            Application.Exit();
-			            break;
-			    }
-			};
-		}
-		
-		private static void ConnectToDirectory()
-		{
-			var dialog = new FolderBrowserDialog
-			{
-				Description = "Select a folder with ELMAH log files",
-				SelectedPath = _settingsManager.GetDefaultLogsDirectory()
-			};
+                    case ApplicationCommands.DisplayReportsView:
+                        {
+                            var presenter = ServiceLocator.Resolve<ReportPresenter>();
+                            _container.DisplayView(presenter.View as UserControl);
+                            break;
+                        }
 
-			var result = dialog.ShowDialog(_container);
+                    case ApplicationCommands.DislayExportDialog:
+                        {
+                            var presenter = ServiceLocator.Resolve<ExportPresenter>();
+                            _container.DisplayDialog(presenter.View as Form);
+                            break;
+                        }
 
-			if (result == DialogResult.OK)
-			{
-				InitializeNewErrorLogSource(ErrorLogSources.Files, dialog.SelectedPath, null, null, null);
-			}
-		}
+                    case ApplicationCommands.DisplaySettingsDialog:
+                        DisplaySettings();
+                        break;
 
-		private static void ConnectToWebServer()
-		{
-			var presenter = ServiceLocator.Resolve<ConnectToWebServerPresenter>();
-			var view = presenter.View as Form;
-			var result = _container.DisplayDialog(view);
+                    case ApplicationCommands.DisplayAboutDialog:
+                        {
+                            var about = ServiceLocator.Resolve<AboutForm>();
+                            _container.DisplayDialog(about);
+                            break;
+                        }
 
-			if (result == DialogResult.OK)
-			{
-				InitializeNewErrorLogSource(ErrorLogSources.Files, string.Empty, null, null, presenter.Connnection);
-			}
-		}
+                    case ApplicationCommands.Exit:
+                        Application.Exit();
+                        break;
+                }
+            };
+        }
 
-		private static void ConnectToSqlServerDatabase()
-		{
-			var presenter = ServiceLocator.Resolve<ConnectToSqlServerPresenter>();
-			var view = presenter.View as Form;
-			var result = _container.DisplayDialog(view);
+        private static void ConnectToDirectory()
+        {
+            var dialog = new FolderBrowserDialogEx()
+            {
+                Description = "Select a folder with ELMAH log files",
+                SelectedPath = _settingsManager.GetDefaultLogsDirectory(),
+                ShowNewFolderButton = true,
+                ShowFullPathInEditBox = true,
+                ShowEditBox = true
+            };
 
-			if (result == DialogResult.OK)
-			{
-				var information = (IConnectToDatabaseConnectionInformation)view;
-				var connectionstring = ConnectionStringHelper.Extract(information);
+            //{
+            //    Description = "Select a folder with ELMAH log files",
+            //    SelectedPath = _settingsManager.GetDefaultLogsDirectory()
+            //};
 
-				InitializeNewErrorLogSource(information.Source, connectionstring, information.Schema, information.Application, null);
-			}
-		}
+            var result = dialog.ShowDialog(_container);
 
-		private static void ConnectToSqlServerCompactDatabase()
-		{
-			var presenter = ServiceLocator.Resolve<ConnectToSqlServerCompactPresenter>();
-			var view = presenter.View as Form;
-			var result = _container.DisplayDialog(view);
+            if (result == DialogResult.OK)
+            {
+                InitializeNewErrorLogSource(ErrorLogSources.Files, dialog.SelectedPath, null, null, null);
+            }
+        }
 
-			if (result == DialogResult.OK)
-			{
-				var information = (IConnectToDatabaseConnectionInformation)view;
-				var connectionstring = ConnectionStringHelper.Extract(information);
+        private static void ConnectToWebServer()
+        {
+            var presenter = ServiceLocator.Resolve<ConnectToWebServerPresenter>();
+            var view = presenter.View as Form;
+            var result = _container.DisplayDialog(view);
 
-				InitializeNewErrorLogSource(information.Source, connectionstring, null, null, null);
-			}
-		}
-		
-		private static void DisplaySettings()
-		{
-			var presenter = ServiceLocator.Resolve<SettingsPresenter>();
-			var result = _container.DisplayDialog(presenter.View as Form);
+            if (result == DialogResult.OK)
+            {
+                InitializeNewErrorLogSource(ErrorLogSources.Files, string.Empty, null, null, presenter.Connnection);
+            }
+        }
 
-			if (result == DialogResult.OK)
-			{
-				_container.DisplaySettings(_settingsManager);
-			}
-		}
+        private static void ConnectToSqlServerDatabase()
+        {
+            var presenter = ServiceLocator.Resolve<ConnectToSqlServerPresenter>();
+            var view = presenter.View as Form;
+            var result = _container.DisplayDialog(view);
 
-		private static void InitializeNewErrorLogSource(ErrorLogSources source, string connection, string schema, string application, NetworkConnection networkConnection)
-		{
-			_container.SetLoadingState();
+            if (result == DialogResult.OK)
+            {
+                var information = (IConnectToDatabaseConnectionInformation)view;
+                var connectionstring = ConnectionStringHelper.Extract(information);
 
-			DataSourceScopeController.SetNewSource(source, connection, schema, application);
+                InitializeNewErrorLogSource(information.Source, connectionstring, information.Schema, information.Application, null);
+            }
+        }
 
-			var downloadLogsTask  = new Task(() => { return; });
+        private static void ConnectToSqlServerCompactDatabase()
+        {
+            var presenter = ServiceLocator.Resolve<ConnectToSqlServerCompactPresenter>();
+            var view = presenter.View as Form;
+            var result = _container.DisplayDialog(view);
 
-			if (networkConnection != null)
-			{
-				var downloader = ServiceLocator.ResolveWithConstructorArguments<ErrorLogDownloader>(new IParameter[] { new ConstructorArgument("connection", networkConnection) });
-				DataSourceScopeController.SetNewSource(ErrorLogSources.Files, downloader.DownloadDirectory, null, null);
+            if (result == DialogResult.OK)
+            {
+                var information = (IConnectToDatabaseConnectionInformation)view;
+                var connectionstring = ConnectionStringHelper.Extract(information);
 
-				downloadLogsTask = new Task(downloader.Download);
-			}
- 
-			var repository = ServiceLocator.Resolve<IErrorLogRepository>();
-			var viewPresenter = ServiceLocator.Resolve<SearchPresenter>();
+                InitializeNewErrorLogSource(information.Source, connectionstring, null, null, null);
+            }
+        }
 
-			var initRepositoryTask = downloadLogsTask.ContinueWith(previousTask =>
-			{
-				if (previousTask.Exception != null)
-				{
-					_container.InvokeEx(m => m.DisplayView(new ErrorView(previousTask.Exception)));
-					_container.InvokeEx(m => m.SetInitialState());
-					return;
-				}
+        private static void DisplaySettings()
+        {
+            var presenter = ServiceLocator.Resolve<SettingsPresenter>();
+            var result = _container.DisplayDialog(presenter.View as Form);
 
-				repository.Initialize();
-			});
+            if (result == DialogResult.OK)
+            {
+                _container.DisplaySettings(_settingsManager);
+            }
+        }
 
-			var updateUiTask = initRepositoryTask.ContinueWith(previousTask =>
-			{
-				if (previousTask.Exception != null)
-				{
-					_container.InvokeEx(m => m.DisplayView(new ErrorView(previousTask.Exception)));
-					_container.InvokeEx(m => m.SetInitialState());
-					return;
-				}
+        private static void InitializeNewErrorLogSource(ErrorLogSources source, string connection, string schema, string application, NetworkConnection networkConnection)
+        {
+            _container.SetLoadingState();
 
-				_container.InvokeEx(m => m.SetReadyForWorkState());
-				_container.InvokeEx(m => m.DisplayConnectionInformation(DataSourceScopeController.Source, DataSourceScopeController.Connection));
-				_container.InvokeEx(m => m.DisplayView(viewPresenter.View as UserControl));
-			});
-			
-			downloadLogsTask.Start();
-		}
-	}
+            DataSourceScopeController.SetNewSource(source, connection, schema, application);
+
+            var downloadLogsTask = new Task(() => { return; });
+
+            if (networkConnection != null)
+            {
+                var downloader = ServiceLocator.ResolveWithConstructorArguments<ErrorLogDownloader>(new IParameter[] { new ConstructorArgument("connection", networkConnection) });
+                DataSourceScopeController.SetNewSource(ErrorLogSources.Files, downloader.DownloadDirectory, null, null);
+
+                downloadLogsTask = new Task(downloader.Download);
+            }
+
+            var repository = ServiceLocator.Resolve<IErrorLogRepository>();
+            var viewPresenter = ServiceLocator.Resolve<SearchPresenter>();
+
+            var initRepositoryTask = downloadLogsTask.ContinueWith(previousTask =>
+            {
+                if (previousTask.Exception != null)
+                {
+                    _container.InvokeEx(m => m.DisplayView(new ErrorView(previousTask.Exception)));
+                    _container.InvokeEx(m => m.SetInitialState());
+                    return;
+                }
+
+                repository.Initialize();
+            });
+
+            var updateUiTask = initRepositoryTask.ContinueWith(previousTask =>
+            {
+                if (previousTask.Exception != null)
+                {
+                    _container.InvokeEx(m => m.DisplayView(new ErrorView(previousTask.Exception)));
+                    _container.InvokeEx(m => m.SetInitialState());
+                    return;
+                }
+
+                _container.InvokeEx(m => m.SetReadyForWorkState());
+                _container.InvokeEx(m => m.DisplayConnectionInformation(DataSourceScopeController.Source, DataSourceScopeController.Connection));
+                _container.InvokeEx(m => m.DisplayView(viewPresenter.View as UserControl));
+            });
+
+            downloadLogsTask.Start();
+        }
+    }
 }

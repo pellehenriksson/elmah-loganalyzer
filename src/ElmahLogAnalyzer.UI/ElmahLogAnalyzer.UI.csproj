@@ -321,6 +321,10 @@
       <Project>{2EAAB0E4-1B2E-437C-B97B-DE2FEBAEFE2E}</Project>
       <Name>ElmahLogAnalyzer.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utils.Winforms\Utils.Winforms.csproj">
+      <Project>{70715faf-bd46-497d-82aa-7853e29b26f4}</Project>
+      <Name>Utils.Winforms</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\database.png" />

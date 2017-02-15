@@ -112,6 +112,7 @@
     <Compile Include="Common\UniqueStringList.cs" />
     <Compile Include="Common\UrlCleaner.cs" />
     <Compile Include="Constants\Browsers.cs" />
+    <Compile Include="Constants\DefaultValues.cs" />
     <Compile Include="Constants\Platforms.cs" />
     <Compile Include="Domain\ErrorLogSources.cs" />
     <Compile Include="Domain\Export\ErrorLogExporterErrorEventArgs.cs" />

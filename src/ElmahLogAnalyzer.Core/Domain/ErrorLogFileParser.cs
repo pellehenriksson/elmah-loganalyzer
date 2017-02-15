@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml;
 using ElmahLogAnalyzer.Core.Common;
+using ElmahLogAnalyzer.Core.Constants;
 using ElmahLogAnalyzer.Core.Infrastructure.Logging;
 
 namespace ElmahLogAnalyzer.Core.Domain
@@ -30,14 +31,14 @@ namespace ElmahLogAnalyzer.Core.Domain
 
 				_errorLog = new ErrorLog();
 
-			    ParseId();
+				ParseId();
 				ParseApplication();
 				ParseAttributes();
 				ParseServerVariables();
 				ParseFormValues();
 				ParseQuerystringValues();
 				ParseCookies();
-			    ParseCustomDataValues();
+				ParseCustomDataValues();
 
 				SetStatusCodeInformation();
 				SetServerInformation();
@@ -52,13 +53,13 @@ namespace ElmahLogAnalyzer.Core.Domain
 			}
 		}
 
-        private void ParseId()
-        {
-            Guid errorId;
-           
-            errorId = Guid.TryParse(GetAttributeValue("errorId"), out errorId) ? Guid.Parse(GetAttributeValue("errorId")) : Guid.Empty;
-            _errorLog.ErrorId = errorId;
-        }
+		private void ParseId()
+		{
+			Guid errorId;
+		   
+			errorId = Guid.TryParse(GetAttributeValue("errorId"), out errorId) ? Guid.Parse(GetAttributeValue("errorId")) : Guid.Empty;
+			_errorLog.ErrorId = errorId;
+		}
 
 		private void ParseApplication()
 		{
@@ -70,7 +71,10 @@ namespace ElmahLogAnalyzer.Core.Domain
 			_errorLog.Host = GetAttributeValue("host");
 			_errorLog.Type = GetAttributeValue("type");
 			_errorLog.Message = GetAttributeValue("message");
-			_errorLog.Source = GetAttributeValue("source");
+
+			var source = GetAttributeValue("source");
+
+			_errorLog.Source = string.IsNullOrWhiteSpace(source) ? DefaultValues.ErrorLogSource : source;
 			_errorLog.Details = GetAttributeValue("detail");
 
 			var time = GetAttributeValue("time");
@@ -118,16 +122,16 @@ namespace ElmahLogAnalyzer.Core.Domain
 		{
 			ParseSegment(_errorLog.AddCookie, "//cookies//item");
 		}
-        
+		
 		private void ParseQuerystringValues()
 		{
 			ParseSegment(_errorLog.AddQuerystringValue, "//queryString//item");
 		}
 
-        private void ParseCustomDataValues()
-        {
-            ParseSegment(_errorLog.AddCustomDataValue, "//data//item");
-        }
+		private void ParseCustomDataValues()
+		{
+			ParseSegment(_errorLog.AddCustomDataValue, "//data//item");
+		}
 
 		private void ParseSegment(Action<string, string> method, string segmentPath)
 		{

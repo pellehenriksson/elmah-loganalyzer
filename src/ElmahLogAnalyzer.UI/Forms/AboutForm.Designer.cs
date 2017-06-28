@@ -46,7 +46,7 @@
 			// 
 			this._closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this._closeButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this._closeButton.Location = new System.Drawing.Point(301, 227);
+			this._closeButton.Location = new System.Drawing.Point(335, 227);
 			this._closeButton.Name = "_closeButton";
 			this._closeButton.Size = new System.Drawing.Size(75, 23);
 			this._closeButton.TabIndex = 0;
@@ -81,10 +81,10 @@
 			this._updateLinkLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this._updateLinkLabel.Location = new System.Drawing.Point(151, 65);
 			this._updateLinkLabel.Name = "_updateLinkLabel";
-			this._updateLinkLabel.Size = new System.Drawing.Size(222, 13);
+			this._updateLinkLabel.Size = new System.Drawing.Size(265, 13);
 			this._updateLinkLabel.TabIndex = 3;
 			this._updateLinkLabel.TabStop = true;
-			this._updateLinkLabel.Text = "http://code.google.com/p/elmah-loganalyzer";
+			this._updateLinkLabel.Text = "https://github.com/pellehenriksson/elmah-loganalyzer";
 			this._updateLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UpdateLinkLabelLinkClicked);
 			// 
 			// _silkLabel
@@ -176,14 +176,14 @@
 			this._dapperLinkLabel.Size = new System.Drawing.Size(213, 13);
 			this._dapperLinkLabel.TabIndex = 11;
 			this._dapperLinkLabel.TabStop = true;
-			this._dapperLinkLabel.Text = "http://code.google.com/p/dapper-dot-net/";
+			this._dapperLinkLabel.Text = "https://github.com/StackExchange/Dapper";
 			this._dapperLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.DapperLinkLabelLinkClicked);
 			// 
 			// AboutForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(388, 262);
+			this.ClientSize = new System.Drawing.Size(422, 262);
 			this.Controls.Add(this._dapperLinkLabel);
 			this.Controls.Add(this._dapperLabel);
 			this.Controls.Add(this._nLogLinkLabel);

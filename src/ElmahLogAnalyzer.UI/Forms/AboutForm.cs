@@ -13,7 +13,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 		
 		private void UpdateLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			Process.Start("http://code.google.com/p/elmah-loganalyzer");
+			Process.Start("https://github.com/pellehenriksson/elmah-loganalyzer");
 		}
 
 		private void SilkLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -33,7 +33,7 @@ namespace ElmahLogAnalyzer.UI.Forms
 
 		private void DapperLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			Process.Start("http://code.google.com/p/dapper-dot-net/");
+			Process.Start("https://github.com/StackExchange/Dapper");
 		}
 	}
 }

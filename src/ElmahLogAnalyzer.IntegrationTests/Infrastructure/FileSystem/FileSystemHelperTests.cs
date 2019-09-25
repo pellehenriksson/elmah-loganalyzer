@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
 using NUnit.Framework;
 

@@ -1,11 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Build", "_Build", "{B9A2272D-595F-4798-8FB9-7ACF04F8F3C0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{B9A2272D-595F-4798-8FB9-7ACF04F8F3C0}"
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
+		.sonarcloud.properties = .sonarcloud.properties
 		..\elmah-loganalyzer.build = ..\elmah-loganalyzer.build
 		SolutionInfo.cs = SolutionInfo.cs
 	EndProjectSection
@@ -104,5 +105,8 @@ Global
 		{31B1036D-1402-484A-B0D0-DC77FEAF5FDE} = {AF47CE1D-DD9A-44BD-A0C1-0479287FC043}
 		{85191ED2-783E-4599-A0FB-0CB66276A933} = {AF47CE1D-DD9A-44BD-A0C1-0479287FC043}
 		{5C8B4C7C-5020-468F-A7EA-57B07C5CE05F} = {AF47CE1D-DD9A-44BD-A0C1-0479287FC043}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CEC315A1-BE2E-4B60-BC52-E4CAF32652FA}
 	EndGlobalSection
 EndGlobal

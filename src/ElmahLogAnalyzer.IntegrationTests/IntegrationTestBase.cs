@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Reflection;
 using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
 using ElmahLogAnalyzer.TestHelpers.Fakes;
@@ -19,7 +20,13 @@ namespace ElmahLogAnalyzer.IntegrationTests
 
 		protected string TestFilesDirectory
 		{
-			get { return Path.Combine(Directory.GetCurrentDirectory(), "_TestFiles"); }
+            get
+            {
+                var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+                var dir = new System.Uri(path).LocalPath;
+
+                return Path.Combine(dir, "_TestFiles");
+            }
 		}
 
 		protected string TestArea
@@ -37,7 +44,7 @@ namespace ElmahLogAnalyzer.IntegrationTests
 			get { return "http://www.google.com"; }
 		}
 
-		protected string NonExistantUrl
+		protected string NonExistentUrl
 		{
 			get { return "http://www.bluttanblä.com"; }
 		}

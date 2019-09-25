@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
 using ElmahLogAnalyzer.TestHelpers.Fakes;

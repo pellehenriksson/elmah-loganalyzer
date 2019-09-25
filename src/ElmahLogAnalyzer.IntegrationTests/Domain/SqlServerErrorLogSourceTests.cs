@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace ElmahLogAnalyzer.IntegrationTests.Domain
 {
-	[TestFixture, Ignore]
+	[TestFixture, Ignore("skipping this is fine")]
 	public class SqlServerErrorLogSourceTests 
 	{
 		[Test]

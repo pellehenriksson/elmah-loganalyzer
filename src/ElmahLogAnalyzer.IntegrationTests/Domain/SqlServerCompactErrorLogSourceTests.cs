@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace ElmahLogAnalyzer.IntegrationTests.Domain
 {
-	[TestFixture]
+	[TestFixture][Ignore("Unable to load the native components of SQL Server Compact")]
 	public class SqlServerCompactErrorLogSourceTests : IntegrationTestBase
 	{
 		[Test]

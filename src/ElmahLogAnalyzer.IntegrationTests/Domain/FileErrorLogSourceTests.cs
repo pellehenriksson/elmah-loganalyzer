@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Infrastructure.FileSystem;
 using ElmahLogAnalyzer.TestHelpers.Fakes;
@@ -51,6 +53,15 @@ namespace ElmahLogAnalyzer.IntegrationTests.Domain
 			Assert.That(result, Is.Not.Null);
 			Assert.That(result.Message, Is.EqualTo(@"The directory: x:\invalid\directory was not found"));
 		}
+
+        [Test]
+        public void Test()
+        {
+            var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+            Console.WriteLine(path);
+            Console.WriteLine(new System.Uri(path).LocalPath);
+            //return new System.Uri(path).LocalPath;
+        }
 
 		private FileErrorLogSource CreateSource()
 		{

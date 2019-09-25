@@ -44,7 +44,7 @@ namespace ElmahLogAnalyzer.IntegrationTests
 			get { return "http://www.google.com"; }
 		}
 
-		protected string NonExistantUrl
+		protected string NonExistentUrl
 		{
 			get { return "http://www.bluttanblä.com"; }
 		}

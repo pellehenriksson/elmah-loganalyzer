@@ -15,7 +15,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Web
 			var helper = new UrlPing(new FakeLog());
 
 			// act
-			var result = helper.Ping(new NetworkConnection(NonExistantUrl));
+			var result = helper.Ping(new NetworkConnection(NonExistentUrl));
 
 			// assert
 			Assert.That(result.Item1, Is.False);

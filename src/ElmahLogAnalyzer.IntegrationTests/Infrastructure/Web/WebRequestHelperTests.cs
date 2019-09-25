@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using ElmahLogAnalyzer.Core.Domain;
 using ElmahLogAnalyzer.Core.Infrastructure.Web;
 using NUnit.Framework;
@@ -29,7 +28,7 @@ namespace ElmahLogAnalyzer.IntegrationTests.Infrastructure.Web
 			var helper = new WebRequestHelper();
 
 			// act
-			var result = Assert.Throws<WebException>(() => helper.Uri(new NetworkConnection(NonExistantUrl)));
+			var result = Assert.Throws<WebException>(() => helper.Uri(new NetworkConnection(NonExistentUrl)));
 
 			// assert
 			Assert.That(result, Is.Not.Null);

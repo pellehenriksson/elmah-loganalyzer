@@ -6,7 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{B9A2272D-595F-4798-8FB9-7ACF04F8F3C0}"
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
-		.sonarcloud.properties = .sonarcloud.properties
+		..\.sonarcloud.properties = ..\.sonarcloud.properties
 		..\elmah-loganalyzer.build = ..\elmah-loganalyzer.build
 		SolutionInfo.cs = SolutionInfo.cs
 	EndProjectSection

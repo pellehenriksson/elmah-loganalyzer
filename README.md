@@ -8,7 +8,7 @@ Latest version released **2015-01-28** Added support for empty sources in filter
 
 Please note that this version is not available under downloads, it's no longer possible to upload new releases to google code.
 
-Go here to download: [Elmah-loganalyzer-downloads](./releases)
+Go here to download: [Elmah-loganalyzer-downloads](https://github.com/pellehenriksson/elmah-loganalyzer/releases/tag/2017.2.15.128)
 
 ## Previous version
 
